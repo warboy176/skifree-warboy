@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#d8f3ff">
+  <meta name="description" content="A fast, self-contained pixel-art downhill skiing game with Warboy on the chase.">
+  <title>SkiFree '91 — Canvas Remake</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d8f3ff'/%3E%3Cpath d='M16 3l-7 10h5L7 23h18l-7-10h5z' fill='%230c6d57'/%3E%3Crect x='14' y='22' width='4' height='7' fill='%237a431f'/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light;--ink:#102a43;--snow:#eefaff;--ice:#c5ecfa;--red:#e33232;--navy:#123c69;--gold:#ffd43b}
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#b7e4f4}
+    body{font-family:"Courier New",Courier,monospace;color:var(--ink);touch-action:none;user-select:none;-webkit-user-select:none}
+    main{position:relative;width:100%;height:100%;display:grid;place-items:center;padding:clamp(8px,2vw,22px)}
+    .cabinet{position:relative;width:min(1100px,100%);height:100%;max-height:900px;border:4px solid var(--ink);background:var(--snow);box-shadow:10px 10px 0 rgba(16,42,67,.22);overflow:hidden}
+    canvas{display:block;width:100%;height:100%;image-rendering:pixelated;cursor:crosshair;outline:none}
+    .controls{position:absolute;right:14px;bottom:12px;display:flex;gap:6px;pointer-events:none;opacity:.86}
+    .key{min-width:28px;height:28px;padding:0 7px;display:grid;place-items:center;background:rgba(238,250,255,.92);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);font-size:13px;font-weight:700}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:640px){main{padding:0}.cabinet{border-width:0;box-shadow:none;max-height:none}.controls{display:none}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="cabinet" aria-label="SkiFree game">
+    <canvas id="game" tabindex="0" aria-label="SkiFree. Press Enter or tap to start. Use arrow keys or pointer to steer, Space to jump, arrow keys in the air to flip, and F for fast mode."></canvas>
+    <div class="controls" aria-hidden="true"><span class="key">←</span><span class="key">↓</span><span class="key">→</span><span class="key">SPACE</span><span class="key">F</span></div>
+    <p id="status" class="sr-only" aria-live="polite">Press Enter or click to ski.</p>
+  </section>
+</main>
+<script>
+(() => {
+  'use strict';
+
+  // ---------------------------------------------------------------------------
+  // Canvas & constants
+  // ---------------------------------------------------------------------------
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const statusEl = document.getElementById('status');
+  const DPR_CAP = 2;
+  const HUD_H = 54;
+  const METERS_PER_PIXEL = 0.25;
+  const MAX_SPEED = 420;
+  const PlayerState = Object.freeze({IDLE:'IDLE',SKIING:'SKIING',JUMPING:'JUMPING',CRASHED:'CRASHED',EATEN:'EATEN'});
+  const GameState = Object.freeze({START:'START',PLAYING:'PLAYING',ENDING:'ENDING',GAMEOVER:'GAMEOVER',WON:'WON'});
+  let W = 960, H = 720, dpr = 1;
+
+  // ---------------------------------------------------------------------------
+  // Input Handling
+  // ---------------------------------------------------------------------------
+  const input = {left:false,right:false,down:false,pointer:false,pointerX:0};
+  const pressed = new Set();
+  let fastMode = false;
+
+  function keyName(e){ return e.code || e.key; }
+  addEventListener('keydown', e => {
+    const k = keyName(e);
+    if (['ArrowLeft','ArrowRight','ArrowDown','Space','Enter','KeyF','KeyR'].includes(k)) e.preventDefault();
+    if (k === 'ArrowLeft') input.left = true;
+    if (k === 'ArrowRight') input.right = true;
+    if (k === 'ArrowDown') input.down = true;
+    if (!e.repeat) pressed.add(k);
+    if (k === 'KeyF' && !e.repeat && game.state === GameState.PLAYING) fastMode = !fastMode;
+    if (k === 'Enter' && game.state === GameState.START) startGame();
+    if (k === 'KeyR' && (game.state === GameState.GAMEOVER || game.state === GameState.WON)) startGame();
+  });
+  addEventListener('keyup', e => {
+    const k = keyName(e);
+    if (k === 'ArrowLeft') input.left = false;
+    if (k === 'ArrowRight') input.right = false;
+    if (k === 'ArrowDown') input.down = false;
+  });
+  canvas.addEventListener('pointermove', e => {
+    const r = canvas.getBoundingClientRect();
+    input.pointer = true;
+    input.pointerX = (e.clientX - r.left) * W / r.width;
+  });
+  canvas.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') input.pointer = false; });
+  canvas.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    canvas.focus();
+    const r = canvas.getBoundingClientRect();
+    input.pointer = true;
+    input.pointerX = (e.clientX - r.left) * W / r.width;
+    if (game.state === GameState.START || game.state === GameState.GAMEOVER || game.state === GameState.WON) startGame();
+    else if (game.state === GameState.PLAYING) pressed.add('Space');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Game model & finite state machine
+  // ---------------------------------------------------------------------------
+  const player = {
+    x:0,y:0,vx:0,speed:150,state:PlayerState.IDLE,stateTime:0,jumpTime:0,
+    jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0
+  };
+  const yeti = {
+    active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,
+    mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,
+    cycle:'WAIT',cycleTime:0,cycleLimit:0
+  };
+  const game = {
+    state:GameState.START,distance:0,style:0,cameraY:-220,spawnY:300,
+    obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,
+    cleanTime:0,maxSpeed:0,scoreSaved:false,milestone:0,lastTime:0
+  };
+  const SCORE_KEY='skifree91_arcade_scores_v1';
+  function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
+  let highScores=loadScores();
+  function saveRun(result){
+    if(game.scoreSaved)return;
+    game.scoreSaved=true;
+    highScores.push({distance:game.distance,style:game.style,maxSpeed:Math.round(game.maxSpeed*.12),result});
+    highScores.sort((a,b)=>b.distance-a.distance||b.style-a.style||b.maxSpeed-a.maxSpeed);
+    highScores=highScores.slice(0,8);
+    try{localStorage.setItem(SCORE_KEY,JSON.stringify(highScores));}catch(e){}
+  }
+
+  function setPlayerState(next){
+    player.state = next;
+    player.stateTime = 0;
+    if (next === PlayerState.JUMPING){ player.jumpTime = 0; player.jumpDuration=.82; player.spin = 0; player.flipDir=0; player.flipActive=false; player.flips=0; }
+    if (next === PlayerState.CRASHED){ player.speed *= .25; game.cleanTime=0; game.shake = .25; }
+    if (next === PlayerState.EATEN){ player.speed = 0; player.vx = 0; game.state = GameState.ENDING; statusEl.textContent = 'Caught by Warboy!'; }
+  }
+
+  function startGame(){
+    Object.assign(player,{x:0,y:0,vx:0,speed:155,state:PlayerState.SKIING,stateTime:0,jumpTime:0,jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0});
+    Object.assign(yeti,{active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,cycle:'WAIT',cycleTime:0,cycleLimit:0});
+    Object.assign(game,{state:GameState.PLAYING,distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0});
+    fastMode = false;
+    input.pointer = false;
+    for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
+    generateCourse();
+    statusEl.textContent = 'Skiing. Distance zero meters.';
+  }
+
+  function rand(a,b){ return a + Math.random()*(b-a); }
+  function pick(a){ return a[(Math.random()*a.length)|0]; }
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+
+  // ---------------------------------------------------------------------------
+  // Spawn Logic — objects are created beyond the lower viewport edge
+  // ---------------------------------------------------------------------------
+  function makeObstacle(type,x,y){
+    const sizes = {evergreen:[34,58],bare:[42,54],rock:[30,20],slope:[54,28],jump:[50,26],drone:[38,22],barrel:[28,34],oil:[58,20],mini:[32,44],firebarrel:[32,44]};
+    const s=sizes[type];
+    return {type,x,y,baseY:y,w:s[0],h:s[1],phase:rand(0,Math.PI*2),dir:Math.random()<.5?-1:1,used:false,broken:false,breakTime:0,splatTime:0};
+  }
+
+  function generateCourse(){
+    const target = player.y + H*1.45;
+    while(game.spawnY < target){
+      game.spawnY += rand(Math.max(48,78-game.distance/1200),112);
+      const density = clamp(2 + game.distance/7000, 2, 7);
+      const count = Math.random() < .76 ? Math.ceil(rand(1,density)) : 0;
+      for(let i=0;i<count;i++){
+        const pool=['evergreen','evergreen','bare','rock','slope','jump','jump','drone'];
+        if(game.distance>=10000)pool.push('barrel','barrel','oil');
+        if(game.distance>=20000)pool.push('mini','mini','firebarrel','firebarrel');
+        const type=pick(pool);
+        const laneX = player.x + rand(-W*.78,W*.78);
+        game.obstacles.push(makeObstacle(type,laneX,game.spawnY+rand(-30,30)));
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Collision Detection — padded AABBs keep the retro play feel forgiving
+  // ---------------------------------------------------------------------------
+  function boxForPlayer(){ return {x:player.x-8,y:player.y-10,w:16,h:22}; }
+  function boxForObstacle(o){
+    const pad = o.type==='evergreen'||o.type==='bare'?10:o.type==='oil'?9:6;
+    return {x:o.x-o.w/2+pad,y:o.y-o.h/2+pad,w:o.w-pad*2,h:o.h-pad*2};
+  }
+  function overlaps(a,b){ return a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y; }
+
+  function handleCollisions(){
+    if(player.invulnerable>0 || player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
+    const pb=boxForPlayer();
+    for(const o of game.obstacles){
+      if(o.used || Math.abs(o.y-player.y)>65 || !overlaps(pb,boxForObstacle(o))) continue;
+      if(o.type==='jump'){
+        o.used=true;
+        if(player.state!==PlayerState.JUMPING){ setPlayerState(PlayerState.JUMPING); player.jumpDuration=1.08; game.style+=100; game.trickText='RAMP +100'; game.trickTime=.8; }
+        continue;
+      }
+      if(o.type==='slope'){
+        o.used=true; o.broken=true; o.breakTime=.001; game.style+=25; game.trickText='BANNER BREAK +25'; game.trickTime=.8; continue;
+      }
+      if(o.type==='oil'){
+        o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;continue;
+      }
+      if((o.type==='drone'||o.type==='mini') && player.state!==PlayerState.JUMPING){
+        o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break;
+      }
+      if(player.state===PlayerState.JUMPING && (o.type==='rock'||o.type==='drone'||o.type==='mini')){
+        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;continue;
+      }
+      setPlayerState(PlayerState.CRASHED);
+      player.invulnerable=1.1;
+      break;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Simulation update
+  // ---------------------------------------------------------------------------
+  function updatePlayer(dt){
+    player.stateTime += dt;
+    player.invulnerable = Math.max(0,player.invulnerable-dt);
+    if(player.state===PlayerState.EATEN) return;
+
+    if(player.state===PlayerState.CRASHED){
+      player.speed=Math.max(0,player.speed-120*dt);
+      if(player.stateTime>.72){ player.speed=105; setPlayerState(PlayerState.SKIING); }
+    } else {
+      game.cleanTime+=dt;
+      const cruise=Math.min(MAX_SPEED,170+game.distance/180+Math.min(80,game.cleanTime*1.3));
+      const targetSpeed = input.down ? Math.min(MAX_SPEED,cruise+65) : cruise;
+      player.speed += (targetSpeed-player.speed)*Math.min(1,dt*(input.down?2.8:1.15));
+      let steer=0;
+      if(input.pointer){
+        const screenX = W/2 + (player.x - player.x);
+        steer=clamp((input.pointerX-screenX)/150,-1,1);
+      } else steer=(input.right?1:0)-(input.left?1:0);
+      player.vx += (steer*150-player.vx)*Math.min(1,dt*7);
+      if(input.down && !steer) player.vx*=Math.pow(.08,dt);
+
+      if(pressed.has('Space') && player.state===PlayerState.SKIING) setPlayerState(PlayerState.JUMPING);
+      if(player.state===PlayerState.JUMPING){
+        player.jumpTime+=dt;
+        const p=clamp(player.jumpTime/player.jumpDuration,0,1);
+        player.jumpHeight=Math.sin(p*Math.PI)*34;
+        if(!player.flipActive && (pressed.has('ArrowLeft')||pressed.has('ArrowRight'))){
+          player.flipDir=pressed.has('ArrowRight')?1:-1; player.flipActive=true;
+          game.trickText=player.flipDir>0?'RIGHT FLIP!':'LEFT FLIP!'; game.trickTime=.65;
+        }
+        if(player.flipActive){
+          player.spin+=player.flipDir*14.2*dt;
+          if(Math.abs(player.spin)>=(player.flips+1)*Math.PI*2){
+            player.flips++; player.flipActive=false; game.style+=250;
+            game.trickText=`${player.flips>1?player.flips+'X ':''}FLIP +250`; game.trickTime=1;
+          }
+        }
+        if(p>=1){
+          const unfinished=player.flipActive && Math.abs(player.spin-player.flips*Math.PI*2)>.75;
+          player.jumpHeight=0;
+          if(unfinished){setPlayerState(PlayerState.CRASHED);player.invulnerable=1.1;game.trickText='BAD LANDING';game.trickTime=.8;}
+          else setPlayerState(PlayerState.SKIING);
+        }
+      }
+    }
+    player.x += player.vx*dt;
+    player.y += player.speed*dt;
+    if(player.state===PlayerState.SKIING && player.speed>35){
+      game.trackTimer+=dt;
+      if(game.trackTimer>.055){
+        const spread=7+Math.abs(player.vx)*.012;
+        game.tracks.push({x1:player.x-spread,y:player.y+15,x2:player.x+spread});
+        game.trackTimer=0;
+      }
+    }
+    game.distance=Math.max(game.distance,Math.floor(player.y*METERS_PER_PIXEL));
+    game.maxSpeed=Math.max(game.maxSpeed,player.speed);
+    if(game.distance>=30000){
+      game.distance=30000;game.state=GameState.WON;player.speed=0;yeti.active=false;saveRun('WIN');
+      statusEl.textContent='You won SkiFree! Thirty thousand meters complete.';
+    }
+  }
+
+  function beginWarboyChase(){
+    Object.assign(yeti,{
+      active:true,x:player.x+pick([-1,1])*rand(210,350),y:player.y-rand(360,520),
+      vx:0,vy:Math.max(180,player.speed*.8),phase:0,step:0,mode:'STALK',modeTime:0,misses:0,
+      cycle:'CHASE',cycleTime:0,cycleLimit:rand(10,15)
+    });
+    game.flash=.55;statusEl.textContent='Warboy is chasing you.';
+  }
+
+  function updateYeti(dt){
+    if(yeti.cycle==='WAIT'){
+      if(game.distance>=2000)beginWarboyChase();
+      else return;
+    }
+    if(yeti.cycle==='REST'){
+      yeti.cycleTime+=dt;
+      if(yeti.cycleTime>=yeti.cycleLimit)beginWarboyChase();
+      return;
+    }
+    if(yeti.cycle==='TIRED'){
+      yeti.cycleTime+=dt;yeti.phase+=dt;yeti.step+=dt*3;
+      yeti.x+=yeti.vx*dt;yeti.y+=yeti.vy*dt;yeti.vx*=Math.pow(.08,dt);yeti.vy-=90*dt;
+      if(yeti.cycleTime>=1.35){
+        yeti.active=false;yeti.cycle='REST';yeti.cycleTime=0;yeti.cycleLimit=rand(20,40);
+        game.trickText='WARBOY ESCAPED!';game.trickTime=1.5;statusEl.textContent='Warboy gave up. Ski free while he rests.';
+      }
+      return;
+    }
+    if(!yeti.active || player.state===PlayerState.EATEN) return;
+    yeti.cycleTime+=dt;
+    if(yeti.cycleTime>=yeti.cycleLimit){
+      yeti.cycle='TIRED';yeti.cycleTime=0;yeti.mode='TIRED';yeti.modeTime=0;
+      yeti.vx*=.18;yeti.vy*=.18;game.style+=500;game.trickText='ESCAPE +500';game.trickTime=1.2;return;
+    }
+    yeti.phase+=dt; yeti.step+=dt*(yeti.mode==='LUNGE'?13:9); yeti.modeTime+=dt;
+    const chaseSpeed=Math.max(235,Math.min(MAX_SPEED*1.25,player.speed*1.25+18));
+
+    if(yeti.mode==='STALK'){
+      // The monster predicts your line, but cannot pivot instantly.
+      const aimX=player.x+player.vx*.42;
+      const aimY=player.y+20;
+      const dx=aimX-yeti.x,dy=aimY-yeti.y,d=Math.hypot(dx,dy)||1;
+      const turn=Math.min(1,dt*3.2);
+      yeti.vx+=(dx/d*chaseSpeed-yeti.vx)*turn;
+      yeti.vy+=(dy/d*chaseSpeed-yeti.vy)*turn;
+      yeti.x+=yeti.vx*dt; yeti.y+=yeti.vy*dt;
+
+      if(d<195 && yeti.y<player.y+35){
+        // A committed lunge can be juked. Each miss makes the next attempt sharper.
+        const error=Math.max(24,92-yeti.misses*16);
+        yeti.targetX=player.x+player.vx*.55+rand(-error,error);
+        yeti.targetY=player.y+95;
+        const lx=yeti.targetX-yeti.x,ly=yeti.targetY-yeti.y,ld=Math.hypot(lx,ly)||1;
+        yeti.vx=lx/ld*chaseSpeed*1.42;
+        yeti.vy=ly/ld*chaseSpeed*1.42;
+        yeti.mode='LUNGE';yeti.modeTime=0;game.flash=.16;
+      }
+    } else if(yeti.mode==='LUNGE'){
+      yeti.x+=yeti.vx*dt; yeti.y+=yeti.vy*dt;
+      const d=Math.hypot(player.x-yeti.x,player.y-yeti.y);
+      if(d<23){setPlayerState(PlayerState.EATEN);return;}
+      const passed=yeti.y>player.y+115;
+      const reached=Math.hypot(yeti.targetX-yeti.x,yeti.targetY-yeti.y)<24;
+      if(passed||reached||yeti.modeTime>.82){
+        yeti.mode='RECOVER';yeti.modeTime=0;yeti.misses++;
+        yeti.vx*=.48;yeti.vy*=.48;
+      }
+    } else {
+      // Recovery gives the skier a real escape window after a successful dodge.
+      yeti.x+=yeti.vx*dt;yeti.y+=yeti.vy*dt;
+      yeti.vx*=Math.pow(.12,dt);yeti.vy*=Math.pow(.12,dt);
+      if(yeti.modeTime>.72){yeti.mode='STALK';yeti.modeTime=0;}
+    }
+  }
+
+  function updateObstacles(dt){
+    for(const o of game.obstacles){
+      if(o.type==='drone'||o.type==='mini'){
+        if(o.splatTime>0)o.splatTime+=dt;
+        else{
+          o.phase+=dt*(o.type==='drone'?5.5:3.2);o.x+=o.dir*(o.type==='drone'?46:58)*dt;
+          if(Math.sin(o.phase)>.985)o.dir*=-1;
+        }
+      }
+      if(o.type==='firebarrel')o.phase+=dt*8;
+      if(o.broken)o.breakTime+=dt;
+    }
+    // Strict cleanup: objects above the camera are removed from the active array.
+    const cutoff=game.cameraY-130;
+    game.obstacles=game.obstacles.filter(o=>o.y>cutoff);
+    game.tracks=game.tracks.filter(t=>t.y>cutoff);
+  }
+
+  function update(dt){
+    if(game.state===GameState.START || game.state===GameState.GAMEOVER || game.state===GameState.WON){ pressed.clear(); return; }
+    const simDt=Math.min(dt,.04)*(fastMode?2:1);
+    if(game.state===GameState.PLAYING){
+      updatePlayer(simDt);
+      if(game.state===GameState.PLAYING){
+        if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
+        if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
+        updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
+      }
+      const targetCam=player.y-H*.34;
+      game.cameraY+=(targetCam-game.cameraY)*Math.min(1,simDt*7);
+      game.shake=Math.max(0,game.shake-simDt);
+      game.flash=Math.max(0,game.flash-simDt);
+      game.trickTime=Math.max(0,game.trickTime-simDt);
+    } else if(game.state===GameState.ENDING){
+      player.stateTime+=simDt; yeti.phase+=simDt; game.cameraY+=(player.y-H*.34-game.cameraY)*Math.min(1,simDt*4);
+      if(player.stateTime>1.65){ game.state=GameState.GAMEOVER;saveRun('CAUGHT');statusEl.textContent=`Caught by Warboy after ${game.distance} meters. Press R or tap to restart.`; }
+    }
+    pressed.clear();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Pixel art rendering
+  // ---------------------------------------------------------------------------
+  function rect(x,y,w,h,c){ ctx.fillStyle=c; ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h)); }
+  function poly(points,c){ ctx.fillStyle=c; ctx.beginPath(); ctx.moveTo(Math.round(points[0][0]),Math.round(points[0][1])); for(let i=1;i<points.length;i++)ctx.lineTo(Math.round(points[i][0]),Math.round(points[i][1])); ctx.closePath();ctx.fill(); }
+  function limb(x1,y1,x2,y2,width,color){
+    // Integer-stepped strokes avoid the soft antialiasing of rotated rectangles.
+    const dx=x2-x1,dy=y2-y1,steps=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))));
+    for(let i=0;i<=steps;i++){
+      const t=i/steps;
+      rect(Math.round(x1+dx*t-width/2),Math.round(y1+dy*t-width/2),width,width,color);
+    }
+  }
+  function worldToScreen(x,y){ return {x:W/2+(x-player.x),y:HUD_H+y-game.cameraY}; }
+
+  function drawSnow(){
+    rect(0,0,W,H,'#eefaff');
+    ctx.globalAlpha=.62;
+    for(const f of game.snow){
+      const sx=((f.x-player.x*.08+W*2)%(W*1.5))-W*.25;
+      const sy=HUD_H+(((f.y-game.cameraY*.18+H*3)%(H*1.4))-H*.2);
+      rect(sx,sy,f.s*2,f.s,'#b8e5f4');
+    }
+    ctx.globalAlpha=1;
+    for(let i=-2;i<4;i++){
+      const y=HUD_H+((i*170-game.cameraY*.3)%(H+200));
+      ctx.strokeStyle='rgba(129,203,229,.25)';ctx.lineWidth=2;ctx.setLineDash([12,20]);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y+32);ctx.stroke();
+    }
+    ctx.setLineDash([]);
+  }
+
+  function drawTracks(){
+    ctx.globalAlpha=.46;
+    for(const t of game.tracks){
+      const a=worldToScreen(t.x1,t.y),b=worldToScreen(t.x2,t.y);
+      if(a.y<HUD_H||a.y>H+20)continue;
+      rect(a.x-1,a.y-5,2,9,'#a7d7e7');rect(b.x-1,b.y-5,2,9,'#a7d7e7');
+      rect(a.x,a.y+3,2,2,'#d9f1f9');rect(b.x,b.y+3,2,2,'#d9f1f9');
+    }
+    ctx.globalAlpha=1;
+  }
+
+  function drawEvergreen(x,y){
+    rect(x-5,y+11,10,22,'#5b321d');rect(x-2,y+12,4,21,'#9b5b2b');
+    poly([[x,y-34],[x-22,y+3],[x+22,y+3]],'#075844');
+    poly([[x,y-23],[x-29,y+17],[x+29,y+17]],'#087257');
+    poly([[x,y-10],[x-33,y+24],[x+33,y+24]],'#0a8a68');
+    poly([[x,y-34],[x-9,y-18],[x+7,y-18]],'#f6fdff');
+    rect(x-22,y-1,12,4,'#d9f3fb');rect(x+5,y+8,17,4,'#d9f3fb');rect(x-21,y+17,13,4,'#d9f3fb');
+    rect(x-29,y+24,58,3,'#b1deeb');
+  }
+  function drawBare(x,y){
+    rect(x-4,y-15,8,44,'#633b22');rect(x,y-12,3,39,'#9a6335');
+    rect(x-18,y-10,18,5,'#633b22');rect(x-19,y-26,5,19,'#633b22');rect(x-29,y-28,14,4,'#633b22');
+    rect(x+2,y-2,21,5,'#633b22');rect(x+18,y-21,5,23,'#633b22');rect(x+20,y-23,13,4,'#633b22');
+    rect(x-9,y-22,5,10,'#633b22');rect(x-15,y-30,10,4,'#633b22');
+    rect(x-24,y+25,48,4,'#a9d9e8');rect(x-15,y+29,30,2,'#d8f2fa');
+  }
+  function drawRock(x,y){
+    rect(x-17,y+8,35,4,'#abdbe9');
+    poly([[x-16,y+8],[x-12,y-7],[x-4,y-13],[x+11,y-8],[x+17,y+8]],'#5f7282');
+    poly([[x-10,y-6],[x-4,y-11],[x+7,y-7],[x+1,y-1],[x-9,y-1]],'#aebfca');
+    rect(x+7,y-3,6,8,'#465969');rect(x-12,y+5,27,3,'#7f94a2');
+  }
+  function drawRamp(x,y){
+    poly([[x-25,y+10],[x-15,y-10],[x+23,y+4],[x+25,y+10]],'#f7fdff');
+    ctx.strokeStyle='#123c69';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x-16,y-8);ctx.lineTo(x+23,y+5);ctx.stroke();
+    rect(x-11,y-3,5,4,'#ffd43b');rect(x-1,y,5,4,'#ffd43b');rect(x+9,y+3,5,4,'#ffd43b');
+    rect(x-24,y+10,49,3,'#9ed5e5');
+  }
+  function drawSlope(x,y,o){
+    const t=Math.min(o.breakTime,1);
+    if(!o.broken){
+      rect(x-27,y-15,3,31,'#123c69');rect(x+24,y-15,3,31,'#123c69');
+      rect(x-30,y+14,9,3,'#61b6d0');rect(x+21,y+14,9,3,'#61b6d0');
+      poly([[x-24,y-13],[x+24,y-13],[x+20,y-3],[x-20,y-3]],'#e33232');
+      rect(x-16,y-11,7,3,'#fff');rect(x-5,y-11,7,3,'#fff');rect(x+6,y-11,7,3,'#fff');
+    }else{
+      // Broken gate pieces tumble apart after the skier cuts the tape.
+      ctx.save();ctx.translate(-t*10,t*7);ctx.rotate(-t*.9);rect(x-27,y-15,3,31,'#123c69');rect(x-30,y+14,9,3,'#61b6d0');ctx.restore();
+      ctx.save();ctx.translate(t*12,t*9);ctx.rotate(t*1.05);rect(x+24,y-15,3,31,'#123c69');rect(x+21,y+14,9,3,'#61b6d0');ctx.restore();
+      ctx.save();ctx.translate(0,t*15);ctx.rotate(t*.45);poly([[x-23,y-13],[x+23,y-13],[x+17,y-4],[x-18,y-3]],'#e33232');rect(x-14,y-11,7,3,'#fff');rect(x-3,y-11,7,3,'#fff');ctx.restore();
+    }
+  }
+  function drawDrone(x,y,o){
+    if(o.splatTime>0){
+      const pop=Math.min(1,o.splatTime*5);
+      ctx.globalAlpha=Math.max(.45,1-o.splatTime*.28);
+      rect(x-12,y+4,24,5,'#465969');rect(x-20-pop*11,y-5-pop*7,9,3,'#123c69');rect(x+11+pop*9,y-6-pop*5,9,3,'#123c69');
+      rect(x-5-pop*5,y-5-pop*11,5,5,'#e33232');rect(x+4+pop*4,y-4-pop*8,4,4,'#ffd43b');ctx.globalAlpha=1;return;
+    }
+    const bob=Math.sin(o.phase*2)*3,spin=((o.phase*3)|0)%2;
+    rect(x-15,y-5+bob,30,10,'#465969');rect(x-9,y-9+bob,18,17,'#7f94a2');rect(x-4,y-4+bob,8,7,'#102a43');rect(x-2,y-2+bob,4,3,'#e33232');
+    limb(x-11,y-4+bob,x-19,y-11+bob,3,'#123c69');limb(x+11,y-4+bob,x+19,y-11+bob,3,'#123c69');
+    rect(x-28-(spin?2:0),y-14+bob,18+(spin?4:0),2,'#102a43');rect(x+10-(spin?2:0),y-14+bob,18+(spin?4:0),2,'#102a43');
+  }
+  function drawBarrel(x,y,fire,phase){
+    rect(x-15,y-16,30,34,'#171715');rect(x-12,y-14,24,30,fire?'#6d3b22':'#8e4f27');
+    rect(x-14,y-11,28,4,'#d0c9ae');rect(x-14,y+9,28,4,'#d0c9ae');rect(x-7,y-5,14,10,'#171715');
+    if(fire){
+      const lick=Math.sin(phase)>0?4:0;
+      poly([[x-11,y-16],[x-7,y-29-lick],[x-2,y-21],[x+2,y-34+lick],[x+7,y-22],[x+12,y-16]],'#e33232');
+      poly([[x-6,y-16],[x-2,y-26+lick],[x+2,y-19],[x+6,y-27-lick],[x+8,y-16]],'#ffd43b');
+      rect(x-18,y+17,36,3,'#a7d7e7');
+    }
+  }
+  function drawOil(x,y,o){
+    const wobble=Math.sin(o.phase)*3;
+    poly([[x-29,y+4],[x-21,y-5],[x-7+wobble,y-8],[x+3,y-4],[x+18,y-7],[x+29,y+1],[x+22,y+8],[x-17,y+9]],'#171715');
+    rect(x-12,y-3,17,3,'#465969');rect(x+12,y,7,3,'#465969');rect(x-25,y+8,50,2,'#a7d7e7');
+  }
+  function drawMiniWarboy(x,y,o){
+    if(o.splatTime>0){
+      const pop=Math.min(1,o.splatTime*5);rect(x-18,y+11,36,5,'#171715');rect(x-12,y+5,24,7,'#756f61');
+      rect(x-25-pop*7,y-4-pop*7,8,4,'#d0c9ae');rect(x+17+pop*7,y-3-pop*5,8,4,'#d0c9ae');rect(x-4,y-2-pop*11,8,6,'#e33232');return;
+    }
+    const step=Math.sin(o.phase)>0?3:-3;
+    limb(x-6,y+7,x-9-step,y+20,5,'#49483f');limb(x+6,y+7,x+9+step,y+20,5,'#49483f');
+    limb(x-10,y-3,x-18-step,y+7,5,'#756f61');limb(x+10,y-3,x+18+step,y+7,5,'#756f61');
+    rect(x-11,y-9,22,20,'#49483f');poly([[x-11,y-8],[x,y+2],[x+11,y-8],[x+8,y-8],[x,y-2],[x-8,y-8]],'#d0c9ae');
+    rect(x-8,y-20,16,12,'#d0c9ae');rect(x-18,y-23,11,4,'#171715');rect(x+7,y-23,11,4,'#171715');rect(x-5,y-17,3,3,'#171715');rect(x+2,y-17,3,3,'#171715');
+  }
+  function drawObstacle(o){
+    const p=worldToScreen(o.x,o.y);
+    if(p.y<-100||p.y>H+100)return;
+    if(o.type==='evergreen')drawEvergreen(p.x,p.y);
+    else if(o.type==='bare')drawBare(p.x,p.y);
+    else if(o.type==='rock')drawRock(p.x,p.y);
+    else if(o.type==='jump')drawRamp(p.x,p.y);
+    else if(o.type==='slope')drawSlope(p.x,p.y,o);
+    else if(o.type==='drone')drawDrone(p.x,p.y,o);
+    else if(o.type==='barrel')drawBarrel(p.x,p.y,false,o.phase);
+    else if(o.type==='firebarrel')drawBarrel(p.x,p.y,true,o.phase);
+    else if(o.type==='oil')drawOil(p.x,p.y,o);
+    else if(o.type==='mini')drawMiniWarboy(p.x,p.y,o);
+  }
+
+  const SKI_COLORS={ink:'#111111',pink:'#ff1593',pinkDark:'#c40069',blue:'#1212d8',blueLight:'#294cff',green:'#16a93b',skin:'#ffe13b',white:'#ffffff'};
+
+  // Hand-authored low-resolution poses, deliberately stepped like Windows bitmaps.
+  function drawSkierPose(pose,frame,mirror){
+    const c=SKI_COLORS;
+    ctx.save();ctx.scale(mirror?-1:1,1);ctx.scale(1.42,1.42);
+    if(pose==='SOUTH'){
+      const kick=frame?2:-2;
+      limb(-5,12,-7-kick,25,3,c.blue);limb(5,12,7+kick,25,3,c.blueLight);
+      rect(-11-kick,24,11,4,c.green);rect(1+kick,24,11,4,c.green);
+      limb(-8,2,-15,10+kick,3,c.pink);limb(8,2,15,10-kick,3,c.pink);
+      rect(-18,9+kick,5,5,c.skin);rect(13,9-kick,5,5,c.skin);
+      limb(-16,12+kick,-20,29,1,c.ink);limb(16,12-kick,20,29,1,c.ink);
+      rect(-23,28,7,2,c.ink);rect(16,28,7,2,c.ink);
+      rect(-9,-4,18,18,c.blue);rect(-7,-3,14,15,c.pink);rect(-7,7,14,3,c.blueLight);
+      rect(-7,-16,14,12,c.skin);rect(-4,-13,8,8,c.skin);rect(4,-12,4,3,c.ink);
+      rect(-10,-20,20,6,c.pink);rect(-6,-23,12,4,c.pinkDark);rect(7,-19,7,3,c.blue);
+      rect(-5,28,3,15,c.ink);rect(4,28,3,15,c.ink);rect(-8,41,8,2,c.ink);rect(2,41,8,2,c.ink);
+    }else if(pose==='TUCK'){
+      rect(-7,26,3,19,c.ink);rect(5,26,3,19,c.ink);rect(-10,43,9,2,c.ink);rect(2,43,9,2,c.ink);
+      limb(-5,10,-9,26,4,c.blue);limb(5,10,9,26,4,c.blueLight);rect(-12,24,9,5,c.green);rect(3,24,9,5,c.green);
+      rect(-10,-1,20,18,c.blue);rect(-8,0,16,14,c.pink);rect(-7,10,14,3,c.blueLight);
+      limb(-7,2,-14,13,4,c.pink);limb(7,2,14,13,4,c.pink);rect(-17,11,5,5,c.skin);rect(12,11,5,5,c.skin);
+      limb(-15,14,-20,32,1,c.ink);limb(15,14,20,32,1,c.ink);
+      rect(-8,-14,16,13,c.skin);rect(-11,-18,22,6,c.pink);rect(-6,-21,12,4,c.pinkDark);rect(5,-11,4,3,c.ink);
+    }else if(pose==='DIAG'){
+      rect(-15,32,38,3,c.ink);rect(-12,36,35,2,c.ink);
+      limb(-4,10,-2,24,5,c.blue);limb(4,11,11,28,5,c.blueLight);rect(-6,22,9,6,c.green);rect(8,26,10,6,c.green);
+      rect(-9,-4,18,18,c.blue);rect(-7,-3,14,15,c.pink);rect(-7,8,14,3,c.blueLight);
+      limb(-7,1,-17,8,4,c.pink);limb(7,1,16,13,4,c.pink);rect(-20,6,5,5,c.skin);rect(14,11,5,5,c.skin);
+      limb(-18,10,-21,31,1,c.ink);limb(17,14,20,34,1,c.ink);rect(-24,30,7,2,c.ink);rect(17,33,7,2,c.ink);
+      rect(-7,-16,14,12,c.skin);rect(-10,-20,20,6,c.pink);rect(-6,-23,12,4,c.pinkDark);rect(6,-18,8,3,c.blue);rect(5,-12,4,3,c.ink);
+      if(frame){rect(-21,34,4,3,c.skin);rect(-27,36,3,3,c.skin);rect(-32,38,2,2,c.skin);}
+    }else if(pose==='SIDE'){
+      rect(-21,30,45,3,c.ink);rect(-15,35,39,2,c.ink);
+      limb(-1,9,2,24,5,c.blue);limb(5,10,12,27,5,c.blueLight);rect(-3,22,9,6,c.green);rect(9,25,10,6,c.green);
+      rect(-8,-5,17,18,c.blue);rect(-6,-4,14,15,c.pink);rect(-5,8,13,3,c.blueLight);
+      limb(-5,0,-16,5,4,c.pink);limb(6,1,17,10,4,c.pink);rect(-19,3,5,5,c.skin);rect(15,8,5,5,c.skin);
+      limb(-17,7,-18,29,1,c.ink);limb(18,11,21,31,1,c.ink);rect(-22,28,8,2,c.ink);rect(18,30,8,2,c.ink);
+      rect(-6,-17,14,12,c.skin);rect(-9,-21,20,6,c.pink);rect(-5,-24,12,4,c.pinkDark);rect(8,-20,11,3,c.pink);rect(5,-13,4,3,c.ink);
+      rect(-23,33,4,3,c.skin);rect(-29,36,3,3,c.skin);rect(-35,39,2,2,c.skin);
+    }else if(pose==='JUMP'){
+      rect(-18,35,41,3,c.ink);rect(-13,40,36,2,c.ink);
+      limb(-5,12,-11,27,5,c.blue);limb(5,12,11,27,5,c.blueLight);rect(-15,25,10,6,c.green);rect(6,25,10,6,c.green);
+      limb(-8,1,-21,11,4,c.pink);limb(8,1,21,11,4,c.pink);rect(-24,9,5,5,c.skin);rect(19,9,5,5,c.skin);
+      limb(-22,12,-26,34,1,c.ink);limb(22,12,26,34,1,c.ink);rect(-29,33,7,2,c.ink);rect(22,33,7,2,c.ink);
+      rect(-9,-4,18,19,c.blue);rect(-7,-3,14,16,c.pink);rect(-7,8,14,3,c.blueLight);
+      rect(-7,-16,14,12,c.skin);rect(-10,-20,20,6,c.pink);rect(-6,-23,12,4,c.pinkDark);rect(6,-18,8,3,c.blue);rect(5,-12,4,3,c.ink);
+    }
+    ctx.restore();
+  }
+
+  function drawCrashPose(frame){
+    const c=SKI_COLORS,angles=[-.8,.15,.92,1.65];
+    ctx.save();ctx.rotate(angles[frame]);ctx.scale(1.35,1.35);
+    rect(-23,20,46,3,c.ink);rect(-20,25,42,2,c.ink);
+    limb(-5,7,-13,20,5,c.blue);limb(5,7,14,20,5,c.blueLight);rect(-17,18,9,6,c.green);rect(10,18,9,6,c.green);
+    limb(-7,-1,-19,-9,4,c.pink);limb(7,-1,18,-10,4,c.pink);rect(-22,-12,5,5,c.skin);rect(16,-13,5,5,c.skin);
+    rect(-9,-5,18,17,c.blue);rect(-7,-4,14,14,c.pink);rect(7,-16,13,12,c.skin);rect(5,-20,19,6,c.pink);rect(18,-17,8,3,c.blue);
+    ctx.restore();
+  }
+
+  function drawSkier(){
+    const p=worldToScreen(player.x,player.y-player.jumpHeight);
+    ctx.save();ctx.translate(Math.round(p.x),Math.round(p.y));
+    if(player.state===PlayerState.EATEN){ctx.restore();return;}
+    if(player.state===PlayerState.CRASHED){drawCrashPose(Math.min(3,(player.stateTime*6)|0));ctx.restore();return;}
+    const steer=clamp(player.vx/150,-1,1),amount=Math.abs(steer),anim=((player.y/20)|0)&1;
+    if(player.state===PlayerState.JUMPING){ctx.rotate(player.spin);drawSkierPose('JUMP',anim,steer<0);}
+    else if(input.down)drawSkierPose('TUCK',anim,steer<0);
+    else if(amount>.72)drawSkierPose('SIDE',anim,steer<0);
+    else if(amount>.24)drawSkierPose('DIAG',anim,steer<0);
+    else drawSkierPose('SOUTH',anim,false);
+    ctx.restore();
+    if(player.state===PlayerState.JUMPING){
+      const ground=worldToScreen(player.x,player.y);ctx.globalAlpha=.16;rect(ground.x-18,ground.y-4,36,8,'#102a43');ctx.globalAlpha=1;
+    }
+  }
+
+  const WARBOY_FRAMES=[
+    {la:[-18,-13,-28,-1,-29,14],ra:[18,-13,28,-25,34,-13],ll:[-10,16,-16,30,-20,43],rl:[10,16,15,31,19,43]},
+    {la:[-18,-13,-30,-23,-35,-9],ra:[18,-13,29,-2,30,14],ll:[-10,16,-20,29,-28,40],rl:[10,16,12,32,12,45]},
+    {la:[-18,-13,-29,-5,-32,12],ra:[18,-13,31,-22,36,-8],ll:[-10,16,-13,32,-14,45],rl:[10,16,20,29,28,40]},
+    {la:[-18,-13,-28,-24,-34,-12],ra:[18,-13,28,-1,31,14],ll:[-10,16,-19,29,-26,40],rl:[10,16,14,32,16,45]}
+  ];
+
+  function warboyJoint(points,outer=8,inner=4){
+    limb(points[0],points[1],points[2],points[3],outer,'#171715');limb(points[2],points[3],points[4],points[5],outer,'#171715');
+    limb(points[0],points[1],points[2],points[3],inner,'#756f61');limb(points[2],points[3],points[4],points[5],inner,'#9d9683');
+    rect(points[2]-3,points[3]-3,6,6,'#d0c9ae');
+  }
+
+  function drawWarboyBody(frame,mode){
+    const f=WARBOY_FRAMES[frame%WARBOY_FRAMES.length],lunge=mode==='LUNGE';
+    ctx.save();ctx.scale(1.14,1.14);
+    if(lunge){warboyJoint([-18,-13,-34,-22,-48,-19],9,5);warboyJoint([18,-13,34,-22,48,-19],9,5);}
+    else{warboyJoint(f.la);warboyJoint(f.ra);}
+    warboyJoint(f.ll,9,5);warboyJoint(f.rl,9,5);
+    rect(f.ll[4]-7,f.ll[5]-2,14,5,'#171715');rect(f.rl[4]-7,f.rl[5]-2,14,5,'#171715');
+    // Patchwork mechanical torso, belt pouches, and the reference's bright V sash.
+    poly([[-20,-19],[20,-19],[17,19],[-17,19]],'#171715');rect(-16,-16,32,32,'#49483f');
+    poly([[-18,-18],[-12,-20],[0,-2],[12,-20],[18,-18],[2,4],[-2,4]],'#d0c9ae');
+    poly([[-13,-14],[0,1],[13,-14],[10,-14],[0,-5],[-10,-14]],'#827c6e');
+    rect(-19,14,38,5,'#171715');rect(-17,19,14,12,'#6d6658');rect(3,19,14,12,'#6d6658');
+    rect(-14,21,8,7,'#252522');rect(6,21,8,7,'#252522');rect(-2,15,4,5,'#d0c9ae');
+    // Ram-horn skull: the silhouette is taken from the user's Warboy reference set.
+    rect(-13,-39,26,20,'#171715');rect(-10,-37,20,17,'#d0c9ae');rect(-6,-21,12,6,'#171715');
+    rect(-7,-34,5,5,'#171715');rect(2,-34,5,5,'#171715');rect(-2,-29,4,5,'#756f61');
+    rect(-8,-22,3,7,'#e7dec1');rect(-3,-22,3,8,'#e7dec1');rect(2,-22,3,8,'#e7dec1');rect(7,-22,3,7,'#e7dec1');
+    rect(-28,-43,17,6,'#171715');rect(11,-43,17,6,'#171715');rect(-34,-40,12,6,'#171715');rect(22,-40,12,6,'#171715');
+    rect(-31,-38,8,10,'#756f61');rect(23,-38,8,10,'#756f61');rect(-25,-42,12,3,'#d0c9ae');rect(13,-42,12,3,'#d0c9ae');
+    const hands=lunge?[[-48,-19,-1],[48,-19,1]]:[[f.la[4],f.la[5],-1],[f.ra[4],f.ra[5],1]];
+    for(const h of hands){rect(h[0]-4,h[1]-4,8,8,'#171715');rect(h[0]+h[2]*4,h[1]-3,6,2,'#d0c9ae');rect(h[0]+h[2]*4,h[1]+1,6,2,'#d0c9ae');}
+    if(!lunge){const hand=hands[0];limb(hand[0]-1,hand[1],hand[0]-1,48,2,'#171715');rect(hand[0]-5,47,9,3,'#756f61');}
+    ctx.restore();
+  }
+
+  function drawWarboyEating(frame){
+    const c=SKI_COLORS,lift=Math.min(frame,4)*8;
+    drawWarboyBody(frame,'LUNGE');
+    if(frame<5){ctx.save();ctx.translate(0,-lift+2);ctx.rotate((frame-1)*.32);rect(-7,-2,14,15,c.pink);rect(-6,-10,12,9,c.skin);rect(-8,-13,16,4,c.pinkDark);limb(-5,10,-11,19,4,c.blue);limb(5,10,11,19,4,c.blueLight);rect(-14,17,9,5,c.green);rect(5,17,9,5,c.green);ctx.restore();}
+    if(frame>=3){rect(-7,-38,14,4,'#e33232');rect(-4,-36,8,3,'#ffd43b');}
+  }
+
+  function drawYeti(){
+    if(!yeti.active)return;
+    let yx=yeti.x,yy=yeti.y;
+    if(player.state===PlayerState.EATEN){yx=player.x;yy=player.y-12;}
+    const p=worldToScreen(yx,yy);
+    ctx.save();ctx.translate(Math.round(p.x),Math.round(p.y));
+    if(player.state===PlayerState.EATEN){
+      drawWarboyEating(Math.min(5,(player.stateTime*4)|0));
+    }else{
+      if(yeti.mode==='RECOVER')ctx.rotate(Math.sin(yeti.modeTime*10)*.13);
+      if(yeti.mode==='TIRED'){ctx.rotate(-.18);ctx.translate(0,8);}
+      drawWarboyBody((yeti.step|0)%4,yeti.mode);
+      if(yeti.mode==='TIRED'){rect(28,-45,4,7,'#61b6d0');rect(34,-38,3,5,'#61b6d0');}
+    }
+    ctx.restore();
+  }
+
+  function drawHUD(){
+    rect(0,0,W,HUD_H,'#102a43');rect(0,HUD_H-4,W,4,'#61b6d0');
+    ctx.textBaseline='middle';ctx.font='700 16px "Courier New",monospace';ctx.fillStyle='#eefaff';
+    const compact=W<620;
+    ctx.textAlign='left';ctx.fillText(compact?'STYLE':'STYLE POINTS',16,18);ctx.fillStyle='#ffd43b';ctx.fillText(String(game.style).padStart(6,'0'),16,39);
+    ctx.textAlign='center';ctx.fillStyle='#eefaff';ctx.fillText('DISTANCE',W/2,18);ctx.fillStyle='#ffd43b';ctx.fillText(`${String(game.distance).padStart(4,'0')} m`,W/2,39);
+    ctx.textAlign='right';ctx.fillStyle='#eefaff';ctx.fillText('SPEED',W-16,18);ctx.fillStyle=fastMode?'#ff5d5d':'#ffd43b';ctx.fillText(`${Math.round(player.speed*.12)} mph${fastMode?' 2X':''}`,W-16,39);
+  }
+
+  function arcadePanel(title,lines,accent,cta){
+    const pw=Math.min(660,W-28),ph=Math.min(500,H-70),x=(W-pw)/2,y=(H-ph)/2+20;
+    ctx.globalAlpha=.92;rect(x+8,y+8,pw,ph,'#102a43');ctx.globalAlpha=1;rect(x,y,pw,ph,'#eefaff');
+    ctx.strokeStyle='#102a43';ctx.lineWidth=4;ctx.strokeRect(x,y,pw,ph);
+    rect(x,y,pw,54,accent);
+    ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#fff';ctx.font=`700 ${clamp(W/22,24,38)}px "Courier New",monospace`;ctx.fillText(title,W/2,y+28);
+    ctx.fillStyle='#102a43';ctx.font='700 15px "Courier New",monospace';
+    lines.forEach((line,i)=>ctx.fillText(line,W/2,y+78+i*24));
+    const tableY=y+102+lines.length*16,rowH=28,rows=ph<430?3:5;
+    rect(x+18,tableY-17,pw-36,25,'#123c69');
+    ctx.fillStyle='#eefaff';ctx.font='700 14px "Courier New",monospace';
+    ctx.textAlign='left';ctx.fillText('RANK',x+30,tableY-5);
+    ctx.textAlign='right';ctx.fillText('DISTANCE',x+pw*.48,tableY-5);ctx.fillText('STYLE',x+pw*.72,tableY-5);ctx.fillText('MAX',x+pw-30,tableY-5);
+    ctx.fillStyle='#102a43';
+    if(!highScores.length){ctx.textAlign='center';ctx.fillText('NO RUNS YET',W/2,tableY+28);}
+    highScores.slice(0,rows).forEach((s,i)=>{
+      const ry=tableY+18+i*rowH;if(i%2===0)rect(x+20,ry-12,pw-40,25,'#d8f3ff');
+      ctx.fillStyle=s.result==='WIN'?'#e33232':'#102a43';ctx.textAlign='left';ctx.fillText(`${String(i+1).padStart(2,'0')}${s.result==='WIN'?'★':''}`,x+30,ry);
+      ctx.textAlign='right';ctx.fillText(`${s.distance}m`,x+pw*.48,ry);ctx.fillText(String(s.style),x+pw*.72,ry);ctx.fillText(`${s.maxSpeed}mph`,x+pw-30,ry);
+    });
+    ctx.fillStyle='#102a43';ctx.textAlign='center';ctx.font='700 14px "Courier New",monospace';ctx.fillText(cta,W/2,y+ph-30);
+  }
+
+  function drawStart(){
+    drawSnow();drawTracks();
+    // Little title-scene vignette.
+    drawEvergreen(W*.18,H*.72);drawBare(W*.82,H*.69);drawRock(W*.7,H*.82);
+    const oldCam=game.cameraY;game.cameraY=-H*.36;drawSkier();game.cameraY=oldCam;
+    arcadePanel('SKIFREE \'91',["ESCAPE WARBOY • REACH 30000m","← → STEER • ↓ TUCK • SPACE JUMP","AIR ← → FLIP • F FAST MODE"],'#e33232','PRESS ENTER OR CLICK TO SKI');
+  }
+  function drawGameOver(){
+    arcadePanel('CAUGHT BY WARBOY!',[ `DISTANCE ${game.distance}m • STYLE ${game.style}`,`MAX SPEED ${Math.round(game.maxSpeed*.12)}mph`],'#123c69','PRESS R OR CLICK TO RESTART');
+  }
+  function drawWon(){
+    arcadePanel('YOU WON!',[ '30000 METERS — THE MOUNTAIN IS YOURS',`STYLE ${game.style} • MAX SPEED ${Math.round(game.maxSpeed*.12)}mph`],'#087257','PRESS R OR CLICK TO SKI AGAIN');
+  }
+
+  function render(){
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=false;
+    if(game.state===GameState.START){drawStart();return;}
+    ctx.save();
+    if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
+    drawSnow();
+    const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
+    for(const o of ordered)if(o.y<player.y)drawObstacle(o);
+    drawYeti();drawSkier();
+    for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
+    ctx.restore();drawHUD();
+    if(game.flash>0){ctx.globalAlpha=game.flash*.35;rect(0,HUD_H,W,H-HUD_H,'#e33232');ctx.globalAlpha=1;}
+    if(game.state===GameState.PLAYING && game.distance>=2000){
+      ctx.font='700 14px "Courier New",monospace';ctx.textAlign='center';
+      if(yeti.cycle==='CHASE'){ctx.fillStyle='#e33232';ctx.fillText(`⚠ WARBOY ${Math.max(0,Math.ceil(yeti.cycleLimit-yeti.cycleTime))}s`,W/2,HUD_H+20);}
+      else if(yeti.cycle==='TIRED'){ctx.fillStyle='#8e4f27';ctx.fillText('WARBOY IS TIRED!',W/2,HUD_H+20);}
+      else if(yeti.cycle==='REST'){ctx.fillStyle='#087257';ctx.fillText(`SKI FREE ${Math.max(0,Math.ceil(yeti.cycleLimit-yeti.cycleTime))}s`,W/2,HUD_H+20);}
+    }
+    if(game.trickTime>0){
+      const p=worldToScreen(player.x,player.y-player.jumpHeight);
+      ctx.globalAlpha=Math.min(1,game.trickTime*2);ctx.fillStyle='#123c69';ctx.font='700 15px "Courier New",monospace';ctx.textAlign='center';ctx.fillText(game.trickText,p.x,p.y-62);ctx.globalAlpha=1;
+    }
+    if(game.state===GameState.GAMEOVER)drawGameOver();
+    if(game.state===GameState.WON)drawWon();
+  }
+
+  function resize(){
+    const r=canvas.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,DPR_CAP);W=Math.max(320,Math.round(r.width));H=Math.max(420,Math.round(r.height));
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);ctx.imageSmoothingEnabled=false;
+  }
+  addEventListener('resize',resize,{passive:true});resize();
+
+  // ---------------------------------------------------------------------------
+  // requestAnimationFrame loop with refresh-rate-independent delta time
+  // ---------------------------------------------------------------------------
+  function frame(now){
+    const dt=game.lastTime?Math.min((now-game.lastTime)/1000,.05):0;game.lastTime=now;
+    update(dt);render();requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
