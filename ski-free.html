@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkiFree</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #87CEEB; /* Sky blue background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    
+    #game-container {
+      position: relative;
+      border: 2px solid #000;
+      background-color: #87CEEB; /* Sky blue */
+    }
+    
+    #status {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    #game {
+      background-color: #87CEEB; /* Sky blue */
+    }
+    
+    #demo-button {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    #demo-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game"></canvas>
+    <div id="status"></div>
+    <div id="demo-button">
+      <button onclick="window.location.href='ski-free.html?demo=1'">Enable Demo Mode</button>
+    </div>
+  </div>
+
+  <script src="ski-free-npc.js"></script>
+  <script src="ski-free-autoplay.js"></script>
+</body>
+</html>

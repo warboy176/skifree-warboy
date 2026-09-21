@@ -1,47 +1,40 @@
-# SkiFree '91 — Canvas Remake ☣️
+# SkiFree
 
-A single-file HTML5 canvas remake of the 1991 Windows classic **SkiFree** — reforged for the machine cult. Bomb down an endless, procedurally-scrolling slope, thread the trees and slalom gates, stack style points off jumps… and outrun **WARBOY**, the relentless machine-spirit that replaces the old Yeti. Reach **30,000 meters** to ski free.
+A modern implementation of the classic SkiFree game with NPC skiers and autoplay functionality.
 
-**▶ [Play it in your browser](https://warboy176.github.io/skifree-warboy/)** — no install, no dependencies, one file.
+## Features
 
-![SkiFree '91 — Warboy gameplay](gameplay.gif)
+- Classic SkiFree gameplay
+- NPC skiers that spawn randomly
+- Autoplay mode (enable with `?demo=1`)
+- Responsive canvas rendering
+- Touch support for mobile devices
 
-## Controls
+## How to Play
 
-| Action | Keys |
-|---|---|
-| Start | **Enter** / click / tap |
-| Steer | **← →** (arrow keys or pointer) |
-| Tuck (speed up) | **↓** |
-| Jump | **Space** |
-| Flip / spin (mid-air) | **← →** while airborne |
-| Fast mode | **F** |
-| Restart | **R** |
+1. Press Enter or tap to start the game
+2. Use arrow keys to move left and right
+3. Avoid colliding with other skiers
 
-## The run
+## Autoplay Mode
 
-- Endless downhill — the further you go, the faster and gnarlier it gets.
-- **Escape Warboy** to bank **+500** and keep skiing; get caught and it's *"CAUGHT BY WARBOY!"*
-- Land flips for **style**; wiping out on trees and rocks bleeds your speed.
-- A local high-score board (distance / style / top speed) persists in your browser.
-- Survive to the **FINAL ZONE: MINI WARBOYS** and hit **30,000 m** to ski free.
+To enable autoplay, visit the game with `?demo=1` in the URL:
 
-## Run it locally
-
-It's one file. Open `index.html` in any modern browser, or serve the folder:
-
-```bash
-python3 -m http.server 8000    # then open http://localhost:8000
+```
+http://localhost:8000/ski-free.html?demo=1
 ```
 
-## Tech
+## Files
 
-Pure vanilla JavaScript + Canvas 2D — no frameworks, no build step, no dependencies. Frame-based sprite animation, an endless scrolling world, lightweight collision, and a `localStorage` leaderboard, all in a single ~42 KB `index.html`.
+- `ski-free.html` - Main HTML file
+- `ski-free-npc.js` - Core game logic with NPC skiers
+- `ski-free-autoplay.js` - Autoplayer functionality
+
+## Development
+
+1. Serve the files using a local server (e.g., `python -m http.server 8000`)
+2. Open `ski-free.html` in your browser
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
----
-
-*A Warboy build. ☣️ WITNESS ME.*
+MIT
