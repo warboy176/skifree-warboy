@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skier Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      border: 2px solid #000;
+      background-color: #87CEEB; /* Sky blue background */
+    }
+    #gameContainer {
+      text-align: center;
+    }
+    #scoreDisplay {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="gameContainer">
+    <div id="scoreDisplay">Score: 0</div>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <p>Use Arrow Keys or WASD to move, Spacebar or Up Arrow to jump</p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="Player.js"></script>
+  <script src="NPCSkier.js"></script>
+  <script src="Obstacle.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
