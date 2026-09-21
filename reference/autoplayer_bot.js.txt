@@ -1,0 +1,46 @@
+  // ---- AUTO-PLAYER (injected for devlog capture; real game logic untouched) ----
+  // Dodges trees/rocks/drones for real survival + near-misses, but does NOT juke the
+  // Warboy predator, so each run ends organically in a game-over and RESTARTS -> the
+  // footage shows multiple distinct runs. A 55s cap steers stragglers into the yeti.
+  let __botRestartAt = 0, __runStart = 0, __runs = 0;
+  function __newRun(){ __runStart = performance.now(); __runs++; }
+  function bot(dt){
+    const s = game.state;
+    if (s === GameState.START){ startGame(); __newRun(); return; }
+    if (s === GameState.GAMEOVER || s === GameState.WON){
+      if (!__botRestartAt) __botRestartAt = performance.now();
+      if (performance.now() - __botRestartAt > 1300){ __botRestartAt = 0; startGame(); __newRun(); }
+      return;
+    }
+    if (s !== GameState.PLAYING) return;            // ENDING: let the eaten animation play
+    __botRestartAt = 0;
+    input.left = input.right = input.down = false;
+    const px = player.x, py = player.y;
+    const runT = (performance.now() - __runStart) / 1000;
+    let push = 0;
+    for (const o of game.obstacles){
+      if (o.used || o.broken) continue;
+      const dy = o.y - py; if (dy < -15 || dy > 260) continue;
+      const dx = o.x - px; if (Math.abs(dx) > 175) continue;
+      const t = o.type;
+      if (t === 'jump'){ if (dy > 40 && dy < 150 && Math.abs(dx) < 55) push += (dx > 0 ? 1 : -1) * 0.5 / (Math.abs(dy)+30); continue; }
+      if (t === 'slope') continue;                  // banners are breakable, harmless
+      const deadly = (t==='evergreen'||t==='bare'||t==='rock'||t==='drone'||t==='mini'||t==='barrel'||t==='firebarrel'||t==='oil');
+      if (!deadly) continue;
+      const prox = 1/(Math.abs(dy)+35);
+      const lane = Math.max(0, 1 - Math.abs(dx)/175);
+      const dir  = (dx >= 0 ? -1 : 1);
+      push += dir * prox * lane * (Math.abs(dx) < 12 ? 1.7 : 1);
+      if ((t==='drone'||t==='mini') && dy>10 && dy<80 && Math.abs(dx)<28 && player.state===PlayerState.SKIING) pressed.add('Space');
+    }
+    // Warboy predator: do NOT evade (lets it catch you for the game-over). After 55s of a
+    // run, actively steer toward it so long survivors still die and the run count grows.
+    if (yeti.active && runT > 55){
+      const dy = yeti.y - py, dx = yeti.x - px;
+      if (Math.abs(dy) < 220 && Math.abs(dx) < 260) push += (dx >= 0 ? 1 : -1) * 0.02;
+    }
+    if (Math.abs(push) < 1e-4) push = Math.sin(py * 0.01) * 0.004;   // gentle wander for variety
+    if (Math.floor(py/620) % 3 === 0) input.down = true;             // intermittent speed tuck
+    if (push > 0.0006) input.right = true; else if (push < -0.0006) input.left = true;
+  }
+
