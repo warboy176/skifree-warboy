@@ -79,12 +79,24 @@ function gameLoop() {
 
 // NPC Skier logic
 if (game.state === GameState.PLAYING) {
+  spawnNPCSkiers();
   game.npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
   });
 }
+
+function spawnNPCSkiers() {
+  const numNPCs = 5;
+  for (let i = 0; i < numNPCs; i++) {
+    const x = laneX[Math.floor(Math.random() * laneX.length)];
+    const y = -NPC_SKIER_HEIGHT;
+    const color = SKI_COLORS[Math.floor(Math.random() * SKI_COLORS.length)];
+    const skier = new NPCSkier(x, y);
+    skier.color = color;
+    game.npcSkiers.push(skier);
   }
+}  }
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
