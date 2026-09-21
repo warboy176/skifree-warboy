@@ -1,3 +1,2 @@
 # Changelog
-
-- Warboy standing mission enabled — ROADMAP.md drives autonomous development; the JS gate (node --check + headless boot + ?demo=1 auto-play) guards every change.
+- Added auto-player functionality behind the `?demo=1` URL flag that starts runs, dodges deadly obstacles, jumps drones, and restarts after game-over.

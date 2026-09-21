@@ -7,7 +7,7 @@ and — once it exists — a `?demo=1` auto-play run). Warboy checks an item off
 same commit that lands it and adds a line to CHANGELOG.md. Humans: add ideas at the
 bottom; reorder freely; Warboy never edits a checked item.
 
-- [ ] Attract / demo mode: add an auto-player behind the `?demo=1` URL flag that starts runs, dodges deadly obstacles, jumps drones, and restarts after game-over (reference logic in `reference/autoplayer_bot.js.txt`). Off by default; must not change normal play.
+- [x] Attract / demo mode: add an auto-player behind the `?demo=1` URL flag that starts runs, dodges deadly obstacles, jumps drones, and restarts after game-over (reference logic in `reference/autoplayer_bot.js.txt`). Off by default; must not change normal play.
 - [ ] Pause: `P` toggles a paused state with a dimmed "PAUSED" overlay; the game loop must not advance while paused; resuming continues from the same state.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, caught, escape chime) synthesized in code (no audio files); `M` mutes; muted state persists in localStorage.
 - [ ] Mobile controls: on touch devices show two translucent on-screen steer zones plus a jump button; prevent page scroll/zoom while playing.
