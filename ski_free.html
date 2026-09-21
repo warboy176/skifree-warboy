@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ski Free</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB;
+            font-family: Arial, sans-serif;
+        }
+        
+        canvas {
+            border: 2px solid #000;
+            background-color: #87CEEB;
+        }
+        
+        #gameContainer {
+            position: relative;
+        }
+        
+        #startScreen, #gameOverScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+        }
+        
+        #gameOverScreen {
+            display: none;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="500" height="600"></canvas>
+        
+        <div id="startScreen">
+            <h1>Ski Free</h1>
+            <p>Use Arrow Keys to move left and right</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        
+        <div id="gameOverScreen">
+            <h1>Game Over</h1>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <p>High Score: <span id="highScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="ski_free_npc.js"></script>
+    <script src="ski_free_game.js"></script>
+</body>
+</html>

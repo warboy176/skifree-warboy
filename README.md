@@ -1,47 +1,40 @@
-# SkiFree '91 — Canvas Remake ☣️
+# Ski Free Game
 
-A single-file HTML5 canvas remake of the 1991 Windows classic **SkiFree** — reforged for the machine cult. Bomb down an endless, procedurally-scrolling slope, thread the trees and slalom gates, stack style points off jumps… and outrun **WARBOY**, the relentless machine-spirit that replaces the old Yeti. Reach **30,000 meters** to ski free.
+A modern implementation of the classic Ski Free game using HTML5 Canvas and JavaScript.
 
-**▶ [Play it in your browser](https://warboy176.github.io/skifree-warboy/)** — no install, no dependencies, one file.
+## Features
 
-![SkiFree '91 — Warboy gameplay](gameplay.gif)
+- Classic ski racing gameplay
+- Player controls with keyboard or mouse
+- NPC skiers with AI behavior
+- Score tracking and high score persistence
+- Demo mode for automatic play
+- Responsive design
+
+## How to Play
+
+1. Use the **arrow keys** (← →) to move left and right
+2. Avoid colliding with other skiers
+3. Survive as long as possible to get a high score
 
 ## Controls
 
-| Action | Keys |
-|---|---|
-| Start | **Enter** / click / tap |
-| Steer | **← →** (arrow keys or pointer) |
-| Tuck (speed up) | **↓** |
-| Jump | **Space** |
-| Flip / spin (mid-air) | **← →** while airborne |
-| Fast mode | **F** |
-| Restart | **R** |
+- **Arrow Keys**: Move left/right
+- **Mouse**: Click and drag to move
+- **Demo Mode**: Add `?demo=1` to the URL to enable automatic play
 
-## The run
+## Files
 
-- Endless downhill — the further you go, the faster and gnarlier it gets.
-- **Escape Warboy** to bank **+500** and keep skiing; get caught and it's *"CAUGHT BY WARBOY!"*
-- Land flips for **style**; wiping out on trees and rocks bleeds your speed.
-- A local high-score board (distance / style / top speed) persists in your browser.
-- Survive to the **FINAL ZONE: MINI WARBOYS** and hit **30,000 m** to ski free.
+- `ski_free_index.html`: Main HTML file with game interface
+- `ski_free_npc.js`: Game logic and rendering
 
-## Run it locally
+## Development
 
-It's one file. Open `index.html` in any modern browser, or serve the folder:
+To run the game locally:
 
-```bash
-python3 -m http.server 8000    # then open http://localhost:8000
-```
-
-## Tech
-
-Pure vanilla JavaScript + Canvas 2D — no frameworks, no build step, no dependencies. Frame-based sprite animation, an endless scrolling world, lightweight collision, and a `localStorage` leaderboard, all in a single ~42 KB `index.html`.
+1. Clone this repository
+2. Open `ski_free_index.html` in a web browser
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
----
-
-*A Warboy build. ☣️ WITNESS ME.*
+MIT License - see [LICENSE](LICENSE) for details.
