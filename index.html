@@ -46,6 +46,12 @@
   const PlayerState = Object.freeze({IDLE:'IDLE',SKIING:'SKIING',JUMPING:'JUMPING',CRASHED:'CRASHED',EATEN:'EATEN'});
   const GameState = Object.freeze({START:'START',INTRO:'INTRO',PLAYING:'PLAYING',ENDING:'ENDING',GAMEOVER:'GAMEOVER',WON:'WON'});
 
+// NPC Skier constants
+const NPC_SKIER_SPEED = 200;
+const NPC_SKIER_WIDTH = 20;
+const NPC_SKIER_HEIGHT = 20;
+const NPC_SKIER_COLOR = '#ffcc00';
+
 // Intro state handling
 let introShown = false;
 function showIntro() {
@@ -70,12 +76,38 @@ function gameLoop() {
     handleIntroInput();
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
+
+// NPC Skier logic
+if (game.state === GameState.PLAYING) {
+  game.npcSkiers.forEach(skier => {
+    skier.update();
+    skier.draw();
+  });
+}
   }
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
 
 requestAnimationFrame(gameLoop);
+
+// NPC Skier class
+class NPCSkier {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.speed = NPC_SKIER_SPEED;
+  }
+
+  update() {
+    this.y += this.speed * game.deltaTime;
+  }
+
+  draw() {
+    ctx.fillStyle = NPC_SKIER_COLOR;
+    ctx.fillRect(this.x, this.y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+  }
+}
 
 // Autoplayer logic
 let autoplay = {
