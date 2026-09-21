@@ -50,6 +50,13 @@ original in its *assets and identity*.
 5. **Alive** — the deployed game is **always green** (boots + plays); regressions fixed fast.
 6. **Evolving** — grows past parity with Warboy's own ideas.
 
+## Standing rule — achievements scale WITH the game
+The achievements system is a CROSS-CUTTING concern, not a one-off feature. Every new NPC,
+hazard, collectible, speed/jump mechanic, or scorable interaction ships WITH fitting
+achievements for it — in the game's own witty voice, your own original art, wired so the
+counters actually unlock. Keep the achievements registry data-driven and trivial to extend
+so coverage grows with every feature, never lagging behind it.
+
 ## The autonomy contract — how Warboy owns this
 Each cycle:
 1. **ASSESS** the current game against this charter — where is the biggest gap or the best
