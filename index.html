@@ -44,7 +44,38 @@
   const METERS_PER_PIXEL = 0.25;
   const MAX_SPEED = 420;
   const PlayerState = Object.freeze({IDLE:'IDLE',SKIING:'SKIING',JUMPING:'JUMPING',CRASHED:'CRASHED',EATEN:'EATEN'});
-  const GameState = Object.freeze({START:'START',PLAYING:'PLAYING',ENDING:'ENDING',GAMEOVER:'GAMEOVER',WON:'WON'});
+  const GameState = Object.freeze({START:'START',INTRO:'INTRO',PLAYING:'PLAYING',ENDING:'ENDING',GAMEOVER:'GAMEOVER',WON:'WON'});
+
+// Intro state handling
+let introShown = false;
+function showIntro() {
+  if (introShown) return;
+  introShown = true;
+  statusEl.textContent = 'Press Enter or tap to start your descent.';
+  game.state = GameState.INTRO;
+}
+
+function handleIntroInput() {
+  if (pressed.has('Enter') || input.pointer) {
+    game.state = GameState.PLAYING;
+    statusEl.textContent = '';
+  }
+}
+
+// Modify game loop to handle intro
+function gameLoop() {
+  if (game.state === GameState.START) {
+    showIntro();
+  } else if (game.state === GameState.INTRO) {
+    handleIntroInput();
+  } else if (game.state === GameState.PLAYING) {
+    // Existing playing logic
+  }
+  // Other game states...
+  requestAnimationFrame(gameLoop);
+}
+
+requestAnimationFrame(gameLoop);
 
 // Autoplayer logic
 let autoplay = {
