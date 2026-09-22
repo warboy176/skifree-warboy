@@ -74,6 +74,8 @@ function gameLoop() {
     showIntro();
   } else if (game.state === GameState.INTRO) {
     handleIntroInput();
+handlePauseInput(event);
+
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
 
@@ -1074,6 +1076,14 @@ function drawPausedOverlay() {
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText('PAUSED', W / 2, H / 2);
 }
+
+function handlePauseInput(event) {
+    if (event.key === 'p' || event.key === 'P') {
+        isPaused = !isPaused;
+        event.preventDefault();
+    }
+}
+
 
 
 
