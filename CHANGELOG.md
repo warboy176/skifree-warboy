@@ -1,4 +1,5 @@
 # Changelog
+- Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only. (initWarboyChase, handleWarboyChaseCollision)
 - Other skiers: NPC skiers share the slope, carving their own lines; the player can weave around (or into) them. (initNPCs, spawnNPCs, handleNPCCollisions)
 - Added ski-lift/lodge intro screen with skippable functionality.
 - Added achievements system with Fallout-style unlock popups, tracking lifetime counters in localStorage and displaying witty unlock messages mid-run.
