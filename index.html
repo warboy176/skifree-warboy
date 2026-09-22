@@ -241,6 +241,8 @@ if (autoplay.enabled) {
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
 initNPCs();
+initTrickSystem();
+
 initWarboyChase();
 
 
@@ -960,6 +962,42 @@ function handleWarboyChaseCollision() {
         drawGameOver();
     }
 }
+
+function initTrickSystem() {
+    GameState.trickSystem = {
+        airTime: 0,
+        trickType: null,
+        stylePoints: 0,
+        styleMultiplier: 1.5 // Fixed multiplier for rotation grab
+    };
+
+    PlayerState.onJumpStart = function() {
+        GameState.trickSystem.airTime = 0;
+        GameState.trickSystem.trickType = null;
+        GameState.trickSystem.stylePoints = 0;
+    };
+
+    PlayerState.onAirUpdate = function(deltaTime) {
+        if (GameState.trickSystem.airTime > 0) {
+            GameState.trickSystem.airTime += deltaTime;
+        }
+    };
+
+    PlayerState.onLanding = function() {
+        if (GameState.trickSystem.trickType === 'rotationGrab') {
+            GameState.trickSystem.stylePoints = GameState.trickSystem.airTime * GameState.trickSystem.styleMultiplier;
+        }
+        console.log('Trick completed with style points:', GameState.trickSystem.stylePoints);
+    };
+
+    // Example input for demonstration purposes
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'r' && PlayerState.isInAir) {
+            GameState.trickSystem.trickType = 'rotationGrab';
+        }
+    });
+}
+
 
 
 
