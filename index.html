@@ -79,12 +79,22 @@ function gameLoop() {
 
 // NPC Skier logic
 if (game.state === GameState.PLAYING) {
+  spawnNPCSkiers();
   game.npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
   });
 }
+
+function spawnNPCSkiers() {
+  const numNPCs = Math.floor(Math.random() * 5) + 1; // Random number of NPC skiers between 1 and 5
+  for (let i = 0; i < numNPCs; i++) {
+    const lane = Math.floor(Math.random() * 3); // Random lane (assuming 3 lanes)
+    const x = lane * W / 3 + NPC_SKIER_WIDTH / 2;
+    const y = -NPC_SKIER_HEIGHT; // Start above the screen
+    game.npcSkiers.push(new NPCSkier(x, y));
   }
+}  }
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
