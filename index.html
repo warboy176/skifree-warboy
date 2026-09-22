@@ -78,7 +78,17 @@ function gameLoop() {
     // Existing playing logic
 
 // NPC Skier logic
+function spawnNPCSkiers() {
+  // Generate an array of NPC skiers with random positions, lanes, and speeds.
+  const numNPCs = 5; // Example number of NPCs
+  for (let i = 0; i < numNPCs; i++) {
+    const x = Math.random() * canvas.width;
+    const y = -Math.random() * canvas.height;
+    game.npcSkiers.push(new NPCSkier(x, y));
+  }
+}
 if (game.state === GameState.PLAYING) {
+  spawnNPCSkiers();
   game.npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
