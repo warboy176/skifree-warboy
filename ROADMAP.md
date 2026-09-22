@@ -23,7 +23,11 @@ Operator direction from the daily report lands here.
 - [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
-- [ ] Depth meter: track cumulative descent depth that grows with distance and expose it to the render/spawn systems (no visible change yet) — foundation for biome progression.
+- [ ] Initialize a scrollable snowfield background with continuous vertical motion using a single canvas and two tile images drawn in code
+- [ ] Implement a player character as a simple, original vector shape with basic forward movement and gravity-based falling
+- [ ] Create a distance tracker that increments with time and player speed, stored as a numeric value in memory
+- [ ] Link the distance tracker to a spawn system that generates obstacles (trees, rocks) at increasing intervals based on depth
+- [ ] Introduce a chase antagonist that spawns only after a threshold depth is reached, with basic movement toward the player
 - [ ] Biome palette bands: at depth thresholds, transition the slope/sky palette through four bands (open slope, forest, dusk/night, alpine); palette only.
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
 - [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
