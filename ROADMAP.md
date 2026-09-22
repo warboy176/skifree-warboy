@@ -23,7 +23,11 @@ Operator direction from the daily report lands here.
 - [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
-- [ ] Initialize a scrollable snowfield background with continuous vertical motion using a single canvas and two tile images drawn in code
+- [ ] Draw a single snow tile as a reusable canvas pattern using original code-drawn art
+- [ ] Create a second, slightly offset snow tile with unique original design for seamless tiling
+- [ ] Render a single vertical scrollable background using the two code-drawn tiles on a canvas
+- [ ] Implement continuous vertical motion with fixed 60fps animation loop using requestAnimationFrame
+- [ ] Ensure the scrollable background seamlessly repeats with no visible seams or flicker
 - [ ] Implement a player character as a simple, original vector shape with basic forward movement and gravity-based falling
 - [ ] Create a distance tracker that increments with time and player speed, stored as a numeric value in memory
 - [ ] Link the distance tracker to a spawn system that generates obstacles (trees, rocks) at increasing intervals based on depth
