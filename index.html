@@ -998,6 +998,26 @@ function initTrickSystem() {
     });
 }
 
+function updateTrickSystem(dt) {
+    if (PlayerState.isInAir) {
+        TrickSystem.airTime += dt;
+        TrickSystem.rotation += TrickSystem.rotationSpeed * dt;
+        
+        // Update style points based on rotation and air time
+        TrickSystem.stylePoints = Math.min(100, TrickSystem.airTime * 2 + Math.abs(TrickSystem.rotation) / 5);
+    } else {
+        if (PlayerState.isLanding && TrickSystem.completed) {
+            GameState.score += TrickSystem.stylePoints;
+        }
+        
+        // Reset trick state after landing
+        TrickSystem.reset();
+    }
+    
+    drawSkier();
+}
+
+
 
 
 
