@@ -482,7 +482,9 @@ spawnNPCs(dt);
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
-        updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
+        updateYeti(simDt);updateObstacles(simDt);handleCollisions();
+handleNPCCollisions();
+generateCourse();
       }
       const targetCam=player.y-H*.34;
       game.cameraY+=(targetCam-game.cameraY)*Math.min(1,simDt*7);
@@ -905,6 +907,17 @@ function spawnNPCs(dt) {
         }
     }
 }
+
+function handleNPCCollisions() {
+    for (let i = 0; i < npcSkiers.length; i++) {
+        if (boxForPlayer().intersects(boxForObstacle(npcSkiers[i]))) {
+            drawCrashPose();
+            PlayerState.resetPosition();
+            break;
+        }
+    }
+}
+
 
 
 </script>
