@@ -79,10 +79,19 @@ function gameLoop() {
 
 // NPC Skier logic
 if (game.state === GameState.PLAYING) {
+  updateNPCs();
   game.npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
   });
+}
+
+function initNPCs() {
+  npcSkiers = [];
+}
+
+function updateNPCs() {
+  // Update NPC skiers' positions
 }
   }
   // Other game states...
