@@ -79,12 +79,18 @@ function gameLoop() {
 
 // NPC Skier logic
 if (game.state === GameState.PLAYING) {
-  game.npcSkiers.forEach(skier => {
+  npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
   });
 }
-  }
+
+function initNPCs() {
+  npcSkiers = [];
+}
+
+// Call initNPCs at the appropriate place in your game initialization code.
+initNPCs();  }
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
