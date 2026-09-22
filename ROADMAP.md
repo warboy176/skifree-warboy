@@ -20,7 +20,7 @@ Operator direction from the daily report lands here.
 - [x] Other skiers: NPC skiers share the slope, carving their own lines; the player can weave around (or into) them.
 - [x] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.
 - [x] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
-- [ ] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
+- [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
 - [ ] Terrain progression: the biome visibly changes with depth (open slope → forest → dusk/night → alpine), affecting palette and obstacle density.
