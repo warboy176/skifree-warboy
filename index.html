@@ -487,6 +487,8 @@ spawnNPCs(dt);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();
+handleTrickLaunch(event);
+
 handleNPCCollisions();
 handleWarboyChaseCollision();
 
@@ -1016,6 +1018,15 @@ function updateTrickSystem(dt) {
     
     drawSkier();
 }
+
+function handleTrickLaunch(event) {
+    if (PlayerState.isAirborne && !PlayerState.isPerformingTrick) {
+        PlayerState.isPerformingTrick = true;
+        TrickSystem.startAirTimer();
+        TrickSystem.beginRotationAnimation();
+    }
+}
+
 
 
 
