@@ -486,6 +486,8 @@ spawnNPCs(dt);
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();
 handleNPCCollisions();
+handleWarboyChaseCollision();
+
 generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -948,6 +950,17 @@ function initWarboyChase() {
     frame.push(drawWarboyChase);
     frame.push(updateWarboyChase);
 }
+
+function handleWarboyChaseCollision() {
+    if (PlayerState.position.x < WarboyChase.position.x + WarboyChase.width &&
+        PlayerState.position.x + PlayerState.width > WarboyChase.position.x &&
+        PlayerState.position.y < WarboyChase.position.y + WarboyChase.height &&
+        PlayerState.position.y + PlayerState.height > WarboyChase.position.y) {
+        GameState.isGameOver = true;
+        drawGameOver();
+    }
+}
+
 
 
 
