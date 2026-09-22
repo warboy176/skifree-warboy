@@ -21,7 +21,7 @@ A single-file HTML5 canvas remake of the 1991 Windows classic **SkiFree** — re
 ## The run
 
 - Endless downhill — the further you go, the faster and gnarlier it gets.
-- **Escape Warboy** to bank **+500** and keep skiing; get caught and it's *"CAUGHT BY WARBOY!"*
+- **Escape Warboy** to bank **+500** and keep skiing; get caught and it's "*CAUGHT BY WARBOY!*"
 - Land flips for **style**; wiping out on trees and rocks bleeds your speed.
 - A local high-score board (distance / style / top speed) persists in your browser.
 - Survive to the **FINAL ZONE: MINI WARBOYS** and hit **30,000 m** to ski free.
