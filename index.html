@@ -1020,11 +1020,25 @@ function updateTrickSystem(dt) {
 }
 
 function handleTrickLaunch(event) {
-    if (PlayerState.isAirborne && !PlayerState.isPerformingTrick) {
-        PlayerState.isPerformingTrick = true;
-        TrickSystem.startAirTimer();
-        TrickSystem.beginRotationAnimation();
-    }
+  if (!event || !event.type || !event.target) return;
+  const isLandingOnJumpOrMogul = event.type === 'land' && (event.target.type === 'jump' || event.target.type === 'mogul');
+  if (!isLandingOnJumpOrMogul) return;
+
+  player.state = PlayerState.JUMPING;
+  player.jumpTime = 0;
+  player.spin = 0;
+  player.flipActive = false;
+  player.flips = 0;
+  player.invulnerable = 100;
+
+  // Start air timer
+  game.trickTime = 0;
+
+  // Begin rotation animation if airborne
+  if (player.state === PlayerState.JUMPING) {
+    // Trigger animation logic (e.g., via requestAnimationFrame or frame-based update)
+    // This assumes a frame update loop handles rotation
+  }
 }
 
 
