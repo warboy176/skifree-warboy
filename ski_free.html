@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkiFree</title>
+  <style>
+    * { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0a2a43; }
+    main { display: flex; justify-content: center; align-items: center; height: 100vh; padding: clamp(8px, 2vw, 22px); }
+    .cabinet { position: relative; width: min(1100px, 100%); height: 100%; max-height: 900px; border: 4px solid var(--ink); background: var(--snow); box-shadow: 10px 10px 0 rgba(16, 42, 67, .22); overflow: hidden; }
+    canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; cursor: crosshair; outline: none; }
+    .controls { position: absolute; right: 14px; bottom: 12px; display: flex; gap: 6px; pointer-events: none; opacity: .86; }
+    .key { min-width: 28px; height: 28px; padding: 0 7px; display: grid; place-items: center; background: rgba(238, 250, 255, .92); border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); font-size: 13px; font-weight: 700; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    @media (max-width: 640px) { main { padding: 0; } .cabinet { border-width: 0; box-shadow: none; max-height: none; } .controls { display: none; } }
+  </style>
+</head>
+<body>
+<main>
+  <section class="cabinet" aria-label="SkiFree game">
+    <canvas id="game" tabindex="0" aria-label="SkiFree. Press Enter or tap to start. Use arrow keys or pointer to steer, Space to jump, arrow keys in the air to flip, and F for fast mode."></canvas>
+    <div class="controls" aria-hidden="true"><span class="key">←</span><span class="key">↓</span><span class="key">→</span><span class="key">SPACE</span><span class="key">F</span></div>
+    <p id="status" class="sr-only" aria-live="polite">Press Enter or click to ski.</p>
+  </section>
+</main>
+<script>
+(() => {
+  'use strict';
+
+  // ---------------------------------------------------------------------------
+  // Canvas & constants
+  // ---------------------------------------------------------------------------
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const statusEl = document.getElementById('status');
+  const DPR_CAP = 2;
+  const HUD_H = 54;
+  const METERS_PER_PIXEL = 0.25;
+  const MAX_SPEED = 420;
+  
+  // Game states
+  const PlayerState = Object.freeze({IDLE:'IDLE',SKIING:'SKIING',JUMPING:'JUMPING',CRASHED:'CRASHED',EATEN:'EATEN'});
+  const GameState = Object.freeze({START:'START',INTRO:'INTRO',PLAYING:'PLAYING',ENDING:'ENDING',GAMEOVER:'GAMEOVER',WON:'WON'});
+
+  // NPC Skier constants
+  const NPC_SKIER_SPEED = 200;
+  const NPC_SKIER_WIDTH = 20;
+  const NPC_SKIER_HEIGHT = 20;
+  const NPC_SKIER_COLOR = '#ffcc00';
+
+  // Game object
+  const game = {
+    state: GameState.START,
+    player: null,
+    npcSkiers: [],
+    deltaTime: 0,
+    lastTime: 0,
+    keys: new Set(),
+    pointer: false,
+    lanes: [100, 200, 300, 400, 500], // Lane positions
+    laneCount: 5,
+    score: 0,
+    speed: 0
+  };
+
+  // Input handling
+  const pressed = new Set();
+  
+  document.addEventListener('keydown', (e) => {
+    pressed.add(e.key);
+    game.keys.add(e.key);
+  });
+
+  document.addEventListener('keyup', (e) => {
+    pressed.delete(e.key);
+    game.keys.delete(e.key);
+  });
+
+  canvas.addEventListener('mousedown', () => {
+    game.pointer = true;
+  });
+
+  canvas.addEventListener('mouseup', () => {
+    game.pointer = false;
+  });
+
+  // NPC Skier class
+  class NPCSkier {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.width = NPC_SKIER_WIDTH;
+      this.height = NPC_SKIER_HEIGHT;
+      this.speed = NPC_SKIER_SPEED;
+      this.color = NPC_SKIER_COLOR;
+    }
+
+    update() {
+      this.y += this.speed * game.deltaTime;
+    }
+
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+  }
+
+  // Spawn NPC skiers
+  function spawnNPCSkiers() {
+    if (game.npcSkiers.length < 5) { // Limit number of NPCs
+      const lane = Math.floor(Math.random() * game.lanes.length);
+      const x = game.lanes[lane];
+      const y = -NPC_SKIER_HEIGHT;
+      const skier = new NPCSkier(x, y);
+      game.npcSkiers.push(skier);
+    }
+  }
+
+  // Intro state handling
+  let introShown = false;
+  function showIntro() {
+    if (introShown) return;
+    introShown = true;
+    statusEl.textContent = 'Press Enter or tap to start your descent.';
+    game.state = GameState.INTRO;
+  }
+
+  function handleIntroInput() {
+    if (pressed.has('Enter') || game.pointer) {
+      game.state = GameState.PLAYING;
+      statusEl.textContent = '';
+    }
+  }
+
+  // Game loop
+  function gameLoop(timestamp) {
+    if (!game.lastTime) game.lastTime = timestamp;
+    game.deltaTime = Math.min((timestamp - game.lastTime) / 1000, 1/30);
+    game.lastTime = timestamp;
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (game.state === GameState.START) {
+      showIntro();
+    } else if (game.state === GameState.INTRO) {
+      handleIntroInput();
+    } else if (game.state === GameState.PLAYING) {
+      // Spawn NPCs
+      spawnNPCSkiers();
+
+      // Update and draw NPC skiers
+      game.npcSkiers.forEach((skier, index) => {
+        skier.update();
+        skier.draw();
+
+        // Remove skiers that are off screen
+        if (skier.y > canvas.height) {
+          game.npcSkiers.splice(index, 1);
+        }
+      });
+    }
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Initialize canvas size
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio, DPR_CAP);
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Start game loop
+  requestAnimationFrame(gameLoop);
+})();
+</script>
+</body>
+</html>
