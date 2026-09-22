@@ -23,7 +23,7 @@ Operator direction from the daily report lands here.
 - [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
-- [ ] Add a depthMeter property to the game object initialized to 0
+- [x] Add a depthMeter property to the game object initialized to 0
 - [ ] Increment depthMeter by METERS_PER_PIXEL multiplied by the player's vertical speed each frame during PLAYING state
 - [ ] Update the depthMeter in the game loop based on player's vertical displacement (deltaY) multiplied by METERS_PER_PIXEL
 - [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
