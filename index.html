@@ -241,6 +241,8 @@ if (autoplay.enabled) {
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
 initNPCs();
+initWarboyChase();
+
 
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
@@ -917,6 +919,36 @@ function handleNPCCollisions() {
         }
     }
 }
+
+function initWarboyChase() {
+    GameState.WarboyChase = {
+        active: false,
+        distanceThreshold: 100,
+        speedMultiplier: 1.5
+    };
+
+    function drawWarboyChase() {
+        // Original art for Warboy's creature design
+        ctx.fillStyle = 'green';
+        ctx.fillRect(W.x, W.y, 20, 20); // Example shape, replace with actual art
+    }
+
+    function updateWarboyChase() {
+        if (GameState.WarboyChase.active) {
+            const distance = Math.sqrt(Math.pow(W.x - c.x, 2) + Math.pow(W.y - c.y, 2));
+            if (distance < GameState.WarboyChase.distanceThreshold) {
+                W.speed *= GameState.WarboyChase.speedMultiplier;
+            } else {
+                W.speed /= GameState.WarboyChase.speedMultiplier;
+            }
+        }
+    }
+
+    // Wire the function into the game loop
+    frame.push(drawWarboyChase);
+    frame.push(updateWarboyChase);
+}
+
 
 
 
