@@ -83,8 +83,28 @@ if (game.state === GameState.PLAYING) {
     skier.update();
     skier.draw();
   });
+
+  handleNPCCollisions();
 }
-  }
+
+function handleNPCCollisions() {
+  // Check for collisions between the player and NPC skiers.
+  game.npcSkiers.forEach(skier => {
+    if (player.x < skier.x + NPC_SKIER_WIDTH &&
+        player.x + PLAYER_WIDTH > skier.x &&
+        player.y < skier.y + NPC_SKIER_HEIGHT &&
+        player.y + PLAYER_HEIGHT > skier.y) {
+      onNPCCollision();
+    }
+  });
+}
+
+function onNPCCollision() {
+  // Trigger crash animation and update score.
+  player.state = PlayerState.CRASHED;
+  drawCrashPose();
+  SCORE_KEY += 10; // Example scoring logic, adjust as needed.
+}  }
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
