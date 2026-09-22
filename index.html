@@ -477,6 +477,8 @@ initNPCs();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+spawnNPCs(dt);
+
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
@@ -891,6 +893,19 @@ function initNPCs() {
         draw: drawNPCs
     };
 }
+
+function spawnNPCs(dt) {
+    if (playerSpeed > 0) { // Ensure player is moving downhill
+        if (Math.random() < NPC_SPAWN_PROBABILITY * dt) { // Random interval based on delta time
+            const lane = Math.floor(Math.random() * LANE_COUNT); // Random lane
+            const x = clamp(lane * LANE_WIDTH + LANE_WIDTH / 2 - NPC_SKIER_WIDTH / 2, 0, W - NPC_SKIER_WIDTH);
+            const y = -NPC_SKIER_HEIGHT; // Start above the screen
+            const speed = NPC_SKIER_SPEED;
+            npcSkiers.push({ x, y, speed });
+        }
+    }
+}
+
 
 </script>
 </body>
