@@ -240,6 +240,8 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
+initNPCs();
+
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
 
@@ -857,6 +859,39 @@ if (autoplay.enabled) {
   }
   requestAnimationFrame(frame);
 })();
+
+function initNPCs() {
+    const npcs = [];
+
+    function updateNPCPositions() {
+        npcs.forEach(npc => {
+            npc.position.x += npc.speed * METERS_PER_PIXEL;
+            if (npc.position.x > W) {
+                npc.position.x = -NPC_SKIER_WIDTH;
+            }
+        });
+    }
+
+    for (let i = 0; i < 5; i++) {
+        npcs.push({
+            color: NPC_SKIER_COLOR,
+            position: { x: -NPC_SKIER_WIDTH * i, y: Math.random() * W },
+            speed: NPC_SKIER_SPEED
+        });
+    }
+
+    function drawNPCs() {
+        npcs.forEach(npc => {
+            drawSkier(npc.position.x, npc.position.y, npc.color);
+        });
+    }
+
+    return {
+        update: updateNPCPositions,
+        draw: drawNPCs
+    };
+}
+
 </script>
 </body>
 </html>
