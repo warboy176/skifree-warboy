@@ -1041,6 +1041,27 @@ function handleTrickLaunch(event) {
   }
 }
 
+function initPauseState() {
+    let isPaused = false;
+    const overlayColor = 'rgba(0, 0, 0, 0.5)';
+    
+    function renderDimmedOverlay() {
+        if (isPaused) {
+            ctx.fillStyle = overlayColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    gameLoop.beforeRender.push(renderDimmedOverlay);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            isPaused = !isPaused;
+        }
+    });
+}
+
+
 
 
 
