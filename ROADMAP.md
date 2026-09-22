@@ -19,7 +19,7 @@ Operator direction from the daily report lands here.
 - [x] Ski-lift / lodge start: a short intro at a lift/lodge, then the player pushes off downhill into the run (skippable with a key / tap).
 - [x] Other skiers: NPC skiers share the slope, carving their own lines; the player can weave around (or into) them.
 - [x] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.
-- [ ] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
+- [x] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
 - [ ] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
