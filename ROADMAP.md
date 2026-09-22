@@ -23,7 +23,9 @@ Operator direction from the daily report lands here.
 - [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
-- [ ] Depth meter: track cumulative descent depth that grows with distance and expose it to the render/spawn systems (no visible change yet) — foundation for biome progression.
+- [ ] Initialize a depthMeter property on the game object to track cumulative descent in meters, incrementing by distance traveled per frame
+- [ ] Update the depthMeter in the game loop based on player's vertical displacement (deltaY) multiplied by METERS_PER_PIXEL
+- [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
 - [ ] Biome palette bands: at depth thresholds, transition the slope/sky palette through four bands (open slope, forest, dusk/night, alpine); palette only.
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
 - [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
