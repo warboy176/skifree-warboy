@@ -841,6 +841,8 @@ generateCourse();
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawPausedOverlay();
+
     if(game.flash>0){ctx.globalAlpha=game.flash*.35;rect(0,HUD_H,W,H-HUD_H,'#e33232');ctx.globalAlpha=1;}
     if(game.state===GameState.PLAYING && game.distance>=2000){
       ctx.font='700 14px "Courier New",monospace';ctx.textAlign='center';
@@ -1060,6 +1062,19 @@ function initPauseState() {
         }
     });
 }
+
+function drawPausedOverlay() {
+    if (!isPaused) return;
+    
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(0, 0, W, H);
+    
+    ctx.font = '48px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText('PAUSED', W / 2, H / 2);
+}
+
 
 
 
