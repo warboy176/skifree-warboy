@@ -78,6 +78,9 @@ function gameLoop() {
     // Existing playing logic
 
 // NPC Skier logic
+if (game.state === GameState.PLAYING && player.state !== PlayerState.IDLE) {
+  spawnNPCSkiers();
+}
 if (game.state === GameState.PLAYING) {
   game.npcSkiers.forEach(skier => {
     skier.update();
@@ -110,6 +113,14 @@ class NPCSkier {
 }
 
 // Autoplayer logic
+function spawnNPCSkiers() {
+  const numSkiers = Math.floor(Math.random() * 3) + 1;
+  for (let i = 0; i < numSkiers; i++) {
+    const x = Math.random() * W;
+    const y = -NPC_SKIER_HEIGHT;
+    game.npcSkiers.push(new NPCSkier(x, y));
+  }
+}
 let autoplay = {
   enabled: new URLSearchParams(window.location.search).get('demo') === '1',
   simulateKeyPress: function(key) {
