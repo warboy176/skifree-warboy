@@ -78,7 +78,8 @@ function gameLoop() {
     // Existing playing logic
 
 // NPC Skier logic
-if (game.state === GameState.PLAYING) {
+if (game.state === GameState.PLAYING && PlayerState !== PlayerState.IDLE) {
+  spawnNPCSkiers();
   game.npcSkiers.forEach(skier => {
     skier.update();
     skier.draw();
@@ -106,6 +107,17 @@ class NPCSkier {
   draw() {
     ctx.fillStyle = NPC_SKIER_COLOR;
     ctx.fillRect(this.x, this.y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+  }
+}
+
+// NPC Skier class
+function spawnNPCSkiers() {
+  if (!game.npcSkiers) game.npcSkiers = [];
+  const numSkiers = Math.floor(Math.random() * 3) + 1; // Random number of skiers between 1 and 3
+  for (let i = 0; i < numSkiers; i++) {
+    const x = Math.random() * W; // Random x position across the width
+    const y = -NPC_SKIER_HEIGHT; // Start above the screen
+    game.npcSkiers.push(new NPCSkier(x, y));
   }
 }
 
