@@ -26,7 +26,7 @@ Operator direction from the daily report lands here.
 - [x] Add a depthMeter property to the game object initialized to 0
 - [x] Increment depthMeter by METERS_PER_PIXEL multiplied by the player's vertical speed each frame during PLAYING state
 - [!] Update the depthMeter in the game loop by incrementing it with deltaY multiplied by METERS_PER_PIXEL  <!-- blocked: reasoner produced no valid envelopes (redundant); deferred by maintenance -->
-- [ ] Initialize depthMeter to 0 when the game state changes from START to INTRO
+- [!] Initialize depthMeter to 0 when the game state changes from START to INTRO  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure depthMeter is reset only during the transition from START to INTRO, not in any other state
 - [ ] Persist the depthMeter value across game restarts by storing it in localStorage on game end and restoring it on startup
 - [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
