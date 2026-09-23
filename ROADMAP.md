@@ -37,7 +37,7 @@ Operator direction from the daily report lands here.
 - [x] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
 - [x] Add a function to check current distance against thresholds and return the next biome index
 - [x] Create a function to update the current biome based on distance, only when crossing a threshold
-- [ ] Create a function to map current distance to current biome index (0-3)
+- [!] Create a function to map current distance to current biome index (0-3)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine
 - [ ] Add a function to interpolate between adjacent palette bands based on depth progress
 - [ ] Update the canvas background rendering to use the current biome palette at each frame
