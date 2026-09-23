@@ -32,14 +32,14 @@ Operator direction from the daily report lands here.
 - [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to check current distance against thresholds and return the next biome index
-- [ ] Create a function to update the current biome based on distance, only when crossing a threshold
-- [ ] Create a function to map current distance to current biome index (0-3)
-- [ ] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine
-- [ ] Add a function to interpolate between adjacent palette bands based on depth progress
-- [ ] Update the canvas background rendering to use the current biome palette at each frame
-- [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
-- [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
+- [!] Add a function to check current distance against thresholds and return the next biome index  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Create a function to update the current biome based on distance, only when crossing a threshold  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Create a function to map current distance to current biome index (0-3)  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Add a function to interpolate between adjacent palette bands based on depth progress  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Update the canvas background rendering to use the current biome palette at each frame  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
+- [!] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
 - [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
