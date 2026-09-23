@@ -34,7 +34,7 @@ Operator direction from the daily report lands here.
 - [!] Add a depthMeter property to the game object, initialized to 0, to track descent distance  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
 - [!] Implement a depthMeter getter that returns the current descent distance in meters  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
 - [!] Update the depthMeter in the game loop by incrementing it based on player speed and deltaTime  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
-- [ ] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
+- [x] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
 - [ ] Add a function to check current distance against thresholds and return the next biome index
 - [ ] Create a function to update the current biome based on distance, only when crossing a threshold
 - [ ] Create a function to map current distance to current biome index (0-3)
