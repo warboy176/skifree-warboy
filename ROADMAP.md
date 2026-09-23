@@ -31,7 +31,7 @@ Operator direction from the daily report lands here.
 - [!] Store the depthMeter value in localStorage when the game ends  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
-- [ ] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
+- [!] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to check current distance against thresholds and return the next biome index
 - [ ] Create a function to update the current biome based on distance, only when crossing a threshold
 - [ ] Create a function to map current distance to current biome index (0-3)
