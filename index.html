@@ -1131,6 +1131,15 @@ function getBiomeIndexFromDistance(distance) {
     }
 }
 
+function updateBiomeFromDistance() {
+    const newIndex = getBiomeIndexFromDistance(distance);
+    if (newIndex !== GameState.biomeIndex) {
+        GameState.biomeIndex = newIndex;
+        updateBiome();
+    }
+}
+
+
 
 
 
