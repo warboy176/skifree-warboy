@@ -243,6 +243,8 @@ if (autoplay.enabled) {
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
 defineBiomeThresholds();
+defineBiomePalettes();
+
 
 initNPCs();
 initTrickSystem();
@@ -1137,6 +1139,45 @@ function updateBiomeFromDistance() {
     GameState.biomeIndex = newIndex;
   }
 }
+
+function defineBiomePalettes() {
+    const openSlope = ["#FFD700", "#8B4513", "#DEB887", "#F4A460", "#D2691E"];
+    const forest = ["#228B22", "#556B2F", "#8FBC8F", "#ADFF2F", "#3CB371"];
+    const duskNight = ["#483D8B", "#00008B", "#191970", "#4682B4", "#6A5ACD"];
+    const alpine = ["#FFFFFF", "#E0FFFF", "#ADD8E6", "#B0C4DE", "#F0F8FF"];
+
+    GameState.biomePalettes = {
+        openSlope: openSlope,
+        forest: forest,
+        duskNight: duskNight,
+        alpine: alpine
+    };
+
+    function updateBiomePalette() {
+        const biomeIndex = getBiomeIndexFromDistance(distance);
+        let palette;
+        switch (biomeIndex) {
+            case 0:
+                palette = openSlope;
+                break;
+            case 1:
+                palette = forest;
+                break;
+            case 2:
+                palette = duskNight;
+                break;
+            case 3:
+                palette = alpine;
+                break;
+            default:
+                palette = openSlope;
+        }
+        GameState.currentPalette = palette;
+    }
+
+    updateBiomePalette();
+}
+
 
 
 
