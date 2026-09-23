@@ -1092,6 +1092,13 @@ function initDepthMeter() {
     window.depthMeter = 0;
 }
 
+function updateDepthMeter(dt) {
+    if (GameState === 'PLAYING') {
+        depthMeter += METERS_PER_PIXEL * PlayerState.verticalSpeed * dt;
+    }
+}
+
+
 
 
 
