@@ -1,4 +1,5 @@
 # Changelog
+- Define four distinct color palettes for open slope, forest, dusk/night, and alpine as arrays of CSS color strings (defineBiomePalettes)
 - Create a function to update the current biome based on distance, only when crossing a threshold (updateBiomeFromDistance)
 - Add a function to check current distance against thresholds and return the next biome index (getBiomeIndexFromDistance)
 - Define biome transition thresholds as constants: 1000, 3000, and 5000 meters (defineBiomeThresholds)
