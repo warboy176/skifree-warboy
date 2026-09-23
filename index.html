@@ -69,12 +69,13 @@ function handleIntroInput() {
 }
 
 // Modify game loop to handle intro
+let isPaused = false;
+document.addEventListener("keydown", handlePauseInput);
 function gameLoop() {
   if (game.state === GameState.START) {
     showIntro();
   } else if (game.state === GameState.INTRO) {
     handleIntroInput();
-handlePauseInput(event);
 
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
@@ -1050,7 +1051,7 @@ function handleTrickLaunch(event) {
 }
 
 function initPauseState() {
-    let isPaused = false;
+    let _deadPauseFlag = false;
     const overlayColor = 'rgba(0, 0, 0, 0.5)';
     
     function renderDimmedOverlay() {
