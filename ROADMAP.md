@@ -28,9 +28,9 @@ Operator direction from the daily report lands here.
 - [!] Update the depthMeter in the game loop by incrementing it with deltaY multiplied by METERS_PER_PIXEL  <!-- blocked: reasoner produced no valid envelopes (redundant); deferred by maintenance -->
 - [!] Initialize depthMeter to 0 when the game state changes from START to INTRO  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure depthMeter is reset only during the transition from START to INTRO, not in any other state  <!-- blocked: 0/0 envelopes (redundant plumbing); deferred by maintenance -->
-- [ ] Store the depthMeter value in localStorage when the game ends
-- [ ] Restore the depthMeter value from localStorage on game startup if available
-- [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
+- [!] Store the depthMeter value in localStorage when the game ends  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
+- [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
+- [!] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [ ] Biome palette bands: at depth thresholds, transition the slope/sky palette through four bands (open slope, forest, dusk/night, alpine); palette only.
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
 - [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
