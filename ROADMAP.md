@@ -40,7 +40,10 @@ Operator direction from the daily report lands here.
 - [!] Update the canvas background rendering to use the current biome palette at each frame  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
 - [!] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
 - [!] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
-- [ ] Add a Dog class with a fixed speed, random starting position, and a simple horizontal movement pattern across the screen
+- [ ] Add a Dog class with x, y, speed, and width/height properties, initialized with random x position and fixed y position within the visible canvas
+- [ ] Implement a Dog.update() method that moves the dog horizontally at a fixed speed, wrapping around the screen when it exits the left or right edge
+- [ ] Add a Dog.draw() method that renders the dog using Warboy's original pixel-art style with a simple shape and color in the canvas
+- [ ] Modify the game loop to call Dog.update() and Dog.draw() for each dog in the game's dog array
 - [ ] Implement collision detection between the player and dogs, triggering a wipeout if the player hits one while not in a scoring state
 - [ ] Add a 'dog' type to the obstacle array with a unique visual design using original pixel art in code
 - [ ] Introduce a scoring mechanic that rewards the player for hitting a dog with a slalom maneuver, adding a style point and multiplier
