@@ -1132,11 +1132,10 @@ function getBiomeIndexFromDistance(distance) {
 }
 
 function updateBiomeFromDistance() {
-    const newIndex = getBiomeIndexFromDistance(distance);
-    if (newIndex !== GameState.biomeIndex) {
-        GameState.biomeIndex = newIndex;
-        updateBiome();
-    }
+  const newIndex = getBiomeIndexFromDistance(game.distance);
+  if (newIndex !== GameState.biomeIndex) {
+    GameState.biomeIndex = newIndex;
+  }
 }
 
 
