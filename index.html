@@ -69,14 +69,11 @@ function handleIntroInput() {
 }
 
 // Modify game loop to handle intro
-let isPaused = false;
-document.addEventListener("keydown", handlePauseInput);
 function gameLoop() {
   if (game.state === GameState.START) {
     showIntro();
   } else if (game.state === GameState.INTRO) {
     handleIntroInput();
-
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
 
@@ -243,16 +240,6 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
-defineBiomeThresholds();
-defineBiomePalettes();
-
-
-initNPCs();
-initTrickSystem();
-
-initWarboyChase();
-
-
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
 
@@ -488,18 +475,10 @@ initWarboyChase();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
-spawnNPCs(dt);
-
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
-        updateYeti(simDt);updateObstacles(simDt);handleCollisions();
-handleTrickLaunch(event);
-
-handleNPCCollisions();
-handleWarboyChaseCollision();
-
-generateCourse();
+        updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
       game.cameraY+=(targetCam-game.cameraY)*Math.min(1,simDt*7);
@@ -848,8 +827,6 @@ generateCourse();
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
-drawPausedOverlay();
-
     if(game.flash>0){ctx.globalAlpha=game.flash*.35;rect(0,HUD_H,W,H-HUD_H,'#e33232');ctx.globalAlpha=1;}
     if(game.state===GameState.PLAYING && game.distance>=2000){
       ctx.font='700 14px "Courier New",monospace';ctx.textAlign='center';
@@ -880,322 +857,6 @@ drawPausedOverlay();
   }
   requestAnimationFrame(frame);
 })();
-
-function initNPCs() {
-    const npcs = [];
-
-    function updateNPCPositions() {
-        npcs.forEach(npc => {
-            npc.position.x += npc.speed * METERS_PER_PIXEL;
-            if (npc.position.x > W) {
-                npc.position.x = -NPC_SKIER_WIDTH;
-            }
-        });
-    }
-
-    for (let i = 0; i < 5; i++) {
-        npcs.push({
-            color: NPC_SKIER_COLOR,
-            position: { x: -NPC_SKIER_WIDTH * i, y: Math.random() * W },
-            speed: NPC_SKIER_SPEED
-        });
-    }
-
-    function drawNPCs() {
-        npcs.forEach(npc => {
-            drawSkier(npc.position.x, npc.position.y, npc.color);
-        });
-    }
-
-    return {
-        update: updateNPCPositions,
-        draw: drawNPCs
-    };
-}
-
-function spawnNPCs(dt) {
-    if (playerSpeed > 0) { // Ensure player is moving downhill
-        if (Math.random() < NPC_SPAWN_PROBABILITY * dt) { // Random interval based on delta time
-            const lane = Math.floor(Math.random() * LANE_COUNT); // Random lane
-            const x = clamp(lane * LANE_WIDTH + LANE_WIDTH / 2 - NPC_SKIER_WIDTH / 2, 0, W - NPC_SKIER_WIDTH);
-            const y = -NPC_SKIER_HEIGHT; // Start above the screen
-            const speed = NPC_SKIER_SPEED;
-            npcSkiers.push({ x, y, speed });
-        }
-    }
-}
-
-function handleNPCCollisions() {
-    for (let i = 0; i < npcSkiers.length; i++) {
-        if (boxForPlayer().intersects(boxForObstacle(npcSkiers[i]))) {
-            drawCrashPose();
-            PlayerState.resetPosition();
-            break;
-        }
-    }
-}
-
-function initWarboyChase() {
-    GameState.WarboyChase = {
-        active: false,
-        distanceThreshold: 100,
-        speedMultiplier: 1.5
-    };
-
-    function drawWarboyChase() {
-        // Original art for Warboy's creature design
-        ctx.fillStyle = 'green';
-        ctx.fillRect(W.x, W.y, 20, 20); // Example shape, replace with actual art
-    }
-
-    function updateWarboyChase() {
-        if (GameState.WarboyChase.active) {
-            const distance = Math.sqrt(Math.pow(W.x - c.x, 2) + Math.pow(W.y - c.y, 2));
-            if (distance < GameState.WarboyChase.distanceThreshold) {
-                W.speed *= GameState.WarboyChase.speedMultiplier;
-            } else {
-                W.speed /= GameState.WarboyChase.speedMultiplier;
-            }
-        }
-    }
-
-    // Wire the function into the game loop
-    frame.push(drawWarboyChase);
-    frame.push(updateWarboyChase);
-}
-
-function handleWarboyChaseCollision() {
-    if (PlayerState.position.x < WarboyChase.position.x + WarboyChase.width &&
-        PlayerState.position.x + PlayerState.width > WarboyChase.position.x &&
-        PlayerState.position.y < WarboyChase.position.y + WarboyChase.height &&
-        PlayerState.position.y + PlayerState.height > WarboyChase.position.y) {
-        GameState.isGameOver = true;
-        drawGameOver();
-    }
-}
-
-function initTrickSystem() {
-    GameState.trickSystem = {
-        airTime: 0,
-        trickType: null,
-        stylePoints: 0,
-        styleMultiplier: 1.5 // Fixed multiplier for rotation grab
-    };
-
-    PlayerState.onJumpStart = function() {
-        GameState.trickSystem.airTime = 0;
-        GameState.trickSystem.trickType = null;
-        GameState.trickSystem.stylePoints = 0;
-    };
-
-    PlayerState.onAirUpdate = function(deltaTime) {
-        if (GameState.trickSystem.airTime > 0) {
-            GameState.trickSystem.airTime += deltaTime;
-        }
-    };
-
-    PlayerState.onLanding = function() {
-        if (GameState.trickSystem.trickType === 'rotationGrab') {
-            GameState.trickSystem.stylePoints = GameState.trickSystem.airTime * GameState.trickSystem.styleMultiplier;
-        }
-        console.log('Trick completed with style points:', GameState.trickSystem.stylePoints);
-    };
-
-    // Example input for demonstration purposes
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'r' && PlayerState.isInAir) {
-            GameState.trickSystem.trickType = 'rotationGrab';
-        }
-    });
-}
-
-function updateTrickSystem(dt) {
-    if (PlayerState.isInAir) {
-        TrickSystem.airTime += dt;
-        TrickSystem.rotation += TrickSystem.rotationSpeed * dt;
-        
-        // Update style points based on rotation and air time
-        TrickSystem.stylePoints = Math.min(100, TrickSystem.airTime * 2 + Math.abs(TrickSystem.rotation) / 5);
-    } else {
-        if (PlayerState.isLanding && TrickSystem.completed) {
-            GameState.score += TrickSystem.stylePoints;
-        }
-        
-        // Reset trick state after landing
-        TrickSystem.reset();
-    }
-    
-    drawSkier();
-}
-
-function handleTrickLaunch(event) {
-  if (!event || !event.type || !event.target) return;
-  const isLandingOnJumpOrMogul = event.type === 'land' && (event.target.type === 'jump' || event.target.type === 'mogul');
-  if (!isLandingOnJumpOrMogul) return;
-
-  player.state = PlayerState.JUMPING;
-  player.jumpTime = 0;
-  player.spin = 0;
-  player.flipActive = false;
-  player.flips = 0;
-  player.invulnerable = 100;
-
-  // Start air timer
-  game.trickTime = 0;
-
-  // Begin rotation animation if airborne
-  if (player.state === PlayerState.JUMPING) {
-    // Trigger animation logic (e.g., via requestAnimationFrame or frame-based update)
-    // This assumes a frame update loop handles rotation
-  }
-}
-
-function initPauseState() {
-    let _deadPauseFlag = false;
-    const overlayColor = 'rgba(0, 0, 0, 0.5)';
-    
-    function renderDimmedOverlay() {
-        if (isPaused) {
-            ctx.fillStyle = overlayColor;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-    }
-
-    gameLoop.beforeRender.push(renderDimmedOverlay);
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            isPaused = !isPaused;
-        }
-    });
-}
-
-function drawPausedOverlay() {
-    if (!isPaused) return;
-    
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    ctx.fillRect(0, 0, W, H);
-    
-    ctx.font = '48px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillText('PAUSED', W / 2, H / 2);
-}
-
-function handlePauseInput(event) {
-    if (event.key === 'p' || event.key === 'P') {
-        isPaused = !isPaused;
-        event.preventDefault();
-    }
-}
-
-function initGameDepthMeter() {
-    game.depthMeter = 0;
-}
-
-function initDepthMeter() {
-    window.depthMeter = 0;
-}
-
-function updateDepthMeter(dt) {
-    if (GameState === 'PLAYING') {
-        depthMeter += METERS_PER_PIXEL * PlayerState.verticalSpeed * dt;
-    }
-}
-
-function defineBiomeThresholds() {
-    const BIOME_THRESHOLD_1 = 1000;
-    const BIOME_THRESHOLD_2 = 3000;
-    const BIOME_THRESHOLD_3 = 5000;
-
-    // Example usage within the game loop or other relevant functions
-    function updateBiome() {
-        if (distance >= BIOME_THRESHOLD_3) {
-            // Change to biome 3
-        } else if (distance >= BIOME_THRESHOLD_2) {
-            // Change to biome 2
-        } else if (distance >= BIOME_THRESHOLD_1) {
-            // Change to biome 1
-        }
-    }
-
-    // Call updateBiome where appropriate, e.g., in the main game loop
-}
-
-function getBiomeIndexFromDistance(distance) {
-    if (distance < BIOME_THRESHOLD_1) {
-        return 0;
-    } else if (distance < BIOME_THRESHOLD_2) {
-        return 1;
-    } else if (distance < BIOME_THRESHOLD_3) {
-        return 2;
-    } else {
-        return 3;
-    }
-}
-
-function updateBiomeFromDistance() {
-  const newIndex = getBiomeIndexFromDistance(game.distance);
-  if (newIndex !== GameState.biomeIndex) {
-    GameState.biomeIndex = newIndex;
-  }
-}
-
-function defineBiomePalettes() {
-    const openSlope = ["#FFD700", "#8B4513", "#DEB887", "#F4A460", "#D2691E"];
-    const forest = ["#228B22", "#556B2F", "#8FBC8F", "#ADFF2F", "#3CB371"];
-    const duskNight = ["#483D8B", "#00008B", "#191970", "#4682B4", "#6A5ACD"];
-    const alpine = ["#FFFFFF", "#E0FFFF", "#ADD8E6", "#B0C4DE", "#F0F8FF"];
-
-    GameState.biomePalettes = {
-        openSlope: openSlope,
-        forest: forest,
-        duskNight: duskNight,
-        alpine: alpine
-    };
-
-    function updateBiomePalette() {
-        const biomeIndex = getBiomeIndexFromDistance(distance);
-        let palette;
-        switch (biomeIndex) {
-            case 0:
-                palette = openSlope;
-                break;
-            case 1:
-                palette = forest;
-                break;
-            case 2:
-                palette = duskNight;
-                break;
-            case 3:
-                palette = alpine;
-                break;
-            default:
-                palette = openSlope;
-        }
-        GameState.currentPalette = palette;
-    }
-
-    updateBiomePalette();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 </body>
 </html>

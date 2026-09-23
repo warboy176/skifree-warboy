@@ -17,47 +17,14 @@ Operator direction from the daily report lands here.
 ## Phase 1 — Capture the feel
 - [x] Attract / demo mode: an auto-player behind the `?demo=1` URL flag that starts runs, dodges deadly obstacles, jumps hazards, and restarts after game-over. Off by default; must not change normal play.
 - [x] Ski-lift / lodge start: a short intro at a lift/lodge, then the player pushes off downhill into the run (skippable with a key / tap).
-- [x] Other skiers: NPC skiers share the slope, carving their own lines; the player can weave around (or into) them.
-- [x] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.
-- [x] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
-- [x] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
+- [ ] Other skiers: NPC skiers share the slope, carving their own lines; the player can weave around (or into) them.
+- [ ] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.
+- [ ] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
+- [ ] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
 
 ## Phase 2 — The living slope
-- [x] Add a depthMeter property to the game object initialized to 0
-- [x] Increment depthMeter by METERS_PER_PIXEL multiplied by the player's vertical speed each frame during PLAYING state
-- [!] Update the depthMeter in the game loop by incrementing it with deltaY multiplied by METERS_PER_PIXEL  <!-- blocked: reasoner produced no valid envelopes (redundant); deferred by maintenance -->
-- [!] Initialize depthMeter to 0 when the game state changes from START to INTRO  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [!] Ensure depthMeter is reset only during the transition from START to INTRO, not in any other state  <!-- blocked: 0/0 envelopes (redundant plumbing); deferred by maintenance -->
-- [!] Store the depthMeter value in localStorage when the game ends  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
-- [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
-- [!] Add a depthMeter property to the game state, initialized to 0 and incremented by 1 per meter of descent  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [!] Add a depthMeter property to the game object, initialized to 0, to track descent distance  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
-- [!] Implement a depthMeter getter that returns the current descent distance in meters  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
-- [!] Update the depthMeter in the game loop by incrementing it based on player speed and deltaTime  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
-- [x] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
-- [x] Add a function to check current distance against thresholds and return the next biome index
-- [x] Create a function to update the current biome based on distance, only when crossing a threshold
-- [!] Create a function to map current distance to current biome index (0-3)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [x] Define four distinct color palettes for open slope, forest, dusk/night, and alpine as arrays of CSS color strings
-- [!] Add a distance-based palette mapping function that returns a color set based on player's traveled meters  <!-- blocked: pipeline: item INCOMPLETE — 0/5 landed, 0 unspecifiable, 3 e -->
-- [ ] Modify the canvas rendering loop to apply the current palette's colors to all drawn elements using the palette mapping function
-- [ ] Modify the terrain drawing function to use the active palette's colors for snow, ground, and background elements
-- [ ] Ensure the palette transition is smooth by interpolating between adjacent palettes during the changeover
-- [ ] Add a function to interpolate between adjacent palette bands based on depth progress
-- [ ] Update the canvas background rendering to use the current biome palette at each frame
-- [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
-- [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
-- [ ] Add a Dog class with x, y, speed, width, and height properties, initialized with random x position and fixed y position within the visible canvas
-- [ ] Initialize an array of Dog instances in the game state with a fixed number of dogs at random x positions and fixed y positions
-- [ ] Add a draw method to the Dog class to render the dog using Warboy's original pixel-art style on the canvas
-- [ ] Update the game loop to call the draw method for each Dog instance during the PLAYING state
-- [ ] Implement a Dog.update() method that moves the dog horizontally at a fixed speed, wrapping around the screen when it exits the left or right edge
-- [ ] Add a Dog.draw() method that renders the dog using Warboy's original pixel-art style with a simple shape and color in the canvas
-- [ ] Modify the game loop to call Dog.update() and Dog.draw() for each dog in the game's dog array
-- [ ] Implement collision detection between the player and dogs, triggering a wipeout if the player hits one while not in a scoring state
-- [ ] Add a 'dog' type to the obstacle array with a unique visual design using original pixel art in code
-- [ ] Introduce a scoring mechanic that rewards the player for hitting a dog with a slalom maneuver, adding a style point and multiplier
-- [ ] Ensure the dog disappears after crossing the screen or after a brief chase duration, preventing infinite persistence
+- [ ] Terrain progression: the biome visibly changes with depth (open slope → forest → dusk/night → alpine), affecting palette and obstacle density.
+- [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
