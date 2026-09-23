@@ -38,7 +38,10 @@ Operator direction from the daily report lands here.
 - [x] Add a function to check current distance against thresholds and return the next biome index
 - [x] Create a function to update the current biome based on distance, only when crossing a threshold
 - [!] Create a function to map current distance to current biome index (0-3)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine
+- [ ] Define four distinct color palettes for open slope, forest, dusk/night, and alpine as arrays of CSS color strings
+- [ ] Create a function to switch the current palette based on player's distance traveled, updating only the canvas rendering colors
+- [ ] Modify the terrain drawing function to use the active palette's colors for snow, ground, and background elements
+- [ ] Ensure the palette transition is smooth by interpolating between adjacent palettes during the changeover
 - [ ] Add a function to interpolate between adjacent palette bands based on depth progress
 - [ ] Update the canvas background rendering to use the current biome palette at each frame
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
