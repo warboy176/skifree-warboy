@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to check current distance against thresholds and return the next biome index (getBiomeIndexFromDistance)
 - Define biome transition thresholds as constants: 1000, 3000, and 5000 meters (defineBiomeThresholds)
 - Increment depthMeter by METERS_PER_PIXEL multiplied by the player's vertical speed each frame during PLAYING state (initDepthMeter, updateDepthMeter)
 - Add a depthMeter property to the game object initialized to 0 (initGameDepthMeter)
