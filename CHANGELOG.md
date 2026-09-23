@@ -1,4 +1,5 @@
 # Changelog
+- Define biome transition thresholds as constants: 1000, 3000, and 5000 meters (defineBiomeThresholds)
 - Increment depthMeter by METERS_PER_PIXEL multiplied by the player's vertical speed each frame during PLAYING state (initDepthMeter, updateDepthMeter)
 - Add a depthMeter property to the game object initialized to 0 (initGameDepthMeter)
 - Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused. (initPauseState, initPauseState, drawPausedOverlay, handlePauseInput)
