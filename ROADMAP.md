@@ -28,7 +28,8 @@ Operator direction from the daily report lands here.
 - [!] Update the depthMeter in the game loop by incrementing it with deltaY multiplied by METERS_PER_PIXEL  <!-- blocked: reasoner produced no valid envelopes (redundant); deferred by maintenance -->
 - [!] Initialize depthMeter to 0 when the game state changes from START to INTRO  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure depthMeter is reset only during the transition from START to INTRO, not in any other state  <!-- blocked: 0/0 envelopes (redundant plumbing); deferred by maintenance -->
-- [ ] Persist the depthMeter value across game restarts by storing it in localStorage on game end and restoring it on startup
+- [ ] Store the depthMeter value in localStorage when the game ends
+- [ ] Restore the depthMeter value from localStorage on game startup if available
 - [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
 - [ ] Biome palette bands: at depth thresholds, transition the slope/sky palette through four bands (open slope, forest, dusk/night, alpine); palette only.
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
