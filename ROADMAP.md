@@ -40,7 +40,11 @@ Operator direction from the daily report lands here.
 - [!] Update the canvas background rendering to use the current biome palette at each frame  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
 - [!] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
 - [!] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.  <!-- blocked: terrain/biome family churns all coder tiers; deferred by maintenance, revisit as one task -->
-- [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
+- [ ] Add a Dog class with a fixed speed, random starting position, and a simple horizontal movement pattern across the screen
+- [ ] Implement collision detection between the player and dogs, triggering a wipeout if the player hits one while not in a scoring state
+- [ ] Add a 'dog' type to the obstacle array with a unique visual design using original pixel art in code
+- [ ] Introduce a scoring mechanic that rewards the player for hitting a dog with a slalom maneuver, adding a style point and multiplier
+- [ ] Ensure the dog disappears after crossing the screen or after a brief chase duration, preventing infinite persistence
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
