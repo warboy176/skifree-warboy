@@ -30,7 +30,8 @@ Operator direction from the daily report lands here.
 - [!] Ensure depthMeter is reset only during the transition from START to INTRO, not in any other state  <!-- blocked: 0/0 envelopes (redundant plumbing); deferred by maintenance -->
 - [!] Store the depthMeter value in localStorage when the game ends  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
-- [ ] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic
+- [ ] Add a depthMeter property to the game state, initialized to 0 and incremented by 1 per meter of descent
+- [ ] Expose depthMeter as a read-only getter in the game object for use by obstacle and terrain spawn systems
 - [ ] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
 - [ ] Add a function to check current distance against thresholds and return the next biome index
 - [ ] Create a function to update the current biome based on distance, only when crossing a threshold
