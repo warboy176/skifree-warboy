@@ -242,6 +242,8 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
+defineBiomeThresholds();
+
 initNPCs();
 initTrickSystem();
 
@@ -1097,6 +1099,26 @@ function updateDepthMeter(dt) {
         depthMeter += METERS_PER_PIXEL * PlayerState.verticalSpeed * dt;
     }
 }
+
+function defineBiomeThresholds() {
+    const BIOME_THRESHOLD_1 = 1000;
+    const BIOME_THRESHOLD_2 = 3000;
+    const BIOME_THRESHOLD_3 = 5000;
+
+    // Example usage within the game loop or other relevant functions
+    function updateBiome() {
+        if (distance >= BIOME_THRESHOLD_3) {
+            // Change to biome 3
+        } else if (distance >= BIOME_THRESHOLD_2) {
+            // Change to biome 2
+        } else if (distance >= BIOME_THRESHOLD_1) {
+            // Change to biome 1
+        }
+    }
+
+    // Call updateBiome where appropriate, e.g., in the main game loop
+}
+
 
 
 
