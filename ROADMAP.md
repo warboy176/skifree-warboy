@@ -36,7 +36,7 @@ Operator direction from the daily report lands here.
 - [!] Update the depthMeter in the game loop by incrementing it based on player speed and deltaTime  <!-- blocked: redundant depthMeter plumbing (exists via #5/#6); deferred, reversible -->
 - [x] Define biome transition thresholds as constants: 1000, 3000, and 5000 meters
 - [x] Add a function to check current distance against thresholds and return the next biome index
-- [ ] Create a function to update the current biome based on distance, only when crossing a threshold
+- [x] Create a function to update the current biome based on distance, only when crossing a threshold
 - [ ] Create a function to map current distance to current biome index (0-3)
 - [ ] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine
 - [ ] Add a function to interpolate between adjacent palette bands based on depth progress
