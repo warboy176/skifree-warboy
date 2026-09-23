@@ -31,7 +31,11 @@ Operator direction from the daily report lands here.
 - [!] Store the depthMeter value in localStorage when the game ends  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Restore the depthMeter value from localStorage on game startup if available  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
 - [!] Expose the depthMeter value to the obstacle and terrain spawn systems as a read-only metric for future biome progression logic  <!-- blocked: over-split depthMeter plumbing churn; deferred by maintenance, revisit as one coherent item -->
-- [ ] Biome palette bands: at depth thresholds, transition the slope/sky palette through four bands (open slope, forest, dusk/night, alpine); palette only.
+- [ ] Add depth threshold constants for biome transitions at 1000, 3000, 5000 meters
+- [ ] Create a function to map current distance to current biome index (0-3)
+- [ ] Implement a palette lookup table with four distinct color sets for open slope, forest, dusk/night, and alpine
+- [ ] Add a function to interpolate between adjacent palette bands based on depth progress
+- [ ] Update the canvas background rendering to use the current biome palette at each frame
 - [ ] Depth-scaled obstacle density: obstacle spawn rate rises with the current depth band.
 - [ ] Biome props (original art): each band shows its own ORIGINAL decorative sprites (pines in forest, rocks/ice in alpine); original art only.
 - [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
