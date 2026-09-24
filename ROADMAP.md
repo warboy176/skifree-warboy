@@ -44,7 +44,10 @@ Operator direction from the daily report lands here.
 - [!] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 ## Phase 2 — The living slope
-- [ ] Terrain progression: the biome visibly changes with depth (open slope → forest → dusk/night → alpine), affecting palette and obstacle density.
+- [ ] Add biome transition logic that triggers at specific depth thresholds (e.g., 1000m, 2000m, 3000m) and updates a global biome state
+- [ ] Implement a function to update the canvas palette based on current biome (open slope → forest → dusk/night → alpine) using CSS custom properties
+- [ ] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome
+- [ ] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art
 - [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
