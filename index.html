@@ -240,6 +240,7 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
+    initNPCs();
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
 
@@ -505,6 +506,41 @@ if (autoplay.enabled) {
       rect(Math.round(x1+dx*t-width/2),Math.round(y1+dy*t-width/2),width,width,color);
     }
   }
+
+  // --- NPC skiers (other skiers on the slope) --------------------------------------------------
+  // Original art: simple geometric skier built from rect() primitives. Each is a self-contained
+  // object with the update()/draw() methods the main loop already calls on game.npcSkiers.
+  function makeNpcSkier(){
+    return {
+      x: player.x + rand(-W*0.42, W*0.42),
+      y: player.y + rand(-H*0.3, H*1.2),       // spread across the visible slope + a stream ahead
+      sp: rand(0.4, 1.2),                                   // drifts down-slope slower than the player
+      tone: pick(['#c94f4f','#4f7bc9','#5aa15a','#c9a24f','#8a5ac9','#c96fae']),
+      update(){
+        this.y += this.sp;
+        if (this.y < player.y - H*0.85 || this.y > player.y + H*2.4){
+          this.x = player.x + rand(-W*0.42, W*0.42);        // overtaken / far ahead -> recycle ahead
+          this.y = player.y + rand(H*0.9, H*1.6);
+          this.sp = rand(0.4, 1.2);
+        }
+      },
+      draw(){
+        const q = worldToScreen(this.x, this.y);
+        if (q.y < -50 || q.y > H+90) return;                // generous off-screen cull
+        rect(q.x-8, q.y+2, 7, 2, '#3a3a44');                // left ski
+        rect(q.x+1, q.y+2, 7, 2, '#3a3a44');                // right ski
+        rect(q.x-8, q.y-6, 2, 10, '#6f4a2c');               // left pole
+        rect(q.x+6, q.y-6, 2, 10, '#6f4a2c');               // right pole
+        rect(q.x-4, q.y-7, 8, 10, this.tone);               // torso (colored jacket)
+        rect(q.x-3, q.y-14, 6, 6, '#f0cfa6');               // head
+      }
+    };
+  }
+  function initNPCs(){
+    game.npcSkiers = [];
+    for (let i=0; i<6; i++) game.npcSkiers.push(makeNpcSkier());
+  }
+
   function worldToScreen(x,y){ return {x:W/2+(x-player.x),y:HUD_H+y-game.cameraY}; }
 
   function drawSnow(){
