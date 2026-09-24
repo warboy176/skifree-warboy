@@ -919,6 +919,11 @@ if (autoplay.enabled) {
     update(dt);render();requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+
+function initGameState() {
+    game.state = GameState.PAUSED;
+}
+
 })();
 </script>
 </body>
