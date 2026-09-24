@@ -33,7 +33,7 @@ Operator direction from the daily report lands here.
 - [!] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.  <!-- blocked: pipeline NOT started: /mnt/warboy/.mission_repos/skifree-war -->
 - [x] Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts
 - [!] Add a new state 'PAUSED' to the GameState enum and initialize it in the game state object  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function to toggle between GameState.PLAYING and GameState.PAUSED when the 'P' key is pressed
+- [x] Create a function to toggle between GameState.PLAYING and GameState.PAUSED when the 'P' key is pressed
 - [ ] Integrate the pause toggle function into the game loop's input handling, ensuring it only triggers in PLAYING state
 - [ ] Update the game loop to halt all updates and rendering when in PAUSED state, preserving current frame
 - [ ] Add visual feedback in the UI: display a 'PAUSED' overlay or status message when paused, visible only during PAUSED state

@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to toggle between GameState.PLAYING and GameState.PAUSED when the 'P' key is pressed (togglePauseState)
 - Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts (initGameState)
 - Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap (initNPCs, updateNPCs, checkPlayerNPCCollision)
 - Define four distinct color palettes for open slope, forest, dusk/night, and alpine as arrays of CSS color strings (defineBiomePalettes)
