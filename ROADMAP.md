@@ -21,7 +21,8 @@ Operator direction from the daily report lands here.
 - [!] Create a function to spawn a new NPC skier at a random x-position with a fixed vertical spacing from the last one  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [!] Add a timer to trigger NPC skier spawning at random intervals between 1.5 and 3 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure new skiers are only spawned during gameplay and not in intro or game over states  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement NPC skier movement with independent, smooth scrolling at a fixed speed relative to the player
+- [ ] Add NPC skier movement that updates their y-position based on a fixed speed relative to the player's scroll rate
+- [ ] Ensure NPC skiers are drawn at their correct screen position relative to the scrolling slope, using the player's vertical offset
 - [ ] Ensure NPC skiers are drawn on the canvas using original pixel-art style and remain visible throughout the scroll
 - [ ] Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap
 - [ ] Enable player weaving around NPC skiers by allowing movement through their space without immediate collision
