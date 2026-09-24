@@ -19,7 +19,7 @@ Operator direction from the daily report lands here.
 - [x] Ski-lift / lodge start: a short intro at a lift/lodge, then the player pushes off downhill into the run (skippable with a key / tap).
 - [!] Initialize an array to track active NPC skiers in the game state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to spawn a new NPC skier at a random x-position with a fixed vertical spacing from the last one  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a timer to trigger NPC skier spawning at random intervals between 1.5 and 3 seconds
+- [!] Add a timer to trigger NPC skier spawning at random intervals between 1.5 and 3 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure new skiers are only spawned during gameplay and not in intro or game over states
 - [ ] Implement NPC skier movement with independent, smooth scrolling at a fixed speed relative to the player
 - [ ] Ensure NPC skiers are drawn on the canvas using original pixel-art style and remain visible throughout the scroll
