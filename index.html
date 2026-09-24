@@ -74,6 +74,8 @@ function gameLoop() {
     showIntro();
   } else if (game.state === GameState.INTRO) {
     handleIntroInput();
+togglePauseState();
+
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
 
@@ -923,6 +925,17 @@ if (autoplay.enabled) {
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+
+function togglePauseState() {
+    if (keyName === 'P') {
+        if (game.state === GameState.PAUSED) {
+            game.state = GameState.PLAYING;
+        } else if (game.state === GameState.PLAYING) {
+            game.state = GameState.PAUSED;
+        }
+    }
+}
+
 
 })();
 </script>
