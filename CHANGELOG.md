@@ -1,4 +1,5 @@
 # Changelog
+- Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts (initGameState)
 - Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap (initNPCs, updateNPCs, checkPlayerNPCCollision)
 - Define four distinct color palettes for open slope, forest, dusk/night, and alpine as arrays of CSS color strings (defineBiomePalettes)
 - Create a function to update the current biome based on distance, only when crossing a threshold (updateBiomeFromDistance)
