@@ -41,7 +41,7 @@ Operator direction from the daily report lands here.
 - [!] Display a 'PAUSED' overlay on the canvas with a clear visual indicator and instructions to press 'P' to resume  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a key handler for 'P' that toggles between PLAYING and PAUSED states
 - [!] Modify the game loop to skip updates and rendering when in PAUSED state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style
+- [!] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 ## Phase 2 — The living slope
 - [ ] Terrain progression: the biome visibly changes with depth (open slope → forest → dusk/night → alpine), affecting palette and obstacle density.
