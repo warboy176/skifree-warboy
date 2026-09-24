@@ -77,13 +77,7 @@ function gameLoop() {
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
 
-// NPC Skier logic
-if (game.state === GameState.PLAYING) {
-  game.npcSkiers.forEach(skier => {
-    skier.update();
-    skier.draw();
-  });
-}
+// (NPC skiers are drawn inside render(), after the background — see below)
   }
   // Other game states...
   requestAnimationFrame(gameLoop);
@@ -860,6 +854,7 @@ if (autoplay.enabled) {
     drawSnow();
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
+    if(game.state===GameState.PLAYING) game.npcSkiers.forEach(sk=>{sk.update();sk.draw();});
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
