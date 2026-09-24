@@ -1,4 +1,5 @@
 # Changelog
+- Implement a key handler for 'P' that toggles between PLAYING and PAUSED states (handlePauseKey)
 - Add visual feedback in the UI: display a 'PAUSED' overlay or status message when paused, visible only during PAUSED state (drawPausedOverlay)
 - Create a function to toggle between GameState.PLAYING and GameState.PAUSED when the 'P' key is pressed (togglePauseState)
 - Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts (initGameState)
