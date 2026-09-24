@@ -304,6 +304,12 @@ if (autoplay.enabled) {
       player.invulnerable=1.1;
       break;
     }
+    if(Array.isArray(game.npcSkiers)){
+      for(const s of game.npcSkiers){
+        if(Math.abs(s.y-player.y)>65) continue;
+        if(overlaps(pb,{x:s.x-8,y:s.y-15,w:16,h:26})){ s.hit=0.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -506,27 +512,36 @@ if (autoplay.enabled) {
   // object with the update()/draw() methods the main loop already calls on game.npcSkiers.
   function makeNpcSkier(){
     return {
-      x: player.x + rand(-W*0.42, W*0.42),
-      y: player.y + rand(-H*0.3, H*1.2),       // spread across the visible slope + a stream ahead
-      sp: rand(0.4, 1.2),                                   // drifts down-slope slower than the player
+      x: player.x + rand(-W*0.32, W*0.32),
+      y: player.y + rand(-H*0.3, H*1.2),
+      sp: rand(0.35, 1.05),
+      phase: rand(0, Math.PI*2),
+      hit: 0,
       tone: pick(['#c94f4f','#4f7bc9','#5aa15a','#c9a24f','#8a5ac9','#c96fae']),
+      hat: pick(['#2b2b33','#5a3a22','#204020','#3a2b4a']),
       update(){
+        this.phase += 0.16;                                 // animation phase (no dt on the render path)
         this.y += this.sp;
         if (this.y < player.y - H*0.85 || this.y > player.y + H*2.4){
-          this.x = player.x + rand(-W*0.42, W*0.42);        // overtaken / far ahead -> recycle ahead
+          this.x = player.x + rand(-W*0.32, W*0.32);        // overtaken / far ahead -> recycle ahead
           this.y = player.y + rand(H*0.9, H*1.6);
-          this.sp = rand(0.4, 1.2);
+          this.sp = rand(0.35, 1.05); this.phase = rand(0, Math.PI*2);
         }
       },
       draw(){
         const q = worldToScreen(this.x, this.y);
-        if (q.y < -50 || q.y > H+90) return;                // generous off-screen cull
-        rect(q.x-8, q.y+2, 7, 2, '#3a3a44');                // left ski
-        rect(q.x+1, q.y+2, 7, 2, '#3a3a44');                // right ski
-        rect(q.x-8, q.y-6, 2, 10, '#6f4a2c');               // left pole
-        rect(q.x+6, q.y-6, 2, 10, '#6f4a2c');               // right pole
-        rect(q.x-4, q.y-7, 8, 10, this.tone);               // torso (colored jacket)
-        rect(q.x-3, q.y-14, 6, 6, '#f0cfa6');               // head
+        if (q.y < -70 || q.y > H+110) return;
+        const x=q.x, y=q.y;
+        const sway=Math.sin(this.phase)*2.5;                // pole/arm sway
+        const kick=(Math.sin(this.phase*2)>0)?2:-2;         // leg kick (drone-style phase anim)
+        rect(x-14,y+18,12,3,'#2b2b33'); rect(x+2,y+18,12,3,'#2b2b33');        // skis
+        rect(x-6,y+6,4,13+kick,'#274a7d'); rect(x+2,y+6,4,13-kick,'#3a6bb0'); // legs (animated)
+        rect(x-14+sway,y-1,2,18,'#6f4a2c'); rect(x+12+sway,y-1,2,18,'#6f4a2c');// poles (sway)
+        rect(x-7,y-7,14,15,this.tone);                      // torso jacket
+        rect(x-5,y-5,10,8,'#eef0f4');                       // chest highlight
+        rect(x-10,y-6,4,10,'#c98a4f'); rect(x+6,y-6,4,10,'#c98a4f');          // arms
+        rect(x-5,y-17,10,10,'#f0cfa6');                     // head
+        rect(x-6,y-20,12,4,this.hat);                       // hat
       }
     };
   }
