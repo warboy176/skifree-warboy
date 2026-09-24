@@ -77,13 +77,7 @@ function gameLoop() {
   } else if (game.state === GameState.PLAYING) {
     // Existing playing logic
 
-// NPC Skier logic
-if (game.state === GameState.PLAYING) {
-  game.npcSkiers.forEach(skier => {
-    skier.update();
-    skier.draw();
-  });
-}
+// (NPC skiers are updated+drawn -- guarded -- inside render()'s PLAYING block; see below)
   }
   // Other game states...
   requestAnimationFrame(gameLoop);
@@ -860,6 +854,10 @@ if (autoplay.enabled) {
     drawSnow();
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
+    // Other skiers on the slope. GUARDED: the stray intro path (handleIntroInput) can reach
+    // PLAYING without startGame(), leaving game.npcSkiers undefined -> lazy-init here; the
+    // try/catch guarantees render() still reaches drawSkier()/drawHUD() so it can never blank.
+    if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.npcSkiers))initNPCs();for(let i=0;i<game.npcSkiers.length;i++){game.npcSkiers[i].update();game.npcSkiers[i].draw();}}catch(_npcErr){}}
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
