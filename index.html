@@ -307,7 +307,7 @@ if (autoplay.enabled) {
     if(Array.isArray(game.npcSkiers)){
       for(const s of game.npcSkiers){
         if(Math.abs(s.y-player.y)>65) continue;
-        if(overlaps(pb,{x:s.x-8,y:s.y-15,w:16,h:26})){ s.hit=0.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
+        if(overlaps(pb,{x:s.x-10,y:s.y-18,w:20,h:34})){ s.fallen=1.0; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
       }
     }
   }
@@ -516,32 +516,46 @@ if (autoplay.enabled) {
       y: player.y + rand(-H*0.3, H*1.2),
       sp: rand(0.35, 1.05),
       phase: rand(0, Math.PI*2),
-      hit: 0,
+      fallen: 0,
       tone: pick(['#c94f4f','#4f7bc9','#5aa15a','#c9a24f','#8a5ac9','#c96fae']),
       hat: pick(['#2b2b33','#5a3a22','#204020','#3a2b4a']),
       update(){
-        this.phase += 0.16;                                 // animation phase (no dt on the render path)
-        this.y += this.sp;
+        this.phase += 0.16;
+        if (this.fallen > 0){ this.fallen -= 0.018; this.y += this.sp*0.15; }  // down ~1s, barely drifts
+        else { this.y += this.sp; }
         if (this.y < player.y - H*0.85 || this.y > player.y + H*2.4){
-          this.x = player.x + rand(-W*0.32, W*0.32);        // overtaken / far ahead -> recycle ahead
+          this.x = player.x + rand(-W*0.32, W*0.32);
           this.y = player.y + rand(H*0.9, H*1.6);
-          this.sp = rand(0.35, 1.05); this.phase = rand(0, Math.PI*2);
+          this.sp = rand(0.35, 1.05); this.phase = rand(0, Math.PI*2); this.fallen = 0;
         }
       },
       draw(){
         const q = worldToScreen(this.x, this.y);
-        if (q.y < -70 || q.y > H+110) return;
-        const x=q.x, y=q.y;
-        const sway=Math.sin(this.phase)*2.5;                // pole/arm sway
-        const kick=(Math.sin(this.phase*2)>0)?2:-2;         // leg kick (drone-style phase anim)
-        rect(x-14,y+18,12,3,'#2b2b33'); rect(x+2,y+18,12,3,'#2b2b33');        // skis
-        rect(x-6,y+6,4,13+kick,'#274a7d'); rect(x+2,y+6,4,13-kick,'#3a6bb0'); // legs (animated)
-        rect(x-14+sway,y-1,2,18,'#6f4a2c'); rect(x+12+sway,y-1,2,18,'#6f4a2c');// poles (sway)
-        rect(x-7,y-7,14,15,this.tone);                      // torso jacket
-        rect(x-5,y-5,10,8,'#eef0f4');                       // chest highlight
-        rect(x-10,y-6,4,10,'#c98a4f'); rect(x+6,y-6,4,10,'#c98a4f');          // arms
-        rect(x-5,y-17,10,10,'#f0cfa6');                     // head
-        rect(x-6,y-20,12,4,this.hat);                       // hat
+        if (q.y < -90 || q.y > H+130) return;
+        ctx.save();
+        ctx.translate(q.x, q.y);
+        ctx.scale(1.5, 1.5);                              // player-sized presence
+        if (this.fallen > 0){
+          ctx.rotate(1.35);                               // toppled over on the slope
+          rect(-16,-2,13,3,'#2b2b33'); rect(3,-3,13,3,'#2b2b33');    // skis flung sideways
+          rect(-4,7,4,12,'#274a7d'); rect(2,8,4,11,'#3a6bb0');       // legs splayed
+          rect(-7,-6,14,14,this.tone);                    // torso down
+          rect(-14,3,2,15,'#6f4a2c');                     // pole flung out
+          rect(-5,-16,10,10,'#f0cfa6');                   // head to the side
+          rect(-6,-19,12,4,this.hat);                     // hat
+        } else {
+          const sway=Math.sin(this.phase)*2.5;
+          const kick=(Math.sin(this.phase*2)>0)?2:-2;
+          rect(-14,18,12,3,'#2b2b33'); rect(2,18,12,3,'#2b2b33');            // skis
+          rect(-6,6,4,13+kick,'#274a7d'); rect(2,6,4,13-kick,'#3a6bb0');     // legs (animated)
+          rect(-14+sway,-1,2,18,'#6f4a2c'); rect(12+sway,-1,2,18,'#6f4a2c'); // poles (sway)
+          rect(-7,-7,14,15,this.tone);                    // torso jacket
+          rect(-5,-5,10,8,'#eef0f4');                     // chest highlight
+          rect(-10,-6,4,10,'#c98a4f'); rect(6,-6,4,10,'#c98a4f');            // arms
+          rect(-5,-17,10,10,'#f0cfa6');                   // head
+          rect(-6,-20,12,4,this.hat);                     // hat
+        }
+        ctx.restore();
       }
     };
   }
