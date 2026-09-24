@@ -31,7 +31,10 @@ Operator direction from the daily report lands here.
 - [!] Modify the player's collision response to permit movement through NPC skiers when within the threshold, preserving momentum and direction <!-- blocked: depends on the NPC/collision system, which was rolled back and is not yet buildable (coder keeps inventing laneX); deferred by maintenance to unblock forward progress on independent features. Reopen when the NPC foundation lands under the hardened gate. -->
 - [!] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.  <!-- blocked: pipeline NOT started: /mnt/warboy/.mission_repos/skifree-war -->
-- [ ] Add a pause state to the game state machine with 'PAUSED' as a valid state
+- [ ] Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts
+- [ ] Implement a key press handler for 'P' that toggles between GameState.PLAYING and GameState.PAUSED
+- [ ] Pause the game loop and input processing when state is PAUSED, resuming on toggle
+- [ ] Display a 'PAUSED' overlay on the canvas with a clear visual indicator and instructions to press 'P' to resume
 - [ ] Implement a key handler for 'P' that toggles between PLAYING and PAUSED states
 - [ ] Modify the game loop to skip updates and rendering when in PAUSED state
 - [ ] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style
