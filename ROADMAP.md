@@ -40,7 +40,7 @@ Operator direction from the daily report lands here.
 - [!] Pause the game loop and input processing when state is PAUSED, resuming on toggle  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Display a 'PAUSED' overlay on the canvas with a clear visual indicator and instructions to press 'P' to resume  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a key handler for 'P' that toggles between PLAYING and PAUSED states
-- [ ] Modify the game loop to skip updates and rendering when in PAUSED state
+- [!] Modify the game loop to skip updates and rendering when in PAUSED state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style
 
 ## Phase 2 — The living slope
