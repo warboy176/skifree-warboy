@@ -950,6 +950,14 @@ function drawPausedOverlay() {
     }
 }
 
+function handlePauseKey(event) {
+  if (event.key === 'P') {
+    togglePauseState();
+    event.preventDefault();
+  }
+}
+
+
 
 
 })();
