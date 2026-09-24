@@ -44,7 +44,10 @@ Operator direction from the daily report lands here.
 - [!] Draw a dimmed 'PAUSED' overlay on top of the canvas when paused, using original art style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 ## Phase 2 — The living slope
-- [ ] Add biome transition logic that triggers at specific depth thresholds (e.g., 1000m, 2000m, 3000m) and updates a global biome state
+- [ ] Initialize a global biome state variable set to 'slope' at game start
+- [ ] Add depth threshold checks in the game loop that update biome state at 1000m, 2000m, and 3000m distances
+- [ ] Create a function to trigger biome-specific visual changes based on current biome state
+- [ ] Ensure biome transitions are only applied once per threshold and do not repeat
 - [ ] Implement a function to update the canvas palette based on current biome (open slope → forest → dusk/night → alpine) using CSS custom properties
 - [ ] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome
 - [ ] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art
