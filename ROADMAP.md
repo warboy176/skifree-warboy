@@ -23,7 +23,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure new skiers are only spawned during gameplay and not in intro or game over states  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add NPC skier movement that updates their y-position based on a fixed speed relative to the player's scroll rate  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure NPC skiers are drawn at their correct screen position relative to the scrolling slope, using the player's vertical offset  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 3 e -->
-- [ ] Draw each NPC skier using Warboy's original pixel-art style with unique, hand-coded shapes and colors in the canvas context
+- [!] Draw each NPC skier using Warboy's original pixel-art style with unique, hand-coded shapes and colors in the canvas context  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure NPC skiers are rendered at their correct y-position relative to the scrolling slope, updating their vertical position each frame based on game speed
 - [ ] Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap
 - [ ] Enable player weaving around NPC skiers by allowing movement through their space without immediate collision
