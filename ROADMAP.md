@@ -32,7 +32,11 @@ Operator direction from the daily report lands here.
 - [!] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.  <!-- blocked: pipeline NOT started: /mnt/warboy/.mission_repos/skifree-war -->
 - [x] Add 'PAUSED' to the GameState enum and initialize game.state as GameState.PAUSED when the game starts
-- [ ] Implement a key press handler for 'P' that toggles between GameState.PLAYING and GameState.PAUSED
+- [ ] Add a new state 'PAUSED' to the GameState enum and initialize it in the game state object
+- [ ] Create a function to toggle between GameState.PLAYING and GameState.PAUSED when the 'P' key is pressed
+- [ ] Integrate the pause toggle function into the game loop's input handling, ensuring it only triggers in PLAYING state
+- [ ] Update the game loop to halt all updates and rendering when in PAUSED state, preserving current frame
+- [ ] Add visual feedback in the UI: display a 'PAUSED' overlay or status message when paused, visible only during PAUSED state
 - [ ] Pause the game loop and input processing when state is PAUSED, resuming on toggle
 - [ ] Display a 'PAUSED' overlay on the canvas with a clear visual indicator and instructions to press 'P' to resume
 - [ ] Implement a key handler for 'P' that toggles between PLAYING and PAUSED states
