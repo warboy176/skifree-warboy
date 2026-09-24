@@ -17,7 +17,10 @@ Operator direction from the daily report lands here.
 ## Phase 1 — Capture the feel
 - [x] Attract / demo mode: an auto-player behind the `?demo=1` URL flag that starts runs, dodges deadly obstacles, jumps hazards, and restarts after game-over. Off by default; must not change normal play.
 - [x] Ski-lift / lodge start: a short intro at a lift/lodge, then the player pushes off downhill into the run (skippable with a key / tap).
-- [ ] Add NPC skier spawning logic that generates new skiers at random intervals with consistent spacing
+- [ ] Initialize an array to track active NPC skiers in the game state
+- [ ] Create a function to spawn a new NPC skier at a random x-position with a fixed vertical spacing from the last one
+- [ ] Add a timer to trigger NPC skier spawning at random intervals between 1.5 and 3 seconds
+- [ ] Ensure new skiers are only spawned during gameplay and not in intro or game over states
 - [ ] Implement NPC skier movement with independent, smooth scrolling at a fixed speed relative to the player
 - [ ] Ensure NPC skiers are drawn on the canvas using original pixel-art style and remain visible throughout the scroll
 - [ ] Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap
