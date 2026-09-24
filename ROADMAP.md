@@ -26,9 +26,9 @@ Operator direction from the daily report lands here.
 - [!] Draw each NPC skier using Warboy's original pixel-art style with unique, hand-coded shapes and colors in the canvas context  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure NPC skiers are rendered at their correct y-position relative to the scrolling slope, updating their vertical position each frame based on game speed  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add collision detection between the player and NPC skiers that triggers a crash only on direct overlap
-- [ ] Add a configurable collision margin of 5 pixels to the player's hitbox in the collision detection logic
-- [ ] Modify the NPC skier collision check to use the 5-pixel margin instead of direct pixel overlap
-- [ ] Modify the player's collision response to permit movement through NPC skiers when within the threshold, preserving momentum and direction
+- [!] Add a configurable collision margin of 5 pixels to the player's hitbox in the collision detection logic <!-- blocked: depends on the NPC/collision system, which was rolled back and is not yet buildable (coder keeps inventing laneX); deferred by maintenance to unblock forward progress on independent features. Reopen when the NPC foundation lands under the hardened gate. -->
+- [!] Modify the NPC skier collision check to use the 5-pixel margin instead of direct pixel overlap <!-- blocked: depends on the NPC/collision system, which was rolled back and is not yet buildable (coder keeps inventing laneX); deferred by maintenance to unblock forward progress on independent features. Reopen when the NPC foundation lands under the hardened gate. -->
+- [!] Modify the player's collision response to permit movement through NPC skiers when within the threshold, preserving momentum and direction <!-- blocked: depends on the NPC/collision system, which was rolled back and is not yet buildable (coder keeps inventing laneX); deferred by maintenance to unblock forward progress on independent features. Reopen when the NPC foundation lands under the hardened gate. -->
 - [ ] Chase antagonist: an ORIGINAL creature of Warboy's own design appears if the player dawdles / after a distance, and pursues — catching you ends the run. Original art only.
 - [ ] Tricks & air: launching off a jump/mogul gives air time and a simple trick (rotation/grab) that awards style points on a clean landing.
 - [ ] Pause: `P` toggles a dimmed "PAUSED" overlay; the loop must not advance while paused.
