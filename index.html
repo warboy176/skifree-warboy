@@ -240,8 +240,6 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
-initNPCs();
-
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
 
@@ -477,14 +475,10 @@ initNPCs();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
-updateNPCs(dt);
-
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
-        updateYeti(simDt);updateObstacles(simDt);handleCollisions();
-checkPlayerNPCCollision();
-generateCourse();
+        updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
       game.cameraY+=(targetCam-game.cameraY)*Math.min(1,simDt*7);
@@ -862,51 +856,6 @@ generateCourse();
     update(dt);render();requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
-
-function initNPCs() {
-    game.npcSkiers = [];
-    for (let i = 0; i < 5; i++) {
-        let x = Math.random() * (game.canvas.width - NPC_SKIER_WIDTH);
-        let y = Math.random() * (game.canvas.height - NPC_SKIER_HEIGHT);
-        let speed = NPC_SKIER_SPEED + Math.random() * 2;
-        game.npcSkiers.push({
-            x: x,
-            y: y,
-            width: NPC_SKIER_WIDTH,
-            height: NPC_SKIER_HEIGHT,
-            speed: speed,
-            color: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
-        });
-    }
-}
-
-function updateNPCs(dt) {
-    for (let i = 0; i < game.npcSkiers.length; i++) {
-        let skier = game.npcSkiers[i];
-        skier.y += skier.speed * dt;
-        if (skier.y > canvas.height) {
-            skier.x = Math.random() * canvas.width;
-            skier.y = 0;
-            skier.speed = NPC_SKIER_SPEED + Math.random() * 2;
-        }
-    }
-}
-
-function checkPlayerNPCCollision() {
-    for (let i = 0; i < game.npcSkiers.length; i++) {
-        let npc = game.npcSkiers[i];
-        if (boxForPlayer.x < npc.box.x + npc.box.width &&
-            boxForPlayer.x + boxForPlayer.width > npc.box.x &&
-            boxForPlayer.y < npc.box.y + npc.box.height &&
-            boxForPlayer.y + boxForPlayer.height > npc.box.y) {
-            game.state = GameState.GAMEOVER;
-            drawCrashPose();
-        }
-    }
-}
-
-
-
 })();
 </script>
 </body>
