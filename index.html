@@ -1013,6 +1013,16 @@ function spawnHighJumpRamps() {
   }
 }
 
+function updateHighJumpRamps(dt) {
+  for (let i = 0; i < game.highJumpRamps.length; i++) {
+    let ramp = game.highJumpRamps[i];
+    if (ramp.active) {
+      rect(ramp.x, ramp.y, 40, 10, 'white');
+    }
+  }
+}
+
+
 
 
 
