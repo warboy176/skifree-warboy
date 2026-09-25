@@ -81,7 +81,7 @@ Operator direction from the daily report lands here.
 ## Phase 3 — Depth & identity
 - [!] Coins / collectibles: pickups on the slope that add to score; a light risk/reward line to chase. <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Speed boosts: boost pads/pickups that briefly increase speed (and risk); clear visual feedback. <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
-- [ ] High-jump ramps: special ramps that launch bigger air for bigger trick scores.
+- [x] High-jump ramps: special ramps that launch bigger air for bigger trick scores.
 - [ ] Selectable skins: a small selection of ORIGINAL player skins/characters, chosen on the start screen and persisted.
 - [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
