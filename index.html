@@ -929,6 +929,8 @@ drawPausedOverlay();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initHighJumpRamps();
+
 initDogs();
 
 initBiomeState();
@@ -984,6 +986,20 @@ function checkNPCProximity(dt) {
     }
   }
 }
+
+function initHighJumpRamps() {
+  game.highJumpRamps = [];
+  for (let i = 0; i < 5; i++) {
+    game.highJumpRamps.push({
+      type: 'highJump',
+      width: 40,
+      height: 10,
+      y: canvas.height - 100,
+      active: false
+    });
+  }
+}
+
 
 
 
