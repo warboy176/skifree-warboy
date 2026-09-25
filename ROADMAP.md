@@ -84,7 +84,7 @@ Operator direction from the daily report lands here.
 - [x] High-jump ramps: special ramps that launch bigger air for bigger trick scores.
 - [!] Add a skin selection menu to the start screen with three original Warboy-designed player art variants drawn in code using only the existing canvas context  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement logic to store and switch between selected skin variants using a simple state variable in the game object  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
-- [ ] Update the player's visual representation on start screen and during gameplay based on the selected skin variant
+- [!] Update the player's visual representation on start screen and during gameplay based on the selected skin variant  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Store the selected skin choice in localStorage and apply it when the game starts
 - [ ] Ensure the selected skin is drawn in place of the default player character during gameplay
 - [ ] Update the game loop to use the selected skin's art in all rendering functions
