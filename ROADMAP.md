@@ -47,7 +47,7 @@ Operator direction from the daily report lands here.
 - [x] Initialize a global biome state variable set to 'slope' at game start
 - [!] Add depth threshold checks in the game loop that update biome state at 1000m, 2000m, and 3000m distances  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to trigger biome-specific visual changes based on current biome state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Ensure biome transitions are only applied once per threshold and do not repeat
+- [!] Ensure biome transitions are only applied once per threshold and do not repeat  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
 - [ ] Implement a function to update the canvas palette based on current biome (open slope → forest → dusk/night → alpine) using CSS custom properties
 - [ ] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome
 - [ ] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art
