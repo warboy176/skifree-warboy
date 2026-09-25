@@ -56,14 +56,12 @@ Operator direction from the daily report lands here.
 - [!] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Ensure the game state has a shared `npcs` array initialized as an empty array  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a `npcs` array initialized as empty in the game state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create `spawnNpc(kind)` function that pushes a new object with `x`, `y`, and `kind` to the `npcs` array using NPC_SKIER_WIDTH and NPC_SKIER_HEIGHT for positioning
-- [ ] Ensure `spawnNpc` uses the existing `NPC_SKIER_SPEED` constant for the skier's speed
-- [ ] Modify the existing NPC skier update and draw logic to conditionally handle both 'skier' and 'dog' kinds based on the `kind` property
-- [ ] spawnNpc(dog): spawn a dog at a random x just above the top of the view, only while the game state is PLAYING
-- [ ] Dog movement in updateNpcs: a dog moves down-slope at NPC_SKIER_SPEED and steers its x toward the player position each frame (chase), iterating the npcs array
-- [ ] Draw dogs in drawNpcs as a reskin of the skier: same size, an ORIGINAL dog shape and palette (not the skier colors), reusing the existing NPC draw path
-- [ ] Dog collision: reuse the landed player-vs-NPC overlap check; on overlap with a dog, briefly SLOW the player with a short speed penalty instead of a hard crash, then the dog peels off
-- [ ] Extend scoring: award style points when the player slaloms close to or crashes through a dog, reusing the existing skier scoring hook
+- [ ] Add function initDogs() that sets game.dogs to a new empty array (separate from game.npcSkiers), and wire a call to it where the game state is initialized at start
+- [ ] Add function spawnDog() that pushes an object with x random, y set to -NPC_SKIER_HEIGHT, and dead false into game.dogs, sized from NPC_SKIER_WIDTH and NPC_SKIER_HEIGHT, only while the game state is PLAYING
+- [ ] Wire spawnDog() to fire on a timer at random intervals while the game state is PLAYING
+- [ ] Add function updateDogs() that moves each dog in game.dogs down-slope at NPC_SKIER_SPEED and steers its x toward the player x each frame to chase; wire it into the update loop
+- [ ] Add function drawDogs() that draws each dog in game.dogs as an ORIGINAL code-drawn dog shape and palette, distinct from the skier; wire it into the render path
+- [ ] Add function checkDogCollision() that, on player overlap with a dog in game.dogs, briefly SLOWS the player with a short speed penalty (not a hard crash) then marks the dog dead; wire it into the update loop
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
