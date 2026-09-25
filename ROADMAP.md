@@ -54,13 +54,12 @@ Operator direction from the daily report lands here.
 - [!] Define biome transition conditions based on player distance traveled, triggering palette updates <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
-- [!] Add a Dog class with a random starting position, speed, and direction on the slope  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add dog spawn logic that places dogs at random x positions on the screen when they appear
-- [ ] Implement horizontal movement for dogs using a constant speed, reversing direction when hitting left or right screen edges
-- [ ] Ensure dogs only move when the game is in PLAYING state and are updated within the game loop
-- [ ] Add collision detection between the player and the dog that triggers a wipeout if not evading
-- [ ] Extend the scoring system to grant points when the player slaloms close to or crashes through the dog
-- [ ] Ensure the dog appears only during gameplay and disappears after a brief chase phase
+- [ ] Reuse the NPC system for dogs: ensure a shared npcs array exists in game state and spawnNpc(kind) pushes {x, y, kind} sized from the existing NPC_SKIER_WIDTH and NPC_SKIER_HEIGHT consts (kind is skier or dog) — the shared foundation for skiers and dogs
+- [ ] spawnNpc(dog): spawn a dog at a random x just above the top of the view, only while the game state is PLAYING
+- [ ] Dog movement in updateNpcs: a dog moves down-slope at NPC_SKIER_SPEED and steers its x toward the player position each frame (chase), iterating the npcs array
+- [ ] Draw dogs in drawNpcs as a reskin of the skier: same size, an ORIGINAL dog shape and palette (not the skier colors), reusing the existing NPC draw path
+- [ ] Dog collision: reuse the landed player-vs-NPC overlap check; on overlap with a dog, briefly SLOW the player with a short speed penalty instead of a hard crash, then the dog peels off
+- [ ] Extend scoring: award style points when the player slaloms close to or crashes through a dog, reusing the existing skier scoring hook
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
