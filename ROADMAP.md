@@ -55,7 +55,9 @@ Operator direction from the daily report lands here.
 - [!] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Ensure the game state has a shared `npcs` array initialized as an empty array  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a `spawnNpc(kind)` function that pushes a new object with `x`, `y`, and `kind` to the `npcs` array using the existing NPC_SKIER_WIDTH and NPC_SKIER_HEIGHT constants
+- [ ] Add a `npcs` array initialized as empty in the game state
+- [ ] Create `spawnNpc(kind)` function that pushes a new object with `x`, `y`, and `kind` to the `npcs` array using NPC_SKIER_WIDTH and NPC_SKIER_HEIGHT for positioning
+- [ ] Ensure `spawnNpc` uses the existing `NPC_SKIER_SPEED` constant for the skier's speed
 - [ ] Modify the existing NPC skier update and draw logic to conditionally handle both 'skier' and 'dog' kinds based on the `kind` property
 - [ ] spawnNpc(dog): spawn a dog at a random x just above the top of the view, only while the game state is PLAYING
 - [ ] Dog movement in updateNpcs: a dog moves down-slope at NPC_SKIER_SPEED and steers its x toward the player position each frame (chase), iterating the npcs array
