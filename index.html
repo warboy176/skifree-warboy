@@ -927,6 +927,8 @@ drawPausedOverlay();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeState();
+
 
 function togglePauseState() {
     if (keyName === 'P') {
@@ -956,6 +958,11 @@ function handlePauseKey(event) {
     event.preventDefault();
   }
 }
+
+function initBiomeState() {
+    game.biome = 'slope';
+}
+
 
 
 
