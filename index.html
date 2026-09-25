@@ -478,6 +478,8 @@ if (autoplay.enabled) {
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkNPCProximity(dt);
+
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
@@ -968,6 +970,21 @@ function initBiomeState() {
 function initDogs() {
     game.dogs = [];
 }
+
+function checkNPCProximity(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    if (Math.abs(npc.x - PlayerState.x) <= 15) {
+      handleCollisions();
+      PlayerState.CRASHED = true;
+      player.speed *= 0.25;
+      game.cleanTime = 0;
+      game.shake = 0.25;
+      break;
+    }
+  }
+}
+
 
 
 
