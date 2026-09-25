@@ -927,6 +927,8 @@ drawPausedOverlay();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initDogs();
+
 initBiomeState();
 
 
@@ -962,6 +964,11 @@ function handlePauseKey(event) {
 function initBiomeState() {
     game.biome = 'slope';
 }
+
+function initDogs() {
+    game.dogs = [];
+}
+
 
 
 
