@@ -48,7 +48,10 @@ Operator direction from the daily report lands here.
 - [!] Add depth threshold checks in the game loop that update biome state at 1000m, 2000m, and 3000m distances  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to trigger biome-specific visual changes based on current biome state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
 - [!] Ensure biome transitions are only applied once per threshold and do not repeat  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Implement a function to update the canvas palette based on current biome (open slope → forest → dusk/night → alpine) using CSS custom properties
+- [ ] Add biome state tracking to the game object with initial value 'open_slope'
+- [ ] Create a function to update CSS custom properties based on current biome, using Warboy's original color palette
+- [ ] Extend the game loop to call the palette update function every frame if biome has changed
+- [ ] Define biome transition conditions based on player distance traveled, triggering palette updates
 - [ ] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome
 - [ ] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art
 - [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
