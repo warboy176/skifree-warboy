@@ -82,7 +82,10 @@ Operator direction from the daily report lands here.
 - [!] Coins / collectibles: pickups on the slope that add to score; a light risk/reward line to chase. <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Speed boosts: boost pads/pickups that briefly increase speed (and risk); clear visual feedback. <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [x] High-jump ramps: special ramps that launch bigger air for bigger trick scores.
-- [ ] Selectable skins: a small selection of ORIGINAL player skins/characters, chosen on the start screen and persisted.
+- [ ] Add a selectable skin list to the start screen with at least 3 original Warboy-designed player art variants drawn in code
+- [ ] Store the selected skin choice in localStorage and apply it when the game starts
+- [ ] Ensure the selected skin is drawn in place of the default player character during gameplay
+- [ ] Update the game loop to use the selected skin's art in all rendering functions
 - [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
 - [!] High-score initials: the local board records three-letter initials with an arcade-style entry screen. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
