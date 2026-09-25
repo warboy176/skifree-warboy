@@ -70,7 +70,8 @@ Operator direction from the daily report lands here.
 - [!] Add drone collision detection with the player, triggering a crash state on contact <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Draw the drone using original pixel-art style: a small, stylized flying machine with rotating propellers <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Add a combo counter that increments when the player slaloms close to or crashes through NPCs, resetting on collision with trees or oil slicks  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement style points for slaloming close to NPCs, awarded only when the player's position is within 15px horizontally of an NPC during their pass
+- [ ] Add a function to detect when the player is within 15px horizontally of any NPC skier during their pass
+- [ ] Add a function to award style points only when the player is within 15px of an NPC skier and both are moving forward
 - [ ] Add crash-through points when the player's collision with an NPC triggers a hit, with higher points for faster impact speeds
 - [ ] Display the current combo multiplier on the HUD, updating in real time as the player chains successful style actions
 - [ ] Render the total score and combo multiplier in the top-left corner of the HUD, with the combo shown as a glowing 'xN' indicator
