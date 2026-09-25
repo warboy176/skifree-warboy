@@ -236,6 +236,8 @@ if (autoplay.enabled) {
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
     generateCourse();
+spawnHighJumpRamps();
+
     initNPCs();
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
@@ -999,6 +1001,18 @@ function initHighJumpRamps() {
     });
   }
 }
+
+function spawnHighJumpRamps() {
+  for (let i = 0; i < 3; i++) {
+    const x = Math.random() * (canvas.width - 400) + 200;
+    const y = canvas.height - 100;
+    const width = 40;
+    const height = 10;
+    const active = true;
+    game.highJumpRamps.push({ x, y, width, height, active });
+  }
+}
+
 
 
 
