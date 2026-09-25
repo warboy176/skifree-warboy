@@ -87,7 +87,7 @@ Operator direction from the daily report lands here.
 - [!] Update the player's visual representation on start screen and during gameplay based on the selected skin variant  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Save the selected skin index to localStorage when a skin is chosen
 - [!] Load the saved skin index from localStorage and apply it at game start  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a new player skin selection state that stores the currently selected skin index
+- [!] Add a new player skin selection state that stores the currently selected skin index  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Modify the player's draw function to use the selected skin's original art instead of the default character
 - [ ] Ensure the selected skin is persistently applied across game restarts and maintained in the game state
 - [ ] Update the game loop to use the selected skin's art in all rendering functions
