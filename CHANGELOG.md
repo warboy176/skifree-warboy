@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect when the player is within 15px horizontally of any NPC skier during their pass (checkNPCProximity)
 - Add function initDogs() that sets game.dogs to a new empty array (separate from game.npcSkiers), and wire a call to it where the game state is initialized at start (initDogs)
 - Initialize a global biome state variable set to 'slope' at game start (initBiomeState)
 - Implement a key handler for 'P' that toggles between PLAYING and PAUSED states (handlePauseKey)
