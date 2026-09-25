@@ -74,8 +74,8 @@ Operator direction from the daily report lands here.
 - [ ] Add crash-through points when the player's collision with an NPC triggers a hit, with higher points for faster impact speeds
 - [ ] Display the current combo multiplier on the HUD, updating in real time as the player chains successful style actions
 - [ ] Render the total score and combo multiplier in the top-left corner of the HUD, with the combo shown as a glowing 'xN' indicator
-- [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
-- [ ] Mobile controls: on touch devices, two translucent steer zones + a jump button; prevent page scroll/zoom while playing.
+- [!] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
+- [!] Mobile controls: on touch devices, two translucent steer zones + a jump button; prevent page scroll/zoom while playing. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 
 ## Phase 3 — Depth & identity
 - [!] Coins / collectibles: pickups on the slope that add to score; a light risk/reward line to chase. <!-- blocked: multi-entity system (spawn+move+collision+draw) — same insert-only-coder assembly ceiling as dogs. Deferred by maintenance to keep shipping single-function items; reopen via hand-build or a fine-tuned coder. -->
@@ -84,7 +84,7 @@ Operator direction from the daily report lands here.
 - [ ] Selectable skins: a small selection of ORIGINAL player skins/characters, chosen on the start screen and persisted.
 - [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
-- [ ] High-score initials: the local board records three-letter initials with an arcade-style entry screen.
-- [ ] Leaderboard polish: a persistent top-scores board with dates; groundwork for shareable/daily seeds.
+- [!] High-score initials: the local board records three-letter initials with an arcade-style entry screen. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
+- [!] Leaderboard polish: a persistent top-scores board with dates; groundwork for shareable/daily seeds. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [ ] Reduced motion: honor `prefers-reduced-motion` by damping screen shake and particle bursts.
-- [ ] Performance: pool/recycle obstacle objects and cap the live count so long runs stay at 60fps on low-end devices.
+- [!] Performance: pool/recycle obstacle objects and cap the live count so long runs stay at 60fps on low-end devices. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
