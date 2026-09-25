@@ -54,7 +54,11 @@ Operator direction from the daily report lands here.
 - [!] Define biome transition conditions based on player distance traveled, triggering palette updates <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
-- [ ] Dogs hazard: a moving dog that crosses/chases briefly; colliding costs a wipeout unless you're set up to score off it.
+- [ ] Add a Dog class with a random starting position, speed, and direction on the slope
+- [ ] Implement dog movement logic to cross the screen horizontally and reverse direction at edges
+- [ ] Add collision detection between the player and the dog that triggers a wipeout if not evading
+- [ ] Extend the scoring system to grant points when the player slaloms close to or crashes through the dog
+- [ ] Ensure the dog appears only during gameplay and disappears after a brief chase phase
 - [ ] Drones hazard: a hovering drone that tracks the player laterally; a deeper-run hazard with its own movement.
 - [ ] Scoring system with attitude: points for style — slaloming close to or crashing THROUGH skiers/dogs/drones — with a combo multiplier for chains; penalties for hitting trees or wiping out on oil. Show score + combo on the HUD.
 - [ ] Sound: minimal WebAudio SFX (jump, land, crash, score, chase) synthesized in code (no files); `M` mutes; muted state persists in localStorage.
