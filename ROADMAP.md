@@ -55,7 +55,9 @@ Operator direction from the daily report lands here.
 - [!] Create a function to adjust obstacle spawn density per biome, scaling frequency based on depth and current biome <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Add a function to render a subtle background layer (e.g., distant trees, stars, fog) that changes with biome, using Warboy's original code-drawn art <!-- blocked: biome/terrain cluster unbuildable by the current coder (~5h churn, threshold-tracking+palette+background coordination beyond contextless single-function gen); deferred by maintenance to rotate to buildable features. Reopen when biome is tackled (hand-build or richer coder context). -->
 - [!] Add a Dog class with a random starting position, speed, and direction on the slope  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement dog movement logic to cross the screen horizontally and reverse direction at edges
+- [ ] Add dog spawn logic that places dogs at random x positions on the screen when they appear
+- [ ] Implement horizontal movement for dogs using a constant speed, reversing direction when hitting left or right screen edges
+- [ ] Ensure dogs only move when the game is in PLAYING state and are updated within the game loop
 - [ ] Add collision detection between the player and the dog that triggers a wipeout if not evading
 - [ ] Extend the scoring system to grant points when the player slaloms close to or crashes through the dog
 - [ ] Ensure the dog appears only during gameplay and disappears after a brief chase phase
