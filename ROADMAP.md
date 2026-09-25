@@ -58,7 +58,7 @@ Operator direction from the daily report lands here.
 - [!] Add a `npcs` array initialized as empty in the game state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add function initDogs() that sets game.dogs to a new empty array (separate from game.npcSkiers), and wire a call to it where the game state is initialized at start
 - [!] Add a new array game.dogs = [] to initialize the dog collection in the game state setup  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function spawnDog() that adds a new dog object with random x, y set to -NPC_SKIER_HEIGHT, and dead: false to game.dogs only when game.state is PLAYING
+- [!] Create a function spawnDog() that adds a new dog object with random x, y set to -NPC_SKIER_HEIGHT, and dead: false to game.dogs only when game.state is PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Wire spawnDog() to fire on a timer at random intervals while the game state is PLAYING
 - [ ] Add function updateDogs() that moves each dog in game.dogs down-slope at NPC_SKIER_SPEED and steers its x toward the player x each frame to chase; wire it into the update loop
 - [ ] Add function drawDogs() that draws each dog in game.dogs as an ORIGINAL code-drawn dog shape and palette, distinct from the skier; wire it into the render path
