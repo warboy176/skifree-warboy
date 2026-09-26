@@ -110,6 +110,10 @@ Operator direction from the daily report lands here.
 - [!] Performance: pool/recycle obstacle objects and cap the live count so long runs stay at 60fps on low-end devices. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 
 - [!] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Implement dynamic terrain biomes (forest → night → alpine) that transition as player descends
+- [ ] Add biome transition logic that triggers at specific vertical distances from the start
+- [ ] Define and draw original forest biome art using Warboy's code-drawn pixel style
+- [ ] Define and draw original night biome art using Warboy's code-drawn pixel style
+- [ ] Define and draw original alpine biome art using Warboy's code-drawn pixel style
+- [ ] Implement smooth visual blending between biomes based on player's vertical position
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
