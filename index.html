@@ -660,17 +660,22 @@ checkNPCProximity(dt);
     treeMaxHeight: 82,
     treeMinWidth: 22,
     treeMaxWidth: 38,
-    treeColor: '#0a8a68'
+    treeColor: '#0a8a68',
+    swayTime: 0
   };
-  function drawForestTree(x,y,width,height,color){
+  function drawForestTree(x,y,width,height,color,sway=0){
     const trunkW=Math.max(4,width*.18),trunkH=height*.32;
     rect(x-trunkW/2,y,trunkW,trunkH,'#5b321d');
-    poly([[x,y-height],[x-width/2,y],[x+width/2,y]],color);
-    poly([[x,y-height*.62],[x-width*.34,y-height*.12],[x+width*.34,y-height*.12]],color);
+    ctx.save();ctx.translate(x,y);ctx.rotate(sway);
+    poly([[0,-height],[-width/2,0],[width/2,0]],color);
+    poly([[0,-height*.62],[-width*.34,-height*.12],[width*.34,-height*.12]],color);
+    ctx.restore();
   }
-  function drawForestBiome(){
+  // dt drives a slow wind-sway phase so the forest stretch doesn't feel static like the other biomes.
+  function drawForestBiome(dt){
     if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
-    const {treeDensity,treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor}=forestBiomeConfig;
+    forestBiomeConfig.swayTime+=dt||0;
+    const {treeDensity,treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor,swayTime}=forestBiomeConfig;
     ctx.globalAlpha=.55;
     for(let i=0;i<treeDensity;i++){
       const seed=i*173+29;
@@ -680,7 +685,8 @@ checkNPCProximity(dt);
       const t=Math.sin(seed*12.9898)*.5+.5;
       const width=treeMinWidth+t*(treeMaxWidth-treeMinWidth);
       const height=treeMinHeight+t*(treeMaxHeight-treeMinHeight);
-      drawForestTree(sx,sy,width,height,treeColor);
+      const sway=Math.sin(swayTime*1.3+seed)*.035;
+      drawForestTree(sx,sy,width,height,treeColor,sway);
     }
     ctx.globalAlpha=1;
   }
@@ -993,14 +999,14 @@ renderSkin(game.skin, p.x, p.y);
     arcadePanel('YOU WON!',[ '30000 METERS — THE MOUNTAIN IS YOURS',`STYLE ${game.style} • MAX SPEED ${Math.round(game.maxSpeed*.12)}mph`],'#087257','PRESS R OR CLICK TO SKI AGAIN');
   }
 
-  function render(){
+  function render(dt){
     ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=false;
     if(game.state===GameState.START){drawStart();return;}
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
     drawBackgroundTrees();
-    drawForestBiome();
+    drawForestBiome(dt);
     drawBiomeOverlay(ctx);
     drawBiomeTransition(ctx,player.y);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
@@ -1043,7 +1049,7 @@ updateGameEndStats();
   // ---------------------------------------------------------------------------
   function frame(now){
     const dt=game.lastTime?Math.min((now-game.lastTime)/1000,.05):0;game.lastTime=now;
-    update(dt);render();requestAnimationFrame(frame);
+    update(dt);render(dt);requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 
