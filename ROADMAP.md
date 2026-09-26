@@ -95,7 +95,11 @@ Operator direction from the daily report lands here.
 - [x] Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors
 - [!] Update the `drawNPCSkier` function to use the current skin's art via `renderSkin` instead of hardcoded colors  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the `renderSkin` function is called only when rendering, and never overrides existing game state or logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
+- [ ] Add a VERSION constant set to 'v0.x' in the game's global scope
+- [ ] Create a changelog array in the game's state to track release notes
+- [ ] Implement a function to update CHANGELOG.md with the current version and timestamp
+- [ ] Add a HUD display for the VERSION string using the constant
+- [ ] Ensure the changelog is updated whenever the VERSION constant changes
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
 - [!] High-score initials: the local board records three-letter initials with an arcade-style entry screen. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Leaderboard polish: a persistent top-scores board with dates; groundwork for shareable/daily seeds. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
