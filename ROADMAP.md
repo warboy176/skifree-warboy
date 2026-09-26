@@ -110,7 +110,11 @@ Operator direction from the daily report lands here.
 - [!] Performance: pool/recycle obstacle objects and cap the live count so long runs stay at 60fps on low-end devices. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 
 - [!] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Add biome transition logic that triggers at specific vertical distances from the start
+- [ ] Add vertical distance tracking to the game state, incrementing with each frame based on player speed
+- [ ] Define biome transition thresholds at specific vertical distances (e.g., 500m, 1000m, 1500m) as configurable constants
+- [ ] Create a function that checks current vertical distance against thresholds and updates the current biome if threshold is crossed
+- [ ] Introduce a single, self-contained biome state variable that stores the current biome (e.g., 'slope', 'forest', 'night', 'alpine')
+- [ ] Update the rendering loop to apply biome-specific visual effects (e.g., color tint, background pattern) only when the biome changes
 - [ ] Define and draw original forest biome art using Warboy's code-drawn pixel style
 - [ ] Define and draw original night biome art using Warboy's code-drawn pixel style
 - [ ] Define and draw original alpine biome art using Warboy's code-drawn pixel style
