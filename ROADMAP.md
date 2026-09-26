@@ -115,7 +115,10 @@ Operator direction from the daily report lands here.
 - [!] Create a function that checks current vertical distance against thresholds and updates the current biome if threshold is crossed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Introduce a single, self-contained biome state variable that stores the current biome (e.g., 'slope', 'forest', 'night', 'alpine')  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Update the rendering loop to apply biome-specific visual effects (e.g., color tint, background pattern) only when the biome changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Define and draw original forest biome art using Warboy's code-drawn pixel style
+- [ ] Define a forest biome transition trigger that activates when player descends past 1000 meters
+- [ ] Create a function to draw original code-drawn tree sprites using Warboy's pixel art style on the canvas
+- [ ] Implement a function to spawn forest trees at random positions within the scrolling slope, avoiding player collision zone
+- [ ] Add a function to update tree positions as the slope scrolls, maintaining consistent visual depth and flow
 - [ ] Define and draw original night biome art using Warboy's code-drawn pixel style
 - [ ] Define and draw original alpine biome art using Warboy's code-drawn pixel style
 - [ ] Implement smooth visual blending between biomes based on player's vertical position
