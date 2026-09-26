@@ -620,14 +620,22 @@ checkNPCProximity(dt);
     ctx.setLineDash([]);
   }
 
+  function _bgHash(a,b){var v=Math.sin(a*127.1+b*311.7)*43758.5453;return v-Math.floor(v);}
+  // WORLD-ANCHORED background trees: fixed world positions on a grid, drawn via worldToScreen so they
+  // scroll past (up as you descend, sideways as you steer) and recycle only when off-screen. The old
+  // version used screen-space modulo-wrapped low parallax -> the trees looked pinned/"followed you".
   function drawBackgroundTrees(){
     ctx.globalAlpha=.5;
-    for(let i=0;i<7;i++){
-      const seed=i*211+53;
-      const sx=((seed*1.7-player.x*.05+W*3)%(W*1.2))-W*.1;
-      const sy=HUD_H+(((seed*2.3-game.cameraY*.1+H*4)%(H*1.3))-H*.1);
-      if(sy<HUD_H-40||sy>H+60)continue;
-      drawEvergreen(sx,sy,.4+(i%3)*.08);
+    const SP=150;                                              // world grid spacing (world units == px)
+    const cLo=Math.floor((player.x-W*0.7)/SP),cHi=Math.ceil((player.x+W*0.7)/SP);
+    const rLo=Math.floor((game.cameraY-80)/SP),rHi=Math.ceil((game.cameraY+(H-HUD_H)+90)/SP);
+    for(let c=cLo;c<=cHi;c++)for(let r=rLo;r<=rHi;r++){
+      const h=_bgHash(c,r);
+      if(h>0.4)continue;                                       // ~40% of grid cells carry a bg tree
+      const wx=c*SP+(_bgHash(c+7,r)*70-35), wy=r*SP+(_bgHash(c,r+7)*70-35);
+      const p=worldToScreen(wx,wy);
+      if(p.x<-40||p.x>W+40||p.y<HUD_H-40||p.y>H+80)continue;
+      drawEvergreen(p.x,p.y,.40+(Math.floor(h*7.5)%3)*.08);
     }
     ctx.globalAlpha=1;
   }
@@ -656,18 +664,22 @@ checkNPCProximity(dt);
   function drawForestBiome(dt){
     if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
     forestBiomeConfig.swayTime+=dt||0;
-    const {treeDensity,treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor,swayTime}=forestBiomeConfig;
+    const {treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor,swayTime}=forestBiomeConfig;
     ctx.globalAlpha=.55;
-    for(let i=0;i<treeDensity;i++){
-      const seed=i*173+29;
-      const sx=((seed*1.9-player.x*.07+W*3)%(W*1.25))-W*.12;
-      const sy=HUD_H+(((seed*2.7-game.cameraY*.14+H*4)%(H*1.3))-H*.1);
-      if(sy<HUD_H-90||sy>H+100)continue;
-      const t=Math.sin(seed*12.9898)*.5+.5;
+    const SP=95;                                              // denser than the ambient layer, still world-anchored
+    const cLo=Math.floor((player.x-W*0.75)/SP),cHi=Math.ceil((player.x+W*0.75)/SP);
+    const rLo=Math.floor((game.cameraY-100)/SP),rHi=Math.ceil((game.cameraY+(H-HUD_H)+110)/SP);
+    for(let c=cLo;c<=cHi;c++)for(let r=rLo;r<=rHi;r++){
+      const h=_bgHash(c*1.3,r*1.7);
+      if(h>0.5)continue;                                       // ~50% -> a dense forest backdrop
+      const wx=c*SP+(_bgHash(c+3,r)*60-30), wy=r*SP+(_bgHash(c,r+3)*60-30);
+      const p=worldToScreen(wx,wy);
+      if(p.x<-40||p.x>W+40||p.y<HUD_H-90||p.y>H+100)continue;
+      const t=_bgHash(c+11,r+11);
       const width=treeMinWidth+t*(treeMaxWidth-treeMinWidth);
       const height=treeMinHeight+t*(treeMaxHeight-treeMinHeight);
-      const sway=Math.sin(swayTime*1.3+seed)*.035;
-      drawForestTree(sx,sy,width,height,treeColor,sway);
+      const sway=Math.sin(swayTime*1.3+c*7+r*3)*.035;
+      drawForestTree(p.x,p.y,width,height,treeColor,sway);
     }
     ctx.globalAlpha=1;
   }
