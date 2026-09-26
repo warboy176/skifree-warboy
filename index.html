@@ -639,6 +639,18 @@ checkNPCProximity(dt);
     ctx.setLineDash([]);
   }
 
+  function drawBackgroundTrees(){
+    ctx.globalAlpha=.5;
+    for(let i=0;i<7;i++){
+      const seed=i*211+53;
+      const sx=((seed*1.7-player.x*.05+W*3)%(W*1.2))-W*.1;
+      const sy=HUD_H+(((seed*2.3-game.cameraY*.1+H*4)%(H*1.3))-H*.1);
+      if(sy<HUD_H-40||sy>H+60)continue;
+      drawEvergreen(sx,sy,.4+(i%3)*.08);
+    }
+    ctx.globalAlpha=1;
+  }
+
   function drawTracks(){
     ctx.globalAlpha=.46;
     for(const t of game.tracks){
@@ -650,14 +662,27 @@ checkNPCProximity(dt);
     ctx.globalAlpha=1;
   }
 
-  function drawEvergreen(x,y){
-    rect(x-5,y+11,10,22,'#5b321d');rect(x-2,y+12,4,21,'#9b5b2b');
-    poly([[x,y-34],[x-22,y+3],[x+22,y+3]],'#075844');
-    poly([[x,y-23],[x-29,y+17],[x+29,y+17]],'#087257');
-    poly([[x,y-10],[x-33,y+24],[x+33,y+24]],'#0a8a68');
-    poly([[x,y-34],[x-9,y-18],[x+7,y-18]],'#f6fdff');
-    rect(x-22,y-1,12,4,'#d9f3fb');rect(x+5,y+8,17,4,'#d9f3fb');rect(x-21,y+17,13,4,'#d9f3fb');
-    rect(x-29,y+24,58,3,'#b1deeb');
+  function drawEvergreen(x,y,scale=1){
+    if(scale===1){
+      rect(x-5,y+11,10,22,'#5b321d');rect(x-2,y+12,4,21,'#9b5b2b');
+      poly([[x,y-34],[x-22,y+3],[x+22,y+3]],'#075844');
+      poly([[x,y-23],[x-29,y+17],[x+29,y+17]],'#087257');
+      poly([[x,y-10],[x-33,y+24],[x+33,y+24]],'#0a8a68');
+      poly([[x,y-34],[x-9,y-18],[x+7,y-18]],'#f6fdff');
+      rect(x-22,y-1,12,4,'#d9f3fb');rect(x+5,y+8,17,4,'#d9f3fb');rect(x-21,y+17,13,4,'#d9f3fb');
+      rect(x-29,y+24,58,3,'#b1deeb');
+      return;
+    }
+    // Scaled variant (background parallax trees) draws around the origin under a save/scale transform.
+    ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
+    rect(-5,11,10,22,'#5b321d');rect(-2,12,4,21,'#9b5b2b');
+    poly([[0,-34],[-22,3],[22,3]],'#075844');
+    poly([[0,-23],[-29,17],[29,17]],'#087257');
+    poly([[0,-10],[-33,24],[33,24]],'#0a8a68');
+    poly([[0,-34],[-9,-18],[7,-18]],'#f6fdff');
+    rect(-22,-1,12,4,'#d9f3fb');rect(5,8,17,4,'#d9f3fb');rect(-21,17,13,4,'#d9f3fb');
+    rect(-29,24,58,3,'#b1deeb');
+    ctx.restore();
   }
   function drawBare(x,y){
     rect(x-4,y-15,8,44,'#633b22');rect(x,y-12,3,39,'#9a6335');
@@ -940,6 +965,7 @@ renderSkin(game.skin, p.x, p.y);
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
+    drawBackgroundTrees();
     drawBiomeOverlay(ctx);
     drawBiomeTransition(ctx,player.y);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
