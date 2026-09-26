@@ -121,7 +121,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to update tree positions as the slope scrolls, maintaining consistent visual depth and flow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Define a new night biome state in the game's terrain system with a dark blue sky gradient  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Draw a starfield using randomly positioned small white pixels in the night sky
-- [ ] Add a moon with a circular, softly glowing pixelated design in the upper-right corner
+- [!] Add a moon with a circular, softly glowing pixelated design in the upper-right corner  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [ ] Modify the snowfield rendering to use a darker, icy blue tint during night biome
 - [ ] Update the game loop to transition to the night biome after a fixed distance descent
 - [ ] Define and draw original alpine biome art using Warboy's code-drawn pixel style
