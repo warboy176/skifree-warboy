@@ -94,7 +94,7 @@ Operator direction from the daily report lands here.
 - [!] Create a `renderSkin` function that maps skin names to original pixel-art drawing logic using only Warboy's own code  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors
 - [!] Update the `drawNPCSkier` function to use the current skin's art via `renderSkin` instead of hardcoded colors  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the `renderSkin` function is called only when rendering, and never overrides existing game state or logic
+- [!] Ensure the `renderSkin` function is called only when rendering, and never overrides existing game state or logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
 - [!] High-score initials: the local board records three-letter initials with an arcade-style entry screen. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
