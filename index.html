@@ -1095,6 +1095,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initStarfield();
+
     game.biome = game.biomeThresholds[0].name;
     game.biomeVisual = game.biomeThresholds[0];
 }
@@ -1255,6 +1257,16 @@ function updateGameEndStats() {
   
   game.changelog.push(`score: ${score}, distance: ${distance}m`);
 }
+
+function initStarfield() {
+  game.starfield = [];
+  for (let i = 0; i < 100; i++) {
+    const x = rand(0, canvas.width);
+    const y = rand(0, canvas.height);
+    game.starfield.push({ x, y });
+  }
+}
+
 
 
 
