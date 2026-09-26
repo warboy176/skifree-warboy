@@ -961,6 +961,8 @@ drawPausedOverlay();
       ctx.globalAlpha=Math.min(1,game.trickTime*2);ctx.fillStyle='#123c69';ctx.font='700 15px "Courier New",monospace';ctx.textAlign='center';ctx.fillText(game.trickText,p.x,p.y-62);ctx.globalAlpha=1;
     }
     if(game.state===GameState.GAMEOVER)drawGameOver();
+updateGameEndStats();
+
     if(game.state===GameState.WON)drawWon();
   }
 
@@ -1120,6 +1122,16 @@ function initVersionConstant() {
 function initChangelog() {
   game.changelog = [];
 }
+
+function updateGameEndStats() {
+  if (game.state !== GameState.GAMEOVER) return;
+  
+  const score = localStorage.getItem(SCORE_KEY);
+  const distance = PlayerState.x.toFixed(2);
+  
+  game.changelog.push(`score: ${score}, distance: ${distance}m`);
+}
+
 
 
 
