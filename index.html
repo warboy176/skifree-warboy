@@ -209,6 +209,7 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+    initTrees();
     statusEl.textContent = 'Skiing. Distance zero meters.';
   }
 
@@ -1154,6 +1155,21 @@ function drawBiomeTransition(ctx, playerY) {
 
 function initDogs() {
     game.dogs = [];
+}
+
+// Seeds a batch of collidable trees on the slope at run start, ahead of the player.
+// Reuses the existing obstacle pipeline (makeObstacle / game.obstacles) so update,
+// render (drawObstacle) and collision (handleCollisions) all pick them up for free.
+function initTrees() {
+    game.trees = [];
+    for (let i = 0; i < 26; i++) {
+        const type = Math.random() < 0.7 ? 'evergreen' : 'bare';
+        const tx = player.x + rand(-W * 0.85, W * 0.85);
+        const ty = player.y + rand(H * 0.15, H * 5.5);
+        const tree = makeObstacle(type, tx, ty);
+        game.trees.push(tree);
+        game.obstacles.push(tree);
+    }
 }
 
 function checkNPCProximity(dt) {
