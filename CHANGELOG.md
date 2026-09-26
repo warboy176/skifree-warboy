@@ -1,4 +1,5 @@
 # Changelog
+- Add a new `skin` property to the game object, initialized to 'default' for the existing art (initGameSkin)
 - Save the selected skin index to localStorage when a skin is chosen (saveSelectedSkinIndex)
 - High-jump ramps: special ramps that launch bigger air for bigger trick scores. (initHighJumpRamps, spawnHighJumpRamps, updateHighJumpRamps)
 - Add a function to detect when the player is within 15px horizontally of any NPC skier during their pass (checkNPCProximity)
