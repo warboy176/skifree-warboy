@@ -651,6 +651,40 @@ checkNPCProximity(dt);
     ctx.globalAlpha=1;
   }
 
+  // --- Forest biome decorative trees ------------------------------------------------------------
+  // Denser than the ambient parallax layer (drawBackgroundTrees) above and only shown while the
+  // biome visuals report 'forest' (game.distance 10000-20000), giving that stretch a distinct look.
+  const forestBiomeConfig = {
+    treeDensity: 11,
+    treeMinHeight: 46,
+    treeMaxHeight: 82,
+    treeMinWidth: 22,
+    treeMaxWidth: 38,
+    treeColor: '#0a8a68'
+  };
+  function drawForestTree(x,y,width,height,color){
+    const trunkW=Math.max(4,width*.18),trunkH=height*.32;
+    rect(x-trunkW/2,y,trunkW,trunkH,'#5b321d');
+    poly([[x,y-height],[x-width/2,y],[x+width/2,y]],color);
+    poly([[x,y-height*.62],[x-width*.34,y-height*.12],[x+width*.34,y-height*.12]],color);
+  }
+  function drawForestBiome(){
+    if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
+    const {treeDensity,treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor}=forestBiomeConfig;
+    ctx.globalAlpha=.55;
+    for(let i=0;i<treeDensity;i++){
+      const seed=i*173+29;
+      const sx=((seed*1.9-player.x*.07+W*3)%(W*1.25))-W*.12;
+      const sy=HUD_H+(((seed*2.7-game.cameraY*.14+H*4)%(H*1.3))-H*.1);
+      if(sy<HUD_H-90||sy>H+100)continue;
+      const t=Math.sin(seed*12.9898)*.5+.5;
+      const width=treeMinWidth+t*(treeMaxWidth-treeMinWidth);
+      const height=treeMinHeight+t*(treeMaxHeight-treeMinHeight);
+      drawForestTree(sx,sy,width,height,treeColor);
+    }
+    ctx.globalAlpha=1;
+  }
+
   function drawTracks(){
     ctx.globalAlpha=.46;
     for(const t of game.tracks){
@@ -966,6 +1000,7 @@ renderSkin(game.skin, p.x, p.y);
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
     drawBackgroundTrees();
+    drawForestBiome();
     drawBiomeOverlay(ctx);
     drawBiomeTransition(ctx,player.y);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
