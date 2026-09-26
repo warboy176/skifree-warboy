@@ -109,7 +109,7 @@ Operator direction from the daily report lands here.
 - [!] Reduced motion: honor `prefers-reduced-motion` by damping screen shake and particle bursts.  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Performance: pool/recycle obstacle objects and cap the live count so long runs stay at 60fps on low-end devices. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 
-- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [!] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Implement dynamic terrain biomes (forest → night → alpine) that transition as player descends
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
