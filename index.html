@@ -271,6 +271,19 @@ spawnHighJumpRamps();
         const laneX = player.x + rand(-W*.78,W*.78);
         game.obstacles.push(makeObstacle(type,laneX,game.spawnY+rand(-30,30)));
       }
+      generateForestObstacles(game.spawnY);
+    }
+  }
+
+  // Extra collidable trees layered on top of the normal spawn pool while the forest biome visual
+  // is active, so the dense drawForestBiome() backdrop is matched by dense skiable trees.
+  function generateForestObstacles(y){
+    if(!game.biomeVisual || game.biomeVisual.name!=='forest') return;
+    const extra = Math.ceil(rand(1,3));
+    for(let i=0;i<extra;i++){
+      const type = Math.random()<.7?'evergreen':'bare';
+      const laneX = player.x + rand(-W*.95,W*.95);
+      game.obstacles.push(makeObstacle(type,laneX,y+rand(-40,40)));
     }
   }
 
