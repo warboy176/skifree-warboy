@@ -1073,6 +1073,13 @@ function saveSelectedSkinIndex(skinIndex) {
   localStorage.setItem('selectedSkin', JSON.stringify(skinIndex));
 }
 
+function initGameSkin() {
+  if (!game.skin) {
+    game.skin = 'default';
+  }
+}
+
+
 
 
 
