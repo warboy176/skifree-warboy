@@ -939,6 +939,7 @@ renderSkin(game.skin, p.x, p.y);
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
     drawBiomeOverlay(ctx);
+    drawBiomeTransition(ctx,player.y);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
     // Other skiers on the slope. GUARDED: the stray intro path (handleIntroInput) can reach
@@ -1036,6 +1037,34 @@ function drawBiomeOverlay(ctx) {
     ctx.fillStyle = tint.color;
     ctx.fillRect(0, HUD_H, W, H - HUD_H);
     ctx.restore();
+}
+
+const BIOME_TRANSITIONS = [ { distance: 10000, label: 'ENTERING CANYON' }, { distance: 20000, label: 'ENTERING WARZONE' } ];
+function drawBiomeTransition(ctx, playerY) {
+    if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
+    for (const zone of BIOME_TRANSITIONS) {
+        const boundaryY = zone.distance / METERS_PER_PIXEL;
+        const dy = boundaryY - playerY;
+        if (dy < 0 || dy > 900) continue;
+        const screenY = HUD_H + boundaryY - game.cameraY;
+        const alpha = 1 - dy / 900;
+        ctx.save();
+        ctx.globalAlpha = alpha * 0.85;
+        ctx.strokeStyle = '#eefaff';
+        ctx.lineWidth = 3;
+        ctx.setLineDash([14, 10]);
+        ctx.beginPath();
+        ctx.moveTo(0, screenY);
+        ctx.lineTo(W, screenY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle = '#eefaff';
+        ctx.font = '700 16px "Courier New",monospace';
+        ctx.fillText(zone.label, W / 2, screenY - 8);
+        ctx.restore();
+    }
 }
 
 function initDogs() {
