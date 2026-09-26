@@ -113,7 +113,7 @@ Operator direction from the daily report lands here.
 - [!] Add vertical distance tracking to the game state, incrementing with each frame based on player speed  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Define biome transition thresholds at specific vertical distances (e.g., 500m, 1000m, 1500m) as configurable constants  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function that checks current vertical distance against thresholds and updates the current biome if threshold is crossed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Introduce a single, self-contained biome state variable that stores the current biome (e.g., 'slope', 'forest', 'night', 'alpine')
+- [!] Introduce a single, self-contained biome state variable that stores the current biome (e.g., 'slope', 'forest', 'night', 'alpine')  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Update the rendering loop to apply biome-specific visual effects (e.g., color tint, background pattern) only when the biome changes
 - [ ] Define and draw original forest biome art using Warboy's code-drawn pixel style
 - [ ] Define and draw original night biome art using Warboy's code-drawn pixel style
