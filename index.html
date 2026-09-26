@@ -84,6 +84,8 @@ togglePauseState();
   // Other game states...
   requestAnimationFrame(gameLoop);
 }
+initVersionConstant();
+
 
 requestAnimationFrame(gameLoop);
 
@@ -1105,6 +1107,16 @@ function renderSkin(skinName, x, y) {
 
     ctx.restore();
 }
+
+function initVersionConstant() {
+  Object.defineProperty(window, 'VERSION', {
+    value: 'v0.x',
+    writable: false,
+    configurable: false,
+    enumerable: true
+  });
+}
+
 
 
 
