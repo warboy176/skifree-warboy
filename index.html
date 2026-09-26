@@ -493,6 +493,7 @@ checkNPCProximity(dt);
       if(game.state===GameState.PLAYING){
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
+        game.biome=game.distance>=20000?'warzone':game.distance>=10000?'canyon':'slope';
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -937,6 +938,7 @@ renderSkin(game.skin, p.x, p.y);
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
+    drawBiomeOverlay(ctx);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
     // Other skiers on the slope. GUARDED: the stray intro path (handleIntroInput) can reach
@@ -1022,6 +1024,18 @@ function handlePauseKey(event) {
 
 function initBiomeState() {
     game.biome = 'slope';
+}
+
+const BIOME_TINTS = { canyon: { color: '#8e4f27', alpha: .08 }, warzone: { color: '#e33232', alpha: .12 } };
+function drawBiomeOverlay(ctx) {
+    if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
+    const tint = BIOME_TINTS[game.biome];
+    if (!tint) return;
+    ctx.save();
+    ctx.globalAlpha = tint.alpha;
+    ctx.fillStyle = tint.color;
+    ctx.fillRect(0, HUD_H, W, H - HUD_H);
+    ctx.restore();
 }
 
 function initDogs() {
