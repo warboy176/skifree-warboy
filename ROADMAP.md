@@ -102,7 +102,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the changelog array only grows and never resets during a single play session  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement a function to update CHANGELOG.md with the current version and timestamp  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a HUD display for the VERSION string using the constant  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the changelog is updated whenever the VERSION constant changes
+- [!] Ensure the changelog is updated whenever the VERSION constant changes  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
 - [!] High-score initials: the local board records three-letter initials with an arcade-style entry screen. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
 - [!] Leaderboard polish: a persistent top-scores board with dates; groundwork for shareable/daily seeds. <!-- blocked: multi-touchpoint feature (state+logic+HUD/loop wiring across several sites) exceeds the insert-only coder. Deferred by maintenance to ship single-function items; reopen via hand-build or a fine-tuned coder. -->
