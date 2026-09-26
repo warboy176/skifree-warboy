@@ -100,7 +100,7 @@ Operator direction from the daily report lands here.
 - [!] After each game restart, push a new changelog entry with the current date and version string  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Update the changelog entry to include the player's score and distance at game end
 - [!] Ensure the changelog array only grows and never resets during a single play session  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a function to update CHANGELOG.md with the current version and timestamp
+- [!] Implement a function to update CHANGELOG.md with the current version and timestamp  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Add a HUD display for the VERSION string using the constant
 - [ ] Ensure the changelog is updated whenever the VERSION constant changes
 - [ ] Seeded runs: `?seed=<n>` makes terrain generation deterministic (share a course); show the seed on the results screen.
