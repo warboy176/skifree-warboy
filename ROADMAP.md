@@ -119,7 +119,11 @@ Operator direction from the daily report lands here.
 - [!] Create a function to draw original code-drawn tree sprites using Warboy's pixel art style on the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a function to spawn forest trees at random positions within the scrolling slope, avoiding player collision zone  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to update tree positions as the slope scrolls, maintaining consistent visual depth and flow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Define and draw original night biome art using Warboy's code-drawn pixel style
+- [ ] Define a new night biome state in the game's terrain system with a dark blue sky gradient
+- [ ] Draw a starfield using randomly positioned small white pixels in the night sky
+- [ ] Add a moon with a circular, softly glowing pixelated design in the upper-right corner
+- [ ] Modify the snowfield rendering to use a darker, icy blue tint during night biome
+- [ ] Update the game loop to transition to the night biome after a fixed distance descent
 - [ ] Define and draw original alpine biome art using Warboy's code-drawn pixel style
 - [ ] Implement smooth visual blending between biomes based on player's vertical position
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
