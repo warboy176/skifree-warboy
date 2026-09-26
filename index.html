@@ -808,7 +808,9 @@ checkNPCProximity(dt);
     if(player.state===PlayerState.EATEN){ctx.restore();return;}
     if(player.state===PlayerState.CRASHED){drawCrashPose(Math.min(3,(player.stateTime*6)|0));ctx.restore();return;}
     const steer=clamp(player.vx/150,-1,1),amount=Math.abs(steer),anim=((player.y/20)|0)&1;
-    if(player.state===PlayerState.JUMPING){ctx.rotate(player.spin);drawSkierPose('JUMP',anim,steer<0);}
+    if(player.state===PlayerState.JUMPING){ctx.rotate(player.spin);drawSkierPose('JUMP',anim,steer<0);
+renderSkin(game.skin, p.x, p.y);
+}
     else if(input.down)drawSkierPose('TUCK',anim,steer<0);
     else if(amount>.72)drawSkierPose('SIDE',anim,steer<0);
     else if(amount>.24)drawSkierPose('DIAG',anim,steer<0);
@@ -1078,6 +1080,32 @@ function initGameSkin() {
     game.skin = 'default';
   }
 }
+
+function renderSkin(skinName, x, y) {
+    const frameData = WARBOY_FRAMES[skinName];
+    if (!frameData) return;
+
+    const spriteWidth = 16;
+    const spriteHeight = 32;
+    const dpr = Math.min(window.devicePixelRatio, DPR_CAP);
+
+    ctx.save();
+    ctx.scale(dpr, dpr);
+    ctx.imageSmoothingEnabled = false;
+
+    for (let i = 0; i < spriteHeight; i++) {
+        for (let j = 0; j < spriteWidth; j++) {
+            const pixelIndex = i * spriteWidth + j;
+            if (pixelIndex < frameData.length) {
+                ctx.fillStyle = `#${frameData[pixelIndex]}`;
+                ctx.fillRect(x + j, y + i, 1, 1);
+            }
+        }
+    }
+
+    ctx.restore();
+}
+
 
 
 
