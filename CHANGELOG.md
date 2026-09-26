@@ -1,4 +1,5 @@
 # Changelog
+- Draw a starfield using randomly positioned small white pixels in the night sky (initStarfield, drawStarfield)
 - Update the changelog entry to include the player's score and distance at game end (updateGameEndStats)
 - Add a changelog array to the game state, initialized as an empty array (initChangelog)
 - Add a VERSION constant set to 'v0.x' in the game's global scope (initVersionConstant)
