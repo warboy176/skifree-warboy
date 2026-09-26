@@ -92,7 +92,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the selected skin is persistently applied across game restarts and maintained in the game state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a new `skin` property to the game object, initialized to 'default' for the existing art
 - [!] Create a `renderSkin` function that maps skin names to original pixel-art drawing logic using only Warboy's own code  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors
+- [x] Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors
 - [ ] Update the `drawNPCSkier` function to use the current skin's art via `renderSkin` instead of hardcoded colors
 - [ ] Ensure the `renderSkin` function is called only when rendering, and never overrides existing game state or logic
 - [ ] Version + changelog: a `v0.x` stamp in the HUD read from one constant; keep CHANGELOG.md current.
