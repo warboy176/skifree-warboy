@@ -491,6 +491,7 @@ spawnHighJumpRamps();
 checkNPCProximity(dt);
 
       if(game.state===GameState.PLAYING){
+        updateBiomeState();
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
@@ -621,7 +622,8 @@ checkNPCProximity(dt);
   function worldToScreen(x,y){ return {x:W/2+(x-player.x),y:HUD_H+y-game.cameraY}; }
 
   function drawSnow(){
-    rect(0,0,W,H,'#eefaff');
+    const biomeVisual=game.biomeVisual||{sky:'#eefaff',dash:'rgba(129,203,229,.25)'};
+    rect(0,0,W,H,biomeVisual.sky);
     ctx.globalAlpha=.62;
     for(const f of game.snow){
       const sx=((f.x-player.x*.08+W*2)%(W*1.5))-W*.25;
@@ -631,7 +633,7 @@ checkNPCProximity(dt);
     ctx.globalAlpha=1;
     for(let i=-2;i<4;i++){
       const y=HUD_H+((i*170-game.cameraY*.3)%(H+200));
-      ctx.strokeStyle='rgba(129,203,229,.25)';ctx.lineWidth=2;ctx.setLineDash([12,20]);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y+32);ctx.stroke();
+      ctx.strokeStyle=biomeVisual.dash;ctx.lineWidth=2;ctx.setLineDash([12,20]);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y+32);ctx.stroke();
     }
     ctx.setLineDash([]);
   }
@@ -1020,8 +1022,27 @@ function handlePauseKey(event) {
   }
 }
 
+function defineBiomeThresholds() {
+    return [
+        {name:'slope', min:0, sky:'#eefaff', dash:'rgba(129,203,229,.25)'},
+        {name:'forest', min:10000, sky:'#e7f5ea', dash:'rgba(122,196,148,.28)'},
+        {name:'canyon', min:20000, sky:'#f7ead9', dash:'rgba(214,163,120,.3)'}
+    ];
+}
+
 function initBiomeState() {
-    game.biome = 'slope';
+    game.biomeThresholds = defineBiomeThresholds();
+    game.biome = game.biomeThresholds[0].name;
+    game.biomeVisual = game.biomeThresholds[0];
+}
+
+function updateBiomeState() {
+    let current = game.biomeThresholds[0];
+    for (const threshold of game.biomeThresholds) {
+        if (game.distance >= threshold.min) current = threshold;
+    }
+    game.biome = current.name;
+    game.biomeVisual = current;
 }
 
 function initDogs() {
