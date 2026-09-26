@@ -52,42 +52,10 @@ const NPC_SKIER_WIDTH = 20;
 const NPC_SKIER_HEIGHT = 20;
 const NPC_SKIER_COLOR = '#ffcc00';
 
-// Intro state handling
-let introShown = false;
-function showIntro() {
-  if (introShown) return;
-  introShown = true;
-  statusEl.textContent = 'Press Enter or tap to start your descent.';
-  game.state = GameState.INTRO;
-}
 
-function handleIntroInput() {
-  if (pressed.has('Enter') || input.pointer) {
-    game.state = GameState.PLAYING;
-    statusEl.textContent = '';
-  }
-}
-
-// Modify game loop to handle intro
-function gameLoop() {
-  if (game.state === GameState.START) {
-    showIntro();
-  } else if (game.state === GameState.INTRO) {
-    handleIntroInput();
-togglePauseState();
-
-  } else if (game.state === GameState.PLAYING) {
-    // Existing playing logic
-
-// (NPC skiers are updated+drawn -- guarded -- inside render()'s PLAYING block; see below)
-  }
-  // Other game states...
-  requestAnimationFrame(gameLoop);
-}
 initVersionConstant();
 
 
-requestAnimationFrame(gameLoop);
 
 // NPC Skier class
 class NPCSkier {
