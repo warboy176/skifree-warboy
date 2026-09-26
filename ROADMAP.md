@@ -97,7 +97,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the `renderSkin` function is called only when rendering, and never overrides existing game state or logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a VERSION constant set to 'v0.x' in the game's global scope
 - [x] Add a changelog array to the game state, initialized as an empty array
-- [ ] After each game restart, push a new changelog entry with the current date and version string
+- [!] After each game restart, push a new changelog entry with the current date and version string  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Update the changelog entry to include the player's score and distance at game end
 - [ ] Ensure the changelog array only grows and never resets during a single play session
 - [ ] Implement a function to update CHANGELOG.md with the current version and timestamp
