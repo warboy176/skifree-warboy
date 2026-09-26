@@ -1,4 +1,5 @@
 # Changelog
+- Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors (renderSkin)
 - Add a new `skin` property to the game object, initialized to 'default' for the existing art (initGameSkin)
 - Save the selected skin index to localStorage when a skin is chosen (saveSelectedSkinIndex)
 - High-jump ramps: special ramps that launch bigger air for bigger trick scores. (initHighJumpRamps, spawnHighJumpRamps, updateHighJumpRamps)
