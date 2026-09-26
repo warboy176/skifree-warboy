@@ -90,7 +90,7 @@ Operator direction from the daily report lands here.
 - [!] Add a new player skin selection state that stores the currently selected skin index  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Modify the player's draw function to use the selected skin's original art instead of the default character  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the selected skin is persistently applied across game restarts and maintained in the game state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a new `skin` property to the game object, initialized to 'default' for the existing art
+- [x] Add a new `skin` property to the game object, initialized to 'default' for the existing art
 - [ ] Create a `renderSkin` function that maps skin names to original pixel-art drawing logic using only Warboy's own code
 - [ ] Modify the `drawPlayer` function to use the current skin's art via `renderSkin` instead of hardcoded colors
 - [ ] Update the `drawNPCSkier` function to use the current skin's art via `renderSkin` instead of hardcoded colors
