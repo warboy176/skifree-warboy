@@ -139,7 +139,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to trigger a 'near' visual effect (e.g., subtle glow or pulse) on the NPC skier when the player is within 30 pixels, using only original code-drawn visuals  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Add a function to detect when the player is within 30 pixels of an NPC skier without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a function to increment the style score only when the player is within 30 pixels of an NPC skier and not colliding
-- [ ] Update the style score only during active skiing, not during jumps or crashes
+- [!] Update the style score only during active skiing, not during jumps or crashes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement logic to detect when the player passes within 30 pixels of an NPC skier
 - [ ] Increment the style score by 1 for each valid proximity event, only once per NPC skier per pass
 - [ ] Display the style score in the HUD, updating in real time
