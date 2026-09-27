@@ -129,6 +129,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to render the alpine tree line using Warboy's original pixel art style  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to draw the alpine sky gradient and distant mountain silhouettes in original code-drawn style  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Integrate biome transition logic that triggers alpine art rendering after descending past a defined distance threshold  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement smooth visual blending between biomes based on player's vertical position
+- [ ] Add biome transition threshold values based on player's vertical position, mapping y-position to biome index
+- [ ] Implement a single, smooth interpolation function that blends snow texture color and slope gradient based on current biome transition state
+- [ ] Integrate the blending function into the main render loop to update the background appearance dynamically as player descends
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
