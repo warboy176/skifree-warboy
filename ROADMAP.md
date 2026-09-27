@@ -142,7 +142,7 @@ Operator direction from the daily report lands here.
 - [!] Update the style score only during active skiing, not during jumps or crashes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement logic to detect when the player passes within 30 pixels of an NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Increment the style score by 1 for each valid proximity event, only once per NPC skier per pass  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Display the style score in the HUD, updating in real time
+- [!] Display the style score in the HUD, updating in real time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Implement a 'crash-through' detection that triggers a bonus when the player collides with an NPC skier while in motion
 - [ ] Introduce a multiplier system that increases with consecutive style or crash-through events, resetting on collision with terrain or obstacles
 - [ ] Display the current style score and multiplier in the HUD using Warboy's original pixel-art font and color scheme
