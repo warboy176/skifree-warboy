@@ -131,6 +131,6 @@ Operator direction from the daily report lands here.
 - [!] Integrate biome transition logic that triggers alpine art rendering after descending past a defined distance threshold  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Add biome transition threshold values based on player's vertical position, mapping y-position to biome index  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
 - [!] Implement a single, smooth interpolation function that blends snow texture color and slope gradient based on current biome transition state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Integrate the blending function into the main render loop to update the background appearance dynamically as player descends
+- [!] Integrate the blending function into the main render loop to update the background appearance dynamically as player descends  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
