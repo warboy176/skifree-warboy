@@ -1099,6 +1099,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initStyleScoreAccumulator();
+
 initStarfield();
 
     game.biome = game.biomeThresholds[0].name;
@@ -1323,6 +1325,15 @@ function drawStarfield() {
     ctx.fillRect(star.x, star.y, 1, 1);
   }
 }
+
+function initStyleScoreAccumulator() {
+  if (game.state === GameState.START || game.state === GameState.PAUSED || game.state === GameState.GAMEOVER || game.state === GameState.WON) return;
+  
+  if (!game.styleScore) {
+    game.styleScore = 0;
+  }
+}
+
 
 
 
