@@ -128,7 +128,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to draw the alpine snowfield pattern with original code-drawn rocks and icy patches  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to render the alpine tree line using Warboy's original pixel art style  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to draw the alpine sky gradient and distant mountain silhouettes in original code-drawn style  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Integrate biome transition logic that triggers alpine art rendering after descending past a defined distance threshold
+- [!] Integrate biome transition logic that triggers alpine art rendering after descending past a defined distance threshold  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement smooth visual blending between biomes based on player's vertical position
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
