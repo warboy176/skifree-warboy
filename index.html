@@ -477,7 +477,7 @@ checkNPCProximity(dt);
         updateBiomeTransition(game.distance);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
-        game.biome=game.distance>=20000?'warzone':game.distance>=10000?'canyon':'slope';
+        updateBiome(player.y);
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -1112,6 +1112,24 @@ function updateBiomeFromDistance() {
     }
     game.biome = current.name;
     game.biomeVisual = current;
+}
+
+// Gameplay biome tiers (distinct from the visual biomeThresholds/biomeVisual used for sky and
+// forest dressing above): drives the BIOME_TINTS overlay and the danger-zone milestone banners
+// based on how far downhill the player has traveled.
+const BIOME_THRESHOLDS = [
+    {name:'slope', minDistance:0},
+    {name:'canyon', minDistance:10000},
+    {name:'warzone', minDistance:20000}
+];
+
+function updateBiome(playerY) {
+    const distance = playerY * METERS_PER_PIXEL;
+    let current = BIOME_THRESHOLDS[0];
+    for (const tier of BIOME_THRESHOLDS) {
+        if (distance >= tier.minDistance) current = tier;
+    }
+    game.biome = current.name;
 }
 
 const BIOME_TINTS = { canyon: { color: '#8e4f27', alpha: .08 }, warzone: { color: '#e33232', alpha: .12 } };
