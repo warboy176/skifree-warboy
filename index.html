@@ -473,7 +473,7 @@ spawnHighJumpRamps();
 checkNPCProximity(dt);
 
       if(game.state===GameState.PLAYING){
-        updateBiomeState();
+        updateBiomeFromDistance();
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         game.biome=game.distance>=20000?'warzone':game.distance>=10000?'canyon':'slope';
@@ -1104,7 +1104,7 @@ initStarfield();
     game.biomeVisual = game.biomeThresholds[0];
 }
 
-function updateBiomeState() {
+function updateBiomeFromDistance() {
     let current = game.biomeThresholds[0];
     for (const threshold of game.biomeThresholds) {
         if (game.distance >= threshold.min) current = threshold;
