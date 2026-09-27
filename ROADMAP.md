@@ -133,7 +133,8 @@ Operator direction from the daily report lands here.
 - [!] Implement a single, smooth interpolation function that blends snow texture color and slope gradient based on current biome transition state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Integrate the blending function into the main render loop to update the background appearance dynamically as player descends  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [x] Initialize a style score accumulator in the game state, starting at 0
-- [ ] Add a function to increment the style score when the player is within 30 pixels of an NPC skier without colliding
+- [ ] Add a function to detect when the player is within 30 pixels of an NPC skier without collision
+- [ ] Add a function to increment the style score only when the player is within 30 pixels of an NPC skier and not colliding
 - [ ] Update the style score only during active skiing, not during jumps or crashes
 - [ ] Implement logic to detect when the player passes within 30 pixels of an NPC skier
 - [ ] Increment the style score by 1 for each valid proximity event, only once per NPC skier per pass
