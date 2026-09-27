@@ -474,6 +474,7 @@ checkNPCProximity(dt);
 
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
+        updateBiomeTransition(game.distance);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         game.biome=game.distance>=20000?'warzone':game.distance>=10000?'canyon':'slope';
@@ -1004,7 +1005,7 @@ drawStarfield();
 
     drawForestBiome(dt);
     drawBiomeOverlay(ctx);
-    drawBiomeTransition(ctx,player.y);
+    drawBiomeTransition(ctx);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
     // Other skiers on the slope. GUARDED: the stray intro path (handleIntroInput) can reach
@@ -1125,17 +1126,29 @@ function drawBiomeOverlay(ctx) {
     ctx.restore();
 }
 
-const BIOME_TRANSITIONS = [ { distance: 10000, label: 'ENTERING CANYON' }, { distance: 20000, label: 'ENTERING WARZONE' } ];
-function drawBiomeTransition(ctx, playerY) {
-    if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
-    for (const zone of BIOME_TRANSITIONS) {
+// Foundation data for the biome transition system: the world-distance (in meters) at which
+// each biome boundary sits, paired with the banner label shown as the player nears it.
+const biomeTransitionPoints = [ { distance: 10000, label: 'ENTERING CANYON' }, { distance: 20000, label: 'ENTERING WARZONE' } ];
+
+// Recomputed every update tick from the player's current distance so drawBiomeTransition can
+// stay a pure render of already-known state instead of redoing this math every frame.
+function updateBiomeTransition(distanceMeters) {
+    game.biomeTransitions = [];
+    for (const zone of biomeTransitionPoints) {
         const boundaryY = zone.distance / METERS_PER_PIXEL;
-        const dy = boundaryY - playerY;
+        const dy = boundaryY - player.y;
         if (dy < 0 || dy > 900) continue;
-        const screenY = HUD_H + boundaryY - game.cameraY;
-        const alpha = 1 - dy / 900;
+        game.biomeTransitions.push({ label: zone.label, boundaryY, alpha: 1 - dy / 900 });
+    }
+}
+
+function drawBiomeTransition(ctx) {
+    if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
+    if (!game.biomeTransitions) return;
+    for (const zone of game.biomeTransitions) {
+        const screenY = HUD_H + zone.boundaryY - game.cameraY;
         ctx.save();
-        ctx.globalAlpha = alpha * 0.85;
+        ctx.globalAlpha = zone.alpha * 0.85;
         ctx.strokeStyle = '#eefaff';
         ctx.lineWidth = 3;
         ctx.setLineDash([14, 10]);
