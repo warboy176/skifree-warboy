@@ -1341,18 +1341,16 @@ function initStyleScoreAccumulator() {
 }
 
 function updateStyleScoreOnProximity(dt) {
-    if (PlayerState.CRASHED) return;
-
-    for (let i = 0; i < game.npcSkiers.length; i++) {
-        const npc = game.npcSkiers[i];
-        const distanceX = Math.abs(PlayerState.x - npc.x);
-        const distanceY = Math.abs(PlayerState.y - npc.y);
-
-        if (distanceX < NPC_SKIER_WIDTH + 30 && distanceY < NPC_SKIER_HEIGHT + 30) {
-            game.styleScore += 1;
-            break;
-        }
+  if (player.state === PlayerState.CRASHED) return;
+  const proximityThreshold = 30;
+  for (const skier of game.npcSkiers) {
+    const dx = player.x - skier.x;
+    const dy = player.y - skier.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance < proximityThreshold) {
+      game.styleScore += 1;
     }
+  }
 }
 
 
