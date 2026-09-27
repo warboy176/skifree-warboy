@@ -135,7 +135,8 @@ Operator direction from the daily report lands here.
 - [x] Initialize a style score accumulator in the game state, starting at 0
 - [!] Add a function to detect when the player is within 30 pixels of an NPC skier without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to detect when the player is within 30 pixels of an NPC skier without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a function to detect when the player is within 30 pixels of any NPC skier without collision
+- [ ] Add a function to calculate the distance between the player and each NPC skier, returning true if within 30 pixels
+- [ ] Add a function to trigger a 'near' visual effect (e.g., subtle glow or pulse) on the NPC skier when the player is within 30 pixels, using only original code-drawn visuals
 - [ ] Add a function to increment the style score only when the player is within 30 pixels of an NPC skier and not colliding
 - [ ] Update the style score only during active skiing, not during jumps or crashes
 - [ ] Implement logic to detect when the player passes within 30 pixels of an NPC skier
