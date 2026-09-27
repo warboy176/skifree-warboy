@@ -364,6 +364,9 @@ spawnHighJumpRamps();
         game.trackTimer=0;
       }
     }
+  }
+
+  function updateVerticalDistance(dt){
     game.distance=Math.max(game.distance,Math.floor(player.y*METERS_PER_PIXEL));
     game.maxSpeed=Math.max(game.maxSpeed,player.speed);
     if(game.distance>=30000){
@@ -470,6 +473,7 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateVerticalDistance(simDt);
 checkNPCProximity(dt);
 
       if(game.state===GameState.PLAYING){
