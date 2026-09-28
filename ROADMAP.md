@@ -166,7 +166,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure crash-through effects are visually distinct with a short flash or particle burst  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [x] Make crash-through behavior work only during skiing state and not during jumps or crashes
 
-- [ ] Define a new SnowWolf class with position, speed, and glowing eyes using original canvas drawing functions
+- [!] Define a new SnowWolf class with position, speed, and glowing eyes using original canvas drawing functions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement SnowWolf movement logic that follows the player when they slow down or stop
 - [ ] Add collision detection between the SnowWolf and the player to trigger the EATEN state
 - [ ] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)
