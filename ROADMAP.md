@@ -163,5 +163,5 @@ Operator direction from the daily report lands here.
 - [!] Add collision detection between player and NPCs for crash-through triggers  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement style point increment when player crashes into an NPC  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Add brief speed boost duration after crashing into an NPC  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Ensure crash-through effects are visually distinct with a short flash or particle burst
+- [!] Ensure crash-through effects are visually distinct with a short flash or particle burst  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Make crash-through behavior work only during skiing state and not during jumps or crashes
