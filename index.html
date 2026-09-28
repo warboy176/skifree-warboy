@@ -473,6 +473,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStyleScore(dt);
+
 updateStyleScoreOnProximity(dt);
 
 updateVerticalDistance(simDt);
@@ -1352,6 +1354,21 @@ function updateStyleScoreOnProximity(dt) {
     }
   }
 }
+
+function updateStyleScore(dt) {
+  for (const npc of game.npcSkiers) {
+    if (
+      Math.abs(player.x - npc.x) <= 40 &&
+      Math.abs(player.y - npc.y) <= 100
+    ) {
+      game.styleScore += 10 * game.styleMultiplier;
+      game.styleMultiplier *= 2;
+    } else {
+      game.styleMultiplier = 1;
+    }
+  }
+}
+
 
 
 
