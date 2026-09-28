@@ -160,7 +160,7 @@ Operator direction from the daily report lands here.
 - [!] Add original animated chase antagonist (Warboy's design) that spawns after 30 seconds of inactivity and pursues player with escalating speed  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth with original forest sprite art  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [x] Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses
-- [ ] Add collision detection between player and NPCs for crash-through triggers
+- [!] Add collision detection between player and NPCs for crash-through triggers  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Implement style point increment when player crashes into an NPC
 - [ ] Add brief speed boost duration after crashing into an NPC
 - [ ] Ensure crash-through effects are visually distinct with a short flash or particle burst
