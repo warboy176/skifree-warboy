@@ -166,7 +166,10 @@ Operator direction from the daily report lands here.
 - [!] Ensure crash-through effects are visually distinct with a short flash or particle burst  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [x] Make crash-through behavior work only during skiing state and not during jumps or crashes
 
-- [ ] Create a new Warboy-designed snow-wolf antagonist with glowing eyes using original code-drawn art in the canvas
+- [ ] Define a new SnowWolf class with position, speed, and glowing eyes using original canvas drawing functions
+- [ ] Implement SnowWolf movement logic that follows the player when they slow down or stop
+- [ ] Add collision detection between the SnowWolf and the player to trigger the EATEN state
+- [ ] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)
 - [ ] Implement a timer that tracks player inactivity and triggers the snow-wolf spawn after 30 seconds of no input
 - [ ] Add logic to spawn the snow-wolf at a fixed distance behind the player when the timer triggers
 - [ ] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time
