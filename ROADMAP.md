@@ -165,3 +165,8 @@ Operator direction from the daily report lands here.
 - [!] Add brief speed boost duration after crashing into an NPC  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure crash-through effects are visually distinct with a short flash or particle burst  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [x] Make crash-through behavior work only during skiing state and not during jumps or crashes
+
+- [ ] Add original Warboy-designed chase antagonist (e.g., a mutated snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain biome transitions (lodge → open slope → dense forest → night forest) using code-drawn environmental art and shifting color palettes
+- [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
+- [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
