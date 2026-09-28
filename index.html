@@ -1388,6 +1388,11 @@ function isSkiingState() {
   return player.state === PlayerState.SKIING;
 }
 
+function canCrashThrough() {
+  return player.state === PlayerState.SKIING && player.state !== PlayerState.JUMPING && player.state !== PlayerState.CRASHED;
+}
+
+
 
 
 
