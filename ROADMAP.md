@@ -149,5 +149,5 @@ Operator direction from the daily report lands here.
 - [!] Create a visual indicator for the current multiplier displayed in the HUD, updating in real time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Modify the score calculation to multiply points by the current style multiplier on each style event  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Ensure the multiplier persists across jumps and air time, only resetting on collision  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Display the current style score and multiplier in the HUD using Warboy's original pixel-art font and color scheme
+- [!] Display the current style score and multiplier in the HUD using Warboy's original pixel-art font and color scheme  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
