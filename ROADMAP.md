@@ -162,6 +162,6 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses
 - [!] Add collision detection between player and NPCs for crash-through triggers  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement style point increment when player crashes into an NPC  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Add brief speed boost duration after crashing into an NPC
+- [!] Add brief speed boost duration after crashing into an NPC  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Ensure crash-through effects are visually distinct with a short flash or particle burst
 - [ ] Make crash-through behavior work only during skiing state and not during jumps or crashes
