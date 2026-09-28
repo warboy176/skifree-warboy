@@ -1107,6 +1107,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initStyleScoreSystem();
+
 initStyleScoreAccumulator();
 
 initStarfield();
@@ -1368,6 +1370,12 @@ function updateStyleScore(dt) {
     }
   }
 }
+
+function initStyleScoreSystem() {
+  game.styleScore = 0;
+  game.styleMultiplier = 1;
+}
+
 
 
 
