@@ -153,6 +153,6 @@ Operator direction from the daily report lands here.
 - [!] Design and integrate original unlockable skins and character variants using code-drawn art  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
 - [!] Add original Warboy-designed chase antagonist with unique movement pattern and visual style  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
+- [!] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Add persistent achievements registry with data-driven unlocks for new hazards and interactions
