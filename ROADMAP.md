@@ -147,7 +147,7 @@ Operator direction from the daily report lands here.
 - [!] Add a style multiplier counter that starts at 1 and increments by 0.1 for each consecutive style event (slaloming close to or crashing through NPCs, obstacles, or terrain)  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Implement a function to reset the multiplier to 1 when the player collides with trees, oil slicks, or other obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a visual indicator for the current multiplier displayed in the HUD, updating in real time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Modify the score calculation to multiply points by the current style multiplier on each style event
+- [!] Modify the score calculation to multiply points by the current style multiplier on each style event  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Ensure the multiplier persists across jumps and air time, only resetting on collision
 - [ ] Display the current style score and multiplier in the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Design and integrate original unlockable skins and character variants using code-drawn art
