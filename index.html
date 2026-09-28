@@ -1384,6 +1384,11 @@ function drawStyleScoreHUD() {
   ctx.fillText(`${game.styleScore}×${game.styleMultiplier}`, 10, HUD_H - 20);
 }
 
+function isSkiingState() {
+  return player.state === PlayerState.SKIING;
+}
+
+
 
 
 
