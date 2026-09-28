@@ -159,5 +159,5 @@ Operator direction from the daily report lands here.
 
 - [!] Add original animated chase antagonist (Warboy's design) that spawns after 30 seconds of inactivity and pursues player with escalating speed  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth with original forest sprite art  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses
+- [x] Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses
 - [ ] Add original 'crash-through' mechanic: player gains style points and a brief speed boost when crashing into NPCs or obstacles
