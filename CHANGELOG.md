@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses (initStyleScoreSystem, updateStyleScore, drawStyleScoreHUD)
 - Add a function to increment the style score only when the player is within 30 pixels of an NPC skier and not colliding (updateStyleScoreOnProximity)
 - Initialize a style score accumulator in the game state, starting at 0 (initStyleScoreAccumulator)
 - Draw a starfield using randomly positioned small white pixels in the night sky (initStarfield, drawStarfield)
