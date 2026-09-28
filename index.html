@@ -1024,6 +1024,8 @@ drawStarfield();
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawStyleScoreHUD();
+
 drawPausedOverlay();
 
     if(game.flash>0){ctx.globalAlpha=game.flash*.35;rect(0,HUD_H,W,H-HUD_H,'#e33232');ctx.globalAlpha=1;}
@@ -1375,6 +1377,13 @@ function initStyleScoreSystem() {
   game.styleScore = 0;
   game.styleMultiplier = 1;
 }
+
+function drawStyleScoreHUD() {
+  ctx.fillStyle = 'white';
+  ctx.font = '16px monospace';
+  ctx.fillText(`${game.styleScore}×${game.styleMultiplier}`, 10, HUD_H - 20);
+}
+
 
 
 
