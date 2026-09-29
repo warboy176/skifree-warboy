@@ -1010,7 +1010,9 @@ renderSkin(game.skin, p.x, p.y);
 
   function render(dt){
     ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=false;
-    if(game.state===GameState.START){drawStart();return;}
+    if(game.state===GameState.START){drawStart();
+drawLodgeEntrance();
+return;}
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
@@ -1484,6 +1486,45 @@ function spawnSnowWolf() {
     game.snowWolfActive = false;
   }
 }
+
+function drawLodgeEntrance() {
+    const baseHeight = canvas.height / 3;
+    const baseWidth = baseHeight * 1.5;
+    const pillarWidth = baseHeight / 6;
+    const doorWidth = baseHeight / 4;
+    const doorHeight = baseHeight / 2;
+    const roofSlope = baseHeight / 8;
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height - baseHeight / 2;
+
+    // Draw the rectangular base
+    ctx.fillStyle = BIOME_TINTS[0]; // Assuming BIOME_TINTS is an array of colors
+    ctx.fillRect(centerX - baseWidth / 2, centerY - baseHeight / 2, baseWidth, baseHeight);
+
+    // Draw the two vertical pillars
+    ctx.fillStyle = WARBOY_FRAMES[0].color; // Assuming WARBOY_FRAMES is an array of frames with color property
+    ctx.fillRect(centerX - pillarWidth / 2, centerY - baseHeight / 2, pillarWidth, baseHeight);
+    ctx.fillRect(centerX + baseWidth / 2 - pillarWidth / 2, centerY - baseHeight / 2, pillarWidth, baseHeight);
+
+    // Draw the slanted roof
+    ctx.beginPath();
+    ctx.moveTo(centerX - baseWidth / 2, centerY - baseHeight / 2);
+    ctx.lineTo(centerX, centerY - baseHeight / 2 - roofSlope);
+    ctx.lineTo(centerX + baseWidth / 2, centerY - baseHeight / 2);
+    ctx.closePath();
+    ctx.fillStyle = WARBOY_FRAMES[1].color; // Assuming WARBOY_FRAMES has a second frame with color property
+    ctx.fill();
+
+    // Draw the door with a handle
+    ctx.fillStyle = BIOME_TINTS[1]; // Assuming BIOME_TINTS has a second color
+    ctx.fillRect(centerX - doorWidth / 2, centerY + baseHeight / 4, doorWidth, doorHeight);
+    ctx.beginPath();
+    ctx.arc(centerX - doorWidth / 4, centerY + baseHeight / 4 + doorHeight / 3, doorHeight / 10, 0, Math.PI * 2);
+    ctx.fillStyle = WARBOY_FRAMES[2].color; // Assuming WARBOY_FRAMES has a third frame with color property
+    ctx.fill();
+}
+
 
 
 
