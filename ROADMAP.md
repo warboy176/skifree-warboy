@@ -180,7 +180,7 @@ Operator direction from the daily report lands here.
 - [!] Add the snow-wolf to the game's active entities list with a unique ID and initial position  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Ensure the snow-wolf moves forward at a consistent speed relative to the player's current speed  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart
+- [!] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Implement dynamic terrain biome transitions (lodge → open slope → dense forest → night forest) using code-drawn environmental art and shifting color palettes
 - [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
 - [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
