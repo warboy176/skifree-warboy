@@ -1,4 +1,5 @@
 # Changelog
+- Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background (drawLodgeEntrance)
 - Initialize a snow-wolf spawn timer that starts counting after the player begins skiing (initSnowWolfState, updateSnowWolfSpawnTimer, spawnSnowWolf)
 - Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Add a player inactivity timer that starts when the player is skiing and resets on any input (initPlayerInactivityTimer)
