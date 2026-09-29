@@ -1111,6 +1111,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initPlayerInactivityTimer();
+
 initStyleScoreSystem();
 
 initStyleScoreAccumulator();
@@ -1412,6 +1414,14 @@ function checkSnowWolfCollision(dt) {
         }
     }
 }
+
+function initPlayerInactivityTimer() {
+  game.playerInactivityTimer = {
+    resetTimestamp: null,
+    timeoutDuration: 3000
+  };
+}
+
 
 
 
