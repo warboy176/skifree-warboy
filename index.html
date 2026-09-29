@@ -473,6 +473,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateSnowWolfSpawnTimer(dt);
+
 checkSnowWolfCollision(dt);
 
 updateStyleScore(dt);
@@ -1456,6 +1458,17 @@ function initSnowWolfState() {
   game.snowWolfSpawnTimer = 0;
   game.snowWolfActive = false;
 }
+
+function updateSnowWolfSpawnTimer(dt) {
+  if (player.state === PlayerState.SKIING) {
+    game.snowWolfSpawnTimer += dt;
+    if (game.snowWolfSpawnTimer >= 3000) {
+      game.snowWolfActive = true;
+      game.snowWolfSpawnTimer = 0;
+    }
+  }
+}
+
 
 
 
