@@ -1111,6 +1111,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initSnowWolf();
+
 initPlayerInactivityTimer();
 
 initStyleScoreSystem();
@@ -1431,6 +1433,14 @@ function updateSnowWolf(dt) {
     }
   }
 }
+
+function initSnowWolf() {
+  const x = canvas.width / 2;
+  const y = 0;
+  const type = 'snowwolf';
+  makeNpcSkier(x, y, type);
+}
+
 
 
 
