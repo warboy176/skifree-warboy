@@ -1,4 +1,5 @@
 # Changelog
+- Initialize a snow-wolf spawn timer that starts counting after the player begins skiing (initSnowWolfState, updateSnowWolfSpawnTimer, spawnSnowWolf)
 - Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Add a player inactivity timer that starts when the player is skiing and resets on any input (initPlayerInactivityTimer)
 - Add collision detection between the SnowWolf and the player to trigger the EATEN state (checkSnowWolfCollision)

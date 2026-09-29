@@ -175,7 +175,7 @@ Operator direction from the daily report lands here.
 - [!] When the inactivity timer reaches 30 seconds, trigger the snow-wolf spawn function  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to spawn the snow-wolf at a random position above the player's current view  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed
-- [ ] Initialize a snow-wolf spawn timer that starts counting after the player begins skiing
+- [x] Initialize a snow-wolf spawn timer that starts counting after the player begins skiing
 - [ ] Create a function to spawn a snow-wolf at a fixed distance behind the player when the timer reaches its threshold
 - [ ] Add the snow-wolf to the game's active entities list with a unique ID and initial position
 - [ ] Ensure the snow-wolf moves forward at a consistent speed relative to the player's current speed
