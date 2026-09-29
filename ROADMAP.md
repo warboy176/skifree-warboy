@@ -181,6 +181,10 @@ Operator direction from the daily report lands here.
 - [!] Ensure the snow-wolf moves forward at a consistent speed relative to the player's current speed  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Implement dynamic terrain biome transitions (lodge → open slope → dense forest → night forest) using code-drawn environmental art and shifting color palettes
+- [ ] Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background
+- [ ] Implement a scrolling background layer that shifts upward as the player descends, revealing the open slope terrain
+- [ ] Add a code-drawn forest canopy pattern using randomly spaced, vertical tree trunks and branches in the open slope transition
+- [ ] Introduce a dynamic color palette shift from daytime (light blue sky, white snow) to night forest (dark blue, muted gray, subtle star glow)
+- [ ] Trigger biome transitions based on player distance traveled, updating the background art and palette at fixed meter thresholds
 - [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
 - [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
