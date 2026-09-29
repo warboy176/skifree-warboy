@@ -1377,14 +1377,20 @@ function updateStyleScoreOnProximity(dt) {
   }
 }
 
+function applyStyleMultiplierToScore(points) {
+  const awarded = points * game.styleMultiplier;
+  game.styleScore += awarded;
+  game.styleMultiplier *= 2;
+  return awarded;
+}
+
 function updateStyleScore(dt) {
   for (const npc of game.npcSkiers) {
     if (
       Math.abs(player.x - npc.x) <= 40 &&
       Math.abs(player.y - npc.y) <= 100
     ) {
-      game.styleScore += 10 * game.styleMultiplier;
-      game.styleMultiplier *= 2;
+      applyStyleMultiplierToScore(10);
     } else {
       game.styleMultiplier = 1;
     }
