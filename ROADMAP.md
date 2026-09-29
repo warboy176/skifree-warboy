@@ -179,7 +179,7 @@ Operator direction from the daily report lands here.
 - [!] Create a function to spawn a snow-wolf at a fixed distance behind the player when the timer reaches its threshold  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Add the snow-wolf to the game's active entities list with a unique ID and initial position  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Ensure the snow-wolf moves forward at a consistent speed relative to the player's current speed  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time
+- [!] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart
 - [ ] Implement dynamic terrain biome transitions (lodge → open slope → dense forest → night forest) using code-drawn environmental art and shifting color palettes
 - [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
