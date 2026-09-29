@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to draw branching foliage above each tree trunk, using consistent original code-drawn style (drawBranchingFoliage)
 - Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background (drawLodgeEntrance)
 - Initialize a snow-wolf spawn timer that starts counting after the player begins skiing (initSnowWolfState, updateSnowWolfSpawnTimer, spawnSnowWolf)
 - Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed (initSnowWolf, updateSnowWolf, drawSnowWolf)
