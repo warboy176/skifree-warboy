@@ -473,6 +473,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkSnowWolfCollision(dt);
+
 updateStyleScore(dt);
 
 updateStyleScoreOnProximity(dt);
@@ -1391,6 +1393,26 @@ function isSkiingState() {
 function canCrashThrough() {
   return player.state === PlayerState.SKIING && player.state !== PlayerState.JUMPING && player.state !== PlayerState.CRASHED;
 }
+
+function checkSnowWolfCollision(dt) {
+    if (game.state === GameState.GAMEOVER || game.state === GameState.WON) return;
+    if (player.invulnerable > 0 || player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        let npc = game.npcSkiers[i];
+        if (
+            player.x < npc.x + NPC_SKIER_WIDTH &&
+            player.x + player.width > npc.x &&
+            player.y < npc.y + NPC_SKIER_HEIGHT &&
+            player.y + player.height > npc.y
+        ) {
+            setPlayerState(PlayerState.CRASHED);
+            game.state = GameState.GAMEOVER;
+            break;
+        }
+    }
+}
+
 
 
 
