@@ -182,7 +182,7 @@ Operator direction from the daily report lands here.
 - [!] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background
-- [ ] Implement a scrolling background layer that shifts upward as the player descends, revealing the open slope terrain
+- [!] Implement a scrolling background layer that shifts upward as the player descends, revealing the open slope terrain  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Add a code-drawn forest canopy pattern using randomly spaced, vertical tree trunks and branches in the open slope transition
 - [ ] Introduce a dynamic color palette shift from daytime (light blue sky, white snow) to night forest (dark blue, muted gray, subtle star glow)
 - [ ] Trigger biome transitions based on player distance traveled, updating the background art and palette at fixed meter thresholds
