@@ -186,7 +186,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to draw randomly spaced vertical tree trunks on the open slope using Warboy's original code-drawn art  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a function to draw branching foliage above each tree trunk, using consistent original code-drawn style
 - [x] Add a function to update tree positions based on scrolling slope, ensuring they remain fixed relative to the terrain
-- [ ] Add a night transition trigger that activates after 1000 meters of descent
+- [!] Add a night transition trigger that activates after 1000 meters of descent  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a smooth linear color shift from daytime sky (light blue) to night sky (dark blue) over 200 meters
 - [ ] Update snow color from white to muted gray during the night transition
 - [ ] Draw subtle star glows in the night sky using randomly positioned small white dots
