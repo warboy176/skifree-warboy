@@ -1422,6 +1422,17 @@ function initPlayerInactivityTimer() {
   };
 }
 
+function updateSnowWolf(dt) {
+  for (const skier of game.npcSkiers) {
+    skier.y += NPC_SKIER_SPEED * dt;
+    if (skier.y > canvas.height) {
+      skier.x = Math.random() * (canvas.width - NPC_SKIER_WIDTH);
+      skier.y = -NPC_SKIER_HEIGHT;
+    }
+  }
+}
+
+
 
 
 
