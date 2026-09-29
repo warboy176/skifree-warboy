@@ -1441,6 +1441,16 @@ function initSnowWolf() {
   makeNpcSkier(x, y, type);
 }
 
+function drawSnowWolf() {
+  // Assuming game.npcSkiers contains the current position of the snow-wolf
+  if (game.npcSkiers && game.npcSkiers.length > 0) {
+    let snowWolf = game.npcSkiers[0];
+    ctx.fillStyle = 'white';
+    ctx.fillRect(snowWolf.x, snowWolf.y, 4 * dpr, 4 * dpr);
+  }
+}
+
+
 
 
 
