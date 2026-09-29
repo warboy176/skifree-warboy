@@ -169,7 +169,7 @@ Operator direction from the daily report lands here.
 - [!] Define a new SnowWolf class with position, speed, and glowing eyes using original canvas drawing functions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement SnowWolf movement logic that follows the player when they slow down or stop  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add collision detection between the SnowWolf and the player to trigger the EATEN state
-- [ ] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)
+- [!] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement a timer that tracks player inactivity and triggers the snow-wolf spawn after 30 seconds of no input
 - [ ] Add logic to spawn the snow-wolf at a fixed distance behind the player when the timer triggers
 - [ ] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time
