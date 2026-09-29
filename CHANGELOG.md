@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between the SnowWolf and the player to trigger the EATEN state (checkSnowWolfCollision)
 - Make crash-through behavior work only during skiing state and not during jumps or crashes (isSkiingState, canCrashThrough)
 - Introduce style scoring: award points for slaloming close to NPCs, with multipliers for consecutive near-misses (initStyleScoreSystem, updateStyleScore, drawStyleScoreHUD)
 - Add a function to increment the style score only when the player is within 30 pixels of an NPC skier and not colliding (updateStyleScoreOnProximity)
