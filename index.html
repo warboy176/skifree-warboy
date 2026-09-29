@@ -1528,46 +1528,54 @@ function drawLodgeEntrance() {
 }
 
 function drawBranchingFoliage(treeX, treeY, treeHeight, treeWidth) {
-    const tint = BIOME_TINTS[game.biome];
-    ctx.fillStyle = tint.color;
+  const greenTint = BIOME_TINTS[0];
+  ctx.fillStyle = greenTint;
 
-    // Draw the first equilateral triangle
-    const baseLength = treeWidth * 0.5;
-    const heightFirstTriangle = (Math.sqrt(3) / 2) * baseLength;
-    ctx.beginPath();
-    ctx.moveTo(treeX, treeY);
-    ctx.lineTo(treeX + baseLength / 2, treeY - heightFirstTriangle);
-    ctx.lineTo(treeX - baseLength / 2, treeY - heightFirstTriangle);
-    ctx.closePath();
-    ctx.fill();
+  // Topmost equilateral triangle (smallest)
+  const topSize = treeWidth * 0.4;
+  const topX = treeX + treeWidth / 2;
+  const topY = treeY - treeHeight * 0.1;
+  const topH = topSize * Math.sqrt(3) / 2;
+  ctx.beginPath();
+  ctx.moveTo(topX, topY);
+  ctx.lineTo(topX - topSize / 2, topY + topH);
+  ctx.lineTo(topX + topSize / 2, topY + topH);
+  ctx.closePath();
+  ctx.fill();
 
-    // Draw the second equilateral triangle
-    const baseLengthSecond = baseLength * 0.7;
-    const heightSecondTriangle = (Math.sqrt(3) / 2) * baseLengthSecond;
-    ctx.beginPath();
-    ctx.moveTo(treeX, treeY - heightFirstTriangle);
-    ctx.lineTo(treeX + baseLengthSecond / 2, treeY - heightFirstTriangle - heightSecondTriangle);
-    ctx.lineTo(treeX - baseLengthSecond / 2, treeY - heightFirstTriangle - heightSecondTriangle);
-    ctx.closePath();
-    ctx.fill();
+  // Middle equilateral triangle (medium)
+  const midSize = treeWidth * 0.6;
+  const midX = treeX + treeWidth / 2;
+  const midY = treeY - treeHeight * 0.3;
+  const midH = midSize * Math.sqrt(3) / 2;
+  ctx.beginPath();
+  ctx.moveTo(midX, midY);
+  ctx.lineTo(midX - midSize / 2, midY + midH);
+  ctx.lineTo(midX + midSize / 2, midY + midH);
+  ctx.closePath();
+  ctx.fill();
 
-    // Draw the third equilateral triangle
-    const baseLengthThird = baseLength * 0.5;
-    const heightThirdTriangle = (Math.sqrt(3) / 2) * baseLengthThird;
-    ctx.beginPath();
-    ctx.moveTo(treeX, treeY - heightFirstTriangle - heightSecondTriangle);
-    ctx.lineTo(treeX + baseLengthThird / 2, treeY - heightFirstTriangle - heightSecondTriangle - heightThirdTriangle);
-    ctx.lineTo(treeX - baseLengthThird / 2, treeY - heightFirstTriangle - heightSecondTriangle - heightThirdTriangle);
-    ctx.closePath();
-    ctx.fill();
+  // Bottom equilateral triangle (largest)
+  const botSize = treeWidth * 0.8;
+  const botX = treeX + treeWidth / 2;
+  const botY = treeY - treeHeight * 0.5;
+  const botH = botSize * Math.sqrt(3) / 2;
+  ctx.beginPath();
+  ctx.moveTo(botX, botY);
+  ctx.lineTo(botX - botSize / 2, botY + botH);
+  ctx.lineTo(botX + botSize / 2, botY + botH);
+  ctx.closePath();
+  ctx.fill();
 
-    // Draw the pine-like tips
-    ctx.beginPath();
-    ctx.arc(treeX + baseLength / 4, treeY - heightFirstTriangle - heightSecondTriangle - heightThirdTriangle, 3, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(treeX - baseLength / 4, treeY - heightFirstTriangle - heightSecondTriangle - heightThirdTriangle, 3, 0, Math.PI * 2);
-    ctx.fill();
+  // Pine-like tips: two small circles
+  const tipRadius = treeWidth * 0.08;
+  ctx.beginPath();
+  ctx.arc(topX, topY - topH * 0.3, tipRadius, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(topX, topY + topH * 0.3, tipRadius, 0, Math.PI * 2);
+  ctx.fill();
 }
 
 
