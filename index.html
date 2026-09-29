@@ -1111,6 +1111,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initSnowWolfState();
+
 initSnowWolf();
 
 initPlayerInactivityTimer();
@@ -1449,6 +1451,12 @@ function drawSnowWolf() {
     ctx.fillRect(snowWolf.x, snowWolf.y, 4 * dpr, 4 * dpr);
   }
 }
+
+function initSnowWolfState() {
+  game.snowWolfSpawnTimer = 0;
+  game.snowWolfActive = false;
+}
+
 
 
 
