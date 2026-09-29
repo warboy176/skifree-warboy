@@ -170,7 +170,11 @@ Operator direction from the daily report lands here.
 - [!] Implement SnowWolf movement logic that follows the player when they slow down or stop  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add collision detection between the SnowWolf and the player to trigger the EATEN state
 - [!] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a timer that tracks player inactivity and triggers the snow-wolf spawn after 30 seconds of no input
+- [ ] Add a player inactivity timer that starts when the player is skiing and resets on any input
+- [ ] Track elapsed time since last input and store it in a variable updated every frame
+- [ ] When the inactivity timer reaches 30 seconds, trigger the snow-wolf spawn function
+- [ ] Create a function to spawn the snow-wolf at a random position above the player's current view
+- [ ] Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed
 - [ ] Add logic to spawn the snow-wolf at a fixed distance behind the player when the timer triggers
 - [ ] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time
 - [ ] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart
