@@ -474,6 +474,8 @@ spawnHighJumpRamps();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateSnowWolfSpawnTimer(dt);
+spawnSnowWolf();
+
 
 checkSnowWolfCollision(dt);
 
@@ -1468,6 +1470,21 @@ function updateSnowWolfSpawnTimer(dt) {
     }
   }
 }
+
+function spawnSnowWolf() {
+  if (game.snowWolfActive) {
+    const snowWolf = {
+      x: Math.random() * canvas.width,
+      y: -50,
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT,
+      speed: NPC_SKIER_SPEED
+    };
+    game.npcSkiers.push(snowWolf);
+    game.snowWolfActive = false;
+  }
+}
+
 
 
 
