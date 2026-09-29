@@ -172,7 +172,7 @@ Operator direction from the daily report lands here.
 - [!] Draw the SnowWolf with animated glowing eyes using original pixel-art code (no copied sprites)  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a player inactivity timer that starts when the player is skiing and resets on any input
 - [!] Track elapsed time since last input and store it in a variable updated every frame  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] When the inactivity timer reaches 30 seconds, trigger the snow-wolf spawn function
+- [!] When the inactivity timer reaches 30 seconds, trigger the snow-wolf spawn function  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a function to spawn the snow-wolf at a random position above the player's current view
 - [ ] Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed
 - [ ] Add logic to spawn the snow-wolf at a fixed distance behind the player when the timer triggers
