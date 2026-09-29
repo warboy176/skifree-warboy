@@ -473,6 +473,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateTreePositions(dt);
+
 updateSnowWolfSpawnTimer(dt);
 spawnSnowWolf();
 
@@ -1577,6 +1579,13 @@ function drawBranchingFoliage(treeX, treeY, treeHeight, treeWidth) {
   ctx.arc(topX, topY + topH * 0.3, tipRadius, 0, Math.PI * 2);
   ctx.fill();
 }
+
+function updateTreePositions(dt) {
+  for (let tree of game.trees) {
+    tree.y += dt * MAX_SPEED * METERS_PER_PIXEL;
+  }
+}
+
 
 
 
