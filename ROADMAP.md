@@ -174,7 +174,7 @@ Operator direction from the daily report lands here.
 - [!] Track elapsed time since last input and store it in a variable updated every frame  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] When the inactivity timer reaches 30 seconds, trigger the snow-wolf spawn function  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to spawn the snow-wolf at a random position above the player's current view  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed
+- [x] Ensure the snow-wolf is drawn on the canvas and moves downward at a fixed speed
 - [ ] Add logic to spawn the snow-wolf at a fixed distance behind the player when the timer triggers
 - [ ] Implement basic pursuit behavior: the snow-wolf moves forward at a base speed and increases speed over time
 - [ ] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart
