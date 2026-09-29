@@ -183,7 +183,9 @@ Operator direction from the daily report lands here.
 - [!] Add collision detection between the snow-wolf and player, triggering the EATEN state and instant restart  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background
 - [!] Implement a scrolling background layer that shifts upward as the player descends, revealing the open slope terrain  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Add a code-drawn forest canopy pattern using randomly spaced, vertical tree trunks and branches in the open slope transition
+- [ ] Add a function to draw randomly spaced vertical tree trunks on the open slope using Warboy's original code-drawn art
+- [ ] Add a function to draw branching foliage above each tree trunk, using consistent original code-drawn style
+- [ ] Add a function to update tree positions based on scrolling slope, ensuring they remain fixed relative to the terrain
 - [ ] Introduce a dynamic color palette shift from daytime (light blue sky, white snow) to night forest (dark blue, muted gray, subtle star glow)
 - [ ] Trigger biome transitions based on player distance traveled, updating the background art and palette at fixed meter thresholds
 - [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
