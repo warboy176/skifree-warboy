@@ -474,6 +474,8 @@ spawnHighJumpRamps();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateDistanceTracker(dt);
+checkBiomeTransition();
+
 
 updateTreePositions(dt);
 
@@ -1622,6 +1624,17 @@ function updateDistanceTracker(dt) {
     }
   }
 }
+
+function checkBiomeTransition() {
+  const currentThreshold = BIOME_THRESHOLDS[game.currentBiomeIndex];
+  
+  if (game.distanceMeters > currentThreshold) {
+    game.currentBiomeIndex++;
+    updateBiomeTransition(game.distanceMeters);
+    drawBiomeTransition();
+  }
+}
+
 
 
 
