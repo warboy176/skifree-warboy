@@ -1044,6 +1044,7 @@ return;}
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
+    drawDistantMountainSilhouettes();
     drawBackgroundTrees();
 drawStarfield();
 
@@ -1404,6 +1405,28 @@ function drawStarfield() {
   for (let i = 0; i < game.starfield.length; i++) {
     let star = game.starfield[i];
     ctx.fillRect(star.x, star.y, 1, 1);
+  }
+}
+
+// Faint stepped-pyramid mountain silhouettes far behind the slope. Built purely from
+// fillRect calls (no strokes/paths) so each peak is just a stack of shrinking bars sharing
+// one base line at canvas.height - 100.
+function drawDistantMountainSilhouettes() {
+  const baseY = canvas.height - 100;
+  const peaks = [
+    { x: canvas.width * 0.12, w: 220, h: 150, color: '#b7cfe0' },
+    { x: canvas.width * 0.5, w: 260, h: 190, color: '#a3bfd4' },
+    { x: canvas.width * 0.82, w: 200, h: 130, color: '#b7cfe0' }
+  ];
+  const steps = 8;
+  for (const peak of peaks) {
+    ctx.fillStyle = peak.color;
+    for (let i = 0; i < steps; i++) {
+      const t = i / steps;
+      const stepW = peak.w * (1 - t);
+      const stepH = peak.h / steps;
+      ctx.fillRect(peak.x - stepW / 2, baseY - peak.h + i * stepH, stepW, stepH + 1);
+    }
   }
 }
 
