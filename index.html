@@ -266,6 +266,15 @@ spawnHighJumpRamps();
   }
   function overlaps(a,b){ return a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y; }
 
+  // Direct-overlap AABB test between the player and a single NPC skier. Pure function of
+  // its two arguments (no reliance on the outer `player`/`game` closures) so it can be reused
+  // by handleCollisions() and by any future margin/near-miss logic without duplicating the box math.
+  function checkNPCCollision(player,npc){
+    const pb={x:player.x-8,y:player.y-10,w:16,h:22};
+    const nb={x:npc.x-10,y:npc.y-18,w:20,h:34};
+    return overlaps(pb,nb);
+  }
+
   function handleCollisions(){
     if(player.invulnerable>0 || player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
     const pb=boxForPlayer();
@@ -295,7 +304,7 @@ spawnHighJumpRamps();
     if(Array.isArray(game.npcSkiers)){
       for(const s of game.npcSkiers){
         if(Math.abs(s.y-player.y)>65) continue;
-        if(overlaps(pb,{x:s.x-10,y:s.y-18,w:20,h:34})){ s.fallen=1.0; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
+        if(checkNPCCollision(player,s)){ s.fallen=1.0; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
       }
     }
     if(Array.isArray(game.dogs)){
