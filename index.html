@@ -634,9 +634,20 @@ checkStyleScoreProximity(dt);
 
   function worldToScreen(x,y){ return {x:W/2+(x-player.x),y:HUD_H+y-game.cameraY}; }
 
+  // Vertical alpine-sky gradient: deep blue up high fading through pale haze into the
+  // biome-tinted horizon color, instead of a flat fill.
+  function drawAlpineSkyGradient(skyColor){
+    const grad=ctx.createLinearGradient(0,0,0,H);
+    grad.addColorStop(0,'#8ec9f0');
+    grad.addColorStop(.45,'#cfeeff');
+    grad.addColorStop(1,skyColor);
+    ctx.fillStyle=grad;
+    ctx.fillRect(0,0,W,H);
+  }
+
   function drawSnow(){
     const biomeVisual=game.biomeVisual||{sky:'#eefaff',dash:'rgba(129,203,229,.25)'};
-    rect(0,0,W,H,biomeVisual.sky);
+    drawAlpineSkyGradient(biomeVisual.sky);
     ctx.globalAlpha=.62;
     for(const f of game.snow){
       const sx=((f.x-player.x*.08+W*2)%(W*1.5))-W*.25;
