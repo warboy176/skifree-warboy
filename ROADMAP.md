@@ -195,7 +195,9 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to update the background art and color palette when the player reaches each biome threshold  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Define and draw the first new biome (forest) using original pixel art in the canvas, replacing the current snowfield at the transition point  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure the biome transition is smooth and only affects the background, not gameplay elements like player or obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a 'style' score counter that increases when the player slaloms close to NPC skiers without colliding
+- [ ] Add a 'style' score counter that increments when the player passes within 30px of an NPC skier without collision
+- [ ] Ensure the style counter resets to zero when the player collides with any obstacle or NPC skier
+- [ ] Display the style score in the HUD using a distinct color and position, updating every frame
 - [ ] Implement a multiplier system that starts at 1 and increases by 0.5 for each consecutive close pass through an NPC skier
 - [ ] Reset the multiplier to 1 when the player hits a tree or crashes into any obstacle
 - [ ] Display the current style score and multiplier on the HUD with distinct visual indicators
