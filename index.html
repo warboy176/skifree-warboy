@@ -473,6 +473,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateDistanceTracker(dt);
+
 updateTreePositions(dt);
 
 updateSnowWolfSpawnTimer(dt);
@@ -1608,6 +1610,17 @@ function initDistanceTracker() {
   game.currentBiomeIndex = 0;
   game.biomeTransitionPoints = [];
 }
+
+function updateDistanceTracker(dt) {
+  game.distanceMeters += player.speed * dt * METERS_PER_PIXEL;
+  
+  if (game.distanceMeters >= BIOME_THRESHOLDS[game.currentBiomeIndex]) {
+    game.currentBiomeIndex++;
+    drawBiomeTransition();
+    game.biomeTransitionPoints.push(BIOME_THRESHOLDS[game.currentBiomeIndex - 1]);
+  }
+}
+
 
 
 
