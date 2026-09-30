@@ -1262,16 +1262,28 @@ function initTrees() {
     }
 }
 
+// Near-miss detector: fires when the player's padded box grazes an NPC skier's box
+// (overlaps()) without an actual hit (checkNPCCollision() stays false), rewarding a small
+// style bonus once per pass. `grazed` is tracked per-NPC so the bonus can't repeat every
+// frame while skiing alongside the same skier, and resets once they drift apart again.
 function checkNPCProximity(dt) {
+  if (!Array.isArray(game.npcSkiers)) return;
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  const NEAR_MISS_MARGIN = 14;
   for (let i = 0; i < game.npcSkiers.length; i++) {
     const npc = game.npcSkiers[i];
-    if (Math.abs(npc.x - PlayerState.x) <= 15) {
-      handleCollisions();
-      PlayerState.CRASHED = true;
-      player.speed *= 0.25;
-      game.cleanTime = 0;
-      game.shake = 0.25;
-      break;
+    if (Math.abs(npc.y - player.y) > 60) { npc.grazed = false; continue; }
+    const pb = {x:player.x-8-NEAR_MISS_MARGIN, y:player.y-10-NEAR_MISS_MARGIN, w:16+NEAR_MISS_MARGIN*2, h:22+NEAR_MISS_MARGIN*2};
+    const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
+    if (overlaps(pb, nb) && !checkNPCCollision(player, npc)) {
+      if (!npc.grazed) {
+        npc.grazed = true;
+        game.style += 5;
+        game.trickText = 'NEAR MISS +5';
+        game.trickTime = .6;
+      }
+    } else {
+      npc.grazed = false;
     }
   }
 }
