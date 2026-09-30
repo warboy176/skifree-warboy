@@ -498,6 +498,7 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
+checkStyleScoreProximity(dt);
 
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
@@ -1449,6 +1450,23 @@ function applyStyleScore(dt) {
 function initStyleScoreSystem() {
   game.styleScore = 0;
   game.styleMultiplier = 1;
+}
+
+// Awards style score for skiing close to an NPC, using a direct bounding-box overlap
+// test on player/npc positions (same box math as checkNPCCollision) rather than
+// delegating to checkNPCProximity(), which exists for the separate near-miss trick text
+// system and must not be reused here.
+function checkStyleScoreProximity(dt) {
+  if (!Array.isArray(game.npcSkiers)) return;
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  const pb = {x:player.x-8, y:player.y-10, w:16, h:22};
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
+    if (overlaps(pb, nb)) {
+      game.styleScore += 1;
+    }
+  }
 }
 
 function drawStyleScoreHUD() {
