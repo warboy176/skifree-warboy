@@ -1,4 +1,5 @@
 # Changelog
+- Add a distance tracker that increments with player movement and triggers biome changes at fixed meter thresholds (initDistanceTracker, updateDistanceTracker, checkBiomeTransition)
 - Add a function to update tree positions based on scrolling slope, ensuring they remain fixed relative to the terrain (updateTreePositions)
 - Add a function to draw branching foliage above each tree trunk, using consistent original code-drawn style (drawBranchingFoliage)
 - Draw the lodge entrance art at the start using original code-drawn lines and shapes in the background (drawLodgeEntrance)
