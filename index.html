@@ -201,7 +201,7 @@ if (autoplay.enabled) {
   function startGame(){
     Object.assign(player,{x:0,y:0,vx:0,speed:155,state:PlayerState.SKIING,stateTime:0,jumpTime:0,jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0});
     Object.assign(yeti,{active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,cycle:'WAIT',cycleTime:0,cycleLimit:0});
-    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0});
+    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope'});
     fastMode = false;
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
@@ -496,6 +496,7 @@ checkNPCProximity(dt);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateBiome(player.y);
+        checkBiomeTransition();
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -1139,6 +1140,19 @@ initStarfield();
 
     game.biome = game.biomeThresholds[0].name;
     game.biomeVisual = game.biomeThresholds[0];
+    game.lastBiome = game.biome;
+}
+
+// Detects when the gameplay biome tier (game.biome, updated each tick by updateBiome()) has
+// changed since the last check and fires a one-time flash/shake pulse so the player feels the
+// exact instant of crossing a threshold, complementing the fade-in banner from drawBiomeTransition.
+function checkBiomeTransition() {
+    if (game.state !== GameState.PLAYING) return;
+    if (game.biome !== game.lastBiome) {
+        game.flash = Math.max(game.flash, 0.25);
+        game.shake = Math.max(game.shake, 0.15);
+        game.lastBiome = game.biome;
+    }
 }
 
 function updateBiomeFromDistance() {
