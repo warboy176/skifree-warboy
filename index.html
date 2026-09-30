@@ -1119,6 +1119,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initDistanceTracker();
+
 initSnowWolfState();
 
 initSnowWolf();
@@ -1599,6 +1601,14 @@ function updateTreePositions(dt) {
     tree.y += dt * MAX_SPEED * METERS_PER_PIXEL;
   }
 }
+
+function initDistanceTracker() {
+  game.distanceMeters = 0;
+  const BIOME_THRESHOLDS = defineBiomeThresholds();
+  game.currentBiomeIndex = 0;
+  game.biomeTransitionPoints = [];
+}
+
 
 
 
