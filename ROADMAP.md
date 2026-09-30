@@ -191,7 +191,7 @@ Operator direction from the daily report lands here.
 - [!] Update snow color from white to muted gray during the night transition  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [!] Draw subtle star glows in the night sky using randomly positioned small white dots  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure all existing art and game mechanics remain unchanged and fully functional  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a distance tracker that increments with player movement and triggers biome changes at fixed meter thresholds
+- [x] Add a distance tracker that increments with player movement and triggers biome changes at fixed meter thresholds
 - [ ] Implement a function to update the background art and color palette when the player reaches each biome threshold
 - [ ] Define and draw the first new biome (forest) using original pixel art in the canvas, replacing the current snowfield at the transition point
 - [ ] Ensure the biome transition is smooth and only affects the background, not gameplay elements like player or obstacles
