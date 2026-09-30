@@ -481,9 +481,7 @@ spawnSnowWolf();
 
 checkSnowWolfCollision(dt);
 
-updateStyleScore(dt);
-
-updateStyleScoreOnProximity(dt);
+applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
@@ -1395,6 +1393,12 @@ function updateStyleScore(dt) {
       game.styleMultiplier = 1;
     }
   }
+}
+
+function applyStyleScore(dt) {
+  if (player.state !== PlayerState.SKIING) return;
+  updateStyleScore(dt);
+  updateStyleScoreOnProximity(dt);
 }
 
 function initStyleScoreSystem() {
