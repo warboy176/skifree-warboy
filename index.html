@@ -1613,11 +1613,13 @@ function initDistanceTracker() {
 
 function updateDistanceTracker(dt) {
   game.distanceMeters += player.speed * dt * METERS_PER_PIXEL;
-  
-  if (game.distanceMeters >= BIOME_THRESHOLDS[game.currentBiomeIndex]) {
-    game.currentBiomeIndex++;
-    drawBiomeTransition();
-    game.biomeTransitionPoints.push(BIOME_THRESHOLDS[game.currentBiomeIndex - 1]);
+  const currentThreshold = BIOME_THRESHOLDS[game.currentBiomeIndex];
+  if (game.distanceMeters >= currentThreshold) {
+    if (game.currentBiomeIndex < BIOME_THRESHOLDS.length - 1) {
+      game.currentBiomeIndex++;
+      game.biomeTransitionPoints.push(currentThreshold);
+      drawBiomeTransition();
+    }
   }
 }
 
