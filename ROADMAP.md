@@ -190,7 +190,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a smooth linear color shift from daytime sky (light blue) to night sky (dark blue) over 200 meters  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
 - [!] Update snow color from white to muted gray during the night transition  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [!] Draw subtle star glows in the night sky using randomly positioned small white dots  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Ensure all existing art and game mechanics remain unchanged and fully functional
+- [!] Ensure all existing art and game mechanics remain unchanged and fully functional  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [ ] Trigger biome transitions based on player distance traveled, updating the background art and palette at fixed meter thresholds
 - [ ] Introduce a style-based scoring system that rewards close slaloming through NPC skiers with multipliers and penalizes tree hits with style loss
 - [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
