@@ -1375,8 +1375,12 @@ function updateStyleScoreOnProximity(dt) {
   }
 }
 
+function calculateStyledScore(basePoints) {
+  return basePoints * game.styleMultiplier;
+}
+
 function applyStyleMultiplierToScore(points) {
-  const awarded = points * game.styleMultiplier;
+  const awarded = calculateStyledScore(points);
   game.styleScore += awarded;
   game.styleMultiplier *= 2;
   return awarded;
