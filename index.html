@@ -1626,12 +1626,17 @@ function updateDistanceTracker(dt) {
 }
 
 function checkBiomeTransition() {
-  const currentThreshold = BIOME_THRESHOLDS[game.currentBiomeIndex];
-  
-  if (game.distanceMeters > currentThreshold) {
-    game.currentBiomeIndex++;
-    updateBiomeTransition(game.distanceMeters);
-    drawBiomeTransition();
+  const thresholds = BIOME_THRESHOLDS;
+  const currentDistance = game.distanceMeters;
+
+  for (let i = 0; i < thresholds.length; i++) {
+    const threshold = thresholds[i];
+    if (currentDistance > threshold && !game.biomeTransitioned[i]) {
+      game.currentBiomeIndex = i;
+      game.biomeTransitioned[i] = true;
+      drawBiomeTransition();
+      break;
+    }
   }
 }
 
