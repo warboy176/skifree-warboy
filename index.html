@@ -1045,6 +1045,7 @@ return;}
     drawDistantMountainSilhouettes();
     drawBackgroundTrees();
 drawStarfield();
+drawMoon(ctx);
 
     drawForestBiome(dt);
     drawBiomeOverlay(ctx);
@@ -1404,6 +1405,23 @@ function drawStarfield() {
     let star = game.starfield[i];
     ctx.fillRect(star.x, star.y, 1, 1);
   }
+}
+
+// Static decorative moon drawn in the upper sky alongside the starfield.
+function drawMoon(ctx) {
+  const x = canvas.width * 0.82;
+  const y = canvas.height * 0.14;
+  const r = 26;
+  ctx.save();
+  ctx.fillStyle = '#f5f1d6';
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = 'rgba(200,196,170,0.55)';
+  ctx.beginPath();ctx.arc(x - 8, y - 6, 5, 0, Math.PI * 2);ctx.fill();
+  ctx.beginPath();ctx.arc(x + 7, y + 8, 4, 0, Math.PI * 2);ctx.fill();
+  ctx.beginPath();ctx.arc(x + 10, y - 10, 3, 0, Math.PI * 2);ctx.fill();
+  ctx.restore();
 }
 
 // Faint stepped-pyramid mountain silhouettes far behind the slope. Built purely from
