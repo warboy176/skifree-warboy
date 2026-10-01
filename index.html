@@ -1060,6 +1060,7 @@ return;}
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnow();
+    drawSkyTint(ctx);
     drawDistantMountainSilhouettes();
     drawBackgroundTrees();
 drawStarfield();
@@ -1466,6 +1467,22 @@ function drawMoon(ctx) {
   ctx.beginPath();ctx.arc(x - 8, y - 6, 5, 0, Math.PI * 2);ctx.fill();
   ctx.beginPath();ctx.arc(x + 7, y + 8, 4, 0, Math.PI * 2);ctx.fill();
   ctx.beginPath();ctx.arc(x + 10, y - 10, 3, 0, Math.PI * 2);ctx.fill();
+  ctx.restore();
+}
+
+// Washes the sky with a dusk color as the player nears the NIGHTFALL boundary (tracked in
+// game.biomeTransitions by updateBiomeTransition), smoothing the handoff between the daytime
+// drawAlpineSkyGradient and the hard darkening drawNightBiomeOverlay applies once game.biome
+// actually becomes 'night'.
+function drawSkyTint(ctx) {
+  if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
+  if (!game.biomeTransitions) return;
+  const dusk = game.biomeTransitions.find(z => z.label === 'NIGHTFALL');
+  if (!dusk) return;
+  ctx.save();
+  ctx.globalAlpha = dusk.alpha * 0.55;
+  ctx.fillStyle = '#3a3a78';
+  ctx.fillRect(0, HUD_H, W, H - HUD_H);
   ctx.restore();
 }
 
