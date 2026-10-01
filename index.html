@@ -587,6 +587,24 @@ checkStyleScoreProximity(dt);
       }
     };
   }
+  // Subtle ring that flashes around an NPC skier when the player is within `threshold`
+  // world units of it, giving a visual cue to accompany checkNPCProximity()'s near-miss bonus.
+  function drawNearEffect(ctx, npc, threshold = 30) {
+    const dx = player.x - npc.x;
+    const dy = player.y - npc.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist > threshold) return;
+    const q = worldToScreen(npc.x, npc.y);
+    if (q.y < -90 || q.y > H+130) return;
+    ctx.save();
+    ctx.globalAlpha = (1 - dist/threshold) * 0.6;
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(q.x, q.y-10, 22, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.restore();
+  }
   function initNPCs(){
     game.npcSkiers = [];
     for (let i=0; i<6; i++) game.npcSkiers.push(makeNpcSkier());
@@ -1055,7 +1073,7 @@ drawMoon(ctx);
     // Other skiers on the slope. GUARDED: the stray intro path (handleIntroInput) can reach
     // PLAYING without startGame(), leaving game.npcSkiers undefined -> lazy-init here; the
     // try/catch guarantees render() still reaches drawSkier()/drawHUD() so it can never blank.
-    if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.npcSkiers))initNPCs();for(let i=0;i<game.npcSkiers.length;i++){game.npcSkiers[i].update();game.npcSkiers[i].draw();}}catch(_npcErr){}}
+    if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.npcSkiers))initNPCs();for(let i=0;i<game.npcSkiers.length;i++){game.npcSkiers[i].update();game.npcSkiers[i].draw();drawNearEffect(ctx,game.npcSkiers[i]);}}catch(_npcErr){}}
     if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.dogs))game.dogs=[];game.dogTimer=(game.dogTimer||0)+1;if(game.dogTimer>210&&game.dogs.length<3&&game.distance>350){game.dogTimer=0;game.dogs.push(makeDog());}for(let i=0;i<game.dogs.length;i++){game.dogs[i].update();game.dogs[i].draw();}}catch(_dogErr){}}
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
