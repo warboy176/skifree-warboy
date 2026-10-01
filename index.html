@@ -1067,6 +1067,7 @@ drawMoon(ctx);
 
     drawForestBiome(dt);
     drawBiomeOverlay(ctx);
+    if(game.biome==='night')drawNightBiomeOverlay(ctx,0,HUD_H,W,H-HUD_H);
     drawBiomeTransition(ctx);
     const ordered=game.obstacles.slice().sort((a,b)=>a.y-b.y);
     for(const o of ordered)if(o.y<player.y)drawObstacle(o);
@@ -1209,7 +1210,8 @@ function updateBiomeFromDistance() {
 const BIOME_THRESHOLDS = [
     {name:'slope', minDistance:0},
     {name:'canyon', minDistance:10000},
-    {name:'warzone', minDistance:20000}
+    {name:'warzone', minDistance:20000},
+    {name:'night', minDistance:25000}
 ];
 
 function updateBiome(playerY) {
@@ -1233,9 +1235,34 @@ function drawBiomeOverlay(ctx) {
     ctx.restore();
 }
 
+// Speckle pattern for the night biome overlay: relative (0-1) offsets into the target rect plus a
+// radius, so drawNightBiomeOverlay can scatter a consistent starfield across any x/y/w/h it's given.
+const NIGHT_BIOME_PATTERNS = [
+    { dx: 0.08, dy: 0.15, r: 1.2 }, { dx: 0.22, dy: 0.62, r: 0.8 }, { dx: 0.35, dy: 0.3, r: 1.5 },
+    { dx: 0.47, dy: 0.78, r: 1 }, { dx: 0.58, dy: 0.12, r: 0.9 }, { dx: 0.7, dy: 0.5, r: 1.3 },
+    { dx: 0.82, dy: 0.85, r: 0.7 }, { dx: 0.91, dy: 0.28, r: 1.1 }, { dx: 0.15, dy: 0.92, r: 0.9 },
+    { dx: 0.63, dy: 0.95, r: 1 }, { dx: 0.3, dy: 0.08, r: 0.7 }, { dx: 0.78, dy: 0.08, r: 1 }
+];
+
+// Darkens the given rect to suggest nightfall and scatters NIGHT_BIOME_PATTERNS across it as
+// faint stars; used for the 'night' gameplay biome where the flat BIOME_TINTS tint alone
+// wouldn't read as night.
+function drawNightBiomeOverlay(ctx, x, y, w, h) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(8,12,34,.38)';
+    ctx.fillRect(x, y, w, h);
+    ctx.fillStyle = 'rgba(255,255,255,.75)';
+    for (const p of NIGHT_BIOME_PATTERNS) {
+        ctx.beginPath();
+        ctx.arc(x + p.dx * w, y + p.dy * h, p.r, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.restore();
+}
+
 // Foundation data for the biome transition system: the world-distance (in meters) at which
 // each biome boundary sits, paired with the banner label shown as the player nears it.
-const biomeTransitionPoints = [ { distance: 10000, label: 'ENTERING CANYON' }, { distance: 20000, label: 'ENTERING WARZONE' } ];
+const biomeTransitionPoints = [ { distance: 10000, label: 'ENTERING CANYON' }, { distance: 20000, label: 'ENTERING WARZONE' }, { distance: 25000, label: 'NIGHTFALL' } ];
 
 // Recomputed every update tick from the player's current distance so drawBiomeTransition can
 // stay a pure render of already-known state instead of redoing this math every frame.
