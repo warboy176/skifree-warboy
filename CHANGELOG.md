@@ -1,4 +1,5 @@
 # Changelog
+- Call the style score check function every frame during gameplay (callStyleScoreCheckEveryFrame)
 - Add a 'style' score counter variable initialized to 0 in the game state (initStyleScore)
 - Add a distance tracker that increments with player movement and triggers biome changes at fixed meter thresholds (initDistanceTracker, updateDistanceTracker, checkBiomeTransition)
 - Add a function to update tree positions based on scrolling slope, ensuring they remain fixed relative to the terrain (updateTreePositions)
