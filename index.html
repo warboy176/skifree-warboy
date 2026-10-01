@@ -1847,6 +1847,15 @@ function initStyleScore() {
   game.styleScore = 0;
 }
 
+function callStyleScoreCheckEveryFrame() {
+  if (GameState.PLAYING) {
+    for (const skier of game.npcSkiers) {
+      checkStyleScoreProximity(player.x, player.y, skier.x, skier.y);
+    }
+  }
+}
+
+
 
 
 
