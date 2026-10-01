@@ -757,6 +757,30 @@ checkStyleScoreProximity(dt);
     ctx.globalAlpha=1;
   }
 
+  // --- Open snowfield ambient decoration ---------------------------------------------------------
+  // Sparse, non-collidable snow bumps/drifts for the default 'slope' biome stretch, world-anchored
+  // the same way as drawBackgroundTrees/drawForestBiome so they scroll with the world instead of
+  // looking screen-pinned. Purely decorative: these never enter game.obstacles / handleCollisions.
+  function drawSnowfieldObstacles(){
+    if(game.biomeVisual&&game.biomeVisual.name!=='slope')return;
+    ctx.globalAlpha=.5;
+    const SP=130;
+    const cLo=Math.floor((player.x-W*0.75)/SP),cHi=Math.ceil((player.x+W*0.75)/SP);
+    const rLo=Math.floor((game.cameraY-90)/SP),rHi=Math.ceil((game.cameraY+(H-HUD_H)+100)/SP);
+    for(let c=cLo;c<=cHi;c++)for(let r=rLo;r<=rHi;r++){
+      const h=_bgHash(c*2.1,r*1.9);
+      if(h>0.3)continue;                                       // ~30% of grid cells carry a snow bump
+      const wx=c*SP+(_bgHash(c+5,r)*60-30), wy=r*SP+(_bgHash(c,r+5)*60-30);
+      const p=worldToScreen(wx,wy);
+      if(p.x<-40||p.x>W+40||p.y<HUD_H-30||p.y>H+60)continue;
+      const t=_bgHash(c+13,r+13);
+      const w=24+t*20,hgt=7+t*5;
+      poly([[p.x-w/2,p.y+hgt/2],[p.x-w/4,p.y-hgt/2],[p.x+w/4,p.y-hgt/2],[p.x+w/2,p.y+hgt/2]],'#e3f4fb');
+      rect(p.x-w/2,p.y+hgt/2-1,w,2,'#c5ecfa');
+    }
+    ctx.globalAlpha=1;
+  }
+
   function drawTracks(){
     ctx.globalAlpha=.46;
     for(const t of game.tracks){
@@ -1080,6 +1104,7 @@ drawStarfield();
 drawMoon(ctx);
 
     drawForestBiome(dt);
+    drawSnowfieldObstacles();
     drawBiomeOverlay(ctx);
     if(game.biome==='night')drawNightBiomeOverlay(ctx,0,HUD_H,W,H-HUD_H);
     drawBiomeTransition(ctx);
