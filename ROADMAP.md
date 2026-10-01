@@ -198,7 +198,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'style' score counter variable initialized to 0 in the game state
 - [!] Create a function to check if the player is within 30px of any NPC skier without collision and increment the style score if true  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Call the style score check function every frame during gameplay
-- [ ] Ensure the style counter resets to zero when the player collides with any obstacle or NPC skier
+- [!] Ensure the style counter resets to zero when the player collides with any obstacle or NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Display the style score in the HUD using a distinct color and position, updating every frame
 - [ ] Implement a multiplier system that starts at 1 and increases by 0.5 for each consecutive close pass through an NPC skier
 - [ ] Reset the multiplier to 1 when the player hits a tree or crashes into any obstacle
