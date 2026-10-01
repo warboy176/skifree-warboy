@@ -499,6 +499,7 @@ applyStyleScore(dt);
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
 checkStyleScoreProximity(dt);
+callStyleScoreCheckEveryFrame();
 
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
@@ -1614,6 +1615,25 @@ function checkStyleScoreProximity(dt) {
     const npc = game.npcSkiers[i];
     const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
     if (overlaps(pb, nb)) {
+      game.styleScore += 1;
+    }
+  }
+}
+
+// Checks every NPC skier for a near-miss: within 30px of the player but not
+// bounding-box colliding (collision is handled separately by checkNPCCollision).
+function callStyleScoreCheckEveryFrame() {
+  if (game.state !== GameState.PLAYING) return;
+  if (!Array.isArray(game.npcSkiers)) return;
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  const pb = {x:player.x-8, y:player.y-10, w:16, h:22};
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const dx = player.x - npc.x;
+    const dy = player.y - npc.y;
+    const distance = Math.sqrt(dx*dx + dy*dy);
+    const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
+    if (distance < 30 && !overlaps(pb, nb)) {
       game.styleScore += 1;
     }
   }
