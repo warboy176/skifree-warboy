@@ -680,6 +680,19 @@ checkStyleScoreProximity(dt);
     ctx.setLineDash([]);
   }
 
+  // Wraps drawSnow() with a cool night wash over just the snow/sky layer once game.biome
+  // reaches 'night', so the falling snow reads as moonlit instead of staying daytime-bright
+  // underneath the later full-scene drawNightBiomeOverlay darkening.
+  function drawSnowWithNightTint(ctx){
+    drawSnow();
+    if(game.biome==='night'){
+      ctx.save();
+      ctx.fillStyle='rgba(8,12,34,.18)';
+      ctx.fillRect(0,HUD_H,W,H-HUD_H);
+      ctx.restore();
+    }
+  }
+
   function _bgHash(a,b){var v=Math.sin(a*127.1+b*311.7)*43758.5453;return v-Math.floor(v);}
   // WORLD-ANCHORED background trees: fixed world positions on a grid, drawn via worldToScreen so they
   // scroll past (up as you descend, sideways as you steer) and recycle only when off-screen. The old
@@ -1059,7 +1072,7 @@ drawLodgeEntrance();
 return;}
     ctx.save();
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
-    drawSnow();
+    drawSnowWithNightTint(ctx);
     drawSkyTint(ctx);
     drawDistantMountainSilhouettes();
     drawBackgroundTrees();
