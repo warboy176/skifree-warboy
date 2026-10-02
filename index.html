@@ -2106,6 +2106,18 @@ function initChaseAntagonistState() {
   };
 }
 
+function updateChaseAntagonistState(dt) {
+    if (!PlayerState.inputActive) {
+        game.chaseAntagonist.inactiveTimer += dt;
+        if (game.chaseAntagonist.inactiveTimer >= game.chaseAntagonist.inactivityThreshold) {
+            game.chaseAntagonist.isActive = true;
+        }
+    } else {
+        game.chaseAntagonist.inactiveTimer = 0;
+    }
+}
+
+
 
 
 
