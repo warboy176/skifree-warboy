@@ -1,4 +1,5 @@
 # Changelog
+- Add a chase antagonist state tracker that monitors player inactivity for 30 seconds (initChaseAntagonistState, updateChaseAntagonistState, checkChaseAntagonistTrigger)
 - Implement logic in `update` to call `checkAchievement` after each scorable action is detected (checkAchievementOnScorableAction)
 - Add a new `achievementRegistry` object to track unique achievement keys and their states (initAchievementRegistry, registerAchievement)
 - Add a function to increment achievement counters when the player crashes through an obstacle (initAchievementSystem, registerCrashThroughObstacleAchievement, incrementCrashThroughObstacleCounter)

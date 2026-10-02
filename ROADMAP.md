@@ -221,7 +221,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a `triggerAchievement(achievement)` function that updates the UI with a visual notification and plays a subtle sound  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Define a set of original, self-contained achievements (e.g., 'First Jump', 'Close Call', 'Style King') using Warboy's original art and logic  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
+- [x] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
 - [ ] Create a new original creature class with Warboy's own code-drawn design, initially hidden
 - [ ] Implement logic to spawn the creature after 30 seconds of no player input
 - [ ] Add movement logic for the creature to follow the player with increasing speed over time
