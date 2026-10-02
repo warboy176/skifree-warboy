@@ -1031,6 +1031,25 @@ renderSkin(game.skin, p.x, p.y);
     if(frame>=3){rect(-7,-38,14,4,'#e33232');rect(-4,-36,8,3,'#ffd43b');}
   }
 
+  function drawWarboyChase(){
+    if(!yeti.active || player.state===PlayerState.EATEN) return;
+    const speed=Math.hypot(yeti.vx,yeti.vy);
+    if(speed<40) return;
+    const dirX=-yeti.vx/speed,dirY=-yeti.vy/speed;
+    const p=worldToScreen(yeti.x,yeti.y);
+    const puffs=yeti.mode==='LUNGE'?5:3;
+    for(let i=1;i<=puffs;i++){
+      const back=i*9;
+      const jitter=Math.sin(yeti.phase*6+i*2.1)*4;
+      const px=p.x+dirX*back-dirY*jitter;
+      const py=p.y+dirY*back+dirX*jitter+18;
+      const size=Math.max(2,6-i);
+      ctx.globalAlpha=Math.max(0,.4-i*.07);
+      rect(px-size/2,py-size/2,size,size,'#eefaff');
+    }
+    ctx.globalAlpha=1;
+  }
+
   function drawYeti(){
     if(!yeti.active)return;
     let yx=yeti.x,yy=yeti.y;
@@ -1122,7 +1141,7 @@ drawMoon(ctx);
     // try/catch guarantees render() still reaches drawSkier()/drawHUD() so it can never blank.
     if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.npcSkiers))initNPCs();for(let i=0;i<game.npcSkiers.length;i++){game.npcSkiers[i].update();game.npcSkiers[i].draw();drawNearEffect(ctx,game.npcSkiers[i]);}}catch(_npcErr){}}
     if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.dogs))game.dogs=[];game.dogTimer=(game.dogTimer||0)+1;if(game.dogTimer>210&&game.dogs.length<3&&game.distance>350){game.dogTimer=0;game.dogs.push(makeDog());}for(let i=0;i<game.dogs.length;i++){game.dogs[i].update();game.dogs[i].draw();}}catch(_dogErr){}}
-    drawYeti();drawSkier();
+    drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
 updateAchievementTrophies();
