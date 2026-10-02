@@ -500,7 +500,7 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
-registerHazardAchievement('drones');
+registerHazardAchievement('drones'); // Triggered on drone collision // Triggered on drone collision
 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
@@ -1936,12 +1936,11 @@ function initAchievementsRegistry() {
 }
 
 function registerHazardAchievement(hazardType) {
-  const achievement = game.achievements.find(a => a.type === hazardType);
-  if (achievement) {
-    achievement.counter++;
-    if (achievement.counter >= achievement.unlockThreshold) {
-      achievement.unlocked = true;
-    }
+  const achievement = game.achievements[hazardType];
+  if (!achievement) return;
+  achievement.counter++;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
   }
 }
 
