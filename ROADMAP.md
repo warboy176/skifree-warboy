@@ -208,7 +208,7 @@ Operator direction from the daily report lands here.
 - [!] Display the current style score and multiplier on the HUD with distinct visual indicators  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
 
-- [ ] Initialize an empty `achievements` object in the game state to track player progress
+- [x] Initialize an empty `achievements` object in the game state to track player progress
 - [ ] Add a function to increment achievement counters when the player slaloms near an NPC skier
 - [ ] Add a function to increment achievement counters when the player crashes through an obstacle
 - [ ] Update the game loop to call these achievement-tracking functions on relevant collision or proximity events
