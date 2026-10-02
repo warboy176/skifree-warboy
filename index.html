@@ -1234,6 +1234,8 @@ function defineBiomeThresholds() {
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
 initAchievementRegistry();
+registerAchievement('first_run', 'First Run', 'Complete your first run', 'firstRunCount');
+
 
 initAchievementSystem();
 registerCrashThroughObstacleAchievement();
@@ -2038,6 +2040,20 @@ function initAchievementRegistry() {
     game.achievements = [];
   }
 }
+
+function registerAchievement(key, title, description, counterKey) {
+  const achievement = {
+    key: key,
+    title: title,
+    description: description,
+    unlocked: false,
+    counterKey: counterKey,
+    counter: 0
+  };
+
+  game.achievements[key] = achievement;
+}
+
 
 
 
