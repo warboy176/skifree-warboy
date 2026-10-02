@@ -502,6 +502,7 @@ updateVerticalDistance(simDt);
 checkNPCProximity(dt);
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
+checkAchievementsOnFrame();
 
 incrementCrashThroughObstacleCounter();
 
@@ -1973,6 +1974,18 @@ function initAchievementsRegistry() {
 
 function checkAchievementsEveryFrame(dt) {
   checkAchievement('survivalTime', dt);
+}
+
+function checkAchievementsOnFrame() {
+  if (!Array.isArray(game.dogs)) return;
+  for (const d of game.dogs) {
+    if (d.y > player.y) {
+      d.avoided = false;
+    } else if (d.hit <= 0 && !d.avoided && player.y - d.y > 60) {
+      d.avoided = true;
+      checkAchievement('dogs', 1);
+    }
+  }
 }
 
 function registerHazardAchievement(hazardType) {
