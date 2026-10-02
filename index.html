@@ -1964,7 +1964,8 @@ function initAchievementsRegistry() {
   game.achievements = [
     { type: 'drones', counter: 0, unlockThreshold: 10, title: 'Drone Hunter', description: 'Destroy 10 drones.', unlocked: false },
     { type: 'dogs', counter: 0, unlockThreshold: 5, title: 'Dog Chaser', description: 'Avoid 5 dogs.', unlocked: false },
-    { type: 'dronesCrashed', counter: 0, unlockThreshold: 3, title: 'Crash Course', description: 'Crash into 3 drones.', unlocked: false }
+    { type: 'dronesCrashed', counter: 0, unlockThreshold: 3, title: 'Crash Course', description: 'Crash into 3 drones.', unlocked: false },
+    { type: 'slalom', counter: 0, unlockThreshold: 500, title: 'Slalom Star', description: 'Rack up 500 style points slaloming.', unlocked: false }
   ];
 }
 
@@ -2067,12 +2068,12 @@ function registerAchievement(key, title, description, counterKey) {
 }
 
 function checkAchievementOnScorableAction(actionType, scoreDelta) {
-  const achievement = game.achievements[actionType];
-  if (achievement && achievement.scorable) {
-    achievement.counter += scoreDelta;
-    if (achievement.counter >= achievement.threshold) {
-      achievement.unlocked = true;
-    }
+  if (!Array.isArray(game.achievements)) return;
+  const achievement = game.achievements.find(a => a.type === actionType);
+  if (!achievement || achievement.unlocked) return;
+  achievement.counter += scoreDelta;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
   }
 }
 
