@@ -1206,6 +1206,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initMultiplierHUD();
+
 initDistanceTracker();
 
 initSnowWolfState();
@@ -1901,6 +1903,11 @@ function updateMultiplierOnNearMisses(dt) {
 function applyMultiplierToScore() {
   applyStyleMultiplierToScore(game.styleMultiplier);
 }
+
+function initMultiplierHUD() {
+  game.multiplierDisplay = { value: 1, lastUpdated: 0 };
+}
+
 
 
 
