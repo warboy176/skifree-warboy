@@ -225,7 +225,7 @@ Operator direction from the daily report lands here.
 - [!] Create a new original creature class with Warboy's own code-drawn design, initially hidden  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Implement logic to spawn the creature after 30 seconds of no player input
 - [!] Add a new Creature class with a fixed initial speed and position at the start of the game  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a follow logic that updates the creature's x position based on the player's x position, with a small offset to avoid perfect tracking
+- [!] Implement a follow logic that updates the creature's x position based on the player's x position, with a small offset to avoid perfect tracking  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Increase the creature's speed gradually over time using a timer-based acceleration function
 - [ ] Ensure the creature only appears after a delay following the player's start, and only moves when the game is in PLAYING state
 - [ ] Ensure the creature only appears and moves during active gameplay, not in start or game over states
