@@ -1916,6 +1916,14 @@ function drawMultiplierHUD() {
   ctx.fillText(game.multiplierDisplay.value, 20, 40);
 }
 
+function initMultiplierState() {
+  if (!game.state) {
+    game.state = {};
+  }
+  game.state.multiplier = 1;
+}
+
+
 
 
 
