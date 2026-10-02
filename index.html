@@ -2180,6 +2180,15 @@ function initCreatureSpeedAcceleration() {
   };
 }
 
+function updateCreatureSpeeds(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    npc.speed += game.creatureSpeedAcceleration * dt;
+    npc.speed = clamp(npc.speed, 0, game.maxSpeed);
+  }
+}
+
+
 
 
 
