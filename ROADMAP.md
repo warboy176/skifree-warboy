@@ -229,7 +229,7 @@ Operator direction from the daily report lands here.
 - [x] Increase the creature's speed gradually over time using a timer-based acceleration function
 - [!] Ensure the creature only appears after a delay following the player's start, and only moves when the game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Initialize the chase antagonist only when game.state is GameState.PLAYING by adding a state check in the antagonist's initialization logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Create a function to safely spawn the chase antagonist at a random position on the slope when game.state transitions to GameState.PLAYING
+- [!] Create a function to safely spawn the chase antagonist at a random position on the slope when game.state transitions to GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure the chase antagonist's update and draw functions are called only during active gameplay
 - [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
