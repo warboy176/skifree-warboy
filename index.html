@@ -201,7 +201,7 @@ if (autoplay.enabled) {
   function startGame(){
     Object.assign(player,{x:0,y:0,vx:0,speed:155,state:PlayerState.SKIING,stateTime:0,jumpTime:0,jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0});
     Object.assign(yeti,{active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,cycle:'WAIT',cycleTime:0,cycleLimit:0});
-    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope'});
+    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope',canopyPatches:[]});
     fastMode = false;
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
@@ -241,6 +241,7 @@ spawnHighJumpRamps();
         game.obstacles.push(makeObstacle(type,laneX,game.spawnY+rand(-30,30)));
       }
       generateForestObstacles(game.spawnY);
+      generateForestCanopy(game.spawnY);
     }
   }
 
@@ -253,6 +254,18 @@ spawnHighJumpRamps();
       const type = Math.random()<.7?'evergreen':'bare';
       const laneX = player.x + rand(-W*.95,W*.95);
       game.obstacles.push(makeObstacle(type,laneX,y+rand(-40,40)));
+    }
+  }
+
+  // Non-collidable dappled-shade patches cast over the trail while the forest biome visual is
+  // active, spawned alongside generateForestObstacles() so the overhead shadow scrolls in with
+  // the same stretch of dense trees. Purely decorative: never enters game.obstacles/handleCollisions.
+  function generateForestCanopy(y){
+    if(!game.biomeVisual || game.biomeVisual.name!=='forest') return;
+    const count = Math.ceil(rand(1,3));
+    for(let i=0;i<count;i++){
+      const cx = player.x + rand(-W*.9,W*.9);
+      game.canopyPatches.push({x:cx,y:y+rand(-40,40),w:rand(70,150),h:rand(32,56),a:rand(.1,.22)});
     }
   }
 
@@ -475,6 +488,7 @@ spawnHighJumpRamps();
     const cutoff=game.cameraY-130;
     game.obstacles=game.obstacles.filter(o=>o.y>cutoff);
     game.tracks=game.tracks.filter(t=>t.y>cutoff);
+    if(Array.isArray(game.canopyPatches))game.canopyPatches=game.canopyPatches.filter(c=>c.y>cutoff);
   }
 
   function update(dt){
@@ -766,6 +780,25 @@ callStyleScoreCheckEveryFrame();
       drawForestTree(p.x,p.y,width,height,treeColor,sway);
     }
     ctx.globalAlpha=1;
+  }
+
+  // Overhead dappled-shade blobs for the forest stretch, sourced from game.canopyPatches
+  // (seeded by generateForestCanopy() alongside the trees in generateForestObstacles).
+  // Drawn after drawForestBiome's trees so the shadow reads as light filtering through the canopy.
+  function drawForestCanopy(){
+    if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
+    if(!Array.isArray(game.canopyPatches))return;
+    ctx.save();
+    for(const c of game.canopyPatches){
+      const p=worldToScreen(c.x,c.y);
+      if(p.x<-100||p.x>W+100||p.y<HUD_H-100||p.y>H+100)continue;
+      ctx.globalAlpha=c.a;
+      ctx.fillStyle='#04241c';
+      ctx.beginPath();
+      ctx.ellipse(p.x,p.y,c.w/2,c.h/2,0,0,Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
   }
 
   // --- Open snowfield ambient decoration ---------------------------------------------------------
@@ -1136,6 +1169,7 @@ drawStarfield();
 drawMoon(ctx);
 
     drawForestBiome(dt);
+    drawForestCanopy();
     drawSnowfieldObstacles();
     drawBiomeOverlay(ctx);
     if(game.biome==='night')drawNightBiomeOverlay(ctx,0,HUD_H,W,H-HUD_H);
