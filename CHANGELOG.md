@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to increment achievement counters when the player crashes through an obstacle (initAchievementSystem, registerCrashThroughObstacleAchievement, incrementCrashThroughObstacleCounter)
 - Initialize an empty `achievements` object in the game state to track player progress (initAchievements)
 - Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies (initAchievementsRegistry, registerHazardAchievement, updateAchievementTrophies)
 - Initialize a multiplier counter starting at 1 and store it in the game state (initMultiplierState)
