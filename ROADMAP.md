@@ -201,7 +201,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the style counter resets to zero when the player collides with any obstacle or NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Display the style score in the HUD using a distinct color and position, updating every frame  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a multiplier variable initialized to 1 in the game state, incrementing by 0.5 when the player passes an NPC skier closely without collision
-- [ ] Display the current multiplier value on screen in the HUD, updating in real time during gameplay
+- [x] Display the current multiplier value on screen in the HUD, updating in real time during gameplay
 - [ ] Reset the multiplier to 1 when the player hits a tree or crashes into any obstacle
 - [ ] Display the current style score and multiplier on the HUD with distinct visual indicators
 - [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
