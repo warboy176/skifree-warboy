@@ -220,3 +220,8 @@ Operator direction from the daily report lands here.
 - [!] Integrate `AchievementSystem.check()` into the game loop to run once per frame, only when game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a `triggerAchievement(achievement)` function that updates the UI with a visual notification and plays a subtle sound  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Define a set of original, self-contained achievements (e.g., 'First Jump', 'Close Call', 'Style King') using Warboy's original art and logic  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
+
+- [ ] Implement the chase antagonist: a unique, original creature drawn in code that appears after 30 seconds of inactivity and pursues the player with increasing speed
+- [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
+- [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
+- [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
