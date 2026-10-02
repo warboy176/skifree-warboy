@@ -224,7 +224,10 @@ Operator direction from the daily report lands here.
 - [x] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
 - [!] Create a new original creature class with Warboy's own code-drawn design, initially hidden  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Implement logic to spawn the creature after 30 seconds of no player input
-- [ ] Add movement logic for the creature to follow the player with increasing speed over time
+- [ ] Add a new Creature class with a fixed initial speed and position at the start of the game
+- [ ] Implement a follow logic that updates the creature's x position based on the player's x position, with a small offset to avoid perfect tracking
+- [ ] Increase the creature's speed gradually over time using a timer-based acceleration function
+- [ ] Ensure the creature only appears after a delay following the player's start, and only moves when the game is in PLAYING state
 - [ ] Ensure the creature only appears and moves during active gameplay, not in start or game over states
 - [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
