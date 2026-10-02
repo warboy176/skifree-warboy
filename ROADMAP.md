@@ -226,7 +226,7 @@ Operator direction from the daily report lands here.
 - [x] Implement logic to spawn the creature after 30 seconds of no player input
 - [!] Add a new Creature class with a fixed initial speed and position at the start of the game  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Implement a follow logic that updates the creature's x position based on the player's x position, with a small offset to avoid perfect tracking  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Increase the creature's speed gradually over time using a timer-based acceleration function
+- [x] Increase the creature's speed gradually over time using a timer-based acceleration function
 - [ ] Ensure the creature only appears after a delay following the player's start, and only moves when the game is in PLAYING state
 - [ ] Ensure the creature only appears and moves during active gameplay, not in start or game over states
 - [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art

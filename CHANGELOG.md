@@ -1,4 +1,5 @@
 # Changelog
+- Increase the creature's speed gradually over time using a timer-based acceleration function (initCreatureSpeedAcceleration, updateCreatureSpeeds)
 - Implement logic to spawn the creature after 30 seconds of no player input (initCreatureSpawner)
 - Add a chase antagonist state tracker that monitors player inactivity for 30 seconds (initChaseAntagonistState, updateChaseAntagonistState, checkChaseAntagonistTrigger)
 - Implement logic in `update` to call `checkAchievement` after each scorable action is detected (checkAchievementOnScorableAction)
