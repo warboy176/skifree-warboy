@@ -212,7 +212,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to increment achievement counters when the player slaloms near an NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Add a function to increment achievement counters when the player crashes through an obstacle
 - [!] Update the game loop to call these achievement-tracking functions on relevant collision or proximity events  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Add a new `achievementRegistry` object to track unique achievement keys and their states
+- [x] Add a new `achievementRegistry` object to track unique achievement keys and their states
 - [ ] Create a `checkAchievement` function that evaluates player actions and marks achievements as unlocked in the registry
 - [ ] Implement logic in `update` to call `checkAchievement` after each scorable action is detected
 - [ ] Create a `triggerAchievement` function that logs the achievement and emits a visual or audio cue if the player unlocks a new one
