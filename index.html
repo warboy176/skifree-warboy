@@ -1237,6 +1237,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initChaseAntagonistState();
+
 initAchievementRegistry();
 registerAchievement('first_run', 'First Run', 'Complete your first run', 'firstRunCount');
 
@@ -2095,6 +2097,15 @@ function checkAchievementOnScorableAction(actionType, scoreDelta) {
     achievement.unlocked = true;
   }
 }
+
+function initChaseAntagonistState() {
+  game.chaseAntagonist = {
+    inactiveTimer: 0,
+    isActive: false,
+    inactivityThreshold: 30000 // 30 seconds in milliseconds
+  };
+}
+
 
 
 
