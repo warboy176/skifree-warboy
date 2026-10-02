@@ -1271,6 +1271,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initCreatureSpeedAcceleration();
+
 initCreatureSpawner();
 
 initChaseAntagonistState();
@@ -2169,6 +2171,15 @@ function initCreatureSpawner() {
     spawnDelay: 30000
   };
 }
+
+function initCreatureSpeedAcceleration() {
+  game.creatureSpeedAcceleration = {
+    baseSpeed: NPC_SKIER_SPEED,
+    accelerationRate: 0.0001,
+    maxSpeed: MAX_SPEED
+  };
+}
+
 
 
 
