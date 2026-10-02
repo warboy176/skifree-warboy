@@ -2116,6 +2116,16 @@ function updateChaseAntagonistState(dt) {
         game.chaseAntagonist.inactiveTimer = 0;
     }
 }
+checkChaseAntagonistTrigger();
+
+
+function checkChaseAntagonistTrigger() {
+    if (game.chaseAntagonist.isActive) {
+        beginWarboyChase();
+        game.chaseAntagonist.isActive = false; // Ensure it only triggers once per activation
+    }
+}
+
 
 
 
