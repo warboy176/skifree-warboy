@@ -228,7 +228,8 @@ Operator direction from the daily report lands here.
 - [!] Implement a follow logic that updates the creature's x position based on the player's x position, with a small offset to avoid perfect tracking  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Increase the creature's speed gradually over time using a timer-based acceleration function
 - [!] Ensure the creature only appears after a delay following the player's start, and only moves when the game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Ensure the creature only appears and moves during active gameplay, not in start or game over states
+- [ ] Add a condition to initialize the chase antagonist only when game.state is GameState.PLAYING
+- [ ] Ensure the chase antagonist's update and draw functions are called only during active gameplay
 - [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
