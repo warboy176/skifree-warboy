@@ -1271,6 +1271,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initCreatureSpawner();
+
 initChaseAntagonistState();
 
 initAchievementRegistry();
@@ -2159,6 +2161,15 @@ function checkChaseAntagonistTrigger() {
         game.chaseAntagonist.isActive = false; // Ensure it only triggers once per activation
     }
 }
+
+function initCreatureSpawner() {
+  game.creatureSpawner = {
+    active: false,
+    lastInputTime: 0,
+    spawnDelay: 30000
+  };
+}
+
 
 
 
