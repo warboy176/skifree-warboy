@@ -500,6 +500,8 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
+checkAchievementOnScorableAction('slalom', 10);
+
 incrementCrashThroughObstacleCounter();
 
 registerHazardAchievement('drones'); // Triggered on drone collision // Triggered on drone collision
@@ -2063,6 +2065,17 @@ function registerAchievement(key, title, description, counterKey) {
 
   game.achievements[key] = achievement;
 }
+
+function checkAchievementOnScorableAction(actionType, scoreDelta) {
+  const achievement = game.achievements[actionType];
+  if (achievement && achievement.scorable) {
+    achievement.counter += scoreDelta;
+    if (achievement.counter >= achievement.threshold) {
+      achievement.unlocked = true;
+    }
+  }
+}
+
 
 
 
