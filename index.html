@@ -292,10 +292,10 @@ spawnHighJumpRamps();
         o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;continue;
       }
       if((o.type==='drone'||o.type==='mini') && player.state!==PlayerState.JUMPING){
-        o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break;
+        o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; checkAchievement('dronesCrashed',1); break;
       }
       if(player.state===PlayerState.JUMPING && (o.type==='rock'||o.type==='drone'||o.type==='mini')){
-        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;continue;
+        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);continue;
       }
       setPlayerState(PlayerState.CRASHED);
       player.invulnerable=1.1;
@@ -1970,6 +1970,16 @@ function registerHazardAchievement(hazardType) {
   const achievement = game.achievements[hazardType];
   if (!achievement) return;
   achievement.counter++;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
+  }
+}
+
+function checkAchievement(actionKey, actionValue) {
+  if (!Array.isArray(game.achievements)) return;
+  const achievement = game.achievements.find(a => a.type === actionKey);
+  if (!achievement || achievement.unlocked) return;
+  achievement.counter += actionValue;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
   }
