@@ -204,6 +204,6 @@ Operator direction from the daily report lands here.
 - [x] Display the current multiplier value on screen in the HUD, updating in real time during gameplay
 - [x] Initialize a multiplier counter starting at 1 and store it in the game state
 - [!] Add logic to reset the multiplier to 1 whenever the player collides with a tree  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add logic to reset the multiplier to 1 whenever the player crashes into any obstacle (excluding skiers and drones)
+- [!] Add logic to reset the multiplier to 1 whenever the player crashes into any obstacle (excluding skiers and drones)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Display the current style score and multiplier on the HUD with distinct visual indicators
 - [ ] Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies
