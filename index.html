@@ -1125,6 +1125,8 @@ drawMoon(ctx);
     drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+updateAchievementTrophies();
+
 drawStyleScoreHUD();
 
 drawPausedOverlay();
@@ -1943,6 +1945,20 @@ function registerHazardAchievement(hazardType) {
     achievement.unlocked = true;
   }
 }
+
+function updateAchievementTrophies() {
+  ctx.font = '700 12px "Courier New", monospace';
+  ctx.fillStyle = '#ffffff';
+  ctx.textBaseline = 'top';
+
+  game.achievements.forEach((achievement, index) => {
+    if (achievement.unlocked) {
+      ctx.fillText(achievement.title, W - 200, HUD_H + 20 + index * 20);
+      ctx.fillText(achievement.description, W - 200, HUD_H + 35 + index * 20);
+    }
+  });
+}
+
 
 
 
