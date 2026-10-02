@@ -482,6 +482,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateMultiplierOnNearMisses(dt);
+
 updateDistanceTracker(dt);
 checkBiomeTransition();
 
@@ -1878,6 +1880,24 @@ function callStyleScoreCheckEveryFrame() {
 function initGameMultiplier() {
   game.state.multiplier = 1.0;
 }
+
+function updateMultiplierOnNearMisses(dt) {
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        if (!npc.grazed && checkNPCProximity(player, npc)) {
+            const dx = player.x - npc.x;
+            const dy = player.y - npc.y;
+            const direction = Math.atan2(dy, dx);
+            const playerDirection = Math.atan2(player.vy, player.vx);
+
+            if (Math.abs(direction - playerDirection) < Math.PI / 4) {
+                game.state.multiplier += 0.5;
+                npc.grazed = true;
+            }
+        }
+    }
+}
+
 
 
 
