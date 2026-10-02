@@ -1,4 +1,5 @@
 # Changelog
+- Initialize a multiplier counter starting at 1 and store it in the game state (initMultiplierState)
 - Display the current multiplier value on screen in the HUD, updating in real time during gameplay (initMultiplierHUD, drawMultiplierHUD)
 - Add a multiplier variable initialized to 1 in the game state, incrementing by 0.5 when the player passes an NPC skier closely without collision (initGameMultiplier, updateMultiplierOnNearMisses, applyMultiplierToScore)
 - Call the style score check function every frame during gameplay (callStyleScoreCheckEveryFrame)
