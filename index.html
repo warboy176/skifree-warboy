@@ -1233,6 +1233,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initAchievementRegistry();
+
 initAchievementSystem();
 registerCrashThroughObstacleAchievement();
 
@@ -2030,6 +2032,13 @@ function incrementCrashThroughObstacleCounter() {
     }
   }
 }
+
+function initAchievementRegistry() {
+  if (!game.achievements) {
+    game.achievements = [];
+  }
+}
+
 
 
 
