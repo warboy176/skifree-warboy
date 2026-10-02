@@ -1208,6 +1208,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initAchievementsRegistry();
+
 initMultiplierHUD();
 
 initDistanceTracker();
@@ -1922,6 +1924,15 @@ function initMultiplierState() {
   }
   game.state.multiplier = 1;
 }
+
+function initAchievementsRegistry() {
+  game.achievements = [
+    { type: 'drones', counter: 0, unlockThreshold: 10, title: 'Drone Hunter', description: 'Destroy 10 drones.', unlocked: false },
+    { type: 'dogs', counter: 0, unlockThreshold: 5, title: 'Dog Chaser', description: 'Avoid 5 dogs.', unlocked: false },
+    { type: 'dronesCrashed', counter: 0, unlockThreshold: 3, title: 'Crash Course', description: 'Crash into 3 drones.', unlocked: false }
+  ];
+}
+
 
 
 
