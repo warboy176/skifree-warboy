@@ -1103,6 +1103,8 @@ return;}
     drawSkyTint(ctx);
     drawDistantMountainSilhouettes();
     drawBackgroundTrees();
+drawMultiplierHUD();
+
 drawStarfield();
 drawMoon(ctx);
 
@@ -1907,6 +1909,13 @@ function applyMultiplierToScore() {
 function initMultiplierHUD() {
   game.multiplierDisplay = { value: 1, lastUpdated: 0 };
 }
+
+function drawMultiplierHUD() {
+  ctx.font = '24px monospace';
+  ctx.fillStyle = 'white';
+  ctx.fillText(game.multiplierDisplay.value, 20, 40);
+}
+
 
 
 
