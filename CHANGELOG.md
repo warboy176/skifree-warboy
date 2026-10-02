@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry that auto-updates with new counters for each new hazard type (e.g., drones, dogs, drones crashed) and unlocks witty, original trophies (initAchievementsRegistry, registerHazardAchievement, updateAchievementTrophies)
 - Initialize a multiplier counter starting at 1 and store it in the game state (initMultiplierState)
 - Display the current multiplier value on screen in the HUD, updating in real time during gameplay (initMultiplierHUD, drawMultiplierHUD)
 - Add a multiplier variable initialized to 1 in the game state, incrementing by 0.5 when the player passes an NPC skier closely without collision (initGameMultiplier, updateMultiplierOnNearMisses, applyMultiplierToScore)
