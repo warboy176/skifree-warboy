@@ -500,6 +500,8 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
+registerHazardAchievement('drones');
+
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
 
@@ -1932,6 +1934,17 @@ function initAchievementsRegistry() {
     { type: 'dronesCrashed', counter: 0, unlockThreshold: 3, title: 'Crash Course', description: 'Crash into 3 drones.', unlocked: false }
   ];
 }
+
+function registerHazardAchievement(hazardType) {
+  const achievement = game.achievements.find(a => a.type === hazardType);
+  if (achievement) {
+    achievement.counter++;
+    if (achievement.counter >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+    }
+  }
+}
+
 
 
 
