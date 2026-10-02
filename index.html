@@ -1231,6 +1231,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initAchievementSystem();
+
 initAchievementsRegistry();
 
 initMultiplierHUD();
@@ -1984,6 +1986,24 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+
+function initAchievementSystem() {
+    if (!game.achievements) {
+        game.achievements = [];
+    }
+
+    const requiredFields = ['title', 'description', 'unlocked'];
+
+    for (let i = 0; i < game.achievements.length; i++) {
+        const achievement = game.achievements[i];
+        for (const field of requiredFields) {
+            if (!achievement.hasOwnProperty(field)) {
+                achievement[field] = field === 'unlocked' ? false : '';
+            }
+        }
+    }
+}
+
 
 
 
