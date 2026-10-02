@@ -218,5 +218,5 @@ Operator direction from the daily report lands here.
 - [!] Create a `triggerAchievement` function that logs the achievement and emits a visual or audio cue if the player unlocks a new one  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a new `AchievementSystem` class with `check()` method that evaluates player state and triggers achievements based on current score, distance, and actions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Integrate `AchievementSystem.check()` into the game loop to run once per frame, only when game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a `triggerAchievement(achievement)` function that updates the UI with a visual notification and plays a subtle sound
+- [!] Implement a `triggerAchievement(achievement)` function that updates the UI with a visual notification and plays a subtle sound  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Define a set of original, self-contained achievements (e.g., 'First Jump', 'Close Call', 'Style King') using Warboy's original art and logic
