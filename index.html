@@ -1232,6 +1232,8 @@ function defineBiomeThresholds() {
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
 initAchievementSystem();
+registerCrashThroughObstacleAchievement();
+
 
 initAchievementsRegistry();
 
@@ -2003,6 +2005,17 @@ function initAchievementSystem() {
         }
     }
 }
+
+function registerCrashThroughObstacleAchievement() {
+  const achievement = {
+    title: 'Crash Through',
+    description: 'Crash through an obstacle',
+    unlocked: false
+  };
+
+  game.achievements.push(achievement);
+}
+
 
 
 
