@@ -254,7 +254,9 @@ Operator direction from the daily report lands here.
 - [!] Initialize a persistent achievements registry object that stores unlock conditions and messages in localStorage, using a unique key for Warboy's game  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to check and unlock achievements based on current game state, triggering localStorage update only when a new achievement is unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 2 unspecifiable, 1 e -->
 - [!] Implement a function to retrieve and display the current list of unlocked achievements in the game UI, reading from localStorage on load  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to check and unlock achievements when player events occur (e.g., crashes, jumps, combos)
+- [ ] Add a function to track player events (crashes, jumps, combo starts) and store them in a persistent event log
+- [ ] Create a function to evaluate the event log against achievement conditions and trigger unlocks when met
+- [ ] Implement a visual feedback system to display achievement unlocks with a brief on-screen animation and sound
 - [ ] Create a function to display witty, original unlock messages on screen for 3 seconds when an achievement is earned
 - [ ] Extend the game loop to trigger achievement checks after each frame based on player state and event history
 
