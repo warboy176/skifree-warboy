@@ -1271,6 +1271,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initCloudLayer();
+
 initCreatureSpeedAcceleration();
 
 initCreatureSpawner();
@@ -2198,6 +2200,23 @@ function drawSnowfieldBackground(ctx, game) {
         }
     }
 }
+
+function initCloudLayer() {
+  if (!game.cloudLayer) {
+    game.cloudLayer = [];
+  }
+  
+  for (let i = 0; i < 5; i++) {
+    const cloud = {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      speed: Math.random() * game.maxSpeed * 0.12,
+      size: Math.random() * 30 + 20
+    };
+    game.cloudLayer.push(cloud);
+  }
+}
+
 
 
 
