@@ -2217,6 +2217,19 @@ function initCloudLayer() {
   }
 }
 
+function updateCloudLayer(dt) {
+  for (let i = 0; i < game.cloudLayer.length; i++) {
+    let cloud = game.cloudLayer[i];
+    cloud.x += cloud.speed * dt;
+    if (cloud.x > canvas.width) {
+      cloud.x = 0;
+    }
+    ctx.fillStyle = 'white';
+    ctx.fillRect(cloud.x, cloud.y, 10, 6);
+  }
+}
+
+
 
 
 
