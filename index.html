@@ -2229,6 +2229,15 @@ function updateCloudLayer(dt) {
   }
 }
 
+function drawCloudLayer() {
+  for (let i = 0; i < game.cloudLayer.length; i++) {
+    let cloud = game.cloudLayer[i];
+    ctx.fillStyle = 'white';
+    ctx.fillRect(cloud.x, cloud.y, 10, 6);
+  }
+}
+
+
 
 
 
