@@ -517,6 +517,8 @@ checkNPCProximity(dt);
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
 checkAchievementsOnFrame();
+checkAchievementConditions();
+
 
 incrementCrashThroughObstacleCounter();
 
@@ -2287,6 +2289,16 @@ function initStyleScoringSystem() {
 
   callStyleScoreCheckEveryFrame();
 }
+
+function checkAchievementConditions() {
+  for (let i = 0; i < game.achievements.length; i++) {
+    const achievement = game.achievements[i];
+    if (achievement.counter >= achievement.unlockThreshold && !achievement.unlocked) {
+      achievement.unlocked = true;
+    }
+  }
+}
+
 
 
 
