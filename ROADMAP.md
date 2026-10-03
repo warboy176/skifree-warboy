@@ -241,7 +241,7 @@ Operator direction from the daily report lands here.
 - [x] Draw a fixed background layer with a simple snowfield pattern using canvas primitives
 - [!] Add a second background layer with randomly placed trees using original pixel-art shapes  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a third background layer with animated cloud movement using canvas primitives
-- [ ] Introduce distinct visual themes per biome by changing colors, patterns, and layer visibility based on player distance
+- [!] Introduce distinct visual themes per biome by changing colors, patterns, and layer visibility based on player distance  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Integrate smooth vertical scrolling of background layers to simulate descent through changing biomes
 - [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
