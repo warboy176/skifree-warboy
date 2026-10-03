@@ -2258,12 +2258,10 @@ function initBackgroundLayers() {
 }
 
 function updateBackgroundLayers(dt) {
-  for (let i = 0; i < game.bgLayers.length; i++) {
-    let layer = game.bgLayers[i];
+  const H = canvas.height;
+  for (const layer of game.bgLayers) {
     layer.y += layer.speed * dt;
-    if (layer.y > H) {
-      layer.y = 0;
-    }
+    if (layer.y < -H) layer.y = 0;
   }
 }
 
