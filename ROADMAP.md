@@ -232,6 +232,10 @@ Operator direction from the daily report lands here.
 - [!] Create a function to safely spawn the chase antagonist at a random position on the slope when game.state transitions to GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a condition to call the chase antagonist's update function only when game.state is GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a condition to call the chase antagonist's draw function only when game.state is GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
+- [ ] Add a biome transition system that tracks player distance and triggers new terrain layers at predefined thresholds
+- [ ] Implement a layered rendering system to stack background visuals (lodge, open slope, forest, night) based on current biome
+- [ ] Draw original pixel-art background layers using canvas primitives, ensuring each biome has distinct visual themes
+- [ ] Integrate smooth vertical scrolling of background layers to simulate descent through changing biomes
+- [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
