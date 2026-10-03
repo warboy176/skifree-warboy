@@ -2265,6 +2265,15 @@ function updateBackgroundLayers(dt) {
   }
 }
 
+function drawBackgroundLayers() {
+  for (const layer of game.bgLayers) {
+    const tint = BIOME_TINTS[game.currentBiome].color;
+    ctx.fillStyle = tint;
+    ctx.fillRect(0, layer.y, W, layer.height);
+  }
+}
+
+
 
 
 
