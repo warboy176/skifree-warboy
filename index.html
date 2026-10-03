@@ -2188,6 +2188,18 @@ function updateCreatureSpeeds(dt) {
   }
 }
 
+function drawSnowfieldBackground(ctx, game) {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.fillStyle = 'white';
+    for (let x = 0; x < W; x += 8) {
+        for (let y = 0; y < H; y += 8) {
+            ctx.fillRect(x, y, 4, 4);
+        }
+    }
+}
+
+
 
 
 
