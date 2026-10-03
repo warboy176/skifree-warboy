@@ -231,7 +231,7 @@ Operator direction from the daily report lands here.
 - [!] Initialize the chase antagonist only when game.state is GameState.PLAYING by adding a state check in the antagonist's initialization logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to safely spawn the chase antagonist at a random position on the slope when game.state transitions to GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a condition to call the chase antagonist's update function only when game.state is GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a condition to call the chase antagonist's draw function only when game.state is GameState.PLAYING
+- [!] Add a condition to call the chase antagonist's draw function only when game.state is GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add dynamic terrain transitions: introduce biome shifts (lodge → open slope → forest → night) via vertical scrolling and visual layering with original pixel art
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
