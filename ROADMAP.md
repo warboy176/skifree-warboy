@@ -249,7 +249,7 @@ Operator direction from the daily report lands here.
 - [!] Add a new Warboy-designed chase antagonist sprite using original code-drawn pixel art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement the antagonist's basic movement logic: appear after delay, follow player at variable speed  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add collision detection between player and antagonist, triggering 'EATEN' state on contact  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Draw the antagonist on screen using only original code-based art, never copying existing assets
+- [!] Draw the antagonist on screen using only original code-based art, never copying existing assets  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
 
