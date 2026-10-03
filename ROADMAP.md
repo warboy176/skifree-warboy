@@ -236,7 +236,7 @@ Operator direction from the daily report lands here.
 - [!] Define biome thresholds (e.g., 1000m, 2500m, 5000m) as distance milestones for terrain changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to check if the current distance has crossed a threshold and trigger a biome transition  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a terrain layer system that overlays new visual layers (e.g., forest, night, alpine) based on the current biome  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Ensure each new biome layer is drawn independently and replaces only the background, preserving existing game elements like player, obstacles, and score
+- [!] Ensure each new biome layer is drawn independently and replaces only the background, preserving existing game elements like player, obstacles, and score  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 1 unspecifiable, 1 e -->
 - [ ] Implement a layered rendering system to stack background visuals (lodge, open slope, forest, night) based on current biome
 - [ ] Draw original pixel-art background layers using canvas primitives, ensuring each biome has distinct visual themes
 - [ ] Integrate smooth vertical scrolling of background layers to simulate descent through changing biomes
