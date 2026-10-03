@@ -257,7 +257,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to track player events (crashes, jumps, combo starts) and store them in a persistent event log  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Create a function to evaluate the event log against achievement conditions and trigger unlocks when met
 - [!] Implement a visual feedback system to display achievement unlocks with a brief on-screen animation and sound  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Add a function to track earned achievements and store them in a persistent array
+- [!] Add a function to track earned achievements and store them in a persistent array  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Create a function to generate a random witty, original unlock message from a curated list of Warboy's own phrases
 - [ ] Implement a function to display the message on screen for 3 seconds using a simple overlay with fade-in/fade-out animation
 - [ ] Integrate the message display function to trigger only when a new achievement is unlocked, not on repeat
