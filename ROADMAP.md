@@ -252,7 +252,7 @@ Operator direction from the daily report lands here.
 - [!] Draw the antagonist on screen using only original code-based art, never copying existing assets  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [!] Initialize a persistent achievements registry object that stores unlock conditions and messages in localStorage, using a unique key for Warboy's game  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to check and unlock achievements based on current game state, triggering localStorage update only when a new achievement is unlocked
+- [!] Add a function to check and unlock achievements based on current game state, triggering localStorage update only when a new achievement is unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 2 unspecifiable, 1 e -->
 - [ ] Implement a function to retrieve and display the current list of unlocked achievements in the game UI, reading from localStorage on load
 - [ ] Implement a function to check and unlock achievements when player events occur (e.g., crashes, jumps, combos)
 - [ ] Create a function to display witty, original unlock messages on screen for 3 seconds when an achievement is earned
