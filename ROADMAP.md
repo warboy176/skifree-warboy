@@ -251,6 +251,9 @@ Operator direction from the daily report lands here.
 - [!] Add collision detection between player and antagonist, triggering 'EATEN' state on contact  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Draw the antagonist on screen using only original code-based art, never copying existing assets  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
-- [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
+- [ ] Add a persistent achievements registry object that stores unlock conditions and messages in localStorage
+- [ ] Implement a function to check and unlock achievements when player events occur (e.g., crashes, jumps, combos)
+- [ ] Create a function to display witty, original unlock messages on screen for 3 seconds when an achievement is earned
+- [ ] Extend the game loop to trigger achievement checks after each frame based on player state and event history
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
