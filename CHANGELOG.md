@@ -1,4 +1,5 @@
 # Changelog
+- Implement a third background layer with animated cloud movement using canvas primitives (initCloudLayer, updateCloudLayer, drawCloudLayer)
 - Draw a fixed background layer with a simple snowfield pattern using canvas primitives (drawSnowfieldBackground)
 - Increase the creature's speed gradually over time using a timer-based acceleration function (initCreatureSpeedAcceleration, updateCreatureSpeeds)
 - Implement logic to spawn the creature after 30 seconds of no player input (initCreatureSpawner)
