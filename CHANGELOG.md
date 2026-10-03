@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions (initStyleScoringSystem)
 - Implement vertical scrolling for each background layer at different speeds to simulate depth and movement through changing biomes (initBackgroundLayers, updateBackgroundLayers, drawBackgroundLayers)
 - Implement a third background layer with animated cloud movement using canvas primitives (initCloudLayer, updateCloudLayer, drawCloudLayer)
 - Draw a fixed background layer with a simple snowfield pattern using canvas primitives (drawSnowfieldBackground)
