@@ -243,3 +243,5 @@ Operator direction from the daily report lands here.
 - [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
