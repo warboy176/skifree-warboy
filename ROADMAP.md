@@ -240,7 +240,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a layered rendering system to stack background visuals (lodge, open slope, forest, night) based on current biome  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [x] Draw a fixed background layer with a simple snowfield pattern using canvas primitives
 - [!] Add a second background layer with randomly placed trees using original pixel-art shapes  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a third background layer with animated cloud movement using canvas primitives
+- [x] Implement a third background layer with animated cloud movement using canvas primitives
 - [ ] Introduce distinct visual themes per biome by changing colors, patterns, and layer visibility based on player distance
 - [ ] Integrate smooth vertical scrolling of background layers to simulate descent through changing biomes
 - [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
