@@ -246,7 +246,10 @@ Operator direction from the daily report lands here.
 - [x] Implement vertical scrolling for each background layer at different speeds to simulate depth and movement through changing biomes
 - [!] Introduce biome transition logic that triggers at specific vertical positions (e.g., after 1000 meters) to switch layer visuals and scroll behavior  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure background layers are drawn behind the player and obstacles, maintaining visual depth without affecting gameplay mechanics  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
+- [ ] Add a new Warboy-designed chase antagonist sprite using original code-drawn pixel art
+- [ ] Implement the antagonist's basic movement logic: appear after delay, follow player at variable speed
+- [ ] Add collision detection between player and antagonist, triggering 'EATEN' state on contact
+- [ ] Draw the antagonist on screen using only original code-based art, never copying existing assets
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
 
