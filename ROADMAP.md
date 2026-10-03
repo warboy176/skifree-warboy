@@ -242,7 +242,10 @@ Operator direction from the daily report lands here.
 - [!] Add a second background layer with randomly placed trees using original pixel-art shapes  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a third background layer with animated cloud movement using canvas primitives
 - [!] Introduce distinct visual themes per biome by changing colors, patterns, and layer visibility based on player distance  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Integrate smooth vertical scrolling of background layers to simulate descent through changing biomes
+- [ ] Add a background layer system with at least two distinct biome layers (e.g., snowfield and forest) drawn using original pixel art in code
+- [ ] Implement vertical scrolling for each background layer at different speeds to simulate depth and movement through changing biomes
+- [ ] Introduce biome transition logic that triggers at specific vertical positions (e.g., after 1000 meters) to switch layer visuals and scroll behavior
+- [ ] Ensure background layers are drawn behind the player and obstacles, maintaining visual depth without affecting gameplay mechanics
 - [ ] Ensure all new visuals are drawn with Warboy's original art style and never copy existing game assets
 - [ ] Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry: extend the existing system to auto-track new behaviors (e.g., 'Crashed 10 drones', 'Jumped 5 times in a row') with witty, original unlock messages
