@@ -234,7 +234,7 @@ Operator direction from the daily report lands here.
 - [!] Add a condition to call the chase antagonist's draw function only when game.state is GameState.PLAYING  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a distance tracker that increments with each frame based on player speed and updates the game's total distance traveled  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Define biome thresholds (e.g., 1000m, 2500m, 5000m) as distance milestones for terrain changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function to check if the current distance has crossed a threshold and trigger a biome transition
+- [!] Create a function to check if the current distance has crossed a threshold and trigger a biome transition  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a terrain layer system that overlays new visual layers (e.g., forest, night, alpine) based on the current biome
 - [ ] Ensure each new biome layer is drawn independently and replaces only the background, preserving existing game elements like player, obstacles, and score
 - [ ] Implement a layered rendering system to stack background visuals (lodge, open slope, forest, night) based on current biome
