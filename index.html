@@ -1271,6 +1271,8 @@ function defineBiomeThresholds() {
 
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initBackgroundLayers();
+
 initCloudLayer();
 
 initCreatureSpeedAcceleration();
@@ -2236,6 +2238,25 @@ function drawCloudLayer() {
     ctx.fillRect(cloud.x, cloud.y, 10, 6);
   }
 }
+
+function initBackgroundLayers() {
+  game.bgLayers = [];
+
+  for (let i = 0; i < 5; i++) {
+    const speed = Math.random() * 1.5 + 0.5;
+    const y = Math.random() * H;
+
+    game.bgLayers.push({
+      y: y,
+      speed: speed,
+      draw: function() {
+        ctx.fillStyle = BIOME_TINTS[game.currentBiome].color;
+        ctx.fillRect(0, this.y, W, 1);
+      }
+    });
+  }
+}
+
 
 
 
