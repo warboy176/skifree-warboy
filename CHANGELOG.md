@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop (initBadges, spawnBadge, updateBadges)
 - Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates (checkAchievementTrigger)
 - Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen (drawAchievementHUD)
 - Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle` (isPlayerInAir)

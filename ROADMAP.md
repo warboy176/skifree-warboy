@@ -288,4 +288,4 @@ Operator direction from the daily report lands here.
 - [!] Add a function to track achievement unlocks and store their IDs in a set  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to render a temporary pixel-art badge on screen for each unlocked achievement, using Warboy's original art style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a function to update badge positions and fade out over time, removing them after 3 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
+- [x] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
