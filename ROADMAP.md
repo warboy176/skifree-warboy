@@ -274,4 +274,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a HUD overlay element that renders the achievement icon when unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the overlay appears only when an achievement is earned and persists until the next reset  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new `achievements` object to track player progress on specific scoring events like slaloming near skiers or crashing through obstacles
+- [ ] Implement a `checkAchievementTrigger` function that evaluates current game state against predefined achievement conditions and unlocks them if met
+- [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
+- [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style
