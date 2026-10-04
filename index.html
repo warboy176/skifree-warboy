@@ -2395,6 +2395,15 @@ function drawAchievementIcon(ctx, x, y) {
     ctx.fillRect(x + 6, y + 6, 4, 1);
 }
 
+function initAchievementsState() {
+  if (!game.achievements) {
+    game.achievements = {};
+  }
+  game.achievements.slalom_near_skier = 0;
+  game.achievements.crash_through_obstacle = 0;
+}
+
+
 
 
 
