@@ -496,6 +496,8 @@ spawnHighJumpRamps();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkAchievementTrigger(dt);
+
 updateMultiplierOnNearMisses(dt);
 
 updateDistanceTracker(dt);
@@ -2445,6 +2447,18 @@ function drawAchievementHUD() {
     }
   });
 }
+
+function checkAchievementTrigger(dt) {
+    for (let achievement of game.achievements) {
+        if (achievement.unlocked) continue;
+        if (checkAchievementConditions(achievement)) {
+            achievement.unlocked = true;
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 
