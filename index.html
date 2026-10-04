@@ -2430,6 +2430,23 @@ function isPlayerInAir() {
   return PlayerState.isJumping && !PlayerState.collidingWithObstacle;
 }
 
+function drawAchievementHUD() {
+  ctx.textAlign = 'left';
+  ctx.font = '16px "Courier New", monospace';
+  ctx.fillStyle = '#ffffff';
+
+  let yPosition = 10;
+  const padding = 10;
+
+  game.achievements.forEach(achievement => {
+    if (achievement.unlocked) {
+      ctx.fillText(`${achievement.title}: ${achievement.counter}`, padding, yPosition);
+      yPosition += 20; // Move to the next line
+    }
+  });
+}
+
+
 
 
 
