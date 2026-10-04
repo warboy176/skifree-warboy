@@ -269,7 +269,7 @@ Operator direction from the daily report lands here.
 - [x] Add a `triggerAchievement(name)` function to mark an achievement as completed by name, using the `achievements` array
 - [x] Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions
 - [!] Integrate `checkAchievements()` into the game loop to trigger on score changes, collisions, and jumps  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
-- [ ] Add a new achievement system that tracks player milestones without altering existing game logic
+- [!] Add a new achievement system that tracks player milestones without altering existing game logic  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Create a single pixel-art icon for the first achievement using only original code-drawn graphics
 - [ ] Implement a HUD overlay element that renders the achievement icon when unlocked
 - [ ] Ensure the overlay appears only when an achievement is earned and persists until the next reset
