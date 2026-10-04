@@ -2035,6 +2035,19 @@ function initMultiplierState() {
   game.state.multiplier = 1;
 }
 
+const UNLOCK_MESSAGES = [
+  'Achievement unlocked!',
+  'New trophy earned!',
+  'You\'re on fire!',
+  'Legendary status achieved!',
+  'Warboy is impressed!',
+  'Slope domination!'
+];
+
+function getRandomUnlockMessage() {
+  return UNLOCK_MESSAGES[Math.floor(Math.random() * UNLOCK_MESSAGES.length)];
+}
+
 function initAchievementsRegistry() {
   game.achievements = [
     { type: 'drones', counter: 0, unlockThreshold: 10, title: 'Drone Hunter', description: 'Destroy 10 drones.', unlocked: false },
@@ -2462,6 +2475,8 @@ function checkAchievementTrigger(dt) {
         if (achievement.unlocked) continue;
         if (checkAchievementConditions(achievement.type)) {
             achievement.unlocked = true;
+            game.trickText = `${achievement.title || 'Achievement'}! ${getRandomUnlockMessage()}`;
+            game.trickTime = 1.5;
             return true;
         }
     }
