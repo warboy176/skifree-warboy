@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state (handleJumpingObstacleCollision)
 - Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0 (initAchievementsState)
 - Create a single pixel-art icon for the first achievement using only original code-drawn graphics (drawAchievementIcon)
 - Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions (checkAchievements)

@@ -276,7 +276,7 @@ Operator direction from the daily report lands here.
 
 - [x] Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0
 - [!] Add a function to increment `slalom_near_skier` when the player passes within 30 pixels of an NPC skier while moving forward  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state
+- [x] Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state
 - [ ] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving
 - [ ] Update the collision detection logic to increment `achievements.crash_through_obstacle` when the player hits an obstacle (tree, rock, oil, barrel, drone) while in mid-air
 - [ ] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
