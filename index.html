@@ -1697,7 +1697,8 @@ function updateStyleScore(dt) {
       Math.abs(player.x - npc.x) <= 40 &&
       Math.abs(player.y - npc.y) <= 100
     ) {
-      applyStyleMultiplierToScore(10);
+      const awarded = applyStyleMultiplierToScore(10);
+      checkAchievementsOnScorableAction('slalom', awarded);
     } else {
       game.styleMultiplier = 1;
     }
@@ -2145,6 +2146,17 @@ function checkAchievementOnScorableAction(actionType, scoreDelta) {
   achievement.counter += scoreDelta;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
+  }
+}
+
+function checkAchievementsOnScorableAction(actionType, value = 0) {
+  if (!Array.isArray(game.achievements)) return;
+  for (const achievement of game.achievements) {
+    if (achievement.unlocked || achievement.type !== actionType) continue;
+    achievement.counter += value;
+    if (achievement.counter >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+    }
   }
 }
 
