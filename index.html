@@ -1190,6 +1190,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawAchievementIcon(ctx, 10, 10);
+
 updateAchievementTrophies();
 
 drawStyleScoreHUD();
@@ -2358,6 +2360,16 @@ function checkAchievements() {
     }
   }
 }
+
+function drawAchievementIcon(ctx, x, y) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x + 6, y + 6, 4, 4);
+    ctx.fillStyle = 'black';
+    ctx.fillRect(x + 7, y + 7, 2, 2);
+    ctx.fillStyle = 'red';
+    ctx.fillRect(x + 8, y + 8, 2, 2);
+}
+
 
 
 
