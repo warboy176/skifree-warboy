@@ -2409,6 +2409,22 @@ function handleJumpingObstacleCollision(dt) {
   }
 }
 
+function initPlayerState() {
+  PlayerState.isJumping = false;
+  PlayerState.inAir = false;
+
+  // Synchronize isJumping and inAir on jump start/landing
+  const originalSetIsJumping = PlayerState.setIsJumping;
+  PlayerState.setIsJumping = function(isJumping) {
+    PlayerState.isJumping = isJumping;
+    PlayerState.inAir = isJumping;
+    if (originalSetIsJumping) {
+      originalSetIsJumping(isJumping);
+    }
+  };
+}
+
+
 
 
 
