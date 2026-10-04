@@ -285,4 +285,7 @@ Operator direction from the daily report lands here.
 - [!] Implement `checkAchievementTrigger` to iterate through `achievements` and unlock any that meet their `condition` based on current game state  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a `triggerAchievement` function to handle visual feedback and state updates when an achievement is unlocked  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
-- [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style
+- [ ] Add a function to track achievement unlocks and store their IDs in a set
+- [ ] Create a function to render a temporary pixel-art badge on screen for each unlocked achievement, using Warboy's original art style
+- [ ] Implement a function to update badge positions and fade out over time, removing them after 3 seconds
+- [ ] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
