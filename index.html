@@ -295,7 +295,7 @@ spawnHighJumpRamps();
       if(o.used || Math.abs(o.y-player.y)>65 || !overlaps(pb,boxForObstacle(o))) continue;
       if(o.type==='jump'){
         o.used=true;
-        if(player.state!==PlayerState.JUMPING){ setPlayerState(PlayerState.JUMPING); player.jumpDuration=1.08; game.style+=100; game.trickText='RAMP +100'; game.trickTime=.8; }
+        if(player.state!==PlayerState.JUMPING){ setPlayerState(PlayerState.JUMPING); player.jumpDuration=1.08; game.style+=100; game.trickText='RAMP +100'; game.trickTime=.8; checkAchievement('jumps',1); }
         continue;
       }
       if(o.type==='slope'){
@@ -1263,6 +1263,20 @@ function handlePauseKey(event) {
   }
 }
 
+function addDefaultAchievement(name, condition, unlockThreshold) {
+  if (!Array.isArray(game.achievements)) {
+    game.achievements = [];
+  }
+  game.achievements.push({
+    type: condition,
+    title: name,
+    description: `Trigger "${condition}" ${unlockThreshold} times.`,
+    counter: 0,
+    unlockThreshold: unlockThreshold,
+    unlocked: false
+  });
+}
+
 function defineBiomeThresholds() {
     return [
         {name:'slope', min:0, sky:'#eefaff', dash:'rgba(129,203,229,.25)'},
@@ -1292,6 +1306,7 @@ registerCrashThroughObstacleAchievement();
 
 
 initAchievementsRegistry();
+addDefaultAchievement('Big Air', 'jumps', 5);
 
 initMultiplierHUD();
 
