@@ -274,7 +274,10 @@ Operator direction from the daily report lands here.
 - [!] Implement a HUD overlay element that renders the achievement icon when unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the overlay appears only when an achievement is earned and persists until the next reset  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 
-- [ ] Add a new `achievements` object to track player progress on specific scoring events like slaloming near skiers or crashing through obstacles
+- [ ] Add a new `achievements` object to the game state with empty tracking properties for 'slalom_near_skier' and 'crash_through_obstacle'
+- [ ] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving
+- [ ] Update the collision detection logic to increment `achievements.crash_through_obstacle` when the player hits an obstacle (tree, rock, oil, barrel, drone) while in mid-air
+- [ ] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
 - [ ] Implement a `checkAchievementTrigger` function that evaluates current game state against predefined achievement conditions and unlocks them if met
 - [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
 - [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style
