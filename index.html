@@ -1332,6 +1332,8 @@ addDefaultAchievement('Big Air', 'jumps', 5);
 const Achievement = createAchievement('Need For Speed', 'maxSpeed', 400);
 game.achievements.push(Achievement);
 
+initAchievementFeedbackSystem();
+
 initMultiplierHUD();
 
 initDistanceTracker();
@@ -2050,6 +2052,13 @@ function getRandomUnlockMessage() {
   return UNLOCK_MESSAGES[Math.floor(Math.random() * UNLOCK_MESSAGES.length)];
 }
 
+function initAchievementFeedbackSystem() {
+  game.feedbackQueue = [];
+  game.triggerSoundEffect = function(effectName) {
+    game.feedbackQueue.push(effectName);
+  };
+}
+
 function initAchievementsRegistry() {
   game.achievements = [
     { type: 'drones', counter: 0, unlockThreshold: 10, title: 'Drone Hunter', description: 'Destroy 10 drones.', unlocked: false },
@@ -2479,6 +2488,9 @@ function checkAchievementTrigger(dt) {
             achievement.unlocked = true;
             game.trickText = `${achievement.title || 'Achievement'}! ${getRandomUnlockMessage()}`;
             game.trickTime = 1.5;
+            if (typeof game.triggerSoundEffect === 'function') {
+                game.triggerSoundEffect('achievementUnlocked');
+            }
             return true;
         }
     }
