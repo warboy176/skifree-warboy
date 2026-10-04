@@ -1269,6 +1269,17 @@ function handlePauseKey(event) {
   }
 }
 
+function createAchievement(name, condition, unlockThreshold) {
+  return {
+    title: name,
+    type: condition,
+    description: `Reach a top speed of ${unlockThreshold}.`,
+    counter: 0,
+    unlockThreshold: unlockThreshold,
+    unlocked: false
+  };
+}
+
 function addDefaultAchievement(name, condition, unlockThreshold) {
   if (!Array.isArray(game.achievements)) {
     game.achievements = [];
@@ -1313,6 +1324,9 @@ registerCrashThroughObstacleAchievement();
 
 initAchievementsRegistry();
 addDefaultAchievement('Big Air', 'jumps', 5);
+
+const Achievement = createAchievement('Need For Speed', 'maxSpeed', 400);
+game.achievements.push(Achievement);
 
 initMultiplierHUD();
 
@@ -2354,6 +2368,11 @@ function checkAchievements() {
           if (game.npcSkiers.length >= achievement.unlockThreshold) {
             achievement.unlocked = true;
             triggerAchievement(achievement);
+          }
+          break;
+        case 'maxSpeed':
+          if (game.maxSpeed >= achievement.unlockThreshold) {
+            achievement.unlocked = true;
           }
           break;
       }
