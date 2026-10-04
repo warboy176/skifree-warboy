@@ -1,4 +1,5 @@
 # Changelog
+- Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions (checkAchievements)
 - Add a `triggerAchievement(name)` function to mark an achievement as completed by name, using the `achievements` array (triggerAchievement)
 - Create a function to evaluate the event log against achievement conditions and trigger unlocks when met (checkAchievementConditions)
 - Introduce style-based scoring: award points for close slaloming through NPCs, crashing through obstacles, and landing jumps, with multipliers for consecutive actions (initStyleScoringSystem)

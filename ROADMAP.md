@@ -267,7 +267,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a `checkCondition()` method in the `Achievement` class that evaluates the condition and updates `completed` status  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Initialize an `achievements` array in the game state to store instances of `Achievement`  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a `triggerAchievement(name)` function to mark an achievement as completed by name, using the `achievements` array
-- [ ] Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions
+- [x] Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions
 - [ ] Integrate `checkAchievements()` into the game loop to trigger on score changes, collisions, and jumps
 - [ ] Create a visual overlay in the HUD to display unlocked achievements with Warboy's original pixel-art icons
 
