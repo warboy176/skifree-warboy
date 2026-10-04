@@ -278,7 +278,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to increment `slalom_near_skier` when the player passes within 30 pixels of an NPC skier while moving forward  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state
 - [!] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Update the collision detection logic to increment `achievements.crash_through_obstacle` when the player hits an obstacle (tree, rock, oil, barrel, drone) while in mid-air
+- [ ] Add a new property `inAir` to the Player class to track if the player is currently jumping
+- [ ] Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle`
 - [ ] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
 - [ ] Implement a `checkAchievementTrigger` function that evaluates current game state against predefined achievement conditions and unlocks them if met
 - [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
