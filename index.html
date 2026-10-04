@@ -517,6 +517,8 @@ checkNPCProximity(dt);
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
 checkAchievementsOnFrame();
+checkAchievements();
+
 triggerAchievement('first_ski');
 
 checkAchievementConditions();
@@ -2310,6 +2312,41 @@ function triggerAchievement(name) {
     achievement.counter++;
   }
 }
+
+function checkAchievements() {
+  for (let i = 0; i < game.achievements.length; i++) {
+    const achievement = game.achievements[i];
+    if (!achievement.unlocked) {
+      switch (achievement.type) {
+        case 'score':
+          if (GameState.score >= achievement.unlockThreshold) {
+            achievement.unlocked = true;
+            triggerAchievement(achievement);
+          }
+          break;
+        case 'speed':
+          if (PlayerState.speed >= achievement.unlockThreshold) {
+            achievement.unlocked = true;
+            triggerAchievement(achievement);
+          }
+          break;
+        case 'distance':
+          if (PlayerState.distance >= achievement.unlockThreshold) {
+            achievement.unlocked = true;
+            triggerAchievement(achievement);
+          }
+          break;
+        case 'npcKills':
+          if (game.npcSkiers.length >= achievement.unlockThreshold) {
+            achievement.unlocked = true;
+            triggerAchievement(achievement);
+          }
+          break;
+      }
+    }
+  }
+}
+
 
 
 
