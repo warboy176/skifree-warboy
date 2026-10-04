@@ -275,7 +275,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the overlay appears only when an achievement is earned and persists until the next reset  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 
 - [x] Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0
-- [ ] Add a function to increment `slalom_near_skier` when the player passes within 30 pixels of an NPC skier while moving forward
+- [!] Add a function to increment `slalom_near_skier` when the player passes within 30 pixels of an NPC skier while moving forward  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state
 - [ ] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving
 - [ ] Update the collision detection logic to increment `achievements.crash_through_obstacle` when the player hits an obstacle (tree, rock, oil, barrel, drone) while in mid-air
