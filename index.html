@@ -514,6 +514,8 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
+isPlayerInAir();
+
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
 checkAchievementsOnFrame();
@@ -2423,6 +2425,11 @@ function initPlayerState() {
     }
   };
 }
+
+function isPlayerInAir() {
+  return PlayerState.isJumping && !PlayerState.collidingWithObstacle;
+}
+
 
 
 
