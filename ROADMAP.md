@@ -274,7 +274,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a HUD overlay element that renders the achievement icon when unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the overlay appears only when an achievement is earned and persists until the next reset  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 
-- [ ] Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0
+- [x] Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0
 - [ ] Add a function to increment `slalom_near_skier` when the player passes within 30 pixels of an NPC skier while moving forward
 - [ ] Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state
 - [ ] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving
