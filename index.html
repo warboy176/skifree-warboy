@@ -517,6 +517,8 @@ checkNPCProximity(dt);
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
 checkAchievementsOnFrame();
+triggerAchievement('first_ski');
+
 checkAchievementConditions();
 
 
@@ -2300,6 +2302,15 @@ function checkAchievementConditions() {
     }
   }
 }
+
+function triggerAchievement(name) {
+  const achievement = game.achievements[name];
+  if (achievement) {
+    achievement.unlocked = true;
+    achievement.counter++;
+  }
+}
+
 
 
 
