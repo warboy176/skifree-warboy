@@ -281,6 +281,8 @@ Operator direction from the daily report lands here.
 - [x] Add a new property `inAir` to the Player class to track if the player is currently jumping
 - [x] Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle`
 - [x] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
-- [ ] Implement a `checkAchievementTrigger` function that evaluates current game state against predefined achievement conditions and unlocks them if met
+- [ ] Add a `achievements` object to store achievement definitions with `condition` and `unlocked` properties
+- [ ] Implement `checkAchievementTrigger` to iterate through `achievements` and unlock any that meet their `condition` based on current game state
+- [ ] Add a `triggerAchievement` function to handle visual feedback and state updates when an achievement is unlocked
 - [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
 - [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style
