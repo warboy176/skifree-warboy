@@ -1,4 +1,5 @@
 # Changelog
+- Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle` (isPlayerInAir)
 - Add a new property `inAir` to the Player class to track if the player is currently jumping (initPlayerState)
 - Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state (handleJumpingObstacleCollision)
 - Initialize an empty `achievements` object in the game state with properties `slalom_near_skier` and `crash_through_obstacle`, both set to 0 (initAchievementsState)
