@@ -1719,6 +1719,8 @@ function updateStyleScore(dt) {
     ) {
       const awarded = applyStyleMultiplierToScore(10);
       checkAchievementsOnScorableAction('slalom', awarded);
+spawnBadge(x, y, type);
+
     } else {
       game.styleMultiplier = 1;
     }
@@ -2487,6 +2489,14 @@ function initBadges() {
   game.badges = [];
   game.badgeCount = 0;
 }
+
+function spawnBadge(x, y, type) {
+    const active = true;
+    const badge = { x: x, y: y, type: type, active: active };
+    game.badges.push(badge);
+    game.badgeCount++;
+}
+
 
 
 
