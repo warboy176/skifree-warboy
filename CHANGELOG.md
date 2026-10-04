@@ -1,4 +1,5 @@
 # Changelog
+- Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates (checkAchievementTrigger)
 - Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen (drawAchievementHUD)
 - Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle` (isPlayerInAir)
 - Add a new property `inAir` to the Player class to track if the player is currently jumping (initPlayerState)

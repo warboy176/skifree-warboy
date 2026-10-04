@@ -284,5 +284,5 @@ Operator direction from the daily report lands here.
 - [!] Add a `achievements` object to store achievement definitions with `condition` and `unlocked` properties  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement `checkAchievementTrigger` to iterate through `achievements` and unlock any that meet their `condition` based on current game state  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a `triggerAchievement` function to handle visual feedback and state updates when an achievement is unlocked  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
+- [x] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
 - [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style
