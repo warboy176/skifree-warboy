@@ -499,7 +499,7 @@ spawnHighJumpRamps();
 updateMultiplierOnNearMisses(dt);
 
 updateDistanceTracker(dt);
-checkBiomeTransition();
+checkBiomeTransition(game.distance);
 
 
 updateTreePositions(dt);
@@ -533,7 +533,7 @@ callStyleScoreCheckEveryFrame();
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateBiome(player.y);
-        checkBiomeTransition();
+        checkBiomeTransition(game.distance);
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -1317,7 +1317,9 @@ initStarfield();
 // Detects when the gameplay biome tier (game.biome, updated each tick by updateBiome()) has
 // changed since the last check and fires a one-time flash/shake pulse so the player feels the
 // exact instant of crossing a threshold, complementing the fade-in banner from drawBiomeTransition.
-function checkBiomeTransition() {
+// currentDistance is accepted for callers that track distance explicitly, but the transition
+// itself is driven off game.biome so it fires in sync with whichever update*(..) call last set it.
+function checkBiomeTransition(currentDistance) {
     if (game.state !== GameState.PLAYING) return;
     if (game.biome !== game.lastBiome) {
         game.flash = Math.max(game.flash, 0.25);
@@ -1935,21 +1937,6 @@ function updateDistanceTracker(dt) {
       game.currentBiomeIndex++;
       game.biomeTransitionPoints.push(currentThreshold);
       drawBiomeTransition();
-    }
-  }
-}
-
-function checkBiomeTransition() {
-  const thresholds = BIOME_THRESHOLDS;
-  const currentDistance = game.distanceMeters;
-
-  for (let i = 0; i < thresholds.length; i++) {
-    const threshold = thresholds[i];
-    if (currentDistance > threshold && !game.biomeTransitioned[i]) {
-      game.currentBiomeIndex = i;
-      game.biomeTransitioned[i] = true;
-      drawBiomeTransition();
-      break;
     }
   }
 }
