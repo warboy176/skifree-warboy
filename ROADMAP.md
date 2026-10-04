@@ -280,7 +280,7 @@ Operator direction from the daily report lands here.
 - [!] Update the collision detection logic to increment `achievements.slalom_near_skier` when the player passes within 10 pixels of an NPC skier while moving  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a new property `inAir` to the Player class to track if the player is currently jumping
 - [x] Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle`
-- [ ] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
+- [x] Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen
 - [ ] Implement a `checkAchievementTrigger` function that evaluates current game state against predefined achievement conditions and unlocks them if met
 - [ ] Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates
 - [ ] Add visual feedback for new achievement unlocks using a temporary on-screen badge with Warboy's original pixel-art style

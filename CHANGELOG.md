@@ -1,4 +1,5 @@
 # Changelog
+- Add a visual HUD indicator to display the current count of each achievement in the top-left corner of the screen (drawAchievementHUD)
 - Modify the collision detection logic to check if the player is in mid-air before incrementing `achievements.crash_through_obstacle` (isPlayerInAir)
 - Add a new property `inAir` to the Player class to track if the player is currently jumping (initPlayerState)
 - Add a function to increment `crash_through_obstacle` when the player collides with any obstacle while in JUMPING state (handleJumpingObstacleCollision)
