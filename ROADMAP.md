@@ -290,7 +290,11 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to update badge positions and fade out over time, removing them after 3 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
 
-- [ ] Add the Warboy-designed chase antagonist with unique movement pattern and visual style, drawn in code
+- [ ] Define the chase antagonist's original visual design using pure code-drawn shapes in the canvas context
+- [ ] Implement the antagonist's spawn logic to appear after a delay when the player is idle
+- [ ] Add the antagonist's unique movement pattern: slow drift with sudden bursts toward the player
+- [ ] Introduce collision detection between the antagonist and the player, triggering the EATEN state
+- [ ] Ensure the antagonist is drawn only when active and does not interfere with existing game elements
 - [ ] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards
