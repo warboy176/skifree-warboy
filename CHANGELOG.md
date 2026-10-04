@@ -1,4 +1,5 @@
 # Changelog
+- Create a single pixel-art icon for the first achievement using only original code-drawn graphics (drawAchievementIcon)
 - Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions (checkAchievements)
 - Add a `triggerAchievement(name)` function to mark an achievement as completed by name, using the `achievements` array (triggerAchievement)
 - Create a function to evaluate the event log against achievement conditions and trigger unlocks when met (checkAchievementConditions)
