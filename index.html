@@ -1190,7 +1190,7 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
-drawAchievementIcon(ctx, 10, 10);
+if(Array.isArray(game.achievements)&&game.achievements.some(a=>a.unlocked))drawAchievementIcon(ctx, 10, 10);
 
 updateAchievementTrophies();
 
@@ -2083,6 +2083,8 @@ function updateAchievementTrophies() {
 
   game.achievements.forEach((achievement, index) => {
     if (achievement.unlocked) {
+      drawAchievementIcon(ctx, W - 222, HUD_H + 16 + index * 20);
+      ctx.fillStyle = '#ffffff';
       ctx.fillText(achievement.title, W - 200, HUD_H + 20 + index * 20);
       ctx.fillText(achievement.description, W - 200, HUD_H + 35 + index * 20);
     }
@@ -2381,12 +2383,16 @@ function checkAchievements() {
 }
 
 function drawAchievementIcon(ctx, x, y) {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(x + 6, y + 6, 4, 4);
-    ctx.fillStyle = 'black';
-    ctx.fillRect(x + 7, y + 7, 2, 2);
-    ctx.fillStyle = 'red';
-    ctx.fillRect(x + 8, y + 8, 2, 2);
+    ctx.fillStyle = '#e33232';
+    ctx.fillRect(x + 3, y + 10, 3, 6);
+    ctx.fillRect(x + 10, y + 10, 3, 6);
+    ctx.fillStyle = '#8e4f27';
+    ctx.fillRect(x + 2, y, 12, 12);
+    ctx.fillStyle = '#ffd43b';
+    ctx.fillRect(x + 4, y + 2, 8, 8);
+    ctx.fillStyle = '#fff6d6';
+    ctx.fillRect(x + 7, y + 4, 2, 2);
+    ctx.fillRect(x + 6, y + 6, 4, 1);
 }
 
 
