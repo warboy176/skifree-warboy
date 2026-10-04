@@ -270,3 +270,5 @@ Operator direction from the daily report lands here.
 - [ ] Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions
 - [ ] Integrate `checkAchievements()` into the game loop to trigger on score changes, collisions, and jumps
 - [ ] Create a visual overlay in the HUD to display unlocked achievements with Warboy's original pixel-art icons
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
