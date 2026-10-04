@@ -2497,6 +2497,18 @@ function spawnBadge(x, y, type) {
     game.badgeCount++;
 }
 
+function updateBadges(dt) {
+  for (let i = game.badges.length - 1; i >= 0; i--) {
+    const badge = game.badges[i];
+    badge.y += NPC_SKIER_SPEED * 0.5 * dt;
+    if (badge.y > H) {
+      game.badges.splice(i, 1);
+      game.badgeCount--;
+    }
+  }
+}
+
+
 
 
 
