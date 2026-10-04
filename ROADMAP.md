@@ -271,7 +271,7 @@ Operator direction from the daily report lands here.
 - [!] Integrate `checkAchievements()` into the game loop to trigger on score changes, collisions, and jumps  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 1 unspecifiable, 2 e -->
 - [!] Add a new achievement system that tracks player milestones without altering existing game logic  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Create a single pixel-art icon for the first achievement using only original code-drawn graphics
-- [ ] Implement a HUD overlay element that renders the achievement icon when unlocked
+- [!] Implement a HUD overlay element that renders the achievement icon when unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure the overlay appears only when an achievement is earned and persists until the next reset
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
