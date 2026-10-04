@@ -2403,6 +2403,13 @@ function initAchievementsState() {
   game.achievements.crash_through_obstacle = 0;
 }
 
+function handleJumpingObstacleCollision(dt) {
+  if (PlayerState.isJumping && PlayerState.collidingWithObstacle) {
+    incrementCrashThroughObstacleCounter();
+  }
+}
+
+
 
 
 
