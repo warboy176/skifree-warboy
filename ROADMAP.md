@@ -263,4 +263,7 @@ Operator direction from the daily report lands here.
 - [!] Integrate the message display function to trigger only when a new achievement is unlocked, not on repeat  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Extend the game loop to trigger achievement checks after each frame based on player state and event history  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new `Achievement` class to track individual achievements with name, condition, and completion status
+- [ ] Implement a `checkAchievements()` function that evaluates current game state against all defined achievement conditions
+- [ ] Integrate `checkAchievements()` into the game loop to trigger on score changes, collisions, and jumps
+- [ ] Create a visual overlay in the HUD to display unlocked achievements with Warboy's original pixel-art icons
