@@ -307,7 +307,7 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add a new Warboy-designed chase antagonist class with a unique visual style using original code-drawn pixels
+- [!] Add a new Warboy-designed chase antagonist class with a unique visual style using original code-drawn pixels  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement the antagonist's foundation movement: spawn at a fixed distance behind the player and move forward at a constant speed
 - [ ] Add logic to detect when the antagonist should start pursuing: only activate if the player is not moving fast enough
 - [ ] Introduce a simple chase behavior: adjust horizontal position to follow the player with a slight delay
