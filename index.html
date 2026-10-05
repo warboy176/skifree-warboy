@@ -547,6 +547,9 @@ checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
 registerStyleScoreAchievement();
 
+if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
+if(yeti.active)trackAchievementOnProximity('yeti',yeti);
+
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
         updateBiomeTransition(game.distance);
@@ -2166,6 +2169,42 @@ function checkAchievement(actionKey, actionValue) {
   const achievement = game.achievements.find(a => a.type === actionKey);
   if (!achievement || achievement.unlocked) return;
   achievement.counter += actionValue;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
+    showAchievementUnlock(achievement);
+  }
+}
+
+// Generic proximity tracker: call once per frame per nearby entity (an NPC skier, the
+// yeti, etc.) to build toward a "got close N times" achievement keyed by entityType.
+// Reuses the same achievements array/unlock flow as checkAchievement()/showAchievementUnlock(),
+// but owns its own threshold/range since NEAR_MISS_MARGIN and proximityThreshold in the
+// near-miss/style-score helpers are locals scoped to those functions, not shared state.
+const PROXIMITY_ACHIEVEMENT_RANGE = 40;
+const PROXIMITY_ACHIEVEMENT_THRESHOLD = 10;
+
+function trackAchievementOnProximity(entityType, entity) {
+  if (!entity) return;
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  const dx = player.x - entity.x;
+  const dy = player.y - entity.y;
+  const distance = Math.hypot(dx, dy);
+  if (distance > PROXIMITY_ACHIEVEMENT_RANGE) return;
+  const achievementType = `proximity_${entityType}`;
+  let achievement = game.achievements.find(a => a.type === achievementType);
+  if (!achievement) {
+    achievement = {
+      type: achievementType,
+      title: `Close Call: ${entityType}`,
+      description: `Get within range of a ${entityType} ${PROXIMITY_ACHIEVEMENT_THRESHOLD} times`,
+      counter: 0,
+      unlockThreshold: PROXIMITY_ACHIEVEMENT_THRESHOLD,
+      unlocked: false
+    };
+    game.achievements.push(achievement);
+  }
+  if (achievement.unlocked) return;
+  achievement.counter++;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
     showAchievementUnlock(achievement);
