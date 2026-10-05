@@ -312,7 +312,7 @@ Operator direction from the daily report lands here.
 - [!] Add logic to detect when the antagonist should start pursuing: only activate if the player is not moving fast enough  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a chase antagonist class with a fixed horizontal offset and slow following speed  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement horizontal position adjustment for the antagonist based on player's x-position with a 1-second delay  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Ensure the antagonist only appears after a short delay following player start, and does not appear during initial idle state
+- [!] Ensure the antagonist only appears after a short delay following player start, and does not appear during initial idle state  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Ensure the antagonist is drawn on the canvas and does not interfere with existing game mechanics
 - [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
 - [ ] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos
