@@ -181,6 +181,15 @@ if (autoplay.enabled) {
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
   let highScores=loadScores();
+
+  // Lightweight in-memory event log for player actions (run starts, crashes, etc).
+  // Kept bounded so a long run can't leak memory; read via game.eventLog for debugging.
+  function logPlayerEvent(eventType, context){
+    if(!game.eventLog) game.eventLog=[];
+    game.eventLog.push({eventType:String(eventType), context:context||{}, distance:game.distance, time:Date.now()});
+    if(game.eventLog.length>50) game.eventLog.shift();
+  }
+
   function saveRun(result){
     if(game.scoreSaved)return;
     game.scoreSaved=true;
@@ -188,14 +197,15 @@ if (autoplay.enabled) {
     highScores.sort((a,b)=>b.distance-a.distance||b.style-a.style||b.maxSpeed-a.maxSpeed);
     highScores=highScores.slice(0,8);
     try{localStorage.setItem(SCORE_KEY,JSON.stringify(highScores));}catch(e){}
+    logPlayerEvent('run_end',{result,distance:game.distance,style:game.style});
   }
 
   function setPlayerState(next){
     player.state = next;
     player.stateTime = 0;
     if (next === PlayerState.JUMPING){ player.jumpTime = 0; player.jumpDuration=.82; player.spin = 0; player.flipDir=0; player.flipActive=false; player.flips=0; }
-    if (next === PlayerState.CRASHED){ player.speed *= .25; game.cleanTime=0; game.shake = .25; }
-    if (next === PlayerState.EATEN){ player.speed = 0; player.vx = 0; game.state = GameState.ENDING; statusEl.textContent = 'Caught by Warboy!'; }
+    if (next === PlayerState.CRASHED){ player.speed *= .25; game.cleanTime=0; game.shake = .25; logPlayerEvent('crash',{distance:game.distance,speed:player.speed}); }
+    if (next === PlayerState.EATEN){ player.speed = 0; player.vx = 0; game.state = GameState.ENDING; statusEl.textContent = 'Caught by Warboy!'; logPlayerEvent('caught',{distance:game.distance}); }
   }
 
   function startGame(){
@@ -211,6 +221,7 @@ spawnHighJumpRamps();
     initNPCs();
     initTrees();
     statusEl.textContent = 'Skiing. Distance zero meters.';
+    logPlayerEvent('game_start',{});
   }
 
   function rand(a,b){ return a + Math.random()*(b-a); }
