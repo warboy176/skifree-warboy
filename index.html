@@ -1530,6 +1530,7 @@ function checkNPCProximity(dt) {
         game.style += 5;
         game.trickText = 'NEAR MISS +5';
         game.trickTime = .6;
+        trackAchievement('nearMiss', 1);
       }
     } else {
       npc.grazed = false;
@@ -2205,6 +2206,41 @@ function trackAchievementOnProximity(entityType, entity) {
   }
   if (achievement.unlocked) return;
   achievement.counter++;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
+    showAchievementUnlock(achievement);
+  }
+}
+
+// Generic progress tracker keyed by an arbitrary achievementKey. Unlike checkAchievement()
+// (which requires the achievement to already exist in game.achievements), this auto-registers
+// a sensible entry the first time it sees a new key, so callers don't need a separate
+// registration step before they can start accumulating progress toward it.
+const ACHIEVEMENT_DEFINITIONS = {
+  nearMiss: { title: 'Near Miss Master', description: 'Graze past other skiers 15 times without crashing.', unlockThreshold: 15 }
+};
+
+function trackAchievement(achievementKey, value) {
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  let achievement = game.achievements.find(a => a.type === achievementKey);
+  if (!achievement) {
+    const def = ACHIEVEMENT_DEFINITIONS[achievementKey] || {
+      title: achievementKey,
+      description: `Reach the ${achievementKey} milestone.`,
+      unlockThreshold: 1
+    };
+    achievement = {
+      type: achievementKey,
+      title: def.title,
+      description: def.description,
+      counter: 0,
+      unlockThreshold: def.unlockThreshold,
+      unlocked: false
+    };
+    game.achievements.push(achievement);
+  }
+  if (achievement.unlocked) return;
+  achievement.counter += value;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
     showAchievementUnlock(achievement);
