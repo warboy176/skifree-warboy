@@ -1115,6 +1115,22 @@ renderSkin(game.skin, p.x, p.y);
     ctx.globalAlpha=1;
   }
 
+  function drawChaseAntagonist(x,y){
+    ctx.fillStyle='#e33232';
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+    ctx.lineTo(x+16,y-24);
+    ctx.lineTo(x+32,y);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle='#171715';
+    ctx.lineWidth=2;
+    ctx.stroke();
+    ctx.fillRect(x+14,y-14,4,8);
+    ctx.strokeRect(x+14,y-14,4,8);
+    ctx.fillRect(x+14,y-4,4,3);
+  }
+
   function drawYeti(){
     if(!yeti.active)return;
     let yx=yeti.x,yy=yeti.y;
@@ -1221,7 +1237,7 @@ drawPausedOverlay();
     if(game.flash>0){ctx.globalAlpha=game.flash*.35;rect(0,HUD_H,W,H-HUD_H,'#e33232');ctx.globalAlpha=1;}
     if(game.state===GameState.PLAYING && game.distance>=2000){
       ctx.font='700 14px "Courier New",monospace';ctx.textAlign='center';
-      if(yeti.cycle==='CHASE'){ctx.fillStyle='#e33232';ctx.fillText(`⚠ WARBOY ${Math.max(0,Math.ceil(yeti.cycleLimit-yeti.cycleTime))}s`,W/2,HUD_H+20);}
+      if(yeti.cycle==='CHASE'){drawChaseAntagonist(W/2-110,HUD_H+32);ctx.fillStyle='#e33232';ctx.fillText(`WARBOY ${Math.max(0,Math.ceil(yeti.cycleLimit-yeti.cycleTime))}s`,W/2,HUD_H+20);}
       else if(yeti.cycle==='TIRED'){ctx.fillStyle='#8e4f27';ctx.fillText('WARBOY IS TIRED!',W/2,HUD_H+20);}
       else if(yeti.cycle==='REST'){ctx.fillStyle='#087257';ctx.fillText(`SKI FREE ${Math.max(0,Math.ceil(yeti.cycleLimit-yeti.cycleTime))}s`,W/2,HUD_H+20);}
     }
