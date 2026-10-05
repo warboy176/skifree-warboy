@@ -1806,10 +1806,9 @@ function registerStyleScoreAchievement() {
     game.styleScoreThresholdsCrossed.push(threshold);
     const title = `Style Score ${threshold}`;
     const description = `Reach a style score of ${threshold}`;
-    game.achievements.push({ type: `styleScore${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true });
-    game.trickText = `${title}! ${getRandomUnlockMessage()}`;
-    game.trickTime = 1.5;
-    if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
+    const newAchievement = { type: `styleScore${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true };
+    game.achievements.push(newAchievement);
+    showAchievementUnlock(newAchievement);
   }
 }
 
@@ -2089,6 +2088,17 @@ function getRandomUnlockMessage() {
   return UNLOCK_MESSAGES[Math.floor(Math.random() * UNLOCK_MESSAGES.length)];
 }
 
+// Shared unlock feedback: banner text above the player plus the unlock sound cue.
+// Called by every achievement path (checkAchievement, hazard achievements, style-score
+// thresholds, etc.) so the moment an achievement flips to unlocked, the player sees it.
+function showAchievementUnlock(achievement) {
+  if (!achievement) return;
+  const title = achievement.title || 'Achievement';
+  game.trickText = `${title}! ${getRandomUnlockMessage()}`;
+  game.trickTime = 1.5;
+  if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
+}
+
 function initAchievementFeedbackSystem() {
   game.feedbackQueue = [];
   game.triggerSoundEffect = function(effectName) {
@@ -2146,9 +2156,7 @@ function checkHazardAchievements() {
       entry.unlocked = true;
       const achievement = game.achievements.find(a => a.type === hazardType);
       if (achievement) achievement.unlocked = true;
-      game.trickText = `${entry.title}! ${getRandomUnlockMessage()}`;
-      game.trickTime = 1.5;
-      if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
+      showAchievementUnlock(entry);
     }
   }
 }
@@ -2160,6 +2168,7 @@ function checkAchievement(actionKey, actionValue) {
   achievement.counter += actionValue;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
+    showAchievementUnlock(achievement);
   }
 }
 
@@ -2251,6 +2260,7 @@ function checkAchievementOnScorableAction(actionType, scoreDelta) {
   achievement.counter += scoreDelta;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
+    showAchievementUnlock(achievement);
   }
 }
 
@@ -2261,6 +2271,7 @@ function checkAchievementsOnScorableAction(actionType, value = 0) {
     achievement.counter += value;
     if (achievement.counter >= achievement.unlockThreshold) {
       achievement.unlocked = true;
+      showAchievementUnlock(achievement);
     }
   }
 }
@@ -2545,11 +2556,7 @@ function checkAchievementTrigger(dt) {
         if (achievement.unlocked) continue;
         if (checkAchievementConditions(achievement.type)) {
             achievement.unlocked = true;
-            game.trickText = `${achievement.title || 'Achievement'}! ${getRandomUnlockMessage()}`;
-            game.trickTime = 1.5;
-            if (typeof game.triggerSoundEffect === 'function') {
-                game.triggerSoundEffect('achievementUnlocked');
-            }
+            showAchievementUnlock(achievement);
             return true;
         }
     }
