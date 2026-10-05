@@ -299,7 +299,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to spawn the antagonist at a random position above the player  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure the antagonist only spawns once per idle period and does not reappear immediately  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [!] Add the antagonist's unique movement pattern: slow drift with sudden bursts toward the player  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Introduce collision detection between the antagonist and the player, triggering the EATEN state
+- [!] Introduce collision detection between the antagonist and the player, triggering the EATEN state  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Ensure the antagonist is drawn only when active and does not interfere with existing game elements
 - [ ] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
