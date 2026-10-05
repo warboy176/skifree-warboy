@@ -290,7 +290,10 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to update badge positions and fade out over time, removing them after 3 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
 
-- [ ] Define the chase antagonist's original visual design using pure code-drawn shapes in the canvas context
+- [ ] Define the chase antagonist's base shape using pure code-drawn polygons and lines in the canvas context
+- [ ] Add a unique color scheme and shading pattern to the antagonist's design using solid fills and gradients
+- [ ] Implement a simple animated idle state for the antagonist with a subtle bobbing motion
+- [ ] Ensure the antagonist's visual design is distinct from all existing game elements and NPCs
 - [ ] Implement the antagonist's spawn logic to appear after a delay when the player is idle
 - [ ] Add the antagonist's unique movement pattern: slow drift with sudden bursts toward the player
 - [ ] Introduce collision detection between the antagonist and the player, triggering the EATEN state
