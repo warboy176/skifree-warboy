@@ -2520,6 +2520,28 @@ function updateBadges(dt) {
   }
 }
 
+function initAntagonist() {
+  game.antagonist = {
+    type: 'blackSquare',
+    position: { x: 100, y: 100 },
+    speed: 2,
+    size: 6,
+    isActive: false,
+    sprite: document.createElement('div')
+  };
+
+  game.antagonist.sprite.style.width = `${game.antagonist.size}px`;
+  game.antagonist.sprite.style.height = `${game.antagonist.size}px`;
+  game.antagonist.sprite.style.backgroundColor = 'black';
+  game.antagonist.sprite.style.position = 'absolute';
+  game.antagonist.sprite.style.left = `${game.antagonist.position.x}px`;
+  game.antagonist.sprite.style.top = `${game.antagonist.position.y}px`;
+  game.antagonist.sprite.style.border = 'none';
+
+  document.body.appendChild(game.antagonist.sprite);
+}
+
+
 
 
 
