@@ -292,7 +292,7 @@ Operator direction from the daily report lands here.
 
 - [!] Define the chase antagonist's base shape using pure code-drawn polygons and lines in the canvas context  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a unique color scheme and shading pattern to the antagonist's design using solid fills and gradients  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a simple animated idle state for the antagonist with a subtle bobbing motion
+- [!] Implement a simple animated idle state for the antagonist with a subtle bobbing motion  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure the antagonist's visual design is distinct from all existing game elements and NPCs
 - [ ] Implement the antagonist's spawn logic to appear after a delay when the player is idle
 - [ ] Add the antagonist's unique movement pattern: slow drift with sudden bursts toward the player
