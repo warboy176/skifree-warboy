@@ -313,7 +313,7 @@ Operator direction from the daily report lands here.
 - [!] Add a chase antagonist class with a fixed horizontal offset and slow following speed  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement horizontal position adjustment for the antagonist based on player's x-position with a 1-second delay  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure the antagonist only appears after a short delay following player start, and does not appear during initial idle state  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Ensure the antagonist is drawn on the canvas and does not interfere with existing game mechanics
+- [!] Ensure the antagonist is drawn on the canvas and does not interfere with existing game mechanics  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
 - [ ] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos
 - [ ] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects
