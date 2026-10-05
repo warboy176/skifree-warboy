@@ -313,28 +313,29 @@ spawnHighJumpRamps();
         o.used=true; o.broken=true; o.breakTime=.001; game.style+=25; game.trickText='BANNER BREAK +25'; game.trickTime=.8; continue;
       }
       if(o.type==='oil'){
-        o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;game.oilHits=(game.oilHits||0)+1;continue;
+        o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;game.oilHits=(game.oilHits||0)+1;updateAchievementsOnHazardEncounter('oil');continue;
       }
       if((o.type==='drone'||o.type==='mini') && player.state!==PlayerState.JUMPING){
-        o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; checkAchievement('dronesCrashed',1); break;
+        o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; checkAchievement('dronesCrashed',1); updateAchievementsOnHazardEncounter(o.type); break;
       }
       if(player.state===PlayerState.JUMPING && (o.type==='rock'||o.type==='drone'||o.type==='mini')){
         game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);if(o.type==='rock')game.rocksCleared=(game.rocksCleared||0)+1;continue;
       }
       setPlayerState(PlayerState.CRASHED);
       player.invulnerable=1.1;
+      updateAchievementsOnHazardEncounter(o.type);
       break;
     }
     if(Array.isArray(game.npcSkiers)){
       for(const s of game.npcSkiers){
         if(Math.abs(s.y-player.y)>65) continue;
-        if(checkNPCCollision(player,s)){ s.fallen=1.0; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; break; }
+        if(checkNPCCollision(player,s)){ s.fallen=1.0; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; updateAchievementsOnHazardEncounter('npcSkier'); break; }
       }
     }
     if(Array.isArray(game.dogs)){
       for(const d of game.dogs){
         if(d.hit>0 || Math.abs(d.y-player.y)>72) continue;
-        if(overlaps(pb,{x:d.x-12,y:d.y-8,w:26,h:18})){ d.hit=1.0; if(player.invulnerable<=0){ player.speed=Math.max(60,player.speed*0.55); game.shake=Math.max(game.shake,0.18); game.flash=Math.max(game.flash,0.12); } break; }
+        if(overlaps(pb,{x:d.x-12,y:d.y-8,w:26,h:18})){ d.hit=1.0; updateAchievementsOnHazardEncounter('dog'); if(player.invulnerable<=0){ player.speed=Math.max(60,player.speed*0.55); game.shake=Math.max(game.shake,0.18); game.flash=Math.max(game.flash,0.12); } break; }
       }
     }
   }
@@ -2163,6 +2164,27 @@ function checkHazardAchievements() {
       showAchievementUnlock(entry);
     }
   }
+}
+
+// Called from handleCollisions() every time the player actually runs into a hazard
+// (as opposed to clearing/tricking one). Auto-registers a generic encounter-count
+// achievement for hazardType the first time it's seen, keyed separately from any
+// achievement registerHazardAchievement() set up by name (e.g. 'oilSlick' vs the raw
+// obstacle type 'oil'), then re-evaluates the registry so it can unlock this frame.
+const HAZARD_ENCOUNTER_THRESHOLD = 10;
+
+function updateAchievementsOnHazardEncounter(hazardType) {
+  if (!game.hazardEncounters) game.hazardEncounters = {};
+  game.hazardEncounters[hazardType] = (game.hazardEncounters[hazardType] || 0) + 1;
+  if (!game.achievementsRegistry || !game.achievementsRegistry[hazardType]) {
+    registerHazardAchievement(
+      hazardType,
+      `Hazard Veteran: ${hazardType}`,
+      `Encounter the ${hazardType} hazard ${HAZARD_ENCOUNTER_THRESHOLD} times.`,
+      g => (g.hazardEncounters[hazardType] || 0) >= HAZARD_ENCOUNTER_THRESHOLD
+    );
+  }
+  checkHazardAchievements();
 }
 
 function checkAchievement(actionKey, actionValue) {
