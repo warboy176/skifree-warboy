@@ -302,7 +302,7 @@ Operator direction from the daily report lands here.
 - [!] Introduce collision detection between the antagonist and the player, triggering the EATEN state  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure the antagonist is drawn only when active and does not interfere with existing game elements  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
+- [!] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
