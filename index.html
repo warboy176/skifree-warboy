@@ -313,13 +313,13 @@ spawnHighJumpRamps();
         o.used=true; o.broken=true; o.breakTime=.001; game.style+=25; game.trickText='BANNER BREAK +25'; game.trickTime=.8; continue;
       }
       if(o.type==='oil'){
-        o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;continue;
+        o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;game.oilHits=(game.oilHits||0)+1;continue;
       }
       if((o.type==='drone'||o.type==='mini') && player.state!==PlayerState.JUMPING){
         o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; checkAchievement('dronesCrashed',1); break;
       }
       if(player.state===PlayerState.JUMPING && (o.type==='rock'||o.type==='drone'||o.type==='mini')){
-        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);continue;
+        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);if(o.type==='rock')game.rocksCleared=(game.rocksCleared||0)+1;continue;
       }
       setPlayerState(PlayerState.CRASHED);
       player.invulnerable=1.1;
@@ -541,7 +541,7 @@ checkAchievementConditions();
 
 incrementCrashThroughObstacleCounter();
 
-registerHazardAchievement('drones'); // Triggered on drone collision // Triggered on drone collision
+checkHazardAchievements(); // Evaluate registered hazard-achievement conditions each frame
 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
@@ -1340,6 +1340,9 @@ registerCrashThroughObstacleAchievement();
 initAchievementsRegistry();
 addDefaultAchievement('Big Air', 'jumps', 5);
 
+registerHazardAchievement('oilSlick', 'Slick Survivor', 'Hit 5 oil slicks and keep skiing.', g => (g.oilHits||0) >= 5);
+registerHazardAchievement('rockHopper', 'Rock Hopper', 'Clear 5 rocks by jumping over them.', g => (g.rocksCleared||0) >= 5);
+
 const Achievement = createAchievement('Need For Speed', 'maxSpeed', 400);
 game.achievements.push(Achievement);
 
@@ -2096,12 +2099,34 @@ function checkAchievementsOnFrame() {
   }
 }
 
-function registerHazardAchievement(hazardType) {
-  const achievement = game.achievements[hazardType];
-  if (!achievement) return;
-  achievement.counter++;
-  if (achievement.counter >= achievement.unlockThreshold) {
-    achievement.unlocked = true;
+// Foundation: a registry of hazard-triggered achievements, keyed by hazardType.
+// Mirrors an entry into game.achievements so the existing trophy HUD (updateAchievementTrophies)
+// renders it once unlocked, without duplicating that render logic here.
+function registerHazardAchievement(hazardType, title, description, condition) {
+  if (!game.achievementsRegistry) game.achievementsRegistry = {};
+  if (game.achievementsRegistry[hazardType]) return game.achievementsRegistry[hazardType];
+  const entry = { hazardType, title, description, condition, unlocked: false };
+  game.achievementsRegistry[hazardType] = entry;
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  if (!game.achievements.some(a => a.type === hazardType)) {
+    game.achievements.push({ type: hazardType, title, description, counter: 0, unlockThreshold: 1, unlocked: false });
+  }
+  return entry;
+}
+
+function checkHazardAchievements() {
+  if (!game.achievementsRegistry) return;
+  for (const hazardType in game.achievementsRegistry) {
+    const entry = game.achievementsRegistry[hazardType];
+    if (entry.unlocked) continue;
+    if (typeof entry.condition === 'function' && entry.condition(game)) {
+      entry.unlocked = true;
+      const achievement = game.achievements.find(a => a.type === hazardType);
+      if (achievement) achievement.unlocked = true;
+      game.trickText = `${entry.title}! ${getRandomUnlockMessage()}`;
+      game.trickTime = 1.5;
+      if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
+    }
   }
 }
 
