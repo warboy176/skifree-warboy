@@ -545,6 +545,7 @@ checkHazardAchievements(); // Evaluate registered hazard-achievement conditions 
 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
+registerStyleScoreAchievement();
 
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
@@ -1787,6 +1788,28 @@ function callStyleScoreCheckEveryFrame() {
     if (distance < 30 && !overlaps(pb, nb)) {
       game.styleScore += 1;
     }
+  }
+}
+
+// Thresholds the style score can cross; each one unlocks exactly one achievement,
+// the first time game.styleScore reaches it (not "divisible by 5", which would
+// refire on every frame the score sits at a multiple of 5).
+const STYLE_SCORE_ACHIEVEMENT_THRESHOLDS = [5, 10, 15, 20];
+
+function registerStyleScoreAchievement() {
+  if (!Array.isArray(game.styleScoreThresholdsCrossed)) game.styleScoreThresholdsCrossed = [];
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  const score = game.styleScore || 0;
+  for (const threshold of STYLE_SCORE_ACHIEVEMENT_THRESHOLDS) {
+    if (score < threshold) continue;
+    if (game.styleScoreThresholdsCrossed.includes(threshold)) continue;
+    game.styleScoreThresholdsCrossed.push(threshold);
+    const title = `Style Score ${threshold}`;
+    const description = `Reach a style score of ${threshold}`;
+    game.achievements.push({ type: `styleScore${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true });
+    game.trickText = `${title}! ${getRandomUnlockMessage()}`;
+    game.trickTime = 1.5;
+    if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
   }
 }
 
