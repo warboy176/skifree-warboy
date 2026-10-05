@@ -291,7 +291,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop
 
 - [!] Define the chase antagonist's base shape using pure code-drawn polygons and lines in the canvas context  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a unique color scheme and shading pattern to the antagonist's design using solid fills and gradients
+- [!] Add a unique color scheme and shading pattern to the antagonist's design using solid fills and gradients  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a simple animated idle state for the antagonist with a subtle bobbing motion
 - [ ] Ensure the antagonist's visual design is distinct from all existing game elements and NPCs
 - [ ] Implement the antagonist's spawn logic to appear after a delay when the player is idle
