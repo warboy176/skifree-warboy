@@ -301,7 +301,7 @@ Operator direction from the daily report lands here.
 - [!] Add the antagonist's unique movement pattern: slow drift with sudden bursts toward the player  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Introduce collision detection between the antagonist and the player, triggering the EATEN state  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure the antagonist is drawn only when active and does not interfere with existing game elements  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art
+- [!] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards
 
