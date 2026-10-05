@@ -316,4 +316,4 @@ Operator direction from the daily report lands here.
 - [!] Ensure the antagonist is drawn on the canvas and does not interfere with existing game mechanics  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects
+- [!] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
