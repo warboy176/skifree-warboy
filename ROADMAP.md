@@ -305,4 +305,4 @@ Operator direction from the daily report lands here.
 - [!] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
