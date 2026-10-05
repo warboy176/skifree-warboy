@@ -306,3 +306,8 @@ Operator direction from the daily report lands here.
 - [!] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
+
+- [ ] Add original Warboy-designed chase antagonist with unique movement pattern and visual style
+- [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
+- [ ] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos
+- [ ] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects
