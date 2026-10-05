@@ -1,4 +1,5 @@
 # Changelog
+- Create a spawn delay counter that triggers antagonist spawn after 3 seconds of idle (initAntagonistSpawnDelay)
 - Ensure the antagonist's visual design is distinct from all existing game elements and NPCs (initAntagonist)
 - Add a function to manage badge lifecycle: spawn, update, and remove badges during the game loop (initBadges, spawnBadge, updateBadges)
 - Integrate `checkAchievementTrigger` into the game loop to run on every frame with relevant state updates (checkAchievementTrigger)
