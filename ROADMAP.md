@@ -307,7 +307,11 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add original Warboy-designed chase antagonist with unique movement pattern and visual style
+- [ ] Add a new Warboy-designed chase antagonist class with a unique visual style using original code-drawn pixels
+- [ ] Implement the antagonist's foundation movement: spawn at a fixed distance behind the player and move forward at a constant speed
+- [ ] Add logic to detect when the antagonist should start pursuing: only activate if the player is not moving fast enough
+- [ ] Introduce a simple chase behavior: adjust horizontal position to follow the player with a slight delay
+- [ ] Ensure the antagonist is drawn on the canvas and does not interfere with existing game mechanics
 - [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
 - [ ] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos
 - [ ] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects
