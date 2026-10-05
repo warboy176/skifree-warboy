@@ -294,7 +294,7 @@ Operator direction from the daily report lands here.
 - [!] Add a unique color scheme and shading pattern to the antagonist's design using solid fills and gradients  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a simple animated idle state for the antagonist with a subtle bobbing motion  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure the antagonist's visual design is distinct from all existing game elements and NPCs
-- [ ] Add a player idle timer that tracks time since last input
+- [!] Add a player idle timer that tracks time since last input  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a spawn delay counter that triggers antagonist spawn after 3 seconds of idle
 - [ ] Implement a function to spawn the antagonist at a random position above the player
 - [ ] Ensure the antagonist only spawns once per idle period and does not reappear immediately
