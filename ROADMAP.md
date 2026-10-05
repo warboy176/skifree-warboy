@@ -304,3 +304,5 @@ Operator direction from the daily report lands here.
 - [ ] Implement terrain biomes that transition as player descends (e.g., forest → night → alpine) with original art
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics and unlocks witty rewards
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
