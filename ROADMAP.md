@@ -324,7 +324,7 @@ Operator direction from the daily report lands here.
 - [!] Update the game loop to call the MutantSnowWolf's update method each frame  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement spawn logic that triggers after 30 seconds of no player input (no key or pointer movement)  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add pursuit behavior: the snow-wolf follows the player with increasing speed over time  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Add a random lateral offset function that generates small, unpredictable x-axis adjustments for the snow-wolf's position each frame
+- [!] Add a random lateral offset function that generates small, unpredictable x-axis adjustments for the snow-wolf's position each frame  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Implement a delay mechanism that prevents immediate direction changes in the snow-wolf, introducing a brief hesitation before responding to new steering inputs
 - [ ] Ensure the snow-wolf is destroyed on collision with the player, triggering the EATEN state and instant restart
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns
