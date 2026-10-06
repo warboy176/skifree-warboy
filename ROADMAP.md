@@ -321,7 +321,7 @@ Operator direction from the daily report lands here.
 - [x] Add a new MutantSnowWolf class with a constructor that initializes x, y, and glowing eyes using original code-drawn art
 - [!] Implement a spawn method that positions the MutantSnowWolf off-screen at the start of the game  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a draw method to render the MutantSnowWolf's glowing eyes and original code-drawn body on the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Update the game loop to call the MutantSnowWolf's update method each frame
+- [!] Update the game loop to call the MutantSnowWolf's update method each frame  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement spawn logic that triggers after 30 seconds of no player input (no key or pointer movement)
 - [ ] Add pursuit behavior: the snow-wolf follows the player with increasing speed over time
 - [ ] Implement erratic pathing: the snow-wolf's movement includes random lateral offsets and slight delays in direction changes
