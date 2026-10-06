@@ -332,7 +332,7 @@ Operator direction from the daily report lands here.
 - [!] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
 - [!] Define a new ChaseAntagonist class with a single frame of original pixel art drawn in code using canvas fillRect and path methods  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Add a method to update the antagonist's position based on player proximity and game speed, ensuring it only moves when player is idle or slow
+- [!] Add a method to update the antagonist's position based on player proximity and game speed, ensuring it only moves when player is idle or slow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement a collision check between the antagonist and player that triggers the EATEN state when contact occurs
 - [ ] Implement logic to spawn the antagonist after 10 seconds of no player input
 - [ ] Add movement logic for the antagonist to follow the player with a base speed
