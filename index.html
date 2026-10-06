@@ -219,6 +219,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initMutantSnowWolves();
+
     initTrees();
     statusEl.textContent = 'Skiing. Distance zero meters.';
     logPlayerEvent('game_start',{});
@@ -2772,6 +2774,11 @@ function initAntagonistSpawnDelay() {
   game.antagonist.spawnDelay = 3000;
   game.antagonist.lastSpawnTime = 0;
 }
+
+function initMutantSnowWolves() {
+  game.mutantSnowWolves = [];
+}
+
 
 
 
