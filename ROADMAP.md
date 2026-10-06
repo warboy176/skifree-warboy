@@ -335,7 +335,9 @@ Operator direction from the daily report lands here.
 - [!] Add a method to update the antagonist's position based on player proximity and game speed, ensuring it only moves when player is idle or slow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement a collision check between the antagonist and player that triggers the EATEN state when contact occurs  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement logic to spawn the antagonist after 10 seconds of no player input  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add movement logic for the antagonist to follow the player with a base speed
+- [ ] Add a new antagonist class with a fixed base speed and initial position at the start of the game
+- [ ] Implement a simple follow logic where the antagonist updates its position toward the player's current x-coordinate each frame
+- [ ] Ensure the antagonist only appears after the player has been skiing for a short time, based on distance traveled
 - [ ] Increase the antagonist's speed over time as it chases
 - [ ] Ensure the antagonist only appears during gameplay and does not interfere with start/ending states
 - [ ] Implement dynamic terrain transitions: open slope → forest biome with procedurally drawn original trees (coded art) using color and shape variation
