@@ -318,7 +318,7 @@ Operator direction from the daily report lands here.
 - [!] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add a new MutantSnowWolf class with a constructor that initializes x, y, and glowing eyes using original code-drawn art
+- [x] Add a new MutantSnowWolf class with a constructor that initializes x, y, and glowing eyes using original code-drawn art
 - [ ] Implement a spawn method that positions the MutantSnowWolf off-screen at the start of the game
 - [ ] Add a draw method to render the MutantSnowWolf's glowing eyes and original code-drawn body on the canvas
 - [ ] Update the game loop to call the MutantSnowWolf's update method each frame
