@@ -317,3 +317,8 @@ Operator direction from the daily report lands here.
 - [!] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
+
+- [ ] Add original Warboy-designed chase antagonist (a mutant snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity, pursuing the player with increasing speed and erratic pathing
+- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns
+- [ ] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions
+- [ ] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice
