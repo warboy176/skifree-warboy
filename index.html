@@ -2779,6 +2779,27 @@ function initMutantSnowWolves() {
   game.mutantSnowWolves = [];
 }
 
+function spawnMutantSnowWolf(x, y) {
+  let mutantSnowWolf = {
+    x: x,
+    y: y,
+    glowingEyes: true
+  };
+
+  game.mutantSnowWolves.push(mutantSnowWolf);
+
+  // Draw the body
+  drawSnowWithNightTint(ctx);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(x, y, 6, 6);
+
+  // Draw the glowing eyes
+  ctx.fillStyle = 'white';
+  ctx.fillRect(x + 1, y + 1, 2, 2);
+  ctx.fillRect(x + 4, y + 1, 2, 2);
+}
+
+
 
 
 
