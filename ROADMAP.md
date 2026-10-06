@@ -328,5 +328,5 @@ Operator direction from the daily report lands here.
 - [!] Implement a delay mechanism that prevents immediate direction changes in the snow-wolf, introducing a brief hesitation before responding to new steering inputs  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure the snow-wolf is destroyed on collision with the player, triggering the EATEN state and instant restart  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions
+- [!] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice
