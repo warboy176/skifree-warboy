@@ -523,6 +523,7 @@ updateTreePositions(dt);
 updateSnowWolfSpawnTimer(dt);
 spawnSnowWolf();
 
+updateMutantSnowWolves(dt);
 
 checkSnowWolfCollision(dt);
 
@@ -1224,6 +1225,7 @@ drawMoon(ctx);
     // try/catch guarantees render() still reaches drawSkier()/drawHUD() so it can never blank.
     if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.npcSkiers))initNPCs();for(let i=0;i<game.npcSkiers.length;i++){game.npcSkiers[i].update();game.npcSkiers[i].draw();drawNearEffect(ctx,game.npcSkiers[i]);}}catch(_npcErr){}}
     if(game.state===GameState.PLAYING){try{if(!Array.isArray(game.dogs))game.dogs=[];game.dogTimer=(game.dogTimer||0)+1;if(game.dogTimer>210&&game.dogs.length<3&&game.distance>350){game.dogTimer=0;game.dogs.push(makeDog());}for(let i=0;i<game.dogs.length;i++){game.dogs[i].update();game.dogs[i].draw();}}catch(_dogErr){}}
+    if(game.state===GameState.PLAYING&&Array.isArray(game.mutantSnowWolves)){for(let i=0;i<game.mutantSnowWolves.length;i++){drawMutantSnowWolf(game.mutantSnowWolves[i]);}}
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
@@ -2787,16 +2789,32 @@ function spawnMutantSnowWolf(x, y) {
   };
 
   game.mutantSnowWolves.push(mutantSnowWolf);
+}
 
-  // Draw the body
-  drawSnowWithNightTint(ctx);
+function drawMutantSnowWolf(wolf) {
+  const x = wolf.x, y = wolf.y;
+  const eyeY = y - 15;
+  const eyeXs = [x - 10, x + 10];
+
+  // Original code-drawn body
   ctx.fillStyle = 'black';
   ctx.fillRect(x, y, 6, 6);
 
-  // Draw the glowing eyes
-  ctx.fillStyle = 'white';
-  ctx.fillRect(x + 1, y + 1, 2, 2);
-  ctx.fillRect(x + 4, y + 1, 2, 2);
+  // Glow effect, drawn behind the eyes: 2px-offset semi-transparent white circles
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+  for (const ex of eyeXs) {
+    ctx.beginPath();
+    ctx.arc(ex + 3 + 2, eyeY + 3 + 2, 6, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // Eyes: two 6x6 white squares with a 2px black border, drawn on top of the glow
+  for (const ex of eyeXs) {
+    ctx.fillStyle = 'black';
+    ctx.fillRect(ex - 2, eyeY - 2, 10, 10);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(ex, eyeY, 6, 6);
+  }
 }
 
 function updateMutantSnowWolves(dt) {
