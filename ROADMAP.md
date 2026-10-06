@@ -330,3 +330,8 @@ Operator direction from the daily report lands here.
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
+
+- [ ] Add original animated chase antagonist (Warboy's design) that spawns after 10 seconds of inactivity and pursues player with increasing speed
+- [ ] Implement dynamic terrain transitions: open slope → forest biome with procedurally drawn original trees (coded art) using color and shape variation
+- [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
+- [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
