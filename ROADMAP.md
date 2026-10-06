@@ -323,7 +323,7 @@ Operator direction from the daily report lands here.
 - [!] Add a draw method to render the MutantSnowWolf's glowing eyes and original code-drawn body on the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Update the game loop to call the MutantSnowWolf's update method each frame  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Implement spawn logic that triggers after 30 seconds of no player input (no key or pointer movement)  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add pursuit behavior: the snow-wolf follows the player with increasing speed over time
+- [!] Add pursuit behavior: the snow-wolf follows the player with increasing speed over time  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Implement erratic pathing: the snow-wolf's movement includes random lateral offsets and slight delays in direction changes
 - [ ] Ensure the snow-wolf is destroyed on collision with the player, triggering the EATEN state and instant restart
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns
