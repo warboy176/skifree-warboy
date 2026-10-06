@@ -1358,7 +1358,7 @@ initAchievementSystem();
 registerCrashThroughObstacleAchievement();
 
 
-initAchievementsRegistry();
+initAchievementsSystem();
 addDefaultAchievement('Big Air', 'jumps', 5);
 
 registerHazardAchievement('oilSlick', 'Slick Survivor', 'Hit 5 oil slicks and keep skiing.', g => (g.oilHits||0) >= 5);
@@ -2135,6 +2135,29 @@ function initAchievementsRegistry() {
     { type: 'slalom', counter: 0, unlockThreshold: 500, title: 'Slalom Star', description: 'Rack up 500 style points slaloming.', unlocked: false },
     { type: 'survivalTime', counter: 0, unlockThreshold: 60, title: 'Survivor', description: 'Survive on the slope for 60 seconds.', unlocked: false }
   ];
+}
+
+function initAchievementsSystem() {
+  game.achievements = [];
+  const predefinedAchievements = [
+    { type: 'drones', title: 'Drone Hunter', description: 'Destroy 10 drones.', threshold: 10, scorable: false },
+    { type: 'dogs', title: 'Dog Chaser', description: 'Avoid 5 dogs.', threshold: 5, scorable: false },
+    { type: 'dronesCrashed', title: 'Crash Course', description: 'Crash into 3 drones.', threshold: 3, scorable: false },
+    { type: 'slalom', title: 'Slalom Star', description: 'Rack up 500 style points slaloming.', threshold: 500, scorable: true },
+    { type: 'survivalTime', title: 'Survivor', description: 'Survive on the slope for 60 seconds.', threshold: 60, scorable: false }
+  ];
+  for (const def of predefinedAchievements) {
+    game.achievements.push({
+      type: def.type,
+      title: def.title,
+      description: def.description,
+      threshold: def.threshold,
+      unlockThreshold: def.threshold,
+      counter: 0,
+      unlocked: false,
+      scorable: def.scorable
+    });
+  }
 }
 
 function checkAchievementsEveryFrame(dt) {
