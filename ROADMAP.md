@@ -331,7 +331,11 @@ Operator direction from the daily report lands here.
 - [!] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add original animated chase antagonist (Warboy's design) that spawns after 10 seconds of inactivity and pursues player with increasing speed
+- [ ] Add a chase antagonist class with a single frame of original pixel art drawn in code
+- [ ] Implement logic to spawn the antagonist after 10 seconds of no player input
+- [ ] Add movement logic for the antagonist to follow the player with a base speed
+- [ ] Increase the antagonist's speed over time as it chases
+- [ ] Ensure the antagonist only appears during gameplay and does not interfere with start/ending states
 - [ ] Implement dynamic terrain transitions: open slope → forest biome with procedurally drawn original trees (coded art) using color and shape variation
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
