@@ -2799,6 +2799,17 @@ function spawnMutantSnowWolf(x, y) {
   ctx.fillRect(x + 4, y + 1, 2, 2);
 }
 
+function updateMutantSnowWolves(dt) {
+  for (let i = game.mutantSnowWolves.length - 1; i >= 0; i--) {
+    let snowWolf = game.mutantSnowWolves[i];
+    snowWolf.y += NPC_SKIER_SPEED * dt;
+    if (snowWolf.y > H) {
+      game.mutantSnowWolves.splice(i, 1);
+    }
+  }
+}
+
+
 
 
 
