@@ -318,7 +318,11 @@ Operator direction from the daily report lands here.
 - [!] Introduce style-based scoring system with multipliers for slaloming through NPCs and combos  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Design and integrate original collectible items (coins, speed boosts) with animated pickup effects  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Add original Warboy-designed chase antagonist (a mutant snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity, pursuing the player with increasing speed and erratic pathing
+- [ ] Add a mutant snow-wolf NPC with glowing eyes using original code-drawn art, positioned off-screen initially
+- [ ] Implement spawn logic that triggers after 30 seconds of no player input (no key or pointer movement)
+- [ ] Add pursuit behavior: the snow-wolf follows the player with increasing speed over time
+- [ ] Implement erratic pathing: the snow-wolf's movement includes random lateral offsets and slight delays in direction changes
+- [ ] Ensure the snow-wolf is destroyed on collision with the player, triggering the EATEN state and instant restart
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally drawn trees using original pixel-art foliage patterns
 - [ ] Introduce style scoring system: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with multipliers that increase on consecutive actions
 - [ ] Create a persistent achievements registry with new entries for biome transitions, style combos, and chase antagonist encounters, all in Warboy's original visual and narrative voice
