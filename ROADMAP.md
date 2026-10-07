@@ -349,7 +349,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to draw each tree using only rectangles and triangles, styled with Warboy's unique color palette and no external assets  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Integrate the tree drawing function into the game loop to render trees at their generated positions on the scrolling slope  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a biome-stage-dependent tree height range function that returns min/max heights based on current biome stage
-- [ ] Add a tree-width scaling function that varies width proportionally to height using a fixed ratio
+- [x] Add a tree-width scaling function that varies width proportionally to height using a fixed ratio
 - [ ] Add a tree-color palette function that selects random colors from a biome-specific color set
 - [ ] Implement a tree-drawing function that uses the seed-based height, width, and color functions to render a single tree at given coordinates
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
