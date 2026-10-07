@@ -1807,6 +1807,8 @@ function updateStyleScore(dt) {
     ) {
       const awarded = applyStyleMultiplierToScore(10);
       checkAchievementsOnScorableAction('slalom', awarded);
+getTreeWidthFromSeed(42);
+
 spawnBadge(x, y, type);
 
     } else {
@@ -2882,6 +2884,11 @@ function getTreeHeightFromSeed(seed) {
   const pseudoRandomValue = (hash * 123456789) % 1000;
   return Math.floor(pseudoRandomValue / 10) + 10; // Ensures the value is in the range [10, 100]
 }
+
+function getTreeWidthFromSeed(seed) {
+  return (seed % 10) + 5;
+}
+
 
 
 
