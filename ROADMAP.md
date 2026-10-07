@@ -342,7 +342,7 @@ Operator direction from the daily report lands here.
 - [!] Update the antagonist's speed each frame using the increasing multiplier, but cap it at a maximum speed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the antagonist only appears during gameplay and does not interfere with start/ending states  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Define biome transition thresholds as vertical distance milestones in the game loop  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function to check current vertical position against these thresholds and trigger biome changes
+- [!] Create a function to check current vertical position against these thresholds and trigger biome changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a single, self-contained biome state variable that updates on threshold crossing
 - [ ] Add a visual cue (e.g., subtle color shift) to the canvas background when biome transitions occur
 - [ ] Create a function to draw procedurally generated original trees using only code-based shapes and Warboy's unique color palette
