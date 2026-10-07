@@ -350,3 +350,5 @@ Operator direction from the daily report lands here.
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
