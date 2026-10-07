@@ -2893,6 +2893,15 @@ function initTreeWidthSeed(seed) {
   return Number.isInteger(seed) ? Math.max(1, seed % 10 + 1) : 1;
 }
 
+function seedToTreeColor(seed) {
+  const hash = seed.toString().split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const hue = (hash % 360); // Map the hash to a hue value between 0 and 359
+  const saturation = 70; // Fixed saturation
+  const lightness = 50; // Fixed lightness
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
+
 
 
 
