@@ -516,6 +516,8 @@ updateMultiplierOnNearMisses(dt);
 
 updateDistanceTracker(dt);
 checkBiomeTransition(game.distance);
+getTreeHeightRange(game.biomeStage)
+
 
 
 updateTreePositions(dt);
@@ -2855,6 +2857,20 @@ function checkAntagonistSpawnTrigger(distanceTraveled) {
     game.antagonist.active = true;
   }
 }
+
+function getTreeHeightRange(biomeStage) {
+  switch (biomeStage) {
+    case 'forest':
+      return { min: 10, max: 30 };
+    case 'snowpeak':
+      return { min: 5, max: 15 };
+    case 'frozenwaste':
+      return { min: 1, max: 5 };
+    default:
+      return { min: 0, max: 0 };
+  }
+}
+
 
 
 
