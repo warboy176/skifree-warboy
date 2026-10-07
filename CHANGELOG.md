@@ -1,4 +1,5 @@
 # Changelog
+- Add a biome-stage-dependent tree height range function that returns min/max heights based on current biome stage (getTreeHeightRange)
 - Ensure the antagonist only appears after the player has been skiing for a short time, based on distance traveled (initAntagonistState, checkAntagonistSpawnTrigger)
 - Add a new MutantSnowWolf class with a constructor that initializes x, y, and glowing eyes using original code-drawn art (initMutantSnowWolves, spawnMutantSnowWolf, updateMutantSnowWolves)
 - Create a spawn delay counter that triggers antagonist spawn after 3 seconds of idle (initAntagonistSpawnDelay)
