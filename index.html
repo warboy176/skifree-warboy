@@ -2889,6 +2889,11 @@ function getTreeWidthFromSeed(seed) {
   return (seed % 10) + 5;
 }
 
+function initTreeWidthSeed(seed) {
+  return Number.isInteger(seed) ? Math.max(1, seed % 10 + 1) : 1;
+}
+
+
 
 
 
