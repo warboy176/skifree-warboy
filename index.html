@@ -2835,6 +2835,13 @@ function initAntagonistState() {
   };
 }
 
+function checkAntagonistSpawnTrigger(distanceTraveled) {
+  if (distanceTraveled >= game.antagonist.distanceThreshold && !game.antagonist.active) {
+    game.antagonist.active = true;
+  }
+}
+
+
 
 
 
