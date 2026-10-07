@@ -340,7 +340,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the antagonist only appears after the player has been skiing for a short time, based on distance traveled
 - [!] Add a chase speed multiplier that increases over time since the antagonist started pursuing  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Update the antagonist's speed each frame using the increasing multiplier, but cap it at a maximum speed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the antagonist only appears during gameplay and does not interfere with start/ending states
+- [!] Ensure the antagonist only appears during gameplay and does not interfere with start/ending states  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Implement dynamic terrain transitions: open slope → forest biome with procedurally drawn original trees (coded art) using color and shape variation
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
