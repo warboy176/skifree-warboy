@@ -1,4 +1,11 @@
 # Changelog
+- Integration fix for "Add a seed-based tree width function that returns a width based on the provided ": the assembled feature does not boot or play clean. Diagnose and fix the break so the whole game is green. Break detail: gate SYNTAX  PASS (node --check)
+gate BOOT    PASS (canvas present, 0 console errors)
+gate DEMO    PASS (15s virtual-time auto-play, 0 console errors)
+gate LIVENESS PASS (started via injected input; frame advanced)
+gate REAL-PLAY PASS (drove real start input, non-demo; 8s actual play, 0 console errors)
+gate SINGLE-LOOP PASS (exactly 1 rAF drive loop in normal mode)
+GATE FAIL: visual: real-input pl (initTreeWidthSeed)
 - Add a seed-based tree width function that returns a width based on the provided seed value (getTreeWidthFromSeed)
 - Add a seed-based tree height function that returns a height based on the provided seed value (getTreeHeightFromSeed)
 - Add a tree-width scaling function that varies width proportionally to height using a fixed ratio (scaleTreeWidthByHeight)
