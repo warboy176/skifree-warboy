@@ -538,6 +538,8 @@ isPlayerInAir();
 checkAchievementOnScorableAction('slalom', 10);
 checkAchievementsEveryFrame(dt);
 checkAchievementsOnFrame();
+getTreeHeightFromSeed(42);
+
 checkAchievements();
 
 triggerAchievement('first_ski');
@@ -2874,6 +2876,13 @@ function getTreeHeightRange(biomeStage) {
 }
 
 function scaleTreeWidthByHeight(treeHeight, baseWidthRatio = 0.05) { return treeHeight * baseWidthRatio; }
+
+function getTreeHeightFromSeed(seed) {
+  const hash = seed.toString().split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const pseudoRandomValue = (hash * 123456789) % 1000;
+  return Math.floor(pseudoRandomValue / 10) + 10; // Ensures the value is in the range [10, 100]
+}
+
 
 
 
