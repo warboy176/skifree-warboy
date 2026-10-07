@@ -1790,6 +1790,8 @@ function calculateStyledScore(basePoints) {
 
 function applyStyleMultiplierToScore(points) {
   const awarded = calculateStyledScore(points);
+scaleTreeWidthByHeight(100, 0.05);
+
   game.styleScore += awarded;
   game.styleMultiplier *= 2;
   return awarded;
@@ -2870,6 +2872,11 @@ function getTreeHeightRange(biomeStage) {
       return { min: 0, max: 0 };
   }
 }
+
+function scaleTreeWidthByHeight(treeHeight, baseWidthRatio = 0.05) {
+  return treeHeight * baseWidthRatio;
+}
+
 
 
 
