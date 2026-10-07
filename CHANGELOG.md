@@ -1,4 +1,5 @@
 # Changelog
+- Add a seed-based tree width function that returns a width based on the provided seed value (getTreeWidthFromSeed)
 - Add a seed-based tree height function that returns a height based on the provided seed value (getTreeHeightFromSeed)
 - Add a tree-width scaling function that varies width proportionally to height using a fixed ratio (scaleTreeWidthByHeight)
 - Add a biome-stage-dependent tree height range function that returns min/max heights based on current biome stage (getTreeHeightRange)
