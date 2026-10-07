@@ -345,7 +345,7 @@ Operator direction from the daily report lands here.
 - [!] Create a function to check current vertical position against these thresholds and trigger biome changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a single, self-contained biome state variable that updates on threshold crossing  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a visual cue (e.g., subtle color shift) to the canvas background when biome transitions occur  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a function to generate random tree positions and heights within the scrolling slope using only code-based shapes and Warboy's color palette
+- [!] Add a function to generate random tree positions and heights within the scrolling slope using only code-based shapes and Warboy's color palette  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a function to draw each tree using only rectangles and triangles, styled with Warboy's unique color palette and no external assets
 - [ ] Integrate the tree drawing function into the game loop to render trees at their generated positions on the scrolling slope
 - [ ] Implement a tree-drawing function that varies tree height, width, and color based on random seed and biome stage
