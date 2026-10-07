@@ -1,4 +1,5 @@
 # Changelog
+- Add a seed-based tree color function that returns a color based on the provided seed value (seedToTreeColor)
 - Integration fix for "Add a seed-based tree width function that returns a width based on the provided ": the assembled feature does not boot or play clean. Diagnose and fix the break so the whole game is green. Break detail: gate SYNTAX  PASS (node --check)
 gate BOOT    PASS (canvas present, 0 console errors)
 gate DEMO    PASS (15s virtual-time auto-play, 0 console errors)
