@@ -354,7 +354,7 @@ Operator direction from the daily report lands here.
 - [x] Add a seed-based tree height function that returns a height based on the provided seed value
 - [x] Add a seed-based tree width function that returns a width based on the provided seed value
 - [x] Add a seed-based tree color function that returns a color based on the provided seed value
-- [ ] Add a drawTree function that renders a tree at given (x, y) coordinates using the seed-based height, width, and color functions
+- [!] Add a drawTree function that renders a tree at given (x, y) coordinates using the seed-based height, width, and color functions  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Integrate the tree-drawing function into the game loop to render trees at random positions on the slope
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
