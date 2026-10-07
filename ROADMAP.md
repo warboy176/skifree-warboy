@@ -356,7 +356,7 @@ Operator direction from the daily report lands here.
 - [x] Add a seed-based tree color function that returns a color based on the provided seed value
 - [!] Add a drawTree function that renders a tree at given (x, y) coordinates using the seed-based height, width, and color functions  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a tree spawn system that generates tree positions at random intervals within the visible slope area  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Implement a tree drawing function that renders a single tree using Warboy's original pixel-art style at the tree's position
+- [!] Implement a tree drawing function that renders a single tree using Warboy's original pixel-art style at the tree's position  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Integrate the tree drawing function into the game loop to render all active trees each frame
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
