@@ -364,7 +364,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to draw a single tree at its position using original pixel-art style
 - [!] Add a function to draw a single tree at its current position using Warboy's original pixel art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Modify the game loop to call the tree drawing function once per active tree each frame
-- [ ] Ensure the tree drawing function only renders trees that are within the visible canvas area
+- [x] Ensure the tree drawing function only renders trees that are within the visible canvas area
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
