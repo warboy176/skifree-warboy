@@ -512,6 +512,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+drawTrees(dt);
+
 checkAchievementTrigger(dt);
 
 updateMultiplierOnNearMisses(dt);
@@ -2977,6 +2979,19 @@ function drawTree(ctx, x, y) {
   ctx.fillStyle = brown;
   ctx.fillRect(centerX, centerY + (0 - 2) * pixelSize, pixelSize, pixelSize);
 }
+
+function drawTrees(dt) {
+  for (let i = 0; i < game.trees.length; i++) {
+    let tree = game.trees[i];
+    if (tree.active && tree.x >= 0 && tree.x <= W && tree.y >= 0 && tree.y <= H) {
+      ctx.fillStyle = 'black';
+      ctx.strokeStyle = 'white';
+      ctx.fillRect(tree.x, tree.y, 6, 12);
+      ctx.strokeRect(tree.x, tree.y, 6, 12);
+    }
+  }
+}
+
 
 
 
