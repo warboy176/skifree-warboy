@@ -366,7 +366,7 @@ Operator direction from the daily report lands here.
 - [x] Modify the game loop to call the tree drawing function once per active tree each frame
 - [x] Ensure the tree drawing function only renders trees that are within the visible canvas area
 - [!] Add forest biome detection to the game loop, marking when the player has descended into the forest phase  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Create a function to generate tree positions based on the current biome phase, ensuring trees only appear during the forest biome
+- [!] Create a function to generate tree positions based on the current biome phase, ensuring trees only appear during the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a tree rendering function that draws original pixel-art trees using Warboy's own code-only art, only when in the forest biome
 - [ ] Integrate the tree rendering function into the scrolling background loop, ensuring trees scroll with the terrain and appear only in the forest phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
