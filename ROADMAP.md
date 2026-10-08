@@ -369,7 +369,10 @@ Operator direction from the daily report lands here.
 - [!] Create a function to generate tree positions based on the current biome phase, ensuring trees only appear during the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a tree rendering function that draws original pixel-art trees using Warboy's own code-only art, only when in the forest biome  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Integrate the tree rendering function into the scrolling background loop, ensuring trees scroll with the terrain and appear only in the forest phase  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
+- [ ] Add a 'closePass' flag to the player and NPC skier collision detection to track when the player passes near an NPC skier
+- [ ] Implement a 'styleMultiplier' variable that increases by 1 for each consecutive close pass and resets on collision or fall
+- [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
+- [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
