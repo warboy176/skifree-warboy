@@ -358,7 +358,7 @@ Operator direction from the daily report lands here.
 - [!] Add a tree spawn system that generates tree positions at random intervals within the visible slope area  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Implement a tree drawing function that renders a single tree using Warboy's original pixel-art style at the tree's position  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a Tree class with x, y, and type properties, and a draw method that renders a simple tree using original pixel art in the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Initialize an array of Tree instances in the game state, populating it with random x, y, and type values for initial trees
+- [!] Initialize an array of Tree instances in the game state, populating it with random x, y, and type values for initial trees  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Update the game loop to call the draw method for each tree in the array during each frame
 - [ ] Add collision detection between the player and trees, triggering a crash if the player's position overlaps with any tree's bounds
 - [ ] Implement a function to draw a single tree at its position using original pixel-art style
