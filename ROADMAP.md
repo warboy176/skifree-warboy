@@ -369,7 +369,11 @@ Operator direction from the daily report lands here.
 - [!] Create a function to generate tree positions based on the current biome phase, ensuring trees only appear during the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a tree rendering function that draws original pixel-art trees using Warboy's own code-only art, only when in the forest biome  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Integrate the tree rendering function into the scrolling background loop, ensuring trees scroll with the terrain and appear only in the forest phase  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Add a 'closePass' flag to the player and NPC skier collision detection to track when the player passes near an NPC skier
+- [ ] Add a 'closePass' flag to the player object to track proximity to NPC skiers
+- [ ] Implement a distance-based proximity check between player and NPC skiers using Euclidean distance
+- [ ] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
+- [ ] Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier
+- [ ] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly
 - [ ] Implement a 'styleMultiplier' variable that increases by 1 for each consecutive close pass and resets on collision or fall
 - [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
 - [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
