@@ -2948,20 +2948,34 @@ function seedBasedTreeColor(seed) {
 }
 
 function drawTree(ctx, x, y) {
-  const treeWidth = 10;
-  const treeHeight = 10;
-  const centerX = x + treeWidth / 2;
-  const centerY = y + treeHeight / 2;
+  const pixelSize = 2;
+  const centerX = x + 2;
+  const centerY = y + 2;
 
-  // Draw the trunk (brown)
-  ctx.fillStyle = SKI_COLORS.ink;
-  ctx.fillRect(centerX - 1, centerY + 3, 2, 4);
+  // Define colors
+  const green = '#0c6d57';
+  const darkGreen = '#0a5a48';
+  const brown = '#7a431f';
 
-  // Draw the foliage (green and dark green)
-  ctx.fillStyle = SKI_COLORS.green;
-  ctx.fillRect(centerX - 2, centerY - 2, 4, 4);
-  ctx.fillStyle = SKI_COLORS.ink;
-  ctx.fillRect(centerX - 1, centerY - 3, 2, 2);
+  // Draw the 5x5 grid of 2x2 pixel units
+  // Center pixel (2,2) — green
+  ctx.fillStyle = green;
+  ctx.fillRect(centerX, centerY, pixelSize, pixelSize);
+
+  // Dark green pixels: (1,1), (1,2), (1,3), (2,1), (2,3), (3,1), (3,2), (3,3)
+  const darkGreenPixels = [
+    {x: 1, y: 1}, {x: 1, y: 2}, {x: 1, y: 3},
+    {x: 2, y: 1},           {x: 2, y: 3},
+    {x: 3, y: 1}, {x: 3, y: 2}, {x: 3, y: 3}
+  ];
+  ctx.fillStyle = darkGreen;
+  darkGreenPixels.forEach(p => {
+    ctx.fillRect(centerX + (p.x - 2) * pixelSize, centerY + (p.y - 2) * pixelSize, pixelSize, pixelSize);
+  });
+
+  // Brown pixel at (2,0) — trunk
+  ctx.fillStyle = brown;
+  ctx.fillRect(centerX, centerY + (0 - 2) * pixelSize, pixelSize, pixelSize);
 }
 
 
