@@ -557,6 +557,7 @@ checkHazardAchievements(); // Evaluate registered hazard-achievement conditions 
 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
+checkStyleScoreOnPass(dt);
 registerStyleScoreAchievement();
 
 if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
@@ -1901,6 +1902,31 @@ function checkStyleScoreProximity(dt) {
     const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
     if (overlaps(pb, nb)) {
       game.styleScore += 1;
+    }
+  }
+}
+
+// Awards one style-score point per NPC skier per pass: fires once when the player
+// comes within 30px of an NPC without colliding, using a per-NPC `scoredPass` flag
+// (mirrors the `grazed` flag in checkNPCProximity) so a single pass can't repeat the
+// award every frame, and re-arms once the player drifts back out of range.
+function checkStyleScoreOnPass(dt) {
+  if (!Array.isArray(game.npcSkiers)) return;
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  const pb = {x:player.x-8, y:player.y-10, w:16, h:22};
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const dx = player.x - npc.x;
+    const dy = player.y - npc.y;
+    const distance = Math.sqrt(dx*dx + dy*dy);
+    const nb = {x:npc.x-10, y:npc.y-18, w:20, h:34};
+    if (distance < 30 && !overlaps(pb, nb)) {
+      if (!npc.scoredPass) {
+        npc.scoredPass = true;
+        game.styleScore = (game.styleScore || 0) + 1;
+      }
+    } else {
+      npc.scoredPass = false;
     }
   }
 }
