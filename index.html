@@ -2992,6 +2992,16 @@ function drawTrees(dt) {
   }
 }
 
+function renderVisibleTrees() {
+  for (let i = 0; i < game.trees.length; i++) {
+    let tree = game.trees[i];
+    if (tree.x >= 0 && tree.x <= W && tree.y >= 0 && tree.y <= H) {
+      drawTree(ctx, tree.x, tree.y);
+    }
+  }
+}
+
+
 
 
 
