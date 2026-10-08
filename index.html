@@ -221,6 +221,8 @@ spawnHighJumpRamps();
     initNPCs();
 initMutantSnowWolves();
 
+    initBiomeTintState();
+
     initTrees();
     statusEl.textContent = 'Skiing. Distance zero meters.';
     logPlayerEvent('game_start',{});
@@ -564,6 +566,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
         updateBiome(player.y);
+        updateBiomeTintState(simDt);
         checkBiomeTransition(game.distance);
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
@@ -1394,6 +1397,8 @@ initStarfield();
 
 initBiomeLayers();
 
+initBiomeTintState();
+
     game.biome = game.biomeThresholds[0].name;
     game.biomeVisual = game.biomeThresholds[0];
     game.lastBiome = game.biome;
@@ -1457,13 +1462,50 @@ function updateBiome(playerY) {
 }
 
 const BIOME_TINTS = { canyon: { color: '#8e4f27', alpha: .08 }, warzone: { color: '#e33232', alpha: .12 } };
+
+// Per-biome tint overlay now CROSSFADES instead of snapping, so crossing a BIOME_THRESHOLDS
+// boundary eases the color/alpha wash in over BIOME_TINT_DURATION seconds rather than popping in
+// on the frame the tier flips. initBiomeTintState() seeds the blend state (called once at script
+// load from initBiomeState(), and again per run from startGame() so a restart doesn't inherit the
+// previous run's tint); it must NOT read BIOME_TINTS since it can run before that const below is
+// initialized. updateBiomeTintState() does the per-frame lerp and is only ever called after full
+// script init, so referencing BIOME_TINTS there is safe.
+function initBiomeTintState() {
+    game.biomeTint = { r: 255, g: 255, b: 255, alpha: 0, fromR: 255, fromG: 255, fromB: 255, fromAlpha: 0, toR: 255, toG: 255, toB: 255, toAlpha: 0, progress: 1, targetBiome: null };
+}
+
+function hexToRgb(hex) {
+    const n = parseInt(hex.slice(1), 16);
+    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+}
+
+const BIOME_TINT_DURATION = 1.2;
+function updateBiomeTintState(dt) {
+    const state = game.biomeTint;
+    if (!state) return;
+    if (state.targetBiome !== game.biome) {
+        const tint = BIOME_TINTS[game.biome];
+        const rgb = tint ? hexToRgb(tint.color) : { r: 255, g: 255, b: 255 };
+        state.fromR = state.r; state.fromG = state.g; state.fromB = state.b; state.fromAlpha = state.alpha;
+        state.toR = rgb.r; state.toG = rgb.g; state.toB = rgb.b; state.toAlpha = tint ? tint.alpha : 0;
+        state.progress = 0;
+        state.targetBiome = game.biome;
+    }
+    state.progress = Math.min(1, state.progress + (dt || 0) / BIOME_TINT_DURATION);
+    const t = state.progress;
+    state.r = state.fromR + (state.toR - state.fromR) * t;
+    state.g = state.fromG + (state.toG - state.fromG) * t;
+    state.b = state.fromB + (state.toB - state.fromB) * t;
+    state.alpha = state.fromAlpha + (state.toAlpha - state.fromAlpha) * t;
+}
+
 function drawBiomeOverlay(ctx) {
     if (game.state !== GameState.PLAYING && game.state !== GameState.ENDING) return;
-    const tint = BIOME_TINTS[game.biome];
-    if (!tint) return;
+    const state = game.biomeTint;
+    if (!state || state.alpha <= 0) return;
     ctx.save();
-    ctx.globalAlpha = tint.alpha;
-    ctx.fillStyle = tint.color;
+    ctx.globalAlpha = state.alpha;
+    ctx.fillStyle = `rgb(${state.r | 0},${state.g | 0},${state.b | 0})`;
     ctx.fillRect(0, HUD_H, W, H - HUD_H);
     ctx.restore();
 }
