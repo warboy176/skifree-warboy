@@ -357,7 +357,10 @@ Operator direction from the daily report lands here.
 - [!] Add a drawTree function that renders a tree at given (x, y) coordinates using the seed-based height, width, and color functions  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a tree spawn system that generates tree positions at random intervals within the visible slope area  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [!] Implement a tree drawing function that renders a single tree using Warboy's original pixel-art style at the tree's position  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a tree data structure to store x, y, and type for each tree
+- [ ] Add a Tree class with x, y, and type properties, and a draw method that renders a simple tree using original pixel art in the canvas
+- [ ] Initialize an array of Tree instances in the game state, populating it with random x, y, and type values for initial trees
+- [ ] Update the game loop to call the draw method for each tree in the array during each frame
+- [ ] Add collision detection between the player and trees, triggering a crash if the player's position overlaps with any tree's bounds
 - [ ] Implement a function to draw a single tree at its position using original pixel-art style
 - [ ] Modify the game loop to call the tree drawing function for each active tree each frame
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
