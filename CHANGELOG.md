@@ -1,4 +1,5 @@
 # Changelog
+- Modify the game loop to call the tree drawing function once per active tree each frame (drawTrees)
 - Implement a function to draw a single tree at its position using original pixel-art style (drawTree)
 - Integration fix for "Add a seed-based tree color function that returns a color based on the provided ": the assembled feature does not boot or play clean. Diagnose and fix the break so the whole game is green. Break detail: gate SYNTAX  PASS (node --check)
 gate BOOT    PASS (canvas present, 0 console errors)
