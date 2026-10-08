@@ -362,7 +362,9 @@ Operator direction from the daily report lands here.
 - [!] Update the game loop to call the draw method for each tree in the array during each frame  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add collision detection between the player and trees, triggering a crash if the player's position overlaps with any tree's bounds  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Implement a function to draw a single tree at its position using original pixel-art style
-- [ ] Modify the game loop to call the tree drawing function for each active tree each frame
+- [ ] Add a function to draw a single tree at its current position using Warboy's original pixel art
+- [ ] Modify the game loop to call the tree drawing function once per active tree each frame
+- [ ] Ensure the tree drawing function only renders trees that are within the visible canvas area
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
