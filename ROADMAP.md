@@ -361,7 +361,7 @@ Operator direction from the daily report lands here.
 - [!] Initialize an array of Tree instances in the game state, populating it with random x, y, and type values for initial trees  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Update the game loop to call the draw method for each tree in the array during each frame  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add collision detection between the player and trees, triggering a crash if the player's position overlaps with any tree's bounds  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
-- [ ] Implement a function to draw a single tree at its position using original pixel-art style
+- [x] Implement a function to draw a single tree at its position using original pixel-art style
 - [ ] Modify the game loop to call the tree drawing function for each active tree each frame
 - [ ] Integrate tree drawing into the scrolling background rendering loop, ensuring trees appear only in the forest biome phase
 - [ ] Introduce style scoring: award points for slaloming close to NPC skiers, with multipliers for consecutive close passes
