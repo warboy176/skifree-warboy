@@ -3167,6 +3167,13 @@ function applyStyleScoreMultiplierToGameLoop() {
   game.styleScore += game.styleMultiplier;
 }
 
+function renderStyleScoreHUD() {
+    ctx.fillStyle = 'white';
+    ctx.font = '16px Arial';
+    ctx.fillText(game.styleScore, 10, HUD_H - 20);
+}
+
+
 
 
 
