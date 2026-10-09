@@ -3079,6 +3079,13 @@ function resetClosePassFlagOnRangeExit(npcSkier, player) {
   }
 }
 
+function resetClosePassFlagOnPlayer() {
+  if (!game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    player.closePass = false;
+  }
+}
+
+
 
 
 
