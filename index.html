@@ -538,6 +538,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+applyStyleScoreMultiplierToGameLoop();
+
 checkClosePasses(dt);
 
 drawTrees(dt);
@@ -3160,6 +3162,11 @@ function drawStyleMultiplierHUD() {
   const styleMultiplierText = `Style: ${game.styleMultiplier.toFixed(1)}`;
   ctx.fillText(styleMultiplierText, x + width / 2, y + height / 2);
 }
+
+function applyStyleScoreMultiplierToGameLoop() {
+  game.styleScore += game.styleMultiplier;
+}
+
 
 
 
