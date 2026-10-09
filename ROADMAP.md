@@ -377,7 +377,7 @@ Operator direction from the daily report lands here.
 - [x] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
 - [x] Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier
 - [!] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Initialize a styleMultiplier variable set to 1 in the game state object
+- [x] Initialize a styleMultiplier variable set to 1 in the game state object
 - [ ] Increment styleMultiplier by 1 whenever the player passes an NPC skier closely without collision
 - [ ] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
 - [ ] Display the current styleMultiplier value in the HUD as a visual feedback indicator
