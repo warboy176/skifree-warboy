@@ -588,6 +588,7 @@ callStyleScoreCheckEveryFrame();
 checkStyleScoreOnPass(dt);
 updatePlayerClosePassFlag();
 registerStyleScoreAchievement();
+checkStyleScoreAchievement();
 
 if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
 if(yeti.active)trackAchievementOnProximity('yeti',yeti);
@@ -1999,6 +2000,29 @@ function registerStyleScoreAchievement() {
     const newAchievement = { type: `styleScore${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true };
     game.achievements.push(newAchievement);
     showAchievementUnlock(newAchievement);
+  }
+}
+
+// Tracks the player's best-ever style score (separate from the fixed-threshold
+// achievements in registerStyleScoreAchievement) and unlocks a one-time
+// "personal best" achievement once that record clears STYLE_SCORE_BEST_THRESHOLD.
+const STYLE_SCORE_BEST_THRESHOLD = 25;
+
+function checkStyleScoreAchievement() {
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  const score = game.styleScore || 0;
+  if (typeof game.bestStyleScore !== 'number') game.bestStyleScore = 0;
+  if (score > game.bestStyleScore) game.bestStyleScore = score;
+
+  let achievement = game.achievements.find(a => a.type === 'styleScoreBest');
+  if (!achievement) {
+    achievement = { type: 'styleScoreBest', title: 'Style Icon', description: `Reach a style score of ${STYLE_SCORE_BEST_THRESHOLD}`, counter: 0, unlockThreshold: STYLE_SCORE_BEST_THRESHOLD, unlocked: false };
+    game.achievements.push(achievement);
+  }
+  achievement.counter = game.bestStyleScore;
+  if (!achievement.unlocked && game.bestStyleScore >= STYLE_SCORE_BEST_THRESHOLD) {
+    achievement.unlocked = true;
+    showAchievementUnlock(achievement);
   }
 }
 
