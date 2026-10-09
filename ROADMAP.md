@@ -400,7 +400,7 @@ Operator direction from the daily report lands here.
 - [!] Initialize an `achievements` object in the game state to track style-based milestones  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to increment `achievements.slalomingNearSkier` when player passes within 30px of an NPC skier while skiing  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward
-- [ ] Add a function to check and trigger `achievements.comboStreak` on consecutive style actions with 1-second cooldown
+- [!] Add a function to check and trigger `achievements.comboStreak` on consecutive style actions with 1-second cooldown  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to display achievement unlocks on screen with a brief visual cue and sound effect
 - [ ] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones
 - [ ] Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art
