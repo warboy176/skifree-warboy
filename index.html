@@ -1925,7 +1925,53 @@ const treeWidth = scaleTreeWidthByHeight(100, 0.05);
 
   game.styleScore += awarded;
   game.styleMultiplier *= 2;
+  checkAndTriggerComboStreak(game.lastTime);
   return awarded;
+}
+
+// Chains consecutive style actions (slalom passes, etc.) into a "combo streak":
+// each call is a timestamped style action, and if it lands within
+// COMBO_STREAK_WINDOW_MS of the previous one the streak keeps growing; otherwise
+// it resets to 1. Every COMBO_STREAK_THRESHOLD-length streak awards a style bonus
+// and (the first time only) unlocks the comboStreak achievement.
+const COMBO_STREAK_WINDOW_MS = 1200;
+const COMBO_STREAK_THRESHOLD = 3;
+const COMBO_STREAK_BONUS = 50;
+
+function checkAndTriggerComboStreak(styleActionTime) {
+  if (typeof game.comboStreak !== 'number') game.comboStreak = 0;
+  if (typeof game.lastStyleActionTime !== 'number') game.lastStyleActionTime = 0;
+
+  if (game.lastStyleActionTime && (styleActionTime - game.lastStyleActionTime) <= COMBO_STREAK_WINDOW_MS) {
+    game.comboStreak += 1;
+  } else {
+    game.comboStreak = 1;
+  }
+  game.lastStyleActionTime = styleActionTime;
+
+  if (game.comboStreak > 0 && game.comboStreak % COMBO_STREAK_THRESHOLD === 0) {
+    game.styleScore = (game.styleScore || 0) + COMBO_STREAK_BONUS;
+    game.trickText = `COMBO STREAK x${game.comboStreak}! +${COMBO_STREAK_BONUS}`;
+    game.trickTime = 1;
+
+    if (!Array.isArray(game.achievements)) game.achievements = [];
+    let achievement = game.achievements.find(a => a.type === 'comboStreak');
+    if (!achievement) {
+      achievement = {
+        type: 'comboStreak',
+        title: 'Combo Streak',
+        description: `Chain ${COMBO_STREAK_THRESHOLD} style actions in a row`,
+        counter: 0,
+        unlockThreshold: 1,
+        unlocked: false
+      };
+      game.achievements.push(achievement);
+    }
+    if (!achievement.unlocked) {
+      achievement.unlocked = true;
+      showAchievementUnlock(achievement);
+    }
+  }
 }
 
 function updateStyleScore(dt) {
