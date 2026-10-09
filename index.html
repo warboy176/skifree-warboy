@@ -303,6 +303,13 @@ initMutantSnowWolves();
   }
   function overlaps(a,b){ return a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y; }
 
+  // Direct-overlap AABB test between the player and a single course obstacle (tree, rock,
+  // drone, etc). Mirrors checkNPCCollision's shape so handleCollisions() can use either
+  // interchangeably instead of inlining the box math per caller.
+  function checkPlayerCollision(obstacle){
+    return overlaps(boxForPlayer(),boxForObstacle(obstacle));
+  }
+
   // Direct-overlap AABB test between the player and a single NPC skier. Pure function of
   // its two arguments (no reliance on the outer `player`/`game` closures) so it can be reused
   // by handleCollisions() and by any future margin/near-miss logic without duplicating the box math.
@@ -333,7 +340,7 @@ initMutantSnowWolves();
     if(player.invulnerable>0 || player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
     const pb=boxForPlayer();
     for(const o of game.obstacles){
-      if(o.used || Math.abs(o.y-player.y)>65 || !overlaps(pb,boxForObstacle(o))) continue;
+      if(o.used || Math.abs(o.y-player.y)>65 || !checkPlayerCollision(o)) continue;
       if(o.type==='jump'){
         o.used=true;
         if(player.state!==PlayerState.JUMPING){ setPlayerState(PlayerState.JUMPING); player.jumpDuration=1.08; game.style+=100; game.trickText='RAMP +100'; game.trickTime=.8; checkAchievement('jumps',1); }
