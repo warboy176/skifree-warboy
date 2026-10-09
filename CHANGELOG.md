@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward (incrementCrashedThroughObstacleAchievement)
 - Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision (attachCrashSoundListener)
 - Integration fix for "Create a function to play the crash sound only when the player's state transitio": the assembled feature does not boot or play clean. Diagnose and fix the break so the whole game is green. Break detail: gate SYNTAX  PASS (node --check)
 gate BOOT    PASS (canvas present, 0 console errors)
