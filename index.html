@@ -538,6 +538,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkClosePasses(dt);
+
 drawTrees(dt);
 
 checkAchievementTrigger(dt);
@@ -3084,6 +3086,18 @@ function resetClosePassFlagOnPlayer() {
     player.closePass = false;
   }
 }
+
+function checkClosePasses(dt) {
+  for (const npcSkier of game.npcSkiers) {
+    const horizontalDistance = Math.abs(npcSkier.x - player.x);
+    if (horizontalDistance < 30 && player.isMovingForward) {
+      player.closePass = true;
+      setTimeout(resetClosePassFlagOnPlayer, 100);
+      break;
+    }
+  }
+}
+
 
 
 
