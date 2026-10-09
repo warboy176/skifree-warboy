@@ -3429,6 +3429,57 @@ function playCrashSoundIfTransitioning(player, game) {
   }
 }
 
+function attachCrashSoundListener() {
+  const originalUpdate = update;
+  update = function() {
+    const player = game.player;
+    if (player && !player.crashedPrev) {
+      let crashed = false;
+      
+      // Check tree collisions
+      if (game.trees && game.trees.length > 0) {
+        for (let i = 0; i < game.trees.length; i++) {
+          const tree = game.trees[i];
+          if (tree && boxForObstacle(tree).intersects(boxForPlayer(player))) {
+            crashed = true;
+            break;
+          }
+        }
+      }
+
+      // Check NPC skier collisions
+      if (!crashed && game.npcSkiers && game.npcSkiers.length > 0) {
+        for (let i = 0; i < game.npcSkiers.length; i++) {
+          const npc = game.npcSkiers[i];
+          if (npc && boxForObstacle(npc).intersects(boxForPlayer(player))) {
+            crashed = true;
+            break;
+          }
+        }
+      }
+
+      // Check snow wolf collisions
+      if (!crashed && game.mutantSnowWolves && game.mutantSnowWolves.length > 0) {
+        for (let i = 0; i < game.mutantSnowWolves.length; i++) {
+          const wolf = game.mutantSnowWolves[i];
+          if (wolf && boxForObstacle(wolf).intersects(boxForPlayer(player))) {
+            crashed = true;
+            break;
+          }
+        }
+      }
+
+      if (crashed) {
+        player.crashedPrev = true;
+        playCrashSoundIfTransitioning(player, game);
+      }
+    }
+    
+    return originalUpdate.apply(this, arguments);
+  };
+}
+
+
 
 
 
