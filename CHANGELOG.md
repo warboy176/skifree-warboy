@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to render the styleScore value in the HUD using the existing score display method (renderStyleScoreHUD)
 - Create a function to update styleScore by adding the current multiplier value each frame (applyStyleScoreMultiplierToGameLoop)
 - Display the current styleMultiplier value in the HUD as a visual feedback indicator (drawStyleMultiplierHUD)
 - Initialize a styleMultiplier variable set to 1 in the game state object (initStyleMultiplier)
