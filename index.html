@@ -1269,6 +1269,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawStyleMultiplierHUD();
+
 if(Array.isArray(game.achievements)&&game.achievements.some(a=>a.unlocked))drawAchievementIcon(ctx, 10, 10);
 
 updateAchievementTrophies();
@@ -3117,6 +3119,24 @@ function resetClosePassFlagOnPlayerMove(player, npcSkiers) {
 function initStyleMultiplier() {
   game.styleMultiplier = 1;
 }
+
+function drawStyleMultiplierHUD() {
+  ctx.font = '10px monospace';
+  ctx.fillStyle = 'white';
+  ctx.textBaseline = 'middle';
+  ctx.textAlign = 'center';
+
+  const x = 10;
+  const y = HUD_H - 22;
+  const width = 40;
+  const height = 12;
+
+  ctx.fillRect(x, y, width, height);
+
+  const styleMultiplierText = `Style: ${game.styleMultiplier.toFixed(1)}`;
+  ctx.fillText(styleMultiplierText, x + width / 2, y + height / 2);
+}
+
 
 
 
