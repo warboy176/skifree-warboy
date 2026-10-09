@@ -1,4 +1,5 @@
 # Changelog
+- Ensure styleScore resets to 0 when the player crashes or dies (resetStyleScoreOnDeath)
 - Add a function to render the styleScore value in the HUD using the existing score display method (renderStyleScoreHUD)
 - Create a function to update styleScore by adding the current multiplier value each frame (applyStyleScoreMultiplierToGameLoop)
 - Display the current styleMultiplier value in the HUD as a visual feedback indicator (drawStyleMultiplierHUD)
