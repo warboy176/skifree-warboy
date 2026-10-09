@@ -205,7 +205,7 @@ if (autoplay.enabled) {
     player.state = next;
     player.stateTime = 0;
     if (next === PlayerState.JUMPING){ player.jumpTime = 0; player.jumpDuration=.82; player.spin = 0; player.flipDir=0; player.flipActive=false; player.flips=0; }
-    if (next === PlayerState.CRASHED){ player.speed *= .25; game.cleanTime=0; game.shake = .25; logPlayerEvent('crash',{distance:game.distance,speed:player.speed}); }
+    if (next === PlayerState.CRASHED){ player.speed *= .25; game.cleanTime=0; game.shake = .25; logPlayerEvent('crash',{distance:game.distance,speed:player.speed}); if (typeof game.playCrashSound === 'function') game.playCrashSound(); }
     if (next === PlayerState.EATEN){ player.speed = 0; player.vx = 0; game.state = GameState.ENDING; statusEl.textContent = 'Caught by Warboy!'; logPlayerEvent('caught',{distance:game.distance}); }
   }
 
@@ -1417,6 +1417,8 @@ game.achievements.push(Achievement);
 
 initAchievementFeedbackSystem();
 
+initCrashSound();
+
 initMultiplierHUD();
 
 initDistanceTracker();
@@ -2334,6 +2336,69 @@ function initAchievementFeedbackSystem() {
   game.feedbackQueue = [];
   game.triggerSoundEffect = function(effectName) {
     game.feedbackQueue.push(effectName);
+  };
+}
+
+// Synthesizes Warboy's crash cue entirely with the Web Audio API (no audio
+// assets): a distorted noise burst for the metallic impact plus a falling
+// square-wave thud. AudioContext creation is deferred to first play so
+// initCrashSound() itself never throws in environments without audio support.
+function initCrashSound() {
+  game.playCrashSound = function() {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      if (!game.audioCtx) game.audioCtx = new AC();
+      const ctx = game.audioCtx;
+      if (ctx.state === 'suspended') ctx.resume();
+      const now = ctx.currentTime;
+
+      const bufferSize = Math.floor(ctx.sampleRate * 0.3);
+      const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
+      }
+      const noise = ctx.createBufferSource();
+      noise.buffer = noiseBuffer;
+
+      const distortion = ctx.createWaveShaper();
+      const curve = new Float32Array(256);
+      for (let i = 0; i < curve.length; i++) {
+        const x = (i / 128) - 1;
+        curve[i] = Math.tanh(x * 8);
+      }
+      distortion.curve = curve;
+      distortion.oversample = '2x';
+
+      const bandpass = ctx.createBiquadFilter();
+      bandpass.type = 'bandpass';
+      bandpass.frequency.value = 900;
+      bandpass.Q.value = 0.8;
+
+      const noiseGain = ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.5, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+
+      noise.connect(distortion);
+      distortion.connect(bandpass);
+      bandpass.connect(noiseGain);
+      noiseGain.connect(ctx.destination);
+      noise.start(now);
+      noise.stop(now + 0.3);
+
+      const thud = ctx.createOscillator();
+      thud.type = 'square';
+      thud.frequency.setValueAtTime(160, now);
+      thud.frequency.exponentialRampToValueAtTime(40, now + 0.2);
+      const thudGain = ctx.createGain();
+      thudGain.gain.setValueAtTime(0.4, now);
+      thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+      thud.connect(thudGain);
+      thudGain.connect(ctx.destination);
+      thud.start(now);
+      thud.stop(now + 0.25);
+    } catch (e) {}
   };
 }
 
