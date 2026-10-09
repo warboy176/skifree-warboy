@@ -3101,6 +3101,20 @@ function checkClosePasses(dt) {
   }
 }
 
+function resetClosePassFlagOnPlayerMove(player, npcSkiers) {
+  for (let i = 0; i < npcSkiers.length; i++) {
+    const npc = npcSkiers[i];
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    const verticalDistance = Math.abs(npc.y - player.y);
+    const distance = Math.sqrt(Math.pow(horizontalDistance, 2) + Math.pow(verticalDistance, 2));
+    
+    if (distance > 50) {
+      player.closePass = false;
+    }
+  }
+}
+
+
 
 
 
