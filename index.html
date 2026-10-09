@@ -3088,13 +3088,16 @@ function resetClosePassFlagOnPlayer() {
 }
 
 function checkClosePasses(dt) {
-  for (const npcSkier of game.npcSkiers) {
-    const horizontalDistance = Math.abs(npcSkier.x - player.x);
-    if (horizontalDistance < 30 && player.isMovingForward) {
-      player.closePass = true;
-      setTimeout(resetClosePassFlagOnPlayer, 100);
-      break;
+  let foundClosePass = false;
+  for (const skier of game.npcSkiers) {
+    const dx = Math.abs(skier.x - player.x);
+    if (dx < 30 && player.vx > 0) {
+      foundClosePass = true;
     }
+  }
+  if (foundClosePass) {
+    player.closePass = true;
+    setTimeout(() => { player.closePass = false; }, 100);
   }
 }
 
