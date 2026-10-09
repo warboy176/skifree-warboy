@@ -395,6 +395,6 @@ Operator direction from the daily report lands here.
 - [!] Add the crash sound to the game's audio context as a reusable sound effect  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [!] Trigger the crash sound effect when the player collides with an obstacle or falls off the slope  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [x] Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN
-- [ ] Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision
+- [x] Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
