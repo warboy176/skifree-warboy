@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN (playCrashSound)
 - Ensure styleScore resets to 0 when the player crashes or dies (resetStyleScoreOnDeath)
 - Add a function to render the styleScore value in the HUD using the existing score display method (renderStyleScoreHUD)
 - Create a function to update styleScore by adding the current multiplier value each frame (applyStyleScoreMultiplierToGameLoop)
