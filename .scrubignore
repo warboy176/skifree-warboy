@@ -1,0 +1,6 @@
+# prepublish_scrub allowlist -- keep this TIGHT. Every suppression is echoed in the report.
+# index.html is a client-side canvas game with no credentials. The generic secret_assignment
+# rule false-positives on its JS keyboard-event plumbing and on the localStorage high-score
+# key name. Only that ONE rule is suppressed, only in index.html; every other
+# secret/token/infra rule still applies to it.
+index.html :: secret_assignment
