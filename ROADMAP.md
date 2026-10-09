@@ -391,7 +391,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to generate an achievement unlock sound using Web Audio API with Warboy's signature chime-like, rising pitch pattern  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a jump sound effect to the game's audio context, loaded from a single inline WAV data URL  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Attach a click or keydown event listener to the Space key that triggers the jump sound when the player initiates a jump  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Create a new Audio object with Warboy's original crash sound design using a synthesized waveform
+- [!] Create a new Audio object with Warboy's original crash sound design using a synthesized waveform  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [ ] Add the crash sound to the game's audio context as a reusable sound effect
 - [ ] Trigger the crash sound effect when the player collides with an obstacle or falls off the slope
 - [ ] Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN
