@@ -376,7 +376,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a distance-based proximity check between player and NPC skiers using Euclidean distance  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
 - [x] Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier
-- [ ] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly
+- [!] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement a 'styleMultiplier' variable that increases by 1 for each consecutive close pass and resets on collision or fall
 - [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
 - [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
