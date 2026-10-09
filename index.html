@@ -3366,6 +3366,16 @@ function playCrashSound() {
   player.crashedPrev = player.crashed;
 }
 
+function playCrashSoundIfTransitioning(player, game) {
+  if (player.crashed && !player.crashedPrev && game.soundBuffer && ctx.audioContext) {
+    const source = ctx.audioContext.createBufferSource();
+    source.buffer = game.soundBuffer;
+    source.connect(ctx.audioContext.destination);
+    source.start(0);
+  }
+}
+
+
 
 
 
