@@ -549,6 +549,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+incrementCrashedThroughObstacleAchievement();
+
 applyStyleScoreMultiplierToGameLoop();
 
 checkClosePasses(dt);
@@ -3486,6 +3488,24 @@ function attachCrashSoundListener() {
     return originalUpdate.apply(this, arguments);
   };
 }
+
+function incrementCrashedThroughObstacleAchievement() {
+  if (player.vx > 0 && !player.crashedPrev) {
+    const playerBox = boxForPlayer(player);
+    const obstacles = [...game.obstacles, ...game.npcSkiers];
+    
+    for (const obstacle of obstacles) {
+      const obstacleBox = boxForObstacle(obstacle);
+      
+      if (checkPlayerCollision(obstacleBox, playerBox)) {
+        game.achievements.crashedThroughObstacle++;
+        player.crashedPrev = true;
+        break;
+      }
+    }
+  }
+}
+
 
 
 
