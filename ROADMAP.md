@@ -381,7 +381,10 @@ Operator direction from the daily report lands here.
 - [!] Increment styleMultiplier by 1 whenever the player passes an NPC skier closely without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Reset styleMultiplier to 1 when the player collides with any obstacle or falls  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Display the current styleMultiplier value in the HUD as a visual feedback indicator
-- [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
+- [ ] Initialize a styleScore variable set to 0 in the game state object
+- [ ] Create a function to update styleScore by adding the current multiplier value each frame
+- [ ] Add a function to render the styleScore value in the HUD using the existing score display method
+- [ ] Ensure styleScore resets to 0 when the player crashes or dies
 - [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
 
