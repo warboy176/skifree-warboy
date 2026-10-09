@@ -2530,17 +2530,25 @@ function encodeWavFromSamples(samples, sampleRate) {
   return new Uint8Array(buffer);
 }
 
-function initJumpSound() {
+// Builds the ready-to-play jump cue Audio object from the synthesized
+// waveform. Split out from initJumpSound() so the asset-creation step can be
+// reused/retried independently of wiring up game.playJumpSound.
+function loadJumpSoundEffect() {
   try {
     const sampleRate = 44100;
     const wavBytes = encodeWavFromSamples(synthesizeJumpWaveform(sampleRate, 0.22), sampleRate);
     let binary = '';
     for (let i = 0; i < wavBytes.length; i++) binary += String.fromCharCode(wavBytes[i]);
-    game.jumpSound = new Audio('data:audio/wav;base64,' + btoa(binary));
-    game.jumpSound.volume = 0.5;
+    const audio = new Audio('data:audio/wav;base64,' + btoa(binary));
+    audio.volume = 0.5;
+    return audio;
   } catch (e) {
-    game.jumpSound = null;
+    return null;
   }
+}
+
+function initJumpSound() {
+  game.jumpSound = loadJumpSoundEffect();
   game.playJumpSound = function() {
     try {
       if (!game.jumpSound) return;
