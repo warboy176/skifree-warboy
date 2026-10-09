@@ -379,7 +379,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [x] Initialize a styleMultiplier variable set to 1 in the game state object
 - [!] Increment styleMultiplier by 1 whenever the player passes an NPC skier closely without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
+- [!] Reset styleMultiplier to 1 when the player collides with any obstacle or falls  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Display the current styleMultiplier value in the HUD as a visual feedback indicator
 - [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
 - [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
