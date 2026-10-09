@@ -1,4 +1,5 @@
 # Changelog
+- Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier (checkClosePasses)
 - Reset the 'closePass' flag to false when the player is no longer within 30 pixels of any NPC skier (resetClosePassFlagOnPlayer)
 - Ensure the closePass flag is reset when the player or NPC skier moves out of the 30-pixel horizontal range or changes direction (resetClosePassFlagOnRangeExit)
 - Ensure the tree drawing function only renders trees that are within the visible canvas area (renderVisibleTrees)

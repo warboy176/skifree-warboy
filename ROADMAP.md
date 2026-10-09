@@ -374,7 +374,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the closePass flag is reset when the player or NPC skier moves out of the 30-pixel horizontal range or changes direction
 - [x] Reset the 'closePass' flag to false when the player is no longer within 30 pixels of any NPC skier
 - [!] Implement a distance-based proximity check between player and NPC skiers using Euclidean distance  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
+- [x] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
 - [ ] Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier
 - [ ] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly
 - [ ] Implement a 'styleMultiplier' variable that increases by 1 for each consecutive close pass and resets on collision or fall
