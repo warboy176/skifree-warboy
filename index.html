@@ -1432,6 +1432,8 @@ initAudio();
 
 initCrashSound();
 
+initCrashSoundEffect();
+
 initJumpSound();
 
 initMultiplierHUD();
@@ -2431,6 +2433,53 @@ function initCrashSound() {
       thud.start(now);
       thud.stop(now + 0.25);
     } catch (e) {}
+  };
+}
+
+// Renders Warboy's crash cue to a reusable WAV-backed Audio object (mirroring
+// the noise-burst-plus-falling-thud shape that initCrashSound() synthesizes
+// live) so repeated crashes can play via cheap cloneNode() playback instead of
+// rebuilding a Web Audio graph every time. Falls back to the live
+// AudioContext version from initCrashSound() if the Audio object can't be
+// created.
+function synthesizeCrashWaveform(sampleRate, duration) {
+  const totalSamples = Math.floor(sampleRate * duration);
+  const samples = new Float32Array(totalSamples);
+  for (let i = 0; i < totalSamples; i++) {
+    const t = i / sampleRate;
+    const noiseEnvelope = Math.exp(-t * 10);
+    const noise = (Math.random() * 2 - 1) * noiseEnvelope * 0.5;
+    const thudFreq = 160 * Math.exp(-t * 8) + 40;
+    const thudEnvelope = Math.exp(-t * 12);
+    const thud = Math.sin(2 * Math.PI * thudFreq * t) * thudEnvelope * 0.4;
+    samples[i] = Math.max(-1, Math.min(1, noise + thud));
+  }
+  return samples;
+}
+
+function initCrashSoundEffect() {
+  try {
+    const sampleRate = 44100;
+    const wavBytes = encodeWavFromSamples(synthesizeCrashWaveform(sampleRate, 0.3), sampleRate);
+    let binary = '';
+    for (let i = 0; i < wavBytes.length; i++) binary += String.fromCharCode(wavBytes[i]);
+    game.crashSoundEffect = new Audio('data:audio/wav;base64,' + btoa(binary));
+    game.crashSoundEffect.volume = 0.6;
+  } catch (e) {
+    game.crashSoundEffect = null;
+  }
+  const liveCrashSound = game.playCrashSound;
+  game.playCrashSound = function() {
+    try {
+      if (game.crashSoundEffect) {
+        const cue = game.crashSoundEffect.cloneNode ? game.crashSoundEffect.cloneNode(true) : game.crashSoundEffect;
+        cue.currentTime = 0;
+        const p = cue.play();
+        if (p && typeof p.catch === 'function') p.catch(function() {});
+        return;
+      }
+    } catch (e) {}
+    if (typeof liveCrashSound === 'function') liveCrashSound();
   };
 }
 
