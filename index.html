@@ -312,6 +312,23 @@ initMutantSnowWolves();
     return overlaps(pb,nb);
   }
 
+  // Pure predicate: true when the player grazes an NPC skier closely enough to count as a
+  // "close pass" (padded box overlaps the NPC's box) without an actual hit (checkNPCCollision
+  // stays false). Mirrors checkNPCCollision's signature/box math so callers can reuse it the
+  // same way; the margin is local since no shared NEAR_MISS_MARGIN global exists.
+  function checkClosePassCollision(player,npc){
+    const margin=14;
+    const pb={x:player.x-8-margin,y:player.y-10-margin,w:16+margin*2,h:22+margin*2};
+    const nb={x:npc.x-10,y:npc.y-18,w:20,h:34};
+    return overlaps(pb,nb) && !checkNPCCollision(player,npc);
+  }
+
+  // Keeps player.closePass true for exactly the frames the player is close-passing any
+  // NPC skier (see addClosePassFlagToPlayer for the flag's init).
+  function updatePlayerClosePassFlag(){
+    player.closePass = Array.isArray(game.npcSkiers) && game.npcSkiers.some(npc=>checkClosePassCollision(player,npc));
+  }
+
   function handleCollisions(){
     if(player.invulnerable>0 || player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
     const pb=boxForPlayer();
@@ -567,6 +584,7 @@ checkHazardAchievements(); // Evaluate registered hazard-achievement conditions 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
 checkStyleScoreOnPass(dt);
+updatePlayerClosePassFlag();
 registerStyleScoreAchievement();
 
 if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
