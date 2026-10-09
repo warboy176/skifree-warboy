@@ -389,7 +389,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to generate a simple jump sound using Web Audio API with Warboy's signature high-pitched, bouncy tone  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Add a function to generate a crash sound using Web Audio API with Warboy's signature distorted, metallic impact effect  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to generate an achievement unlock sound using Web Audio API with Warboy's signature chime-like, rising pitch pattern  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Add event listeners to trigger the jump sound when the player initiates a jump
+- [ ] Add a jump sound effect to the game's audio context, loaded from a single inline WAV data URL
+- [ ] Attach a click or keydown event listener to the Space key that triggers the jump sound when the player initiates a jump
 - [ ] Add event listeners to trigger the crash sound when the player collides with an obstacle or falls off the slope
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
