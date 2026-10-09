@@ -385,7 +385,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to update styleScore by adding the current multiplier value each frame
 - [x] Add a function to render the styleScore value in the HUD using the existing score display method
 - [x] Ensure styleScore resets to 0 when the player crashes or dies
-- [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
+- [!] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
