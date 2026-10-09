@@ -377,7 +377,10 @@ Operator direction from the daily report lands here.
 - [x] Set the 'closePass' flag when the player passes within 30 pixels horizontally of an NPC skier
 - [x] Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier
 - [!] Ensure the flag is only set once per NPC skier encounter and does not trigger repeatedly  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a 'styleMultiplier' variable that increases by 1 for each consecutive close pass and resets on collision or fall
+- [ ] Initialize a styleMultiplier variable set to 1 in the game state object
+- [ ] Increment styleMultiplier by 1 whenever the player passes an NPC skier closely without collision
+- [ ] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
+- [ ] Display the current styleMultiplier value in the HUD as a visual feedback indicator
 - [ ] Add a 'styleScore' variable that accumulates points based on the current multiplier and is displayed in the HUD
 - [ ] Update the game loop to increment styleScore and multiplier on close passes, and reset on crashes or obstacles
 - [ ] Add original sound effects for jumps, crashes, and achievement unlocks, all generated via code with Warboy's signature audio aesthetic
