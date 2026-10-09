@@ -397,7 +397,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN
 - [x] Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision
 
-- [ ] Initialize an `achievements` object in the game state to track style-based milestones
+- [!] Initialize an `achievements` object in the game state to track style-based milestones  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [ ] Add a function to increment `achievements.slalomingNearSkier` when player passes within 30px of an NPC skier while skiing
 - [ ] Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward
 - [ ] Add a function to check and trigger `achievements.comboStreak` on consecutive style actions with 1-second cooldown
