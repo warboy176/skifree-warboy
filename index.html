@@ -220,7 +220,7 @@ if (autoplay.enabled) {
     Object.assign(player,{x:0,y:0,vx:0,speed:155,state:PlayerState.SKIING,stateTime:0,jumpTime:0,jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0});
     addClosePassFlagToPlayer();
     Object.assign(yeti,{active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,cycle:'WAIT',cycleTime:0,cycleLimit:0});
-    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope',canopyPatches:[],nightTransitionTriggered:false,forestTransitionTriggered:false});
+    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope',canopyPatches:[],nightTransitionTriggered:false,forestTransitionTriggered:false,inForestBiome:false});
     fastMode = false;
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
@@ -272,7 +272,7 @@ initMutantSnowWolves();
   // Extra collidable trees layered on top of the normal spawn pool while the forest biome visual
   // is active, so the dense drawForestBiome() backdrop is matched by dense skiable trees.
   function generateForestObstacles(y){
-    if(!game.biomeVisual || game.biomeVisual.name!=='forest') return;
+    if(!game.inForestBiome) return;
     const extra = Math.ceil(rand(1,3));
     for(let i=0;i<extra;i++){
       const type = Math.random()<.7?'evergreen':'bare';
@@ -285,7 +285,7 @@ initMutantSnowWolves();
   // active, spawned alongside generateForestObstacles() so the overhead shadow scrolls in with
   // the same stretch of dense trees. Purely decorative: never enters game.obstacles/handleCollisions.
   function generateForestCanopy(y){
-    if(!game.biomeVisual || game.biomeVisual.name!=='forest') return;
+    if(!game.inForestBiome) return;
     const count = Math.ceil(rand(1,3));
     for(let i=0;i<count;i++){
       const cx = player.x + rand(-W*.9,W*.9);
@@ -832,7 +832,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   }
   // dt drives a slow wind-sway phase so the forest stretch doesn't feel static like the other biomes.
   function drawForestBiome(dt){
-    if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
+    if(!game.inForestBiome)return;
     forestBiomeConfig.swayTime+=dt||0;
     const {treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor,swayTime}=forestBiomeConfig;
     ctx.globalAlpha=.55;
@@ -858,7 +858,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   // (seeded by generateForestCanopy() alongside the trees in generateForestObstacles).
   // Drawn after drawForestBiome's trees so the shadow reads as light filtering through the canopy.
   function drawForestCanopy(){
-    if(!game.biomeVisual||game.biomeVisual.name!=='forest')return;
+    if(!game.inForestBiome)return;
     if(!Array.isArray(game.canopyPatches))return;
     ctx.save();
     for(const c of game.canopyPatches){
@@ -1437,6 +1437,8 @@ initBiomeLayers();
 
 initBiomeTintState();
 
+initForestBiomeDetection();
+
     game.biome = game.biomeThresholds[0].name;
     game.biomeVisual = game.biomeThresholds[0];
     game.lastBiome = game.biome;
@@ -1493,6 +1495,17 @@ function updateBiomeFromDistance() {
     }
     game.biome = current.name;
     game.biomeVisual = current;
+    game.inForestBiome = current.name === 'forest';
+}
+
+// Initializes the forest-biome detection state read continuously by generateForestObstacles/
+// generateForestCanopy/drawForestBiome/drawForestCanopy (game.inForestBiome, kept in sync every
+// frame by updateBiomeFromDistance above) and the one-time "just arrived" banner fired by
+// checkForestBiomeTransition (game.forestTransitionTriggered). Called once from initBiomeState()
+// at script load; startGame()'s Object.assign resets both fields again for each run.
+function initForestBiomeDetection() {
+    game.inForestBiome = false;
+    game.forestTransitionTriggered = false;
 }
 
 // Gameplay biome tiers (distinct from the visual biomeThresholds/biomeVisual used for sky and
