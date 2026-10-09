@@ -370,7 +370,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a tree rendering function that draws original pixel-art trees using Warboy's own code-only art, only when in the forest biome  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Integrate the tree rendering function into the scrolling background loop, ensuring trees scroll with the terrain and appear only in the forest phase  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Add a 'closePass' boolean property to the player object, initialized to false  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a horizontal distance check between player and NPC skier, setting closePass to true if within 30 pixels and moving in the same direction
+- [!] Add a horizontal distance check between player and NPC skier, setting closePass to true if within 30 pixels and moving in the same direction  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure the closePass flag is reset when the player or NPC skier moves out of the 30-pixel horizontal range or changes direction
 - [ ] Reset the 'closePass' flag to false when the player is no longer within 30 pixels of any NPC skier
 - [ ] Implement a distance-based proximity check between player and NPC skiers using Euclidean distance
