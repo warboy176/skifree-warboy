@@ -3356,6 +3356,17 @@ function resetStyleScoreOnDeath() {
   }
 }
 
+function playCrashSound() {
+  if (player.crashed && !player.crashedPrev && game.soundBuffer && ctx.audioContext) {
+    const source = ctx.audioContext.createBufferSource();
+    source.buffer = game.soundBuffer;
+    source.connect(ctx.audioContext.destination);
+    source.start(0);
+  }
+  player.crashedPrev = player.crashed;
+}
+
+
 
 
 
