@@ -398,7 +398,7 @@ Operator direction from the daily report lands here.
 - [x] Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision
 
 - [!] Initialize an `achievements` object in the game state to track style-based milestones  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
-- [ ] Add a function to increment `achievements.slalomingNearSkier` when player passes within 30px of an NPC skier while skiing
+- [!] Add a function to increment `achievements.slalomingNearSkier` when player passes within 30px of an NPC skier while skiing  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward
 - [ ] Add a function to check and trigger `achievements.comboStreak` on consecutive style actions with 1-second cooldown
 - [ ] Add a function to display achievement unlocks on screen with a brief visual cue and sound effect
