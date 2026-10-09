@@ -3070,6 +3070,16 @@ function renderVisibleTrees() {
   }
 }
 
+function resetClosePassFlagOnRangeExit(npcSkier, player) {
+  if (npcSkier.closePass) {
+    const horizontalDistance = Math.abs(npcSkier.x - player.x);
+    if (horizontalDistance > 30 || npcSkier.direction !== player.direction) {
+      npcSkier.closePass = false;
+    }
+  }
+}
+
+
 
 
 
