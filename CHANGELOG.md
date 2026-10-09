@@ -1,4 +1,11 @@
 # Changelog
+- Integration fix for "Create a function to play the crash sound only when the player's state transitio": the assembled feature does not boot or play clean. Diagnose and fix the break so the whole game is green. Break detail: gate SYNTAX  PASS (node --check)
+gate BOOT    PASS (canvas present, 0 console errors)
+gate DEMO    PASS (15s virtual-time auto-play, 0 console errors)
+gate LIVENESS PASS (started via injected input; frame advanced)
+gate REAL-PLAY PASS (drove real start input, non-demo; 8s actual play, 0 console errors)
+gate SINGLE-LOOP PASS (exactly 0 rAF drive loop in normal mode)
+GATE FAIL: visual: real-input pl (playCrashSoundIfTransitioning)
 - Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN (playCrashSound)
 - Ensure styleScore resets to 0 when the player crashes or dies (resetStyleScoreOnDeath)
 - Add a function to render the styleScore value in the HUD using the existing score display method (renderStyleScoreHUD)
