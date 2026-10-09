@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to update styleScore by adding the current multiplier value each frame (applyStyleScoreMultiplierToGameLoop)
 - Display the current styleMultiplier value in the HUD as a visual feedback indicator (drawStyleMultiplierHUD)
 - Initialize a styleMultiplier variable set to 1 in the game state object (initStyleMultiplier)
 - Reset the 'closePass' flag when the player moves beyond 50 pixels from the NPC skier (resetClosePassFlagOnPlayerMove)
