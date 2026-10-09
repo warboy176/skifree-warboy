@@ -1424,6 +1424,8 @@ game.achievements.push(Achievement);
 
 initAchievementFeedbackSystem();
 
+initAudio();
+
 initCrashSound();
 
 initJumpSound();
@@ -2346,6 +2348,23 @@ function initAchievementFeedbackSystem() {
   game.triggerSoundEffect = function(effectName) {
     game.feedbackQueue.push(effectName);
   };
+}
+
+// Sets up the shared AudioContext that every synthesized sound cue (crash
+// thud, jump blip, etc.) plays through, and unlocks it on the player's first
+// keypress/pointer press since browsers suspend audio until a user gesture.
+function initAudio() {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (AC && !game.audioCtx) {
+    try { game.audioCtx = new AC(); } catch (e) { game.audioCtx = null; }
+  }
+  function unlockAudio() {
+    if (game.audioCtx && game.audioCtx.state === 'suspended') {
+      game.audioCtx.resume();
+    }
+  }
+  addEventListener('keydown', unlockAudio, { passive: true });
+  addEventListener('pointerdown', unlockAudio, { passive: true });
 }
 
 // Synthesizes Warboy's crash cue entirely with the Web Audio API (no audio
