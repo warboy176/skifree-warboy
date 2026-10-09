@@ -397,4 +397,8 @@ Operator direction from the daily report lands here.
 - [x] Create a function to play the crash sound only when the player's state transitions to CRASHED or EATEN
 - [x] Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new `achievements` object to track player progress on style-based actions like slaloming near skiers or crashing through obstacles
+- [ ] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones
+- [ ] Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art
+- [ ] Add logic to award 'style points' and track combo multipliers when the player performs consecutive high-scoring actions
+- [ ] Ensure all achievements are tied to specific, non-redundant interactions (e.g., 'Crashed Through 3 Obstacles in a Row') without duplicating existing scoring
