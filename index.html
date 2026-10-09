@@ -1902,6 +1902,8 @@ function updateStyleScore(dt) {
     ) {
       const awarded = applyStyleMultiplierToScore(10);
       checkAchievementsOnScorableAction('slalom', awarded);
+resetStyleScoreOnDeath();
+
 getTreeWidthFromSeed(42);
 
 spawnBadge(x, y, type);
@@ -3172,6 +3174,13 @@ function renderStyleScoreHUD() {
     ctx.font = '16px Arial';
     ctx.fillText(game.styleScore, 10, HUD_H - 20);
 }
+
+function resetStyleScoreOnDeath() {
+  if (player.crashed || player.died) {
+    game.styleScore = 0;
+  }
+}
+
 
 
 
