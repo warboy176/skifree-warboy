@@ -4177,6 +4177,20 @@ function applyStyleScoringToGameLoop(dt) {
   applyStylePointsToNPCs(dt);
 }
 
+function checkSnowWolfChaseCollision() {
+  if (!game.npcSkiers) return;
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const snowWolf = game.npcSkiers[i];
+    if (snowWolf.chasing && Math.abs(snowWolf.x - player.x) < 20) {
+      player.crashed = true;
+      player.crashedPrev = true;
+      snowWolf.chasing = false;
+      break;
+    }
+  }
+}
+
+
 
 
 
