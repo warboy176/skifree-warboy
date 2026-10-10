@@ -4069,6 +4069,12 @@ function drawComboAndStylePointsHUD(dt) {
   ctx.fillText('STYLE ' + game.styleScore, 10, 40);
 }
 
+function initObstacleCrashTracker() {
+    game.obstacleCrashStreak = 0;
+    game.lastObstacleType = 0;
+}
+
+
 
 
 
