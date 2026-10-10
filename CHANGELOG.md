@@ -1,4 +1,5 @@
 # Changelog
+- Reset the multiplier to 1 when the player crashes or hits a tree (resetMultiplierOnCrashOrTreeHit)
 - Display the current multiplier on screen as a floating HUD element that updates in real time (drawMultiplierHUD)
 - Cap the multiplier at 5, preventing further increases beyond that value (capMultiplierAtFive)
 - Add a multiplier counter initialized to 1, incrementing by 1 on each successful slalom pass through an NPC skier or obstacle (initMultiplierSystem, updateMultiplierOnSlalomPass)
