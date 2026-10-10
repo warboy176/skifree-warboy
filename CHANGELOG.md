@@ -1,4 +1,5 @@
 # Changelog
+- Add a combo counter that increments on each consecutive high-scoring action and resets on misses or collisions (initComboCounter, drawComboCounter)
 - Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art (renderAchievements)
 - Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward (incrementCrashedThroughObstacleAchievement)
 - Attach an event listener to the collision detection logic that triggers the crash sound on any obstacle collision (attachCrashSoundListener)

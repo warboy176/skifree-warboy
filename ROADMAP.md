@@ -404,7 +404,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to display achievement unlocks on screen with a brief visual cue and sound effect  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art
-- [ ] Add a combo counter that increments on each consecutive high-scoring action and resets on misses or collisions
+- [x] Add a combo counter that increments on each consecutive high-scoring action and resets on misses or collisions
 - [ ] Implement style point scoring for slaloming close to skiers, dogs, or drones without collision
 - [ ] Add a multiplier that increases with each consecutive style point and resets on failure
 - [ ] Display the current combo multiplier and style points in the HUD using the existing score display area
