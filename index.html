@@ -1388,6 +1388,7 @@ if(Array.isArray(game.achievements)&&game.achievements.some(a=>a.unlocked))drawA
 updateAchievementTrophies();
 
 drawStyleScoreHUD();
+drawMultiplierIndicator();
 
 drawPausedOverlay();
 
@@ -2431,6 +2432,25 @@ function drawStyleScoreHUD() {
   ctx.fillStyle = 'white';
   ctx.font = '16px monospace';
   ctx.fillText(`${game.styleScore}×${game.styleMultiplier}`, 10, HUD_H - 20);
+}
+
+// Dedicated glowing 'xN' combo indicator, separate from the plain text in
+// drawStyleScoreHUD(), that pulses and brightens as game.styleMultiplier climbs.
+function drawMultiplierIndicator() {
+  if (game.state !== GameState.PLAYING) return;
+  const mult = game.styleMultiplier || 1;
+  const pulse = mult > 1 ? (0.5 + 0.5 * Math.sin(performance.now() / 160)) : 0;
+  const size = 16 + Math.min(mult - 1, 6) * 2;
+  ctx.save();
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'top';
+  ctx.font = `700 ${Math.round(size)}px "Courier New",monospace`;
+  const color = mult > 1 ? '#ffd43b' : '#9fd8ff';
+  ctx.shadowColor = color;
+  ctx.shadowBlur = mult > 1 ? 10 + pulse * 10 : 4;
+  ctx.fillStyle = color;
+  ctx.fillText(`x${Number.isInteger(mult) ? mult : mult.toFixed(1)}`, W - 16, HUD_H + 8);
+  ctx.restore();
 }
 
 function isSkiingState() {
