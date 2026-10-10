@@ -1298,6 +1298,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+renderAchievements(ctx, game);
+
 drawStyleMultiplierHUD();
 
 if(Array.isArray(game.achievements)&&game.achievements.some(a=>a.unlocked))drawAchievementIcon(ctx, 10, 10);
@@ -3564,6 +3566,24 @@ function incrementCrashedThroughObstacleAchievement() {
     }
   }
 }
+
+function renderAchievements(ctx, game) {
+  if (!game.achievements || !game.achievements.some(a => a.unlocked)) return;
+  const iconSize = 4;
+  const gridWidth = 16;
+  const gridHeight = 16;
+  const startX = W - gridWidth;
+  const startY = 0;
+  game.achievements.forEach((a, i) => {
+    if (a.unlocked) {
+      drawAchievementIcon(ctx, startX + (i % 4) * iconSize, startY + Math.floor(i / 4) * iconSize);
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(a.counter || 0, startX + (i % 4) * iconSize + iconSize/2, startY + Math.floor(i / 4) * iconSize + iconSize + 10);
+    }
+  });
+}
+
 
 
 
