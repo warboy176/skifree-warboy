@@ -4096,6 +4096,19 @@ function checkCrashThroughThreeInARowAchievement() {
   }
 }
 
+function validateAchievementEventUniqueness() {
+  const seenPatterns = new Set();
+  for (const achievement of ACHIEVEMENT_DEFINITIONS) {
+    const pattern = achievement.eventPattern;
+    if (seenPatterns.has(pattern)) {
+      return false;
+    }
+    seenPatterns.add(pattern);
+  }
+  return true;
+}
+
+
 
 
 
