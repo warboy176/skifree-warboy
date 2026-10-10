@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, checkSnowWolfChaseCollision)
 - Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps) (initAchievementsRegistry, registerAchievement, updateAchievements)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with flair (initStyleScoringSystem, applyStyleScoringToGameLoop)
 - Add original chase antagonist: a pixel-art 'Snowhound' creature with unique movement patterns, drawn in code, that pursues the player when they slow down (initSnowhound, updateSnowhound, drawSnowhound)
