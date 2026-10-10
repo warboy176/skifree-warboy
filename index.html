@@ -1356,6 +1356,7 @@ return;}
     drawSkyTint(ctx);
     drawBackgroundLayers();
     drawDistantMountainSilhouettes();
+    drawBiomeLayer(game.distance);
     drawBackgroundTrees();
 drawMultiplierHUD();
 
@@ -1572,6 +1573,109 @@ initForestBiomeDetection();
     game.biome = game.biomeThresholds[0].name;
     game.biomeVisual = game.biomeThresholds[0];
     game.lastBiome = game.biome;
+}
+
+// --- Layered background-biome rendering system ---------------------------------------------
+// Foundation data the earlier "stack background visuals (lodge, open slope, forest, night)"
+// roadmap item needed but never shipped: one entry per biome tier the run passes through, each
+// pairing an activation distance with an original code-drawn silhouette layer. drawBiomeLayer()
+// below looks up the tier `currentDistance` falls into and renders it, cross-fading from the
+// previous tier's layer over a short distance band so the stack reads as one continuous backdrop
+// instead of a hard cut. Drawn behind the ambient parallax trees, in front of the distant peaks.
+function drawLodgeBiomeLayer(alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const baseY = H * 0.78;
+  const cabins = [
+    { x: W * 0.14, w: 46, h: 30 },
+    { x: W * 0.32, w: 36, h: 24 },
+    { x: W * 0.68, w: 40, h: 26 },
+    { x: W * 0.86, w: 50, h: 32 }
+  ];
+  for (const c of cabins) {
+    rect(c.x - c.w / 2, baseY - c.h, c.w, c.h, '#4a3220');
+    poly([[c.x - c.w / 2 - 4, baseY - c.h], [c.x, baseY - c.h - c.h * 0.6], [c.x + c.w / 2 + 4, baseY - c.h]], '#2e1d12');
+    rect(c.x - 5, baseY - c.h * 0.55, 10, 10, '#ffd43b');
+  }
+  ctx.restore();
+}
+
+function drawOpenSlopeBiomeLayer(alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const baseY = H * 0.8;
+  ctx.fillStyle = '#eef7ff';
+  ctx.beginPath();
+  ctx.moveTo(0, H);
+  ctx.lineTo(0, baseY + 14);
+  ctx.quadraticCurveTo(W * 0.5, baseY - 18, W, baseY + 10);
+  ctx.lineTo(W, H);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawForestBiomeLayer(alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const baseY = H * 0.8;
+  const SP = 34;
+  for (let x = -SP; x < W + SP; x += SP) {
+    const h = 50 + (Math.sin(x * 0.045) + 1) * 18;
+    poly([[x - SP * 0.42, baseY], [x - SP * 0.08, baseY - h], [x + SP * 0.08, baseY - h], [x + SP * 0.42, baseY]], '#123f2c');
+  }
+  ctx.restore();
+}
+
+function drawNightBiomeLayer(alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const baseY = H * 0.82;
+  ctx.fillStyle = '#0a0f24';
+  ctx.beginPath();
+  ctx.moveTo(0, H);
+  ctx.lineTo(0, baseY);
+  ctx.lineTo(W * 0.3, baseY - 24);
+  ctx.lineTo(W * 0.55, baseY + 6);
+  ctx.lineTo(W * 0.8, baseY - 20);
+  ctx.lineTo(W, baseY);
+  ctx.lineTo(W, H);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
+const biomeLayers = [
+  { name: 'lodge', minDistance: 0, draw: drawLodgeBiomeLayer },
+  { name: 'open_slope', minDistance: 400, draw: drawOpenSlopeBiomeLayer },
+  { name: 'forest', minDistance: 10000, draw: drawForestBiomeLayer },
+  { name: 'night', minDistance: 25000, draw: drawNightBiomeLayer }
+];
+
+// Distance (in meters) over which one biomeLayers entry fades out while the next fades in.
+const BIOME_LAYER_FADE_DISTANCE = 600;
+
+function drawBiomeLayer(currentDistance) {
+  let index = 0;
+  for (let i = 0; i < biomeLayers.length; i++) {
+    if (currentDistance >= biomeLayers[i].minDistance) index = i;
+  }
+  const current = biomeLayers[index];
+  const next = biomeLayers[index + 1];
+  if (next) {
+    const span = next.minDistance - current.minDistance;
+    const into = currentDistance - current.minDistance;
+    const fadeStart = Math.max(0, span - BIOME_LAYER_FADE_DISTANCE);
+    if (into > fadeStart) {
+      const t = clamp((into - fadeStart) / Math.max(1, span - fadeStart), 0, 1);
+      current.draw(1 - t);
+      next.draw(t);
+      ctx.globalAlpha = 1;
+      return;
+    }
+  }
+  current.draw(1);
+  ctx.globalAlpha = 1;
 }
 
 // Detects when the gameplay biome tier (game.biome, updated each tick by updateBiome()) has
