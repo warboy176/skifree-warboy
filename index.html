@@ -657,8 +657,8 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
         updateBiomeFromDistance();
         checkForestBiomeTransition();
         updateBiomeTransition(game.distance);
-        if(game.milestone<1&&game.distance>=10000){game.milestone=1;game.trickText='DANGER ZONE: BARRELS + OIL';game.trickTime=2;}
-        if(game.milestone<2&&game.distance>=20000){game.milestone=2;game.trickText='FINAL ZONE: MINI WARBOYS';game.trickTime=2;}
+        if(game.milestone<1&&game.distance>=10000){game.milestone=1;displayAchievementUnlock('dangerZoneReached','DANGER ZONE: BARRELS + OIL');}
+        if(game.milestone<2&&game.distance>=20000){game.milestone=2;displayAchievementUnlock('finalZoneReached','FINAL ZONE: MINI WARBOYS');}
         updateBiome(player.y);
         updateBiomeTintState(simDt);
         checkBiomeTransition(game.distance);
@@ -2515,6 +2515,24 @@ function showAchievementUnlock(achievement) {
   if (!achievement) return;
   const title = achievement.title || 'Achievement';
   game.trickText = `${title}! ${getRandomUnlockMessage()}`;
+  game.trickTime = 1.5;
+  if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
+}
+
+// Direct unlock display: given an achievementType key and a ready-made message (as opposed
+// to showAchievementUnlock's auto-generated "title + random hype line"), records the
+// achievement in game.achievements (so the trophy HUD icon at drawAchievementIcon lights up)
+// and reuses the trickText/trickTime banner + sound cue already drawn each frame.
+function displayAchievementUnlock(achievementType, message) {
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  let achievement = game.achievements.find(a => a.type === achievementType);
+  if (!achievement) {
+    achievement = { type: achievementType, title: achievementType, description: message, counter: 1, unlockThreshold: 1, unlocked: false };
+    game.achievements.push(achievement);
+  }
+  if (achievement.unlocked) return;
+  achievement.unlocked = true;
+  game.trickText = message;
   game.trickTime = 1.5;
   if (typeof game.triggerSoundEffect === 'function') game.triggerSoundEffect('achievementUnlocked');
 }
