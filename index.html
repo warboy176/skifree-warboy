@@ -622,6 +622,8 @@ getTreeHeightRange(game.biomeStage)
 
 updateTreePositions(dt);
 
+updateBackgroundLayer(simDt);
+
 updateSnowWolfSpawnTimer(dt);
 spawnSnowWolf();
 
@@ -1352,6 +1354,7 @@ return;}
     if(game.shake>0)ctx.translate(rand(-5,5),rand(-4,4));
     drawSnowWithNightTint(ctx);
     drawSkyTint(ctx);
+    drawBackgroundLayers();
     drawDistantMountainSilhouettes();
     drawBackgroundTrees();
 drawMultiplierHUD();
@@ -3220,26 +3223,24 @@ function initBackgroundLayers() {
       y: y,
       speed: speed,
       draw: function() {
-        ctx.fillStyle = BIOME_TINTS[game.currentBiome].color;
+        const tint = BIOME_TINTS[game.biome];
+        ctx.fillStyle = tint ? tint.color : '#ffffff';
         ctx.fillRect(0, this.y, W, 1);
       }
     });
   }
 }
 
-function updateBackgroundLayers(dt) {
-  const H = canvas.height;
+function updateBackgroundLayer(dt) {
   for (const layer of game.bgLayers) {
     layer.y += layer.speed * dt;
-    if (layer.y < -H) layer.y = 0;
+    if (layer.y > H) layer.y -= H;
   }
 }
 
 function drawBackgroundLayers() {
   for (const layer of game.bgLayers) {
-    const tint = BIOME_TINTS[game.currentBiome].color;
-    ctx.fillStyle = tint;
-    ctx.fillRect(0, layer.y, W, layer.height);
+    layer.draw();
   }
 }
 
