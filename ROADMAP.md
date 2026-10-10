@@ -420,6 +420,6 @@ Operator direction from the daily report lands here.
 - [x] Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
+- [x] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive passes and penalties for crashes
 - [ ] Create a persistent achievements registry with new original unlocks: 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Ghost' (complete forest biome without hitting trees), 'Jumpmaster' (land 10 jumps)
