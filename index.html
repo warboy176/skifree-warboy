@@ -4150,6 +4150,14 @@ function drawSnowhound() {
   ctx.fillRect(x+10, y+6, 2, 2);
 }
 
+function applyStyleScoringToGameLoop(dt) {
+  updateStyleScoreOnProximity(dt);
+  applyStylePointsToNPCs(dt);
+  applyStyleScoreMultiplierToGameLoop();
+  checkAndTriggerComboStreak(dt);
+}
+
+
 
 
 
