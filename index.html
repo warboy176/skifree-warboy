@@ -612,6 +612,7 @@ applyStylePointsToNPCs(dt);
 incrementCrashedThroughObstacleAchievement();
 
 applyStyleScoreMultiplierToGameLoop();
+applyStyleMultiplierToScoreInGameLoop(dt);
 
 checkClosePasses(dt);
 
@@ -3888,6 +3889,18 @@ function drawStyleMultiplierHUD() {
 
 function applyStyleScoreMultiplierToGameLoop() {
   game.styleScore += game.styleMultiplier;
+}
+
+// Base style points earned per second of active skiing, before the style
+// multiplier is applied. Kept separate from applyStyleScoreMultiplierToGameLoop
+// above so that mechanic's flat per-frame bonus is untouched.
+const STYLE_SCORE_DELTA_RATE = 1;
+
+function applyStyleMultiplierToScoreInGameLoop(dt) {
+  if (player.state !== PlayerState.SKIING) return;
+  const scoreDelta = STYLE_SCORE_DELTA_RATE * dt;
+  game.scoreDelta = scoreDelta;
+  game.styleScore += scoreDelta * game.styleMultiplier;
 }
 
 function renderStyleScoreHUD() {
