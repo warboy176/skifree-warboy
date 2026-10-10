@@ -2009,14 +2009,27 @@ function initStyleScoreAccumulator() {
 
 function updateStyleScoreOnProximity(dt) {
   if (player.state === PlayerState.CRASHED) return;
-  const proximityThreshold = 30;
   for (const skier of game.npcSkiers) {
-    const dx = player.x - skier.x;
-    const dy = player.y - skier.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance < proximityThreshold) {
+    checkAndIncrementStyleScore(skier);
+  }
+}
+
+// Awards +1 style point the moment the player enters proximity range of a given NPC
+// skier, then latches (npc.styleScored) so the same pass by the same skier can't keep
+// re-awarding every frame while the player lingers close by. The flag clears once the
+// player drifts back out of range, arming it for the next valid proximity event.
+function checkAndIncrementStyleScore(npc) {
+  const proximityThreshold = 30;
+  const dx = player.x - npc.x;
+  const dy = player.y - npc.y;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  if (distance < proximityThreshold) {
+    if (!npc.styleScored) {
       game.styleScore += 1;
+      npc.styleScored = true;
     }
+  } else {
+    npc.styleScored = false;
   }
 }
 
