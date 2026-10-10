@@ -4138,6 +4138,19 @@ function updateSnowhound(dt) {
   game.antagonist.y = Math.max(0, Math.min(H, game.antagonist.y));
 }
 
+function drawSnowhound() {
+  const {x, y} = game.antagonist;
+  ctx.fillStyle = NPC_SKIER_COLOR;
+  ctx.fillRect(x, y, 16, 16);
+  ctx.fillStyle = "white";
+  ctx.fillRect(x+4, y+4, 4, 4);
+  ctx.fillStyle = "black";
+  ctx.fillRect(x+6, y+8, 6, 2);
+  ctx.fillStyle = "white";
+  ctx.fillRect(x+10, y+6, 2, 2);
+}
+
+
 
 
 
