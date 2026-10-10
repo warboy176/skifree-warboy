@@ -3985,6 +3985,16 @@ function initComboCounter() {
     game.comboStreakTimer = 0;
 }
 
+function drawComboCounter() {
+  if (game.comboStreak > 0) {
+    ctx.textBaseline = 'middle';
+    ctx.font = '16px sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText(String(game.comboStreak), W - 80, 40);
+  }
+}
+
+
 
 
 
