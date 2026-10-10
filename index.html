@@ -4227,6 +4227,14 @@ function resetSlalomPassesOnCrashOrObstacle() {
   }
 }
 
+function initMultiplierSystem() {
+  if (typeof game.slalomPasses !== 'number') game.slalomPasses = 0;
+  if (typeof game.multiplier !== 'number') game.multiplier = 1;
+  game.multiplierDisplay = { value: 1, lastUpdated: 0 };
+  game.baseMultiplier = 1.0;
+}
+
+
 
 
 
