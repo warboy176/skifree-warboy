@@ -2193,6 +2193,26 @@ const treeWidth = scaleTreeWidthByHeight(100, 0.05);
   return awarded;
 }
 
+// Awards style score for a specific in-game action (slalom pass, jump, etc.), scaling a
+// per-action base value by scoreMultiplier so escalating multipliers pay off more.
+// Every style-scoring call site should route through here so combo-streak chaining and
+// achievement tracking stay consistent instead of being re-derived inline per call site.
+const STYLE_ACTION_BASE_POINTS = {
+  slalom: 10,
+  jump: 15,
+  closePass: 5,
+  nearMiss: 5,
+};
+
+function applyStylePoints(actionType, scoreMultiplier) {
+  const basePoints = STYLE_ACTION_BASE_POINTS[actionType] || 10;
+  const awarded = basePoints * scoreMultiplier;
+  game.styleScore = (game.styleScore || 0) + awarded;
+  checkAndTriggerComboStreak(game.lastTime);
+  checkAchievementsOnScorableAction(actionType, awarded);
+  return awarded;
+}
+
 // Chains consecutive style actions (slalom passes, etc.) into a "combo streak":
 // each call is a timestamped style action, and if it lands within
 // COMBO_STREAK_WINDOW_MS of the previous one the streak keeps growing; otherwise
