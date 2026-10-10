@@ -404,5 +404,9 @@ Operator direction from the daily report lands here.
 - [!] Add a function to display achievement unlocks on screen with a brief visual cue and sound effect  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art
-- [ ] Add logic to award 'style points' and track combo multipliers when the player performs consecutive high-scoring actions
+- [ ] Add a combo counter that increments on each consecutive high-scoring action and resets on misses or collisions
+- [ ] Implement style point scoring for slaloming close to skiers, dogs, or drones without collision
+- [ ] Add a multiplier that increases with each consecutive style point and resets on failure
+- [ ] Display the current combo multiplier and style points in the HUD using the existing score display area
+- [ ] Ensure style points and multipliers are preserved across game restarts and reset only on death
 - [ ] Ensure all achievements are tied to specific, non-redundant interactions (e.g., 'Crashed Through 3 Obstacles in a Row') without duplicating existing scoring
