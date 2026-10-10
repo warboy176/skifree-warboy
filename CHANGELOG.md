@@ -1,4 +1,5 @@
 # Changelog
+- Cap the multiplier at 5, preventing further increases beyond that value (capMultiplierAtFive)
 - Add a multiplier counter initialized to 1, incrementing by 1 on each successful slalom pass through an NPC skier or obstacle (initMultiplierSystem, updateMultiplierOnSlalomPass)
 - Reset the 'slalomPasses' counter when the player crashes or hits an obstacle (resetSlalomPassesOnCrashOrObstacle)
 - Add a 'slalomPasses' counter initialized to 0 in the game state (initSlalomPassesCounter)
