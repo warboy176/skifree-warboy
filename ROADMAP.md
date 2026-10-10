@@ -427,7 +427,7 @@ Operator direction from the daily report lands here.
 - [x] Reset the 'slalomPasses' counter when the player crashes or hits an obstacle
 - [x] Add a multiplier counter initialized to 1, incrementing by 1 on each successful slalom pass through an NPC skier or obstacle
 - [x] Cap the multiplier at 5, preventing further increases beyond that value
-- [ ] Display the current multiplier on screen as a floating HUD element that updates in real time
+- [x] Display the current multiplier on screen as a floating HUD element that updates in real time
 - [ ] Reset the multiplier to 1 when the player crashes or hits a tree
 - [ ] Apply the multiplier to the score when the player completes a slalom pass, increasing points earned
 - [ ] Display the current multiplier and style score in the HUD using the existing score display
