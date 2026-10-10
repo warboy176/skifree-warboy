@@ -4074,6 +4074,16 @@ function initObstacleCrashTracker() {
     game.lastObstacleType = 0;
 }
 
+function updateObstacleCrashStreak(crash, obstacleType) {
+  if (crash) {
+    game.obstacleCrashStreak++;
+    game.lastObstacleType = obstacleType;
+  } else if (obstacleType !== game.lastObstacleType) {
+    game.obstacleCrashStreak = 0;
+  }
+}
+
+
 
 
 
