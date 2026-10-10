@@ -402,7 +402,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to increment `achievements.crashedThroughObstacle` when player collides with any obstacle while moving forward
 - [!] Add a function to check and trigger `achievements.comboStreak` on consecutive style actions with 1-second cooldown  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to display achievement unlocks on screen with a brief visual cue and sound effect  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones
+- [!] Implement a `checkAchievements()` function that triggers after each collision or style event, updating the registry with new milestones  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a `renderAchievements()` function to draw achievement icons and counts in the HUD, using only original pixel art
 - [ ] Add logic to award 'style points' and track combo multipliers when the player performs consecutive high-scoring actions
 - [ ] Ensure all achievements are tied to specific, non-redundant interactions (e.g., 'Crashed Through 3 Obstacles in a Row') without duplicating existing scoring
