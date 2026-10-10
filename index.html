@@ -659,6 +659,7 @@ updatePlayerClosePassFlag();
 checkClosePassProximity(dt);
 registerStyleScoreAchievement();
 checkStyleScoreAchievement();
+checkStyleAchievements(dt);
 
 if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
 if(yeti.active)trackAchievementOnProximity('yeti',yeti);
@@ -2259,6 +2260,50 @@ function checkStyleScoreAchievement() {
     achievement.unlocked = true;
     showAchievementUnlock(achievement);
   }
+}
+
+// A reversal stays "live" for this long, so several quick direction changes
+// can chain into one slalom combo instead of each needing to land in the
+// same single frame.
+const SLALOM_REVERSAL_WINDOW = 1.2;
+// Rapid alternating steering (left-right-left...) earns the slalom bonus;
+// holding both ArrowLeft and ArrowRight at once yields no net steer direction
+// and never reverses, so it no longer qualifies.
+const SLALOM_REVERSALS_REQUIRED = 3;
+const SLALOM_STYLE_AWARD = 15;
+
+// Detects qualifying stylish movement (currently: slaloming) and, when found,
+// awards style score through the existing applyStyleScore/
+// applyStyleScoreMultiplierToGameLoop pipeline, then checks whether any
+// style-score achievement threshold has now been crossed.
+function checkStyleAchievements(dt) {
+  if (player.state !== PlayerState.SKIING) return;
+
+  const steerDir = input.left === input.right ? 0 : (input.left ? -1 : 1);
+  if (typeof game.slalomLastDir !== 'number') game.slalomLastDir = 0;
+  if (typeof game.slalomReversalTimer !== 'number') game.slalomReversalTimer = 0;
+  if (typeof game.slalomReversals !== 'number') game.slalomReversals = 0;
+
+  game.slalomReversalTimer -= dt;
+  if (game.slalomReversalTimer <= 0) game.slalomReversals = 0;
+
+  if (steerDir !== 0 && game.slalomLastDir !== 0 && steerDir !== game.slalomLastDir) {
+    game.slalomReversals++;
+    game.slalomReversalTimer = SLALOM_REVERSAL_WINDOW;
+  }
+  if (steerDir !== 0) game.slalomLastDir = steerDir;
+
+  const isSlaloming = game.slalomReversals >= SLALOM_REVERSALS_REQUIRED;
+  if (isSlaloming) {
+    game.style += SLALOM_STYLE_AWARD;
+    applyStyleScore(dt);
+    applyStyleScoreMultiplierToGameLoop();
+    game.slalomReversals = 0;
+    game.slalomReversalTimer = 0;
+  }
+
+  registerStyleScoreAchievement();
+  checkStyleScoreAchievement();
 }
 
 function drawStyleScoreHUD() {
