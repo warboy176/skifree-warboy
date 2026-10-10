@@ -361,6 +361,29 @@ initMutantSnowWolves();
     player.closePass = Array.isArray(game.npcSkiers) && game.npcSkiers.some(npc=>checkClosePassCollision(player,npc));
   }
 
+  // Awards a style bonus once per close pass: fires the first frame checkClosePassCollision
+  // is true for a given NPC, using a per-NPC `closePassed` flag (mirrors `grazed` in
+  // checkNPCProximity) so the bonus can't repeat every frame of the same pass, and re-arms
+  // once the player and NPC separate again.
+  function checkClosePassProximity(dt){
+    if(!Array.isArray(game.npcSkiers)) return;
+    if(player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
+    for(let i=0;i<game.npcSkiers.length;i++){
+      const npc=game.npcSkiers[i];
+      if(checkClosePassCollision(player,npc)){
+        if(!npc.closePassed){
+          npc.closePassed=true;
+          game.style+=5;
+          game.trickText='CLOSE PASS +5';
+          game.trickTime=.6;
+          trackAchievement('closePass',1);
+        }
+      } else {
+        npc.closePassed=false;
+      }
+    }
+  }
+
   function handleCollisions(){
     if(player.invulnerable>0 || player.state===PlayerState.CRASHED || player.state===PlayerState.EATEN) return;
     const pb=boxForPlayer();
@@ -623,6 +646,7 @@ checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
 checkStyleScoreOnPass(dt);
 updatePlayerClosePassFlag();
+checkClosePassProximity(dt);
 registerStyleScoreAchievement();
 checkStyleScoreAchievement();
 
