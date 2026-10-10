@@ -1427,6 +1427,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initComboCounter();
+
 initHighJumpRamps();
 
 initDogs();
@@ -3977,6 +3979,12 @@ function renderAchievements(ctx, game) {
     }
   });
 }
+
+function initComboCounter() {
+    if (typeof game.comboStreak !== 'number') game.comboStreak = 0;
+    game.comboStreakTimer = 0;
+}
+
 
 
 
