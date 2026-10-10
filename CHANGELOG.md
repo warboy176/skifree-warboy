@@ -1,4 +1,5 @@
 # Changelog
+- Reset the 'slalomPasses' counter when the player crashes or hits an obstacle (resetSlalomPassesOnCrashOrObstacle)
 - Add a 'slalomPasses' counter initialized to 0 in the game state (initSlalomPassesCounter)
 - Add a 'slalom' detection system that checks if the player passes within 30px of an NPC skier during skiing (initNPCs, checkSlalomPasses)
 - Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts (initBiomeTransitionPoints, updateBiomeLayerVisibility, drawForestBiome)
