@@ -4263,6 +4263,13 @@ function capMultiplierAtFive() {
   if (game.multiplier > 5) game.multiplier = 5;
 }
 
+function resetMultiplierOnCrashOrTreeHit() {
+  if (game.playerCrashed || game.playerHitTree) {
+    game.multiplier = 1;
+  }
+}
+
+
 
 
 
