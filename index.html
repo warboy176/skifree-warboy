@@ -605,6 +605,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+drawComboAndStylePointsHUD(dt);
+
 applyStylePointsToNPCs(dt);
 
 incrementCrashedThroughObstacleAchievement();
@@ -4045,6 +4047,15 @@ function registerStyleProximityAchievement() {
   };
   game.achievements.push(newAchievement);
 }
+
+function drawComboAndStylePointsHUD(dt) {
+  ctx.font = '16px monospace';
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'left';
+  ctx.fillText('COMBO ' + game.comboStreak, 10, 20);
+  ctx.fillText('STYLE ' + game.styleScore, 10, 40);
+}
+
 
 
 
