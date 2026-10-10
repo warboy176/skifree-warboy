@@ -605,6 +605,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkSlalomPasses(dt);
+
 drawComboAndStylePointsHUD(dt);
 
 applyStylePointsToNPCs(dt);
@@ -4201,6 +4203,20 @@ function updateBiomeLayerVisibility(meters) {
     biomeLayers[0].visible = false;
   }
 }
+
+function checkSlalomPasses(dt) {
+  if (PlayerState.isMovingDownhill) {
+    game.npcSkiers.forEach(npc => {
+      const dx = npc.x - PlayerState.x;
+      const dy = npc.y - PlayerState.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 30) {
+        addClosePassFlagToPlayer();
+      }
+    });
+  }
+}
+
 
 
 
