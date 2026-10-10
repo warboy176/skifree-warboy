@@ -871,7 +871,6 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
     treeMaxHeight: 82,
     treeMinWidth: 22,
     treeMaxWidth: 38,
-    treeColor: '#0a8a68',
     swayTime: 0
   };
   function drawForestTree(x,y,width,height,color,sway=0){
@@ -886,7 +885,8 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   function drawForestBiome(dt){
     if(!game.inForestBiome)return;
     forestBiomeConfig.swayTime+=dt||0;
-    const {treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,treeColor,swayTime}=forestBiomeConfig;
+    const {treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,swayTime}=forestBiomeConfig;
+    const treeColor=activeTreeColorPalette().foliage[2];
     ctx.globalAlpha=.55;
     const SP=95;                                              // denser than the ambient layer, still world-anchored
     const cLo=Math.floor((player.x-W*0.75)/SP),cHi=Math.ceil((player.x+W*0.75)/SP);
@@ -960,26 +960,34 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
     ctx.globalAlpha=1;
   }
 
+  // Looks up the foliage/trunk/snow colors for whichever biome is currently visible, falling
+  // back to the 'slope' palette before initTreeColorPalettes() has run or for an unknown biome.
+  function activeTreeColorPalette(){
+    const palettes=game.treeColorPalettes;
+    const name=game.biomeVisual&&game.biomeVisual.name;
+    return (palettes&&(palettes[name]||palettes.slope))||{trunk:'#5b321d',trunkLight:'#9b5b2b',foliage:['#075844','#087257','#0a8a68'],snow:'#f6fdff',snowLedge:'#d9f3fb',snowBase:'#b1deeb'};
+  }
   function drawEvergreen(x,y,scale=1){
+    const pal=activeTreeColorPalette();
     if(scale===1){
-      rect(x-5,y+11,10,22,'#5b321d');rect(x-2,y+12,4,21,'#9b5b2b');
-      poly([[x,y-34],[x-22,y+3],[x+22,y+3]],'#075844');
-      poly([[x,y-23],[x-29,y+17],[x+29,y+17]],'#087257');
-      poly([[x,y-10],[x-33,y+24],[x+33,y+24]],'#0a8a68');
-      poly([[x,y-34],[x-9,y-18],[x+7,y-18]],'#f6fdff');
-      rect(x-22,y-1,12,4,'#d9f3fb');rect(x+5,y+8,17,4,'#d9f3fb');rect(x-21,y+17,13,4,'#d9f3fb');
-      rect(x-29,y+24,58,3,'#b1deeb');
+      rect(x-5,y+11,10,22,pal.trunk);rect(x-2,y+12,4,21,pal.trunkLight);
+      poly([[x,y-34],[x-22,y+3],[x+22,y+3]],pal.foliage[0]);
+      poly([[x,y-23],[x-29,y+17],[x+29,y+17]],pal.foliage[1]);
+      poly([[x,y-10],[x-33,y+24],[x+33,y+24]],pal.foliage[2]);
+      poly([[x,y-34],[x-9,y-18],[x+7,y-18]],pal.snow);
+      rect(x-22,y-1,12,4,pal.snowLedge);rect(x+5,y+8,17,4,pal.snowLedge);rect(x-21,y+17,13,4,pal.snowLedge);
+      rect(x-29,y+24,58,3,pal.snowBase);
       return;
     }
     // Scaled variant (background parallax trees) draws around the origin under a save/scale transform.
     ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
-    rect(-5,11,10,22,'#5b321d');rect(-2,12,4,21,'#9b5b2b');
-    poly([[0,-34],[-22,3],[22,3]],'#075844');
-    poly([[0,-23],[-29,17],[29,17]],'#087257');
-    poly([[0,-10],[-33,24],[33,24]],'#0a8a68');
-    poly([[0,-34],[-9,-18],[7,-18]],'#f6fdff');
-    rect(-22,-1,12,4,'#d9f3fb');rect(5,8,17,4,'#d9f3fb');rect(-21,17,13,4,'#d9f3fb');
-    rect(-29,24,58,3,'#b1deeb');
+    rect(-5,11,10,22,pal.trunk);rect(-2,12,4,21,pal.trunkLight);
+    poly([[0,-34],[-22,3],[22,3]],pal.foliage[0]);
+    poly([[0,-23],[-29,17],[29,17]],pal.foliage[1]);
+    poly([[0,-10],[-33,24],[33,24]],pal.foliage[2]);
+    poly([[0,-34],[-9,-18],[7,-18]],pal.snow);
+    rect(-22,-1,12,4,pal.snowLedge);rect(5,8,17,4,pal.snowLedge);rect(-21,17,13,4,pal.snowLedge);
+    rect(-29,24,58,3,pal.snowBase);
     ctx.restore();
   }
   function drawBare(x,y){
@@ -1376,6 +1384,8 @@ initHighJumpRamps();
 initDogs();
 
 initBiomeState();
+
+initTreeColorPalettes();
 
 
 function togglePauseState() {
@@ -3373,6 +3383,18 @@ function checkAntagonistSpawnTrigger(distanceTraveled) {
   if (distanceTraveled >= game.antagonist.distanceThreshold && !game.antagonist.active) {
     game.antagonist.active = true;
   }
+}
+
+// Seeds game.treeColorPalettes with one foliage/trunk/snow palette per entry in
+// defineBiomeThresholds() (slope/forest/canyon), so drawEvergreen/drawForestBiome (via
+// activeTreeColorPalette()) can tint trees to match whichever biome is currently on screen
+// instead of every tree sharing one fixed set of greens.
+function initTreeColorPalettes() {
+  game.treeColorPalettes = {
+    slope: { trunk: '#5b321d', trunkLight: '#9b5b2b', foliage: ['#075844', '#087257', '#0a8a68'], snow: '#f6fdff', snowLedge: '#d9f3fb', snowBase: '#b1deeb' },
+    forest: { trunk: '#5b321d', trunkLight: '#7a4a28', foliage: ['#0a4a36', '#0c6b4a', '#12a878'], snow: '#eafff5', snowLedge: '#cdf3e0', snowBase: '#a8dcc0' },
+    canyon: { trunk: '#6b4226', trunkLight: '#a9703e', foliage: ['#4e5a22', '#6f7f32', '#98a850'], snow: '#fff3dd', snowLedge: '#f6e3bd', snowBase: '#e0c48f' }
+  };
 }
 
 function getTreeHeightRange(biomeStage) {
