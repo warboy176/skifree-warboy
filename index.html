@@ -242,6 +242,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+registerStyleProximityAchievement();
+
 initMutantSnowWolves();
 
     initBiomeTintState();
@@ -4032,6 +4034,18 @@ function applyStylePointsToNPCs(dt) {
     }
   }
 }
+
+function registerStyleProximityAchievement() {
+  const newAchievement = {
+    type: 'style_proximity',
+    name: 'Slalom Master',
+    description: 'Score style points by slaloming near skiers, dogs, or drones.',
+    threshold: STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0],
+    unlockMessage: UNLOCK_MESSAGES[0]
+  };
+  game.achievements.push(newAchievement);
+}
+
 
 
 
