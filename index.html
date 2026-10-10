@@ -4221,6 +4221,13 @@ function initSlalomPassesCounter() {
   if (typeof game.slalomPasses !== 'number') game.slalomPasses = 0;
 }
 
+function resetSlalomPassesOnCrashOrObstacle() {
+  if (game.player.crashed || game.player.hitObstacle) {
+    game.slalomPasses = 0;
+  }
+}
+
+
 
 
 
