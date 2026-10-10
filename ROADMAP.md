@@ -409,7 +409,7 @@ Operator direction from the daily report lands here.
 - [!] Add a multiplier that increases with each consecutive style point and resets on failure  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Display the current combo multiplier and style points in the HUD using the existing score display area
 - [!] Ensure style points and multipliers are preserved across game restarts and reset only on death  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a new achievement system that tracks specific, non-redundant player interactions with obstacles, such as crashing through consecutive obstacles
+- [!] Add a new achievement system that tracks specific, non-redundant player interactions with obstacles, such as crashing through consecutive obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change
 - [ ] Define and register a new achievement for 'Crashed Through 3 Obstacles in a Row' that triggers only when three distinct obstacles are crashed through consecutively
 - [ ] Ensure all achievements are tied to unique, non-overlapping interactions by validating that no two achievements share the same underlying event pattern
