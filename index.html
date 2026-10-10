@@ -4195,6 +4195,14 @@ function initBiomeTransitionPoints() {
   biomeTransitionPoints.push({ meters: 500, biome: 'forest' });
 }
 
+function updateBiomeLayerVisibility(meters) {
+  if (meters >= 500) {
+    biomeLayers[1].visible = true;
+    biomeLayers[0].visible = false;
+  }
+}
+
+
 
 
 
