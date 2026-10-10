@@ -412,4 +412,4 @@ Operator direction from the daily report lands here.
 - [!] Add a new achievement system that tracks specific, non-redundant player interactions with obstacles, such as crashing through consecutive obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change
 - [x] Define and register a new achievement for 'Crashed Through 3 Obstacles in a Row' that triggers only when three distinct obstacles are crashed through consecutively
-- [ ] Ensure all achievements are tied to unique, non-overlapping interactions by validating that no two achievements share the same underlying event pattern
+- [x] Ensure all achievements are tied to unique, non-overlapping interactions by validating that no two achievements share the same underlying event pattern
