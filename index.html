@@ -574,7 +574,6 @@ checkAchievementTrigger(dt);
 
 updateMultiplierOnNearMisses(dt);
 
-updateDistanceTracker(dt);
 checkBiomeTransition(game.distance);
 getTreeHeightRange(game.biomeStage)
 
@@ -631,6 +630,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
         updateBiome(player.y);
         updateBiomeTintState(simDt);
         checkBiomeTransition(game.distance);
+        updateBiomeTransitions();
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -1479,7 +1479,7 @@ initJumpSound();
 
 initMultiplierHUD();
 
-initDistanceTracker();
+initBiomeTransitions();
 
 initSnowWolfState();
 
@@ -1722,6 +1722,25 @@ function drawBiomeTransition(ctx) {
         ctx.font = '700 16px "Courier New",monospace';
         ctx.fillText(zone.label, W / 2, screenY - 8);
         ctx.restore();
+    }
+}
+
+// Sorted meters at which each biome boundary sits (mirrors the distances used by
+// biomeTransitionPoints above), tracked with a single forward-only index so
+// updateBiomeTransitions() announces each crossing exactly once, never repeating.
+function initBiomeTransitions() {
+    game.biomeTransitionPoints = [10000, 20000, 25000];
+    game.biomeTransitionIndex = 0;
+}
+
+// Advances game.biomeTransitionIndex past any threshold game.distance has now reached,
+// echoing that zone's banner label to the status line once per crossing.
+function updateBiomeTransitions() {
+    while (game.biomeTransitionIndex < game.biomeTransitionPoints.length &&
+           game.distance >= game.biomeTransitionPoints[game.biomeTransitionIndex]) {
+        const zone = biomeTransitionPoints[game.biomeTransitionIndex];
+        if (zone) statusEl.textContent = zone.label;
+        game.biomeTransitionIndex++;
     }
 }
 
@@ -2335,25 +2354,6 @@ function drawBranchingFoliage(treeX, treeY, treeHeight, treeWidth) {
 function updateTreePositions(dt) {
   for (let tree of game.trees) {
     tree.y += dt * MAX_SPEED * METERS_PER_PIXEL;
-  }
-}
-
-function initDistanceTracker() {
-  game.distanceMeters = 0;
-  const BIOME_THRESHOLDS = defineBiomeThresholds();
-  game.currentBiomeIndex = 0;
-  game.biomeTransitionPoints = [];
-}
-
-function updateDistanceTracker(dt) {
-  game.distanceMeters += player.speed * dt * METERS_PER_PIXEL;
-  const currentThreshold = BIOME_THRESHOLDS[game.currentBiomeIndex];
-  if (game.distanceMeters >= currentThreshold) {
-    if (game.currentBiomeIndex < BIOME_THRESHOLDS.length - 1) {
-      game.currentBiomeIndex++;
-      game.biomeTransitionPoints.push(currentThreshold);
-      drawBiomeTransition();
-    }
   }
 }
 
