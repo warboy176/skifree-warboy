@@ -2254,10 +2254,23 @@ getTreeWidthFromSeed(42);
   }
 }
 
+// Rewards sustained carving: style score trickles in while the player actively
+// steers (player.vx away from zero) during normal skiing, scaled by how hard
+// they're leaning the turn and by MAX_SPEED so faster carves are worth more.
+function updateStyleScoreOnSkiing(dt) {
+  if (player.state !== PlayerState.SKIING) return;
+  if (!game.styleScore) game.styleScore = 0;
+  const steerAmount = Math.min(1, Math.abs(player.vx) / MAX_SPEED);
+  if (steerAmount > 0.15) {
+    game.styleScore += steerAmount * dt * 6;
+  }
+}
+
 function applyStyleScore(dt) {
   if (player.state !== PlayerState.SKIING) return;
   updateStyleScore(dt);
   updateStyleScoreOnProximity(dt);
+  updateStyleScoreOnSkiing(dt);
 }
 
 function initStyleScoreSystem() {
