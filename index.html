@@ -651,6 +651,7 @@ checkAchievementConditions();
 incrementCrashThroughObstacleCounter();
 
 checkHazardAchievements(); // Evaluate registered hazard-achievement conditions each frame
+updateAchievements(dt);
 
 checkStyleScoreProximity(dt);
 callStyleScoreCheckEveryFrame();
@@ -2954,7 +2955,8 @@ function trackAchievementOnProximity(entityType, entity) {
 // a sensible entry the first time it sees a new key, so callers don't need a separate
 // registration step before they can start accumulating progress toward it.
 const ACHIEVEMENT_DEFINITIONS = {
-  nearMiss: { title: 'Near Miss Master', description: 'Graze past other skiers 15 times without crashing.', unlockThreshold: 15 }
+  nearMiss: { title: 'Near Miss Master', description: 'Graze past other skiers 15 times without crashing.', unlockThreshold: 15 },
+  highSpeedTime: { title: 'Red Line', description: 'Stay above 90% top speed for a total of 10 seconds.', unlockThreshold: 10 }
 };
 
 function trackAchievement(achievementKey, value) {
@@ -3085,6 +3087,26 @@ function checkAchievementsOnScorableAction(actionType, value = 0) {
       achievement.unlocked = true;
       showAchievementUnlock(achievement);
     }
+  }
+}
+
+// Per-frame achievement maintenance that isn't tied to a specific collision/trick
+// event. Covers the two achievement entries nothing else in the update loop feeds:
+// the 'maxSpeed' milestone registered in initBiomeState() (direct threshold compare,
+// since game.maxSpeed is a running peak rather than something to accumulate with +=)
+// and the dt-accumulated 'highSpeedTime' milestone defined above in ACHIEVEMENT_DEFINITIONS.
+function updateAchievements(dt) {
+  if (game.state !== GameState.PLAYING) return;
+  if (!Array.isArray(game.achievements)) return;
+
+  const speedAchievement = game.achievements.find(a => a.type === 'maxSpeed');
+  if (speedAchievement && !speedAchievement.unlocked && game.maxSpeed >= speedAchievement.unlockThreshold) {
+    speedAchievement.unlocked = true;
+    showAchievementUnlock(speedAchievement);
+  }
+
+  if (player.speed >= MAX_SPEED * 0.9) {
+    trackAchievement('highSpeedTime', dt);
   }
 }
 
