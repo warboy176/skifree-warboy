@@ -237,6 +237,7 @@ initMutantSnowWolves();
     initBiomeTintState();
 
     initTrees();
+    initSnowfieldObstacles();
     statusEl.textContent = 'Skiing. Distance zero meters.';
     logPlayerEvent('game_start',{});
   }
@@ -1773,6 +1774,22 @@ function initTrees() {
         const tree = makeObstacle(type, tx, ty);
         game.trees.push(tree);
         game.obstacles.push(tree);
+    }
+}
+
+// Seeds a batch of collidable rocks scattered across the open snowfield at run start, ahead
+// of the player. Mirrors initTrees()'s approach so these also reuse the existing obstacle
+// pipeline (makeObstacle / game.obstacles) and get update, render (drawObstacle) and
+// collision (handleCollisions) for free. Kept separate from game.trees so the two batches
+// can be inspected/tuned independently.
+function initSnowfieldObstacles() {
+    game.snowfieldObstacles = [];
+    for (let i = 0; i < 14; i++) {
+        const rx = player.x + rand(-W * 0.85, W * 0.85);
+        const ry = player.y + rand(H * 0.15, H * 5.5);
+        const rock = makeObstacle('rock', rx, ry);
+        game.snowfieldObstacles.push(rock);
+        game.obstacles.push(rock);
     }
 }
 
