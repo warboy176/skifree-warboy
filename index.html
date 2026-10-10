@@ -603,6 +603,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+applyStylePointsToNPCs(dt);
+
 incrementCrashedThroughObstacleAchievement();
 
 applyStyleScoreMultiplierToGameLoop();
@@ -4013,6 +4015,24 @@ function drawComboCounter() {
     ctx.fillText(String(game.comboStreak), W - 80, 40);
   }
 }
+
+function applyStylePointsToNPCs(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    const verticalDistance = Math.abs(npc.y - player.y);
+    const distance = Math.sqrt(horizontalDistance * horizontalDistance + verticalDistance * verticalDistance);
+
+    if (distance < 100 && !player.crashed) {
+      let points = STYLE_ACTION_BASE_POINTS;
+      if (game.comboStreak >= COMBO_STREAK_THRESHOLD) {
+        points = applyStyleScoreMultiplierToGameLoop(points);
+      }
+      player.styleScore += points;
+    }
+  }
+}
+
 
 
 
