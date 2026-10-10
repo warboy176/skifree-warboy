@@ -421,5 +421,9 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
-- [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive passes and penalties for crashes
+- [ ] Add a 'slalom' detection system that checks if the player passes within 30px of an NPC skier during skiing
+- [ ] Implement a consecutive pass counter that increments on each valid slalom and resets on crash or obstacle hit
+- [ ] Introduce a multiplier system that increases by 1 for each consecutive slalom pass, capping at 5
+- [ ] Display the current multiplier and style score in the HUD using the existing score display
+- [ ] Apply penalty points (50) to the style score when the player crashes into a tree or oil slick
 - [ ] Create a persistent achievements registry with new original unlocks: 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Ghost' (complete forest biome without hitting trees), 'Jumpmaster' (land 10 jumps)
