@@ -4234,6 +4234,29 @@ function initMultiplierSystem() {
   game.baseMultiplier = 1.0;
 }
 
+function updateMultiplierOnSlalomPass() {
+  if (!game.npcSkiers || !Array.isArray(game.npcSkiers)) return;
+  
+  for (const skier of game.npcSkiers) {
+    if (!skier || !skier.y) continue;
+    
+    const player = game.player || {};
+    if (!player.x || !player.y) continue;
+    
+    const isPassing = checkClosePassCollision(player, skier);
+    if (!isPassing) continue;
+    
+    const isSlaloming = game.slalomReversals >= SLALOM_REVERSALS_REQUIRED;
+    if (!isSlaloming) continue;
+    
+    game.slalomPasses = (game.slalomPasses || 0) + 1;
+    game.multiplier = game.slalomPasses + 1;
+    
+    break;
+  }
+}
+
+
 
 
 
