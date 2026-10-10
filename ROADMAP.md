@@ -417,4 +417,4 @@ Operator direction from the daily report lands here.
 - [x] Add original chase antagonist: a pixel-art 'Snowhound' creature with unique movement patterns, drawn in code, that pursues the player when they slow down
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest with original tree sprites and ambient snow effects  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 2 unspecifiable, 0 e -->
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with flair
-- [ ] Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps)
+- [x] Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps)
