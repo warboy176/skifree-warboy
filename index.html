@@ -187,12 +187,22 @@ if (autoplay.enabled) {
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
   let highScores=loadScores();
 
-  // Lightweight in-memory event log for player actions (run starts, crashes, etc).
-  // Kept bounded so a long run can't leak memory; read via game.eventLog for debugging.
+  // Lightweight event log for player actions (run starts, crashes, etc), persisted to
+  // localStorage so the log survives page reloads. Kept bounded so a long run (or many
+  // sessions) can't leak memory / grow the stored blob unbounded.
+  const EVENTLOG_KEY='skifree91_arcade_eventlog_v1';
+  function loadPlayerEventLog(){try{return JSON.parse(localStorage.getItem(EVENTLOG_KEY)||'[]').slice(-50);}catch(e){return [];}}
+  game.eventLog = loadPlayerEventLog();
+
+  function persistPlayerEventLog(){
+    try{localStorage.setItem(EVENTLOG_KEY, JSON.stringify(game.eventLog.slice(-50)));}catch(e){}
+  }
+
   function logPlayerEvent(eventType, context){
     if(!game.eventLog) game.eventLog=[];
     game.eventLog.push({eventType:String(eventType), context:context||{}, distance:game.distance, time:Date.now()});
     if(game.eventLog.length>50) game.eventLog.shift();
+    persistPlayerEventLog();
   }
 
   function saveRun(result){
