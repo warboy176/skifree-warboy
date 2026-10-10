@@ -593,6 +593,7 @@ applyStyleScore(dt);
 
 updateVerticalDistance(simDt);
 checkNPCProximity(dt);
+checkAndSpawnNPCs(dt);
 isPlayerInAir();
 
 checkAchievementOnScorableAction('slalom', 10);
@@ -661,6 +662,10 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   // --- NPC skiers (other skiers on the slope) --------------------------------------------------
   // Original art: simple geometric skier built from rect() primitives. Each is a self-contained
   // object with the update()/draw() methods the main loop already calls on game.npcSkiers.
+  const NPC_SPAWN_MIN_INTERVAL = 1.5;
+  const NPC_SPAWN_MAX_INTERVAL = 3;
+  const NPC_SPAWN_SPACING = 140;
+  const NPC_SPAWN_MAX_SKIERS = 12;
   function makeNpcSkier(){
     return {
       x: player.x + rand(-W*0.32, W*0.32),
@@ -731,6 +736,25 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   function initNPCs(){
     game.npcSkiers = [];
     for (let i=0; i<6; i++) game.npcSkiers.push(makeNpcSkier());
+    game.npcSpawnTimer = rand(NPC_SPAWN_MIN_INTERVAL, NPC_SPAWN_MAX_INTERVAL);
+    game.npcLastSpawnY = player.y + H*1.6;
+  }
+
+  // Periodically adds another NPC skier ahead of the player, on top of the fixed pool that
+  // initNPCs() recycles forever, until NPC_SPAWN_MAX_SKIERS is reached. The timer re-rolls a
+  // random NPC_SPAWN_MIN/MAX_INTERVAL gap after each spawn; each new skier is placed a fixed
+  // NPC_SPAWN_SPACING below the previously spawned one so extra skiers don't clump together.
+  function checkAndSpawnNPCs(dt){
+    if(game.state!==GameState.PLAYING || !Array.isArray(game.npcSkiers)) return;
+    game.npcSpawnTimer=(game.npcSpawnTimer==null?rand(NPC_SPAWN_MIN_INTERVAL,NPC_SPAWN_MAX_INTERVAL):game.npcSpawnTimer)-dt;
+    if(game.npcSpawnTimer>0) return;
+    game.npcSpawnTimer = rand(NPC_SPAWN_MIN_INTERVAL, NPC_SPAWN_MAX_INTERVAL);
+    if(game.npcSkiers.length >= NPC_SPAWN_MAX_SKIERS) return;
+    const npc = makeNpcSkier();
+    npc.x = player.x + rand(-W*0.32, W*0.32);
+    npc.y = (game.npcLastSpawnY || player.y) + NPC_SPAWN_SPACING;
+    game.npcLastSpawnY = npc.y;
+    game.npcSkiers.push(npc);
   }
 
   function makeDog(){
