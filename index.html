@@ -3291,7 +3291,18 @@ function spawnMutantSnowWolf(x, y) {
     glowingEyes: true
   };
 
+  initSnowWolfOffsets(mutantSnowWolf);
+
   game.mutantSnowWolves.push(mutantSnowWolf);
+}
+
+// Gives each mutant snow wolf its own small, unpredictable side-to-side drift
+// so a pack of wolves doesn't move in perfect lockstep.
+function initSnowWolfOffsets(wolf) {
+  wolf.baseX = wolf.x;
+  wolf.offsetPhase = Math.random() * Math.PI * 2;
+  wolf.offsetSpeed = 1.5 + Math.random() * 1.5;
+  wolf.offsetAmplitude = 8 + Math.random() * 12;
 }
 
 function drawMutantSnowWolf(wolf) {
@@ -3323,7 +3334,10 @@ function drawMutantSnowWolf(wolf) {
 function updateMutantSnowWolves(dt) {
   for (let i = game.mutantSnowWolves.length - 1; i >= 0; i--) {
     let snowWolf = game.mutantSnowWolves[i];
+    if (typeof snowWolf.offsetPhase !== 'number') initSnowWolfOffsets(snowWolf);
     snowWolf.y += NPC_SKIER_SPEED * dt;
+    snowWolf.offsetPhase += snowWolf.offsetSpeed * dt;
+    snowWolf.x = snowWolf.baseX + Math.sin(snowWolf.offsetPhase) * snowWolf.offsetAmplitude;
     if (snowWolf.y > H) {
       game.mutantSnowWolves.splice(i, 1);
     }
