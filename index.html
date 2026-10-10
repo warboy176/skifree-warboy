@@ -615,6 +615,8 @@ incrementCrashedThroughObstacleAchievement();
 
 applyStyleScoreMultiplierToGameLoop();
 applyStyleMultiplierToScoreInGameLoop(dt);
+capMultiplierAtFive();
+
 
 checkClosePasses(dt);
 
@@ -4255,6 +4257,12 @@ function updateMultiplierOnSlalomPass() {
     break;
   }
 }
+
+function capMultiplierAtFive() {
+  if (typeof game.multiplier !== 'number') game.multiplier = 1;
+  if (game.multiplier > 5) game.multiplier = 5;
+}
+
 
 
 
