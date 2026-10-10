@@ -423,7 +423,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
 - [x] Add a 'slalom' detection system that checks if the player passes within 30px of an NPC skier during skiing
 - [x] Add a 'slalomPasses' counter initialized to 0 in the game state
-- [ ] Increment the 'slalomPasses' counter when the player successfully passes between two obstacles with sufficient proximity
+- [!] Increment the 'slalomPasses' counter when the player successfully passes between two obstacles with sufficient proximity  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Reset the 'slalomPasses' counter when the player crashes or hits an obstacle
 - [ ] Introduce a multiplier system that increases by 1 for each consecutive slalom pass, capping at 5
 - [ ] Display the current multiplier and style score in the HUD using the existing score display
