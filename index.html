@@ -4082,11 +4082,20 @@ function updateObstacleCrashStreak(crash, obstacleType) {
     game.obstacleCrashStreak = 0;
   }
 }
+checkCrashThroughThreeInARowAchievement();
+
 
 function initObstacleCrashStreakTracking() {
     game.obstacleCrashStreak = 0;
     game.lastObstacleType = null;
 }
+
+function checkCrashThroughThreeInARowAchievement() {
+  if (game.obstacleCrashStreak >= 3 && !game.achievements.some(a => a.name === 'Crashed Through 3 Obstacles in a Row')) {
+    addDefaultAchievement('crash_streak_3');
+  }
+}
+
 
 
 
