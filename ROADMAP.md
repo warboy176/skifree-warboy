@@ -421,7 +421,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
-- [ ] Add a 'slalom' detection system that checks if the player passes within 30px of an NPC skier during skiing
+- [x] Add a 'slalom' detection system that checks if the player passes within 30px of an NPC skier during skiing
 - [ ] Implement a consecutive pass counter that increments on each valid slalom and resets on crash or obstacle hit
 - [ ] Introduce a multiplier system that increases by 1 for each consecutive slalom pass, capping at 5
 - [ ] Display the current multiplier and style score in the HUD using the existing score display
