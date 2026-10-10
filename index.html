@@ -4269,6 +4269,14 @@ function resetMultiplierOnCrashOrTreeHit() {
   }
 }
 
+function updateHUD(game, ctx) {
+  ctx.textAlign = 'left';
+  ctx.fillStyle = 'white';
+  ctx.fillText('x' + game.multiplier, W - 100, 30);
+  ctx.fillText('Style: ' + game.styleScore, W - 100, 50);
+}
+
+
 
 
 
