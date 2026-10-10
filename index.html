@@ -254,6 +254,19 @@ initMutantSnowWolves();
     return {type,x,y,baseY:y,w:s[0],h:s[1],phase:rand(0,Math.PI*2),dir:Math.random()<.5?-1:1,used:false,broken:false,breakTime:0,splatTime:0};
   }
 
+  // Creates a single collidable tree ('evergreen' or 'bare') at world position (x,y) and
+  // registers it in both game.trees and game.obstacles, so the existing update (updateObstacles),
+  // render (drawObstacle) and collision (handleCollisions) pipelines pick it up the same way they
+  // already do for every other obstacle type. The single entry point used by initTrees() (initial
+  // seed) and generateCourse()/generateForestObstacles() (ongoing spawns) so there is one place
+  // that knows how a tree is built.
+  function addTree(x,y,type){
+    const tree = makeObstacle(type,x,y);
+    game.trees.push(tree);
+    game.obstacles.push(tree);
+    return tree;
+  }
+
   function generateCourse(){
     const target = player.y + H*1.45;
     while(game.spawnY < target){
