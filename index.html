@@ -3585,11 +3585,31 @@ function resetClosePassFlagOnPlayer() {
   }
 }
 
+// Per-NPC edge detector backing checkClosePasses(): returns true only on the frame a
+// given NPC skier first comes within the 30px horizontal close-pass range, using the
+// NPC's own `encountered` flag (mirrors the `grazed`/`scoredPass` per-NPC flags used by
+// checkNPCProximity/checkStyleScoreOnPass) so a single pass can't re-report true every
+// frame it stays in range. Clears once the pair's straight-line distance exceeds 50
+// units, matching the existing reset threshold, so their next approach can trigger again.
+function checkNPCEncounter(player, npc) {
+  const dx = Math.abs(npc.x - player.x);
+  const dy = Math.abs(npc.y - player.y);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  if (distance > 50) {
+    npc.encountered = false;
+    return false;
+  }
+  if (dx < 30 && player.vx > 0 && !npc.encountered) {
+    npc.encountered = true;
+    return true;
+  }
+  return false;
+}
+
 function checkClosePasses(dt) {
   let foundClosePass = false;
   for (const skier of game.npcSkiers) {
-    const dx = Math.abs(skier.x - player.x);
-    if (dx < 30 && player.vx > 0) {
+    if (checkNPCEncounter(player, skier)) {
       foundClosePass = true;
     }
   }
