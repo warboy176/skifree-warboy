@@ -1,4 +1,5 @@
 # Changelog
+- Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change (initObstacleCrashTracker, updateObstacleCrashStreak)
 - Display the current combo multiplier and style points in the HUD using the existing score display area (drawComboAndStylePointsHUD)
 - Implement style point scoring for slaloming close to skiers, dogs, or drones without collision (initNPCs, applyStylePointsToNPCs, registerStyleProximityAchievement)
 - Add a combo counter that increments on each consecutive high-scoring action and resets on misses or collisions (initComboCounter, drawComboCounter)
