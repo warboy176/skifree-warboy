@@ -425,7 +425,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'slalomPasses' counter initialized to 0 in the game state
 - [!] Increment the 'slalomPasses' counter when the player successfully passes between two obstacles with sufficient proximity  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Reset the 'slalomPasses' counter when the player crashes or hits an obstacle
-- [ ] Add a multiplier counter initialized to 1, incrementing by 1 on each successful slalom pass through an NPC skier or obstacle
+- [x] Add a multiplier counter initialized to 1, incrementing by 1 on each successful slalom pass through an NPC skier or obstacle
 - [ ] Cap the multiplier at 5, preventing further increases beyond that value
 - [ ] Display the current multiplier on screen as a floating HUD element that updates in real time
 - [ ] Reset the multiplier to 1 when the player crashes or hits a tree
