@@ -1,4 +1,5 @@
 # Changelog
+- Define and register a new achievement for 'Crashed Through 3 Obstacles in a Row' that triggers only when three distinct obstacles are crashed through consecutively (initObstacleCrashStreakTracking, updateObstacleCrashStreak, checkCrashThroughThreeInARowAchievement)
 - Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change (initObstacleCrashTracker, updateObstacleCrashStreak)
 - Display the current combo multiplier and style points in the HUD using the existing score display area (drawComboAndStylePointsHUD)
 - Implement style point scoring for slaloming close to skiers, dogs, or drones without collision (initNPCs, applyStylePointsToNPCs, registerStyleProximityAchievement)
