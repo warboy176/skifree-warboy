@@ -4108,6 +4108,16 @@ function validateAchievementEventUniqueness() {
   return true;
 }
 
+function initSnowhound() {
+  game.antagonist = {
+    x: W + 100,
+    y: H * 0.7,
+    speed: 0.8 * NPC_SKIER_SPEED,
+    state: 'idle'
+  };
+}
+
+
 
 
 
