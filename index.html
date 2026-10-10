@@ -812,12 +812,13 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
 
   function drawSnow(){
     const biomeVisual=game.biomeVisual||{sky:'#eefaff',dash:'rgba(129,203,229,.25)'};
+    const particleColor=(game.biomeVisuals&&game.biomeVisuals[biomeVisual.name]&&game.biomeVisuals[biomeVisual.name].particleColor)||'#b8e5f4';
     drawAlpineSkyGradient(biomeVisual.sky);
     ctx.globalAlpha=.62;
     for(const f of game.snow){
       const sx=((f.x-player.x*.08+W*2)%(W*1.5))-W*.25;
       const sy=HUD_H+(((f.y-game.cameraY*.18+H*3)%(H*1.4))-H*.2);
-      rect(sx,sy,f.s*2,f.s,'#b8e5f4');
+      rect(sx,sy,f.s*2,f.s,particleColor);
     }
     ctx.globalAlpha=1;
     for(let i=-2;i<4;i++){
@@ -1438,8 +1439,20 @@ function defineBiomeThresholds() {
     ];
 }
 
+// Per-biome falling-snow tint, keyed by the visual biome name (game.biomeVisual.name, i.e. the
+// slope/forest/canyon thresholds from defineBiomeThresholds) so drawSnow()'s particles shift
+// color alongside the sky/dash-line theming instead of staying a flat blue-white everywhere.
+function initBiomeVisuals() {
+    game.biomeVisuals = {
+        slope: { particleColor: '#b8e5f4' },
+        forest: { particleColor: '#cdeccb' },
+        canyon: { particleColor: '#f3d9ad' }
+    };
+}
+
 function initBiomeState() {
     game.biomeThresholds = defineBiomeThresholds();
+initBiomeVisuals();
 initBackgroundLayers();
 
 initCloudLayer();
