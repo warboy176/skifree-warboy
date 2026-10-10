@@ -1,4 +1,5 @@
 # Changelog
+- Add original chase antagonist: a pixel-art 'Snowhound' creature with unique movement patterns, drawn in code, that pursues the player when they slow down (initSnowhound, updateSnowhound, drawSnowhound)
 - Ensure all achievements are tied to unique, non-overlapping interactions by validating that no two achievements share the same underlying event pattern (validateAchievementEventUniqueness)
 - Define and register a new achievement for 'Crashed Through 3 Obstacles in a Row' that triggers only when three distinct obstacles are crashed through consecutively (initObstacleCrashStreakTracking, updateObstacleCrashStreak, checkCrashThroughThreeInARowAchievement)
 - Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change (initObstacleCrashTracker, updateObstacleCrashStreak)
