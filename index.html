@@ -252,7 +252,14 @@ initMutantSnowWolves();
   function makeObstacle(type,x,y){
     const sizes = {evergreen:[34,58],bare:[42,54],rock:[30,20],slope:[54,28],jump:[50,26],drone:[38,22],barrel:[28,34],oil:[58,20],mini:[32,44],firebarrel:[32,44]};
     const s=sizes[type];
-    return {type,x,y,baseY:y,w:s[0],h:s[1],phase:rand(0,Math.PI*2),dir:Math.random()<.5?-1:1,used:false,broken:false,breakTime:0,splatTime:0};
+    const o={type,x,y,baseY:y,w:s[0],h:s[1],phase:rand(0,Math.PI*2),dir:Math.random()<.5?-1:1,used:false,broken:false,breakTime:0,splatTime:0};
+    if(type==='evergreen'){
+      // Deterministic per-tree height variation, seeded by spawn position so the same
+      // spot always grows the same tree (reproducible across a run's generateCourse calls).
+      const {height}=initTreeHeights(Math.floor(x+y));
+      o.treeScale=0.6+(height-10)/40*0.7; // height in [10,50] -> draw scale in [0.6,1.3]
+    }
+    return o;
   }
 
   // Creates a single collidable tree ('evergreen' or 'bare') at world position (x,y) and
@@ -1064,7 +1071,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
   function drawObstacle(o){
     const p=worldToScreen(o.x,o.y);
     if(p.y<-100||p.y>H+100)return;
-    if(o.type==='evergreen')drawEvergreen(p.x,p.y);
+    if(o.type==='evergreen')drawEvergreen(p.x,p.y,o.treeScale||1);
     else if(o.type==='bare')drawBare(p.x,p.y);
     else if(o.type==='rock')drawRock(p.x,p.y);
     else if(o.type==='jump')drawRamp(p.x,p.y);
@@ -3408,6 +3415,14 @@ function getTreeHeightRange(biomeStage) {
     default:
       return { min: 0, max: 0 };
   }
+}
+
+// Deterministic tree height from a seed: pure Math.floor + modulo so the same seed
+// (e.g. a tree's spawn position) always yields the same height, in [10, 50].
+function initTreeHeights(seed) {
+  const n = Math.floor(seed);
+  const height = ((n % 41) + 41) % 41 + 10;
+  return { height };
 }
 
 function scaleTreeWidthByHeight(treeHeight, baseWidthRatio = 0.05) { return treeHeight * baseWidthRatio; }
