@@ -4151,10 +4151,30 @@ function drawSnowhound() {
 }
 
 function applyStyleScoringToGameLoop(dt) {
+  // Update style score based on proximity to NPCs
   updateStyleScoreOnProximity(dt);
+
+  // Check for crashes through obstacles
+  if (player.crashed && !player.crashedPrev) {
+    game.style += 50;
+    checkAndTriggerComboStreak(dt);
+  }
+  player.crashedPrev = player.crashed;
+
+  // Check for jump landings
+  if (player.state === PlayerState.SKIING && player.jumpTime > 0 && player.jumpTime < player.jumpDuration) {
+    // Land after a jump
+    if (player.jumpTime >= player.jumpDuration) {
+      game.style += 30;
+      checkAndTriggerComboStreak(dt);
+    }
+  }
+
+  // Apply style multiplier
+  applyStyleScoreMultiplierToGameLoop(dt);
+
+  // Apply style points to NPCs
   applyStylePointsToNPCs(dt);
-  applyStyleScoreMultiplierToGameLoop();
-  checkAndTriggerComboStreak(dt);
 }
 
 
