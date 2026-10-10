@@ -413,3 +413,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a state tracker for consecutive obstacle crashes, resetting on non-crash or obstacle type change
 - [x] Define and register a new achievement for 'Crashed Through 3 Obstacles in a Row' that triggers only when three distinct obstacles are crashed through consecutively
 - [x] Ensure all achievements are tied to unique, non-overlapping interactions by validating that no two achievements share the same underlying event pattern
+
+- [ ] Add original chase antagonist: a pixel-art 'Snowhound' creature with unique movement patterns, drawn in code, that pursues the player when they slow down
+- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest with original tree sprites and ambient snow effects
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with flair
+- [ ] Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps)
