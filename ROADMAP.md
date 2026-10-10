@@ -418,3 +418,8 @@ Operator direction from the daily report lands here.
 - [!] Implement dynamic terrain biomes: transition from open slope to dense forest with original tree sprites and ambient snow effects  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 2 unspecifiable, 0 e -->
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with flair
 - [x] Add a persistent achievements registry with new entries for each new mechanic: 'Forest Fugitive' (survive 10 forest seconds), 'Snowhound Slayer' (defeat 3 Snowhounds), 'Jump Master' (land 5 consecutive jumps)
+
+- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain transitions: change background art from open slope to dense forest biome at 500 meters, using original code-drawn trees and snowdrifts
+- [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive passes and penalties for crashes
+- [ ] Create a persistent achievements registry with new original unlocks: 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Ghost' (complete forest biome without hitting trees), 'Jumpmaster' (land 10 jumps)
