@@ -4117,6 +4117,28 @@ function initSnowhound() {
   };
 }
 
+function updateSnowhound(dt) {
+  const targetX = player.x;
+  const targetY = player.y;
+  
+  if (player.vx < 0.5 * MAX_SPEED) {
+    const dx = targetX - game.antagonist.x;
+    const dy = targetY - game.antagonist.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    if (dist > 0) {
+      game.antagonist.x += (dx / dist) * 0.8 * NPC_SKIER_SPEED * dt;
+      game.antagonist.y += (dy / dist) * 0.8 * NPC_SKIER_SPEED * dt;
+    }
+  } else {
+    game.antagonist.x += 0.6 * NPC_SKIER_SPEED * dt;
+  }
+  
+  game.antagonist.x = Math.max(0, Math.min(W, game.antagonist.x));
+  game.antagonist.y = Math.max(0, Math.min(H, game.antagonist.y));
+}
+
+
 
 
 
