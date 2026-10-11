@@ -614,6 +614,8 @@ applyStylePointsToNPCs(dt);
 incrementCrashedThroughObstacleAchievement();
 
 applyStyleScoreMultiplierToGameLoop();
+applyComboMultiplierToScore();
+
 applyStyleMultiplierToScoreInGameLoop(dt);
 capMultiplierAtFive();
 
@@ -4508,6 +4510,13 @@ function updateComboStreak(actionTime) {
   }
   game.comboLastActionTime = actionTime;
 }
+
+function applyComboMultiplierToScore() {
+  if (game.comboStreak >= 2) {
+    applyStyleMultiplierToScore(player.styleScore * game.comboStreak);
+  }
+}
+
 
 
 
