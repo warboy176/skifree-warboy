@@ -448,4 +448,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to track and update unlocked achievements in the game state, triggering HUD updates only when new achievements are earned  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to ensure the HUD indicator only appears when at least one achievement is unlocked, and hides when none are earned  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new function to track and record 'slaloming close to skiers' as a distinct achievement trigger
+- [ ] Add a new function to detect and register 'crashing through dogs' as a separate achievement event
+- [ ] Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition
+- [ ] Add a new function to increment and store combo multipliers during chains of successful style actions
+- [ ] Add a new function to update the achievements registry with current score-based style points and trigger visual feedback
