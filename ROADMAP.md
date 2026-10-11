@@ -464,6 +464,6 @@ Operator direction from the daily report lands here.
 - [x] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after 30 seconds of no input
 - [x] Add a function to spawn the antagonist at a fixed offset behind the player when triggered, ensuring it appears only once
 - [x] Implement the antagonist's unique movement pattern: slow tracking of the player with periodic acceleration bursts when within 100px
-- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
+- [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
 - [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, with visual feedback on screen
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
