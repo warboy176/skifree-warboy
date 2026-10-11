@@ -443,7 +443,7 @@ Operator direction from the daily report lands here.
 - [!] Display the jump counter on the HUD using the existing score rendering function  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a jump counter variable initialized to 0 in the player object
 - [x] Create a function that increments the jump counter on each jump and unlocks 'Jumpmaster' in localStorage when it reaches 10
-- [ ] Add a function to render a single pixel-art achievement icon in the top-left HUD corner using original Warboy art
+- [!] Add a function to render a single pixel-art achievement icon in the top-left HUD corner using original Warboy art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to display the achievement label text next to its icon, using original pixel-art style fonts
 - [ ] Add a function to track and update unlocked achievements in the game state, triggering HUD updates only when new achievements are earned
 - [ ] Add a function to ensure the HUD indicator only appears when at least one achievement is unlocked, and hides when none are earned
