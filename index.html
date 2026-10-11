@@ -616,6 +616,8 @@ resetComboMultiplierOnFailure();
 incrementCrashedThroughObstacleAchievement();
 
 applyStyleScoreMultiplierToGameLoop();
+updateStyleScoreAchievements(dt);
+
 applyComboMultiplierToScore();
 
 applyStyleMultiplierToScoreInGameLoop(dt);
@@ -4589,6 +4591,28 @@ function updateStyleScoreBasedOnProximityAndCrashes(dt) {
     game.styleScoreUpdateTime = Date.now();
   }
 }
+
+function updateStyleScoreAchievements(dt) {
+  if (!game.styleScoreThresholdsCrossed) game.styleScoreThresholdsCrossed = [];
+  
+  for (const threshold of STYLE_SCORE_ACHIEVEMENT_THRESHOLDS) {
+    if (game.styleScore >= threshold && !game.styleScoreThresholdsCrossed.includes(threshold)) {
+      game.styleScoreThresholdsCrossed.push(threshold);
+      
+      const achievement = {
+        type: 'style_score',
+        score: threshold,
+        timestamp: Date.now()
+      };
+      
+      if (!game.achievements) game.achievements = [];
+      if (!game.achievements.some(a => a.type === 'style_score' && a.score === threshold)) {
+        game.achievements.push(achievement);
+      }
+    }
+  }
+}
+
 
 
 
