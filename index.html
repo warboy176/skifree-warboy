@@ -4562,6 +4562,29 @@ function initStyleScoreTracking() {
     if (typeof game.styleScoreData !== 'object') game.styleScoreData = {};
 }
 
+function updateStyleScoreBasedOnProximityAndCrashes(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const distance = Math.sqrt(Math.pow(npc.x - player.x, 2) + Math.pow(npc.y - player.y, 2));
+    if (distance < 30) { // NEAR_MISS_MARGIN equivalent
+      game.styleScoreDelta += 10;
+    }
+  }
+
+  if (game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    applyStylePointsToNPCs(20);
+  }
+
+  if (game.styleScoreUpdateInterval <= 0) {
+    game.styleScore += game.styleScoreDelta;
+    game.styleScoreDelta = 0;
+    game.styleScoreUpdateInterval = 1000; // Reset interval
+  } else {
+    game.styleScoreUpdateInterval -= dt;
+  }
+}
+
+
 
 
 
