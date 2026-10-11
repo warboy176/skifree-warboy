@@ -1,4 +1,5 @@
 # Changelog
+- Add a new function to detect and register 'crashing through dogs' as a separate achievement event (initDogs, spawnDogs, checkDogCrash)
 - Add a function to detect when the player's x-position is within 15 pixels of an NPC skier's x-position while both are moving (initNPCs, checkNPCProximity)
 - Create a function that increments the jump counter on each jump and unlocks 'Jumpmaster' in localStorage when it reaches 10 (incrementJumpCounter)
 - Add a jump counter variable initialized to 0 in the player object (initPlayerJumpCounter)
