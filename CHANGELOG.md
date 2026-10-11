@@ -1,4 +1,5 @@
 # Changelog
+- Define the chase antagonist's original visual design using only code-drawn shapes in the canvas context (initNPCs, drawChaseAntagonist, registerChaseAntagonistAchievement)
 - Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds (initAchievementRegistry, updateStyleScoreAchievements)
 - Add a function to track and update style points based on proximity to skiers and successful crashes through obstacles (initStyleScoreTracking, updateStyleScoreBasedOnProximityAndCrashes)
 - Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect) (initComboSystem, updateComboDisplay)
