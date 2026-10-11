@@ -459,3 +459,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to track and update style points based on proximity to skiers and successful crashes through obstacles
 - [!] Implement a visual feedback system that displays a brief style point counter on screen when style points are earned  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds
+
+- [ ] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
+- [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, with visual feedback on screen
+- [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
