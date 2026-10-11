@@ -4309,6 +4309,12 @@ function unlockAchievement(achievementId) {
     displayAchievementUnlock(achievementId, `Achievement Unlocked: ${achievement.name}`);
 }
 
+function isAchievementUnlocked(achievementId) {
+  const achievements = JSON.parse(localStorage.getItem('achievements') || '[]');
+  return achievements.some(a => a.id === achievementId);
+}
+
+
 
 
 
