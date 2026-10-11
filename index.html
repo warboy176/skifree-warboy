@@ -1444,6 +1444,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleScoreTracking();
+
 initComboTracker();
 
 initComboCounter();
@@ -4551,6 +4553,15 @@ function updateComboDisplay(dt) {
         ctx.fillText(`x${game.comboStreak}`, W - 100, 50);
     }
 }
+
+function initStyleScoreTracking() {
+    game.styleScore = 0;
+    game.styleScoreDelta = 0;
+    game.styleScoreUpdateInterval = 1000;
+    if (typeof game.bestStyleScore !== 'number') game.bestStyleScore = 0;
+    if (typeof game.styleScoreData !== 'object') game.styleScoreData = {};
+}
+
 
 
 
