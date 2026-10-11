@@ -4327,6 +4327,13 @@ function loadRegistryFromStorage(){
     }
 }
 
+function saveRegistryToStorage(){
+  try {
+    localStorage.setItem('skiFreeWarboy_registry', JSON.stringify(game.registry));
+  } catch(e) {}
+}
+
+
 
 
 
