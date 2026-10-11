@@ -4563,24 +4563,30 @@ function initStyleScoreTracking() {
 }
 
 function updateStyleScoreBasedOnProximityAndCrashes(dt) {
-  for (let i = 0; i < game.npcSkiers.length; i++) {
-    const npc = game.npcSkiers[i];
-    const distance = Math.sqrt(Math.pow(npc.x - player.x, 2) + Math.pow(npc.y - player.y, 2));
-    if (distance < 30) { // NEAR_MISS_MARGIN equivalent
-      game.styleScoreDelta += 10;
+  const NEAR_MISS_MARGIN = 100;
+  const STYLE_ACTION_BASE_POINTS = 10;
+  const styleScoreUpdateInterval = 1000;
+
+  // Check proximity to player
+  for (const npcSkier of game.npcSkiers) {
+    const distance = Math.abs(npcSkier.x - player.x);
+    if (distance < NEAR_MISS_MARGIN) {
+      game.styleScoreDelta += STYLE_ACTION_BASE_POINTS;
     }
   }
 
-  if (game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
-    applyStylePointsToNPCs(20);
+  // Check for crashes through obstacles
+  for (const obstacle of game.obstacles) {
+    if (obstacle.type === 'crash' && obstacle.crashed) {
+      applyStylePointsToNPCs(STYLE_ACTION_BASE_POINTS * 2);
+    }
   }
 
-  if (game.styleScoreUpdateInterval <= 0) {
+  // Apply style score delta periodically
+  if (game.styleScoreUpdateTime + styleScoreUpdateInterval < Date.now()) {
     game.styleScore += game.styleScoreDelta;
     game.styleScoreDelta = 0;
-    game.styleScoreUpdateInterval = 1000; // Reset interval
-  } else {
-    game.styleScoreUpdateInterval -= dt;
+    game.styleScoreUpdateTime = Date.now();
   }
 }
 
