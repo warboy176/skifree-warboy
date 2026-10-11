@@ -4726,6 +4726,21 @@ function drawBiomeBackground(ctx, meters) {
   }
 }
 
+function checkSlalomProximity(player, npcSkiers, proximityThreshold) {
+    let anyClosePass = false;
+    for (let i = 0; i < npcSkiers.length; i++) {
+        const npc = npcSkiers[i];
+        const distance = Math.sqrt(Math.pow(npc.x - player.x, 2) + Math.pow(npc.y - player.y, 2));
+        if (distance < proximityThreshold) {
+            addClosePassFlagToPlayer(player);
+            player.proximityCounter++;
+            anyClosePass = true;
+        }
+    }
+    return anyClosePass;
+}
+
+
 
 
 
