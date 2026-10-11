@@ -1440,6 +1440,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initComboTracker();
+
 initComboCounter();
 
 initHighJumpRamps();
@@ -4492,6 +4494,14 @@ function checkOilSlickCollisions() {
     }
   }
 }
+
+function initComboTracker() {
+    game.comboStreak = 1;
+    game.comboLastActionTime = null;
+    game.comboStreakTimer = 0;
+    game.lastStyleActionTime = 0;
+}
+
 
 
 
