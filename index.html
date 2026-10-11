@@ -481,7 +481,7 @@ initMutantSnowWolves();
           const unfinished=player.flipActive && Math.abs(player.spin-player.flips*Math.PI*2)>.75;
           player.jumpHeight=0;
           if(unfinished){setPlayerState(PlayerState.CRASHED);player.invulnerable=1.1;game.trickText='BAD LANDING';game.trickTime=.8;}
-          else setPlayerState(PlayerState.SKIING);
+          else { setPlayerState(PlayerState.SKIING); if(player.flips>0) checkAndUnlockJumpmasterAchievement(); }
         }
       }
     }
@@ -3153,6 +3153,33 @@ function trackAchievement(achievementKey, value) {
   }
   if (achievement.unlocked) return;
   achievement.counter += value;
+  if (achievement.counter >= achievement.unlockThreshold) {
+    achievement.unlocked = true;
+    showAchievementUnlock(achievement);
+  }
+}
+
+// Counts clean jump landings that included at least one completed flip (called from
+// updatePlayer's jump-landing branch). Distinct from the 'jumps' achievement (Big Air),
+// which only requires touching ramps - this one rewards actually sticking the trick.
+const JUMPMASTER_LANDING_THRESHOLD = 5;
+
+function checkAndUnlockJumpmasterAchievement() {
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  let achievement = game.achievements.find(a => a.type === 'jumpmaster');
+  if (!achievement) {
+    achievement = {
+      type: 'jumpmaster',
+      title: 'Jumpmaster',
+      description: `Land ${JUMPMASTER_LANDING_THRESHOLD} jumps with a flip.`,
+      counter: 0,
+      unlockThreshold: JUMPMASTER_LANDING_THRESHOLD,
+      unlocked: false
+    };
+    game.achievements.push(achievement);
+  }
+  if (achievement.unlocked) return;
+  achievement.counter++;
   if (achievement.counter >= achievement.unlockThreshold) {
     achievement.unlocked = true;
     showAchievementUnlock(achievement);
