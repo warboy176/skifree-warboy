@@ -4649,12 +4649,12 @@ function updateAntagonistState(dt) {
 }
 
 function spawnAntagonistAtOffset() {
-  if (!game.antagonistState.active) {
-    game.antagonistState.active = true;
-    game.antagonistState.x = player.x - NPC_SPAWN_SPACING;
-    game.antagonistState.y = player.y;
-    game.antagonistState.speed = NPC_SKIER_SPEED * 1.2;
-  }
+  if (antagonistState.active) return;
+  if (player.state !== PlayerState.SKIING) return;
+  antagonistState.active = true;
+  antagonistState.x = player.x - NPC_SPAWN_SPACING;
+  antagonistState.y = player.y;
+  antagonistState.speed = NPC_SKIER_SPEED * 1.2;
 }
 
 
