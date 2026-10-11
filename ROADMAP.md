@@ -438,7 +438,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the registry persists across page reloads without requiring user re-entry
 - [!] Implement a function to check and unlock 'Snow-Wolf Slayer' when the chase antagonist is defeated, storing the result in localStorage  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage
-- [ ] Add a jump counter variable initialized to 0 in the game state
+- [x] Add a jump counter variable initialized to 0 in the game state
 - [ ] Increment the jump counter by 1 each time the player lands from a jump, detected when transitioning from JUMPING to SKIING state
 - [ ] Display the jump counter on the HUD using the existing score rendering function
 - [ ] Create a function to check if the jump counter reaches 10 and unlock 'Jumpmaster' in localStorage

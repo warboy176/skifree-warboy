@@ -1,4 +1,5 @@
 # Changelog
+- Add a jump counter variable initialized to 0 in the game state (initJumpCounter)
 - Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage (unlockForestGhostIfCompleted)
 - Ensure the registry persists across page reloads without requiring user re-entry (loadRegistryFromStorage, saveRegistryToStorage)
 - Create a function to check if an achievement is already unlocked by reading from localStorage (isAchievementUnlocked)
