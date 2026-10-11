@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'slalom proximity' detection system that checks distance between player and NPCs every frame (checkSlalomProximity)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues (initBiomes, updateBiomeTransition, drawBiomeBackground)
 - Implement the antagonist's unique movement pattern: slow tracking of the player with periodic acceleration bursts when within 100px (initAntagonist, updateAntagonist, registerAntagonistAchievement)
 - Add a function to spawn the antagonist at a fixed offset behind the player when triggered, ensuring it appears only once (initAntagonistState, spawnAntagonistAtOffset, updateAntagonist)
