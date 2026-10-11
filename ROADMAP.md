@@ -441,3 +441,5 @@ Operator direction from the daily report lands here.
 - [ ] Add a jump counter that increments each time the player lands from a jump
 - [ ] Create a function to check if the jump counter reaches 10 and unlock 'Jumpmaster' in localStorage
 - [ ] Add a visual HUD indicator to display unlocked achievements with original pixel-art icons and labels
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
