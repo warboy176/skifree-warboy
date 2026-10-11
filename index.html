@@ -4350,6 +4350,20 @@ function initPlayerJumpCounter() {
     game.jumpCounter = 0;
 }
 
+function incrementJumpCounter() {
+    game.jumpCounter++;
+    if (game.jumpCounter === 10) {
+        const achievements = JSON.parse(localStorage.getItem('achievements') || '[]');
+        const achievementKey = 'Jumpmaster';
+        const achievement = ACHIEVEMENT_DEFINITIONS[achievementKey];
+        if (achievement && !achievements.includes(achievementKey)) {
+            achievements.push(achievementKey);
+            localStorage.setItem('achievements', JSON.stringify(achievements));
+        }
+    }
+}
+
+
 
 
 
