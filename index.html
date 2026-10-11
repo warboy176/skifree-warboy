@@ -610,6 +610,8 @@ checkSlalomPasses(dt);
 drawComboAndStylePointsHUD(dt);
 
 applyStylePointsToNPCs(dt);
+resetComboMultiplierOnFailure();
+
 
 incrementCrashedThroughObstacleAchievement();
 
@@ -4521,6 +4523,16 @@ function initComboSystem() {
   game.comboStreak = 0;
   game.comboLastActionTime = 0;
 }
+
+function resetComboMultiplierOnFailure() {
+    if (typeof game.comboStreak === 'number') {
+        game.comboStreak = 1;
+    }
+    game.comboLastActionTime = null;
+    applyStyleScoreMultiplierToGameLoop();
+    applyStylePointsToNPCs();
+}
+
 
 
 
