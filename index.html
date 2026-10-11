@@ -4657,6 +4657,21 @@ function spawnAntagonistAtOffset() {
   antagonistState.speed = NPC_SKIER_SPEED * 1.2;
 }
 
+function updateAntagonist(dt) {
+  if (game.antagonistState.active) {
+    game.antagonistState.y += game.antagonistState.speed * dt;
+    if (game.antagonistState.y >= H) {
+      game.antagonistState.active = false;
+      // Remove antagonist from game state
+      const index = game.gameState.indexOf(game.antagonistState);
+      if (index > -1) {
+        game.gameState.splice(index, 1);
+      }
+    }
+  }
+}
+
+
 
 
 
