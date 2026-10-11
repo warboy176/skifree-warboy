@@ -458,4 +458,4 @@ Operator direction from the daily report lands here.
 - [x] Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect)
 - [x] Add a function to track and update style points based on proximity to skiers and successful crashes through obstacles
 - [!] Implement a visual feedback system that displays a brief style point counter on screen when style points are earned  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds
+- [x] Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds

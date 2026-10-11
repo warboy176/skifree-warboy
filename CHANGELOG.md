@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds (initAchievementRegistry, updateStyleScoreAchievements)
 - Add a function to track and update style points based on proximity to skiers and successful crashes through obstacles (initStyleScoreTracking, updateStyleScoreBasedOnProximityAndCrashes)
 - Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect) (initComboSystem, updateComboDisplay)
 - Reset the combo multiplier to 1 when a style action fails or a collision occurs (resetComboMultiplierOnFailure)
