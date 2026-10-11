@@ -242,6 +242,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+registerChaseAntagonistAchievement();
+
 registerStyleProximityAchievement();
 
 initMutantSnowWolves();
@@ -4612,6 +4614,12 @@ function updateStyleScoreAchievements(dt) {
     }
   }
 }
+
+function registerChaseAntagonistAchievement() {
+    const newAchievement = { type: 'event', key: 'chase_antagonist_sighted', unlockThreshold: 1 };
+    game.achievements.push(newAchievement);
+}
+
 
 
 
