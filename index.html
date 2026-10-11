@@ -4480,6 +4480,20 @@ function spawnOilSlicks(dt) {
   }
 }
 
+function checkOilSlickCollisions() {
+  for (let i = game.oilSlicks.length - 1; i >= 0; i--) {
+    const slick = game.oilSlicks[i];
+    if (player.x < slick.x + slick.width &&
+        player.x + player.width > slick.x &&
+        player.y < slick.y + slick.height &&
+        player.y + player.height > slick.y) {
+      applyPenaltyToStyleScoreOnHazardCrash("oilSlick");
+      game.oilSlicks.splice(i, 1);
+    }
+  }
+}
+
+
 
 
 
