@@ -432,7 +432,7 @@ Operator direction from the daily report lands here.
 - [!] Apply the multiplier to the score when the player completes a slalom pass, increasing points earned  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Display the current multiplier and style score in the HUD using the existing score display
 - [x] Apply penalty points (50) to the style score when the player crashes into a tree or oil slick
-- [ ] Initialize an empty achievements registry in localStorage on first load, if none exists
+- [x] Initialize an empty achievements registry in localStorage on first load, if none exists
 - [ ] Add a function to mark an achievement as unlocked and save the updated list to localStorage
 - [ ] Create a function to check if an achievement is already unlocked by reading from localStorage
 - [ ] Ensure the registry persists across page reloads without requiring user re-entry
