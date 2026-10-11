@@ -4455,6 +4455,13 @@ function checkDogCrash(player, dt) {
   }
 }
 
+function initOilSlicks() {
+  game.oilSlicks = [];
+  game.oilSlicks.update = function(dt) {};
+  game.oilSlicks.draw = function(ctx) {};
+}
+
+
 
 
 
