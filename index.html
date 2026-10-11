@@ -4533,6 +4533,26 @@ function resetComboMultiplierOnFailure() {
     applyStylePointsToNPCs();
 }
 
+function updateComboDisplay(dt) {
+    if (typeof game.comboStreak !== 'number') game.comboStreak = 0;
+    const now = Date.now();
+    const screenX = W/2 + (player.x - player.x);
+    
+    if (game.comboStreak >= 5) {
+        const flashCycle = Math.floor(now / 200) % 2;
+        if (flashCycle === 0) {
+            ctx.fillStyle = 'white';
+            ctx.font = '24px Arial';
+            ctx.fillText(`x${game.comboStreak}`, W - 100, 50);
+        }
+    } else {
+        ctx.fillStyle = 'white';
+        ctx.font = '24px Arial';
+        ctx.fillText(`x${game.comboStreak}`, W - 100, 50);
+    }
+}
+
+
 
 
 
