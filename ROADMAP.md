@@ -440,7 +440,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage
 - [x] Add a jump counter variable initialized to 0 in the game state
 - [!] Increment the jump counter by 1 each time the player lands from a jump, detected when transitioning from JUMPING to SKIING state  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Display the jump counter on the HUD using the existing score rendering function
+- [!] Display the jump counter on the HUD using the existing score rendering function  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Create a function to check if the jump counter reaches 10 and unlock 'Jumpmaster' in localStorage
 - [ ] Add a visual HUD indicator to display unlocked achievements with original pixel-art icons and labels
 
