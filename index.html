@@ -4415,6 +4415,22 @@ function spawnDogs(dt) {
   }
 }
 
+function checkDogCrash(player, dt) {
+  for (let i = 0; i < game.dogs.length; i++) {
+    const dog = game.dogs[i];
+    if (player.x < dog.x + dog.width &&
+        player.x + player.width > dog.x &&
+        player.y < dog.y + dog.height &&
+        player.y + player.height > dog.y) {
+      dog.crash = true;
+      addDefaultAchievement(ACHIEVEMENT_DEFINITIONS.dogCrash);
+      game.dogs.splice(i, 1);
+      i--;
+    }
+  }
+}
+
+
 
 
 
