@@ -442,7 +442,7 @@ Operator direction from the daily report lands here.
 - [!] Increment the jump counter by 1 each time the player lands from a jump, detected when transitioning from JUMPING to SKIING state  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Display the jump counter on the HUD using the existing score rendering function  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a jump counter variable initialized to 0 in the player object
-- [ ] Create a function that increments the jump counter on each jump and unlocks 'Jumpmaster' in localStorage when it reaches 10
+- [x] Create a function that increments the jump counter on each jump and unlocks 'Jumpmaster' in localStorage when it reaches 10
 - [ ] Add a visual HUD indicator to display unlocked achievements with original pixel-art icons and labels
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
