@@ -4637,6 +4637,18 @@ function spawnAntagonistIfActive() {
   }
 }
 
+function updateAntagonistState(dt) {
+    if (PlayerState.inputActive || input.left || input.right || input.down || input.pointer) {
+        game.antagonistState.inactiveTimer = 0;
+    } else {
+        game.antagonistState.inactiveTimer += dt;
+        if (game.antagonistState.inactiveTimer >= 30) {
+            game.antagonistState.isActive = true;
+        }
+    }
+}
+
+
 
 
 
