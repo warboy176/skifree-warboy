@@ -4513,7 +4513,7 @@ function updateComboStreak(actionTime) {
 
 function applyComboMultiplierToScore() {
   if (game.comboStreak >= 2) {
-    applyStyleMultiplierToScore(player.styleScore * game.comboStreak);
+    applyStyleMultiplierToScore(game.comboStreak);
   }
 }
 
