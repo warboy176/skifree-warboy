@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the registry persists across page reloads without requiring user re-entry (loadRegistryFromStorage, saveRegistryToStorage)
 - Create a function to check if an achievement is already unlocked by reading from localStorage (isAchievementUnlocked)
 - Add a function to mark an achievement as unlocked and save the updated list to localStorage (unlockAchievement)
 - Initialize an empty achievements registry in localStorage on first load, if none exists (initAchievementsRegistry)
