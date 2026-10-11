@@ -448,7 +448,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to track and update unlocked achievements in the game state, triggering HUD updates only when new achievements are earned  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to ensure the HUD indicator only appears when at least one achievement is unlocked, and hides when none are earned  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Add a new function to track and record 'slaloming close to skiers' as a distinct achievement trigger
+- [ ] Add a function to detect when the player's x-position is within 15 pixels of an NPC skier's x-position while both are moving
+- [ ] Add a function to record 'slaloming close to skiers' as a distinct achievement trigger when proximity is detected for at least 0.5 seconds
 - [ ] Add a new function to detect and register 'crashing through dogs' as a separate achievement event
 - [ ] Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition
 - [ ] Add a new function to increment and store combo multipliers during chains of successful style actions
