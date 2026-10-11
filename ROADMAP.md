@@ -456,4 +456,6 @@ Operator direction from the daily report lands here.
 - [x] Store the current combo multiplier in a variable and update it only when a style action succeeds without interruption
 - [x] Reset the combo multiplier to 1 when a style action fails or a collision occurs
 - [x] Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect)
-- [ ] Add a new function to update the achievements registry with current score-based style points and trigger visual feedback
+- [ ] Add a function to track and update style points based on proximity to skiers and successful crashes through obstacles
+- [ ] Implement a visual feedback system that displays a brief style point counter on screen when style points are earned
+- [ ] Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds
