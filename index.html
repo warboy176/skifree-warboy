@@ -4276,6 +4276,16 @@ function updateHUD(game, ctx) {
   ctx.fillText('Style: ' + game.styleScore, W - 100, 50);
 }
 
+function applyPenaltyToStyleScoreOnHazardCrash(hazardType) {
+  if (hazardType === 'tree' || hazardType === 'oilSlick') {
+    game.styleScore -= 50;
+    game.shake = .25;
+    logPlayerEvent('crash',{distance:game.distance,speed:player.speed});
+    if (typeof game.playCrashSound == 'function') game.playCrashSound();
+  }
+}
+
+
 
 
 
