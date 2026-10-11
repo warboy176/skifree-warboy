@@ -432,7 +432,10 @@ Operator direction from the daily report lands here.
 - [!] Apply the multiplier to the score when the player completes a slalom pass, increasing points earned  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Display the current multiplier and style score in the HUD using the existing score display
 - [x] Apply penalty points (50) to the style score when the player crashes into a tree or oil slick
-- [ ] Add a persistent achievements registry that stores unlocked achievements in localStorage and initializes with empty state
+- [ ] Initialize an empty achievements registry in localStorage on first load, if none exists
+- [ ] Add a function to mark an achievement as unlocked and save the updated list to localStorage
+- [ ] Create a function to check if an achievement is already unlocked by reading from localStorage
+- [ ] Ensure the registry persists across page reloads without requiring user re-entry
 - [ ] Implement a function to check and unlock 'Snow-Wolf Slayer' when the chase antagonist is defeated, storing the result in localStorage
 - [ ] Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage
 - [ ] Implement a function to check and unlock 'Jumpmaster' when the player lands 10 jumps, storing the result in localStorage
