@@ -1,4 +1,5 @@
 # Changelog
+- Add a combo multiplier tracker that starts at 1 and increments by 1 for each consecutive style action (initComboTracker, updateComboStreak, applyComboMultiplierToScore)
 - Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition (initOilSlicks, spawnOilSlicks, checkOilSlickCollisions)
 - Add a new function to detect and register 'crashing through dogs' as a separate achievement event (initDogs, spawnDogs, checkDogCrash)
 - Add a function to detect when the player's x-position is within 15 pixels of an NPC skier's x-position while both are moving (initNPCs, checkNPCProximity)
