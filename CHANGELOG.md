@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to spawn the antagonist at a fixed offset behind the player when triggered, ensuring it appears only once (initAntagonistState, spawnAntagonistAtOffset, updateAntagonist)
 - Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after 30 seconds of no input (initAntagonistState, updateAntagonistState, spawnAntagonistIfActive)
 - Define the chase antagonist's original visual design using only code-drawn shapes in the canvas context (initNPCs, drawChaseAntagonist, registerChaseAntagonistAchievement)
 - Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds (initAchievementRegistry, updateStyleScoreAchievements)
