@@ -4500,6 +4500,16 @@ function initComboTracker() {
   game.comboLastActionTime = null;
 }
 
+function updateComboStreak(actionTime) {
+  if (actionTime - game.comboLastActionTime < COMBO_STREAK_WINDOW_MS) {
+    game.comboStreak += 1;
+  } else {
+    game.comboStreak = 1;
+  }
+  game.comboLastActionTime = actionTime;
+}
+
+
 
 
 
