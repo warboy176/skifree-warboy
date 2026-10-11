@@ -460,7 +460,10 @@ Operator direction from the daily report lands here.
 - [!] Implement a visual feedback system that displays a brief style point counter on screen when style points are earned  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Create a persistent achievements registry that stores and updates score-based style milestones upon reaching new thresholds
 
-- [ ] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
+- [ ] Define the chase antagonist's original visual design using only code-drawn shapes in the canvas context
+- [ ] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after 30 seconds of no input
+- [ ] Add a function to spawn the antagonist at a fixed offset behind the player when triggered, ensuring it appears only once
+- [ ] Implement the antagonist's unique movement pattern: slow tracking of the player with periodic acceleration bursts when within 100px
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
 - [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, with visual feedback on screen
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
