@@ -4696,6 +4696,20 @@ function registerAntagonistAchievement() {
   }
 }
 
+function initBiomes() {
+  game.biomes = [];
+  for (const threshold of game.biomeThresholds) {
+    const biome = {
+      id: threshold.id,
+      threshold: threshold.value,
+      tint: BIOME_TINTS[threshold.id],
+      patterns: NIGHT_BIOME_PATTERNS[threshold.id] || []
+    };
+    game.biomes.push(biome);
+  }
+}
+
+
 
 
 
