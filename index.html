@@ -4709,6 +4709,24 @@ function initBiomes() {
   }
 }
 
+function drawBiomeBackground(ctx, meters) {
+  if (!game.currentBiome || !game.currentBiome.patterns) return;
+  const pattern = game.currentBiome.patterns;
+  const scale = METERS_PER_PIXEL;
+  ctx.fillStyle = 'white';
+  for (let i = 0; i < pattern.length; i += 2) {
+    const offsetX = pattern[i];
+    const offsetY = pattern[i + 1];
+    ctx.fillRect(
+      (meters.x + offsetX) * scale,
+      (meters.y + offsetY) * scale,
+      4 * scale,
+      4 * scale
+    );
+  }
+}
+
+
 
 
 
