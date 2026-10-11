@@ -3187,18 +3187,26 @@ function checkAndUnlockJumpmasterAchievement() {
 }
 
 function updateAchievementTrophies() {
-  ctx.font = '700 12px "Courier New", monospace';
-  ctx.fillStyle = '#ffffff';
-  ctx.textBaseline = 'top';
-
   game.achievements.forEach((achievement, index) => {
     if (achievement.unlocked) {
       drawAchievementIcon(ctx, W - 222, HUD_H + 16 + index * 20);
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText(achievement.title, W - 200, HUD_H + 20 + index * 20);
-      ctx.fillText(achievement.description, W - 200, HUD_H + 35 + index * 20);
+      drawAchievementLabel(achievement, W - 200, HUD_H + 20 + index * 20);
     }
   });
+}
+
+// Renders an unlocked achievement's title/description using the game's established
+// pixel-style HUD font ("Courier New", monospace, image smoothing disabled) rather than
+// a sprite-drawing helper like drawMiniWarboy, which draws an obstacle, not text.
+function drawAchievementLabel(achievement, x, y) {
+  if (!achievement) return;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.font = '700 12px "Courier New", monospace';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText(achievement.title, x, y);
+  ctx.fillStyle = '#eefaff';
+  ctx.fillText(achievement.description, x, y + 15);
 }
 
 function initAchievements() {
