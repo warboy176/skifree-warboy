@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to mark an achievement as unlocked and save the updated list to localStorage (unlockAchievement)
 - Initialize an empty achievements registry in localStorage on first load, if none exists (initAchievementsRegistry)
 - Apply penalty points (50) to the style score when the player crashes into a tree or oil slick (applyPenaltyToStyleScoreOnHazardCrash)
 - Display the current multiplier and style score in the HUD using the existing score display (updateHUD)
