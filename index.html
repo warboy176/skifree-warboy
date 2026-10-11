@@ -4620,6 +4620,24 @@ function registerChaseAntagonistAchievement() {
     game.achievements.push(newAchievement);
 }
 
+function spawnAntagonistIfActive() {
+  if (game.antagonistState.isActive && !game.npcSkiers.some(npc => npc.type === 'antagonist')) {
+    const x = Math.random() * (window.innerWidth - NPC_SKIER_WIDTH);
+    const y = -NPC_SKIER_HEIGHT;
+    game.npcSkiers.push({
+      x,
+      y,
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT,
+      speed: NPC_SKIER_SPEED,
+      color: NPC_SKIER_COLOR,
+      type: 'antagonist'
+    });
+    game.antagonistState.isActive = false;
+  }
+}
+
+
 
 
 
