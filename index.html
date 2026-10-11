@@ -4398,6 +4398,24 @@ function incrementJumpCounter() {
     }
 }
 
+function spawnDogs(dt) {
+  if (game.dogs.length < NPC_SPAWN_MAX_SKIERS) {
+    game.npcSpawnTimer -= dt;
+    if (game.npcSpawnTimer <= 0) {
+      game.npcSpawnTimer = rand(NPC_SPAWN_MIN_INTERVAL, NPC_SPAWN_MAX_INTERVAL);
+      const dog = {
+        x: Math.random() * (canvas.width - NPC_SKIER_WIDTH),
+        y: -NPC_SKIER_HEIGHT,
+        width: NPC_SKIER_WIDTH,
+        height: NPC_SKIER_HEIGHT,
+        speed: NPC_SKIER_SPEED
+      };
+      game.dogs.push(dog);
+    }
+  }
+}
+
+
 
 
 
