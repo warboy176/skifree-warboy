@@ -465,5 +465,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to spawn the antagonist at a fixed offset behind the player when triggered, ensuring it appears only once
 - [x] Implement the antagonist's unique movement pattern: slow tracking of the player with periodic acceleration bursts when within 100px
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
-- [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, with visual feedback on screen
+- [ ] Add a 'slalom proximity' detection system that checks distance between player and NPCs every frame
+- [ ] Implement visual feedback (brief flash or trail effect) when player passes close to an NPC
+- [ ] Add style points to score for each close pass, with increasing multiplier for consecutive passes
+- [ ] Display real-time style multiplier and total style points in the HUD
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
