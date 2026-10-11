@@ -4648,6 +4648,16 @@ function updateAntagonistState(dt) {
   }
 }
 
+function spawnAntagonistAtOffset() {
+  if (!game.antagonistState.active) {
+    game.antagonistState.active = true;
+    game.antagonistState.x = player.x - NPC_SPAWN_SPACING;
+    game.antagonistState.y = player.y;
+    game.antagonistState.speed = NPC_SKIER_SPEED * 1.2;
+  }
+}
+
+
 
 
 
