@@ -620,6 +620,8 @@ capMultiplierAtFive();
 
 checkClosePasses(dt);
 
+checkSlalomClosePasses(dt);
+
 drawTrees(dt);
 
 checkAchievementTrigger(dt);
@@ -3889,6 +3891,29 @@ function checkClosePasses(dt) {
   if (foundClosePass) {
     player.closePass = true;
     setTimeout(() => { player.closePass = false; }, 100);
+  }
+}
+
+// Rewards threading between NPC skiers like slalom gates: fires once per NPC each time
+// the player grazes it closely without colliding (reuses checkClosePassCollision's padded-box
+// test rather than a new margin constant), using a per-NPC `slalomPassed` flag so a single
+// pass can't repeat the bonus every frame, and re-arms once the player drifts back out of range.
+function checkSlalomClosePasses(dt) {
+  if (!Array.isArray(game.npcSkiers)) return;
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    if (checkClosePassCollision(player, npc)) {
+      if (!npc.slalomPassed) {
+        npc.slalomPassed = true;
+        game.style += 15;
+        game.trickText = 'SLALOM +15';
+        game.trickTime = .6;
+        checkAchievementsOnScorableAction('slalom', 15);
+      }
+    } else {
+      npc.slalomPassed = false;
+    }
   }
 }
 
