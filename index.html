@@ -4285,6 +4285,31 @@ function applyPenaltyToStyleScoreOnHazardCrash(hazardType) {
   }
 }
 
+function unlockAchievement(achievementId) {
+    if (!ACHIEVEMENT_DEFINITIONS[achievementId]) return;
+    
+    const achievement = ACHIEVEMENT_DEFINITIONS[achievementId];
+    
+    if (game.achievements && game.achievements.some(a => a.id === achievementId && a.unlocked)) return;
+    
+    if (achievement.unlockThreshold) {
+        if (achievementId === 'speedAchievement') {
+            if (PlayerState.speed < achievement.unlockThreshold) return;
+        } else if (GameState.score < achievement.unlockThreshold) {
+            return;
+        }
+    }
+    
+    game.achievements = game.achievements || [];
+    game.achievements.push({ id: achievementId, unlocked: true });
+    
+    localStorage.setItem('gameState', JSON.stringify(game));
+    
+    showAchievementUnlock(achievement);
+    displayAchievementUnlock(achievementId, `Achievement Unlocked: ${achievement.name}`);
+}
+
+
 
 
 
