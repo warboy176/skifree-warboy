@@ -437,6 +437,6 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check if an achievement is already unlocked by reading from localStorage
 - [x] Ensure the registry persists across page reloads without requiring user re-entry
 - [!] Implement a function to check and unlock 'Snow-Wolf Slayer' when the chase antagonist is defeated, storing the result in localStorage  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage
+- [x] Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage
 - [ ] Implement a function to check and unlock 'Jumpmaster' when the player lands 10 jumps, storing the result in localStorage
 - [ ] Add a visual HUD indicator to display unlocked achievements with original pixel-art icons and labels

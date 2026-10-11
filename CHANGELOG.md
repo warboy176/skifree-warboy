@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to check and unlock 'Forest Ghost' when the player completes the forest biome without hitting any trees, storing the result in localStorage (unlockForestGhostIfCompleted)
 - Ensure the registry persists across page reloads without requiring user re-entry (loadRegistryFromStorage, saveRegistryToStorage)
 - Create a function to check if an achievement is already unlocked by reading from localStorage (isAchievementUnlocked)
 - Add a function to mark an achievement as unlocked and save the updated list to localStorage (unlockAchievement)
