@@ -451,6 +451,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to detect when the player's x-position is within 15 pixels of an NPC skier's x-position while both are moving
 - [!] Add a function to record 'slaloming close to skiers' as a distinct achievement trigger when proximity is detected for at least 0.5 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a new function to detect and register 'crashing through dogs' as a separate achievement event
-- [ ] Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition
+- [x] Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition
 - [ ] Add a new function to increment and store combo multipliers during chains of successful style actions
 - [ ] Add a new function to update the achievements registry with current score-based style points and trigger visual feedback
