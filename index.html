@@ -4461,6 +4461,26 @@ function initOilSlicks() {
   game.oilSlicks.draw = function(ctx) {};
 }
 
+function spawnOilSlicks(dt) {
+  if (!game.oilSlicks) game.oilSlicks = [];
+  if (!game.oilSpawnTimer) game.oilSpawnTimer = Math.random() * 10 + 10;
+
+  game.oilSpawnTimer -= dt;
+  if (game.oilSpawnTimer <= 0) {
+    game.oilSlicks.push({
+      x: Math.random() * game.width,
+      y: player.y + 100,
+      width: 60,
+      height: 20,
+      type: 'oil',
+      color: '#333333',
+      seed: Math.floor(Math.random() * 1000)
+    });
+    game.oilSpawnTimer = Math.random() * 10 + 10;
+  }
+}
+
+
 
 
 
