@@ -3660,6 +3660,8 @@ function initAntagonist() {
 
   document.body.appendChild(game.antagonist.sprite);
 }
+registerAntagonistAchievement();
+
 
 function initAntagonistSpawnDelay() {
   game.antagonist.spawnDelay = 3000;
@@ -4670,6 +4672,30 @@ function updateAntagonist(dt) {
     }
   }
 }
+
+function registerAntagonistAchievement() {
+  if (!game.antagonistState || !game.antagonistState.isActive) return;
+
+  const distance = Math.sqrt(
+    Math.pow(player.x - game.antagonistState.x, 2) +
+    Math.pow(player.y - game.antagonistState.y, 2)
+  );
+
+  if (distance <= 100) {
+    if (!game.antagonistCloseCallTimer) {
+      game.antagonistCloseCallTimer = 0;
+    }
+    game.antagonistCloseCallTimer += 1;
+    if (game.antagonistCloseCallTimer >= 60) { // assuming 60fps
+      game.achievements = game.achievements || {};
+      game.achievements['Antagonist Close Call'] = true;
+      game.antagonistCloseCallTimer = null;
+    }
+  } else {
+    game.antagonistCloseCallTimer = null;
+  }
+}
+
 
 
 
