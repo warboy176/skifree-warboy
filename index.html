@@ -4314,6 +4314,20 @@ function isAchievementUnlocked(achievementId) {
   return achievements.some(a => a.id === achievementId);
 }
 
+function loadRegistryFromStorage(){
+    try {
+        const registryData = localStorage.getItem('skiFreeWarboy_registry');
+        if (registryData) {
+            game.registry = JSON.parse(registryData);
+        } else {
+            game.registry = [];
+        }
+    } catch (e) {
+        game.registry = [];
+    }
+}
+
+
 
 
 
