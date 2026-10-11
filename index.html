@@ -4333,6 +4333,16 @@ function saveRegistryToStorage(){
   } catch(e) {}
 }
 
+function unlockForestGhostIfCompleted() {
+    if (game.registry.treeHits === 0 && game.biome === 'forest') {
+        const achievementKey = 'Forest Ghost';
+        if (!localStorage.getItem(achievementKey)) {
+            localStorage.setItem(achievementKey, 'unlocked');
+        }
+    }
+}
+
+
 
 
 
