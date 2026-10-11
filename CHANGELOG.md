@@ -1,4 +1,5 @@
 # Changelog
+- Apply penalty points (50) to the style score when the player crashes into a tree or oil slick (applyPenaltyToStyleScoreOnHazardCrash)
 - Display the current multiplier and style score in the HUD using the existing score display (updateHUD)
 - Reset the multiplier to 1 when the player crashes or hits a tree (resetMultiplierOnCrashOrTreeHit)
 - Display the current multiplier on screen as a floating HUD element that updates in real time (drawMultiplierHUD)

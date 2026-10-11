@@ -431,5 +431,5 @@ Operator direction from the daily report lands here.
 - [x] Reset the multiplier to 1 when the player crashes or hits a tree
 - [!] Apply the multiplier to the score when the player completes a slalom pass, increasing points earned  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Display the current multiplier and style score in the HUD using the existing score display
-- [ ] Apply penalty points (50) to the style score when the player crashes into a tree or oil slick
+- [x] Apply penalty points (50) to the style score when the player crashes into a tree or oil slick
 - [ ] Create a persistent achievements registry with new original unlocks: 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Ghost' (complete forest biome without hitting trees), 'Jumpmaster' (land 10 jumps)
