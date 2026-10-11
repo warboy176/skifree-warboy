@@ -455,5 +455,5 @@ Operator direction from the daily report lands here.
 - [x] Add a combo multiplier tracker that starts at 1 and increments by 1 for each consecutive style action
 - [x] Store the current combo multiplier in a variable and update it only when a style action succeeds without interruption
 - [x] Reset the combo multiplier to 1 when a style action fails or a collision occurs
-- [ ] Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect)
+- [x] Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect)
 - [ ] Add a new function to update the achievements registry with current score-based style points and trigger visual feedback

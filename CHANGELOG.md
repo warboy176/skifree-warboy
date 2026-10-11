@@ -1,4 +1,5 @@
 # Changelog
+- Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect) (initComboSystem, updateComboDisplay)
 - Reset the combo multiplier to 1 when a style action fails or a collision occurs (resetComboMultiplierOnFailure)
 - Store the current combo multiplier in a variable and update it only when a style action succeeds without interruption (initComboSystem, updateComboStreak, applyComboMultiplierToScore)
 - Add a combo multiplier tracker that starts at 1 and increments by 1 for each consecutive style action (initComboTracker, updateComboStreak, applyComboMultiplierToScore)
