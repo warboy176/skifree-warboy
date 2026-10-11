@@ -452,5 +452,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to record 'slaloming close to skiers' as a distinct achievement trigger when proximity is detected for at least 0.5 seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a new function to detect and register 'crashing through dogs' as a separate achievement event
 - [x] Add a new function to detect and register 'hitting oil slicks' as a penalty-based achievement condition
-- [ ] Add a new function to increment and store combo multipliers during chains of successful style actions
+- [ ] Add a combo multiplier tracker that starts at 1 and increments by 1 for each consecutive style action
+- [ ] Store the current combo multiplier in a variable and update it only when a style action succeeds without interruption
+- [ ] Reset the combo multiplier to 1 when a style action fails or a collision occurs
+- [ ] Display the current combo multiplier on screen with a visual indicator (e.g., a growing number or flashing effect)
 - [ ] Add a new function to update the achievements registry with current score-based style points and trigger visual feedback
