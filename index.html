@@ -5015,6 +5015,8 @@ function initTreePositions() {
         game.treePositions = [];
     }
 }
+addTreeAnimationBranch(100, 300, 40, Math.PI / 6, 0, 0.3);
+
 
 function spawnTrees(dt) {
   if (game.treePositions.length < 10) {
@@ -5051,6 +5053,30 @@ function updateTreeAnimation(dt) {
     ctx.restore();
   }
 }
+
+function addTreeAnimationBranch(x, y, branchLength, branchAngle, swayPhase, swayAmplitude) {
+  const swayOffset = swayAmplitude * Math.sin(swayPhase);
+  const actualAngle = branchAngle + swayOffset;
+  
+  game.treePositions.push({
+    x: x,
+    y: y,
+    length: branchLength,
+    angle: actualAngle,
+    swayPhase: swayPhase,
+    swayAmplitude: swayAmplitude
+  });
+  
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(actualAngle);
+  ctx.fillStyle = '#555';
+  ctx.fillRect(0, -1, branchLength, 2);
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(branchLength - 1, -1, 1, 2);
+  ctx.restore();
+}
+
 
 
 
