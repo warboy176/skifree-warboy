@@ -4907,6 +4907,39 @@ function saveAchievementsToStorage() {
     }
 }
 
+function drawAchievementBadge(achievement, x, y, durationMs) {
+  const badgeWidth = 120;
+  const badgeHeight = 40;
+  const padding = 5;
+  
+  const def = ACHIEVEMENT_DEFINITIONS[achievement];
+  if (!def) return;
+  
+  const startTime = Date.now();
+  
+  function renderBadge() {
+    if (Date.now() - startTime > durationMs) return;
+    
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x, y, badgeWidth, badgeHeight);
+    
+    ctx.fillStyle = def.tint;
+    ctx.fillRect(x, y, badgeWidth, badgeHeight);
+    
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '12px sans-serif';
+    ctx.fillText(def.name, x + badgeWidth/2, y + badgeHeight/2);
+    
+    requestAnimationFrame(renderBadge);
+  }
+  
+  renderBadge();
+}
+
+
 
 
 
