@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to draw a small, original code-drawn popup badge at the top-center of the screen for 1.5 seconds when an achievement is unlocked (drawAchievementBadge)
 - Add a function to track unlocked achievements and store them in a persistent array (initAchievementsStorage, saveAchievementsToStorage)
 - Create a state flag to track if 'Slick Willy' has been unlocked, and trigger the unlock only once upon first successful landing on an oil slick after a jump (initSlickWillyUnlockState, checkSlickWillyUnlockOnLanding)
 - Add a function to detect when the player lands on an oil slick after a jump, using collision detection with the oil slick's position and the player's landing frame (initOilSlicks, detectPlayerLandingOnOilSlick, registerOilSlickHazardAchievement)
