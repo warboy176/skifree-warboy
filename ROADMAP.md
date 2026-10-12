@@ -497,6 +497,6 @@ Operator direction from the daily report lands here.
 - [!] Ensure trees scroll at the same speed as the background, maintaining depth-based parallax with the player's position  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [x] Add a 'stylePoints' counter that increments by 10 when the player passes within 15px of an NPC skier without colliding
 - [x] Track consecutive style hits with a 'styleStreak' variable that resets to 0 on collision or missed skier
-- [ ] Apply a 1.5x multiplier to the score whenever styleStreak is greater than 0, updating the displayed score in real time
+- [x] Apply a 1.5x multiplier to the score whenever styleStreak is greater than 0, updating the displayed score in real time
 - [ ] Display the current style streak and multiplier (e.g., 'x1.5') in the HUD using the existing score display area
 - [ ] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
