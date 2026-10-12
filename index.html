@@ -3235,6 +3235,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerOilSlickHazardAchievement();
+
 
 function initAchievementSystem() {
     if (!game.achievements) {
@@ -4836,6 +4838,15 @@ function detectPlayerLandingOnOilSlick(player, dt) {
     }
   }
 }
+
+function registerOilSlickHazardAchievement() {
+  if (!game.achievementsRegistry) game.achievementsRegistry = {};
+  if (!game.achievementsRegistry['oil_slick_landing']) {
+    addDefaultAchievement('oil_slick_landing', 'hazard_crash', 1);
+    game.achievementsRegistry['oil_slick_landing'] = true;
+  }
+}
+
 
 
 
