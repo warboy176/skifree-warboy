@@ -4955,6 +4955,27 @@ function updateGameTerrainType() {
     }
 }
 
+function updateTerrainType(game, dt) {
+  if (!game.biomeThresholds || !game.player) return;
+  
+  const playerY = game.player.y;
+  let newTerrainType = 'forest';
+  
+  for (let i = 0; i < BIOME_THRESHOLDS.length; i++) {
+    if (playerY >= BIOME_THRESHOLDS[i].y) {
+      newTerrainType = BIOME_THRESHOLDS[i].type;
+    } else {
+      break;
+    }
+  }
+  
+  if (game.terrainType !== newTerrainType) {
+    game.terrainType = newTerrainType;
+    updateGameTerrainType();
+  }
+}
+
+
 
 
 
