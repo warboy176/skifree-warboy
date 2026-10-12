@@ -473,5 +473,5 @@ Operator direction from the daily report lands here.
 - [x] Modify the score update logic to apply the current styleMultiplier to points earned from close passes
 - [x] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
 - [x] Add a stylePoints variable initialized to 0 in the game state
-- [ ] Update the HUD to display stylePoints and multiplier in real time during gameplay
+- [x] Update the HUD to display stylePoints and multiplier in real time during gameplay
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
