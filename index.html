@@ -5036,6 +5036,23 @@ function updateAndDrawTrees(ctx, dt) {
   }
 }
 
+function updateTreeAnimation(dt) {
+  for (let i = 0; i < game.treePositions.length; i++) {
+    const tree = game.treePositions[i];
+    tree.swayPhase += dt * 0.01;
+    const swayOffset = tree.swayAmplitude * Math.sin(tree.swayPhase);
+    ctx.save();
+    ctx.translate(tree.x, tree.y);
+    ctx.rotate(tree.branchAngle + swayOffset);
+    ctx.fillStyle = '#8B4513';
+    ctx.fillRect(-2, 0, 4, -tree.branchLength);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(-3, -tree.branchLength, 6, 6);
+    ctx.restore();
+  }
+}
+
+
 
 
 
