@@ -479,5 +479,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to check if an achievement is already unlocked by reading from localStorage
 - [x] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
 - [!] Implement a function to check and unlock 'Organic Mechanic' when the player crashes through a dog without dying  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
-- [ ] Implement a function to check and unlock 'Slick Willy' when the player lands after a jump on an oil slick
+- [ ] Add a function to detect when the player lands on an oil slick after a jump, using collision detection with the oil slick's position and the player's landing frame
+- [ ] Create a state flag to track if 'Slick Willy' has been unlocked, and trigger the unlock only once upon first successful landing on an oil slick after a jump
 - [ ] Add visual feedback (e.g., a brief popup) when an achievement is unlocked, using only original code-drawn UI elements
