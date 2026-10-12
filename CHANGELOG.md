@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect when the player lands on an oil slick after a jump, using collision detection with the oil slick's position and the player's landing frame (initOilSlicks, detectPlayerLandingOnOilSlick, registerOilSlickHazardAchievement)
 - Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing (initDroneBusterAchievement, checkDroneBusterUnlock)
 - Add a function to check if an achievement is already unlocked by reading from localStorage (loadUnlockedAchievements)
 - Add a function to mark an achievement as unlocked and save it to localStorage (unlockAchievement)
