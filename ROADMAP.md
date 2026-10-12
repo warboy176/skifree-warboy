@@ -471,6 +471,6 @@ Operator direction from the daily report lands here.
 - [!] Add a 'consecutiveClosePasses' counter that increments on each close pass and resets on collision or crash  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a 'styleMultiplier' that increases by 1 for each consecutive close pass, capping at 5
 - [x] Modify the score update logic to apply the current styleMultiplier to points earned from close passes
-- [ ] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
+- [x] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
 - [ ] Display real-time style multiplier and total style points in the HUD
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
