@@ -468,6 +468,9 @@ Operator direction from the daily report lands here.
 - [x] Add a 'slalom proximity' detection system that checks distance between player and NPCs every frame
 - [!] Add a particle system to emit brief flash effects when the player's x-position is within 30px of an NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a trail effect that persists for 100ms after the player passes an NPC, using a single frame of translucent pixel rendering  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add style points to score for each close pass, with increasing multiplier for consecutive passes
+- [ ] Add a 'consecutiveClosePasses' counter that increments on each close pass and resets on collision or crash
+- [ ] Implement a 'styleMultiplier' that increases by 1 for each consecutive close pass, capping at 5
+- [ ] Modify the score update logic to apply the current styleMultiplier to points earned from close passes
+- [ ] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
 - [ ] Display real-time style multiplier and total style points in the HUD
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
