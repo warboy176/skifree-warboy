@@ -466,7 +466,8 @@ Operator direction from the daily report lands here.
 - [x] Implement the antagonist's unique movement pattern: slow tracking of the player with periodic acceleration bursts when within 100px
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues
 - [x] Add a 'slalom proximity' detection system that checks distance between player and NPCs every frame
-- [ ] Implement visual feedback (brief flash or trail effect) when player passes close to an NPC
+- [ ] Add a particle system to emit brief flash effects when the player's x-position is within 30px of an NPC skier
+- [ ] Implement a trail effect that persists for 100ms after the player passes an NPC, using a single frame of translucent pixel rendering
 - [ ] Add style points to score for each close pass, with increasing multiplier for consecutive passes
 - [ ] Display real-time style multiplier and total style points in the HUD
 - [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
