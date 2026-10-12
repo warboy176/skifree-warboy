@@ -1453,6 +1453,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initTreeGeneration();
+
 initSlickWillyUnlockState();
 
 initStyleScoreTracking();
@@ -5002,6 +5004,12 @@ function generateRandomTreesAndDust() {
     game.branchDustPatterns.push({ x: W + 1, y: y + 3 + offset, width: 2, height: 2 });
   }
 }
+
+function initTreeGeneration() {
+    game.treePositions = [];
+    game.branchDustPatterns = [];
+}
+
 
 
 
