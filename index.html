@@ -4258,6 +4258,8 @@ function applyStyleScoringToGameLoop(dt) {
   // Apply style points to NPCs
   applyStylePointsToNPCs(dt);
 }
+checkDroneBusterUnlock(player, game.npcSkiers);
+
 
 function checkSnowWolfChaseCollision() {
   if (!game.npcSkiers) return;
@@ -4784,6 +4786,38 @@ function initDroneBusterAchievement() {
   dronebuster.type = 'action';
   game.achievements.push(dronebuster);
 }
+
+function checkDroneBusterUnlock(player, npcSkiers) {
+  if (!player.jumping) return;
+  
+  for (let i = 0; i < npcSkiers.length; i++) {
+    const drone = npcSkiers[i];
+    if (drone.type !== 'drone') continue;
+    
+    const playerBottom = player.y + player.jumpHeight;
+    const droneTop = drone.y;
+    const droneBottom = drone.y + drone.height;
+    
+    if (playerBottom > droneTop && player.y < droneBottom) {
+      const playerLeft = player.x;
+      const playerRight = player.x + 32;
+      const droneLeft = drone.x;
+      const droneRight = drone.x + drone.width;
+      
+      if (playerRight > droneLeft && playerLeft < droneRight) {
+        if (!drone.closePassFlag) {
+          game.achievements.droneBusterCounter++;
+          drone.closePassFlag = true;
+          
+          if (game.achievements.droneBusterCounter === 1) {
+            unlockAchievement('dronebuster');
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 
