@@ -474,4 +474,8 @@ Operator direction from the daily report lands here.
 - [x] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
 - [x] Add a stylePoints variable initialized to 0 in the game state
 - [x] Update the HUD to display stylePoints and multiplier in real time during gameplay
-- [ ] Add a persistent achievements registry with new entries for 'Dronebuster', 'Organic Mechanic', and 'Slick Willy' that unlock via gameplay events
+- [ ] Add a persistent achievements registry that stores unlocked achievements in localStorage and initializes with empty state
+- [ ] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
+- [ ] Implement a function to check and unlock 'Organic Mechanic' when the player crashes through a dog without dying
+- [ ] Implement a function to check and unlock 'Slick Willy' when the player lands after a jump on an oil slick
+- [ ] Add visual feedback (e.g., a brief popup) when an achievement is unlocked, using only original code-drawn UI elements
