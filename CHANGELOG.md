@@ -1,4 +1,5 @@
 # Changelog
+- Update game.terrainType to 'forest' when threshold is crossed (addForestBiomeThreshold, updateGameTerrainType)
 - Create a function to check if player's distance exceeds forest threshold (checkForestThreshold)
 - Add a depth threshold constant for forest biome at 2000 meters (addForestBiomeThreshold)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, updateSnowWolf)
