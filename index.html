@@ -4869,6 +4869,39 @@ function checkSlickWillyUnlockOnLanding(player, jump, oilSlicks) {
     }
 }
 
+function initAchievementsStorage() {
+    if (!game.state) game.state = {};
+    if (!game.state.achievements) {
+        game.state.achievements = [];
+    }
+    
+    const saveAchievements = () => {
+        localStorage.setItem('achievements', JSON.stringify(game.state.achievements));
+    };
+    
+    const originalPush = game.state.achievements.push;
+    game.state.achievements.push = function(...items) {
+        const result = originalPush.apply(this, items);
+        saveAchievements();
+        return result;
+    };
+    
+    const originalSplice = game.state.achievements.splice;
+    game.state.achievements.splice = function(...args) {
+        const result = originalSplice.apply(this, args);
+        saveAchievements();
+        return result;
+    };
+    
+    const storedAchievements = JSON.parse(localStorage.getItem('achievements') || '[]');
+    if (storedAchievements.length > 0) {
+        game.state.achievements = storedAchievements;
+    } else {
+        saveAchievements();
+    }
+}
+
+
 
 
 
