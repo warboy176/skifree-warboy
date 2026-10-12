@@ -607,6 +607,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+detectPlayerLandingOnOilSlick(player, dt);
+
 updateStyleMultiplier(dt);
 
 checkSlalomPasses(dt);
@@ -4817,6 +4819,24 @@ function checkDroneBusterUnlock(player, npcSkiers) {
     }
   }
 }
+
+function detectPlayerLandingOnOilSlick(player, dt) {
+  if (!player.isJumping || player.y > player.landingY) return;
+  for (let i = 0; i < game.oilSlicks.length; i++) {
+    const slick = game.oilSlicks[i];
+    if (player.y >= slick.y && player.y < slick.y + slick.h && player.x >= slick.x && player.x < slick.x + slick.w) {
+      applyPenaltyToStyleScoreOnHazardCrash();
+      applyStyleScoringToGameLoop();
+      game.oilHits = (game.oilHits || 0) + 1;
+      updateAchievementsOnHazardEncounter('oil');
+      game.shake = .25;
+      logPlayerEvent('crash',{distance:game.distance,speed:player.speed});
+      if (typeof game.playCrashSound == 'function') game.playCrashSound();
+      break;
+    }
+  }
+}
+
 
 
 
