@@ -5109,11 +5109,10 @@ function initStyleStreak() {
 }
 
 function applyStyleStreakMultiplierToScore(game, dt) {
-    if (game.styleStreak > 0 && game.styleScoreUpdateTime + game.styleScoreUpdateInterval < Date.now()) {
-        game.styleScoreUpdateTime = Date.now();
-        const multiplier = 1 + (game.styleStreak * 0.5);
-        game.score = Math.floor(game.score * multiplier);
-    }
+  if (game.styleStreak > 0) {
+    const multiplier = 1.5;
+    applyMultiplierToScore(game, multiplier);
+  }
 }
 
 
