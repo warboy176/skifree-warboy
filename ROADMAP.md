@@ -490,7 +490,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check if player's distance exceeds forest threshold
 - [x] Update game.terrainType to 'forest' when threshold is crossed
 - [x] Ensure terrainType update triggers visual changes in the next render cycle
-- [ ] Add a function to generate random tree positions and branch-dust patterns at the right edge of the canvas, using only original Warboy art drawn in code
+- [x] Add a function to generate random tree positions and branch-dust patterns at the right edge of the canvas, using only original Warboy art drawn in code
 - [ ] Implement a tree spawning system that creates new animated trees at depth 2000 with randomized vertical positions and unique branch-dust effects
 - [ ] Integrate the tree animation loop into the game's main update cycle, ensuring trees scroll in from the right and remain visible during gameplay
 - [ ] Implement tree animation: draw snow-dusted branches using original code-drawn art, with subtle sway motion over time

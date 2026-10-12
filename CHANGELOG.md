@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to generate random tree positions and branch-dust patterns at the right edge of the canvas, using only original Warboy art drawn in code (initTreeGeneration, generateRandomTreesAndDust)
 - Ensure terrainType update triggers visual changes in the next render cycle (updateTerrainType, renderTerrainVisuals)
 - Update game.terrainType to 'forest' when threshold is crossed (addForestBiomeThreshold, updateGameTerrainType)
 - Create a function to check if player's distance exceeds forest threshold (checkForestThreshold)
