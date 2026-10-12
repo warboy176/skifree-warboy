@@ -181,7 +181,8 @@ if (autoplay.enabled) {
     obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,
     cleanTime:0,maxSpeed:0,scoreSaved:false,milestone:0,lastTime:0,
     audioContext: null,
-    soundBuffer: null
+    soundBuffer: null,
+    terrainType: 'snow'
   };
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
