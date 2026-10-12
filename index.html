@@ -4766,6 +4766,16 @@ function updateStylePointsAndMultiplierHUD(dt) {
   ctx.fillText('x' + game.styleMultiplier.toString(), W - 60, HUD_H - 30);
 }
 
+function loadUnlockedAchievements() {
+  const unlockedAchievementKeys = JSON.parse(localStorage.getItem('achievements') || '[]');
+  for (const achievement of game.achievements) {
+    if (unlockedAchievementKeys.includes(achievement.id)) {
+      achievement.unlocked = true;
+    }
+  }
+}
+
+
 
 
 
