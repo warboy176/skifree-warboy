@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkNearMisses(dt);
+
 detectPlayerLandingOnOilSlick(player, dt);
 
 updateStyleMultiplier(dt);
@@ -5076,6 +5078,18 @@ function addTreeAnimationBranch(x, y, branchLength, branchAngle, swayPhase, sway
   ctx.fillRect(branchLength - 1, -1, 1, 2);
   ctx.restore();
 }
+
+function checkNearMisses(dt) {
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        const horizontalDistance = Math.abs(npc.x - player.x);
+        const verticalDistance = Math.abs(npc.y - player.y);
+        if (horizontalDistance < 15 && verticalDistance < 15 && !game.npcSkiers.some(npc=>checkClosePassCollision(player,npc))) {
+            game.stylePoints += 10;
+        }
+    }
+}
+
 
 
 
