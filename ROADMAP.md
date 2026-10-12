@@ -483,4 +483,4 @@ Operator direction from the daily report lands here.
 - [x] Create a state flag to track if 'Slick Willy' has been unlocked, and trigger the unlock only once upon first successful landing on an oil slick after a jump
 - [x] Add a function to track unlocked achievements and store them in a persistent array
 - [x] Create a function to draw a small, original code-drawn popup badge at the top-center of the screen for 1.5 seconds when an achievement is unlocked
-- [ ] Implement a function to update the UI by rendering the popup badge only when a new achievement is detected, using only original pixel-art style elements
+- [!] Implement a function to update the UI by rendering the popup badge only when a new achievement is detected, using only original pixel-art style elements  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
