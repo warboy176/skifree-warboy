@@ -4901,6 +4901,13 @@ function initAchievementsStorage() {
     }
 }
 
+function saveAchievementsToStorage() {
+    if (game.state.achievements && game.state.achievements.length > 0) {
+        localStorage.setItem('achievements', JSON.stringify(game.state.achievements));
+    }
+}
+
+
 
 
 
