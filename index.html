@@ -1561,6 +1561,8 @@ registerCrashThroughObstacleAchievement();
 
 initAchievementsSystem();
 addDefaultAchievement('Big Air', 'jumps', 5);
+initDroneBusterAchievement();
+
 
 registerHazardAchievement('oilSlick', 'Slick Survivor', 'Hit 5 oil slicks and keep skiing.', g => (g.oilHits||0) >= 5);
 registerHazardAchievement('rockHopper', 'Rock Hopper', 'Clear 5 rocks by jumping over them.', g => (g.rocksCleared||0) >= 5);
@@ -4774,6 +4776,15 @@ function loadUnlockedAchievements() {
     }
   }
 }
+
+function initDroneBusterAchievement() {
+  const dronebuster = createAchievement('Dronebuster', 'jump_through_drone', 1);
+  dronebuster.id = 'dronebuster';
+  dronebuster.unlocked = false;
+  dronebuster.type = 'action';
+  game.achievements.push(dronebuster);
+}
+
 
 
 
