@@ -478,6 +478,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to mark an achievement as unlocked and save it to localStorage
 - [x] Add a function to check if an achievement is already unlocked by reading from localStorage
 - [x] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
-- [ ] Implement a function to check and unlock 'Organic Mechanic' when the player crashes through a dog without dying
+- [!] Implement a function to check and unlock 'Organic Mechanic' when the player crashes through a dog without dying  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Implement a function to check and unlock 'Slick Willy' when the player lands after a jump on an oil slick
 - [ ] Add visual feedback (e.g., a brief popup) when an achievement is unlocked, using only original code-drawn UI elements
