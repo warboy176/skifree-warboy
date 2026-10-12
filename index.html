@@ -4985,13 +4985,21 @@ function renderTerrainVisuals(game, ctx) {
 }
 
 function generateRandomTreesAndDust() {
+  // Clear previous data
   game.treePositions = [];
   game.branchDustPatterns = [];
-  let numTrees = Math.floor(Math.random() * 10) + 1;
-  for (let i = 0; i < numTrees; i++) {
-    let y = Math.random() * H;
-    game.treePositions.push({x: W, y: y});
-    game.branchDustPatterns.push({x: W + 1, y: y + 3});
+
+  // Generate up to 10 trees
+  for (let i = 0; i < 10; i++) {
+    const y = Math.random() * H;
+    game.treePositions.push({ x: W, y, width: 3, height: 6 });
+  }
+
+  // Generate up to 10 dust patterns
+  for (let i = 0; i < 10; i++) {
+    const y = Math.random() * H;
+    const offset = (Math.random() - 0.5) * 4; // Random offset between -2 and +2
+    game.branchDustPatterns.push({ x: W + 1, y: y + 3 + offset, width: 2, height: 2 });
   }
 }
 
