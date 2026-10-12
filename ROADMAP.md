@@ -487,7 +487,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Add a depth threshold constant for forest biome at 2000 meters
-- [ ] Create a function to check if player's distance exceeds forest threshold
+- [x] Create a function to check if player's distance exceeds forest threshold
 - [ ] Update game.terrainType to 'forest' when threshold is crossed
 - [ ] Ensure terrainType update triggers visual changes in the next render cycle
 - [ ] Create a function to spawn animated tree sprites at the right edge of the canvas, starting at depth 2000, with random y positions and varying branch-dust patterns
