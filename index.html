@@ -4984,6 +4984,18 @@ function renderTerrainVisuals(game, ctx) {
   ctx.globalAlpha = 1;
 }
 
+function generateRandomTreesAndDust() {
+  game.treePositions = [];
+  game.branchDustPatterns = [];
+  let numTrees = Math.floor(Math.random() * 10) + 1;
+  for (let i = 0; i < numTrees; i++) {
+    let y = Math.random() * H;
+    game.treePositions.push({x: W, y: y});
+    game.branchDustPatterns.push({x: W + 1, y: y + 3});
+  }
+}
+
+
 
 
 
