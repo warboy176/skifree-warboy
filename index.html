@@ -4757,8 +4757,13 @@ function initStylePoints() {
 }
 
 function updateStylePointsAndMultiplierHUD(dt) {
-    drawComboAndStylePointsHUD(dt);
-    drawStyleMultiplierHUD();
+  // Draw stylePoints as white number at (W - 120, HUD_H - 30)
+  ctx.fillStyle = 'white';
+  ctx.font = '16px monospace';
+  ctx.fillText(game.style.toString(), W - 120, HUD_H - 30);
+
+  // Draw multiplier as 'x' + multiplier value at (W - 60, HUD_H - 30)
+  ctx.fillText('x' + game.styleMultiplier.toString(), W - 60, HUD_H - 30);
 }
 
 
