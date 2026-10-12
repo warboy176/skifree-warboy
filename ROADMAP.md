@@ -486,6 +486,9 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to update the UI by rendering the popup badge only when a new achievement is detected, using only original pixel-art style elements  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain transitions: introduce a forest biome with animated trees and snow-dusted branches that scroll in from the right at depth 2000
+- [ ] Add a forest biome trigger at depth 2000, updating game.terrainType to 'forest' when reached
+- [ ] Create a function to spawn animated tree sprites at the right edge of the canvas, starting at depth 2000, with random y positions and varying branch-dust patterns
+- [ ] Implement tree animation: draw snow-dusted branches using original code-drawn art, with subtle sway motion over time
+- [ ] Ensure trees scroll at the same speed as the background, maintaining depth-based parallax with the player's position
 - [ ] Create a style-based scoring system that rewards close slaloming through NPC skiers with +10 points and multiplies score by 1.5 for consecutive hits
 - [ ] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
