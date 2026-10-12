@@ -1,4 +1,5 @@
 # Changelog
+- Initialize an empty achievements registry in localStorage on first load if none exists (initAchievementsRegistry)
 - Update the HUD to display stylePoints and multiplier in real time during gameplay (updateStylePointsAndMultiplierHUD)
 - Add a stylePoints variable initialized to 0 in the game state (initStylePoints)
 - Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time (drawStyleMultiplierHUD)

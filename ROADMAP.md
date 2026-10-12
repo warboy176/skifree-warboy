@@ -474,7 +474,7 @@ Operator direction from the daily report lands here.
 - [x] Display the current styleMultiplier as a growing 'x' value in the HUD, updating in real time
 - [x] Add a stylePoints variable initialized to 0 in the game state
 - [x] Update the HUD to display stylePoints and multiplier in real time during gameplay
-- [ ] Initialize an empty achievements registry in localStorage on first load if none exists
+- [x] Initialize an empty achievements registry in localStorage on first load if none exists
 - [ ] Add a function to mark an achievement as unlocked and save it to localStorage
 - [ ] Add a function to check if an achievement is already unlocked by reading from localStorage
 - [ ] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
