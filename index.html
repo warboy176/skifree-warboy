@@ -3242,6 +3242,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerStylePointsAchievement();
+
 registerOilSlickHazardAchievement();
 
 
@@ -5090,6 +5092,16 @@ function checkNearMisses(dt) {
     }
   }
 }
+
+function registerStylePointsAchievement() {
+  addDefaultAchievement({
+    type: 'stylePoints',
+    threshold: 100,
+    unlockMessage: 'Style Master',
+    award: 'stylePoints100'
+  });
+}
+
 
 
 
