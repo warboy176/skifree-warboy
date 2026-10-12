@@ -1452,6 +1452,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSlickWillyUnlockState();
+
 initStyleScoreTracking();
 
 initComboTracker();
@@ -4846,6 +4848,11 @@ function registerOilSlickHazardAchievement() {
     game.achievementsRegistry['oil_slick_landing'] = true;
   }
 }
+
+function initSlickWillyUnlockState() {
+    game.slickWillyUnlocked = false;
+}
+
 
 
 
