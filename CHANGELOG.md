@@ -1,4 +1,5 @@
 # Changelog
+- Track consecutive style hits with a 'styleStreak' variable that resets to 0 on collision or missed skier (initStyleStreak)
 - Add a 'stylePoints' counter that increments by 10 when the player passes within 15px of an NPC skier without colliding (initStylePoints, checkNearMisses, registerStylePointsAchievement)
 - Implement tree animation: draw snow-dusted branches using original code-drawn art, with subtle sway motion over time (initTreePositions, addTreeAnimationBranch, updateTreeAnimation)
 - Integrate the tree animation loop into the game's main update cycle, ensuring trees scroll in from the right and remain visible during gameplay (initTreePositions, spawnTrees, updateAndDrawTrees)
