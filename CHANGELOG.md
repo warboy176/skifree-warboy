@@ -1,4 +1,5 @@
 # Changelog
+- Modify the score update logic to apply the current styleMultiplier to points earned from close passes (applyStyleMultiplierToScoreInGameLoop)
 - Implement a 'styleMultiplier' that increases by 1 for each consecutive close pass, capping at 5 (initStyleMultiplier, updateStyleMultiplier, applyStyleMultiplierToScoreInGameLoop)
 - Add a 'slalom proximity' detection system that checks distance between player and NPCs every frame (checkSlalomProximity)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with shifting background art and ambient sound cues (initBiomes, updateBiomeTransition, drawBiomeBackground)
