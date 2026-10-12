@@ -1455,6 +1455,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleStreak();
+
 initTreeGeneration();
 
 initSlickWillyUnlockState();
@@ -5101,6 +5103,11 @@ function registerStylePointsAchievement() {
     award: 'stylePoints100'
   });
 }
+
+function initStyleStreak() {
+    game.styleStreak = 0;
+}
+
 
 
 
