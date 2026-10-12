@@ -607,6 +607,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStyleMultiplier(dt);
+
 checkSlalomPasses(dt);
 
 drawComboAndStylePointsHUD(dt);
@@ -4739,6 +4741,17 @@ function checkSlalomProximity(player, npcSkiers, proximityThreshold) {
     }
     return anyClosePass;
 }
+
+function updateStyleMultiplier(dt) {
+  if (player.proximityCounter > 0 && (!game.hazardCrash || game.hazardCrash < Date.now() - COMBO_STREAK_WINDOW_MS)) {
+    player.styleStreak++;
+    player.styleMultiplier = Math.min(player.styleStreak, 5);
+  } else {
+    player.styleStreak = 0;
+    player.styleMultiplier = 0;
+  }
+}
+
 
 
 
