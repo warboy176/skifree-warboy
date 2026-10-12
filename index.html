@@ -4976,6 +4976,15 @@ function updateTerrainType(game, dt) {
   }
 }
 
+function renderTerrainVisuals(game, ctx) {
+  const tint = BIOME_TINTS[game.biome];
+  ctx.fillStyle = tint.color;
+  ctx.globalAlpha = tint.alpha;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalAlpha = 1;
+}
+
+
 
 
 
