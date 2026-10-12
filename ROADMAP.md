@@ -489,7 +489,7 @@ Operator direction from the daily report lands here.
 - [x] Add a depth threshold constant for forest biome at 2000 meters
 - [x] Create a function to check if player's distance exceeds forest threshold
 - [x] Update game.terrainType to 'forest' when threshold is crossed
-- [ ] Ensure terrainType update triggers visual changes in the next render cycle
+- [x] Ensure terrainType update triggers visual changes in the next render cycle
 - [ ] Create a function to spawn animated tree sprites at the right edge of the canvas, starting at depth 2000, with random y positions and varying branch-dust patterns
 - [ ] Implement tree animation: draw snow-dusted branches using original code-drawn art, with subtle sway motion over time
 - [ ] Ensure trees scroll at the same speed as the background, maintaining depth-based parallax with the player's position
