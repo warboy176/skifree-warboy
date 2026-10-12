@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing (initDroneBusterAchievement, checkDroneBusterUnlock)
 - Add a function to check if an achievement is already unlocked by reading from localStorage (loadUnlockedAchievements)
 - Add a function to mark an achievement as unlocked and save it to localStorage (unlockAchievement)
 - Initialize an empty achievements registry in localStorage on first load if none exists (initAchievementsRegistry)

@@ -477,7 +477,7 @@ Operator direction from the daily report lands here.
 - [x] Initialize an empty achievements registry in localStorage on first load if none exists
 - [x] Add a function to mark an achievement as unlocked and save it to localStorage
 - [x] Add a function to check if an achievement is already unlocked by reading from localStorage
-- [ ] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
+- [x] Implement a function to check and unlock 'Dronebuster' when the player jumps through a drone without crashing
 - [ ] Implement a function to check and unlock 'Organic Mechanic' when the player crashes through a dog without dying
 - [ ] Implement a function to check and unlock 'Slick Willy' when the player lands after a jump on an oil slick
 - [ ] Add visual feedback (e.g., a brief popup) when an achievement is unlocked, using only original code-drawn UI elements
