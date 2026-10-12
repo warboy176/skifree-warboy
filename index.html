@@ -5016,6 +5016,14 @@ function initTreePositions() {
     }
 }
 
+function spawnTrees(dt) {
+  if (game.treePositions.length < 10) {
+    const x = W - 100 + Math.random() * 100;
+    game.treePositions.push({x, y: H - NPC_SKIER_HEIGHT});
+  }
+}
+
+
 
 
 
