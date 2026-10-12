@@ -484,3 +484,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to track unlocked achievements and store them in a persistent array
 - [x] Create a function to draw a small, original code-drawn popup badge at the top-center of the screen for 1.5 seconds when an achievement is unlocked
 - [!] Implement a function to update the UI by rendering the popup badge only when a new achievement is detected, using only original pixel-art style elements  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
+
+- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain transitions: introduce a forest biome with animated trees and snow-dusted branches that scroll in from the right at depth 2000
+- [ ] Create a style-based scoring system that rewards close slaloming through NPC skiers with +10 points and multiplies score by 1.5 for consecutive hits
+- [ ] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
