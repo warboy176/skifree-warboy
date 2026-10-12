@@ -494,6 +494,6 @@ Operator direction from the daily report lands here.
 - [!] Implement a tree spawning system that creates new animated trees at depth 2000 with randomized vertical positions and unique branch-dust effects  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Integrate the tree animation loop into the game's main update cycle, ensuring trees scroll in from the right and remain visible during gameplay
 - [x] Implement tree animation: draw snow-dusted branches using original code-drawn art, with subtle sway motion over time
-- [ ] Ensure trees scroll at the same speed as the background, maintaining depth-based parallax with the player's position
+- [!] Ensure trees scroll at the same speed as the background, maintaining depth-based parallax with the player's position  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Create a style-based scoring system that rewards close slaloming through NPC skiers with +10 points and multiplies score by 1.5 for consecutive hits
 - [ ] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
