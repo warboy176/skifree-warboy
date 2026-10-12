@@ -4853,6 +4853,23 @@ function initSlickWillyUnlockState() {
     game.slickWillyUnlocked = false;
 }
 
+function checkSlickWillyUnlockOnLanding(player, jump, oilSlicks) {
+    if (jump && jump.landing && !game.slickWillyUnlocked) {
+        for (let i = 0; i < oilSlicks.length; i++) {
+            const slick = oilSlicks[i];
+            const dx = player.x - slick.x;
+            const dy = player.y - slick.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance <= 10) {
+                game.slickWillyUnlocked = true;
+                addDefaultAchievement('SLICK_WILLY_UNLOCKED');
+                break;
+            }
+        }
+    }
+}
+
+
 
 
 
