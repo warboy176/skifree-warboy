@@ -4943,6 +4943,11 @@ function addForestBiomeThreshold() {
   BIOME_THRESHOLDS.push({ biome: 'forest', threshold: 2000 });
 }
 
+function checkForestThreshold(player, game) {
+    return player.distance > game.biomeThresholds.forest;
+}
+
+
 
 
 
