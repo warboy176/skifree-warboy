@@ -486,7 +486,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a function to update the UI by rendering the popup badge only when a new achievement is detected, using only original pixel-art style elements  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Add a depth threshold constant for forest biome at 2000 meters
+- [x] Add a depth threshold constant for forest biome at 2000 meters
 - [ ] Create a function to check if player's distance exceeds forest threshold
 - [ ] Update game.terrainType to 'forest' when threshold is crossed
 - [ ] Ensure terrainType update triggers visual changes in the next render cycle
