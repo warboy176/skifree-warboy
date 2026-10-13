@@ -5146,6 +5146,18 @@ function applyFastModeVisualEffects(dt) {
   }
 }
 
+function spawnChaseAntagonist() {
+  if (game.npcSkiers.length < NPC_SPAWN_MAX_SKIERS && Math.random() < 0.02) {
+    game.npcSkiers.push({
+      x: W + 100,
+      y: H - NPC_SKIER_HEIGHT - 10,
+      speed: NPC_SKIER_SPEED * 1.2,
+      type: 'chase'
+    });
+  }
+}
+
+
 
 
 
