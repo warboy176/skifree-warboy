@@ -1,4 +1,5 @@
 # Changelog
+- Define a new original animated creature class with a unique visual style using only code-drawn shapes and Warboy's original art (initCricketNPCs, spawnCricketNPCs, updateCricketNPCs)
 - Add a chase antagonist state tracker that monitors player inactivity for 30 seconds (initChaseAntagonistState, updateChaseAntagonistState)
 - Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps (initStyleScoringSystem, applyStyleScoringToGameLoop)
 - Create a syncVisualsToScroll function that maps scrollProgress to visual elements (e.g., sky gradient, distant mountains) using modulo and time-based offsets (syncVisualsToScroll)
