@@ -1,4 +1,5 @@
 # Changelog
+- Trigger ski wind audio when entering the open slope biome (initSkiWindAudio, triggerSkiWindAudioOnBiomeTransition)
 - Implement a sound manager that loads and plays ambient audio for each biome (playBiomeAmbientSound)
 - Add biome transition detection based on player's vertical position (initBiomeThresholds, updateBiomeTransition, applyBiomeTintTransition)
 - Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay (initBiomeLayers, drawBiomeLayers)
