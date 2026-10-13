@@ -516,7 +516,7 @@ Operator direction from the daily report lands here.
 - [x] Trigger ski wind audio when entering the open slope biome
 - [x] Trigger nocturnal sounds when entering the night biome
 - [x] Add a scrollProgress variable to track the slope's vertical position, updating it in the game loop based on player speed and terrain scroll rate
-- [ ] Create a syncVisualsToScroll function that maps scrollProgress to visual elements (e.g., sky gradient, distant mountains) using modulo and time-based offsets
+- [x] Create a syncVisualsToScroll function that maps scrollProgress to visual elements (e.g., sky gradient, distant mountains) using modulo and time-based offsets
 - [ ] Implement a syncAudioToScroll function that advances audio cues (e.g., ambient wind, heartbeat) based on scrollProgress, ensuring they align with terrain changes
 - [ ] Ensure all visual and audio updates are triggered only when scrollProgress crosses a threshold, avoiding redundant recalculations
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
