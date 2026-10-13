@@ -1,4 +1,5 @@
 # Changelog
+- Trigger nocturnal sounds when entering the night biome (initNocturnalSoundBank, triggerNocturnalSoundsIfInNightBiome)
 - Trigger ski wind audio when entering the open slope biome (initSkiWindAudio, triggerSkiWindAudioOnBiomeTransition)
 - Implement a sound manager that loads and plays ambient audio for each biome (playBiomeAmbientSound)
 - Add biome transition detection based on player's vertical position (initBiomeThresholds, updateBiomeTransition, applyBiomeTintTransition)
