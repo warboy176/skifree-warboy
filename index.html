@@ -5435,6 +5435,13 @@ function checkBiomeTransitionTriggered(dt) {
   }
 }
 
+function checkDistanceTransition(game) {
+  if (game.distanceTraveled >= 500 * METERS_PER_PIXEL) {
+    game.biomeTransitionTriggered = true;
+  }
+}
+
+
 
 
 
