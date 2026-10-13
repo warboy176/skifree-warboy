@@ -523,3 +523,8 @@ Operator direction from the daily report lands here.
 - [!] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
+
+- [ ] Implement the chase antagonist: a unique, original creature drawn in code that appears after 30 seconds of inactivity and pursues the player with escalating speed
+- [ ] Add terrain biome transitions: code a visual shift from open slope to dense forest at 500 meters, using original pixel art trees and snow depth effects
+- [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
+- [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
