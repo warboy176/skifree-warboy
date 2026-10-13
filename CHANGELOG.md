@@ -1,4 +1,5 @@
 # Changelog
+- Add a scrollProgress variable to track the slope's vertical position, updating it in the game loop based on player speed and terrain scroll rate (initScrollProgress, updateScrollProgress)
 - Trigger nocturnal sounds when entering the night biome (initNocturnalSoundBank, triggerNocturnalSoundsIfInNightBiome)
 - Trigger ski wind audio when entering the open slope biome (initSkiWindAudio, triggerSkiWindAudioOnBiomeTransition)
 - Implement a sound manager that loads and plays ambient audio for each biome (playBiomeAmbientSound)
