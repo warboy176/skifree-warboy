@@ -532,7 +532,7 @@ Operator direction from the daily report lands here.
 - [x] Add movement logic for the antagonist to follow the player with a base speed that increases over time
 - [x] Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue
 - [x] Add a distance-traveled counter that increments each frame based on player speed
-- [ ] Create a flag to track whether biome transition has been triggered at 500 meters
+- [x] Create a flag to track whether biome transition has been triggered at 500 meters
 - [ ] Implement a function to check if distance traveled reaches 500 meters and set the transition flag
 - [ ] Implement a visual snow depth effect overlay that gradually increases in opacity as distance reaches 500 meters, using original pixel art
 - [ ] Draw original pixel art trees in a dense forest pattern starting at 500 meters, positioned only in the background layer
