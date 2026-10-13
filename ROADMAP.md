@@ -501,7 +501,7 @@ Operator direction from the daily report lands here.
 - [!] Display the current style streak and multiplier (e.g., 'x1.5') in the HUD using the existing score display area  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
 
-- [ ] Define the chase antagonist's original visual design using Warboy's own pixel art in code, with a unique sprite drawn entirely in JavaScript
+- [x] Define the chase antagonist's original visual design using Warboy's own pixel art in code, with a unique sprite drawn entirely in JavaScript
 - [ ] Implement a state machine for the antagonist that starts inactive and activates after 30 seconds of player inactivity
 - [ ] Add logic to spawn the antagonist at a fixed distance behind the player when activated, with initial position offset from the slope
 - [ ] Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near

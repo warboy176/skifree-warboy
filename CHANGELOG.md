@@ -1,4 +1,5 @@
 # Changelog
+- Define the chase antagonist's original visual design using Warboy's own pixel art in code, with a unique sprite drawn entirely in JavaScript (initNPCs, drawChaseAntagonist, spawnChaseAntagonist)
 - Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake (initFastModeState, toggleFastMode, applyFastModeVisualEffects)
 - Apply a 1.5x multiplier to the score whenever styleStreak is greater than 0, updating the displayed score in real time (applyStyleStreakMultiplierToScore)
 - Track consecutive style hits with a 'styleStreak' variable that resets to 0 on collision or missed skier (initStyleStreak)
