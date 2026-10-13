@@ -500,3 +500,8 @@ Operator direction from the daily report lands here.
 - [x] Apply a 1.5x multiplier to the score whenever styleStreak is greater than 0, updating the displayed score in real time
 - [!] Display the current style streak and multiplier (e.g., 'x1.5') in the HUD using the existing score display area  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a 'F' fast mode toggle that increases player speed by 20% and triggers a 'Warboy's Fury' visual effect with animated snow spray and screen shake
+
+- [ ] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual transitions and ambient audio cues
+- [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
+- [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
