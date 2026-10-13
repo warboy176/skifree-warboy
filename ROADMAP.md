@@ -520,6 +520,6 @@ Operator direction from the daily report lands here.
 - [!] Implement a syncAudioToScroll function that advances audio cues (e.g., ambient wind, heartbeat) based on scrollProgress, ensuring they align with terrain changes  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure all visual and audio updates are triggered only when scrollProgress crosses a threshold, avoiding redundant recalculations  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
-- [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
+- [!] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
