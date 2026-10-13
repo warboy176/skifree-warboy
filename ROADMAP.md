@@ -504,7 +504,7 @@ Operator direction from the daily report lands here.
 - [x] Define the chase antagonist's original visual design using Warboy's own pixel art in code, with a unique sprite drawn entirely in JavaScript
 - [!] Implement a state machine for the antagonist that starts inactive and activates after 30 seconds of player inactivity  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a fixed distance threshold behind the player to trigger antagonist spawn  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to calculate the antagonist's initial spawn position offset from the slope's current x-position
+- [x] Implement a function to calculate the antagonist's initial spawn position offset from the slope's current x-position
 - [ ] Create a function to spawn the antagonist only once when the trigger distance is reached, using the calculated offset
 - [ ] Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near
 - [ ] Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over
