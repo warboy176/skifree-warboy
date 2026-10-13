@@ -511,3 +511,5 @@ Operator direction from the daily report lands here.
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual transitions and ambient audio cues
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
 - [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
