@@ -1477,6 +1477,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeTransitionFlag();
+
 initFastModeState();
 
 initStyleStreak();
@@ -5421,6 +5423,11 @@ function initDistanceTraveled() {
 function updateDistanceTraveled(dt) {
   game.distanceTraveled += PlayerState.speed * dt * METERS_PER_PIXEL;
 }
+
+function initBiomeTransitionFlag() {
+    game.biomeTransitionTriggered = false;
+}
+
 
 
 
