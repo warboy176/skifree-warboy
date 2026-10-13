@@ -508,7 +508,10 @@ Operator direction from the daily report lands here.
 - [!] Create a function to spawn the antagonist only once when the trigger distance is reached, using the calculated offset  <!-- blocked: pipeline: item INCOMPLETE — 1/7 landed, 0 unspecifiable, 2 e -->
 - [x] Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near
 - [x] Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over
-- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual transitions and ambient audio cues
+- [ ] Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night
+- [ ] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
+- [ ] Introduce ambient audio cues for each biome: ski wind, forest rustling, and nocturnal sounds, triggered on biome change
+- [ ] Ensure all visual and audio changes are synchronized with the scrolling slope's progress and do not interfere with existing gameplay mechanics
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
 - [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
 
