@@ -5263,6 +5263,16 @@ function triggerSkiWindAudioOnBiomeTransition() {
   }
 }
 
+function initSkiWindAudio() {
+    const audio = new Audio();
+    audio.loop = true;
+    audio.volume = 0.3;
+    audio.src = 'ski_wind.mp3';
+    game.soundBank = game.soundBank || {};
+    game.soundBank.skiWind = audio;
+}
+
+
 
 
 
