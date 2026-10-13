@@ -524,7 +524,11 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Implement the chase antagonist: a unique, original creature drawn in code that appears after 30 seconds of inactivity and pursues the player with escalating speed
+- [ ] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
+- [ ] Create a single, original animated creature drawn in code with a distinct visual style and idle animation
+- [ ] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
+- [ ] Add movement logic for the antagonist to follow the player with a base speed that increases over time
+- [ ] Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue
 - [ ] Add terrain biome transitions: code a visual shift from open slope to dense forest at 500 meters, using original pixel art trees and snow depth effects
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
