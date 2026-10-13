@@ -611,6 +611,8 @@ initMutantSnowWolves();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateCricketNPCs(dt);
+
 triggerNocturnalSoundsIfInNightBiome();
 
 
@@ -5349,6 +5351,24 @@ function spawnCricketNPCs(dt) {
   }
   game.cricketInterval -= dt;
 }
+
+function updateCricketNPCs(dt) {
+  for (let i = game.cricketNPCs.length - 1; i >= 0; i--) {
+    const npc = game.cricketNPCs[i];
+    npc.y += npc.speed * dt * 60;
+    if (npc.y > H) {
+      game.cricketNPCs.splice(i, 1);
+      continue;
+    }
+    ctx.beginPath();
+    ctx.arc(npc.x, npc.y, 6, 0, Math.PI * 2);
+    ctx.strokeStyle = '#5C3317';
+    ctx.fillStyle = '#8B4513';
+    ctx.fill();
+    ctx.stroke();
+  }
+}
+
 
 
 
