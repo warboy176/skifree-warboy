@@ -1,4 +1,5 @@
 # Changelog
+- Add movement logic for the antagonist to follow the player with a base speed that increases over time (initNPCs, updateAntagonistMovement)
 - Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity (initNPCs, spawnAntagonistAtFixedDistanceBehindPlayer)
 - Implement a simple idle animation loop for the creature using frame-based rendering in the game loop (initNPCs, updateNPCs, drawNPCs)
 - Define a new original animated creature class with a unique visual style using only code-drawn shapes and Warboy's original art (initCricketNPCs, spawnCricketNPCs, updateCricketNPCs)
