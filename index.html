@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+spawnAntagonistAtFixedDistanceBehindPlayer();
+
 updateScrollProgress(dt);
 
 updateNPCs(dt);
@@ -5375,6 +5377,22 @@ function drawNPCs(ctx) {
     ctx.fillRect(skier.x, skier.y, 4, 4);
   }
 }
+
+function spawnAntagonistAtFixedDistanceBehindPlayer() {
+  if (Date.now() - PlayerState.lastInputTime > 30000 && !game.npcSkiers.some(npc => npc.type === 'antagonist')) {
+    const antagonist = {
+      x: PlayerState.x - NPC_SPAWN_SPACING * 2,
+      y: PlayerState.y,
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT,
+      speed: NPC_SKIER_SPEED,
+      color: NPC_SKIER_COLOR,
+      type: 'antagonist'
+    };
+    game.npcSkiers.push(antagonist);
+  }
+}
+
 
 
 
