@@ -5441,6 +5441,17 @@ function checkDistanceTransition(game) {
   }
 }
 
+function initSnowDepthLayer() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.imageSmoothingEnabled = false;
+    ctx.globalCompositeOperation = 'overlay';
+    game.snowDepthLayer = { canvas, ctx };
+}
+
+
 
 
 
