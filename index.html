@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateDistanceTraveled(dt);
+
 checkAntagonistCollision(dt);
 
 spawnAntagonistAtFixedDistanceBehindPlayer();
@@ -5415,6 +5417,11 @@ function checkAntagonistCollision(dt) {
 function initDistanceTraveled() {
     game.distanceTraveled = 0;
 }
+
+function updateDistanceTraveled(dt) {
+  game.distanceTraveled += PlayerState.speed * dt * METERS_PER_PIXEL;
+}
+
 
 
 
