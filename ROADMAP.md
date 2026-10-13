@@ -531,6 +531,9 @@ Operator direction from the daily report lands here.
 - [x] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
 - [x] Add movement logic for the antagonist to follow the player with a base speed that increases over time
 - [x] Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue
-- [ ] Add terrain biome transitions: code a visual shift from open slope to dense forest at 500 meters, using original pixel art trees and snow depth effects
+- [ ] Add a terrain biome transition trigger at 500 meters of distance traveled, using a simple flag to track progress
+- [ ] Implement a visual snow depth effect overlay that gradually increases in opacity as distance reaches 500 meters, using original pixel art
+- [ ] Draw original pixel art trees in a dense forest pattern starting at 500 meters, positioned only in the background layer
+- [ ] Ensure the forest transition is seamless and does not interfere with existing obstacles, player, or scrolling mechanics
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
