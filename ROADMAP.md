@@ -522,4 +522,4 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
 - [!] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
