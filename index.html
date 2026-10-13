@@ -1455,6 +1455,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initFastModeState();
+
 initStyleStreak();
 
 initTreeGeneration();
@@ -5114,6 +5116,12 @@ function applyStyleStreakMultiplierToScore(game, dt) {
     applyMultiplierToScore(game, multiplier);
   }
 }
+
+function initFastModeState() {
+    game.fastMode = false;
+    game.fastModeSpeedMultiplier = 1.2;
+}
+
 
 
 
