@@ -511,7 +511,7 @@ Operator direction from the daily report lands here.
 - [x] Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night
 - [x] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
 - [x] Add biome transition detection based on player's vertical position
-- [ ] Implement a sound manager that loads and plays ambient audio for each biome
+- [x] Implement a sound manager that loads and plays ambient audio for each biome
 - [ ] Trigger forest rustling audio when entering the forest biome
 - [ ] Trigger ski wind audio when entering the open slope biome
 - [ ] Trigger nocturnal sounds when entering the night biome

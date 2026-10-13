@@ -1,4 +1,5 @@
 # Changelog
+- Implement a sound manager that loads and plays ambient audio for each biome (playBiomeAmbientSound)
 - Add biome transition detection based on player's vertical position (initBiomeThresholds, updateBiomeTransition, applyBiomeTintTransition)
 - Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay (initBiomeLayers, drawBiomeLayers)
 - Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night (initBiomeState, updateBiomeTransition)
