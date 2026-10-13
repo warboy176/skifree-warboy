@@ -528,7 +528,7 @@ Operator direction from the daily report lands here.
 - [x] Define a new original animated creature class with a unique visual style using only code-drawn shapes and Warboy's original art
 - [x] Implement a simple idle animation loop for the creature using frame-based rendering in the game loop
 - [!] Add the creature to the game world at a fixed position on the slope, rendering it independently of player movement  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
+- [x] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
 - [ ] Add movement logic for the antagonist to follow the player with a base speed that increases over time
 - [ ] Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue
 - [ ] Add terrain biome transitions: code a visual shift from open slope to dense forest at 500 meters, using original pixel art trees and snow depth effects

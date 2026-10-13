@@ -1,4 +1,5 @@
 # Changelog
+- Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity (initNPCs, spawnAntagonistAtFixedDistanceBehindPlayer)
 - Implement a simple idle animation loop for the creature using frame-based rendering in the game loop (initNPCs, updateNPCs, drawNPCs)
 - Define a new original animated creature class with a unique visual style using only code-drawn shapes and Warboy's original art (initCricketNPCs, spawnCricketNPCs, updateCricketNPCs)
 - Add a chase antagonist state tracker that monitors player inactivity for 30 seconds (initChaseAntagonistState, updateChaseAntagonistState)
