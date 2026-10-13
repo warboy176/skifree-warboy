@@ -1,4 +1,5 @@
 # Changelog
+- Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay (initBiomeLayers, drawBiomeLayers)
 - Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night (initBiomeState, updateBiomeTransition)
 - Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over (initNPCs, updateNPCs)
 - Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near (initNPCs, updateAntagonistMovement, registerAntagonistAchievement)

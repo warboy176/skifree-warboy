@@ -509,7 +509,7 @@ Operator direction from the daily report lands here.
 - [x] Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near
 - [x] Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over
 - [x] Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night
-- [ ] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
+- [x] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
 - [ ] Introduce ambient audio cues for each biome: ski wind, forest rustling, and nocturnal sounds, triggered on biome change
 - [ ] Ensure all visual and audio changes are synchronized with the scrolling slope's progress and do not interfere with existing gameplay mechanics
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
