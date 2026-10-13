@@ -5428,6 +5428,14 @@ function initBiomeTransitionFlag() {
     game.biomeTransitionTriggered = false;
 }
 
+function checkBiomeTransitionTriggered(dt) {
+  if (game.distanceTraveled >= 500 && !game.biomeTransitionTriggered) {
+    game.biomeTransitionTriggered = true;
+    applyBiomeTintTransition();
+  }
+}
+
+
 
 
 
