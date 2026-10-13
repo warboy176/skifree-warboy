@@ -1414,6 +1414,8 @@ drawMoon(ctx);
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
 applyBiomeTintTransition();
+triggerSkiWindAudioOnBiomeTransition();
+
 
 renderAchievements(ctx, game);
 
@@ -5251,6 +5253,16 @@ function playBiomeAmbientSound(biomeName) {
     }
   }
 }
+
+function triggerSkiWindAudioOnBiomeTransition() {
+  if (game.currentBiome === 'openSlope' && game.biomeTransitionFlag) {
+    if (game.soundBank && game.soundBank.skiWind) {
+      game.soundBank.skiWind.play();
+      game.soundBank.skiWind.loop = true;
+    }
+  }
+}
+
 
 
 
