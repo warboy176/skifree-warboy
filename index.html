@@ -3619,6 +3619,8 @@ function initPlayerState() {
     }
   };
 }
+initCricketNPCs();
+
 
 function isPlayerInAir() {
   return PlayerState.isJumping && !PlayerState.collidingWithObstacle;
@@ -5321,6 +5323,23 @@ function syncVisualsToScroll(scrollProgress) {
   drawAlpineSkyGradient(`hsl(${skyHue}, 80%, 60%)`);
   drawSlope(0, 0, mountainCycle * 100);
 }
+
+function initCricketNPCs() {
+    if (!game.cricketNPCs) {
+        game.cricketNPCs = [];
+    }
+    const cricket = {
+        id: 'cricket',
+        type: 'cricket',
+        x: 0,
+        y: 0,
+        speed: 0.5,
+        size: 12,
+        color: '#8B4513'
+    };
+    game.cricketNPCs.push(cricket);
+}
+
 
 
 
