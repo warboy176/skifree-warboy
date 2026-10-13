@@ -5341,18 +5341,13 @@ function initCricketNPCs() {
 }
 
 function spawnCricketNPCs(dt) {
-    if (game.cricketInterval <= 0) {
-        const npc = {
-            x: Math.random() * (window.innerWidth - 12),
-            y: -100,
-            speed: 0.5,
-            size: 12
-        };
-        game.cricketNPCs.push(npc);
-        game.cricketInterval = Math.random() * (NPC_SPAWN_MAX_INTERVAL - NPC_SPAWN_MIN_INTERVAL) + NPC_SPAWN_MIN_INTERVAL;
-    } else {
-        game.cricketInterval -= dt;
-    }
+  if (game.cricketNPCs.length >= 3) return;
+  if (game.cricketInterval <= 0) {
+    const x = Math.random() * (W - 12);
+    game.cricketNPCs.push({ x, y: -100, speed: 0.5, size: 12 });
+    game.cricketInterval = 1.5; // reset interval
+  }
+  game.cricketInterval -= dt;
 }
 
 
