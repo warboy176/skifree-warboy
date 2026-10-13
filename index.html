@@ -5241,6 +5241,18 @@ function applyBiomeTintTransition() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+function playBiomeAmbientSound(biomeName) {
+  if (game.soundBank && game.soundBank[biomeName]) {
+    const audio = game.soundBank[biomeName];
+    if (audio.play) {
+      audio.volume = 0.3;
+      audio.loop = true;
+      audio.play();
+    }
+  }
+}
+
+
 
 
 
