@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateScrollProgress(dt);
+
 updateNPCs(dt);
 triggerNocturnalSoundsIfInNightBiome();
 
@@ -5305,6 +5307,11 @@ function triggerNocturnalSoundsIfInNightBiome() {
 function initScrollProgress() {
     game.scrollProgress = 0;
 }
+
+function updateScrollProgress(dt) {
+  game.scrollProgress += player.speed * dt * METERS_PER_PIXEL;
+}
+
 
 
 
