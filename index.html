@@ -5122,6 +5122,14 @@ function initFastModeState() {
     game.fastModeSpeedMultiplier = 1.2;
 }
 
+function toggleFastMode(event) {
+  if (event.key.toLowerCase() === 'f') {
+    game.fastMode = !game.fastMode;
+    player.speed = game.fastMode ? MAX_SPEED * game.fastModeSpeedMultiplier : MAX_SPEED;
+  }
+}
+
+
 
 
 
