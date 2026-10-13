@@ -1,4 +1,5 @@
 # Changelog
+- Add a snow depth overlay canvas layer that renders over the main game canvas using original pixel art (initSnowDepthLayer, drawSnowDepthOverlay)
 - Implement a function to check if distance traveled reaches 500 meters and set the transition flag (checkDistanceTransition)
 - Create a flag to track whether biome transition has been triggered at 500 meters (initBiomeTransitionFlag, checkBiomeTransitionTriggered)
 - Add a distance-traveled counter that increments each frame based on player speed (initDistanceTraveled, updateDistanceTraveled)
