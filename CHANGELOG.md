@@ -1,4 +1,5 @@
 # Changelog
+- Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night (initBiomeState, updateBiomeTransition)
 - Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over (initNPCs, updateNPCs)
 - Implement the antagonist's unique movement pattern: slow pursuit with periodic acceleration bursts when the player is near (initNPCs, updateAntagonistMovement, registerAntagonistAchievement)
 - Implement a function to calculate the antagonist's initial spawn position offset from the slope's current x-position (initNPCs, calculateAntagonistSpawnOffset)
