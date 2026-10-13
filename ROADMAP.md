@@ -515,7 +515,10 @@ Operator direction from the daily report lands here.
 - [!] Trigger forest rustling audio when entering the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [x] Trigger ski wind audio when entering the open slope biome
 - [x] Trigger nocturnal sounds when entering the night biome
-- [ ] Ensure all visual and audio changes are synchronized with the scrolling slope's progress and do not interfere with existing gameplay mechanics
+- [ ] Add a scrollProgress variable to track the slope's vertical position, updating it in the game loop based on player speed and terrain scroll rate
+- [ ] Create a syncVisualsToScroll function that maps scrollProgress to visual elements (e.g., sky gradient, distant mountains) using modulo and time-based offsets
+- [ ] Implement a syncAudioToScroll function that advances audio cues (e.g., ambient wind, heartbeat) based on scrollProgress, ensuring they align with terrain changes
+- [ ] Ensure all visual and audio updates are triggered only when scrollProgress crosses a threshold, avoiding redundant recalculations
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
 - [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
 
