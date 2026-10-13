@@ -609,6 +609,8 @@ initMutantSnowWolves();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateNPCs(dt);
+triggerNocturnalSoundsIfInNightBiome();
+
 
 updateAntagonistMovement(dt);
 
@@ -5278,6 +5280,28 @@ function initNocturnalSoundBank() {
     { key: 'cricketChirp', audio: new Audio() }
   ];
 }
+
+function triggerNocturnalSoundsIfInNightBiome() {
+  if (game.biome === 'night' && game.currentBiome && game.currentBiome.patterns) {
+    if (!game.soundBank.nightAmbience || !game.soundBank.nightAmbience.isPlaying) {
+      game.soundBank.play('nightAmbience');
+    }
+    if (!game.cricketInterval) {
+      game.cricketInterval = setInterval(() => {
+        const randomOffset = Math.random() * 0.5;
+        setTimeout(() => {
+          game.soundBank.play('cricketChirp');
+        }, randomOffset * 1000);
+      }, 3000);
+    }
+  } else {
+    if (game.cricketInterval) {
+      clearInterval(game.cricketInterval);
+      game.cricketInterval = null;
+    }
+  }
+}
+
 
 
 
