@@ -510,7 +510,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over
 - [x] Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night
 - [x] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
-- [ ] Add biome transition detection based on player's vertical position
+- [x] Add biome transition detection based on player's vertical position
 - [ ] Implement a sound manager that loads and plays ambient audio for each biome
 - [ ] Trigger forest rustling audio when entering the forest biome
 - [ ] Trigger ski wind audio when entering the open slope biome
