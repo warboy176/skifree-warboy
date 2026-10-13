@@ -510,7 +510,11 @@ Operator direction from the daily report lands here.
 - [x] Ensure the antagonist does not collide with obstacles and only interacts with the player via collision detection for game over
 - [x] Add biome transition logic that triggers at fixed distance intervals, advancing through lodge → open slope → forest → night
 - [x] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
-- [ ] Introduce ambient audio cues for each biome: ski wind, forest rustling, and nocturnal sounds, triggered on biome change
+- [ ] Add biome transition detection based on player's vertical position
+- [ ] Implement a sound manager that loads and plays ambient audio for each biome
+- [ ] Trigger forest rustling audio when entering the forest biome
+- [ ] Trigger ski wind audio when entering the open slope biome
+- [ ] Trigger nocturnal sounds when entering the night biome
 - [ ] Ensure all visual and audio changes are synchronized with the scrolling slope's progress and do not interfere with existing gameplay mechanics
 - [ ] Introduce style-based scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing jumps
 - [ ] Create a persistent achievements registry with data-driven unlock logic, extending existing list to include new behaviors like 'Drone Buster' and 'Tree Hugger'
