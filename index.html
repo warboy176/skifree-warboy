@@ -5205,6 +5205,31 @@ function updateNPCs(dt) {
   }
 }
 
+function initBiomeThresholds() {
+  BIOME_THRESHOLDS = [
+    0,
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500
+  ];
+  game.biomeTransitions = [];
+  for (let i = 0; i < BIOME_THRESHOLDS.length - 1; i++) {
+    game.biomeTransitions.push({
+      from: BIOME_THRESHOLDS[i],
+      to: BIOME_THRESHOLDS[i + 1],
+      biome: i
+    });
+  }
+}
+
+
 
 
 
