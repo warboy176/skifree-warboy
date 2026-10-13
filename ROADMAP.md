@@ -512,7 +512,7 @@ Operator direction from the daily report lands here.
 - [x] Implement visual layering for each biome using original pixel art: snow texture changes, tree sprites, and night-time fog overlay
 - [x] Add biome transition detection based on player's vertical position
 - [x] Implement a sound manager that loads and plays ambient audio for each biome
-- [ ] Trigger forest rustling audio when entering the forest biome
+- [!] Trigger forest rustling audio when entering the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [ ] Trigger ski wind audio when entering the open slope biome
 - [ ] Trigger nocturnal sounds when entering the night biome
 - [ ] Ensure all visual and audio changes are synchronized with the scrolling slope's progress and do not interfere with existing gameplay mechanics
