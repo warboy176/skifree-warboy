@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkAntagonistCollision(dt);
+
 spawnAntagonistAtFixedDistanceBehindPlayer();
 
 updateScrollProgress(dt);
@@ -5392,6 +5394,24 @@ function spawnAntagonistAtFixedDistanceBehindPlayer() {
     game.npcSkiers.push(antagonist);
   }
 }
+
+function checkAntagonistCollision(dt) {
+    if (PlayerState.inJump) return;
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        const dx = PlayerState.x - npc.x;
+        const dy = PlayerState.y - npc.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance <= NPC_SKIER_WIDTH / 2) {
+            GameState.gameOver = true;
+            game.shake = 0.25;
+            attachCrashSoundListener();
+            logPlayerEvent('crash', { distance: distance, speed: PlayerState.speed });
+            break;
+        }
+    }
+}
+
 
 
 
