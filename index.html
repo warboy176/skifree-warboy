@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAntagonistMovement(dt);
+
 applyFastModeVisualEffects(dt);
 
 checkNearMisses(dt);
@@ -5160,6 +5162,25 @@ function spawnChaseAntagonist() {
 function calculateAntagonistSpawnOffset(slopeX) {
   return 1.5 * NPC_SPAWN_SPACING;
 }
+
+function updateAntagonistMovement(dt) {
+  const now = Date.now();
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    npc.y += npc.speed * dt;
+    
+    if (npc.state !== 'accelerating' && checkPlayerCollision(npc)) {
+      npc.state = 'accelerating';
+      npc.accelerationStartTime = now;
+    }
+    
+    if (npc.state === 'accelerating' && now - npc.accelerationStartTime > 1000) {
+      npc.speed += 0.5 * NPC_SKIER_SPEED;
+      npc.state = 'normal';
+    }
+  }
+}
+
 
 
 
