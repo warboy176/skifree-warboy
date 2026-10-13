@@ -534,7 +534,10 @@ Operator direction from the daily report lands here.
 - [x] Add a distance-traveled counter that increments each frame based on player speed
 - [x] Create a flag to track whether biome transition has been triggered at 500 meters
 - [x] Implement a function to check if distance traveled reaches 500 meters and set the transition flag
-- [ ] Implement a visual snow depth effect overlay that gradually increases in opacity as distance reaches 500 meters, using original pixel art
+- [ ] Add a snow depth overlay canvas layer that renders over the main game canvas using original pixel art
+- [ ] Initialize a snow depth opacity value that starts at 0 and begins increasing at 500 meters of distance
+- [ ] Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters
+- [ ] Render the snow depth overlay with original pixel art at the current opacity level, ensuring it's drawn only when distance >= 500 meters
 - [ ] Draw original pixel art trees in a dense forest pattern starting at 500 meters, positioned only in the background layer
 - [ ] Ensure the forest transition is seamless and does not interfere with existing obstacles, player, or scrolling mechanics
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
