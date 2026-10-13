@@ -608,6 +608,8 @@ initMutantSnowWolves();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+applyFastModeVisualEffects(dt);
+
 checkNearMisses(dt);
 
 detectPlayerLandingOnOilSlick(player, dt);
@@ -5128,6 +5130,22 @@ function toggleFastMode(event) {
     player.speed = game.fastMode ? MAX_SPEED * game.fastModeSpeedMultiplier : MAX_SPEED;
   }
 }
+
+function applyFastModeVisualEffects(dt) {
+  if (game.fastMode) {
+    for (let i = 0; i < 4; i++) {
+      const x = PlayerState.x + rand(-6, 6);
+      const y = PlayerState.y + rand(-6, 6);
+      ctx.fillStyle = 'white';
+      ctx.fillRect(x, y, 2, 2);
+    }
+    ctx.save();
+    ctx.translate(rand(-2, 2), rand(-2, 2));
+    drawSnowfieldBackground(ctx, game);
+    ctx.restore();
+  }
+}
+
 
 
 
