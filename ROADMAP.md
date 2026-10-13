@@ -527,7 +527,7 @@ Operator direction from the daily report lands here.
 - [x] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
 - [x] Define a new original animated creature class with a unique visual style using only code-drawn shapes and Warboy's original art
 - [x] Implement a simple idle animation loop for the creature using frame-based rendering in the game loop
-- [ ] Add the creature to the game world at a fixed position on the slope, rendering it independently of player movement
+- [!] Add the creature to the game world at a fixed position on the slope, rendering it independently of player movement  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
 - [ ] Add movement logic for the antagonist to follow the player with a base speed that increases over time
 - [ ] Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue
