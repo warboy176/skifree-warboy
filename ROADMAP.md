@@ -524,7 +524,7 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
+- [x] Add a chase antagonist state tracker that monitors player inactivity for 30 seconds
 - [ ] Create a single, original animated creature drawn in code with a distinct visual style and idle animation
 - [ ] Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity
 - [ ] Add movement logic for the antagonist to follow the player with a base speed that increases over time
