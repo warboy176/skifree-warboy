@@ -5312,6 +5312,17 @@ function updateScrollProgress(dt) {
   game.scrollProgress += player.speed * dt * METERS_PER_PIXEL;
 }
 
+function syncVisualsToScroll(scrollProgress) {
+  const timeOffset = Date.now() * 0.0001;
+  const skyHue = (H + timeOffset * 0.5) % 360;
+  const mountainCycle = scrollProgress % 1.0;
+  const biomeTransition = Math.floor(scrollProgress / BIOME_TINT_DURATION) % BIOME_THRESHOLDS.length;
+  applyBiomeTintTransition(biomeTransition, scrollProgress % BIOME_TINT_DURATION);
+  drawAlpineSkyGradient(`hsl(${skyHue}, 80%, 60%)`);
+  drawSlope(0, 0, mountainCycle * 100);
+}
+
+
 
 
 
