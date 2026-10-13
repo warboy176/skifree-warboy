@@ -1,4 +1,5 @@
 # Changelog
+- Add a distance-traveled counter that increments each frame based on player speed (initDistanceTraveled, updateDistanceTraveled)
 - Ensure the antagonist triggers a game-over state if it catches the player, with a clear visual and audio cue (checkAntagonistCollision)
 - Add movement logic for the antagonist to follow the player with a base speed that increases over time (initNPCs, updateAntagonistMovement)
 - Implement logic to spawn the antagonist at a fixed distance behind the player after 30 seconds of inactivity (initNPCs, spawnAntagonistAtFixedDistanceBehindPlayer)
