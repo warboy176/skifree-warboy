@@ -5369,6 +5369,14 @@ function updateCricketNPCs(dt) {
   }
 }
 
+function drawNPCs(ctx) {
+  for (const skier of game.npcSkiers) {
+    ctx.fillStyle = NPC_SKIER_COLOR;
+    ctx.fillRect(skier.x, skier.y, 4, 4);
+  }
+}
+
+
 
 
 
