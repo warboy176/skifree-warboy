@@ -1,4 +1,5 @@
 # Changelog
+- Ensure trees are rendered only in the background layer, never overlapping player or foreground obstacles (initTreeArray, renderTreesBackgroundLayer)
 - Implement tree positioning logic to place trees in a dense, randomized pattern at 500m and beyond, using only original pixel art (initTrees, generateTreePositions, drawTrees)
 - Add a background layer rendering function that draws trees only at y ≥ 500 meters using original pixel art (initTreeLayer, drawTreesAtYThreshold)
 - Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters (updateSnowDepthOverlayOpacity)
