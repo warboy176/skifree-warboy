@@ -4880,6 +4880,8 @@ function detectPlayerLandingOnOilSlick(player, dt) {
     if (player.y >= slick.y && player.y < slick.y + slick.h && player.x >= slick.x && player.x < slick.x + slick.w) {
       applyPenaltyToStyleScoreOnHazardCrash();
       applyStyleScoringToGameLoop();
+onHazardEncountered('ice_patch');
+
 updateGameTerrainType();
 
       game.oilHits = (game.oilHits || 0) + 1;
@@ -5697,6 +5699,14 @@ function updateStyleScoreAndMultiplier(dt) {
 
   applyStyleMultiplierToScoreInGameLoop();
 }
+
+function onHazardEncountered(hazardType) {
+    game.hazardEncounters[hazardType] = (game.hazardEncounters[hazardType] || 0) + 1;
+    if (game.hazardEncounters[hazardType] >= HAZARD_ENCOUNTER_THRESHOLD) {
+        addDefaultAchievement(hazardType + 'HazardEncounter');
+    }
+}
+
 
 
 
