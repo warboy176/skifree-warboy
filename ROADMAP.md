@@ -548,7 +548,7 @@ Operator direction from the daily report lands here.
 - [x] Add forest background color shift: change canvas background from sky blue to deep green at y >= 400
 - [!] Implement forest snow texture: replace current snow pattern with a denser, shadowed pixel texture starting at y >= 400  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 - [!] Introduce ambient lighting dimming: reduce canvas brightness by 30% when player y >= 400, using a semi-transparent overlay  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
+- [x] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
 - [ ] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
 - [ ] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
 - [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
