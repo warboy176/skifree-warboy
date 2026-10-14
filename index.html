@@ -5550,6 +5550,14 @@ function initForestBiomeThresholds() {
   BIOME_THRESHOLDS.splice(1, 0, 1000 * METERS_PER_PIXEL);
 }
 
+function addForestTransitionTrigger() {
+    if (player.y > GameState.start_y + 1000 * METERS_PER_PIXEL && !game.forestTransitionTriggered) {
+        applyBiomeTintTransition(1, BIOME_TINT_DURATION);
+        game.forestTransitionTriggered = true;
+    }
+}
+
+
 
 
 
