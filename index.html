@@ -252,6 +252,8 @@ initMutantSnowWolves();
     initBiomeTintState();
 
     initTrees();
+generateTreePositions();
+
     initSnowfieldObstacles();
     statusEl.textContent = 'Skiing. Distance zero meters.';
     logPlayerEvent('game_start',{});
@@ -5492,6 +5494,17 @@ function drawTreesAtYThreshold(ctx, game) {
     }
   }
 }
+
+function generateTreePositions() {
+  game.treeArray = [];
+  const baseY = 500 * METERS_PER_PIXEL;
+  for (let i = 0; i < 20; i++) {
+    const x = W / 2 + (Math.random() - 0.5) * 200;
+    const y = baseY + i * 200;
+    game.treeArray.push({x, y});
+  }
+}
+
 
 
 
