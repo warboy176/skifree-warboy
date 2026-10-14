@@ -562,6 +562,9 @@ Operator direction from the daily report lands here.
 - [x] Implement a reset mechanism that sets the multiplier to 1 when the player collides with trees or oil slicks
 - [x] Display the current multiplier value on screen with a dynamic, visually distinct HUD element that scales with multiplier value
 - [x] Update the score display to show style points and active multiplier in real time
-- [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
+- [ ] Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions
+- [ ] Implement a function to register a new achievement dynamically when a new hazard type or mechanic is introduced
+- [ ] Create a function to check and trigger achievement unlocks based on in-game events like encountering a new hazard type
+- [ ] Add a visual indicator in the HUD to display unlocked achievements with their names and icons
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
