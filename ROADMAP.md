@@ -539,7 +539,7 @@ Operator direction from the daily report lands here.
 - [x] Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters
 - [!] Render the snow depth overlay with original pixel art at the current opacity level, ensuring it's drawn only when distance >= 500 meters  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 1 e -->
 - [x] Add a background layer rendering function that draws trees only at y ≥ 500 meters using original pixel art
-- [ ] Implement tree positioning logic to place trees in a dense, randomized pattern at 500m and beyond, using only original pixel art
+- [x] Implement tree positioning logic to place trees in a dense, randomized pattern at 500m and beyond, using only original pixel art
 - [ ] Ensure trees are rendered only in the background layer, never overlapping player or foreground obstacles
 - [ ] Ensure the forest transition is seamless and does not interfere with existing obstacles, player, or scrolling mechanics
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
