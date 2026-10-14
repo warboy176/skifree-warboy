@@ -544,7 +544,11 @@ Operator direction from the daily report lands here.
 - [!] Add forest biome transition trigger at fixed distance intervals without altering existing scroll speed or obstacle generation  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement forest background layer with original pixel art trees drawn in code, positioned to scroll at same rate as slope
 - [!] Modify obstacle spawn logic to replace or blend with forest-specific obstacles (e.g., tree clusters) at transition point  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Ensure player sprite remains unchanged and unaffected by forest transition, preserving collision and animation behavior
+- [ ] Add forest transition trigger at a fixed distance threshold below the player's starting position
+- [ ] Define forest biome properties: background color, snow texture shift, and ambient lighting changes
+- [ ] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
+- [ ] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
+- [ ] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
 - [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
