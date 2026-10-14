@@ -1,4 +1,5 @@
 # Changelog
+- Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters (updateSnowDepthOverlayOpacity)
 - Add a snow depth overlay canvas layer that renders over the main game canvas using original pixel art (initSnowDepthLayer, drawSnowDepthOverlay)
 - Implement a function to check if distance traveled reaches 500 meters and set the transition flag (checkDistanceTransition)
 - Create a flag to track whether biome transition has been triggered at 500 meters (initBiomeTransitionFlag, checkBiomeTransitionTriggered)
