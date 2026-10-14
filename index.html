@@ -5685,18 +5685,17 @@ function renderMultiplierHUD(dt) {
 }
 
 function updateStyleScoreAndMultiplier(dt) {
-  if (game.styleScoreUpdateTime + 1000 < Date.now()) {
-    const points = STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
-    if (game.comboStreak >= COMBO_STREAK_THRESHOLD) {
-      game.styleScoreDelta += points * COMBO_STREAK_BONUS;
-    } else {
-      game.styleScoreDelta += points;
-    }
-    game.styleScore += game.styleScoreDelta;
-    game.styleScoreDelta = 0;
-    applyStyleMultiplierToScoreInGameLoop(dt);
-    game.styleScoreUpdateTime = Date.now();
+  const basePoints = STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+  game.styleScoreDelta += basePoints * dt;
+
+  if (game.comboStreak >= COMBO_STREAK_THRESHOLD) {
+    game.styleScoreDelta += COMBO_STREAK_BONUS * dt;
   }
+
+  game.styleScore += game.styleScoreDelta;
+  game.styleScoreDelta = 0;
+
+  applyStyleMultiplierToScoreInGameLoop();
 }
 
 
