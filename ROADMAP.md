@@ -554,7 +554,7 @@ Operator direction from the daily report lands here.
 - [!] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a style score variable initialized to 0 in the game state
 - [!] Increment style score by 1 for each consecutive near-miss or crash-through of an obstacle without hitting a tree or oil slick  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Reset style score to 0 when player hits a tree or oil slick
+- [x] Reset style score to 0 when player hits a tree or oil slick
 - [ ] Display the current style score in the HUD with a distinct visual style
 - [ ] Implement a function to detect when the player is within 10px of an NPC skier during skiing
 - [ ] Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state
