@@ -643,6 +643,8 @@ checkSlalomPasses(dt);
 drawComboAndStylePointsHUD(dt);
 
 applyStylePointsToNPCs(dt);
+incrementStyleMultiplierOnValidAction('slalom');
+
 resetComboMultiplierOnFailure();
 
 
@@ -5650,6 +5652,13 @@ function checkPlayerHazardCrash(player, npcSkiers, game) {
     player.y + NPC_SKIER_HEIGHT > npc.y
   );
 }
+
+function incrementStyleMultiplierOnValidAction(actionType) {
+  if ((actionType === 'slalom' || actionType === 'crash') && game.styleMultiplier < 10) {
+    game.styleMultiplier++;
+  }
+}
+
 
 
 
