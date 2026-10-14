@@ -5470,6 +5470,13 @@ function drawSnowDepthOverlay() {
   }
 }
 
+function updateSnowDepthOverlayOpacity(distanceTraveled) {
+    const maxDistance = 700;
+    const opacity = Math.min(distanceTraveled / maxDistance, 1);
+    return opacity;
+}
+
+
 
 
 
