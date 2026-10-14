@@ -551,7 +551,7 @@ Operator direction from the daily report lands here.
 - [x] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
 - [x] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
 - [x] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
-- [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
+- [!] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
 
