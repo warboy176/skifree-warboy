@@ -5659,6 +5659,22 @@ function incrementStyleMultiplierOnValidAction(actionType) {
   }
 }
 
+function resetStyleMultiplierOnHazardCrash() {
+    if (!game.hazards || !game.player) return;
+    
+    for (let i = 0; i < game.hazards.length; i++) {
+        const hazard = game.hazards[i];
+        if (hazard.used || Math.abs(hazard.y - game.player.y) > 65 || !checkPlayerCollision(hazard)) continue;
+        
+        if (hazard.type === 'tree' || hazard.type === 'oilSlick') {
+            game.styleMultiplier = 1;
+            applyPenaltyToStyleScoreOnHazardCrash();
+            break;
+        }
+    }
+}
+
+
 
 
 
