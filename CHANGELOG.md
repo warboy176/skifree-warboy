@@ -1,4 +1,5 @@
 # Changelog
+- Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions (initAchievementRegistry, registerAchievement, unlockAchievement)
 - Update the score display to show style points and active multiplier in real time (initStyleScoreSystem, updateStyleScoreAndMultiplier, renderStyleScoreHUD)
 - Display the current multiplier value on screen with a dynamic, visually distinct HUD element that scales with multiplier value (renderMultiplierHUD)
 - Implement a reset mechanism that sets the multiplier to 1 when the player collides with trees or oil slicks (resetStyleMultiplierOnHazardCrash)
