@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to detect when the player is within 10px of an NPC skier during skiing (initNPCs, checkPlayerNPCProximity)
 - Reset style score to 0 when player hits a tree or oil slick (resetStyleScoreOnHazardCrash)
 - Add a style score variable initialized to 0 in the game state (initStyleScore)
 - Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions (initNPCs, updateNPCs, checkNPCCollision)
