@@ -5674,6 +5674,17 @@ function resetStyleMultiplierOnHazardCrash() {
     }
 }
 
+function renderMultiplierHUD(dt) {
+  const mult = game.styleMultiplier || 1;
+  const fontSize = 16 + (mult - 1) * (48 - 16) / (10 - 1);
+  ctx.font = `bold ${fontSize}px sans-serif`;
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  ctx.fillText(`${mult.toFixed(1)}x`, W / 2, 10 + (mult - 1) * 4);
+}
+
+
 
 
 
