@@ -1,4 +1,5 @@
 # Changelog
+- Implement a reset mechanism that sets the multiplier to 1 when the player collides with trees or oil slicks (resetStyleMultiplierOnHazardCrash)
 - Add a style multiplier counter initialized to 1, incrementing only on valid style actions like slaloming close to skiers or crashing through obstacles (initStyleMultiplier, applyStyleMultiplierToScoreInGameLoop, incrementStyleMultiplierOnValidAction)
 - Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state (checkPlayerHazardCrash)
 - Implement a function to detect when the player is within 10px of an NPC skier during skiing (initNPCs, checkPlayerNPCProximity)
