@@ -535,7 +535,7 @@ Operator direction from the daily report lands here.
 - [x] Create a flag to track whether biome transition has been triggered at 500 meters
 - [x] Implement a function to check if distance traveled reaches 500 meters and set the transition flag
 - [x] Add a snow depth overlay canvas layer that renders over the main game canvas using original pixel art
-- [ ] Initialize a snow depth opacity value that starts at 0 and begins increasing at 500 meters of distance
+- [!] Initialize a snow depth opacity value that starts at 0 and begins increasing at 500 meters of distance  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters
 - [ ] Render the snow depth overlay with original pixel art at the current opacity level, ensuring it's drawn only when distance >= 500 meters
 - [ ] Draw original pixel art trees in a dense forest pattern starting at 500 meters, positioned only in the background layer
