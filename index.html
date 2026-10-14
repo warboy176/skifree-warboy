@@ -5537,6 +5537,16 @@ function generateForestTrees() {
   }
 }
 
+function drawForestBackground(dt) {
+  for (let i = 0; i < game.trees.length; i++) {
+    let tree = game.trees[i];
+    tree.y += dt * 1;
+    if (tree.y > H) tree.y = 0;
+    rect(tree.x, tree.y, 4, 4, "white");
+  }
+}
+
+
 
 
 
