@@ -5383,6 +5383,8 @@ function drawNPCs(ctx) {
     ctx.fillRect(skier.x, skier.y, 4, 4);
   }
 }
+drawTreesAtYThreshold(ctx, game);
+
 
 function spawnAntagonistAtFixedDistanceBehindPlayer() {
   if (Date.now() - PlayerState.lastInputTime > 30000 && !game.npcSkiers.some(npc => npc.type === 'antagonist')) {
@@ -5479,6 +5481,18 @@ function updateSnowDepthOverlayOpacity(distanceTraveled) {
 function initTreeLayer() {
   game.treeLayer = [];
 }
+
+function drawTreesAtYThreshold(ctx, game) {
+  if (game.treeLayer === undefined) return;
+  for (let i = 0; i < game.treeLayer.length; i++) {
+    const tree = game.treeLayer[i];
+    if (tree.y >= 500) {
+      ctx.fillStyle = 'green';
+      ctx.fillRect(tree.x, tree.y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+    }
+  }
+}
+
 
 
 
