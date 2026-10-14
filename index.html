@@ -5557,6 +5557,14 @@ function addForestTransitionTrigger() {
     }
 }
 
+function applyForestBiomeTintTransition() {
+    if (game.forestTransitionTriggered) {
+        ctx.fillStyle = 'rgb(0, 50, 0)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+}
+
+
 
 
 
