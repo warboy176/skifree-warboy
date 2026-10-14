@@ -1,4 +1,5 @@
 # Changelog
+- Add a background layer rendering function that draws trees only at y ≥ 500 meters using original pixel art (initTreeLayer, drawTreesAtYThreshold)
 - Update the snow depth overlay opacity based on distance traveled, increasing linearly from 0 to 1 as distance reaches 700 meters (updateSnowDepthOverlayOpacity)
 - Add a snow depth overlay canvas layer that renders over the main game canvas using original pixel art (initSnowDepthLayer, drawSnowDepthOverlay)
 - Implement a function to check if distance traveled reaches 500 meters and set the transition flag (checkDistanceTransition)
