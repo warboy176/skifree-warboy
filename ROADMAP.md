@@ -557,7 +557,7 @@ Operator direction from the daily report lands here.
 - [x] Reset style score to 0 when player hits a tree or oil slick
 - [!] Display the current style score in the HUD with a distinct visual style  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a function to detect when the player is within 10px of an NPC skier during skiing
-- [ ] Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state
+- [x] Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state
 - [ ] Create a multiplier system that increases on each valid style action and resets on collision
 - [ ] Update the score display to show style points and active multiplier in real time
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic

@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state (checkPlayerHazardCrash)
 - Implement a function to detect when the player is within 10px of an NPC skier during skiing (initNPCs, checkPlayerNPCProximity)
 - Reset style score to 0 when player hits a tree or oil slick (resetStyleScoreOnHazardCrash)
 - Add a style score variable initialized to 0 in the game state (initStyleScore)
