@@ -1,4 +1,5 @@
 # Changelog
+- Add forest background color shift: change canvas background from sky blue to deep green at y >= 400 (addForestTransitionTrigger, applyForestBiomeTintTransition)
 - Add forest transition trigger at a fixed distance threshold below the player's starting position (initForestBiomeThresholds, addForestTransitionTrigger)
 - Implement forest background layer with original pixel art trees drawn in code, positioned to scroll at same rate as slope (initTrees, generateForestTrees, drawForestBackground)
 - Ensure trees are rendered only in the background layer, never overlapping player or foreground obstacles (initTreeArray, renderTreesBackgroundLayer)
