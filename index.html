@@ -612,6 +612,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkPlayerNPCProximity(dt);
+
 updateDistanceTraveled(dt);
 
 checkAntagonistCollision(dt);
@@ -5616,6 +5618,28 @@ function resetStyleScoreOnHazardCrash(game) {
     game.styleScore = 0;
   }
 }
+
+function checkPlayerNPCProximity(dt) {
+    if (!game.npcSkiers) return;
+    
+    let nearNPC = false;
+    
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        const dx = player.x - npc.x;
+        const dy = player.y - npc.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance <= 10) {
+            nearNPC = true;
+            addClosePassFlagToPlayer();
+            break;
+        }
+    }
+    
+    player.nearNPC = nearNPC;
+}
+
 
 
 
