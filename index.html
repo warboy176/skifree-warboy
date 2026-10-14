@@ -1430,6 +1430,8 @@ drawMoon(ctx);
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
 applyBiomeTintTransition();
+preservePlayerStateDuringBiomeTransition();
+
 triggerSkiWindAudioOnBiomeTransition();
 
 
@@ -5571,6 +5573,42 @@ function initForestObstacles() {
     spawnRate: 0.3
   };
 }
+
+function preservePlayerStateDuringBiomeTransition() {
+    if (!game.playerState || !game.biomeTransitionState) return;
+    
+    const player = game.player;
+    if (!player) return;
+    
+    // Freeze current player state before transition
+    if (game.biomeTransitionState === 'STARTING') {
+        game.frozenPlayerState = {
+            x: player.x,
+            y: player.y,
+            scale: player.scale,
+            animation: player.animation,
+            state: game.playerState
+        };
+    }
+    
+    // Restore player state after transition
+    if (game.biomeTransitionState === 'FINISHING') {
+        if (game.frozenPlayerState) {
+            player.x = game.frozenPlayerState.x;
+            player.y = game.frozenPlayerState.y;
+            player.scale = game.frozenPlayerState.scale;
+            player.animation = game.frozenPlayerState.animation;
+            game.playerState = game.frozenPlayerState.state;
+            delete game.frozenPlayerState;
+        }
+    }
+    
+    // Apply biome tint transition
+    if (game.biomeTransitionState === 'TRANSITIONING') {
+        applyBiomeTintTransition();
+    }
+}
+
 
 
 
