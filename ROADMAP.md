@@ -545,7 +545,9 @@ Operator direction from the daily report lands here.
 - [x] Implement forest background layer with original pixel art trees drawn in code, positioned to scroll at same rate as slope
 - [!] Modify obstacle spawn logic to replace or blend with forest-specific obstacles (e.g., tree clusters) at transition point  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [x] Add forest transition trigger at a fixed distance threshold below the player's starting position
-- [ ] Define forest biome properties: background color, snow texture shift, and ambient lighting changes
+- [ ] Add forest background color shift: change canvas background from sky blue to deep green at y >= 400
+- [ ] Implement forest snow texture: replace current snow pattern with a denser, shadowed pixel texture starting at y >= 400
+- [ ] Introduce ambient lighting dimming: reduce canvas brightness by 30% when player y >= 400, using a semi-transparent overlay
 - [ ] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
 - [ ] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
 - [ ] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
