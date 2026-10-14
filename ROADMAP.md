@@ -552,7 +552,11 @@ Operator direction from the daily report lands here.
 - [x] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
 - [x] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
 - [!] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
+- [ ] Add a style score counter that tracks consecutive near-misses or crashes through obstacles
+- [ ] Implement a function to detect when the player is within 10px of an NPC skier during skiing
+- [ ] Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state
+- [ ] Create a multiplier system that increases on each valid style action and resets on collision
+- [ ] Update the score display to show style points and active multiplier in real time
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
