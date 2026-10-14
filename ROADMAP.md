@@ -548,3 +548,5 @@ Operator direction from the daily report lands here.
 - [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
