@@ -558,7 +558,7 @@ Operator direction from the daily report lands here.
 - [!] Display the current style score in the HUD with a distinct visual style  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a function to detect when the player is within 10px of an NPC skier during skiing
 - [x] Add a function to detect when the player crashes through any obstacle (excluding trees) while not in a crash state
-- [ ] Add a style multiplier counter initialized to 1, incrementing only on valid style actions like slaloming close to skiers or crashing through obstacles
+- [x] Add a style multiplier counter initialized to 1, incrementing only on valid style actions like slaloming close to skiers or crashing through obstacles
 - [ ] Implement a reset mechanism that sets the multiplier to 1 when the player collides with trees or oil slicks
 - [ ] Display the current multiplier value on screen with a dynamic, visually distinct HUD element that scales with multiplier value
 - [ ] Update the score display to show style points and active multiplier in real time
