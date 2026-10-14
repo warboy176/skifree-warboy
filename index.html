@@ -252,6 +252,8 @@ initMutantSnowWolves();
     initBiomeTintState();
 
     initTrees();
+generateForestTrees();
+
 generateTreePositions();
 
     initSnowfieldObstacles();
@@ -5521,6 +5523,20 @@ function renderTreesBackgroundLayer() {
     }
   }
 }
+
+function generateForestTrees() {
+  const treeColor = activeTreeColorPalette().foliage[2];
+  for (let i = 0; i < 15; i++) {
+    const y = i * 120;
+    const offsetX = Math.random() * 80 - 40;
+    const x = W / 2 + offsetX;
+    if (x >= 0 && x <= W && y >= 0 && y <= H) {
+      const tree = { x, y, color: treeColor };
+      game.trees.push(tree);
+    }
+  }
+}
+
 
 
 
