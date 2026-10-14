@@ -1,4 +1,5 @@
 # Changelog
+- Add a style score variable initialized to 0 in the game state (initStyleScore)
 - Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions (initNPCs, updateNPCs, checkNPCCollision)
 - Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state (preservePlayerStateDuringBiomeTransition)
 - Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic (initForestObstacles)
