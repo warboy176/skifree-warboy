@@ -5511,6 +5511,18 @@ function initTreeArray() {
   }
 }
 
+function renderTreesBackgroundLayer() {
+  if (!game.treeArray) return;
+  for (let i = 0; i < game.treeArray.length; i++) {
+    const tree = game.treeArray[i];
+    if (tree.y > player.y - 100) {
+      ctx.fillStyle = '#000';
+      ctx.fillRect(tree.x, tree.y, 6, 6);
+    }
+  }
+}
+
+
 
 
 
