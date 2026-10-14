@@ -4557,6 +4557,8 @@ function checkOilSlickCollisions() {
         player.y < slick.y + slick.height &&
         player.y + player.height > slick.y) {
       applyPenaltyToStyleScoreOnHazardCrash("oilSlick");
+resetStyleScoreOnHazardCrash(game);
+
       game.oilSlicks.splice(i, 1);
     }
   }
@@ -5608,6 +5610,13 @@ function preservePlayerStateDuringBiomeTransition() {
         applyBiomeTintTransition();
     }
 }
+
+function resetStyleScoreOnHazardCrash(game) {
+  if (game.hazardCrash) {
+    game.styleScore = 0;
+  }
+}
+
 
 
 
