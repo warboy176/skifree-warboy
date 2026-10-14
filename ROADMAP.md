@@ -549,7 +549,7 @@ Operator direction from the daily report lands here.
 - [!] Implement forest snow texture: replace current snow pattern with a denser, shadowed pixel texture starting at y >= 400  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 - [!] Introduce ambient lighting dimming: reduce canvas brightness by 30% when player y >= 400, using a semi-transparent overlay  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [x] Implement forest-specific obstacle spawn patterns (e.g., denser trees, new rock clusters) without altering existing obstacle logic
-- [ ] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
+- [x] Ensure player sprite rendering remains unchanged during biome transition, preserving its position, scale, and animation state
 - [ ] Verify that collision detection and response behavior for all obstacles remain fully consistent across biome transitions
 - [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
