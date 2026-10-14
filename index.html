@@ -5640,6 +5640,18 @@ function checkPlayerNPCProximity(dt) {
     player.nearNPC = nearNPC;
 }
 
+function checkPlayerHazardCrash(player, npcSkiers, game) {
+  if (game.hazardCrash) return false;
+  return npcSkiers.some(npc => 
+    npc.type !== 'tree' && 
+    player.x < npc.x + NPC_SKIER_WIDTH &&
+    player.x + NPC_SKIER_WIDTH > npc.x &&
+    player.y < npc.y + NPC_SKIER_HEIGHT &&
+    player.y + NPC_SKIER_HEIGHT > npc.y
+  );
+}
+
+
 
 
 
