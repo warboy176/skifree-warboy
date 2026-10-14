@@ -541,6 +541,10 @@ Operator direction from the daily report lands here.
 - [x] Add a background layer rendering function that draws trees only at y ≥ 500 meters using original pixel art
 - [x] Implement tree positioning logic to place trees in a dense, randomized pattern at 500m and beyond, using only original pixel art
 - [x] Ensure trees are rendered only in the background layer, never overlapping player or foreground obstacles
-- [ ] Ensure the forest transition is seamless and does not interfere with existing obstacles, player, or scrolling mechanics
+- [ ] Add forest biome transition trigger at fixed distance intervals without altering existing scroll speed or obstacle generation
+- [ ] Implement forest background layer with original pixel art trees drawn in code, positioned to scroll at same rate as slope
+- [ ] Modify obstacle spawn logic to replace or blend with forest-specific obstacles (e.g., tree clusters) at transition point
+- [ ] Ensure player sprite remains unchanged and unaffected by forest transition, preserving collision and animation behavior
+- [ ] Add subtle visual cues (e.g., fog, tree density change) to signal biome shift without disrupting gameplay flow
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPCs or crashing through obstacles, with a multiplier that resets on collision
 - [ ] Create a persistent achievements registry with dynamic unlock logic: extend the existing system to auto-register new achievements for each new hazard type or mechanic
