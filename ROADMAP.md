@@ -563,7 +563,7 @@ Operator direction from the daily report lands here.
 - [x] Display the current multiplier value on screen with a dynamic, visually distinct HUD element that scales with multiplier value
 - [x] Update the score display to show style points and active multiplier in real time
 - [x] Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions
-- [ ] Implement a function to register a new achievement dynamically when a new hazard type or mechanic is introduced
+- [!] Implement a function to register a new achievement dynamically when a new hazard type or mechanic is introduced  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a function to check and trigger achievement unlocks based on in-game events like encountering a new hazard type
 - [ ] Add a visual indicator in the HUD to display unlocked achievements with their names and icons
 
