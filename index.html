@@ -5771,6 +5771,14 @@ function applyAchievementToHUD() {
   ctx.globalAlpha = 1;
 }
 
+function spawnAntagonistIfDelayed() {
+  if (!game.antagonist.active && performance.now() - game.lastAntagonistSpawnTime > 5000) {
+    game.antagonist.active = true;
+    spawnAntagonistAtFixedDistanceBehindPlayer();
+  }
+}
+
+
 
 
 
