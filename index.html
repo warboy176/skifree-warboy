@@ -1487,6 +1487,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAchievementHUD();
+
 initBiomeTransitionFlag();
 
 initFastModeState();
@@ -5706,6 +5708,20 @@ function onHazardEncountered(hazardType) {
         addDefaultAchievement(hazardType + 'HazardEncounter');
     }
 }
+
+function initAchievementHUD() {
+  if (!game.achievementsHUD) {
+    game.achievementsHUD = [];
+  }
+  if (game.achievements && Array.isArray(game.achievements)) {
+    game.achievements.forEach(achievement => {
+      if (achievement.unlocked) {
+        game.achievementsHUD.push(achievement);
+      }
+    });
+  }
+}
+
 
 
 
