@@ -592,3 +592,8 @@ Operator direction from the daily report lands here.
 - [!] Implement a `drawAchievementBadges()` function that renders unlocked achievements as small, non-intrusive badges in the top-left corner using original pixel art  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Integrate `drawAchievementBadges()` into the main game loop to render badges during gameplay  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Define achievement conditions based on existing game mechanics: e.g., 'Hit 5 skiers in a row', 'Jump over 3 obstacles without touching', 'Avoid 10 trees'
+
+- [ ] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient sound cues
+- [ ] Introduce style scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing tricks
+- [ ] Design and integrate a persistent achievements registry with new witty unlocks for biome traversal, combo streaks, and chase antagonist evasion
