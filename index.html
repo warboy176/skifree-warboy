@@ -169,7 +169,8 @@ if (autoplay.enabled) {
     jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0,
     closePass:false,
     crashed: false,
-    crashedPrev: false
+    crashedPrev: false,
+    position: { x: 0, y: 0 }
   };
   const yeti = {
     active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,
@@ -182,7 +183,13 @@ if (autoplay.enabled) {
     cleanTime:0,maxSpeed:0,scoreSaved:false,milestone:0,lastTime:0,
     audioContext: null,
     soundBuffer: null,
-    terrainType: 'snow'
+    terrainType: 'snow',
+    antagonist: {
+      active: false,
+      x: 0,
+      y: 0,
+      lastSpawnTime: 0
+    }
   };
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
@@ -5772,9 +5779,17 @@ function applyAchievementToHUD() {
 }
 
 function spawnAntagonistIfDelayed() {
-  if (!game.antagonist.active && performance.now() - game.lastAntagonistSpawnTime > 5000) {
+  const now = Date.now();
+  const timeSinceLastSpawn = now - (game.antagonist.lastSpawnTime || 0);
+
+  if (!game.antagonist.active && timeSinceLastSpawn > 5000) {
     game.antagonist.active = true;
-    spawnAntagonistAtFixedDistanceBehindPlayer();
+    game.antagonist.lastSpawnTime = now;
+    
+    // Position 100m behind player at start of track
+    const distanceBehind = 100 * METERS_PER_PIXEL;
+    game.antagonist.x = game.player.position.x;
+    game.antagonist.y = game.player.position.y - distanceBehind;
   }
 }
 
