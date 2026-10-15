@@ -582,7 +582,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a persistent achievement counter that increments and displays the number of times the player has successfully dodged or interacted with a new hazard type  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a visual indicator (e.g., a small icon or badge) in the HUD that shows the player's current active achievements for new mechanics or NPCs
 - [x] Ensure each achievement is only counted once per session and persists across restarts using localStorage
-- [ ] Add a new achievement for defeating the chase antagonist (Warboy's original creature) by surviving its pursuit for 10 seconds or more
+- [!] Add a new achievement for defeating the chase antagonist (Warboy's original creature) by surviving its pursuit for 10 seconds or more  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Store achievement progress in localStorage and restore it on reload
 - [ ] Display active achievements in the HUD with visual indicators for completed and in-progress milestones
 
