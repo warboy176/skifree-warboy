@@ -5967,6 +5967,18 @@ function handleCrashThroughCollision(player, obstacle) {
   return true;
 }
 
+function updateCrashThroughBonus(dt) {
+  if (game.crashThroughActive) {
+    game.crashThroughTimer += dt;
+    applyFastModeVisualEffects();
+    if (game.crashThroughTimer > 1000) {
+      game.crashThroughActive = false;
+      game.crashThroughTimer = 0;
+    }
+  }
+}
+
+
 
 
 
