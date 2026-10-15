@@ -3291,6 +3291,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerStyleAchievement();
+
 registerStylePointsAchievement();
 
 registerOilSlickHazardAchievement();
@@ -5792,6 +5794,17 @@ function spawnAntagonistIfDelayed() {
     game.antagonist.y = game.player.position.y - distanceBehind;
   }
 }
+
+function registerStyleAchievement() {
+  addDefaultAchievement({
+    key: 'style_combo',
+    type: 'style',
+    threshold: STYLE_SCORE_BEST_THRESHOLD,
+    unlockMessage: UNLOCK_MESSAGES.style_combo
+  });
+  applyStyleScoreMultiplierToGameLoop();
+}
+
 
 
 
