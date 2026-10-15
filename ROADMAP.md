@@ -578,7 +578,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes (e.g., open slope → forest → night) that transition smoothly as the player descends
 - [x] Introduce a style-based scoring system that rewards slaloming close to or crashing through NPCs, with real-time combo multipliers
 - [x] Add a persistent achievements registry that tracks new hazards, NPCs, and mechanics as they are introduced
-- [ ] Add a new achievement tracking system that records the first encounter with each unique hazard type (e.g., oil slick, drone, dog) as a player encounters it
+- [x] Add a new achievement tracking system that records the first encounter with each unique hazard type (e.g., oil slick, drone, dog) as a player encounters it
 - [ ] Implement a persistent achievement counter that increments and displays the number of times the player has successfully dodged or interacted with a new hazard type
 - [ ] Create a visual indicator (e.g., a small icon or badge) in the HUD that shows the player's current active achievements for new mechanics or NPCs
 - [ ] Ensure each achievement is only counted once per session and persists across restarts using localStorage
