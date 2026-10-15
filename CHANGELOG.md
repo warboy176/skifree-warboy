@@ -1,4 +1,5 @@
 # Changelog
+- Store achievement progress in localStorage and restore it on reload (initAchievementsStorage, saveAchievementsToStorage, loadAchievementsFromStorage)
 - Ensure each achievement is only counted once per session and persists across restarts using localStorage (initAchievementPersistence, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Create a visual indicator (e.g., a small icon or badge) in the HUD that shows the player's current active achievements for new mechanics or NPCs (initAchievementHUD, initAchievementHUD, updateActiveAchievementBadges, drawAchievementHUD)
 - Add a new achievement tracking system that records the first encounter with each unique hazard type (e.g., oil slick, drone, dog) as a player encounters it (initHazardAchievements, registerHazardEncounter)
