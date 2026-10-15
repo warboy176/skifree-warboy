@@ -1433,6 +1433,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+applyAchievementToHUD();
+
 applyBiomeTintTransition();
 preservePlayerStateDuringBiomeTransition();
 
@@ -5721,6 +5723,54 @@ function initAchievementHUD() {
     });
   }
 }
+
+function applyAchievementToHUD() {
+  if (!game.achievementsHUD) return;
+  
+  const badgeWidth = 60;
+  const badgeHeight = 20;
+  const borderWidth = 8;
+  const fontSize = '12px';
+  const fontFamily = 'monospace';
+  
+  for (let i = game.achievementsHUD.length - 1; i >= 0; i--) {
+    const badge = game.achievementsHUD[i];
+    
+    if (!badge || !badge.visible) continue;
+    
+    const x = badge.x;
+    const y = badge.y;
+    const duration = badge.duration;
+    const elapsed = Date.now() - badge.startTime;
+    const alpha = Math.max(0, 1 - (elapsed / duration));
+    
+    if (alpha <= 0) {
+      game.achievementsHUD.splice(i, 1);
+      continue;
+    }
+    
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x, y, badgeWidth, badgeHeight);
+    
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = borderWidth;
+    ctx.strokeRect(x, y, badgeWidth, badgeHeight);
+    
+    ctx.fillStyle = 'black';
+    ctx.font = `${fontSize} ${fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    const textX = x + badgeWidth / 2;
+    const textY = y + badgeHeight / 2;
+    
+    ctx.fillText(badge.name, textX, textY);
+  }
+  
+  ctx.globalAlpha = 1;
+}
+
 
 
 
