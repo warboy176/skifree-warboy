@@ -1496,6 +1496,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initComboMultiplierSystem();
+
 initAchievementHUD();
 
 initBiomeTransitionFlag();
@@ -5923,6 +5925,14 @@ function drawAntagonist() {
     ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(game.antagonist.x + 14, game.antagonist.y + 14, 4, 4);
 }
+
+function initComboMultiplierSystem() {
+    if (typeof game.comboStreak !== 'number') game.comboStreak = 0;
+    game.comboStreakTimer = 0;
+    const COMBO_STREAK_THRESHOLD = 5;
+    const COMBO_STREAK_WINDOW_MS = 3000;
+}
+
 
 
 
