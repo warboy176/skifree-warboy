@@ -5867,6 +5867,14 @@ function updateActiveAchievementBadges() {
   });
 }
 
+function initAchievementPersistence() {
+    if (!localStorage.getItem('warboy_achievements')) {
+        localStorage.setItem('warboy_achievements', JSON.stringify([]));
+    }
+    game.achievements = JSON.parse(localStorage.getItem('warboy_achievements'));
+}
+
+
 
 
 
