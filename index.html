@@ -5987,16 +5987,13 @@ function initTrickLandingSystem() {
 }
 
 function handleTrickLanding(player, dt) {
-  if (!game.trickLandingActive || player.isJumping || !player.landed) return;
-  
-  applyStylePoints(100);
-  applyComboMultiplierToScore(100);
-  applyStyleMultiplierToScoreInGameLoop();
-  applyStylePointsToNPCs();
-  
-  game.trickLandingActive = false;
-  game.trickLandingMultiplier = 1;
-  game.trickLandingTimer = 0;
+  if (game.trickLandingActive && !player.isJumping && player.landed) {
+    game.score += 100;
+    game.comboMultiplier = 1;
+    game.style += 10;
+    game.comboStreak = 0;
+    game.trickLandingActive = false;
+  }
 }
 
 
