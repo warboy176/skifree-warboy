@@ -1,4 +1,5 @@
 # Changelog
+- Create a visual indicator (e.g., a small icon or badge) in the HUD that shows the player's current active achievements for new mechanics or NPCs (initAchievementHUD, initAchievementHUD, updateActiveAchievementBadges, drawAchievementHUD)
 - Add a new achievement tracking system that records the first encounter with each unique hazard type (e.g., oil slick, drone, dog) as a player encounters it (initHazardAchievements, registerHazardEncounter)
 - Add a persistent achievements registry that tracks new hazards, NPCs, and mechanics as they are introduced (initAchievementsRegistry, registerNewHazardAchievement, registerNewNPCAchievement)
 - Introduce a style-based scoring system that rewards slaloming close to or crashing through NPCs, with real-time combo multipliers (initStyleScoringSystem, applyStyleScoringToGameLoop, registerStyleAchievement)
