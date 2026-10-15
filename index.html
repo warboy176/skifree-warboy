@@ -5933,6 +5933,21 @@ function initComboMultiplierSystem() {
     const COMBO_STREAK_WINDOW_MS = 3000;
 }
 
+function updateComboMultiplierSystem(dt) {
+  const anyClosePass = game.npcSkiers && game.npcSkiers.some(npc=>checkClosePassCollision(player,npc));
+  if (anyClosePass) {
+    game.comboStreak++;
+    game.comboStreakTimer = 0;
+  } else {
+    game.comboStreakTimer += dt;
+    if (game.comboStreakTimer >= COMBO_STREAK_WINDOW_MS) {
+      game.comboStreak = 0;
+    }
+  }
+  applyComboMultiplierToScore(COMBO_STREAK_BONUS * game.comboStreak);
+}
+
+
 
 
 
