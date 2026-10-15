@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that tracks new hazards, NPCs, and mechanics as they are introduced (initAchievementsRegistry, registerNewHazardAchievement, registerNewNPCAchievement)
 - Introduce a style-based scoring system that rewards slaloming close to or crashing through NPCs, with real-time combo multipliers (initStyleScoringSystem, applyStyleScoringToGameLoop, registerStyleAchievement)
 - Implement dynamic terrain biomes (e.g., open slope → forest → night) that transition smoothly as the player descends (initBiomeState, updateBiomeTransition)
 - Add the Warboy-designed chase antagonist (a pixel-art creature of your own creation) that spawns after a delay and pursues the player when they slow down (initAntagonist, spawnAntagonistIfDelayed, updateAntagonist)
