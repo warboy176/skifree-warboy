@@ -3297,6 +3297,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerTrickLandingAchievement();
+
 registerStyleAchievement();
 
 registerStylePointsAchievement();
@@ -5995,6 +5997,11 @@ function handleTrickLanding(player, dt) {
     game.trickLandingActive = false;
   }
 }
+
+function registerTrickLandingAchievement() {
+  addDefaultAchievement('trick_master', 'score', 10);
+}
+
 
 
 
