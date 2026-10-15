@@ -6002,6 +6002,12 @@ function registerTrickLandingAchievement() {
   addDefaultAchievement('trick_master', 'score', 10);
 }
 
+function initStyleHUDState() {
+    if (typeof game.styleScore !== 'number') game.styleScore = 0;
+    if (typeof game.styleMultiplier !== 'number') game.styleMultiplier = 0;
+}
+
+
 
 
 
