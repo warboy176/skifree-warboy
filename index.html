@@ -6007,6 +6007,20 @@ function initStyleHUDState() {
     if (typeof game.styleMultiplier !== 'number') game.styleMultiplier = 0;
 }
 
+function updateStyleHUD(game) {
+  const scoreX = 16;
+  const multiplierX = 16;
+  const y = 18;
+  
+  ctx.fillStyle = '#ffffff';
+  ctx.textAlign = 'left';
+  ctx.font = '16px sans-serif';
+  
+  ctx.fillText(`Style: ${game.styleScore}`, scoreX, y);
+  ctx.fillText(`×${game.styleMultiplier}`, multiplierX, y + 20);
+}
+
+
 
 
 
