@@ -1,4 +1,5 @@
 # Changelog
+- Add a new `achievements` object to track player progress on specific events like 'slalom through 3 skiers' or 'crash through a drone' (initAchievements, registerAchievement, updateAchievements)
 - Add a visual indicator in the HUD to display unlocked achievements with their names and icons (initAchievementHUD)
 - Add a new achievement system that tracks specific in-game events such as encountering a new hazard type (registerHazardAchievement, onHazardEncountered)
 - Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions (initAchievementRegistry, registerAchievement, unlockAchievement)
