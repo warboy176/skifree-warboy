@@ -1,4 +1,5 @@
 # Changelog
+- Add the Warboy-designed chase antagonist (a pixel-art creature of your own creation) that spawns after a delay and pursues the player when they slow down (initAntagonist, spawnAntagonistIfDelayed, updateAntagonist)
 - Integrate the achievement system into the game loop to ensure checks happen on every frame during gameplay (checkAchievementsOnFrame)
 - Add a `triggerAchievement` function that logs and visually signals new achievements via a temporary on-screen badge (initAchievementHUD, applyAchievementToHUD)
 - Implement a `checkAchievements` function that triggers after each collision or scoring event, updating the registry with new milestones (initAchievementRegistry, checkAchievements)

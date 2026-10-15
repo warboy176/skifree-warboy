@@ -574,7 +574,7 @@ Operator direction from the daily report lands here.
 - [x] Add a `triggerAchievement` function that logs and visually signals new achievements via a temporary on-screen badge
 - [x] Integrate the achievement system into the game loop to ensure checks happen on every frame during gameplay
 
-- [ ] Add the Warboy-designed chase antagonist (a pixel-art creature of your own creation) that spawns after a delay and pursues the player when they slow down
+- [x] Add the Warboy-designed chase antagonist (a pixel-art creature of your own creation) that spawns after a delay and pursues the player when they slow down
 - [ ] Implement dynamic terrain biomes (e.g., open slope → forest → night) that transition smoothly as the player descends
 - [ ] Introduce a style-based scoring system that rewards slaloming close to or crashing through NPCs, with real-time combo multipliers
 - [ ] Add a persistent achievements registry that auto-updates with new counters for every new hazard, NPC, or mechanic introduced
