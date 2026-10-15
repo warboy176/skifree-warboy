@@ -586,7 +586,7 @@ Operator direction from the daily report lands here.
 - [x] Store achievement progress in localStorage and restore it on reload
 - [x] Display active achievements in the HUD with visual indicators for completed and in-progress milestones
 
-- [ ] Add a new `achievements` object to track player progress on specific interactions like hitting skiers, avoiding trees, or performing tricks
+- [x] Add a new `achievements` object to track player progress on specific interactions like hitting skiers, avoiding trees, or performing tricks
 - [ ] Implement a `checkAchievements()` function that triggers on key events (e.g., collision, jump, style scoring) and updates the registry with new milestones
 - [ ] Create a `displayAchievements()` function that renders active achievements as small, non-intrusive badges in the top-left corner of the screen
 - [ ] Define achievement conditions based on existing game mechanics: e.g., 'Hit 5 skiers in a row', 'Jump over 3 obstacles without touching', 'Avoid 10 trees'

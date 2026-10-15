@@ -1,4 +1,5 @@
 # Changelog
+- Add a new `achievements` object to track player progress on specific interactions like hitting skiers, avoiding trees, or performing tricks (initAchievements, registerAchievement, updateAchievements)
 - Display active achievements in the HUD with visual indicators for completed and in-progress milestones (initAchievementHUD, updateAchievementHUD)
 - Store achievement progress in localStorage and restore it on reload (initAchievementsStorage, saveAchievementsToStorage, loadAchievementsFromStorage)
 - Ensure each achievement is only counted once per session and persists across restarts using localStorage (initAchievementPersistence, loadAchievementsFromStorage, saveAchievementsToStorage)
