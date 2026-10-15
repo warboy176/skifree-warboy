@@ -598,6 +598,6 @@ Operator direction from the daily report lands here.
 - [!] Add a style score counter that increments when the player slaloms closely to NPCs without colliding  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a multiplier system that increases when the player performs consecutive close passes to NPCs
 - [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing
-- [ ] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
+- [x] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
 - [ ] Display the current style score and multiplier in the HUD with visual feedback
 - [ ] Design and integrate a persistent achievements registry with new witty unlocks for biome traversal, combo streaks, and chase antagonist evasion

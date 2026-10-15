@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump (initTrickLandingSystem, handleTrickLanding, registerTrickLandingAchievement)
 - Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing (initCrashThroughBonus, handleCrashThroughCollision, updateCrashThroughBonus)
 - Implement a multiplier system that increases when the player performs consecutive close passes to NPCs (initComboMultiplierSystem, updateComboMultiplierSystem)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initAntagonist, updateAntagonist, drawAntagonist)
