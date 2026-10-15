@@ -599,5 +599,5 @@ Operator direction from the daily report lands here.
 - [x] Implement a multiplier system that increases when the player performs consecutive close passes to NPCs
 - [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing
 - [x] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
-- [ ] Display the current style score and multiplier in the HUD with visual feedback
+- [x] Display the current style score and multiplier in the HUD with visual feedback
 - [ ] Design and integrate a persistent achievements registry with new witty unlocks for biome traversal, combo streaks, and chase antagonist evasion
