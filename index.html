@@ -5843,6 +5843,31 @@ function registerHazardEncounter(hazardType) {
   }
 }
 
+function updateActiveAchievementBadges() {
+  if (!game.achievementHUD) return;
+  
+  game.achievementHUD.badges = [];
+  
+  ACHIEVEMENT_DEFINITIONS.forEach(achievementDef => {
+    if (achievementDef.active) {
+      const badge = {
+        type: achievementDef.type,
+        icon: 'white-square-16x16',
+        timestamp: Date.now()
+      };
+      
+      game.achievementHUD.badges.push(badge);
+    }
+  });
+  
+  // Position badges in a row at top-left, spaced 20px apart
+  game.achievementHUD.badges.forEach((badge, index) => {
+    badge.x = 10 + (index * 20);
+    badge.y = 10;
+  });
+}
+
+
 
 
 
