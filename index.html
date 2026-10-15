@@ -5832,6 +5832,18 @@ function initHazardAchievements() {
     game.state.hazardEncounters = {};
 }
 
+function registerHazardEncounter(hazardType) {
+  if (!game.state.hazardEncounters[hazardType]) {
+    game.state.hazardEncounters[hazardType] = true;
+    const achievementDef = ACHIEVEMENT_DEFINITIONS.find(a => a.type === 'first_hazard' && a.condition?.hazardType === hazardType);
+    if (achievementDef) {
+      addDefaultAchievement(achievementDef);
+      applyAchievementToHUD(achievementDef);
+    }
+  }
+}
+
+
 
 
 
