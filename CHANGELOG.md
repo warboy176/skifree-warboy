@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements state object to track active achievements and their unlock conditions (initAchievementsState, registerAchievement, unlockAchievement)
 - Implement a `checkAchievements()` function that triggers on key events (e.g., collision, jump, style scoring) and updates the registry with new milestones (initAchievementRegistry, checkAchievements)
 - Add a new `achievements` object to track player progress on specific interactions like hitting skiers, avoiding trees, or performing tricks (initAchievements, registerAchievement, updateAchievements)
 - Display active achievements in the HUD with visual indicators for completed and in-progress milestones (initAchievementHUD, updateAchievementHUD)
