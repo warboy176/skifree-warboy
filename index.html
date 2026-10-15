@@ -5896,6 +5896,26 @@ function loadAchievementsFromStorage() {
   game.achievements = [];
 }
 
+function updateAchievementHUD() {
+    if (!game.achievementHUD) return;
+    const ctx = game.ctx;
+    let x = 10;
+    const y = HUD_H - 20;
+    
+    game.achievements.forEach(achievement => {
+        if (achievement.active) {
+            if (achievement.completed) {
+                ctx.fillStyle = 'green';
+            } else {
+                ctx.fillStyle = 'white';
+            }
+            ctx.fillRect(x, y, 16, 16);
+            x += 20;
+        }
+    });
+}
+
+
 
 
 
