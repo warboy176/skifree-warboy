@@ -5873,6 +5873,29 @@ function initAchievementPersistence() {
     }
     game.achievements = JSON.parse(localStorage.getItem('warboy_achievements'));
 }
+loadAchievementsFromStorage();
+
+
+function loadAchievementsFromStorage() {
+  const stored = localStorage.getItem('warboy_achievements');
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed)) {
+        game.achievements = parsed.map(ach => ({
+          ...ach,
+          unlocked: ach.unlocked || false,
+          count: ach.count || 0
+        }));
+        return;
+      }
+    } catch (e) {
+      console.error('Failed to parse achievements:', e);
+    }
+  }
+  game.achievements = [];
+}
+
 
 
 
