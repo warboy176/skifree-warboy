@@ -5805,6 +5805,19 @@ function registerStyleAchievement() {
   applyStyleScoreMultiplierToGameLoop();
 }
 
+function registerNewHazardAchievement(hazardType) {
+  if (!game.state.achievements[hazardType]) {
+    const definition = ACHIEVEMENT_DEFINITIONS[hazardType];
+    game.state.achievements[hazardType] = {
+      count: 0,
+      unlocked: false,
+      timestamp: 0,
+      ...definition
+    };
+  }
+}
+
+
 
 
 
