@@ -594,6 +594,6 @@ Operator direction from the daily report lands here.
 - [x] Define achievement conditions based on existing game mechanics: e.g., 'Hit 5 skiers in a row', 'Jump over 3 obstacles without touching', 'Avoid 10 trees'
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient sound cues
+- [!] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient sound cues  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Introduce style scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing tricks
 - [ ] Design and integrate a persistent achievements registry with new witty unlocks for biome traversal, combo streaks, and chase antagonist evasion
