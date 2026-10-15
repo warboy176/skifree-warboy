@@ -595,5 +595,9 @@ Operator direction from the daily report lands here.
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [!] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient sound cues  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
-- [ ] Introduce style scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing tricks
+- [ ] Add a style score counter that increments when the player slaloms closely to NPCs without colliding
+- [ ] Implement a multiplier system that increases when the player performs consecutive close passes to NPCs
+- [ ] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing
+- [ ] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
+- [ ] Display the current style score and multiplier in the HUD with visual feedback
 - [ ] Design and integrate a persistent achievements registry with new witty unlocks for biome traversal, combo streaks, and chase antagonist evasion
