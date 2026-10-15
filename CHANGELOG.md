@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing (initCrashThroughBonus, handleCrashThroughCollision, updateCrashThroughBonus)
 - Implement a multiplier system that increases when the player performs consecutive close passes to NPCs (initComboMultiplierSystem, updateComboMultiplierSystem)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initAntagonist, updateAntagonist, drawAntagonist)
 - Define achievement conditions based on existing game mechanics: e.g., 'Hit 5 skiers in a row', 'Jump over 3 obstacles without touching', 'Avoid 10 trees' (initAchievementSystem, updateAchievements)
