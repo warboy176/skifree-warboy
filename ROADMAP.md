@@ -567,6 +567,6 @@ Operator direction from the daily report lands here.
 - [x] Add a new achievement system that tracks specific in-game events such as encountering a new hazard type
 - [!] Implement a function to register and validate achievement triggers when new hazard types are first encountered  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a visual and auditory feedback mechanism to notify the player when an achievement is unlocked  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Add a visual indicator in the HUD to display unlocked achievements with their names and icons
+- [x] Add a visual indicator in the HUD to display unlocked achievements with their names and icons
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)

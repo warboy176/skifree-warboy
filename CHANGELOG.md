@@ -1,4 +1,5 @@
 # Changelog
+- Add a visual indicator in the HUD to display unlocked achievements with their names and icons (initAchievementHUD)
 - Add a new achievement system that tracks specific in-game events such as encountering a new hazard type (registerHazardAchievement, onHazardEncountered)
 - Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions (initAchievementRegistry, registerAchievement, unlockAchievement)
 - Update the score display to show style points and active multiplier in real time (initStyleScoreSystem, updateStyleScoreAndMultiplier, renderStyleScoreHUD)
