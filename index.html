@@ -1496,6 +1496,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initTrickLandingSystem();
+
 initCrashThroughBonus();
 
 initComboMultiplierSystem();
@@ -5977,6 +5979,13 @@ function updateCrashThroughBonus(dt) {
     }
   }
 }
+
+function initTrickLandingSystem() {
+    game.trickLandingActive = false;
+    game.trickLandingTimer = 0;
+    game.trickLandingMultiplier = 1;
+}
+
 
 
 
