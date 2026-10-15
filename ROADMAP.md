@@ -565,7 +565,7 @@ Operator direction from the daily report lands here.
 - [x] Add a new achievement registry object to store unlockable achievements with unique IDs and unlock conditions
 - [!] Implement a function to register a new achievement dynamically when a new hazard type or mechanic is introduced  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a new achievement system that tracks specific in-game events such as encountering a new hazard type
-- [ ] Implement a function to register and validate achievement triggers when new hazard types are first encountered
+- [!] Implement a function to register and validate achievement triggers when new hazard types are first encountered  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a visual and auditory feedback mechanism to notify the player when an achievement is unlocked
 - [ ] Add a visual indicator in the HUD to display unlocked achievements with their names and icons
 
