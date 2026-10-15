@@ -588,5 +588,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add a new `achievements` object to track player progress on specific interactions like hitting skiers, avoiding trees, or performing tricks
 - [x] Implement a `checkAchievements()` function that triggers on key events (e.g., collision, jump, style scoring) and updates the registry with new milestones
-- [ ] Create a `displayAchievements()` function that renders active achievements as small, non-intrusive badges in the top-left corner of the screen
+- [ ] Add a persistent achievements state object to track active achievements and their unlock conditions
+- [ ] Implement a `drawAchievementBadges()` function that renders unlocked achievements as small, non-intrusive badges in the top-left corner using original pixel art
+- [ ] Integrate `drawAchievementBadges()` into the main game loop to render badges during gameplay
 - [ ] Define achievement conditions based on existing game mechanics: e.g., 'Hit 5 skiers in a row', 'Jump over 3 obstacles without touching', 'Avoid 10 trees'
