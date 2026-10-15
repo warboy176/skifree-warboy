@@ -5817,6 +5817,18 @@ function registerNewHazardAchievement(hazardType) {
   }
 }
 
+function registerNewNPCAchievement(npcType) {
+  if (!game.state.achievements[npcType]) {
+    game.state.achievements[npcType] = {
+      definition: ACHIEVEMENT_DEFINITIONS[npcType],
+      count: 0,
+      unlocked: false,
+      timestamp: 0
+    };
+  }
+}
+
+
 
 
 
