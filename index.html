@@ -5410,6 +5410,8 @@ function drawNPCs(ctx) {
     ctx.fillRect(skier.x, skier.y, 4, 4);
   }
 }
+drawAntagonist();
+
 drawTreesAtYThreshold(ctx, game);
 
 
@@ -5914,6 +5916,14 @@ function updateAchievementHUD() {
         }
     });
 }
+
+function drawAntagonist() {
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(game.antagonist.x, game.antagonist.y, 32, 32);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(game.antagonist.x + 14, game.antagonist.y + 14, 4, 4);
+}
+
 
 
 
