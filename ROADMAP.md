@@ -572,4 +572,4 @@ Operator direction from the daily report lands here.
 - [x] Add a new `achievements` object to track player progress on specific events like 'slalom through 3 skiers' or 'crash through a drone'
 - [x] Implement a `checkAchievements` function that triggers after each collision or scoring event, updating the registry with new milestones
 - [x] Add a `triggerAchievement` function that logs and visually signals new achievements via a temporary on-screen badge
-- [ ] Integrate the achievement system into the game loop to ensure checks happen on every frame during gameplay
+- [x] Integrate the achievement system into the game loop to ensure checks happen on every frame during gameplay
