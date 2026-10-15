@@ -578,3 +578,5 @@ Operator direction from the daily report lands here.
 - [ ] Implement dynamic terrain biomes (e.g., open slope → forest → night) that transition smoothly as the player descends
 - [ ] Introduce a style-based scoring system that rewards slaloming close to or crashing through NPCs, with real-time combo multipliers
 - [ ] Add a persistent achievements registry that auto-updates with new counters for every new hazard, NPC, or mechanic introduced
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
