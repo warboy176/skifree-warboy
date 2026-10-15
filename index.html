@@ -5954,6 +5954,20 @@ function initCrashThroughBonus() {
     game.crashThroughTimer = 0;
 }
 
+function handleCrashThroughCollision(player, obstacle) {
+  if (game.crashThroughActive) return false;
+  
+  const isColliding = checkClosePassCollision(player, obstacle);
+  if (!isColliding) return false;
+
+  game.crashThroughActive = true;
+  game.crashThroughTimer = 0;
+  applyComboMultiplierToScore(COMBO_STREAK_BONUS);
+  
+  return true;
+}
+
+
 
 
 
