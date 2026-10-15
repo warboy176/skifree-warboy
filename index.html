@@ -5986,6 +5986,20 @@ function initTrickLandingSystem() {
     game.trickLandingMultiplier = 1;
 }
 
+function handleTrickLanding(player, dt) {
+  if (!game.trickLandingActive || player.isJumping || !player.landed) return;
+  
+  applyStylePoints(100);
+  applyComboMultiplierToScore(100);
+  applyStyleMultiplierToScoreInGameLoop();
+  applyStylePointsToNPCs();
+  
+  game.trickLandingActive = false;
+  game.trickLandingMultiplier = 1;
+  game.trickLandingTimer = 0;
+}
+
+
 
 
 
