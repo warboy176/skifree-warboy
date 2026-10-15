@@ -1496,6 +1496,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughBonus();
+
 initComboMultiplierSystem();
 
 initAchievementHUD();
@@ -5946,6 +5948,12 @@ function updateComboMultiplierSystem(dt) {
   }
   applyComboMultiplierToScore(COMBO_STREAK_BONUS * game.comboStreak);
 }
+
+function initCrashThroughBonus() {
+    game.crashThroughActive = false;
+    game.crashThroughTimer = 0;
+}
+
 
 
 
