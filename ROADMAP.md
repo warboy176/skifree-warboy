@@ -619,6 +619,6 @@ Operator direction from the daily report lands here.
 - [!] Ensure messages appear only once per achievement and are positioned centrally with a subtle shadow for readability  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [x] Add original Warboy-designed chase antagonist: a pixel-art 'Slope Stalker' creature that spawns after 10 seconds of inactivity, crawling up the slope to pursue the player with erratic movement and increasing speed
-- [ ] Implement dynamic terrain transitions: change the snowfield background from open slope to dense forest biome after 500 meters, using original code-drawn trees and shadows
+- [x] Implement dynamic terrain transitions: change the snowfield background from open slope to dense forest biome after 500 meters, using original code-drawn trees and shadows
 - [ ] Introduce style scoring: award bonus points for slaloming within 10px of NPC skiers, with a multiplier that increases with consecutive close passes and resets on collision
 - [ ] Add a 'Wasteland Flip' trick mechanic: perform a 180-degree air flip mid-jump by pressing both left and right arrows simultaneously, earning a 2x style multiplier and a unique visual effect
