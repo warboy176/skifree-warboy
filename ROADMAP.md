@@ -601,7 +601,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
 - [x] Display the current style score and multiplier in the HUD with visual feedback
 - [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty state on first load
-- [ ] Add biome zone boundaries as invisible triggers at specific y-positions in the scrolling slope
+- [!] Add biome zone boundaries as invisible triggers at specific y-positions in the scrolling slope  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a function to detect when the player crosses into a new biome zone and update the current biome state
 - [ ] Implement a function to check if the player has entered a new biome and unlock the corresponding achievement if not already unlocked
 - [ ] Add visual feedback (e.g., a brief screen flash or HUD label) when a new biome is entered and an achievement is unlocked
