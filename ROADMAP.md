@@ -605,7 +605,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to detect when the player crosses into a new biome zone and update the current biome state
 - [x] Implement a function to check if the player has entered a new biome and unlock the corresponding achievement if not already unlocked
 - [!] Add visual feedback (e.g., a brief screen flash or HUD label) when a new biome is entered and an achievement is unlocked  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a combo counter that increments on each consecutive style point from slaloming through skiers, dogs, or drones
+- [!] Add a combo counter that increments on each consecutive style point from slaloming through skiers, dogs, or drones  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to reset the combo counter when a penalty occurs (hitting a tree or oil slick)
 - [ ] Add a function to detect and trigger a combo achievement when the counter reaches 3, 5, and 10
 - [ ] Add visual feedback (e.g., a flashing 'COMBO!' label) when a new combo milestone is reached
