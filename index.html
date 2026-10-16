@@ -6196,6 +6196,21 @@ function updateStyleDistance() {
   game.styleDistance = minDistance;
 }
 
+function resetStyleMultiplierOnHazardCollision() {
+    if (game.player.styleMultiplier > 1) {
+        for (let i = 0; i < game.hazards.length; i++) {
+            const hazard = game.hazards[i];
+            if (!hazard.used && Math.abs(hazard.y - game.player.y) <= 65 && checkPlayerCollision(hazard)) {
+                game.player.styleMultiplier = 1;
+                applyStyleMultiplierToScoreInGameLoop();
+                applyStyleMultiplierToScore();
+                break;
+            }
+        }
+    }
+}
+
+
 
 
 
