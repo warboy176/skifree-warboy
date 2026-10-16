@@ -1496,6 +1496,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeZones();
+
 initTrickLandingSystem();
 
 initCrashThroughBonus();
@@ -6019,6 +6021,13 @@ function updateStyleHUD(game) {
   ctx.fillText(`Style: ${game.styleScore}`, scoreX, y);
   ctx.fillText(`×${game.styleMultiplier}`, multiplierX, y + 20);
 }
+
+function initBiomeZones() {
+  game.biomeThresholds = defineBiomeThresholds();
+  game.currentBiomeIndex = 0;
+  game.biomeTransitionActive = false;
+}
+
 
 
 
