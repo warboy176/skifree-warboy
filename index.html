@@ -630,6 +630,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+spawnSlopeStalker(dt);
+
 updateCricketNPCs(dt);
 
 triggerNocturnalSoundsIfInNightBiome();
@@ -6161,6 +6163,21 @@ function updateSlopeStalker(dt) {
     }
   }
 }
+
+function spawnSlopeStalker(dt) {
+    const now = Date.now();
+    if (!game.antagonist && (now - PlayerState.lastInputTime) > 10000) {
+        game.antagonist = {
+            x: Math.random() * 800,
+            y: 0,
+            state: 'crawling',
+            spawnTime: now
+        };
+        game.antagonistState.isActive = true;
+        game.npcSpawnTimer = rand(NPC_SPAWN_MIN_INTERVAL, NPC_SPAWN_MAX_INTERVAL);
+    }
+}
+
 
 
 
