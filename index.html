@@ -6363,6 +6363,19 @@ function resetStyleMultiplierOnCollisionOrLanding() {
   }
 }
 
+function ensureFlipMechanicIsJumpingOnly() {
+  if (player.currentState === PlayerState.JUMPING) {
+    if (player.jumpTime > 0 && player.vy < 0) {
+      player.flipActive = true;
+    } else if (player.vy >= 0) {
+      player.flipActive = false;
+    }
+  } else {
+    player.flipActive = false;
+  }
+}
+
+
 
 
 
