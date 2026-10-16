@@ -608,6 +608,6 @@ Operator direction from the daily report lands here.
 - [!] Add a combo counter that increments on each consecutive style point from slaloming through skiers, dogs, or drones  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to reset the combo counter when a penalty occurs (hitting a tree or oil slick)
 - [!] Add a function to detect and trigger a combo achievement when the counter reaches 3, 5, and 10  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
-- [ ] Add visual feedback (e.g., a flashing 'COMBO!' label) when a new combo milestone is reached
+- [!] Add visual feedback (e.g., a flashing 'COMBO!' label) when a new combo milestone is reached  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Create a function to detect and unlock evasion achievements when the player avoids the chase antagonist for a sustained duration or survives a close encounter
 - [ ] Integrate witty unlock messages that display briefly on screen when achievements are earned, using original Warboy-style text and timing
