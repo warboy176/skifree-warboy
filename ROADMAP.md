@@ -631,7 +631,7 @@ Operator direction from the daily report lands here.
 - [x] Update the player's flip state when Space is pressed mid-air and animate it over time
 - [x] Add a flip state tracker to the player object to detect when a flip is initiated
 - [x] Implement a condition that checks for successful flip completion based on air time and orientation
-- [ ] Introduce a style multiplier state that activates when a successful flip is detected
+- [x] Introduce a style multiplier state that activates when a successful flip is detected
 - [ ] Update the score calculation to apply a 2x multiplier when the flip is completed successfully
 - [ ] Ensure the multiplier resets after a collision or landing, preserving game balance
 - [ ] Ensure the flip mechanic only activates during JUMPING state and resets after landing
