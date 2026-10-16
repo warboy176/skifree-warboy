@@ -6084,6 +6084,14 @@ function initEvasionCueSystem() {
     };
 }
 
+function triggerEvasionCue() {
+  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    game.evasionCueActive = true;
+    game.evasionCueTimer = 1000;
+  }
+}
+
+
 
 
 
