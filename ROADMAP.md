@@ -625,7 +625,7 @@ Operator direction from the daily report lands here.
 - [x] Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score
 - [x] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
 - [x] Add a new player state 'FLIPPING' to track mid-air flip input and animation
-- [ ] Implement simultaneous left and right arrow detection during jump to trigger the flip state
+- [x] Implement simultaneous left and right arrow detection during jump to trigger the flip state
 - [ ] Create a visual flip effect using a mirrored and rotating sprite animation during the flip
 - [ ] Apply a 2x style multiplier to the score when the flip is completed successfully
 - [ ] Ensure the flip mechanic only activates during JUMPING state and resets after landing
