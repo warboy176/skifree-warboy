@@ -6301,6 +6301,8 @@ function animatePlayerFlip(dt) {
     }
   }
 }
+applyStyleMultiplierOnFlip(player);
+
 
 function checkFlipCompletion(player, dt) {
   // Only check if flip is active and jump has lasted at least 1 second
@@ -6327,6 +6329,19 @@ function initStyleMultiplierState() {
     game.styleMultiplierDurationMs = 2000;
     game.styleMultiplierThreshold = 100;
 }
+
+function applyStyleMultiplierOnFlip(player) {
+  if (player.flipActive && player.spin >= 180) {
+    game.styleMultiplierActive = true;
+    game.styleMultiplier = 1;
+    setTimeout(() => {
+      game.styleMultiplier = 0;
+      game.styleMultiplierActive = false;
+    }, game.styleMultiplierDurationMs);
+    applyStyleMultiplierToScoreInGameLoop();
+  }
+}
+
 
 
 
