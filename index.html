@@ -6093,6 +6093,20 @@ function triggerEvasionCue() {
   }
 }
 
+function renderEvasionCue(dt) {
+    if (game.evasionCueActive) {
+        const alpha = 0.8;
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fillRect(player.x - 2, player.y - 2, 4, 4);
+        game.evasionCueTimer += dt;
+        if (game.evasionCueTimer >= 1000) {
+            game.evasionCueActive = false;
+            game.evasionCueTimer = 0;
+        }
+    }
+}
+
+
 
 
 
