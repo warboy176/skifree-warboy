@@ -616,4 +616,4 @@ Operator direction from the daily report lands here.
 - [x] Add a visual or audio cue to signal a successful evasion achievement, using only original art and sound in the existing codebase
 - [!] Add a function to track earned achievements and trigger unlock messages with original Warboy-style text  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a message display system that shows each unlock message for 2 seconds with fade-in/fade-out animation using original art-style typography  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Ensure messages appear only once per achievement and are positioned centrally with a subtle shadow for readability
+- [!] Ensure messages appear only once per achievement and are positioned centrally with a subtle shadow for readability  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
