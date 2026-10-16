@@ -626,6 +626,8 @@ Operator direction from the daily report lands here.
 - [x] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
 - [x] Add a new player state 'FLIPPING' to track mid-air flip input and animation
 - [x] Implement simultaneous left and right arrow detection during jump to trigger the flip state
-- [ ] Create a visual flip effect using a mirrored and rotating sprite animation during the flip
+- [ ] Add a flip animation state to the player object that tracks flip progress from 0 to 1
+- [ ] Draw the player sprite mirrored and rotated around the center during flip state using canvas transformations
+- [ ] Update the player's flip state when Space is pressed mid-air and animate it over time
 - [ ] Apply a 2x style multiplier to the score when the flip is completed successfully
 - [ ] Ensure the flip mechanic only activates during JUMPING state and resets after landing
