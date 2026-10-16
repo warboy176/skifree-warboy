@@ -6301,16 +6301,22 @@ function animatePlayerFlip(dt) {
 }
 
 function checkFlipCompletion(player, dt) {
-    if (player.flipActive && player.jumpTime >= 1.0) {
-        const uprightThreshold = 15;
-        const actualAngle = Math.abs(player.rotation);
-        if (actualAngle <= uprightThreshold) {
-            player.flips++;
-            player.flipActive = false;
-            return true;
-        }
-    }
-    return false;
+  // Only check if flip is active and jump has lasted at least 1 second
+  if (!player.flipActive || player.jumpTime < 1.0) return false;
+
+  // Check if vertical velocity is near zero (peak height)
+  const verticalVelocityThreshold = 0.1;
+  const isAtPeak = Math.abs(player.vy) < verticalVelocityThreshold;
+
+  // Check orientation: rotation should be within ±15 degrees of upright (0 degrees)
+  const upright = 0;
+  const tolerance = 15;
+  const isOrientedCorrectly = Math.abs(player.spin % 360 - upright) < tolerance || 
+                               Math.abs(player.spin % 360 - upright - 360) < tolerance || 
+                               Math.abs(player.spin % 360 - upright + 360) < tolerance;
+
+  // Return true only if both conditions are met: at peak height AND oriented correctly
+  return isAtPeak && isOrientedCorrectly;
 }
 
 
