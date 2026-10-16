@@ -6106,6 +6106,20 @@ function renderEvasionCue(dt) {
     }
 }
 
+function initSlopeStalker() {
+  game.antagonist = null;
+  const stalker = {
+    x: 0,
+    y: 0,
+    speed: 0,
+    state: 'idle',
+    spawnTimer: 0
+  };
+  game.antagonist = stalker;
+  game.antagonist.state = 'idle';
+}
+
+
 
 
 
