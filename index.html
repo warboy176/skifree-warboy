@@ -6028,6 +6028,19 @@ function initBiomeZones() {
   game.biomeTransitionActive = false;
 }
 
+function updateBiomeState(playerMeters) {
+    if (playerMeters >= BIOME_THRESHOLDS[game.currentBiomeIndex + 1]) {
+        game.currentBiomeIndex++;
+        const newTint = BIOME_TINTS[game.currentBiomeIndex];
+        applyBiomeTintTransition(newTint);
+        game.biomeTransitionActive = true;
+        setTimeout(() => {
+            game.biomeTransitionActive = false;
+        }, BIOME_TINT_DURATION);
+    }
+}
+
+
 
 
 
