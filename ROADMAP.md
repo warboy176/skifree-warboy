@@ -636,7 +636,10 @@ Operator direction from the daily report lands here.
 - [x] Ensure the multiplier resets after a collision or landing, preserving game balance
 - [x] Ensure the flip mechanic only activates during JUMPING state and resets after landing
 
-- [ ] Add original Warboy-designed chase antagonist: a pixel-art 'Slope Stalker' creature that emerges after 30 seconds of inactivity, with unique movement pattern and visual flair
+- [ ] Add a 'Slope Stalker' class with original pixel-art drawing using only canvas primitives, positioned off-screen initially
+- [ ] Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input
+- [ ] Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern
+- [ ] Ensure the Slope Stalker's presence is visually distinct with unique animation frames and a subtle trail effect using only original code-drawn pixels
 - [ ] Implement dynamic terrain transitions: code a biome shift from open slope to dense forest at 500 meters, using original hand-drawn pixel art for trees and snow depth
 - [ ] Introduce style-based scoring: award bonus points for slaloming within 10px of NPC skiers, with visual feedback and multiplier display in the HUD
 - [ ] Add persistent achievements registry: extend the existing system to include new witty unlocks like 'Tree Hugger' (hit 10 trees) and 'Airborne King' (land 5 jumps in a row)
