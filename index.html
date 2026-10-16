@@ -6241,6 +6241,17 @@ function drawPlayerFlipAnimation(ctx) {
   }
 }
 
+function handleJumpFlipInput(dt) {
+  if (game.player.jumpState === PlayerState.JUMPING) {
+    if (game.keys.left && game.keys.right) {
+      game.player.flipState = true;
+    } else {
+      game.player.flipState = false;
+    }
+  }
+}
+
+
 
 
 
