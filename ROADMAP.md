@@ -614,4 +614,6 @@ Operator direction from the daily report lands here.
 - [!] Create a collision detection system that registers near-misses between the player and the chase antagonist without triggering a crash  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Define and trigger an 'evasion achievement' when the player avoids the chase antagonist for a continuous duration or survives a close encounter  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [x] Add a visual or audio cue to signal a successful evasion achievement, using only original art and sound in the existing codebase
-- [ ] Integrate witty unlock messages that display briefly on screen when achievements are earned, using original Warboy-style text and timing
+- [ ] Add a function to track earned achievements and trigger unlock messages with original Warboy-style text
+- [ ] Implement a message display system that shows each unlock message for 2 seconds with fade-in/fade-out animation using original art-style typography
+- [ ] Ensure messages appear only once per achievement and are positioned centrally with a subtle shadow for readability
