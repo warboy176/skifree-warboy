@@ -6197,17 +6197,25 @@ function updateStyleDistance() {
 }
 
 function resetStyleMultiplierOnHazardCollision() {
-    if (game.player.styleMultiplier > 1) {
-        for (let i = 0; i < game.hazards.length; i++) {
-            const hazard = game.hazards[i];
-            if (!hazard.used && Math.abs(hazard.y - game.player.y) <= 65 && checkPlayerCollision(hazard)) {
-                game.player.styleMultiplier = 1;
-                applyStyleMultiplierToScoreInGameLoop();
-                applyStyleMultiplierToScore();
-                break;
-            }
-        }
+  if (game.player.state === PlayerState.CRASHED || game.player.state === PlayerState.EATEN) return;
+
+  // Check for collision with any obstacle (hazard)
+  for (const obstacle of game.obstacles) {
+    if (obstacle.type === 'drone' || obstacle.type === 'tree' || obstacle.type === 'rock' || obstacle.type === 'yeti') {
+      const dx = game.player.x - obstacle.x;
+      const dy = game.player.y - obstacle.y;
+      if (Math.abs(dx) < 15 && Math.abs(dy) < 25) {
+        game.player.styleMultiplier = 1;
+        return;
+      }
     }
+  }
+
+  // Check for fall: player has fallen below the track (y > cameraY + H)
+  if (game.player.y > game.cameraY + H) {
+    game.player.styleMultiplier = 1;
+    return;
+  }
 }
 
 
