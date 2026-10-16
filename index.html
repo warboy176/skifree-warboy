@@ -6290,6 +6290,17 @@ function handleSpaceJumpFlip(event) {
   }
 }
 
+function animatePlayerFlip(dt) {
+  if (game.player.flipState) {
+    game.player.flipProgress += dt * 0.01;
+    if (game.player.flipProgress >= 1) {
+      game.player.flipState = false;
+      game.player.flipProgress = 0;
+    }
+  }
+}
+
+
 
 
 
