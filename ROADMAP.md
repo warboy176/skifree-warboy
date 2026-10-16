@@ -610,7 +610,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to detect and trigger a combo achievement when the counter reaches 3, 5, and 10  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [!] Add visual feedback (e.g., a flashing 'COMBO!' label) when a new combo milestone is reached  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a chase antagonist entity with a unique original design, positioned dynamically on the slope and moving toward the player when idle
-- [ ] Implement a state tracker for the chase antagonist's pursuit phase, triggered when the player's speed drops below a threshold for a sustained duration
+- [x] Implement a state tracker for the chase antagonist's pursuit phase, triggered when the player's speed drops below a threshold for a sustained duration
 - [ ] Create a collision detection system that registers near-misses between the player and the chase antagonist without triggering a crash
 - [ ] Define and trigger an 'evasion achievement' when the player avoids the chase antagonist for a continuous duration or survives a close encounter
 - [ ] Add a visual or audio cue to signal a successful evasion achievement, using only original art and sound in the existing codebase
