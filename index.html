@@ -6222,6 +6222,26 @@ function initPlayerFlipState() {
     game.player.flipState = { active: false, progress: 0, direction: 1 };
 }
 
+function drawPlayerFlipAnimation(ctx) {
+  if (game.player.flipState.active) {
+    const centerX = game.player.x;
+    const centerY = game.player.y;
+    const rotation = game.player.flipState.progress * 180;
+    
+    ctx.save();
+    ctx.translate(centerX, centerY);
+    ctx.rotate(rotation * Math.PI / 180);
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, -1);
+    ctx.lineTo(0, 1);
+    ctx.stroke();
+    ctx.restore();
+  }
+}
+
+
 
 
 
