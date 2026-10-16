@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist: a pixel-art 'Slope Stalker' creature that spawns after 10 seconds of inactivity, crawling up the slope to pursue the player with erratic movement and increasing speed (initSlopeStalker, spawnSlopeStalker, updateSlopeStalker)
 - Add a visual or audio cue to signal a successful evasion achievement, using only original art and sound in the existing codebase (initEvasionCueSystem, triggerEvasionCue, renderEvasionCue)
 - Implement a state tracker for the chase antagonist's pursuit phase, triggered when the player's speed drops below a threshold for a sustained duration (initAntagonistState, updateAntagonistChasePhase)
 - Add a chase antagonist entity with a unique original design, positioned dynamically on the slope and moving toward the player when idle (initAntagonist, updateAntagonist, drawAntagonist)
