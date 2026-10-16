@@ -1,4 +1,5 @@
 # Changelog
+- Implement a 'styleMultiplier' that starts at 1 and increases by 0.5 for each consecutive frame within 10px of an NPC skier, resetting to 1 on collision (initStyleMultiplier, updateStyleMultiplier)
 - Add a 'styleDistance' variable to track the minimum distance to the nearest NPC skier, updating every frame during skiing (initNPCs, updateStyleDistance)
 - Implement dynamic terrain transitions: change the snowfield background from open slope to dense forest biome after 500 meters, using original code-drawn trees and shadows (initForestBiomeThresholds, addForestTransitionTrigger, addTree)
 - Add original Warboy-designed chase antagonist: a pixel-art 'Slope Stalker' creature that spawns after 10 seconds of inactivity, crawling up the slope to pursue the player with erratic movement and increasing speed (initSlopeStalker, spawnSlopeStalker, updateSlopeStalker)
