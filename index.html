@@ -6251,6 +6251,21 @@ function handleJumpFlipInput(dt) {
   }
 }
 
+function updatePlayerFlipState(dt) {
+    if (game.player.flipActive) {
+        if (game.player.flipDirection > 0) {
+            game.player.flipProgress += dt * 2;
+        } else {
+            game.player.flipProgress -= dt * 2;
+        }
+        game.player.flipProgress = Math.max(0, Math.min(1, game.player.flipProgress));
+        if (game.player.flipProgress >= 1 || game.player.flipProgress <= 0) {
+            game.player.flipActive = false;
+        }
+    }
+}
+
+
 
 
 
