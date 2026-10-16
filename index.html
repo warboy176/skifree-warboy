@@ -6342,6 +6342,20 @@ function applyStyleMultiplierOnFlip(player) {
   }
 }
 
+function resetStyleMultiplierOnCollisionOrLanding() {
+  if (game.player.isJumping && game.player.vy > 0 && game.player.jumpTime > 0) {
+    if (game.styleMultiplierActive) {
+      game.styleMultiplier = 1;
+      game.styleMultiplierActive = false;
+    }
+  }
+  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(game.player, npc))) {
+    game.styleMultiplier = 1;
+    game.styleMultiplierActive = false;
+  }
+}
+
+
 
 
 
