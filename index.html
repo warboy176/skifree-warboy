@@ -6178,6 +6178,25 @@ function spawnSlopeStalker(dt) {
     }
 }
 
+function updateStyleDistance() {
+  if (!game.npcSkiers || game.npcSkiers.length === 0) {
+    game.styleDistance = Infinity;
+    return;
+  }
+  
+  let minDistance = Infinity;
+  
+  for (const npcSkier of game.npcSkiers) {
+    const horizontalDistance = Math.abs(npcSkier.x - game.player.x);
+    const verticalDistance = Math.abs(npcSkier.y - game.player.y);
+    const distance = Math.sqrt(horizontalDistance * horizontalDistance + verticalDistance * verticalDistance);
+    minDistance = Math.min(minDistance, distance);
+  }
+  
+  game.styleDistance = minDistance;
+}
+
+
 
 
 
