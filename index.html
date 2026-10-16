@@ -6085,7 +6085,9 @@ function initEvasionCueSystem() {
 }
 
 function triggerEvasionCue() {
-  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN) return;
+  if (game.evasionCueActive) return;
+  if (anyClosePass()) {
     game.evasionCueActive = true;
     game.evasionCueTimer = 1000;
   }
