@@ -6058,6 +6058,33 @@ function updateAntagonistChasePhase(dt) {
   }
 }
 
+function initEvasionCueSystem() {
+    game.evasionCueActive = false;
+    game.evasionCueTimer = 0;
+
+    function updateEvasionCue() {
+        if (!game.evasionCueActive && game.npcSkiers.some(npc => checkClosePassCollision(game.playerState, npc))) {
+            game.evasionCueActive = true;
+            game.evasionCueTimer = 2000;
+        }
+
+        if (game.evasionCueActive) {
+            game.evasionCueTimer -= 16;
+            if (game.evasionCueTimer <= 0) {
+                game.evasionCueActive = false;
+            }
+        }
+    }
+
+    // Wire into main game loop
+    const originalUpdate = game.update;
+    game.update = function(dt) {
+        updateEvasionCue();
+        return originalUpdate.call(this, dt);
+    };
+}
+
+
 
 
 
