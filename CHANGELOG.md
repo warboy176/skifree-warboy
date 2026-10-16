@@ -1,4 +1,5 @@
 # Changelog
+- Add a flip state tracker to the player object to detect when a flip is initiated (initPlayerFlipState, updatePlayerFlipState)
 - Update the player's flip state when Space is pressed mid-air and animate it over time (initPlayerFlipState, handleSpaceJumpFlip, animatePlayerFlip)
 - Draw the player sprite mirrored and rotated around the center during flip state using canvas transformations (drawPlayerFlippedSprite)
 - Add a flip animation state to the player object that tracks flip progress from 0 to 1 (initPlayerFlipState, updatePlayerFlipState)
