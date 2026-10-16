@@ -612,6 +612,6 @@ Operator direction from the daily report lands here.
 - [x] Add a chase antagonist entity with a unique original design, positioned dynamically on the slope and moving toward the player when idle
 - [x] Implement a state tracker for the chase antagonist's pursuit phase, triggered when the player's speed drops below a threshold for a sustained duration
 - [!] Create a collision detection system that registers near-misses between the player and the chase antagonist without triggering a crash  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Define and trigger an 'evasion achievement' when the player avoids the chase antagonist for a continuous duration or survives a close encounter
+- [!] Define and trigger an 'evasion achievement' when the player avoids the chase antagonist for a continuous duration or survives a close encounter  <!-- blocked: pipeline: item INCOMPLETE — 0/6 landed, 0 unspecifiable, 3 e -->
 - [ ] Add a visual or audio cue to signal a successful evasion achievement, using only original art and sound in the existing codebase
 - [ ] Integrate witty unlock messages that display briefly on screen when achievements are earned, using original Warboy-style text and timing
