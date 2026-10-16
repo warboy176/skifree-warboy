@@ -1,4 +1,5 @@
 # Changelog
+- Add a new player state 'FLIPPING' to track mid-air flip input and animation (initPlayerFlipState, drawPlayerFlipAnimation)
 - Reset styleMultiplier to 1 when the player collides with any obstacle or falls (resetStyleMultiplierOnHazardCollision)
 - Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score (applyStyleMultiplierToScoreInGameLoop)
 - Implement a 'styleMultiplier' that starts at 1 and increases by 0.5 for each consecutive frame within 10px of an NPC skier, resetting to 1 on collision (initStyleMultiplier, updateStyleMultiplier)

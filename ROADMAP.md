@@ -624,7 +624,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a 'styleMultiplier' that starts at 1 and increases by 0.5 for each consecutive frame within 10px of an NPC skier, resetting to 1 on collision
 - [x] Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score
 - [x] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
-- [ ] Add a new player state 'FLIPPING' to track mid-air flip input and animation
+- [x] Add a new player state 'FLIPPING' to track mid-air flip input and animation
 - [ ] Implement simultaneous left and right arrow detection during jump to trigger the flip state
 - [ ] Create a visual flip effect using a mirrored and rotating sprite animation during the flip
 - [ ] Apply a 2x style multiplier to the score when the flip is completed successfully
