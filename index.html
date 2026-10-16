@@ -6029,15 +6029,14 @@ function initBiomeZones() {
 }
 
 function updateBiomeState(playerMeters) {
-    if (playerMeters >= BIOME_THRESHOLDS[game.currentBiomeIndex + 1]) {
-        game.currentBiomeIndex++;
-        const newTint = BIOME_TINTS[game.currentBiomeIndex];
-        applyBiomeTintTransition(newTint);
-        game.biomeTransitionActive = true;
-        setTimeout(() => {
-            game.biomeTransitionActive = false;
-        }, BIOME_TINT_DURATION);
-    }
+  const nextBiomeIndex = currentBiomeIndex + 1;
+  if (nextBiomeIndex >= BIOME_THRESHOLDS.length) return; // Do not update biome if already at last zone
+  if (playerMeters >= BIOME_THRESHOLDS[nextBiomeIndex]) {
+    currentBiomeIndex = nextBiomeIndex;
+    applyBiomeTintTransition(BIOME_TINTS[currentBiomeIndex]);
+    biomeTransitionActive = true;
+    setTimeout(() => { biomeTransitionActive = false; }, BIOME_TINT_DURATION);
+  }
 }
 
 
