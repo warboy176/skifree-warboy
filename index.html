@@ -6047,6 +6047,18 @@ function resetComboCounterOnPenalty() {
   }
 }
 
+function updateAntagonistChasePhase(dt) {
+  if (game.playerState.speed < 200) {
+    game.antagonist.sustainedDurationMs += dt;
+    if (game.antagonist.sustainedDurationMs > 3000 && !game.antagonist.chasePhase) {
+      game.antagonist.chasePhase = true;
+    }
+  } else {
+    game.antagonist.sustainedDurationMs = 0;
+  }
+}
+
+
 
 
 
