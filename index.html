@@ -6119,6 +6119,50 @@ function initSlopeStalker() {
   game.antagonist.state = 'idle';
 }
 
+function updateSlopeStalker(dt) {
+  if (!game.antagonist) return;
+  
+  const now = Date.now();
+  const timeSinceSpawn = (now - game.antagonist.spawnTime) / 1000;
+  
+  if (!game.antagonist.chasing) {
+    game.antagonist.y -= (0.5 + 0.05 * timeSinceSpawn) * dt;
+    
+    const distanceToPlayer = Math.sqrt(
+      Math.pow(game.antagonist.x - player.x, 2) +
+      Math.pow(game.antagonist.y - player.y, 2)
+    );
+    
+    if (distanceToPlayer < 100) {
+      game.antagonist.chasing = true;
+      game.antagonist.chaseStartTime = now;
+    }
+  } else {
+    const timeSinceChaseStart = (now - game.antagonist.chaseStartTime) / 1000;
+    const speed = 1.0 + 0.1 * timeSinceChaseStart;
+    
+    const dx = player.x - game.antagonist.x;
+    const dy = player.y - game.antagonist.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    
+    if (distance > 0) {
+      game.antagonist.x += (dx / distance) * speed * dt;
+      game.antagonist.y += (dy / distance) * speed * dt;
+    }
+    
+    if (distance < 10) {
+      player.speed *= 0.25;
+      game.cleanTime = 0;
+      game.shake = 0.25;
+      logPlayerEvent('crash', {distance: game.distance, speed: player.speed});
+      setPlayerState(PlayerState.CRASHED);
+      player.invulnerable = 1.1;
+      updateAchievementsOnHazardEncounter('npcSkier');
+    }
+  }
+}
+
+
 
 
 
