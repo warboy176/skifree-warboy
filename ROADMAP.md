@@ -622,6 +622,6 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain transitions: change the snowfield background from open slope to dense forest biome after 500 meters, using original code-drawn trees and shadows
 - [x] Add a 'styleDistance' variable to track the minimum distance to the nearest NPC skier, updating every frame during skiing
 - [x] Implement a 'styleMultiplier' that starts at 1 and increases by 0.5 for each consecutive frame within 10px of an NPC skier, resetting to 1 on collision
-- [ ] Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score
+- [x] Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score
 - [ ] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
 - [ ] Add a 'Wasteland Flip' trick mechanic: perform a 180-degree air flip mid-jump by pressing both left and right arrows simultaneously, earning a 2x style multiplier and a unique visual effect
