@@ -6343,13 +6343,21 @@ function applyStyleMultiplierOnFlip(player) {
 }
 
 function resetStyleMultiplierOnCollisionOrLanding() {
-  if (game.player.isJumping && game.player.vy > 0 && game.player.jumpTime > 0) {
-    if (game.styleMultiplierActive) {
-      game.styleMultiplier = 1;
-      game.styleMultiplierActive = false;
-    }
+  // Check for landing after a jump: player is descending (vy > 0) and has just touched ground
+  // This happens when jumpTime > 0 (was in jump) and vy > 0 (descending), and is no longer jumping
+  if (game.player.jumpTime > 0 && game.player.vy > 0 && !game.player.isJumping) {
+    game.styleMultiplier = 1;
+    game.styleMultiplierActive = false;
   }
-  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(game.player, npc))) {
+
+  // Check for collision with NPC: if player is not in jump and is colliding with any NPC
+  const collision = game.obstacles.some(obstacle => {
+    const dx = Math.abs(game.player.x - obstacle.x);
+    const dy = Math.abs(game.player.y - obstacle.y);
+    return dx < 20 && dy < 20;
+  });
+
+  if (collision) {
     game.styleMultiplier = 1;
     game.styleMultiplierActive = false;
   }
