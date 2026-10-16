@@ -623,5 +623,5 @@ Operator direction from the daily report lands here.
 - [x] Add a 'styleDistance' variable to track the minimum distance to the nearest NPC skier, updating every frame during skiing
 - [x] Implement a 'styleMultiplier' that starts at 1 and increases by 0.5 for each consecutive frame within 10px of an NPC skier, resetting to 1 on collision
 - [x] Award 10 bonus points per frame with a styleMultiplier > 1, applying the multiplier to the base score
-- [ ] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
+- [x] Reset styleMultiplier to 1 when the player collides with any obstacle or falls
 - [ ] Add a 'Wasteland Flip' trick mechanic: perform a 180-degree air flip mid-jump by pressing both left and right arrows simultaneously, earning a 2x style multiplier and a unique visual effect
