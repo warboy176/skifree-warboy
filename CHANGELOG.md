@@ -1,4 +1,5 @@
 # Changelog
+- Add a chase antagonist entity with a unique original design, positioned dynamically on the slope and moving toward the player when idle (initAntagonist, updateAntagonist, drawAntagonist)
 - Add a function to reset the combo counter when a penalty occurs (hitting a tree or oil slick) (resetComboCounterOnPenalty)
 - Implement a function to check if the player has entered a new biome and unlock the corresponding achievement if not already unlocked (checkBiomeTransition)
 - Create a function to detect when the player crosses into a new biome zone and update the current biome state (initBiomeZones, updateBiomeState)
