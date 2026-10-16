@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty state on first load (initAchievementsRegistry, saveAchievementsToStorage)
 - Display the current style score and multiplier in the HUD with visual feedback (initStyleHUDState, updateStyleHUD)
 - Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump (initTrickLandingSystem, handleTrickLanding, registerTrickLandingAchievement)
 - Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing (initCrashThroughBonus, handleCrashThroughCollision, updateCrashThroughBonus)

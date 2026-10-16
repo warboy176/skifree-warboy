@@ -600,7 +600,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and continues skiing
 - [x] Introduce a trick landing reward that gives points and resets the multiplier when the player lands after a jump
 - [x] Display the current style score and multiplier in the HUD with visual feedback
-- [ ] Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty state on first load
+- [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty state on first load
 - [ ] Implement a function to check and unlock biome traversal achievements when player crosses into new terrain zones (e.g., open slope → forest → night → alpine)
 - [ ] Add a function to track and trigger combo streak achievements based on consecutive style points from slaloming through skiers, dogs, or drones
 - [ ] Create a function to detect and unlock evasion achievements when the player avoids the chase antagonist for a sustained duration or survives a close encounter
