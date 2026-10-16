@@ -1498,6 +1498,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleMultiplierState();
+
 initBiomeZones();
 
 initTrickLandingSystem();
@@ -6318,6 +6320,14 @@ function checkFlipCompletion(player, dt) {
   // Return true only if both conditions are met: at peak height AND oriented correctly
   return isAtPeak && isOrientedCorrectly;
 }
+
+function initStyleMultiplierState() {
+    game.styleMultiplier = 0;
+    game.styleMultiplierActive = false;
+    game.styleMultiplierDurationMs = 2000;
+    game.styleMultiplierThreshold = 100;
+}
+
 
 
 
