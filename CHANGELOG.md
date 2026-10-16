@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to reset the combo counter when a penalty occurs (hitting a tree or oil slick) (resetComboCounterOnPenalty)
 - Implement a function to check if the player has entered a new biome and unlock the corresponding achievement if not already unlocked (checkBiomeTransition)
 - Create a function to detect when the player crosses into a new biome zone and update the current biome state (initBiomeZones, updateBiomeState)
 - Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty state on first load (initAchievementsRegistry, saveAchievementsToStorage)
