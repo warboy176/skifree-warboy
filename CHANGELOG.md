@@ -1,4 +1,5 @@
 # Changelog
+- Draw the player sprite mirrored and rotated around the center during flip state using canvas transformations (drawPlayerFlippedSprite)
 - Add a flip animation state to the player object that tracks flip progress from 0 to 1 (initPlayerFlipState, updatePlayerFlipState)
 - Implement simultaneous left and right arrow detection during jump to trigger the flip state (handleJumpFlipInput)
 - Add a new player state 'FLIPPING' to track mid-air flip input and animation (initPlayerFlipState, drawPlayerFlipAnimation)
