@@ -633,5 +633,5 @@ Operator direction from the daily report lands here.
 - [x] Implement a condition that checks for successful flip completion based on air time and orientation
 - [x] Introduce a style multiplier state that activates when a successful flip is detected
 - [!] Update the score calculation to apply a 2x multiplier when the flip is completed successfully  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the multiplier resets after a collision or landing, preserving game balance
+- [x] Ensure the multiplier resets after a collision or landing, preserving game balance
 - [ ] Ensure the flip mechanic only activates during JUMPING state and resets after landing

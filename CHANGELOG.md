@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the multiplier resets after a collision or landing, preserving game balance (resetStyleMultiplierOnCollisionOrLanding)
 - Introduce a style multiplier state that activates when a successful flip is detected (initStyleMultiplierState, applyStyleMultiplierOnFlip)
 - Implement a condition that checks for successful flip completion based on air time and orientation (checkFlipCompletion)
 - Add a flip state tracker to the player object to detect when a flip is initiated (initPlayerFlipState, updatePlayerFlipState)
