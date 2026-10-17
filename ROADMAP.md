@@ -644,7 +644,7 @@ Operator direction from the daily report lands here.
 - [x] Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern
 - [x] Ensure the Slope Stalker's presence is visually distinct with unique animation frames and a subtle trail effect using only original code-drawn pixels
 - [x] Implement dynamic terrain transitions: code a biome shift from open slope to dense forest at 500 meters, using original hand-drawn pixel art for trees and snow depth
-- [ ] Add a function to detect when the player is within 10px of an NPC skier during skiing, without collision
+- [x] Add a function to detect when the player is within 10px of an NPC skier during skiing, without collision
 - [ ] Add a function to increment a style counter and display a temporary 'style' visual feedback (e.g., a glowing trail) when the player slaloms within 10px of an NPC skier
 - [ ] Add a function to update the HUD with a running style multiplier that increases with consecutive close passes and resets on collision or crash
 - [ ] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier

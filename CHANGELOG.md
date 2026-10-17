@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect when the player is within 10px of an NPC skier during skiing, without collision (initNPCs, checkPlayerNPCProximity)
 - Implement dynamic terrain transitions: code a biome shift from open slope to dense forest at 500 meters, using original hand-drawn pixel art for trees and snow depth (initForestBiomeThresholds, addForestTransitionTrigger, addTree)
 - Ensure the Slope Stalker's presence is visually distinct with unique animation frames and a subtle trail effect using only original code-drawn pixels (initSlopeStalker, updateSlopeStalker, drawSlopeStalker)
 - Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern (initSlopeStalker, updateSlopeStalker, spawnSlopeStalker)
