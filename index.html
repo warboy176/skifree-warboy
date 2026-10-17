@@ -621,6 +621,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+spawnAntagonistIfInactive(dt);
+
 updateSlopeStalkers(dt);
 
 checkPlayerNPCProximity(dt);
@@ -6573,6 +6575,15 @@ function checkAndUnlockAchievements(dt) {
     
     updateAchievementHUD();
 }
+
+function spawnAntagonistIfInactive(dt) {
+  if (!game.antagonist.active && Date.now() - game.lastPlayerActionTime >= 10000) {
+    game.antagonist.active = true;
+    game.antagonist.x = game.player.x + 100;
+    game.antagonist.y = game.player.y - 50;
+  }
+}
+
 
 
 
