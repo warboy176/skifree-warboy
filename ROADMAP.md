@@ -655,7 +655,7 @@ Operator direction from the daily report lands here.
 - [!] Add logic to detect 'close pass' events based on proximity to NPCs or obstacles during movement  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a persistent achievements registry object to store unlock states using localStorage, with initial empty entries for 'Tree Hugger' and 'Airborne King'
-- [ ] Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached
+- [x] Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached
 - [ ] Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
