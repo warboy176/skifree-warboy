@@ -660,4 +660,4 @@ Operator direction from the daily report lands here.
 
 - [x] Add a new 'achievements' object to track player progress on specific behaviors like hitting skiers or performing tricks
 - [x] Implement a function to check and unlock achievements when the player performs scorable actions such as slaloming near skiers or crashing through obstacles
-- [ ] Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons
+- [x] Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons

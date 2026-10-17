@@ -1,4 +1,5 @@
 # Changelog
+- Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons (initAchievementFeedbackSystem, showAchievementUnlock)
 - Implement a function to check and unlock achievements when the player performs scorable actions such as slaloming near skiers or crashing through obstacles (checkAndUnlockAchievements)
 - Add a new 'achievements' object to track player progress on specific behaviors like hitting skiers or performing tricks (initAchievements, registerAchievement, updateAchievements)
 - Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached (initJumpAchievementTracking, checkAndUnlockJumpAchievements)
