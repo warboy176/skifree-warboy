@@ -6516,6 +6516,65 @@ function checkAndUnlockJumpAchievements(landingHeight) {
     }
 }
 
+function checkAndUnlockAchievements(dt) {
+    if (!game.achievements || !Array.isArray(game.achievements)) return;
+    
+    for (let i = 0; i < game.achievements.length; i++) {
+        const achievement = game.achievements[i];
+        if (achievement.unlocked) continue;
+        
+        let conditionMet = false;
+        
+        switch (achievement.type) {
+            case 'proximity':
+                for (let j = 0; j < game.skiers.length; j++) {
+                    const skier = game.skiers[j];
+                    const dx = Math.abs(skier.x - PlayerState.x);
+                    const dy = Math.abs(skier.y - PlayerState.y);
+                    if (dx < PROXIMITY_ACHIEVEMENT_RANGE && dy < PROXIMITY_ACHIEVEMENT_RANGE) {
+                        conditionMet = true;
+                        break;
+                    }
+                }
+                break;
+                
+            case 'style':
+                conditionMet = GameState.styleScore >= STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[achievement.thresholdIndex];
+                break;
+                
+            case 'slalom':
+                conditionMet = PlayerState.reversals >= SLALOM_REVERSALS_REQUIRED;
+                break;
+                
+            case 'combo':
+                conditionMet = GameState.comboStreak >= COMBO_STREAK_THRESHOLD;
+                break;
+                
+            case 'hazard':
+                conditionMet = game.oilHits >= HAZARD_ENCOUNTER_THRESHOLD || 
+                             game.iceHits >= HAZARD_ENCOUNTER_THRESHOLD ||
+                             game.treeHits >= HAZARD_ENCOUNTER_THRESHOLD;
+                break;
+                
+            case 'speed':
+                conditionMet = game.maxSpeed >= achievement.unlockThreshold;
+                break;
+                
+            case 'score':
+                conditionMet = GameState.score >= achievement.unlockThreshold;
+                break;
+        }
+        
+        if (conditionMet) {
+            achievement.unlocked = true;
+            applyAchievementToHUD(achievement);
+        }
+    }
+    
+    updateAchievementHUD();
+}
+
+
 
 
 
