@@ -652,3 +652,5 @@ Operator direction from the daily report lands here.
 - [ ] Add a function to update the HUD with a running style multiplier that increases with consecutive close passes and resets on collision or crash
 - [ ] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier
 - [ ] Add persistent achievements registry: extend the existing system to include new witty unlocks like 'Tree Hugger' (hit 10 trees) and 'Airborne King' (land 5 jumps in a row)
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
