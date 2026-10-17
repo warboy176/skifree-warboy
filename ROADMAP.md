@@ -648,7 +648,7 @@ Operator direction from the daily report lands here.
 - [!] Add a style counter variable to track consecutive close passes to NPCs  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a function to check if the player is within 10px of any NPC skier during movement
 - [!] Trigger a temporary glowing trail effect when a close pass is detected, using a short-lived visual overlay  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Display a 'style' score update on screen for 1 second after each valid close pass
+- [x] Display a 'style' score update on screen for 1 second after each valid close pass
 - [ ] Add a function to update the HUD with a running style multiplier that increases with consecutive close passes and resets on collision or crash
 - [ ] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier
 - [ ] Add persistent achievements registry: extend the existing system to include new witty unlocks like 'Tree Hugger' (hit 10 trees) and 'Airborne King' (land 5 jumps in a row)
