@@ -6425,6 +6425,15 @@ function initSlopeStalkerTimer() {
     game.slopeStalkerActive = false;
 }
 
+function updateSlopeStalkerTimer(dt) {
+    if (game.lastInputTime !== undefined && Date.now() - game.lastInputTime > 30000) {
+        game.slopeStalkerActive = true;
+    } else {
+        game.slopeStalkerTimer = null;
+    }
+}
+
+
 
 
 
