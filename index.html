@@ -6495,6 +6495,12 @@ function handleTreeEncounter(player, tree) {
     localStorage.setItem('achievements', JSON.stringify(unlockedAchievementKeys));
 }
 
+function initJumpAchievementTracking() {
+    game.jumpStreak = 0;
+    game.jumpStreakStartTime = Date.now();
+}
+
+
 
 
 
