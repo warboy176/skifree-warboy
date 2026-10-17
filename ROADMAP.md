@@ -658,4 +658,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached
 - [x] Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new 'achievements' object to track player progress on specific behaviors like hitting skiers or performing tricks
+- [ ] Implement a function to check and unlock achievements when the player performs scorable actions such as slaloming near skiers or crashing through obstacles
+- [ ] Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons
