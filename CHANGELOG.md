@@ -1,4 +1,5 @@
 # Changelog
+- Add a new 'achievements' object to track player progress on specific behaviors like hitting skiers or performing tricks (initAchievements, registerAchievement, updateAchievements)
 - Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached (initJumpAchievementTracking, checkAndUnlockJumpAchievements)
 - Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached (initTreeAchievementSystem, handleTreeEncounter)
 - Add a persistent achievements registry object to store unlock states using localStorage, with initial empty entries for 'Tree Hugger' and 'Airborne King' (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
