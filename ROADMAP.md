@@ -636,7 +636,10 @@ Operator direction from the daily report lands here.
 - [x] Ensure the multiplier resets after a collision or landing, preserving game balance
 - [x] Ensure the flip mechanic only activates during JUMPING state and resets after landing
 
-- [ ] Add a 'Slope Stalker' class with original pixel-art drawing using only canvas primitives, positioned off-screen initially
+- [ ] Create a 'SlopeStalker' class with properties for x, y, speed, and state, initialized off-screen and inactive
+- [ ] Implement a draw method for SlopeStalker using only canvas primitives to render a unique, original pixel-art design
+- [ ] Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed
+- [ ] Initialize the SlopeStalker instance off-screen and inactive, ensuring it does not interfere with existing gameplay
 - [ ] Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input
 - [ ] Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern
 - [ ] Ensure the Slope Stalker's presence is visually distinct with unique animation frames and a subtle trail effect using only original code-drawn pixels
