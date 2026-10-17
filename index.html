@@ -1500,6 +1500,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSlopeStalkerTimer();
+
 initStyleMultiplierState();
 
 initBiomeZones();
@@ -6417,6 +6419,12 @@ function updateSlopeStalkers(dt) {
     }
   }
 }
+
+function initSlopeStalkerTimer() {
+    game.slopeStalkerTimer = null;
+    game.slopeStalkerActive = false;
+}
+
 
 
 
