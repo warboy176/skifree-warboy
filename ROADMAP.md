@@ -651,7 +651,7 @@ Operator direction from the daily report lands here.
 - [x] Display a 'style' score update on screen for 1 second after each valid close pass
 - [!] Add a style multiplier counter initialized to 1, incrementing on each close pass to skiers or obstacles without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Update the HUD to display the current style multiplier value in real time  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Reset the style multiplier to 1 when the player collides with a tree, oil slick, or crashes
+- [x] Reset the style multiplier to 1 when the player collides with a tree, oil slick, or crashes
 - [ ] Add logic to detect 'close pass' events based on proximity to NPCs or obstacles during movement
 - [ ] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier
 - [ ] Add persistent achievements registry: extend the existing system to include new witty unlocks like 'Tree Hugger' (hit 10 trees) and 'Airborne King' (land 5 jumps in a row)
