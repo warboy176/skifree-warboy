@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry object to store unlock states using localStorage, with initial empty entries for 'Tree Hugger' and 'Airborne King' (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Reset the style multiplier to 1 when the player collides with a tree, oil slick, or crashes (resetStyleMultiplierOnHazardCrash)
 - Display a 'style' score update on screen for 1 second after each valid close pass (initStyleScoreDisplay)
 - Create a function to check if the player is within 10px of any NPC skier during movement (initNPCs, checkPlayerNPCProximity)
