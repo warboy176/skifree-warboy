@@ -6500,6 +6500,23 @@ function initJumpAchievementTracking() {
     game.jumpStreakStartTime = Date.now();
 }
 
+function checkAndUnlockJumpAchievements(landingHeight) {
+    if (landingHeight >= JUMPMASTER_LANDING_THRESHOLD) {
+        game.jumpStreak++;
+        game.jumpStreakStartTime = Date.now();
+        if (game.jumpStreak >= COMBO_STREAK_THRESHOLD) {
+            const achievementKey = 'jump_streak_' + COMBO_STREAK_THRESHOLD;
+            if (!game.achievements[achievementKey]) {
+                game.achievements[achievementKey] = true;
+                addDefaultAchievement(achievementKey);
+                applyAchievementToHUD(achievementKey);
+                localStorage.setItem('achievements', JSON.stringify(game.achievements));
+            }
+        }
+    }
+}
+
+
 
 
 
