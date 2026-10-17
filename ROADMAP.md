@@ -637,7 +637,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the flip mechanic only activates during JUMPING state and resets after landing
 
 - [x] Create a 'SlopeStalker' class with properties for x, y, speed, and state, initialized off-screen and inactive
-- [ ] Implement a draw method for SlopeStalker using only canvas primitives to render a unique, original pixel-art design
+- [!] Implement a draw method for SlopeStalker using only canvas primitives to render a unique, original pixel-art design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed
 - [ ] Initialize the SlopeStalker instance off-screen and inactive, ensuring it does not interfere with existing gameplay
 - [ ] Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input
