@@ -664,7 +664,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases
-- [ ] Add a style score counter that increments when the player slaloms close to NPCs without colliding
+- [!] Add a style score counter that increments when the player slaloms close to NPCs without colliding  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a multiplier system that increases when the player performs consecutive close passes to NPCs
 - [ ] Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier
 - [ ] Track and display air time during jumps, awarding style points for longer landings and adding multipliers for tricks
