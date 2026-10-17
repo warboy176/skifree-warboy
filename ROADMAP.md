@@ -646,7 +646,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain transitions: code a biome shift from open slope to dense forest at 500 meters, using original hand-drawn pixel art for trees and snow depth
 - [x] Add a function to detect when the player is within 10px of an NPC skier during skiing, without collision
 - [!] Add a style counter variable to track consecutive close passes to NPCs  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function to check if the player is within 10px of any NPC skier during movement
+- [x] Create a function to check if the player is within 10px of any NPC skier during movement
 - [ ] Trigger a temporary glowing trail effect when a close pass is detected, using a short-lived visual overlay
 - [ ] Display a 'style' score update on screen for 1 second after each valid close pass
 - [ ] Add a function to update the HUD with a running style multiplier that increases with consecutive close passes and resets on collision or crash
