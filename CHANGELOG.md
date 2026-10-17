@@ -1,4 +1,5 @@
 # Changelog
+- Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern (initSlopeStalker, updateSlopeStalker, spawnSlopeStalker)
 - Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input (initSlopeStalkerTimer, updateSlopeStalkerTimer, spawnSlopeStalker)
 - Initialize the SlopeStalker instance off-screen and inactive, ensuring it does not interfere with existing gameplay (initSlopeStalker)
 - Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed (initSlopeStalkers, updateSlopeStalkers)
