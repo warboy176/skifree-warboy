@@ -1502,6 +1502,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initTreeAchievementSystem();
+
 initStyleScoreDisplay();
 
 initSlopeStalkerTimer();
@@ -6467,6 +6469,15 @@ function initStyleScoreDisplay() {
     color: 'white'
   };
 }
+
+function initTreeAchievementSystem() {
+    if (typeof game.state === 'string') game.state = {};
+    if (!game.state.treeEncounters) {
+        const saved = localStorage.getItem('treeEncounters');
+        game.state.treeEncounters = saved ? parseInt(saved) : 0;
+    }
+}
+
 
 
 
