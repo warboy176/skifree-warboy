@@ -3667,6 +3667,8 @@ function initPlayerState() {
   };
 }
 initSlopeStalkers();
+createSlopeStalker();
+
 
 initCricketNPCs();
 
@@ -6380,6 +6382,18 @@ function ensureFlipMechanicIsJumpingOnly() {
 function initSlopeStalkers() {
   game.slopeStalkers = [];
 }
+
+function createSlopeStalker() {
+    const stalker = {
+        x: -100,
+        y: -100,
+        speed: 0,
+        state: 'inactive'
+    };
+    game.slopeStalkers.push(stalker);
+    return stalker;
+}
+
 
 
 
