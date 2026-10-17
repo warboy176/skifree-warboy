@@ -638,7 +638,7 @@ Operator direction from the daily report lands here.
 
 - [x] Create a 'SlopeStalker' class with properties for x, y, speed, and state, initialized off-screen and inactive
 - [!] Implement a draw method for SlopeStalker using only canvas primitives to render a unique, original pixel-art design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed
+- [x] Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed
 - [ ] Initialize the SlopeStalker instance off-screen and inactive, ensuring it does not interfere with existing gameplay
 - [ ] Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input
 - [ ] Add logic for the Slope Stalker to appear at the top of the screen and begin following the player with a slow, predatory movement pattern
