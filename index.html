@@ -619,6 +619,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateSlopeStalkers(dt);
+
 checkPlayerNPCProximity(dt);
 
 updateDistanceTraveled(dt);
@@ -6393,6 +6395,29 @@ function createSlopeStalker() {
     game.slopeStalkers.push(stalker);
     return stalker;
 }
+
+function updateSlopeStalkers(dt) {
+  if (!game.slopeStalkers) return;
+  for (let i = 0; i < game.slopeStalkers.length; i++) {
+    const s = game.slopeStalkers[i];
+    if (!s.active) continue;
+    const dx = PlayerState.x - s.x;
+    const dy = PlayerState.y - s.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const speed = distance > 100 ? NPC_SKIER_SPEED * 0.5 : NPC_SKIER_SPEED;
+    const moveX = (dx / distance) * speed * dt;
+    const moveY = (dy / distance) * speed * dt;
+    s.x += moveX;
+    s.y += moveY;
+    if (checkSlalomProximity(PlayerState, [s], 20)) {
+      s.fallen = 1.0;
+      setPlayerState(PlayerState.CRASHED);
+      PlayerState.invulnerable = 1.1;
+      updateAchievementsOnHazardEncounter('npcSkier');
+    }
+  }
+}
+
 
 
 
