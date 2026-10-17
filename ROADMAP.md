@@ -661,3 +661,8 @@ Operator direction from the daily report lands here.
 - [x] Add a new 'achievements' object to track player progress on specific behaviors like hitting skiers or performing tricks
 - [x] Implement a function to check and unlock achievements when the player performs scorable actions such as slaloming near skiers or crashing through obstacles
 - [x] Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons
+
+- [ ] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases
+- [ ] Introduce style scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing tricks
+- [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
