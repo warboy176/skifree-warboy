@@ -189,7 +189,9 @@ if (autoplay.enabled) {
       x: 0,
       y: 0,
       lastSpawnTime: 0
-    }
+    },
+    lastInputTime: 0,
+    slopeStalkerActive: false
   };
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
@@ -6426,11 +6428,14 @@ function initSlopeStalkerTimer() {
 }
 
 function updateSlopeStalkerTimer(dt) {
-    if (game.lastInputTime !== undefined && Date.now() - game.lastInputTime > 30000) {
-        game.slopeStalkerActive = true;
-    } else {
-        game.slopeStalkerTimer = null;
-    }
+  const now = Date.now();
+  const inputActive = input.left || input.right || input.down || input.pointer || pressed.size > 0;
+  
+  if (inputActive) {
+    game.lastInputTime = now;
+  } else if (now - game.lastInputTime > 30000) {
+    game.slopeStalkerActive = true;
+  }
 }
 
 
