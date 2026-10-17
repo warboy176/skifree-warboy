@@ -6478,6 +6478,24 @@ function initTreeAchievementSystem() {
     }
 }
 
+function handleTreeEncounter(player, tree) {
+    game.state.treeEncounters++;
+    const unlockedAchievementKeys = JSON.parse(localStorage.getItem('achievements') || '[]');
+    
+    for (const [key, achievement] of Object.entries(ACHIEVEMENT_DEFINITIONS)) {
+        if (achievement.type === 'treeEncounter' && 
+            game.state.treeEncounters >= achievement.threshold &&
+            !unlockedAchievementKeys.includes(key)) {
+            
+            unlockAchievement(key);
+            unlockedAchievementKeys.push(key);
+        }
+    }
+    
+    localStorage.setItem('achievements', JSON.stringify(unlockedAchievementKeys));
+}
+
+
 
 
 
