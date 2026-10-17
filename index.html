@@ -3666,6 +3666,8 @@ function initPlayerState() {
     }
   };
 }
+initSlopeStalkers();
+
 initCricketNPCs();
 
 
@@ -6374,6 +6376,11 @@ function ensureFlipMechanicIsJumpingOnly() {
     player.flipActive = false;
   }
 }
+
+function initSlopeStalkers() {
+  game.slopeStalkers = [];
+}
+
 
 
 
