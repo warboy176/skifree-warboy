@@ -663,6 +663,6 @@ Operator direction from the daily report lands here.
 - [x] Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases
+- [x] Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases
 - [ ] Introduce style scoring system with multipliers for slaloming close to NPCs, crashing through obstacles, and landing tricks
 - [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
