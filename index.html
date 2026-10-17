@@ -6459,19 +6459,13 @@ function drawSlopeStalker() {
 }
 
 function initStyleScoreDisplay() {
-    game.styleScoreDisplay = {
-        text: "0",
-        x: 0,
-        y: 0,
-        duration: 1000,
-        color: "white"
-    };
-    game.styleScoreUpdateTime = Date.now();
-    game.styleScoreUpdateInterval = 1000;
-    game.stylePoints = 0;
-    game.styleScoreDelta = 0;
-    game.bestStyleScore = 0;
-    player.styleScore = 0;
+  game.styleScoreDisplay = {
+    text: '0',
+    x: 10,
+    y: HUD_H - 10,
+    duration: 1000,
+    color: 'white'
+  };
 }
 
 
