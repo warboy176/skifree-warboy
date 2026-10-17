@@ -1,4 +1,5 @@
 # Changelog
+- Implement a timer that tracks player inactivity and triggers the Slope Stalker's emergence after 30 seconds of no input (initSlopeStalkerTimer, updateSlopeStalkerTimer, spawnSlopeStalker)
 - Initialize the SlopeStalker instance off-screen and inactive, ensuring it does not interfere with existing gameplay (initSlopeStalker)
 - Add an update method to SlopeStalker that moves it toward the player only when active, based on distance and speed (initSlopeStalkers, updateSlopeStalkers)
 - Create a 'SlopeStalker' class with properties for x, y, speed, and state, initialized off-screen and inactive (initSlopeStalkers, createSlopeStalker)
