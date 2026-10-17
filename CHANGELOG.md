@@ -1,4 +1,5 @@
 # Changelog
+- Create a 'SlopeStalker' class with properties for x, y, speed, and state, initialized off-screen and inactive (initSlopeStalkers, createSlopeStalker)
 - Ensure the flip mechanic only activates during JUMPING state and resets after landing (ensureFlipMechanicIsJumpingOnly)
 - Ensure the multiplier resets after a collision or landing, preserving game balance (resetStyleMultiplierOnCollisionOrLanding)
 - Introduce a style multiplier state that activates when a successful flip is detected (initStyleMultiplierState, applyStyleMultiplierOnFlip)
