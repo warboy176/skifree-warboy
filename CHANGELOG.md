@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached (initJumpAchievementTracking, checkAndUnlockJumpAchievements)
 - Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached (initTreeAchievementSystem, handleTreeEncounter)
 - Add a persistent achievements registry object to store unlock states using localStorage, with initial empty entries for 'Tree Hugger' and 'Airborne King' (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Reset the style multiplier to 1 when the player collides with a tree, oil slick, or crashes (resetStyleMultiplierOnHazardCrash)

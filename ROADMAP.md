@@ -656,6 +656,6 @@ Operator direction from the daily report lands here.
 - [!] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a persistent achievements registry object to store unlock states using localStorage, with initial empty entries for 'Tree Hugger' and 'Airborne King'
 - [x] Add a function to check and unlock achievements when the player hits a tree, incrementing the counter and saving to localStorage if threshold is reached
-- [ ] Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached
+- [x] Add a function to check and unlock achievements when the player lands from a jump, tracking consecutive jumps and saving to localStorage if threshold is reached
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
