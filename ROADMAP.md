@@ -645,7 +645,10 @@ Operator direction from the daily report lands here.
 - [x] Ensure the Slope Stalker's presence is visually distinct with unique animation frames and a subtle trail effect using only original code-drawn pixels
 - [x] Implement dynamic terrain transitions: code a biome shift from open slope to dense forest at 500 meters, using original hand-drawn pixel art for trees and snow depth
 - [x] Add a function to detect when the player is within 10px of an NPC skier during skiing, without collision
-- [ ] Add a function to increment a style counter and display a temporary 'style' visual feedback (e.g., a glowing trail) when the player slaloms within 10px of an NPC skier
+- [ ] Add a style counter variable to track consecutive close passes to NPCs
+- [ ] Create a function to check if the player is within 10px of any NPC skier during movement
+- [ ] Trigger a temporary glowing trail effect when a close pass is detected, using a short-lived visual overlay
+- [ ] Display a 'style' score update on screen for 1 second after each valid close pass
 - [ ] Add a function to update the HUD with a running style multiplier that increases with consecutive close passes and resets on collision or crash
 - [ ] Add a function to award bonus points based on the current style multiplier when the player successfully slaloms near an NPC skier
 - [ ] Add persistent achievements registry: extend the existing system to include new witty unlocks like 'Tree Hugger' (hit 10 trees) and 'Airborne King' (land 5 jumps in a row)
