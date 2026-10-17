@@ -649,7 +649,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check if the player is within 10px of any NPC skier during movement
 - [!] Trigger a temporary glowing trail effect when a close pass is detected, using a short-lived visual overlay  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Display a 'style' score update on screen for 1 second after each valid close pass
-- [ ] Add a style multiplier counter initialized to 1, incrementing on each close pass to skiers or obstacles without collision
+- [!] Add a style multiplier counter initialized to 1, incrementing on each close pass to skiers or obstacles without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Update the HUD to display the current style multiplier value in real time
 - [ ] Reset the style multiplier to 1 when the player collides with a tree, oil slick, or crashes
 - [ ] Add logic to detect 'close pass' events based on proximity to NPCs or obstacles during movement
