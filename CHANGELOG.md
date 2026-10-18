@@ -1,4 +1,5 @@
 # Changelog
+- Add a multiplier counter initialized at 1 and display it in the HUD (initMultiplierState, updateMultiplierDisplay)
 - Add a multiplier counter initialized to 1 in the game state (initMultiplierCounter)
 - Reset the multiplier to 1 whenever the player crashes or hits an obstacle (resetMultiplierOnHazardCrash)
 - Initialize a multiplier variable set to 1 in the game state object (initMultiplierState)
