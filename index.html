@@ -6664,6 +6664,13 @@ function resetConsecutivePassesOnHazardCollision() {
   }
 }
 
+function resetMultiplierOnHazardCrash() {
+  if (game.player.crashed || game.hazards.anyCrashed) {
+    game.player.styleMultiplier = 1;
+  }
+}
+
+
 
 
 
