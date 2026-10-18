@@ -730,6 +730,7 @@ checkStyleScoreOnPass(dt);
 updatePlayerClosePassFlag();
 checkClosePassProximity(dt);
 registerStyleScoreAchievement();
+registerStyleScoringAchievement();
 checkStyleScoreAchievement();
 checkStyleAchievements(dt);
 
@@ -2491,6 +2492,29 @@ function registerStyleScoreAchievement() {
     const title = `Style Score ${threshold}`;
     const description = `Reach a style score of ${threshold}`;
     const newAchievement = { type: `styleScore${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true };
+    game.achievements.push(newAchievement);
+    showAchievementUnlock(newAchievement);
+  }
+}
+
+// Thresholds the style multiplier (game.styleMultiplier, doubled by
+// applyStyleMultiplierToScore on each consecutive close pass, reset to 1 on a miss)
+// can cross; each tier unlocks exactly one "scoring streak" achievement, the first
+// time the multiplier reaches it, mirroring registerStyleScoreAchievement above but
+// keyed on multiplier tier instead of raw style score.
+const STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS = [4, 8, 16];
+
+function registerStyleScoringAchievement() {
+  if (!Array.isArray(game.styleMultiplierThresholdsCrossed)) game.styleMultiplierThresholdsCrossed = [];
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  const multiplier = game.styleMultiplier || 1;
+  for (const threshold of STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS) {
+    if (multiplier < threshold) continue;
+    if (game.styleMultiplierThresholdsCrossed.includes(threshold)) continue;
+    game.styleMultiplierThresholdsCrossed.push(threshold);
+    const title = `Multiplier x${threshold}`;
+    const description = `Reach a style multiplier of x${threshold}`;
+    const newAchievement = { type: `styleMultiplier${threshold}`, title, description, counter: threshold, unlockThreshold: threshold, unlocked: true };
     game.achievements.push(newAchievement);
     showAchievementUnlock(newAchievement);
   }
