@@ -6643,6 +6643,28 @@ function checkHorizontalProximity(player, npc) {
     return horizontalDistance <= 15 && !game.state.collisionDetected;
 }
 
+function resetConsecutivePassesOnHazardCollision() {
+  if (game.player.state === PlayerState.CRASHED) return;
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const s = game.npcSkiers[i];
+    if (s.fallen || Math.abs(s.y - game.player.y) > 65 || !checkPlayerCollision(s)) continue;
+    s.fallen = 1.0;
+    setPlayerState(PlayerState.CRASHED);
+    game.player.invulnerable = 1.1;
+    updateAchievementsOnHazardEncounter('npcSkier');
+    game.player.consecutivePasses = 0;
+    return;
+  }
+  for (let j = 0; j < game.hazards.length; j++) {
+    const hazard = game.hazards[j];
+    if (hazard.used || Math.abs(hazard.y - game.player.y) > 65 || !checkPlayerCollision(hazard)) continue;
+    hazard.used = true;
+    game.player.consecutivePasses = 0;
+    return;
+  }
+}
+
+
 
 
 
