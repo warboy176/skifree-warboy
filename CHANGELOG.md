@@ -1,4 +1,5 @@
 # Changelog
+- Reset the multiplier to 1 whenever the player crashes or hits an obstacle (resetMultiplierOnHazardCrash)
 - Initialize a multiplier variable set to 1 in the game state object (initMultiplierState)
 - Reset 'consecutivePasses' to 0 when the player collides with any obstacle or hits the ground (resetConsecutivePassesOnHazardCollision)
 - Create a function to check horizontal proximity (within 15px) between player and NPC skier, incrementing 'consecutivePasses' if true and no collision is detected (initNPCs, checkHorizontalProximity)

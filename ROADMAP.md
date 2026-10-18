@@ -669,7 +669,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check horizontal proximity (within 15px) between player and NPC skier, incrementing 'consecutivePasses' if true and no collision is detected
 - [x] Reset 'consecutivePasses' to 0 when the player collides with any obstacle or hits the ground
 - [x] Initialize a multiplier variable set to 1 in the game state object
-- [ ] Reset the multiplier to 1 whenever the player crashes or hits an obstacle
+- [x] Reset the multiplier to 1 whenever the player crashes or hits an obstacle
 - [ ] Increment the multiplier by 1 each time the player successfully passes an obstacle without failure, capping it at 5
 - [ ] Display the current multiplier value on screen as a growing number above the player, using the existing HUD space
 - [ ] Apply the multiplier to the score when passing an obstacle, increasing points proportionally to the current multiplier value
