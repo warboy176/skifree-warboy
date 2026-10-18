@@ -1,4 +1,5 @@
 # Changelog
+- Add a multiplier counter initialized to 1 in the game state (initMultiplierCounter)
 - Reset the multiplier to 1 whenever the player crashes or hits an obstacle (resetMultiplierOnHazardCrash)
 - Initialize a multiplier variable set to 1 in the game state object (initMultiplierState)
 - Reset 'consecutivePasses' to 0 when the player collides with any obstacle or hits the ground (resetConsecutivePassesOnHazardCollision)
