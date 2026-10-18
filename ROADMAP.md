@@ -670,7 +670,9 @@ Operator direction from the daily report lands here.
 - [x] Reset 'consecutivePasses' to 0 when the player collides with any obstacle or hits the ground
 - [x] Initialize a multiplier variable set to 1 in the game state object
 - [x] Reset the multiplier to 1 whenever the player crashes or hits an obstacle
-- [ ] Increment the multiplier by 1 each time the player successfully passes an obstacle without failure, capping it at 5
+- [ ] Add a multiplier counter initialized to 1 in the game state
+- [ ] Increment the multiplier by 1 when the player passes an obstacle without collision, capping it at 5
+- [ ] Display the current multiplier value in the HUD
 - [ ] Display the current multiplier value on screen as a growing number above the player, using the existing HUD space
 - [ ] Apply the multiplier to the score when passing an obstacle, increasing points proportionally to the current multiplier value
 - [ ] Render the current multiplier as a floating 'xN' label above the player for 1.5 seconds after each pass, using original pixel-style text
