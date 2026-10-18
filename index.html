@@ -1449,6 +1449,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+updateMultiplierDisplay();
+
 applyAchievementToHUD();
 
 applyBiomeTintTransition();
@@ -6673,6 +6675,18 @@ function resetMultiplierOnHazardCrash() {
 function initMultiplierCounter() {
     if (typeof game.multiplier !== 'number') game.multiplier = 1;
 }
+
+function updateMultiplierDisplay() {
+  if (game.multiplier > 1.0) {
+    const multiplier = game.multiplier || 1;
+    const textX = W - 60;
+    const textY = HUD_H - 20;
+    ctx.font = '16px sans-serif';
+    ctx.fillStyle = 'white';
+    ctx.fillText(multiplier.toFixed(1), textX, textY);
+  }
+}
+
 
 
 
