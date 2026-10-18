@@ -423,7 +423,7 @@ generateTreePositions();
         continue;
       }
       if(o.type==='slope'){
-        o.used=true; o.broken=true; o.breakTime=.001; game.style+=25; game.trickText='BANNER BREAK +25'; game.trickTime=.8; continue;
+        o.used=true; o.broken=true; o.breakTime=.001; game.style+=25; game.trickText='BANNER BREAK +25'; game.trickTime=.8; checkAchievement('bannerBreak',1); continue;
       }
       if(o.type==='oil'){
         o.used=true;player.speed=Math.max(75,player.speed*.48);player.vx*=.55;game.cleanTime=0;game.trickText='OIL SLICK!';game.trickTime=1;game.oilHits=(game.oilHits||0)+1;updateAchievementsOnHazardEncounter('oil');continue;
@@ -432,7 +432,7 @@ generateTreePositions();
         o.used=true; o.splatTime=.001; setPlayerState(PlayerState.CRASHED); player.invulnerable=1.1; checkAchievement('dronesCrashed',1); updateAchievementsOnHazardEncounter(o.type); break;
       }
       if(player.state===PlayerState.JUMPING && (o.type==='rock'||o.type==='drone'||o.type==='mini')){
-        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);if(o.type==='rock')game.rocksCleared=(game.rocksCleared||0)+1;continue;
+        game.style+=o.type==='mini'?100:o.type==='drone'?40:10;o.used=true;if(o.type==='drone')checkAchievement('drones',1);if(o.type==='mini')checkAchievement('miniClear',1);if(o.type==='rock')game.rocksCleared=(game.rocksCleared||0)+1;continue;
       }
       setPlayerState(PlayerState.CRASHED);
       player.invulnerable=1.1;
@@ -1648,6 +1648,8 @@ initDroneBusterAchievement();
 
 registerHazardAchievement('oilSlick', 'Slick Survivor', 'Hit 5 oil slicks and keep skiing.', g => (g.oilHits||0) >= 5);
 registerHazardAchievement('rockHopper', 'Rock Hopper', 'Clear 5 rocks by jumping over them.', g => (g.rocksCleared||0) >= 5);
+
+registerScorableInteractions();
 
 const Achievement = createAchievement('Need For Speed', 'maxSpeed', 400);
 game.achievements.push(Achievement);
@@ -3123,6 +3125,30 @@ function checkAchievementsOnFrame() {
       d.avoided = true;
       checkAchievement('dogs', 1);
     }
+  }
+}
+
+// Fills in achievement coverage for the scorable (style-earning) interactions in
+// handleCollisions() that never got an entry in game.achievements: breaking a banner
+// (the 'slope' obstacle) and jumping clear of a 'mini' Warboy. checkAchievement() is a
+// no-op when no achievement with a matching type exists, so without this those two
+// handleCollisions() calls (see 'bannerBreak'/'miniClear' there) would silently do nothing.
+function registerScorableInteractions() {
+  if (!Array.isArray(game.achievements)) game.achievements = [];
+  const scorableAchievements = [
+    { type: 'bannerBreak', title: 'Banner Breaker', description: 'Break 10 banners.', unlockThreshold: 10 },
+    { type: 'miniClear', title: 'Mini Hopper', description: 'Jump clear of 10 mini-Warboys.', unlockThreshold: 10 }
+  ];
+  for (const def of scorableAchievements) {
+    if (game.achievements.some(a => a.type === def.type)) continue;
+    game.achievements.push({
+      type: def.type,
+      title: def.title,
+      description: def.description,
+      counter: 0,
+      unlockThreshold: def.unlockThreshold,
+      unlocked: false
+    });
   }
 }
 
