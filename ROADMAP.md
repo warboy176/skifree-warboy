@@ -665,7 +665,7 @@ Operator direction from the daily report lands here.
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases
 - [!] Add a style score counter that increments when the player slaloms close to NPCs without colliding  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a 'consecutivePasses' variable initialized to 0 in the game state
+- [x] Add a 'consecutivePasses' variable initialized to 0 in the game state
 - [ ] Create a function to check horizontal proximity (within 15px) between player and NPC skier, incrementing 'consecutivePasses' if true and no collision is detected
 - [ ] Reset 'consecutivePasses' to 0 when the player collides with any obstacle or hits the ground
 - [ ] Implement a 'multiplier' value that increases by 1 for each consecutive pass, capped at 5, and resets to 1 on any failure

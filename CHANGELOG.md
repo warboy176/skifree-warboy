@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'consecutivePasses' variable initialized to 0 in the game state (initConsecutivePasses)
 - Implement dynamic terrain transitions (forest → night → alpine) using code-drawn biome layers that shift as distance increases (initBiomeLayers, updateBiomeTransition)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initAntagonist, spawnAntagonistIfInactive, updateAntagonist)
 - Create a visual feedback system to display achievement unlocks with a brief on-screen notification using original pixel art icons (initAchievementFeedbackSystem, showAchievementUnlock)
