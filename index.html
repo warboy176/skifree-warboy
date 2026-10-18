@@ -6638,6 +6638,12 @@ function initConsecutivePasses() {
     game.state.consecutivePasses = 0;
 }
 
+function checkHorizontalProximity(player, npc) {
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    return horizontalDistance <= 15 && !game.state.collisionDetected;
+}
+
+
 
 
 
