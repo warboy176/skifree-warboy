@@ -1461,6 +1461,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawAirTimeOverlay(ctx);
+
 updateMultiplierDisplay();
 
 applyAchievementToHUD();
@@ -6822,6 +6824,17 @@ function updateAirTime(player, dt) {
         game.airTimeMs = 0;
     }
 }
+
+function drawAirTimeOverlay(ctx) {
+  ctx.textAlign = 'right';
+  ctx.font = '16px sans-serif';
+  ctx.fillStyle = 'white';
+  ctx.shadowColor = 'black';
+  ctx.shadowBlur = 2;
+  ctx.fillText((game.airTimeMs / 1000).toFixed(1), W - 100, 20);
+  ctx.shadowBlur = 0;
+}
+
 
 
 
