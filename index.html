@@ -6919,6 +6919,16 @@ function updateStylePointsAndMultipliers(dt) {
   }
 }
 
+function renderStyleScoreDisplay() {
+  ctx.textAlign = 'right';
+  ctx.fillStyle = 'white';
+  ctx.font = '16px monospace';
+  ctx.fillText(game.styleScore.toString(), W - 100, HUD_H - 30);
+  ctx.fillStyle = 'yellow';
+  ctx.fillText(`x${game.styleMultiplier}`, W - 100, HUD_H - 10);
+}
+
+
 
 
 
