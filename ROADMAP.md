@@ -683,7 +683,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to detect when the player passes an NPC skier without collision
 - [x] Add a function to increment the score multiplier when the player successfully passes an NPC skier
 - [x] Add a function to apply the current multiplier to the score when passing an NPC, then reset the multiplier after a short delay
-- [ ] Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier
+- [x] Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier
 - [ ] Track and display air time during jumps, awarding style points for longer landings and adding multipliers for tricks
 - [ ] Integrate all style points and multipliers into the main score display, updating in real time
 - [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
