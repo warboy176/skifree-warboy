@@ -698,7 +698,10 @@ Operator direction from the daily report lands here.
 - [!] Create a function to draw Warboy's original pixel-art tree sprite using pure code-drawn shapes in the forest biome, with consistent style and size  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Integrate the tree drawing function into the game loop so trees are rendered only when the current biome is forest  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Ensure trees are drawn at correct vertical positions relative to the scrolling slope, maintaining visual depth and flow
-- [ ] Implement a smooth visual transition between open slope and forest biome by gradually replacing snowfield patterns with tree sprites as distance increases
+- [ ] Add a distance-based biome transition trigger that starts at 1000 meters and increases linearly to 3000 meters
+- [ ] Create a function to generate tree sprites as original code-drawn elements using a consistent pixel-art style
+- [ ] Implement a blending function that gradually replaces snowfield patterns with tree sprites over the 1000–3000 meter range
+- [ ] Ensure the transition is visually smooth by interpolating opacity and position of tree sprites across the canvas
 - [ ] Ensure tree sprites are drawn only in the forest biome and do not interfere with existing obstacles or player movement
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
