@@ -1,4 +1,5 @@
 # Changelog
+- Integrate all style points and multipliers into the main score display, updating in real time (initStylePointsAndMultipliers, updateStylePointsAndMultipliers, renderStyleScoreDisplay)
 - Reset the trick multiplier after landing or if the player hits an obstacle (resetTrickMultiplierOnLandingOrObstacle)
 - Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds (initTrickMultiplierState, updateTrickMultiplier, registerTrickMultiplierAchievement)
 - Award style points for air time exceeding 0.5 seconds, scaling linearly with duration (updateAirTime, awardAirTimeStylePoints)
