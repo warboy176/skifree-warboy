@@ -244,7 +244,7 @@ if (autoplay.enabled) {
     Object.assign(player,{x:0,y:0,vx:0,speed:155,state:PlayerState.SKIING,stateTime:0,jumpTime:0,jumpDuration:.82,jumpHeight:0,spin:0,flipDir:0,flipActive:false,flips:0,invulnerable:0});
     addClosePassFlagToPlayer();
     Object.assign(yeti,{active:false,x:0,y:0,vx:0,vy:0,phase:0,step:0,mode:'STALK',modeTime:0,targetX:0,targetY:0,misses:0,cycle:'WAIT',cycleTime:0,cycleLimit:0});
-    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope',canopyPatches:[],nightTransitionTriggered:false,forestTransitionTriggered:false,inForestBiome:false});
+    Object.assign(game,{state:GameState.PLAYING,npcSkiers:[],distance:0,style:0,cameraY:-H*.32,spawnY:H*.85,obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,cleanTime:0,maxSpeed:155,scoreSaved:false,milestone:0,dogs:[],dogTimer:0,lastBiome:'slope',canopyPatches:[],nightTransitionTriggered:false,forestTransitionTriggered:false,inForestBiome:false,lastForestBiomeTreeMeters:null});
     fastMode = false;
     input.pointer = false;
     for(let i=0;i<70;i++) game.snow.push({x:rand(-W,W),y:rand(-H,H*2),s:pick([1,1,2]),a:rand(.25,.8)});
@@ -343,6 +343,23 @@ generateTreePositions();
     for(let i=0;i<count;i++){
       const cx = player.x + rand(-W*.9,W*.9);
       game.canopyPatches.push({x:cx,y:y+rand(-40,40),w:rand(70,150),h:rand(32,56),a:rand(.1,.22)});
+    }
+  }
+
+  // Spawns one collidable tree every FOREST_BIOME_TREE_INTERVAL_METERS of slope distance while the
+  // forest biome is active, reusing the makeObstacle/game.trees/game.obstacles pipeline so update,
+  // render (drawObstacle) and collision (handleCollisions) all pick it up for free, same as initTrees().
+  const FOREST_BIOME_TREE_INTERVAL_METERS = 100;
+  function spawnForestBiomeTrees(meters){
+    if(!game.inForestBiome) return;
+    if(typeof game.lastForestBiomeTreeMeters !== 'number') game.lastForestBiomeTreeMeters = meters;
+    while(meters - game.lastForestBiomeTreeMeters >= FOREST_BIOME_TREE_INTERVAL_METERS){
+      game.lastForestBiomeTreeMeters += FOREST_BIOME_TREE_INTERVAL_METERS;
+      const type = Math.random()<.7?'evergreen':'bare';
+      const laneX = player.x + rand(-W*.9,W*.9);
+      const tree = makeObstacle(type,laneX,game.spawnY+rand(-40,40));
+      game.trees.push(tree);
+      game.obstacles.push(tree);
     }
   }
 
@@ -756,6 +773,7 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
       if(game.state===GameState.PLAYING){
         updateBiomeFromDistance();
         checkForestBiomeTransition();
+        spawnForestBiomeTrees(game.distance);
         updateBiomeTransition(game.distance);
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;displayAchievementUnlock('dangerZoneReached','DANGER ZONE: BARRELS + OIL');}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;displayAchievementUnlock('finalZoneReached','FINAL ZONE: MINI WARBOYS');}
@@ -2331,7 +2349,6 @@ function calculateStyledScore(basePoints) {
 
 function applyStyleMultiplierToScore(points) {
   const awarded = calculateStyledScore(points);
-const treeWidth = scaleTreeWidthByHeight(100, 0.05);
 
   game.styleScore += awarded;
   game.styleMultiplier *= 2;
