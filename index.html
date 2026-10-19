@@ -3393,6 +3393,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerTrickMultiplierAchievement();
+
 registerTrickLandingAchievement();
 
 registerStyleAchievement();
@@ -6869,6 +6871,11 @@ function updateTrickMultiplier(dt) {
     game.styleScore *= 2;
   }
 }
+
+function registerTrickMultiplierAchievement() {
+  addDefaultAchievement('trick_multiplier_3s', () => game.trickMultiplierActive && Date.now() - game.trickMultiplierStartTime >= 3000, 3000);
+}
+
 
 
 
