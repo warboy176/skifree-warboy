@@ -621,6 +621,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStylePointsAndMultipliers(dt);
+
 updateAirTime(game.player, dt);
 awardAirTimeStylePoints(game);
 
@@ -6890,6 +6892,33 @@ function initStylePointsAndMultipliers() {
   game.styleMultiplier = 0;
   game.styleScore = 0;
 }
+
+function updateStylePointsAndMultipliers(dt) {
+  if (game.trickMultiplierActive) {
+    const trickMultiplierDuration = Date.now() - game.trickMultiplierStartTime;
+    if (trickMultiplierDuration > 5000) {
+      game.trickMultiplierActive = false;
+      resetTrickMultiplierOnLandingOrObstacle();
+    }
+  }
+
+  let points = STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+  if (game.trickMultiplierActive) {
+    points *= 2;
+  }
+
+  if (game.comboActive) {
+    points += COMBO_STREAK_BONUS;
+  }
+
+  game.stylePoints += points;
+  game.styleScore += points;
+
+  if (game.stylePoints >= STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0]) {
+    // Trigger first achievement logic here
+  }
+}
+
 
 
 
