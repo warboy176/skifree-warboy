@@ -694,7 +694,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
 - [x] Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering
-- [ ] Add a function to generate random tree positions within the forest biome, ensuring they appear only after the terrain transitions to forest
+- [!] Add a function to generate random tree positions within the forest biome, ensuring they appear only after the terrain transitions to forest  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a function to draw Warboy's original pixel-art tree sprite using pure code-drawn shapes in the forest biome, with consistent style and size
 - [ ] Integrate the tree drawing function into the game loop so trees are rendered only when the current biome is forest
 - [ ] Ensure trees are drawn at correct vertical positions relative to the scrolling slope, maintaining visual depth and flow
