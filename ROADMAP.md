@@ -691,3 +691,8 @@ Operator direction from the daily report lands here.
 - [x] Reset the trick multiplier after landing or if the player hits an obstacle
 - [x] Integrate all style points and multipliers into the main score display, updating in real time
 - [x] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
+
+- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
+- [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
+- [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
