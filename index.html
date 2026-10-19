@@ -6928,6 +6928,72 @@ function renderStyleScoreDisplay() {
   ctx.fillText(`x${game.styleMultiplier}`, W - 100, HUD_H - 10);
 }
 
+function checkAchievementProgress(game) {
+    if (!game.achievements || !game.achievementsHUD) return;
+    
+    const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
+    
+    for (const achievement of achievementsToCheck) {
+        let conditionMet = false;
+        
+        switch (achievement.type) {
+            case 'score':
+                conditionMet = GameState.score >= achievement.unlockThreshold;
+                break;
+            case 'speed':
+                conditionMet = PlayerState.speed >= achievement.unlockThreshold;
+                break;
+            case 'obstaclePass':
+                conditionMet = game.obstaclesPassed >= achievement.unlockThreshold;
+                break;
+            case 'npcPass':
+                conditionMet = game.npcsPassed >= achievement.unlockThreshold;
+                break;
+            case 'hazardCrash':
+                conditionMet = game.hazardsCrashed >= achievement.unlockThreshold;
+                break;
+            case 'combo':
+                conditionMet = game.currentCombo >= achievement.unlockThreshold;
+                break;
+            case 'style':
+                conditionMet = game.styleScore >= achievement.unlockThreshold;
+                break;
+        }
+        
+        if (conditionMet) {
+            unlockAchievement(achievement.id);
+            
+            if (achievement.effects) {
+                for (const effect of achievement.effects) {
+                    switch (effect.type) {
+                        case 'multiplierOnObstaclePass':
+                            applyMultiplierToScoreOnObstaclePass(effect.multiplier);
+                            break;
+                        case 'multiplierOnNPCPass':
+                            applyMultiplierToScoreOnNPCPass(effect.multiplier);
+                            break;
+                        case 'penaltyOnHazardCrash':
+                            applyPenaltyToStyleScoreOnHazardCrash(effect.penalty);
+                            break;
+                        case 'comboMultiplier':
+                            applyComboMultiplierToScore(effect.multiplier);
+                            break;
+                        case 'styleMultiplier':
+                            applyStyleMultiplierToScore(effect.multiplier);
+                            break;
+                        case 'flipMultiplier':
+                            applyStyleMultiplierOnFlip(effect.multiplier);
+                            break;
+                    }
+                }
+            }
+            
+            applyAchievementToHUD(achievement);
+        }
+    }
+}
+
+
 
 
 
