@@ -693,7 +693,7 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
-- [ ] Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering
+- [x] Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering
 - [ ] Create a function to draw original code-drawn tree sprites at random positions within the forest biome, using Warboy's unique pixel-art style
 - [ ] Implement a smooth visual transition between open slope and forest biome by gradually replacing snowfield patterns with tree sprites as distance increases
 - [ ] Ensure tree sprites are drawn only in the forest biome and do not interfere with existing obstacles or player movement
