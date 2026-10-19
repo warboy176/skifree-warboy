@@ -1515,6 +1515,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughMechanic();
+
 initMultiplierLabels();
 
 initTreeAchievementSystem();
@@ -6760,6 +6762,12 @@ function resetMultiplierAfterDelay() {
     }, 2000);
   }
 }
+
+function initCrashThroughMechanic() {
+    game.crashThroughActive = false;
+    game.crashThroughTimer = 0;
+}
+
 
 
 
