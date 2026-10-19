@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to apply the current multiplier to the score when passing an NPC, then reset the multiplier after a short delay (applyMultiplierToScoreOnNPCPass, resetMultiplierAfterDelay)
 - Add a function to increment the score multiplier when the player successfully passes an NPC skier (initNPCs, updateNPCs, checkNPCPasses)
 - Add a function to detect when the player passes an NPC skier without collision (initNPCs, updateNPCs, checkClosePasses)
 - Render the current multiplier as a floating 'xN' label above the player for 1.5 seconds after each pass, using original pixel-style text (initMultiplierLabels)
