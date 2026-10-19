@@ -622,6 +622,8 @@ generateTreePositions();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateAirTime(game.player, dt);
+awardAirTimeStylePoints(game);
+
 
 updateAirTimeTracker(dt);
 
@@ -6834,6 +6836,15 @@ function drawAirTimeOverlay(ctx) {
   ctx.fillText((game.airTimeMs / 1000).toFixed(1), W - 100, 20);
   ctx.shadowBlur = 0;
 }
+
+function awardAirTimeStylePoints(game) {
+  if (game.airTimeMs > 500) {
+    let points = (game.airTimeMs - 500) * 0.1;
+    game.styleScore += points;
+    applyStyleMultiplierToScore(game);
+  }
+}
+
 
 
 
