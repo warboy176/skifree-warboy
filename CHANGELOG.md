@@ -1,4 +1,5 @@
 # Changelog
+- Add a distance-based biome transition trigger that starts at 1000 meters and increases linearly to 3000 meters (initBiomeTransitionState, updateBiomeTransition, applyBiomeTransitionTint)
 - Ensure trees are drawn at correct vertical positions relative to the scrolling slope, maintaining visual depth and flow (initTrees, spawnTrees, drawTrees)
 - Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering (initBiomeState, checkBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolf, updateSnowWolf)
