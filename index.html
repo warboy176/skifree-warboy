@@ -5748,6 +5748,8 @@ function applyForestBiomeTintTransition() {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 }
+applyBiomeTransitionTint();
+
 
 function initForestObstacles() {
   game.forestObstacleConfig = {
@@ -7037,6 +7039,17 @@ function initBiomeTransitionState() {
     game.biomeTransitionThresholds = [1000, 3000];
     game.biomeTransitionProgress = 0.0;
 }
+
+function applyBiomeTransitionTint() {
+  if (game.biomeTransitionProgress > 0) {
+    const progress = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+    const r = Math.round(BIOME_TINTS[0][0] * (1 - progress) + BIOME_TINTS[1][0] * progress);
+    const g = Math.round(BIOME_TINTS[0][1] * (1 - progress) + BIOME_TINTS[1][1] * progress);
+    const b = Math.round(BIOME_TINTS[0][2] * (1 - progress) + BIOME_TINTS[1][2] * progress);
+    applyBiomeTintTransition([r, g, b]);
+  }
+}
+
 
 
 
