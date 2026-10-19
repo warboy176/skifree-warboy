@@ -4505,6 +4505,8 @@ function updateHUD(game, ctx) {
   ctx.fillText('x' + game.multiplier, W - 100, 30);
   ctx.fillText('Style: ' + game.styleScore, W - 100, 50);
 }
+updateScoreDisplay();
+
 
 function applyPenaltyToStyleScoreOnHazardCrash(hazardType) {
   if (hazardType === 'tree' || hazardType === 'oilSlick') {
@@ -6698,6 +6700,15 @@ function checkNPCClearanceAndIncrementMultiplier() {
     }
   }
 }
+
+function updateScoreDisplay() {
+  if (game.multiplier > 1) {
+    ctx.fillStyle = 'white';
+    ctx.font = '16px monospace';
+    ctx.fillText(game.multiplier.toString(), W - 60, 20);
+  }
+}
+
 
 
 
