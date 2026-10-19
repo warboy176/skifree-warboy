@@ -1,4 +1,5 @@
 # Changelog
+- Render the current multiplier as a floating 'xN' label above the player for 1.5 seconds after each pass, using original pixel-style text (initMultiplierLabels)
 - Apply the multiplier to the score when passing an obstacle, increasing points proportionally to the current multiplier value (applyMultiplierToScoreOnObstaclePass)
 - Display the current multiplier value on screen as a growing number above the player, using the existing HUD space (drawMultiplierHUD)
 - Display the current multiplier value in the HUD (drawMultiplierHUD)

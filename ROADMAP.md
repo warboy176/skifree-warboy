@@ -679,7 +679,7 @@ Operator direction from the daily report lands here.
 - [x] Display the current multiplier value in the HUD
 - [x] Display the current multiplier value on screen as a growing number above the player, using the existing HUD space
 - [x] Apply the multiplier to the score when passing an obstacle, increasing points proportionally to the current multiplier value
-- [ ] Render the current multiplier as a floating 'xN' label above the player for 1.5 seconds after each pass, using original pixel-style text
+- [x] Render the current multiplier as a floating 'xN' label above the player for 1.5 seconds after each pass, using original pixel-style text
 - [ ] Apply the multiplier to the score when the player successfully passes an NPC, increasing points proportionally
 - [ ] Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier
 - [ ] Track and display air time during jumps, awarding style points for longer landings and adding multipliers for tricks
