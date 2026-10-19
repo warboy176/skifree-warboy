@@ -636,6 +636,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+checkNPCPasses();
+
 checkNPCClearanceAndIncrementMultiplier();
 
 spawnSlopeStalker(dt);
@@ -6722,6 +6724,18 @@ function initMultiplierLabels() {
     game.multiplierLabels = [];
   }
 }
+
+function checkNPCPasses() {
+  for (let i = game.npcSkiers.length - 1; i >= 0; i--) {
+    const npc = game.npcSkiers[i];
+    if (game.player.x > npc.x + NPC_SKIER_WIDTH && game.player.y > npc.y) {
+      game.multiplier += 1;
+      applyComboMultiplierToScore();
+      game.npcSkiers.splice(i, 1);
+    }
+  }
+}
+
 
 
 
