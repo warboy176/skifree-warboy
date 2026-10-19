@@ -1,4 +1,5 @@
 # Changelog
+- Award style points for air time exceeding 0.5 seconds, scaling linearly with duration (updateAirTime, awardAirTimeStylePoints)
 - Display air time as a floating text overlay during jumps, showing seconds with one decimal place (initAirTimeState, updateAirTime, drawAirTimeOverlay)
 - Add air time tracking: increment a timer when player enters JUMPING state and reset on landing (initAirTimeTracker, updateAirTimeTracker)
 - Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier (initCrashThroughMechanic, handleCrashThrough, updateCrashThroughMechanic)
