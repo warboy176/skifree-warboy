@@ -636,6 +636,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+checkNPCClearanceAndIncrementMultiplier();
+
 spawnSlopeStalker(dt);
 
 updateCricketNPCs(dt);
@@ -6686,6 +6688,17 @@ function updateMultiplierDisplay() {
     ctx.fillText(multiplier.toFixed(1), textX, textY);
   }
 }
+
+function checkNPCClearanceAndIncrementMultiplier() {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    if (npc.y < player.y - 100 && npc.cleared === false) {
+      npc.cleared = true;
+      applyComboMultiplierToScore(1);
+    }
+  }
+}
+
 
 
 
