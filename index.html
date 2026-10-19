@@ -636,6 +636,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+applyMultiplierToScoreOnNPCPass(npc, game.player);
+
 checkNPCPasses();
 
 checkNPCClearanceAndIncrementMultiplier();
@@ -6735,6 +6737,20 @@ function checkNPCPasses() {
     }
   }
 }
+
+function applyMultiplierToScoreOnNPCPass(npc, player) {
+    const dx = player.x - npc.x;
+    const dy = player.y - npc.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    
+    if (distance < 10) {
+        game.score += game.multiplier;
+        setTimeout(() => {
+            game.multiplier = 1;
+        }, 2000);
+    }
+}
+
 
 
 
