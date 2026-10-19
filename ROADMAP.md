@@ -699,7 +699,7 @@ Operator direction from the daily report lands here.
 - [!] Integrate the tree drawing function into the game loop so trees are rendered only when the current biome is forest  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Ensure trees are drawn at correct vertical positions relative to the scrolling slope, maintaining visual depth and flow
 - [x] Add a distance-based biome transition trigger that starts at 1000 meters and increases linearly to 3000 meters
-- [ ] Create a function to generate tree sprites as original code-drawn elements using a consistent pixel-art style
+- [!] Create a function to generate tree sprites as original code-drawn elements using a consistent pixel-art style  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement a blending function that gradually replaces snowfield patterns with tree sprites over the 1000–3000 meter range
 - [ ] Ensure the transition is visually smooth by interpolating opacity and position of tree sprites across the canvas
 - [ ] Ensure tree sprites are drawn only in the forest biome and do not interfere with existing obstacles or player movement
