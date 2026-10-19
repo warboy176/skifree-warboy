@@ -1,4 +1,5 @@
 # Changelog
+- Add air time tracking: increment a timer when player enters JUMPING state and reset on landing (initAirTimeTracker, updateAirTimeTracker)
 - Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier (initCrashThroughMechanic, handleCrashThrough, updateCrashThroughMechanic)
 - Add a function to apply the current multiplier to the score when passing an NPC, then reset the multiplier after a short delay (applyMultiplierToScoreOnNPCPass, resetMultiplierAfterDelay)
 - Add a function to increment the score multiplier when the player successfully passes an NPC skier (initNPCs, updateNPCs, checkNPCPasses)

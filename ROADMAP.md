@@ -684,7 +684,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to increment the score multiplier when the player successfully passes an NPC skier
 - [x] Add a function to apply the current multiplier to the score when passing an NPC, then reset the multiplier after a short delay
 - [x] Add a 'crash-through' mechanic where hitting an obstacle with momentum grants bonus style points and resets the multiplier
-- [ ] Add air time tracking: increment a timer when player enters JUMPING state and reset on landing
+- [x] Add air time tracking: increment a timer when player enters JUMPING state and reset on landing
 - [ ] Display air time as a floating text overlay during jumps, showing seconds with one decimal place
 - [ ] Award style points for air time exceeding 0.5 seconds, scaling linearly with duration
 - [ ] Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds
