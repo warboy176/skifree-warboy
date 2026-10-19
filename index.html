@@ -1509,6 +1509,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initMultiplierLabels();
+
 initTreeAchievementSystem();
 
 initStyleScoreDisplay();
@@ -6714,6 +6716,13 @@ function applyMultiplierToScoreOnObstaclePass(game, obstacle) {
         game.score += game.multiplier * 10;
     }
 }
+
+function initMultiplierLabels() {
+  if (!game.multiplierLabels) {
+    game.multiplierLabels = [];
+  }
+}
+
 
 
 
