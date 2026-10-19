@@ -6768,6 +6768,16 @@ function initCrashThroughMechanic() {
     game.crashThroughTimer = 0;
 }
 
+function handleCrashThrough(player, obstacle, dt) {
+  if (player.speed > 0 && handleCrashThroughCollision(player, obstacle) && !game.crashThroughActive) {
+    game.crashThroughActive = true;
+    game.crashThroughTimer = 0;
+    applyStyleMultiplierToScore(COMBO_STREAK_BONUS * 2);
+    game.multiplier = 1;
+  }
+}
+
+
 
 
 
