@@ -675,7 +675,7 @@ Operator direction from the daily report lands here.
 - [x] Add a multiplier counter initialized to 1 in the game state
 - [x] Create a function to increment the multiplier when the player passes an obstacle without collision, triggered only if the obstacle is ahead and fully cleared
 - [x] Update the score display to show the current multiplier value
-- [ ] Cap the multiplier at 5 to prevent it from growing beyond 5
+- [x] Cap the multiplier at 5 to prevent it from growing beyond 5
 - [ ] Display the current multiplier value in the HUD
 - [ ] Display the current multiplier value on screen as a growing number above the player, using the existing HUD space
 - [ ] Apply the multiplier to the score when passing an obstacle, increasing points proportionally to the current multiplier value

@@ -1,4 +1,5 @@
 # Changelog
+- Cap the multiplier at 5 to prevent it from growing beyond 5 (capMultiplierAtFive)
 - Update the score display to show the current multiplier value (updateScoreDisplay)
 - Create a function to increment the multiplier when the player passes an obstacle without collision, triggered only if the obstacle is ahead and fully cleared (initNPCs, updateNPCs, checkNPCClearanceAndIncrementMultiplier)
 - Add a multiplier counter initialized to 1 in the game state (initMultiplierCounter)
