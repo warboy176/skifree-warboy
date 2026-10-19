@@ -621,6 +621,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAirTimeTracker(dt);
+
 spawnAntagonistIfInactive(dt);
 
 updateSlopeStalkers(dt);
@@ -6792,6 +6794,17 @@ function initAirTimeTracker() {
     game.airTimeMs = 0;
     game.isJumping = false;
 }
+
+function updateAirTimeTracker(dt) {
+  if (player.y > player.lastGroundY) {
+    game.airTimeMs += dt;
+    game.isJumping = true;
+  } else if (player.y <= player.lastGroundY) {
+    game.airTimeMs = 0;
+    game.isJumping = false;
+  }
+}
+
 
 
 
