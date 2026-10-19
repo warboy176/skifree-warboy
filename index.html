@@ -1543,6 +1543,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initForestTrees();
+
 initStylePointsAndMultipliers();
 
 initTrickMultiplierState();
@@ -7009,6 +7011,11 @@ function checkAchievementProgress(game) {
         }
     }
 }
+
+function initForestTrees() {
+    game.forestTrees = [];
+}
+
 
 
 
