@@ -1,4 +1,5 @@
 # Changelog
+- Reset the trick multiplier after landing or if the player hits an obstacle (resetTrickMultiplierOnLandingOrObstacle)
 - Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds (initTrickMultiplierState, updateTrickMultiplier, registerTrickMultiplierAchievement)
 - Award style points for air time exceeding 0.5 seconds, scaling linearly with duration (updateAirTime, awardAirTimeStylePoints)
 - Display air time as a floating text overlay during jumps, showing seconds with one decimal place (initAirTimeState, updateAirTime, drawAirTimeOverlay)
