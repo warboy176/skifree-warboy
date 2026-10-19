@@ -6876,6 +6876,30 @@ function registerTrickMultiplierAchievement() {
   addDefaultAchievement('trick_multiplier_3s', () => game.trickMultiplierActive && Date.now() - game.trickMultiplierStartTime >= 3000, 3000);
 }
 
+function resetTrickMultiplierOnLandingOrObstacle(game) {
+  if ((player.isJumping || player.y > player.landingY) && game.trickMultiplierActive) {
+    game.trickMultiplierActive = false;
+    game.trickMultiplierStartTime = null;
+    game.trickLandingMultiplier = 1;
+    game.trickLandingTimer = 0;
+    game.trickLandingActive = false;
+  }
+  
+  for (let i = 0; i < game.hazards.length; i++) {
+    const hazard = game.hazards[i];
+    if (hazard.used || Math.abs(hazard.y - game.player.y) > HAZARD_ENCOUNTER_THRESHOLD || !checkPlayerCollision(hazard)) continue;
+    
+    if (game.trickMultiplierActive) {
+      game.trickMultiplierActive = false;
+      game.trickMultiplierStartTime = null;
+      game.trickLandingMultiplier = 1;
+      game.trickLandingTimer = 0;
+      game.trickLandingActive = false;
+    }
+  }
+}
+
+
 
 
 
