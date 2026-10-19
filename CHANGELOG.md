@@ -1,4 +1,5 @@
 # Changelog
+- Display the current multiplier value in the HUD (drawMultiplierHUD)
 - Cap the multiplier at 5 to prevent it from growing beyond 5 (capMultiplierAtFive)
 - Update the score display to show the current multiplier value (updateScoreDisplay)
 - Create a function to increment the multiplier when the player passes an obstacle without collision, triggered only if the obstacle is ahead and fully cleared (initNPCs, updateNPCs, checkNPCClearanceAndIncrementMultiplier)
