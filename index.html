@@ -1523,6 +1523,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initTrickMultiplierState();
+
 initAirTimeState();
 
 initAirTimeTracker();
@@ -6844,6 +6846,12 @@ function awardAirTimeStylePoints(game) {
     applyStyleMultiplierToScore(game);
   }
 }
+
+function initTrickMultiplierState() {
+  game.trickMultiplierActive = false;
+  game.trickMultiplierStartTime = null;
+}
+
 
 
 
