@@ -1,4 +1,5 @@
 # Changelog
+- Display the current multiplier value on screen as a growing number above the player, using the existing HUD space (drawMultiplierHUD)
 - Display the current multiplier value in the HUD (drawMultiplierHUD)
 - Cap the multiplier at 5 to prevent it from growing beyond 5 (capMultiplierAtFive)
 - Update the score display to show the current multiplier value (updateScoreDisplay)
