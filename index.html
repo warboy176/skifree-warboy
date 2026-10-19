@@ -6777,6 +6777,16 @@ function handleCrashThrough(player, obstacle, dt) {
   }
 }
 
+function updateCrashThroughMechanic(dt) {
+    if (game.crashThroughActive) {
+        game.crashThroughTimer += dt;
+        if (game.crashThroughTimer > 1000) {
+            game.crashThroughActive = false;
+        }
+    }
+}
+
+
 
 
 
