@@ -6756,11 +6756,8 @@ function applyMultiplierToScoreOnNPCPass(npc, player) {
 function resetMultiplierAfterDelay() {
   if (game.multiplier > 1) {
     setTimeout(() => {
-      if (game.multiplier > 1) {
-        game.multiplier = game.baseMultiplier;
-        game.multiplierDisplay.value = game.baseMultiplier;
-      }
-    }, game.styleMultiplierDurationMs);
+      game.multiplier = 1;
+    }, 2000);
   }
 }
 
