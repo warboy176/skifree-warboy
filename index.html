@@ -1517,6 +1517,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAirTimeState();
+
 initAirTimeTracker();
 
 initCrashThroughMechanic();
@@ -6804,6 +6806,12 @@ function updateAirTimeTracker(dt) {
     game.isJumping = false;
   }
 }
+
+function initAirTimeState() {
+    game.airTimeMs = 0;
+    game.isJumping = false;
+}
+
 
 
 
