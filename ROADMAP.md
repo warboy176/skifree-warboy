@@ -672,7 +672,9 @@ Operator direction from the daily report lands here.
 - [x] Reset the multiplier to 1 whenever the player crashes or hits an obstacle
 - [x] Add a multiplier counter initialized to 1 in the game state
 - [x] Add a multiplier counter initialized at 1 and display it in the HUD
-- [ ] Create a function to increment the multiplier when the player passes an obstacle without collision
+- [ ] Add a multiplier counter initialized to 1 in the game state
+- [ ] Create a function to increment the multiplier when the player passes an obstacle without collision, triggered only if the obstacle is ahead and fully cleared
+- [ ] Update the score display to show the current multiplier value
 - [ ] Cap the multiplier at 5 to prevent it from growing beyond 5
 - [ ] Display the current multiplier value in the HUD
 - [ ] Display the current multiplier value on screen as a growing number above the player, using the existing HUD space
