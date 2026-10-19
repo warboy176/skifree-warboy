@@ -687,7 +687,7 @@ Operator direction from the daily report lands here.
 - [x] Add air time tracking: increment a timer when player enters JUMPING state and reset on landing
 - [x] Display air time as a floating text overlay during jumps, showing seconds with one decimal place
 - [x] Award style points for air time exceeding 0.5 seconds, scaling linearly with duration
-- [ ] Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds
+- [x] Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds
 - [ ] Reset the trick multiplier after landing or if the player hits an obstacle
 - [ ] Integrate all style points and multipliers into the main score display, updating in real time
 - [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
