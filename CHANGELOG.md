@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to generate random tree positions within the forest biome, ensuring they appear only after the terrain transitions to forest (initForestTrees, generateForestTrees)
 - Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering (initBiomeState, checkBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolf, updateSnowWolf)
 - Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone) (initAchievementsRegistry, checkAchievementProgress)
