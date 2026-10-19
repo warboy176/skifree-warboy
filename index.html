@@ -1055,6 +1055,26 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
     ctx.globalAlpha=1;
   }
 
+  // Sparse pixel-art saplings layered under the denser drawForestBiome backdrop, gated the same
+  // way (game.inForestBiome, kept current every frame by updateBiomeFromDistance) so this stand of
+  // trees only appears across the forest stretch. Reuses the drawTree() pixel sprite (previously
+  // unused) and the _bgHash scatter-grid convention from drawBackgroundTrees/drawForestBiome, on
+  // its own grid/seed offset so it doesn't double up with either of those layers.
+  function drawTreesIfForest(){
+    if(!game.inForestBiome)return;
+    const SP=60;
+    const cLo=Math.floor((player.x-W*0.75)/SP),cHi=Math.ceil((player.x+W*0.75)/SP);
+    const rLo=Math.floor((game.cameraY-80)/SP),rHi=Math.ceil((game.cameraY+(H-HUD_H)+90)/SP);
+    for(let c=cLo;c<=cHi;c++)for(let r=rLo;r<=rHi;r++){
+      const h=_bgHash(c*5.3+19,r*4.1+23);
+      if(h>0.35)continue;                                       // ~35% of this finer grid carries a sapling
+      const wx=c*SP+(_bgHash(c+31,r)*40-20), wy=r*SP+(_bgHash(c,r+31)*40-20);
+      const p=worldToScreen(wx,wy);
+      if(p.x<-20||p.x>W+20||p.y<HUD_H-20||p.y>H+20)continue;
+      drawTree(ctx,p.x,p.y);
+    }
+  }
+
   // Overhead dappled-shade blobs for the forest stretch, sourced from game.canopyPatches
   // (seeded by generateForestCanopy() alongside the trees in generateForestObstacles).
   // Drawn after drawForestBiome's trees so the shadow reads as light filtering through the canopy.
@@ -1468,6 +1488,7 @@ drawStarfield();
 drawMoon(ctx);
 
     drawForestBiome(dt);
+    drawTreesIfForest();
     drawForestCanopy();
     drawSnowfieldObstacles();
     drawBiomeLayers(ctx);
