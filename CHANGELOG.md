@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone) (initAchievementsRegistry, checkAchievementProgress)
 - Integrate all style points and multipliers into the main score display, updating in real time (initStylePointsAndMultipliers, updateStylePointsAndMultipliers, renderStyleScoreDisplay)
 - Reset the trick multiplier after landing or if the player hits an obstacle (resetTrickMultiplierOnLandingOrObstacle)
 - Implement a trick multiplier that activates on jumps longer than 1.0 seconds, increasing score by 2x for up to 3 seconds (initTrickMultiplierState, updateTrickMultiplier, registerTrickMultiplierAchievement)
