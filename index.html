@@ -6858,12 +6858,15 @@ function updateTrickMultiplier(dt) {
     game.trickMultiplierStartTime = Date.now();
   }
 
-  if (game.trickMultiplierActive && Date.now() - game.trickMultiplierStartTime >= 3000) {
-    game.trickMultiplierActive = false;
+  if (game.trickMultiplierActive) {
+    const elapsed = Date.now() - game.trickMultiplierStartTime;
+    if (elapsed >= 3000) {
+      game.trickMultiplierActive = false;
+    }
   }
 
   if (game.trickMultiplierActive) {
-    applyMultiplierToScore(game, 2);
+    game.styleScore *= 2;
   }
 }
 
