@@ -693,6 +693,9 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with new entries for each new mechanic: 'Forest Flanker' (slalom through 5 forest trees), 'Night Runner' (survive 1 minute in night biome), 'Alpine Ace' (land 3 jumps in alpine zone)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
+- [ ] Add biome transition trigger at 500 meters distance, updating a global biome state without altering existing rendering
+- [ ] Create a function to draw original code-drawn tree sprites at random positions within the forest biome, using Warboy's unique pixel-art style
+- [ ] Implement a smooth visual transition between open slope and forest biome by gradually replacing snowfield patterns with tree sprites as distance increases
+- [ ] Ensure tree sprites are drawn only in the forest biome and do not interfere with existing obstacles or player movement
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
