@@ -637,6 +637,8 @@ updateScrollProgress(dt);
 
 updateNPCs(dt);
 applyMultiplierToScoreOnNPCPass(npc, game.player);
+resetMultiplierAfterDelay();
+
 
 checkNPCPasses();
 
@@ -6750,6 +6752,18 @@ function applyMultiplierToScoreOnNPCPass(npc, player) {
         }, 2000);
     }
 }
+
+function resetMultiplierAfterDelay() {
+  if (game.multiplier > 1) {
+    setTimeout(() => {
+      if (game.multiplier > 1) {
+        game.multiplier = game.baseMultiplier;
+        game.multiplierDisplay.value = game.baseMultiplier;
+      }
+    }, game.styleMultiplierDurationMs);
+  }
+}
+
 
 
 
