@@ -1096,6 +1096,34 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
     ctx.restore();
   }
 
+  // Close foreground tree accent for the forest stretch: sparser and larger than drawForestBiome's
+  // midground grid, hugging the screen edges so the trail reads as cut through dense woods.
+  // Gated the same way as every other forest-only drawer in this file (game.inForestBiome, kept
+  // current each frame by updateBiomeFromDistance) rather than re-deriving the biome condition.
+  function drawTreesInForestBiome(){
+    if(!game.inForestBiome)return;
+    const {treeMinHeight,treeMaxHeight,treeMinWidth,treeMaxWidth,swayTime}=forestBiomeConfig;
+    const foregroundColor='#06432f';
+    ctx.globalAlpha=.85;
+    const SP=170;
+    const cLo=Math.floor((player.x-W*0.95)/SP),cHi=Math.ceil((player.x+W*0.95)/SP);
+    const rLo=Math.floor((game.cameraY-100)/SP),rHi=Math.ceil((game.cameraY+(H-HUD_H)+120)/SP);
+    for(let c=cLo;c<=cHi;c++)for(let r=rLo;r<=rHi;r++){
+      const h=_bgHash(c*2.9,r*3.3);
+      if(h>0.22)continue;                                      // sparse foreground accent
+      const wx=c*SP+(_bgHash(c+17,r)*80-40), wy=r*SP+(_bgHash(c,r+17)*80-40);
+      const p=worldToScreen(wx,wy);
+      if(p.x>-W*.08&&p.x<W*1.08)continue;                       // keep the trail itself clear
+      if(p.y<HUD_H-120||p.y>H+140)continue;
+      const t=_bgHash(c+23,r+23);
+      const width=(treeMinWidth+t*(treeMaxWidth-treeMinWidth))*1.6;
+      const height=(treeMinHeight+t*(treeMaxHeight-treeMinHeight))*1.6;
+      const sway=Math.sin(swayTime*1.1+c*5+r*2)*.04;
+      drawForestTree(p.x,p.y,width,height,foregroundColor,sway);
+    }
+    ctx.globalAlpha=1;
+  }
+
   // --- Open snowfield ambient decoration ---------------------------------------------------------
   // Sparse, non-collidable snow bumps/drifts for the default 'slope' biome stretch, world-anchored
   // the same way as drawBackgroundTrees/drawForestBiome so they scroll with the world instead of
@@ -1492,6 +1520,7 @@ drawMoon(ctx);
     drawForestBiome(dt);
     drawTreesIfForest();
     drawForestCanopy();
+    drawTreesInForestBiome();
     drawSnowfieldObstacles();
     drawBiomeLayers(ctx);
     drawBiomeTransition(ctx);
