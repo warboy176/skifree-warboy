@@ -706,7 +706,7 @@ Operator direction from the daily report lands here.
 - [x] Modify tree rendering logic to check if current biome is 'forest' before drawing any tree sprites
 - [x] Add biome detection to the game loop that tracks descent level and triggers forest biome at a specific distance threshold
 - [x] Add biome tracking to the game state, initializing it to 'open_slope' at start
-- [ ] Define a valid vertical range for tree spawning based on the current biome's terrain
+- [!] Define a valid vertical range for tree spawning based on the current biome's terrain  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [ ] Modify the tree spawn logic to check if the current biome is 'forest' before generating trees
 - [ ] Ensure tree generation only occurs within the valid vertical range when in the forest biome
 - [ ] Ensure tree sprites are drawn only if their position does not overlap with existing obstacle positions using a collision check function
