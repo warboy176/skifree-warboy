@@ -704,7 +704,10 @@ Operator direction from the daily report lands here.
 - [!] Ensure the transition is visually smooth by interpolating opacity and position of tree sprites across the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add biome tracking to the game loop, marking current terrain as 'forest' when y exceeds 3000 pixels
 - [x] Modify tree rendering logic to check if current biome is 'forest' before drawing any tree sprites
-- [ ] Ensure tree sprites are drawn only within the forest biome and do not overlap with existing obstacle positions
+- [ ] Add biome detection to the game loop that tracks descent level and triggers forest biome at a specific distance threshold
+- [ ] Modify tree generation to only spawn when the current biome is forest and within valid vertical range
+- [ ] Ensure tree sprites are drawn only if their position does not overlap with existing obstacle positions using a collision check function
+- [ ] Update the tree drawing logic to respect the current biome and obstacle avoidance rules in the render phase
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
