@@ -1,4 +1,5 @@
 # Changelog
+- Add biome tracking to the game state, initializing it to 'open_slope' at start (initBiomeState)
 - Add biome detection to the game loop that tracks descent level and triggers forest biome at a specific distance threshold (initBiomeThresholds, addForestBiomeThreshold, applyForestBiomeTintTransition)
 - Modify tree rendering logic to check if current biome is 'forest' before drawing any tree sprites (shouldDrawTreeInBiome)
 - Add biome tracking to the game loop, marking current terrain as 'forest' when y exceeds 3000 pixels (initBiomeThresholds, updateBiomeTracking)
