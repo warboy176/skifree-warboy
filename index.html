@@ -638,6 +638,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateBiomeTracking(dt);
+
 updateStylePointsAndMultipliers(dt);
 
 updateAirTime(game.player, dt);
@@ -7049,6 +7051,13 @@ function applyBiomeTransitionTint() {
     applyBiomeTintTransition([r, g, b]);
   }
 }
+
+function updateBiomeTracking(dt) {
+    if (game.player.y > game.biomeTransitionThresholds[0] * METERS_PER_PIXEL) {
+        game.currentBiome = 'forest';
+    }
+}
+
 
 
 
