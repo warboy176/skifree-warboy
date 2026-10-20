@@ -702,7 +702,7 @@ Operator direction from the daily report lands here.
 - [!] Create a function to generate tree sprites as original code-drawn elements using a consistent pixel-art style  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [!] Implement a blending function that gradually replaces snowfield patterns with tree sprites over the 1000–3000 meter range  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the transition is visually smooth by interpolating opacity and position of tree sprites across the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
-- [ ] Add biome tracking to the game loop, marking current terrain as 'forest' when y exceeds 3000 pixels
+- [x] Add biome tracking to the game loop, marking current terrain as 'forest' when y exceeds 3000 pixels
 - [ ] Modify tree rendering logic to check if current biome is 'forest' before drawing any tree sprites
 - [ ] Ensure tree sprites are drawn only within the forest biome and do not overlap with existing obstacle positions
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
