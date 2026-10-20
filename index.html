@@ -7058,6 +7058,9 @@ function updateBiomeTracking(dt) {
     }
 }
 
+function shouldDrawTreeInBiome(game) { return game.biome === 'forest' && game.meters > game.lastTreeMeters + FOREST_BIOME_TREE_INTERVAL_METERS; }
+
+
 
 
 
