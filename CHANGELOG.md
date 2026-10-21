@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic (initObstacles, checkObstacleTreeOverlap)
 - Modify the tree spawn logic to check if the current biome is 'forest' before generating trees (isCurrentBiomeForest)
 - Add biome tracking to the game state, initializing it to 'open_slope' at start (initBiomeState)
 - Add biome detection to the game loop that tracks descent level and triggers forest biome at a specific distance threshold (initBiomeThresholds, addForestBiomeThreshold, applyForestBiomeTintTransition)
