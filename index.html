@@ -31,6 +31,8 @@
 </main>
 <script>
 (() => {
+  let TREE_PALETTE;   // scope state (foundation-provided)
+
   let BIOME_TREE_STYLES;   // scope state (foundation-provided)
 
   defineBiomeTreeStyles();
@@ -7216,6 +7218,17 @@ function getTreeStyleForBiome(biomeKey) {
     branchColor: '#008000'
   };
 }
+
+function initTreePalette() {
+  const trunkColors = ['#5d4037', '#4e342e', '#3e2723', '#212121', '#424242'];
+  const foliageColors = ['#2e7d32', '#388e3c', '#4caf50', '#66bb6a', '#81c784'];
+  game.treeColorPalettes = {
+    trunk: trunkColors,
+    foliage: foliageColors
+  };
+  return game.treeColorPalettes;
+}
+
 
 
 
