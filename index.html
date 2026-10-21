@@ -1610,6 +1610,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSleetHoundState();
+
 initSleetHoundSpeedMultiplier();
 
 initScorePopups();
@@ -7438,6 +7440,13 @@ function initSleetHoundSpeedMultiplier() {
 function updateSleetHoundSpeed() {
     game.sleetHound.speed = game.playerState.speed * game.sleetHoundSpeedMultiplier;
 }
+
+function initSleetHoundState() {
+  game.sleetHound = game.sleetHound || {};
+  game.sleetHound.state = 'idle';
+  game.sleetHound.chaseThreshold = 100;
+}
+
 
 
 
