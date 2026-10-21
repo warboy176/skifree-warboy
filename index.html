@@ -1605,6 +1605,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleMeter();
+
 initObstacles();
 
 initBiomeTransitionState();
@@ -7246,6 +7248,18 @@ function updateStyleScoreOnNearPass(dt) {
     }
   }
 }
+
+function initStyleMeter() {
+  game.styleMeter = 0;
+  game.styleScoreDisplay = {
+    x: 10,
+    y: 10,
+    width: 100,
+    height: 4,
+    color: SKI_COLORS[0]
+  };
+}
+
 
 
 
