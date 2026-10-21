@@ -3485,6 +3485,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerCrashThroughAchievement();
+
 registerTrickMultiplierAchievement();
 
 registerTrickLandingAchievement();
@@ -7294,6 +7296,18 @@ function updateStyleMeter(dt) {
   ctx.fillStyle = '#ffd43b';
   ctx.fillRect(barX, barY, fillWidth, barHeight);
 }
+
+function registerCrashThroughAchievement() {
+  addDefaultAchievement({
+    type: 'score',
+    title: 'Crash Through',
+    description: 'Crashed through 1000 points worth of obstacles',
+    counter: 0,
+    unlockThreshold: 1000,
+    condition: () => game.crashThroughBonus.points >= 1000
+  });
+}
+
 
 
 
