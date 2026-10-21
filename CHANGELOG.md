@@ -1,4 +1,5 @@
 # Changelog
+- Define biome-specific tree styles as arrays of original code-drawn shapes in the BIOME_TREE_STYLES constant (defineBiomeTreeStyles)
 - Add biome-specific tree styles by defining a map of biome types to tree color and shape parameters in the render phase (initBiomeTreeStyles, renderBiomeTrees)
 - Ensure the collision check uses the current player position and all active obstacles (initObstacles, checkObstacleCollisions)
 - Modify the tree drawing logic to skip rendering if an overlap is detected (initTreeOverlapDetection, checkTreeOverlap)
