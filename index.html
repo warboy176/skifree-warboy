@@ -7145,16 +7145,17 @@ function initTreeOverlapDetection() {
 }
 
 function checkObstacleCollisions() {
-    if (!game.player.active) return false;
-    
-    for (let i = 0; i < game.obstacles.length; i++) {
-        const obstacle = game.obstacles[i];
-        if (obstacle.used || Math.abs(obstacle.y - game.player.y) > 65 || !checkPlayerCollision(obstacle)) continue;
-        
-        return true;
+  const player = game.player;
+  for (const obstacle of game.obstacles) {
+    if (obstacle.active &&
+        player.x < obstacle.x + obstacle.w &&
+        player.x + player.w > obstacle.x &&
+        player.y < obstacle.y + obstacle.h &&
+        player.y + player.h > obstacle.y) {
+      return true;
     }
-    
-    return false;
+  }
+  return false;
 }
 
 
