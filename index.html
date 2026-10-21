@@ -7435,6 +7435,11 @@ function initSleetHoundSpeedMultiplier() {
     game.sleetHoundSpeedMultiplier = 1.2;
 }
 
+function updateSleetHoundSpeed() {
+    game.sleetHound.speed = game.playerState.speed * game.sleetHoundSpeedMultiplier;
+}
+
+
 
 
 
