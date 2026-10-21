@@ -7467,6 +7467,17 @@ function updateSleetHoundChaseState(dt) {
   }
 }
 
+function spawnSleetHoundIfPlayerSkiing() {
+    if (game.playerState.isSkiing && !game.sleetHound) {
+        game.sleetHound = {
+            x: player.x - 150,
+            y: player.y + 30,
+            speed: game.playerState.speed * game.sleetHoundSpeedMultiplier
+        };
+    }
+}
+
+
 
 
 
