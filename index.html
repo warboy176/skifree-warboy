@@ -7144,6 +7144,20 @@ function initTreeOverlapDetection() {
   }
 }
 
+function checkObstacleCollisions() {
+    if (!game.player.active) return false;
+    
+    for (let i = 0; i < game.obstacles.length; i++) {
+        const obstacle = game.obstacles[i];
+        if (obstacle.used || Math.abs(obstacle.y - game.player.y) > 65 || !checkPlayerCollision(obstacle)) continue;
+        
+        return true;
+    }
+    
+    return false;
+}
+
+
 
 
 
