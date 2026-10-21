@@ -720,3 +720,5 @@ Operator direction from the daily report lands here.
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
