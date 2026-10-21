@@ -719,7 +719,7 @@ Operator direction from the daily report lands here.
 - [x] Update the tree drawing function to select tree appearance based on the current biome using the BIOME_TREE_STYLES constant
 - [x] Ensure the tree drawing function uses only original code-drawn shapes and does not reuse existing sprites
 - [!] Ensure tree rendering respects obstacle avoidance by adjusting tree spawn positions to avoid overlapping with player or other obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 1 unspecifiable, 1 e -->
-- [ ] Verify that tree sprites do not affect player collision detection or movement physics
+- [!] Verify that tree sprites do not affect player collision detection or movement physics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
 
