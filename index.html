@@ -54,6 +54,7 @@
 
 // NPC Skier constants
 const NPC_SKIER_SPEED = 200;
+const NEAR_MISS_MARGIN = 50;
 const NPC_SKIER_WIDTH = 20;
 const NPC_SKIER_HEIGHT = 20;
 const NPC_SKIER_COLOR = '#ffcc00';
@@ -7263,17 +7264,35 @@ function initStyleMeter() {
 }
 
 function updateStyleMeter(dt) {
-  for (let i = 0; i < game.npcSkiers.length; i++) {
-    const npc = game.npcSkiers[i];
-    const horizontalDistance = Math.abs(npc.x - player.x);
-    if (horizontalDistance < NPC_SKIER_WIDTH && player.direction === npc.direction) {
-      game.styleMeter = Math.min(game.styleMeter + 0.1 * dt, 100);
+  const NEAR_MISS_MARGIN = 50; // Assuming this constant exists; if not, define it
+  for (const npc of game.npcSkiers) {
+    const horizontalDiff = Math.abs(player.x - npc.x);
+    const isNearHorizontal = horizontalDiff < NEAR_MISS_MARGIN;
+    
+    // Check if player is moving toward the NPC: same direction AND approaching
+    const playerMovingRight = player.vx > 0;
+    const npcMovingRight = npc.speed > 0;
+    const sameDirection = playerMovingRight === npcMovingRight;
+    
+    // Player is approaching if: both moving right and player is left of NPC, or both moving left and player is right of NPC
+    const isApproaching = (playerMovingRight && player.x < npc.x) || (!playerMovingRight && player.x > npc.x);
+    
+    if (isNearHorizontal && sameDirection && isApproaching) {
+      game.styleMeter = Math.min(100, game.styleMeter + 0.1 * dt);
     }
   }
 
-  // Draw style meter bar
-  ctx.fillStyle = SKI_COLORS[0];
-  ctx.fillRect(10, 10, game.styleMeter * 0.4, 4);
+  // Draw the meter bar
+  const barX = 10;
+  const barY = 10;
+  const barWidth = 100;
+  const barHeight = 4;
+  const fillWidth = (game.styleMeter / 100) * barWidth;
+
+  ctx.fillStyle = '#0c6d57';
+  ctx.fillRect(barX, barY, barWidth, barHeight);
+  ctx.fillStyle = '#ffd43b';
+  ctx.fillRect(barX, barY, fillWidth, barHeight);
 }
 
 
