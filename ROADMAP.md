@@ -732,7 +732,7 @@ Operator direction from the daily report lands here.
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
-- [ ] Define the Sleet Hound's initial position as a fixed offset from the player's starting point, using only original code-drawn coordinates
+- [x] Define the Sleet Hound's initial position as a fixed offset from the player's starting point, using only original code-drawn coordinates
 - [ ] Initialize the Sleet Hound's speed as a constant multiplier of the player's current speed, ensuring it scales dynamically with gameplay
 - [ ] Add a state variable for the Sleet Hound to track whether it is idle or actively chasing, starting in the idle state
 - [ ] Ensure the Sleet Hound's state transitions to 'chasing' only when the player's speed drops below a threshold for a sustained period
