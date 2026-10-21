@@ -714,6 +714,8 @@ checkClosePasses(dt);
 checkSlalomClosePasses(dt);
 
 drawTrees(dt);
+checkTreeOverlap(i);
+
 
 checkAchievementTrigger(dt);
 
@@ -7107,6 +7109,26 @@ function initObstacles() {
 function checkObstacleTreeOverlap(obstacle, tree) {
     return (obstacle.x < tree.x + tree.w) && (obstacle.x + obstacle.w > tree.x) && (obstacle.y < tree.y + tree.h) && (obstacle.y + obstacle.h > tree.y);
 }
+
+function checkTreeOverlap(treeIndex) {
+  const tree = game.obstacles[treeIndex];
+  if (!tree) return false;
+
+  for (let i = 0; i < game.treeOverlapCache.length; i++) {
+    const cachedTree = game.treeOverlapCache[i];
+    if (cachedTree === tree) continue;
+    
+    if (tree.x < cachedTree.x + cachedTree.w &&
+        tree.x + tree.w > cachedTree.x &&
+        tree.y < cachedTree.y + cachedTree.h &&
+        tree.y + tree.h > cachedTree.y) {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
 
 
 
