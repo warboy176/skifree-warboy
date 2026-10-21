@@ -730,4 +730,4 @@ Operator direction from the daily report lands here.
 - [x] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
 - [x] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
