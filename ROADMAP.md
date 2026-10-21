@@ -731,3 +731,8 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original chase antagonist: a pixel-art 'Sleet Hound' creature with unique movement patterns, drawn in code, that pursues the player when dawdling
+- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest with original tree art and ambient snow effects
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
+- [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
