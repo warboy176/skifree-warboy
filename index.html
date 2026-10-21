@@ -7315,16 +7315,31 @@ function initCrashThroughState() {
 }
 
 function checkPlayerCrashThroughObstacle(player, obstacles) {
-    for (let i = 0; i < obstacles.length; i++) {
-        const obstacle = obstacles[i];
-        if (player.isJumping && checkPlayerCollision(obstacle)) {
-            player.crashedThrough = true;
-            game.crashThroughBonus += 1;
-            applyFastModeVisualEffects();
-            return true;
-        }
+  let collisionOccurred = false;
+  for (const obstacle of obstacles) {
+    // Check if player is in mid-air and collides with obstacle
+    if (player.isJumping === true) {
+      // Bounding box collision: check if player and obstacle overlap
+      const playerRight = player.x + player.width;
+      const playerBottom = player.y + player.height;
+      const obstacleRight = obstacle.x + obstacle.width;
+      const obstacleBottom = obstacle.y + obstacle.height;
+
+      if (
+        player.x < obstacleRight &&
+        playerRight > obstacle.x &&
+        player.y < obstacleBottom &&
+        playerBottom > obstacle.y
+      ) {
+        player.crashedThrough = true;
+        game.crashThroughBonus += 1;
+        // Trigger visual feedback: flash white screen for 100ms
+        game.flash = 100;
+        collisionOccurred = true;
+      }
     }
-    return false;
+  }
+  return collisionOccurred;
 }
 
 
