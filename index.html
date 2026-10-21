@@ -644,6 +644,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStyleMeter(dt);
+
 updateStyleScoreOnNearPass(dt);
 
 updateBiomeTracking(dt);
@@ -7259,6 +7261,21 @@ function initStyleMeter() {
     color: SKI_COLORS[0]
   };
 }
+
+function updateStyleMeter(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    if (horizontalDistance < NPC_SKIER_WIDTH && player.direction === npc.direction) {
+      game.styleMeter = Math.min(game.styleMeter + 0.1 * dt, 100);
+    }
+  }
+
+  // Draw style meter bar
+  ctx.fillStyle = SKI_COLORS[0];
+  ctx.fillRect(10, 10, game.styleMeter * 0.4, 4);
+}
+
 
 
 
