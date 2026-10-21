@@ -7104,6 +7104,11 @@ function initObstacles() {
   };
 }
 
+function checkObstacleTreeOverlap(obstacle, tree) {
+    return (obstacle.x < tree.x + tree.w) && (obstacle.x + obstacle.w > tree.x) && (obstacle.y < tree.y + tree.h) && (obstacle.y + obstacle.h > tree.y);
+}
+
+
 
 
 
