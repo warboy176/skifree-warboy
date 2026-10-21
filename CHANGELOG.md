@@ -1,4 +1,5 @@
 # Changelog
+- Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick (initStyleMultiplier, updateStyleMultiplier)
 - Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation (initScorePopups, showScorePopup, updateScorePopups)
 - Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state (initCrashThroughState, checkPlayerCrashThroughObstacle)
 - Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving (initCrashThroughBonus, handleCrashThroughCollision, registerCrashThroughAchievement)

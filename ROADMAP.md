@@ -727,7 +727,7 @@ Operator direction from the daily report lands here.
 - [!] Create a small, self-contained animation function that draws a brief 'crash through' visual effect using original pixel art in the canvas  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation
 - [!] Link the animation and score pop-up to the collision detection, ensuring they only trigger when the player crashes through an obstacle  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
+- [x] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
