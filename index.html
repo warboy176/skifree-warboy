@@ -644,6 +644,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStyleScoreOnNearPass(dt);
+
 updateBiomeTracking(dt);
 
 updateStylePointsAndMultipliers(dt);
@@ -7228,6 +7230,23 @@ function initTreePalette() {
   };
   return game.treeColorPalettes;
 }
+
+function updateStyleScoreOnNearPass(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    
+    if (horizontalDistance < 30 && npc.direction !== player.direction) {
+      game.styleScore += STYLE_ACTION_BASE_POINTS;
+      game.styleScoreDelta = 1;
+      
+      setTimeout(() => {
+        game.styleScoreDelta = 0;
+      }, 100);
+    }
+  }
+}
+
 
 
 
