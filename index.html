@@ -7348,6 +7348,17 @@ function initScorePopups() {
   game.scorePopups = [];
 }
 
+function showScorePopup(x, y, value) {
+    game.scorePopups.push({
+        x: x,
+        y: y,
+        value: value,
+        alpha: 1,
+        age: 0
+    });
+}
+
+
 
 
 
