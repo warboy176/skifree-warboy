@@ -674,6 +674,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+checkAchievementsOnInteraction('proximity', distance);
+
 applyMultiplierToScoreOnNPCPass(npc, game.player);
 resetMultiplierAfterDelay();
 
@@ -7390,6 +7392,31 @@ function registerWolfWhispererAchievement() {
 function registerForestRunnerAchievement() {
   addDefaultAchievement('Forest Runner', 'distance', 'forest', 100);
 }
+
+function checkAchievementsOnInteraction(type, value) {
+  const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
+  
+  for (const achievement of achievementsToCheck) {
+    if (achievement.type === type && value >= achievement.unlockThreshold) {
+      unlockAchievement(achievement.id);
+      applyAchievementToHUD(achievement);
+      showAchievementUnlock(achievement);
+      
+      if (achievement.type === 'combo') {
+        game.currentCombo = value;
+      }
+      
+      if (achievement.type === 'closePass') {
+        addClosePassFlagToPlayer();
+      }
+      
+      break;
+    }
+  }
+  
+  updateAchievementHUD();
+}
+
 
 
 
