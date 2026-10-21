@@ -725,7 +725,7 @@ Operator direction from the daily report lands here.
 - [x] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
 - [x] Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state
 - [!] Create a small, self-contained animation function that draws a brief 'crash through' visual effect using original pixel art in the canvas  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation
+- [x] Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation
 - [ ] Link the animation and score pop-up to the collision detection, ensuring they only trigger when the player crashes through an obstacle
 - [ ] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
