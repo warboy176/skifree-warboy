@@ -722,7 +722,7 @@ Operator direction from the daily report lands here.
 - [!] Verify that tree sprites do not affect player collision detection or movement physics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
 - [x] Add a visual style meter that fills incrementally when the player performs close passes to NPCs
-- [ ] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
+- [x] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
 - [ ] Display a temporary 'CRASH THROUGH' animation and score pop-up when the player crashes through an obstacle
 - [ ] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
