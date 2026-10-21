@@ -1,4 +1,5 @@
 # Changelog
+- Add biome-specific tree styles by defining a map of biome types to tree color and shape parameters in the render phase (initBiomeTreeStyles, renderBiomeTrees)
 - Ensure the collision check uses the current player position and all active obstacles (initObstacles, checkObstacleCollisions)
 - Modify the tree drawing logic to skip rendering if an overlap is detected (initTreeOverlapDetection, checkTreeOverlap)
 - Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic (initObstacles, checkObstacleTreeOverlap)

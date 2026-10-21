@@ -714,7 +714,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to check if a new tree overlaps with any existing obstacle or skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Modify the tree drawing logic to skip rendering if an overlap is detected
 - [x] Ensure the collision check uses the current player position and all active obstacles
-- [ ] Add biome-specific tree styles by defining a map of biome types to tree color and shape parameters in the render phase
+- [x] Add biome-specific tree styles by defining a map of biome types to tree color and shape parameters in the render phase
 - [ ] Modify the tree drawing function to select tree appearance based on the current biome, using only original code-drawn shapes
 - [ ] Ensure tree rendering respects obstacle avoidance by adjusting tree spawn positions to avoid overlapping with player or other obstacles
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
