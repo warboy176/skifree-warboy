@@ -7206,6 +7206,18 @@ function defineBiomeTreeStyles() {
   ];
 }
 
+function getTreeStyleForBiome(biomeKey) {
+  const treeStyle = BIOME_TREE_STYLES[biomeKey];
+  if (treeStyle) {
+    return treeStyle;
+  }
+  return {
+    trunkColor: '#FFFFFF',
+    branchColor: '#008000'
+  };
+}
+
+
 
 
 
