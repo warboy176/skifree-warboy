@@ -3236,6 +3236,8 @@ function initAchievementsRegistry() {
     { type: 'survivalTime', counter: 0, unlockThreshold: 60, title: 'Survivor', description: 'Survive on the slope for 60 seconds.', unlocked: false }
   ];
 }
+registerForestRunnerAchievement();
+
 
 function initAchievementsSystem() {
   game.achievements = [];
@@ -7384,6 +7386,11 @@ function registerWolfWhispererAchievement() {
     return false;
   }, 15);
 }
+
+function registerForestRunnerAchievement() {
+  addDefaultAchievement('Forest Runner', 'distance', 'forest', 100);
+}
+
 
 
 
