@@ -1,4 +1,5 @@
 # Changelog
+- Add a visual style meter that fills incrementally when the player performs close passes to NPCs (initStyleMeter, updateStyleMeter)
 - Add a style score counter that increments when the player slaloms within 30px of an NPC skier (initStyleScore, updateStyleScoreOnNearPass, registerStyleScoreAchievement)
 - Ensure the tree drawing function uses only original code-drawn shapes and does not reuse existing sprites (initTreePalette, drawTree, spawnTrees)
 - Update the tree drawing function to select tree appearance based on the current biome using the BIOME_TREE_STYLES constant (initBiomeTreeStyles, getTreeStyleForBiome)
