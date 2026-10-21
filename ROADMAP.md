@@ -711,7 +711,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure tree generation only occurs within the valid vertical range when in the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to check if a tree's bounding box overlaps with any obstacle's bounding box using their x, y, width, and height  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic
-- [ ] Add a function to check if a new tree overlaps with any existing obstacle or skier
+- [!] Add a function to check if a new tree overlaps with any existing obstacle or skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Modify the tree drawing logic to skip rendering if an overlap is detected
 - [ ] Ensure the collision check uses the current player position and all active obstacles
 - [ ] Update the tree drawing logic to respect the current biome and obstacle avoidance rules in the render phase
