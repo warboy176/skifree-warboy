@@ -720,7 +720,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure the tree drawing function uses only original code-drawn shapes and does not reuse existing sprites
 - [!] Ensure tree rendering respects obstacle avoidance by adjusting tree spawn positions to avoid overlapping with player or other obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 1 unspecifiable, 1 e -->
 - [!] Verify that tree sprites do not affect player collision detection or movement physics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
+- [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
 - [ ] Add a visual style meter that fills incrementally when the player performs close passes to NPCs
 - [ ] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
 - [ ] Display a temporary 'CRASH THROUGH' animation and score pop-up when the player crashes through an obstacle
