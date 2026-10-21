@@ -7178,6 +7178,25 @@ function initBiomeTreeStyles() {
   return biomeTreeStyles;
 }
 
+function renderBiomeTrees(ctx, game) {
+  for (let i = 0; i < game.treeOverlapCache.length; i++) {
+    const tree = game.treeOverlapCache[i];
+    let biome;
+    if (tree.y < 100) biome = 'desert';
+    else if (tree.y < 200) biome = 'plains';
+    else if (tree.y < 300) biome = 'forest';
+    else biome = 'mountains';
+
+    const treeStyle = BIOME_TREE_STYLES[biome];
+    ctx.fillStyle = treeStyle.trunkColor;
+    ctx.fillRect(tree.x - 1, tree.y - 6, 2, 6);
+    ctx.fillStyle = treeStyle.branchColor;
+    ctx.fillRect(tree.x - 2, tree.y - 2, 1, 4);
+    ctx.fillRect(tree.x + 1, tree.y - 2, 1, 4);
+  }
+}
+
+
 
 
 
