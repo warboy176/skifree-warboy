@@ -1608,6 +1608,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughState();
+
 initStyleMeter();
 
 initObstacles();
@@ -7307,6 +7309,11 @@ function registerCrashThroughAchievement() {
     condition: () => game.crashThroughBonus.points >= 1000
   });
 }
+
+function initCrashThroughState() {
+    game.crashThroughBonus = 0;
+}
+
 
 
 
