@@ -737,7 +737,7 @@ Operator direction from the daily report lands here.
 - [x] Add a state variable for the Sleet Hound to track whether it is idle or actively chasing, starting in the idle state
 - [x] Ensure the Sleet Hound's state transitions to 'chasing' only when the player's speed drops below a threshold for a sustained period
 - [x] Add a Sleet Hound class with a fixed spawn offset behind the player, initialized only when the player is skiing
-- [ ] Implement idle behavior: the Sleet Hound remains stationary until the player's speed drops below a threshold, then begins pursuit
+- [x] Implement idle behavior: the Sleet Hound remains stationary until the player's speed drops below a threshold, then begins pursuit
 - [ ] Add logic to detect dawdling: if the player's speed drops below a threshold for more than 1 second, trigger the Sleet Hound to start pursuing
 - [ ] Implement the Sleet Hound's pursuit movement: follow the player's x-position with a slight delay and acceleration, adjusting for terrain scrolling
 - [ ] Draw the Sleet Hound using original pixel-art code: a simple, stylized creature composed of geometric shapes in Warboy's signature style
