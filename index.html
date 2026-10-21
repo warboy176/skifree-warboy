@@ -7358,6 +7358,23 @@ function showScorePopup(x, y, value) {
     });
 }
 
+function updateScorePopups(dt) {
+  for (let i = game.scorePopups.length - 1; i >= 0; i--) {
+    const popup = game.scorePopups[i];
+    popup.age += dt;
+    popup.alpha -= 0.01 * dt;
+    if (popup.alpha <= 0 || popup.age > 1000) {
+      game.scorePopups.splice(i, 1);
+      continue;
+    }
+    ctx.globalAlpha = popup.alpha;
+    ctx.fillStyle = 'white';
+    ctx.font = '16px Arial';
+    ctx.fillText(popup.value, popup.x, popup.y);
+  }
+}
+
+
 
 
 
