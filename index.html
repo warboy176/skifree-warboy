@@ -7417,6 +7417,19 @@ function checkAchievementsOnInteraction(type, value) {
   updateAchievementHUD();
 }
 
+function initSleetHound() {
+  const x = player.startX + 150;
+  const y = player.startY + 100;
+  game.dogs.push({
+    x: x,
+    y: y,
+    w: 4,
+    h: 4,
+    color: "#FFFFFF"
+  });
+}
+
+
 
 
 
