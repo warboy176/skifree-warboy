@@ -7374,6 +7374,18 @@ function updateScorePopups(dt) {
   }
 }
 
+function registerWolfWhispererAchievement() {
+  addDefaultAchievement('Wolf Whisperer', () => {
+    if (game.antagonist.chaseStartTime) {
+      const now = Date.now();
+      const timeSinceChaseStart = (now - game.antagonist.chaseStartTime) / 1000;
+      return timeSinceChaseStart >= 15;
+    }
+    return false;
+  }, 15);
+}
+
+
 
 
 
