@@ -1,4 +1,5 @@
 # Changelog
+- Modify the tree drawing logic to skip rendering if an overlap is detected (initTreeOverlapDetection, checkTreeOverlap)
 - Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic (initObstacles, checkObstacleTreeOverlap)
 - Modify the tree spawn logic to check if the current biome is 'forest' before generating trees (isCurrentBiomeForest)
 - Add biome tracking to the game state, initializing it to 'open_slope' at start (initBiomeState)
