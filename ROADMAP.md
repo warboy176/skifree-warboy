@@ -723,7 +723,7 @@ Operator direction from the daily report lands here.
 - [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
 - [x] Add a visual style meter that fills incrementally when the player performs close passes to NPCs
 - [x] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
-- [ ] Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state
+- [x] Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state
 - [ ] Create a small, self-contained animation function that draws a brief 'crash through' visual effect using original pixel art in the canvas
 - [ ] Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation
 - [ ] Link the animation and score pop-up to the collision detection, ensuring they only trigger when the player crashes through an obstacle

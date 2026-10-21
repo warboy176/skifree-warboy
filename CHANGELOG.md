@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state (initCrashThroughState, checkPlayerCrashThroughObstacle)
 - Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving (initCrashThroughBonus, handleCrashThroughCollision, registerCrashThroughAchievement)
 - Add a visual style meter that fills incrementally when the player performs close passes to NPCs (initStyleMeter, updateStyleMeter)
 - Add a style score counter that increments when the player slaloms within 30px of an NPC skier (initStyleScore, updateStyleScoreOnNearPass, registerStyleScoreAchievement)
