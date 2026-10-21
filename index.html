@@ -1610,6 +1610,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSleetHoundSpeedMultiplier();
+
 initScorePopups();
 
 initCrashThroughState();
@@ -7428,6 +7430,11 @@ function initSleetHound() {
     color: "#FFFFFF"
   });
 }
+
+function initSleetHoundSpeedMultiplier() {
+    game.sleetHoundSpeedMultiplier = 1.2;
+}
+
 
 
 
