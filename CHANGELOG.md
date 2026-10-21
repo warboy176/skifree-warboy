@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds) (initAchievementsRegistry, registerForestRunnerAchievement, registerWolfWhispererAchievement)
 - Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick (initStyleMultiplier, updateStyleMultiplier)
 - Implement a score pop-up function that displays a temporary +10 point label above the player's position with a fade-out animation (initScorePopups, showScorePopup, updateScorePopups)
 - Add a function to detect when the player collides with an obstacle while in mid-air, triggering a 'crash through' state (initCrashThroughState, checkPlayerCrashThroughObstacle)
