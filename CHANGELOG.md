@@ -1,4 +1,5 @@
 # Changelog
+- Initialize the Sleet Hound's speed as a constant multiplier of the player's current speed, ensuring it scales dynamically with gameplay (initSleetHoundSpeedMultiplier, updateSleetHoundSpeed)
 - Define the Sleet Hound's initial position as a fixed offset from the player's starting point, using only original code-drawn coordinates (initSleetHound)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions, checkAchievementsOnInteraction)
 - Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds) (initAchievementsRegistry, registerForestRunnerAchievement, registerWolfWhispererAchievement)
