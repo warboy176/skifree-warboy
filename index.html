@@ -7196,6 +7196,38 @@ function renderBiomeTrees(ctx, game) {
   }
 }
 
+function defineBiomeTreeStyles() {
+  BIOME_TREE_STYLES = [
+    {
+      trunkColor: [139, 69, 19],
+      branchColor: [34, 139, 34]
+    },
+    {
+      trunkColor: [101, 67, 33],
+      branchColor: [0, 100, 0]
+    },
+    {
+      trunkColor: [160, 82, 45],
+      branchColor: [50, 205, 50]
+    }
+  ];
+  
+  function initBiomeTreeStyles() {
+    const biomeTreeStyles = {};
+    for (let biome = 0; biome < BIOME_TREE_STYLES.length; biome++) {
+      const treeStyle = BIOME_TREE_STYLES[biome];
+      biomeTreeStyles[biome] = {
+        trunkColor: treeStyle.trunkColor,
+        branchColor: treeStyle.branchColor
+      };
+    }
+    return biomeTreeStyles;
+  }
+  
+  initBiomeTreeStyles();
+}
+
+
 
 
 
