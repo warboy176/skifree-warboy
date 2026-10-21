@@ -1595,6 +1595,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initObstacles();
+
 initBiomeTransitionState();
 
 initStylePointsAndMultipliers();
@@ -7092,6 +7094,16 @@ function shouldDrawTreeInBiome(game) { return game.biome === 'forest' && game.me
 function isCurrentBiomeForest() {
     return game.biome === 'forest';
 }
+
+function initObstacles() {
+  game.obstacles = [];
+  game.forestObstacleConfig = {
+    tree: { width: 40, height: 60 },
+    rock: { width: 30, height: 30 },
+    log: { width: 50, height: 20 }
+  };
+}
+
 
 
 
