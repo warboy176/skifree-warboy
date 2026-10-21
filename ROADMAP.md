@@ -713,7 +713,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic
 - [!] Add a function to check if a new tree overlaps with any existing obstacle or skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Modify the tree drawing logic to skip rendering if an overlap is detected
-- [ ] Ensure the collision check uses the current player position and all active obstacles
+- [x] Ensure the collision check uses the current player position and all active obstacles
 - [ ] Update the tree drawing logic to respect the current biome and obstacle avoidance rules in the render phase
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
