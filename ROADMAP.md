@@ -709,7 +709,7 @@ Operator direction from the daily report lands here.
 - [!] Define a valid vertical range for tree spawning based on the current biome's terrain  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [x] Modify the tree spawn logic to check if the current biome is 'forest' before generating trees
 - [!] Ensure tree generation only occurs within the valid vertical range when in the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to check if a tree's bounding box overlaps with any obstacle's bounding box using their x, y, width, and height
+- [!] Add a function to check if a tree's bounding box overlaps with any obstacle's bounding box using their x, y, width, and height  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to return true if any obstacle's position overlaps with a tree's position, using the bounding box overlap logic
 - [ ] Modify the tree drawing logic to call the collision check and only draw trees when no overlap is detected
 - [ ] Update the tree drawing logic to respect the current biome and obstacle avoidance rules in the render phase
