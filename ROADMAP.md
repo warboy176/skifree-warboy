@@ -720,7 +720,11 @@ Operator direction from the daily report lands here.
 - [x] Ensure the tree drawing function uses only original code-drawn shapes and does not reuse existing sprites
 - [!] Ensure tree rendering respects obstacle avoidance by adjusting tree spawn positions to avoid overlapping with player or other obstacles  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 1 unspecifiable, 1 e -->
 - [!] Verify that tree sprites do not affect player collision detection or movement physics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
+- [ ] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
+- [ ] Add a visual style meter that fills incrementally when the player performs close passes to NPCs
+- [ ] Add a crash-through bonus that awards points when the player collides with an obstacle and continues moving
+- [ ] Display a temporary 'CRASH THROUGH' animation and score pop-up when the player crashes through an obstacle
+- [ ] Add a style multiplier that increases with consecutive close passes or crashes, resetting on collision with a tree or oil slick
 - [ ] Create a persistent achievements registry with new entries for 'Forest Runner' (complete 100m in forest biome) and 'Wolf Whisperer' (survive chase antagonist for 15 seconds)
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
