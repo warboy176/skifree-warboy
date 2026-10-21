@@ -7129,6 +7129,22 @@ function checkTreeOverlap(treeIndex) {
   return false;
 }
 
+function initTreeOverlapDetection() {
+  game.treeOverlapCache = [];
+  for (let i = 0; i < game.obstacles.length; i++) {
+    const tree = game.obstacles[i];
+    if (tree.type === 'tree') {
+      game.treeOverlapCache.push({
+        x: tree.x,
+        y: tree.y,
+        w: tree.w,
+        h: tree.h
+      });
+    }
+  }
+}
+
+
 
 
 
