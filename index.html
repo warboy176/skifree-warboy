@@ -7314,6 +7314,20 @@ function initCrashThroughState() {
     game.crashThroughBonus = 0;
 }
 
+function checkPlayerCrashThroughObstacle(player, obstacles) {
+    for (let i = 0; i < obstacles.length; i++) {
+        const obstacle = obstacles[i];
+        if (player.isJumping && checkPlayerCollision(obstacle)) {
+            player.crashedThrough = true;
+            game.crashThroughBonus += 1;
+            applyFastModeVisualEffects();
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 
 
