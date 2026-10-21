@@ -7447,6 +7447,14 @@ function initSleetHoundState() {
   game.sleetHound.chaseThreshold = 100;
 }
 
+function updateSleetHoundState(dt) {
+  if (game.sleetHound.state === 'idle' && game.playerState.position.distanceTo(game.sleetHound.position) <= 100) {
+    game.sleetHound.state = 'chasing';
+    game.sleetHound.speed = game.playerState.speed * game.sleetHoundSpeedMultiplier;
+  }
+}
+
+
 
 
 
