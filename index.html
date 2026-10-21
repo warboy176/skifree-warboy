@@ -674,6 +674,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateSleetHound(dt);
+
 checkAchievementsOnInteraction('proximity', distance);
 
 applyMultiplierToScoreOnNPCPass(npc, game.player);
@@ -7476,6 +7478,17 @@ function spawnSleetHoundIfPlayerSkiing() {
         };
     }
 }
+
+function updateSleetHound(dt) {
+  if (game.sleetHound) {
+    game.sleetHound.x += game.sleetHoundSpeedMultiplier * dt * 10;
+    H.ctx.fillStyle = 'black';
+    H.ctx.fillRect(game.sleetHound.x, game.sleetHound.y, 16, 16);
+    H.ctx.fillStyle = 'white';
+    H.ctx.fillRect(game.sleetHound.x + 6, game.sleetHound.y + 6, 4, 4);
+  }
+}
+
 
 
 
