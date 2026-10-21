@@ -31,6 +31,8 @@
 </main>
 <script>
 (() => {
+  let BIOME_TREE_STYLES;   // scope state (foundation-provided)
+
   'use strict';
 
   // ---------------------------------------------------------------------------
@@ -7157,6 +7159,25 @@ function checkObstacleCollisions() {
   }
   return false;
 }
+
+function initBiomeTreeStyles() {
+  const biomeTreeStyles = {};
+  for (const [biome, thresholds] of Object.entries(BIOME_THRESHOLDS)) {
+    if (thresholds.tree) {
+      biomeTreeStyles[biome] = {
+        color: BIOME_TINTS[biome]?.color || '#8B4513',
+        shape: [
+          [0, 0], // trunk
+          [2, -4], // branch 1
+          [-2, -6], // branch 2
+          [4, -8] // branch 3
+        ]
+      };
+    }
+  }
+  return biomeTreeStyles;
+}
+
 
 
 
