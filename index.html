@@ -7454,6 +7454,20 @@ function updateSleetHoundState(dt) {
   }
 }
 
+function updateSleetHoundChaseState(dt) {
+  if (game.playerState.speed < game.sleetHound.chaseThreshold) {
+    if (game.sleetHound.lastSpeedBelowThreshold === undefined) {
+      game.sleetHound.lastSpeedBelowThreshold = game.gameTime;
+    } else if (game.gameTime - game.sleetHound.lastSpeedBelowThreshold >= game.sleetHound.chaseDurationMs) {
+      game.sleetHound.isChasing = true;
+    }
+  } else {
+    game.sleetHound.isChasing = false;
+    game.sleetHound.lastSpeedBelowThreshold = undefined;
+  }
+}
+
+
 
 
 
