@@ -715,7 +715,9 @@ Operator direction from the daily report lands here.
 - [x] Modify the tree drawing logic to skip rendering if an overlap is detected
 - [x] Ensure the collision check uses the current player position and all active obstacles
 - [x] Add biome-specific tree styles by defining a map of biome types to tree color and shape parameters in the render phase
-- [ ] Modify the tree drawing function to select tree appearance based on the current biome, using only original code-drawn shapes
+- [ ] Define biome-specific tree styles as arrays of original code-drawn shapes in the BIOME_TREE_STYLES constant
+- [ ] Update the tree drawing function to select tree appearance based on the current biome using the BIOME_TREE_STYLES constant
+- [ ] Ensure the tree drawing function uses only original code-drawn shapes and does not reuse existing sprites
 - [ ] Ensure tree rendering respects obstacle avoidance by adjusting tree spawn positions to avoid overlapping with player or other obstacles
 - [ ] Verify that tree sprites do not affect player collision detection or movement physics
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs and crashing through obstacles, with visual feedback on screen
