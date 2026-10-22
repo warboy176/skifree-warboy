@@ -3872,6 +3872,8 @@ function initPlayerState() {
     }
   };
 }
+initCrashThroughHazards();
+
 initSlopeStalkers();
 createSlopeStalker();
 
@@ -7611,6 +7613,27 @@ function disableSnowParticlesOutsideForest() {
     game.snowParticles.enabled = true;
   }
 }
+
+function initCrashThroughHazards() {
+  game.hazards = [];
+  const hazardTypes = ['rock', 'spike', 'log'];
+  for (let i = 0; i < 10; i++) {
+    const hazardType = hazardTypes[Math.floor(Math.random() * hazardTypes.length)];
+    game.hazards.push({
+      type: 'obstacle',
+      active: true,
+      x: Math.random() * 800,
+      y: -Math.random() * 600,
+      width: 32,
+      height: 32,
+      speed: 2 + Math.random() * 3,
+      explosionRadius: 16,
+      explosionDuration: 200,
+      hazardType
+    });
+  }
+}
+
 
 
 
