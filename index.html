@@ -7794,6 +7794,18 @@ function renderStyleScoreAndComboHUD() {
   }
 }
 
+function updateComboStreakOnStyleAction(actionTime) {
+  if (actionTime - game.comboStreakTimer < COMBO_STREAK_WINDOW_MS) {
+    game.comboStreak++;
+    game.comboStreakTimer = actionTime;
+    applyComboMultiplierToScore();
+  } else {
+    game.comboStreak = 0;
+    game.comboStreakTimer = actionTime;
+  }
+}
+
+
 
 
 
