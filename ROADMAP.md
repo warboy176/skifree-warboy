@@ -753,7 +753,7 @@ Operator direction from the daily report lands here.
 - [x] Increment styleScore by 1 whenever the player passes within 30px of an NPC skier, without double-counting the same skier in a single frame
 - [x] Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect
 - [x] Add a 'trick' detection system that awards points when the player lands after a jump with a vertical velocity below 10px/s
-- [ ] Add a style score counter to the HUD using Warboy's original pixel-art font and color scheme
+- [!] Add a style score counter to the HUD using Warboy's original pixel-art font and color scheme  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Implement a combo multiplier display that updates in real time, styled with Warboy's original pixel-art font and color scheme
 - [ ] Ensure the style score and combo multiplier are updated only when the player performs style-boosting actions (e.g., near misses, crashes through obstacles)
 - [ ] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
