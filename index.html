@@ -7494,6 +7494,16 @@ function drawSleetHound() {
   H.ctx.fillRect(game.sleetHound.x, game.sleetHound.y, 4, 4);
 }
 
+function updateSleetHoundDawdling(dt) {
+    if (PlayerState.speed < 0.5 && game.sleetHound.dawdlingTimer > 1000) {
+        game.sleetHound.state = 'pursuing';
+        game.sleetHound.speed = NPC_SKIER_SPEED * 1.2;
+    } else {
+        game.sleetHound.dawdlingTimer = 0;
+    }
+}
+
+
 
 
 
