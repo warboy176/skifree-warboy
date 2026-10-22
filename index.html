@@ -674,6 +674,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateCrashThroughHazards(dt);
+
 updateSnowParticles(dt);
 spawnSnowParticlesInForest();
 
@@ -7633,6 +7635,22 @@ function initCrashThroughHazards() {
     });
   }
 }
+
+function updateCrashThroughHazards(dt) {
+  for (let i = 0; i < game.hazards.length; i++) {
+    const hazard = game.hazards[i];
+    hazard.y += hazard.speed * dt;
+
+    if (player.distance > hazard.y + hazard.height && player.distance < hazard.y + hazard.height + 10) {
+      if (player.speed > MAX_SPEED * 0.8) {
+        applyMultiplierToScore(2);
+        addDefaultAchievement('crashThroughHazard');
+        // Trigger explosion effect here if needed
+      }
+    }
+  }
+}
+
 
 
 
