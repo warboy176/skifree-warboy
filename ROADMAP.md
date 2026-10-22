@@ -741,6 +741,9 @@ Operator direction from the daily report lands here.
 - [x] Add logic to detect dawdling: if the player's speed drops below a threshold for more than 1 second, trigger the Sleet Hound to start pursuing
 - [x] Implement the Sleet Hound's pursuit movement: follow the player's x-position with a slight delay and acceleration, adjusting for terrain scrolling
 - [x] Draw the Sleet Hound using original pixel-art code: a simple, stylized creature composed of geometric shapes in Warboy's signature style
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest with original tree art and ambient snow effects
+- [ ] Add biome transition logic that triggers at specific distance thresholds during descent
+- [ ] Implement original tree art using Warboy's own code-drawn pixel style, rendered only in forest biome
+- [ ] Introduce ambient snow particle effects that appear and intensify in forest biome
+- [ ] Ensure tree and snow effects are dynamically disabled in non-forest biomes
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
