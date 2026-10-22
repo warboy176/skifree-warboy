@@ -7727,14 +7727,13 @@ function updateComboCounter(dt) {
 }
 
 function resetComboOnCrash() {
-  if (game.comboStreak > 0) {
+  // Check for collision with trees or oil hazards via existing collision logic
+  if (game.obstacles.some(obstacle => 
+    (obstacle.type === 'tree' || obstacle.type === 'oil') &&
+    Math.hypot(player.x - obstacle.x, player.y - obstacle.y) < 30
+  )) {
     game.comboStreak = 1;
     game.comboStreakTimer = 0;
-    if (player.x < -200 || player.x > 200 || player.z < -200 || player.z > 200) {
-      addTree(player.x, player.z);
-      addForestTrees();
-      addTreeAnimationBranch();
-    }
   }
 }
 
