@@ -1,4 +1,5 @@
 # Changelog
+- Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect (initCrashThroughHazards, updateCrashThroughHazards, drawExplosionEffect)
 - Increment styleScore by 1 whenever the player passes within 30px of an NPC skier, without double-counting the same skier in a single frame (initNPCs, updateNPCs, checkClosePasses)
 - Create a function to check if the player is within 30px of any NPC skier during each frame (initNPCs, checkPlayerNPCProximity)
 - Add a styleScore variable initialized to 0 in the game state (initStyleScore)

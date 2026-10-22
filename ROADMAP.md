@@ -751,7 +751,7 @@ Operator direction from the daily report lands here.
 - [x] Add a styleScore variable initialized to 0 in the game state
 - [x] Create a function to check if the player is within 30px of any NPC skier during each frame
 - [x] Increment styleScore by 1 whenever the player passes within 30px of an NPC skier, without double-counting the same skier in a single frame
-- [ ] Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect
+- [x] Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect
 - [ ] Add a 'trick' detection system that awards points when the player lands after a jump with a vertical velocity below 10px/s
 - [ ] Display real-time style score and combo multiplier on the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
