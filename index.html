@@ -1622,6 +1622,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleScoreAndComboState();
+
 initTrickDetectionSystem();
 
 initSleetHoundState();
@@ -7736,6 +7738,23 @@ function resetComboOnCrash() {
     game.comboStreakTimer = 0;
   }
 }
+
+function initStyleScoreAndComboState() {
+    game.styleScore = 0;
+    game.comboMultiplier = 1;
+    game.styleMultiplierActive = false;
+    game.bestStyleScore = typeof game.bestStyleScore !== 'number' ? 0 : game.bestStyleScore;
+    game.baseMultiplier = 1.0;
+    game.styleMeter = 0;
+    game.stylePoints = 0;
+    game.styleScoreDisplay = {
+        x: 0,
+        y: 0,
+        scale: 1
+    };
+    game.styleScoreDelta = 0;
+}
+
 
 
 
