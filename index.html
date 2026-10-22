@@ -7596,6 +7596,15 @@ function updatePlayerBiome() {
   game.currentBiome = biomeIndex;
 }
 
+function disableTreeRenderingOutsideForestBiome() {
+  if (player.distance > BIOME_THRESHOLDS.forest.exit) {
+    game.renderTrees = false;
+  } else {
+    game.renderTrees = true;
+  }
+}
+
+
 
 
 
