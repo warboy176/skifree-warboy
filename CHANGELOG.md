@@ -1,4 +1,5 @@
 # Changelog
+- Add a styleScore variable initialized to 0 in the game state (initStyleScore)
 - Create a function to disable snow particle effects when player is outside forest biome (disableSnowParticlesOutsideForest)
 - Create a function to disable tree rendering when player is outside forest biome (disableTreeRenderingOutsideForestBiome)
 - Add biome detection to track current terrain type based on player's vertical position (initBiomeThresholds, updatePlayerBiome, applyBiomeTintTransition)
