@@ -7755,6 +7755,34 @@ function initStyleScoreAndComboState() {
     game.styleScoreDelta = 0;
 }
 
+function updateStyleScoreAndComboMultiplier(styleActionPoints) {
+    game.styleScore += styleActionPoints;
+    
+    if (styleActionPoints > 0) {
+        game.comboStreak++;
+        game.comboMultiplier = Math.min(1 + Math.floor(game.comboStreak / COMBO_STREAK_THRESHOLD), 5);
+        
+        if (game.comboStreakTimer) {
+            clearTimeout(game.comboStreakTimer);
+        }
+        
+        game.comboStreakTimer = setTimeout(() => {
+            game.comboStreak = 0;
+            game.comboMultiplier = 1;
+        }, COMBO_STREAK_WINDOW_MS);
+    } else {
+        if (game.comboStreakTimer) {
+            clearTimeout(game.comboStreakTimer);
+        }
+        
+        game.comboStreakTimer = setTimeout(() => {
+            game.comboStreak = 0;
+            game.comboMultiplier = 1;
+        }, COMBO_STREAK_WINDOW_MS);
+    }
+}
+
+
 
 
 
