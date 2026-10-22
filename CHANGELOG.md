@@ -1,4 +1,5 @@
 # Changelog
+- Add biome transition logic that triggers at specific distance thresholds during descent (initBiomeThresholds, updateBiomeTransition)
 - Draw the Sleet Hound using original pixel-art code: a simple, stylized creature composed of geometric shapes in Warboy's signature style (initSleetHound, drawSleetHound)
 - Implement the Sleet Hound's pursuit movement: follow the player's x-position with a slight delay and acceleration, adjusting for terrain scrolling (initNPCs, updateSleetHound, registerSleetHoundAchievement)
 - Add logic to detect dawdling: if the player's speed drops below a threshold for more than 1 second, trigger the Sleet Hound to start pursuing (initSleetHound, updateSleetHoundDawdling, registerSleetHoundAchievement)
