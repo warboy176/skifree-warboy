@@ -7604,6 +7604,15 @@ function disableTreeRenderingOutsideForestBiome() {
   }
 }
 
+function disableSnowParticlesOutsideForest() {
+  if (player.distance >= BIOME_THRESHOLDS.forest) {
+    game.snowParticles.enabled = false;
+  } else {
+    game.snowParticles.enabled = true;
+  }
+}
+
+
 
 
 
