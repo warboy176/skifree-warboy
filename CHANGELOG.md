@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to check if the player is within 30px of any NPC skier during each frame (initNPCs, checkPlayerNPCProximity)
 - Add a styleScore variable initialized to 0 in the game state (initStyleScore)
 - Create a function to disable snow particle effects when player is outside forest biome (disableSnowParticlesOutsideForest)
 - Create a function to disable tree rendering when player is outside forest biome (disableTreeRenderingOutsideForestBiome)
