@@ -675,6 +675,8 @@ updateScrollProgress(dt);
 
 updateNPCs(dt);
 updateSnowParticles(dt);
+spawnSnowParticlesInForest();
+
 
 updateSleetHound(dt);
 
@@ -7560,6 +7562,22 @@ function updateSnowParticles(dt) {
     ctx.fill();
   }
 }
+
+function spawnSnowParticlesInForest() {
+  if (game.meters > game.lastTreeMeters + FOREST_BIOME_TREE_INTERVAL_METERS && player.distance > game.biomeThresholds.forest) {
+    for (let i = 0; i < 2; i++) {
+      game.snowParticles.push({
+        x: rand(-W, W),
+        y: rand(-H, H * 2),
+        s: rand(1, 3),
+        vx: rand(-1, 1),
+        vy: rand(1, 2)
+      });
+    }
+    game.lastTreeMeters += FOREST_BIOME_TREE_INTERVAL_METERS;
+  }
+}
+
 
 
 
