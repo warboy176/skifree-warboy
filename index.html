@@ -7584,13 +7584,16 @@ function spawnSnowParticlesInForest() {
 }
 
 function updatePlayerBiome() {
-    game.currentBiomeIndex = 0;
-    for (let i = 0; i < game.biomeThresholds.length; i++) {
-        if (player.distance > game.biomeThresholds[i]) {
-            game.currentBiomeIndex = i + 1;
-        }
+  const thresholds = game.biomeThresholds;
+  let biomeIndex = 0;
+  for (let i = 0; i < thresholds.length; i++) {
+    if (player.distance >= thresholds[i]) {
+      biomeIndex = i + 1;
+    } else {
+      break;
     }
-    game.currentBiome = game.currentBiomeIndex;
+  }
+  game.currentBiome = biomeIndex;
 }
 
 
