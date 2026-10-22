@@ -675,6 +675,8 @@ updateScrollProgress(dt);
 
 updateNPCs(dt);
 updateCrashThroughHazards(dt);
+drawExplosionEffect(hazard.x, hazard.y, hazard.explosionRadius, hazard.explosionDuration);
+
 
 updateSnowParticles(dt);
 spawnSnowParticlesInForest();
@@ -7650,6 +7652,41 @@ function updateCrashThroughHazards(dt) {
     }
   }
 }
+
+function drawExplosionEffect(x, y, radius, duration) {
+  const startTime = Date.now();
+  function animate() {
+    const elapsed = Date.now() - startTime;
+    if (elapsed > duration) return;
+    const alpha = Math.max(0, 1 - (elapsed / duration));
+    ctx.globalAlpha = alpha;
+    
+    // Draw radial lines
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * Math.PI * 2;
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + Math.cos(angle) * radius, y + Math.sin(angle) * radius);
+      ctx.stroke();
+    }
+    
+    // Draw concentric circles
+    for (let i = 1; i <= 4; i++) {
+      const circleRadius = radius * (i / 4);
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(x, y, circleRadius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
 
 
 
