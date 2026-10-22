@@ -5807,6 +5807,8 @@ function addForestTransitionTrigger() {
         game.forestTransitionTriggered = true;
     }
 }
+addForestTrees();
+
 
 function applyForestBiomeTintTransition() {
     if (game.forestTransitionTriggered) {
@@ -7515,6 +7517,19 @@ function registerSleetHoundAchievement() {
   
   addDefaultAchievement(achievementDef);
 }
+
+function addForestTrees() {
+  if (game.biome !== 'forest') return;
+  const interval = FOREST_BIOME_TREE_INTERVAL_METERS;
+  if (game.meters > game.lastTreeMeters + interval) {
+    game.lastTreeMeters += interval;
+    const x = W / 2 + (game.meters * METERS_PER_PIXEL) - 1;
+    const y = H - 100 + (Math.random() * 20);
+    const color = TREE_PALETTE[Math.floor(Math.random() * TREE_PALETTE.length)];
+    drawForestTree(x, y, 4, 6, color);
+  }
+}
+
 
 
 
