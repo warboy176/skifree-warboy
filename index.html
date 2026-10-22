@@ -7756,30 +7756,29 @@ function initStyleScoreAndComboState() {
 }
 
 function updateStyleScoreAndComboMultiplier(styleActionPoints) {
-    game.styleScore += styleActionPoints;
-    
-    if (styleActionPoints > 0) {
-        game.comboStreak++;
-        game.comboMultiplier = Math.min(1 + Math.floor(game.comboStreak / COMBO_STREAK_THRESHOLD), 5);
-        
-        if (game.comboStreakTimer) {
-            clearTimeout(game.comboStreakTimer);
-        }
-        
-        game.comboStreakTimer = setTimeout(() => {
-            game.comboStreak = 0;
-            game.comboMultiplier = 1;
-        }, COMBO_STREAK_WINDOW_MS);
-    } else {
-        if (game.comboStreakTimer) {
-            clearTimeout(game.comboStreakTimer);
-        }
-        
-        game.comboStreakTimer = setTimeout(() => {
-            game.comboStreak = 0;
-            game.comboMultiplier = 1;
-        }, COMBO_STREAK_WINDOW_MS);
+  game.styleScore += styleActionPoints;
+
+  if (styleActionPoints > 0) {
+    game.comboStreak++;
+    game.comboMultiplier = Math.min(1 + Math.floor(game.comboStreak / COMBO_STREAK_THRESHOLD), 5);
+    // Reset the timeout only if it exists, and only when a valid action occurs
+    if (game.comboResetTimeout) {
+      clearTimeout(game.comboResetTimeout);
     }
+    // Set a new timeout to reset comboStreak after the window if no action occurs
+    game.comboResetTimeout = setTimeout(() => {
+      game.comboStreak = 0;
+      game.comboMultiplier = 1;
+    }, COMBO_STREAK_WINDOW_MS);
+  } else {
+    // If no style action, ensure the timeout is set to reset the streak
+    if (!game.comboResetTimeout) {
+      game.comboResetTimeout = setTimeout(() => {
+        game.comboStreak = 0;
+        game.comboMultiplier = 1;
+      }, COMBO_STREAK_WINDOW_MS);
+    }
+  }
 }
 
 
