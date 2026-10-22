@@ -7530,6 +7530,19 @@ function addForestTrees() {
   }
 }
 
+function initSnowParticles() {
+  game.snowParticles = [];
+  for (let i = 0; i < 70; i++) {
+    game.snowParticles.push({
+      x: Math.random() * W * 2 - W,
+      y: Math.random() * H * 2 - H,
+      s: Math.random() > 0.5 ? 1 : (Math.random() > 0.5 ? 2 : 3),
+      v: Math.random() + 1
+    });
+  }
+}
+
+
 
 
 
