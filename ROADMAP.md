@@ -750,3 +750,5 @@ Operator direction from the daily report lands here.
 - [ ] Link tree and snow effect toggles to the current biome state in the game loop
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
