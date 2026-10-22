@@ -7795,14 +7795,24 @@ function renderStyleScoreAndComboHUD() {
 }
 
 function updateComboStreakOnStyleAction(actionTime) {
-  if (actionTime - game.comboStreakTimer < COMBO_STREAK_WINDOW_MS) {
+  // Check if player is in fall or collision state — if so, reset combo streak
+  if (player.state === PlayerState.CRASHED || player.state === PlayerState.EATEN || player.crashed) {
+    game.comboStreak = 0;
+    game.comboStreakTimer = actionTime;
+    return;
+  }
+
+  // Check if actionTime is within COMBO_STREAK_WINDOW_MS of the last style action
+  const timeDiff = actionTime - game.comboStreakTimer;
+  if (timeDiff <= COMBO_STREAK_WINDOW_MS) {
     game.comboStreak++;
     game.comboStreakTimer = actionTime;
-    applyComboMultiplierToScore();
   } else {
     game.comboStreak = 0;
     game.comboStreakTimer = actionTime;
   }
+
+  applyComboMultiplierToScore();
 }
 
 
