@@ -3499,6 +3499,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerSleetHoundAchievement();
+
 registerCrashThroughAchievement();
 
 registerTrickMultiplierAchievement();
@@ -7502,6 +7504,18 @@ function updateSleetHoundDawdling(dt) {
         game.sleetHound.dawdlingTimer = 0;
     }
 }
+
+function registerSleetHoundAchievement() {
+  const achievementDef = {
+    key: 'sleet_hound_chase',
+    type: 'hazard_encounter',
+    threshold: 1,
+    unlockMessage: 'The Sleet Hound is on your trail!'
+  };
+  
+  addDefaultAchievement(achievementDef);
+}
+
 
 
 
