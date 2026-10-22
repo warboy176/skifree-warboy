@@ -7694,6 +7694,19 @@ function initTrickDetectionSystem() {
   game.lastJumpLandingVelocity = null;
 }
 
+function checkTrickLanding(player, dt) {
+  if (player.isJumping && player.velocityY >= 0) {
+    game.lastJumpLandingVelocity = player.velocityY;
+  }
+  if (!player.isJumping && game.lastJumpLandingVelocity !== null) {
+    if (player.velocityY < game.trickLandingThreshold) {
+      player.score += 10;
+      game.lastJumpLandingVelocity = null;
+    }
+  }
+}
+
+
 
 
 
