@@ -7815,6 +7815,13 @@ function updateComboStreakOnStyleAction(actionTime) {
   applyComboMultiplierToScore();
 }
 
+function resetComboOnCollisionOrFall() {
+    game.comboStreak = 0;
+    game.comboStreakTimer = null;
+    applyComboMultiplierToScore();
+}
+
+
 
 
 
