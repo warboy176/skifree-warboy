@@ -746,7 +746,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce ambient snow particle effects that appear and intensify in forest biome
 - [x] Add biome detection to track current terrain type based on player's vertical position
 - [x] Create a function to disable tree rendering when player is outside forest biome
-- [ ] Create a function to disable snow particle effects when player is outside forest biome
+- [x] Create a function to disable snow particle effects when player is outside forest biome
 - [ ] Link tree and snow effect toggles to the current biome state in the game loop
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
