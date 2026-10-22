@@ -645,6 +645,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateComboCounter(dt);
+
 updateStyleMeter(dt);
 
 updateStyleScoreOnNearPass(dt);
@@ -7705,6 +7707,25 @@ function checkTrickLanding(player, dt) {
     }
   }
 }
+
+function updateComboCounter(dt) {
+    if (game.comboStreak > 0) {
+        game.comboStreakTimer += dt;
+        if (game.comboStreakTimer >= COMBO_STREAK_WINDOW_MS) {
+            game.comboStreak = 0;
+            game.comboStreakTimer = 0;
+        }
+    } else {
+        for (let npc of game.npcSkiers) {
+            if (Math.abs(player.x - npc.x) < NEAR_MISS_MARGIN && Math.abs(player.z - npc.z) < NEAR_MISS_MARGIN) {
+                game.comboStreak++;
+                game.comboStreakTimer = 0;
+                break;
+            }
+        }
+    }
+}
+
 
 
 
