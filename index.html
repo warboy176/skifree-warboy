@@ -7781,6 +7781,20 @@ function updateStyleScoreAndComboMultiplier(styleActionPoints) {
   }
 }
 
+function renderStyleScoreAndComboHUD() {
+  if (game.styleScoreDisplay.lastUpdated !== game.styleScore || game.multiplierDisplay.lastUpdated !== game.comboMultiplier) {
+    const ctx = game.ctx;
+    ctx.font = '16px monospace';
+    ctx.fillStyle = 'white';
+    ctx.fillText(game.styleScore.toString(), 10, HUD_H - 20);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText(`x${game.comboMultiplier}`, 10, HUD_H - 40);
+    game.styleScoreDisplay.lastUpdated = game.styleScore;
+    game.multiplierDisplay.lastUpdated = game.comboMultiplier;
+  }
+}
+
+
 
 
 
