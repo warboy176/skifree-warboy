@@ -748,7 +748,10 @@ Operator direction from the daily report lands here.
 - [x] Create a function to disable tree rendering when player is outside forest biome
 - [x] Create a function to disable snow particle effects when player is outside forest biome
 - [!] Link tree and snow effect toggles to the current biome state in the game loop  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
+- [ ] Add a 'style' score counter that increments when the player passes within 30px of an NPC skier
+- [ ] Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect
+- [ ] Add a 'trick' detection system that awards points when the player lands after a jump with a vertical velocity below 10px/s
+- [ ] Display real-time style score and combo multiplier on the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
