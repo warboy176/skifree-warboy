@@ -1,4 +1,5 @@
 # Changelog
+- Reset the combo multiplier to 1 when the player hits a tree or crashes on oil (resetComboOnCrash)
 - Add a style score counter that increments only on near misses with skiers or obstacles (initStyleScore, updateStyleScore, registerStyleScoreAchievement)
 - Update the combo display in real time during gameplay, positioned in the top-left HUD corner (updateComboDisplay)
 - Add a combo multiplier counter that increments on successful near-misses with skiers and resets on collisions (initComboCounter, updateComboCounter, applyComboMultiplierToScore)
