@@ -743,7 +743,7 @@ Operator direction from the daily report lands here.
 - [x] Draw the Sleet Hound using original pixel-art code: a simple, stylized creature composed of geometric shapes in Warboy's signature style
 - [x] Add biome transition logic that triggers at specific distance thresholds during descent
 - [x] Implement original tree art using Warboy's own code-drawn pixel style, rendered only in forest biome
-- [ ] Introduce ambient snow particle effects that appear and intensify in forest biome
+- [x] Introduce ambient snow particle effects that appear and intensify in forest biome
 - [ ] Ensure tree and snow effects are dynamically disabled in non-forest biomes
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks with visual feedback
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
