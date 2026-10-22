@@ -761,7 +761,7 @@ Operator direction from the daily report lands here.
 - [x] Add a style score counter that increments only on near misses with skiers or obstacles
 - [!] Add a combo multiplier that starts at 1 and increases on consecutive style-boosting actions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Reset the combo multiplier to 1 when the player hits a tree or crashes on oil
-- [ ] Display the current style score and combo multiplier in the HUD, updating only when style actions occur
+- [x] Display the current style score and combo multiplier in the HUD, updating only when style actions occur
 - [ ] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
 
