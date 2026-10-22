@@ -762,7 +762,7 @@ Operator direction from the daily report lands here.
 - [!] Add a combo multiplier that starts at 1 and increases on consecutive style-boosting actions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Reset the combo multiplier to 1 when the player hits a tree or crashes on oil
 - [x] Display the current style score and combo multiplier in the HUD, updating only when style actions occur
-- [ ] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
+- [x] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
