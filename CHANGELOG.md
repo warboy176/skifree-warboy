@@ -1,4 +1,5 @@
 # Changelog
+- Add logic to detect dawdling: if the player's speed drops below a threshold for more than 1 second, trigger the Sleet Hound to start pursuing (initSleetHound, updateSleetHoundDawdling, registerSleetHoundAchievement)
 - Implement idle behavior: the Sleet Hound remains stationary until the player's speed drops below a threshold, then begins pursuit (initSleetHound, updateSleetHound, drawSleetHound)
 - Add a Sleet Hound class with a fixed spawn offset behind the player, initialized only when the player is skiing (initSleetHound, spawnSleetHoundIfPlayerSkiing, updateSleetHound)
 - Ensure the Sleet Hound's state transitions to 'chasing' only when the player's speed drops below a threshold for a sustained period (initSleetHoundState, updateSleetHoundChaseState)
