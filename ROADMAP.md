@@ -757,7 +757,7 @@ Operator direction from the daily report lands here.
 - [x] Add a combo multiplier counter that increments on successful near-misses with skiers and resets on collisions
 - [!] Render the combo multiplier using Warboy's original pixel-art font with the game's color scheme (navy, gold, snow)  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Update the combo display in real time during gameplay, positioned in the top-left HUD corner
-- [ ] Style the combo text with a subtle glow effect using the game's original pixel-art aesthetic
+- [!] Style the combo text with a subtle glow effect using the game's original pixel-art aesthetic  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure the style score and combo multiplier are updated only when the player performs style-boosting actions (e.g., near misses, crashes through obstacles)
 - [ ] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
 - [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
