@@ -1,4 +1,5 @@
 # Changelog
+- Add a combo multiplier counter that increments on successful near-misses with skiers and resets on collisions (initComboCounter, updateComboCounter, applyComboMultiplierToScore)
 - Add a 'trick' detection system that awards points when the player lands after a jump with a vertical velocity below 10px/s (initTrickDetectionSystem, checkTrickLanding)
 - Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect (initCrashThroughHazards, updateCrashThroughHazards, drawExplosionEffect)
 - Increment styleScore by 1 whenever the player passes within 30px of an NPC skier, without double-counting the same skier in a single frame (initNPCs, updateNPCs, checkClosePasses)
