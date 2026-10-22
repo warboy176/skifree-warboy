@@ -7726,6 +7726,19 @@ function updateComboCounter(dt) {
     }
 }
 
+function resetComboOnCrash() {
+  if (game.comboStreak > 0) {
+    game.comboStreak = 1;
+    game.comboStreakTimer = 0;
+    if (player.x < -200 || player.x > 200 || player.z < -200 || player.z > 200) {
+      addTree(player.x, player.z);
+      addForestTrees();
+      addTreeAnimationBranch();
+    }
+  }
+}
+
+
 
 
 
