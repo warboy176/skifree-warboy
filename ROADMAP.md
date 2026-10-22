@@ -744,7 +744,7 @@ Operator direction from the daily report lands here.
 - [x] Add biome transition logic that triggers at specific distance thresholds during descent
 - [x] Implement original tree art using Warboy's own code-drawn pixel style, rendered only in forest biome
 - [x] Introduce ambient snow particle effects that appear and intensify in forest biome
-- [ ] Add biome detection to track current terrain type based on player's vertical position
+- [x] Add biome detection to track current terrain type based on player's vertical position
 - [ ] Create a function to disable tree rendering when player is outside forest biome
 - [ ] Create a function to disable snow particle effects when player is outside forest biome
 - [ ] Link tree and snow effect toggles to the current biome state in the game loop
