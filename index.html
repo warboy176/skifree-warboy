@@ -7564,18 +7564,23 @@ function updateSnowParticles(dt) {
 }
 
 function spawnSnowParticlesInForest() {
-  if (game.meters > game.lastTreeMeters + FOREST_BIOME_TREE_INTERVAL_METERS && player.distance > game.biomeThresholds.forest) {
-    for (let i = 0; i < 2; i++) {
-      game.snowParticles.push({
-        x: rand(-W, W),
-        y: rand(-H, H * 2),
-        s: rand(1, 3),
-        vx: rand(-1, 1),
-        vy: rand(1, 2)
-      });
-    }
-    game.lastTreeMeters += FOREST_BIOME_TREE_INTERVAL_METERS;
+  // Check if current biome is forest AND player has passed forest threshold
+  if (game.currentBiome !== 'forest' || player.distance <= game.biomeThresholds.forest) return;
+
+  // Spawn 2 new snow particles per frame
+  for (let i = 0; i < 2; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.floor(Math.random() * 3) + 1;
+    const vx = (Math.random() * 2) + 1;
+    const vy = (Math.random() * 2) + 1;
+
+    game.snowParticles.push({ x, y, size, vx, vy });
   }
+
+  // Update lastTreeMeters only when threshold is crossed (not every frame)
+  // This is done *after* spawning, and only if condition was met
+  game.lastTreeMeters = game.meters;
 }
 
 
