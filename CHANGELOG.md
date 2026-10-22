@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to disable tree rendering when player is outside forest biome (disableTreeRenderingOutsideForestBiome)
 - Add biome detection to track current terrain type based on player's vertical position (initBiomeThresholds, updatePlayerBiome, applyBiomeTintTransition)
 - Introduce ambient snow particle effects that appear and intensify in forest biome (initSnowParticles, updateSnowParticles, spawnSnowParticlesInForest)
 - Implement original tree art using Warboy's own code-drawn pixel style, rendered only in forest biome (initTreePalette, addForestTrees)
