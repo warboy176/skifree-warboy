@@ -748,7 +748,9 @@ Operator direction from the daily report lands here.
 - [x] Create a function to disable tree rendering when player is outside forest biome
 - [x] Create a function to disable snow particle effects when player is outside forest biome
 - [!] Link tree and snow effect toggles to the current biome state in the game loop  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a 'style' score counter that increments when the player passes within 30px of an NPC skier
+- [ ] Add a styleScore variable initialized to 0 in the game state
+- [ ] Create a function to check if the player is within 30px of any NPC skier during each frame
+- [ ] Increment styleScore by 1 whenever the player passes within 30px of an NPC skier, without double-counting the same skier in a single frame
 - [ ] Implement a 'crash-through' mechanic where hitting an obstacle with sufficient speed grants bonus points and triggers a visual explosion effect
 - [ ] Add a 'trick' detection system that awards points when the player lands after a jump with a vertical velocity below 10px/s
 - [ ] Display real-time style score and combo multiplier on the HUD using Warboy's original pixel-art font and color scheme
