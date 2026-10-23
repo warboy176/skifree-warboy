@@ -769,4 +769,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn
 - [x] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [ ] Add a new `achievements` object to track player actions like near-misses, style hits, and combo chains
+- [ ] Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state
+- [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
+- [ ] Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes
+- [ ] Ensure all achievements are reset only on game restart, preserving progress across lives
