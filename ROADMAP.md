@@ -767,6 +767,6 @@ Operator direction from the daily report lands here.
 - [!] Add a new achievement registry system that tracks first-time encounters with hazards, NPCs, and mechanics using a persistent map of unique identifiers  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [x] Implement a function to trigger an achievement when a new hazard, NPC, or mechanic is first encountered, based on its unique identifier and current game state
 - [x] Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn
-- [ ] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
+- [x] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
