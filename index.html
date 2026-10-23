@@ -676,6 +676,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+checkAndTriggerNewEncounterAchievement(entity.id, entity.type);
+
 updateCrashThroughHazards(dt);
 drawExplosionEffect(hazard.x, hazard.y, hazard.explosionRadius, hazard.explosionDuration);
 
@@ -7826,6 +7828,17 @@ function resetComboOnCollisionOrFall() {
 function initAchievementTracker() {
     game.achievementTracker = {};
 }
+
+function checkAndTriggerNewEncounterAchievement(entityId, entityType) {
+  if (game.achievementTracker[entityId] === undefined) {
+    game.achievementTracker[entityId] = true;
+    const achievementDef = ACHIEVEMENT_DEFINITIONS.find(a => a.type === 'encounter' && a.key === entityId);
+    if (achievementDef) {
+      addDefaultAchievement(achievementDef.key, achievementDef.condition, achievementDef.unlockThreshold);
+    }
+  }
+}
+
 
 
 
