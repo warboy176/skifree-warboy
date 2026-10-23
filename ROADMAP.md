@@ -772,7 +772,10 @@ Operator direction from the daily report lands here.
 - [x] Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains
 - [x] Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN
 - [!] Add a function to increment `achievements.styleHits` and reset `achievements.combo` when the player slaloms through an obstacle or NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to increment `achievements.combo` on consecutive style hits, and reset it on any miss or collision
+- [ ] Add a function to track consecutive style hits by incrementing achievements.combo on successful close passes or crashes through NPCs, without resetting on non-style events
+- [ ] Add a function to reset achievements.combo to 0 when the player collides with a tree, oil slick, or other obstacle that ends the run
+- [ ] Add a function to reset achievements.combo to 0 when the player crashes due to a jump failure or collision with terrain
+- [ ] Add a function to ensure achievements.combo is only incremented when the player performs a style hit (slalom or crash-through) and not on idle or movement alone
 - [ ] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record
 - [ ] Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state
 - [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
