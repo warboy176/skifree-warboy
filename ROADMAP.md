@@ -776,7 +776,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to increment achievements.combo when player passes near or crashes through an NPC skier, without resetting on non-style events  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure achievements.combo is only incremented for NPC skiers, not trees, rocks, or other obstacles
 - [!] Add a function to reset achievements.combo to 0 when the player collides with a tree  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add oil slick collision detection to the player's update function using bounding box checks
+- [ ] Add a new oilSlicks array to store active oil slicks in the game state
+- [ ] Implement a bounding box collision check between the player and each oil slick in the update loop
 - [ ] Trigger player crash state when oil slick collision is detected, updating game state accordingly
 - [ ] Reset achievements.combo to 0 when player collides with an oil slick
 - [ ] Add a function to reset achievements.combo to 0 when the player collides with any other obstacle that ends the run
