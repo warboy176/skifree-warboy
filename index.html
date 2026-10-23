@@ -7932,6 +7932,14 @@ function initPlayerStyleState() {
     PlayerState.isStyleHit = false;
 }
 
+function resetStyleHitAfterComboIncrement() {
+    if (game.comboStreak > 0 && game.comboStreak % 5 === 0) {
+        PlayerState.isStyleHit = false;
+        game.styleMultiplierActive = false;
+    }
+}
+
+
 
 
 
