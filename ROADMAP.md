@@ -763,6 +763,9 @@ Operator direction from the daily report lands here.
 - [x] Reset the combo multiplier to 1 when the player hits a tree or crashes on oil
 - [x] Display the current style score and combo multiplier in the HUD, updating only when style actions occur
 - [x] Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall
-- [ ] Add persistent achievements registry: extend the existing system to auto-register new achievements for every new hazard, NPC, or mechanic introduced
+- [ ] Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial empty state
+- [ ] Create a function to register a new achievement when a new hazard, NPC, or mechanic is first encountered during gameplay
+- [ ] Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn
+- [ ] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
