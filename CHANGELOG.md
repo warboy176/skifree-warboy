@@ -1,4 +1,5 @@
 # Changelog
+- Ensure achievements.combo is only incremented for NPC skiers, not trees, rocks, or other obstacles (initNPCs, updateNPCs)
 - Initialize achievements.combo to 0 in the game state initialization (initAchievementsState)
 - Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN (initNPCs, checkNearMisses)
 - Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains (initAchievements, registerAchievement)
