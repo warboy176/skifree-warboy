@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn (checkAndUnlockAchievements)
 - Implement a function to trigger an achievement when a new hazard, NPC, or mechanic is first encountered, based on its unique identifier and current game state (initAchievementTracker, checkAndTriggerNewEncounterAchievement)
 - Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial empty state (initAchievementsRegistry, saveAchievementsToStorage)
 - Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall (initComboSystem, updateComboStreakOnStyleAction, resetComboOnCollisionOrFall)
