@@ -7903,6 +7903,20 @@ function updateAchievementHUDVisibility() {
     }
 }
 
+function renderAchievementHUDIndicators() {
+  if (!game.achievementsHUD) return;
+  for (let i = 0; i < game.achievementsHUD.length; i++) {
+    const a = game.achievementsHUD[i];
+    if (a.visible) {
+      ctx.strokeStyle = 'white';
+      ctx.strokeRect(a.x, a.y, 16, 16);
+      ctx.fillStyle = 'white';
+      ctx.fillRect(a.x + 4, a.y + 4, 8, 8);
+    }
+  }
+}
+
+
 
 
 
