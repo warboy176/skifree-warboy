@@ -1,4 +1,5 @@
 # Changelog
+- Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains (initAchievements, registerAchievement)
 - Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering (initAchievementHUDState, updateAchievementHUDVisibility, renderAchievementHUDIndicators)
 - Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn (checkAndUnlockAchievements)
 - Implement a function to trigger an achievement when a new hazard, NPC, or mechanic is first encountered, based on its unique identifier and current game state (initAchievementTracker, checkAndTriggerNewEncounterAchievement)
