@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial empty state (initAchievementsRegistry, saveAchievementsToStorage)
 - Link the combo multiplier to the timing and chain of style actions, resetting on collision or fall (initComboSystem, updateComboStreakOnStyleAction, resetComboOnCollisionOrFall)
 - Display the current style score and combo multiplier in the HUD, updating only when style actions occur (initStyleScoreAndComboState, updateStyleScoreAndComboMultiplier, renderStyleScoreAndComboHUD)
 - Reset the combo multiplier to 1 when the player hits a tree or crashes on oil (resetComboOnCrash)
