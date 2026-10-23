@@ -782,7 +782,9 @@ Operator direction from the daily report lands here.
 - [x] Reset achievements.combo to 0 when player collides with an oil slick
 - [!] Add a function to reset achievements.combo to 0 when the player collides with any other obstacle that ends the run  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to reset achievements.combo to 0 when the player crashes due to a jump failure or collision with terrain
-- [ ] Add a function to ensure achievements.combo is only incremented when the player performs a style hit (slalom or crash-through) and not on idle or movement alone
+- [ ] Add a new state flag 'isStyleHit' to track when the player performs a slalom or crash-through action
+- [ ] Update the combo increment logic to only trigger when 'isStyleHit' is true and the player is not idle or moving without collision
+- [ ] Reset 'isStyleHit' after each combo increment to prevent repeated triggering
 - [ ] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record
 - [ ] Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state
 - [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
