@@ -1,4 +1,5 @@
 # Changelog
+- Reset achievements.combo to 0 when player collides with an oil slick (initOilSlicks, checkOilSlickCollisions)
 - Implement a bounding box collision check between the player and each oil slick in the update loop (initOilSlicks, updateOilSlicks)
 - Add a new oilSlicks array to store active oil slicks in the game state (initOilSlicks)
 - Ensure achievements.combo is only incremented for NPC skiers, not trees, rocks, or other obstacles (initNPCs, updateNPCs)
