@@ -770,7 +770,7 @@ Operator direction from the daily report lands here.
 - [x] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
 
 - [x] Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains
-- [ ] Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN
+- [x] Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN
 - [ ] Add a function to increment `achievements.styleHits` and reset `achievements.combo` when the player slaloms through an obstacle or NPC skier
 - [ ] Add a function to increment `achievements.combo` on consecutive style hits, and reset it on any miss or collision
 - [ ] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record

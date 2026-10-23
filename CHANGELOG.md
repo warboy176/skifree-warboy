@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN (initNPCs, checkNearMisses)
 - Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains (initAchievements, registerAchievement)
 - Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering (initAchievementHUDState, updateAchievementHUDVisibility, renderAchievementHUDIndicators)
 - Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn (checkAndUnlockAchievements)
