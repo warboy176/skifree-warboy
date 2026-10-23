@@ -7886,6 +7886,24 @@ function initAchievementHUDState() {
   }
 }
 
+function updateAchievementHUDVisibility() {
+    for (let i = 0; i < ACHIEVEMENT_DEFINITIONS.length; i++) {
+        const a = ACHIEVEMENT_DEFINITIONS[i];
+        if (game.achievements && game.achievements.some(ach => ach.id === a.id && ach.unlocked)) {
+            game.achievementsHUD[i] = {
+                visible: true,
+                x: W - 180 + (i * 30),
+                y: HUD_H - 30
+            };
+        } else {
+            game.achievementsHUD[i] = {
+                visible: false
+            };
+        }
+    }
+}
+
+
 
 
 
