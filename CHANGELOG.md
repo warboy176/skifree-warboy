@@ -1,4 +1,5 @@
 # Changelog
+- Reset 'isStyleHit' after each combo increment to prevent repeated triggering (resetStyleHitAfterComboIncrement)
 - Update the combo increment logic to only trigger when 'isStyleHit' is true and the player is not idle or moving without collision (updateComboStreak)
 - Add a new state flag 'isStyleHit' to track when the player performs a slalom or crash-through action (initPlayerStyleState)
 - Add a function to reset achievements.combo to 0 when the player crashes due to a jump failure or collision with terrain (resetComboOnCrash)
