@@ -1622,6 +1622,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAchievementTracker();
+
 initStyleScoreAndComboState();
 
 initTrickDetectionSystem();
@@ -7820,6 +7822,11 @@ function resetComboOnCollisionOrFall() {
     game.comboStreakTimer = null;
     applyComboMultiplierToScore();
 }
+
+function initAchievementTracker() {
+    game.achievementTracker = {};
+}
+
 
 
 
