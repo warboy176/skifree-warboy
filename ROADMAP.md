@@ -778,3 +778,5 @@ Operator direction from the daily report lands here.
 - [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
 - [ ] Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes
 - [ ] Ensure all achievements are reset only on game restart, preserving progress across lives
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
