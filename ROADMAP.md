@@ -780,7 +780,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a bounding box collision check between the player and each oil slick in the update loop
 - [!] Trigger player crash state when oil slick collision is detected, updating game state accordingly  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [x] Reset achievements.combo to 0 when player collides with an oil slick
-- [ ] Add a function to reset achievements.combo to 0 when the player collides with any other obstacle that ends the run
+- [!] Add a function to reset achievements.combo to 0 when the player collides with any other obstacle that ends the run  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to reset achievements.combo to 0 when the player crashes due to a jump failure or collision with terrain
 - [ ] Add a function to ensure achievements.combo is only incremented when the player performs a style hit (slalom or crash-through) and not on idle or movement alone
 - [ ] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record
