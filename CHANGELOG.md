@@ -1,4 +1,5 @@
 # Changelog
+- Add a new oilSlicks array to store active oil slicks in the game state (initOilSlicks)
 - Ensure achievements.combo is only incremented for NPC skiers, not trees, rocks, or other obstacles (initNPCs, updateNPCs)
 - Initialize achievements.combo to 0 in the game state initialization (initAchievementsState)
 - Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN (initNPCs, checkNearMisses)
