@@ -7842,19 +7842,48 @@ function checkAndTriggerNewEncounterAchievement(entityId, entityType) {
 }
 
 function initAchievementHUDState() {
-    game.achievementsHUD = [];
-    if (game.achievements && game.achievements.some(a=>a.unlocked)) {
-        for (let i = 0; i < game.achievements.length; i++) {
-            if (game.achievements[i].unlocked) {
-                game.achievementsHUD.push({
-                    key: game.achievements[i].key,
-                    x: 10 + (i % 5) * 20,
-                    y: 10 + Math.floor(i / 5) * 20,
-                    visible: true
-                });
-            }
-        }
-    }
+  // Initialize the achievementsHUD array with visual indicators using original Warboy art
+  // Each HUD indicator is a 16x16 pixel square with a white border and a centered 8x8 pixel icon
+  // drawn via fillRect and strokeRect
+  game.achievementsHUD = [];
+
+  // Define the base size and position for each HUD indicator
+  const size = 16;
+  const iconSize = 8;
+  const border = 1;
+  const offsetX = 8;
+  const offsetY = 8;
+
+  // Create 10 placeholder HUD entries (can be extended later)
+  for (let i = 0; i < 10; i++) {
+    const x = offsetX + i * (size + 2);
+    const y = offsetY;
+    
+    game.achievementsHUD.push({
+      key: `achievement_${i}`,
+      x: x,
+      y: y,
+      visible: false,
+      // Drawing logic is not part of the state object itself, but the structure
+      // is initialized to support rendering via the game loop
+      draw: function(ctx) {
+        const size = 16;
+        const iconSize = 8;
+        const border = 1;
+        const x = this.x;
+        const y = this.y;
+        
+        // Draw white border (1px)
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = border;
+        ctx.strokeRect(x, y, size, size);
+        
+        // Draw centered 8x8 pixel icon (white fill)
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(x + (size - iconSize) / 2, y + (size - iconSize) / 2, iconSize, iconSize);
+      }
+    });
+  }
 }
 
 
