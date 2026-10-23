@@ -769,7 +769,11 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock achievements based on game state changes, triggered after each obstacle or NPC spawn
 - [x] Add a visual indicator in the HUD to show unlocked achievements, using only original Warboy art and existing canvas rendering
 
-- [ ] Add a new `achievements` object to track player actions like near-misses, style hits, and combo chains
+- [ ] Initialize an `achievements` object in the global scope to track near-misses, style hits, and combo chains
+- [ ] Add a function to increment `achievements.nearMisses` when the player passes an NPC skier within NEAR_MISS_MARGIN
+- [ ] Add a function to increment `achievements.styleHits` and reset `achievements.combo` when the player slaloms through an obstacle or NPC skier
+- [ ] Add a function to increment `achievements.combo` on consecutive style hits, and reset it on any miss or collision
+- [ ] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record
 - [ ] Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state
 - [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
 - [ ] Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes
