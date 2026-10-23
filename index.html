@@ -1624,6 +1624,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAchievementHUDState();
+
 initAchievementTracker();
 
 initStyleScoreAndComboState();
@@ -7838,6 +7840,23 @@ function checkAndTriggerNewEncounterAchievement(entityId, entityType) {
     }
   }
 }
+
+function initAchievementHUDState() {
+    game.achievementsHUD = [];
+    if (game.achievements && game.achievements.some(a=>a.unlocked)) {
+        for (let i = 0; i < game.achievements.length; i++) {
+            if (game.achievements[i].unlocked) {
+                game.achievementsHUD.push({
+                    key: game.achievements[i].key,
+                    x: 10 + (i % 5) * 20,
+                    y: 10 + Math.floor(i / 5) * 20,
+                    visible: true
+                });
+            }
+        }
+    }
+}
+
 
 
 
