@@ -778,7 +778,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to reset achievements.combo to 0 when the player collides with a tree  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a new oilSlicks array to store active oil slicks in the game state
 - [x] Implement a bounding box collision check between the player and each oil slick in the update loop
-- [ ] Trigger player crash state when oil slick collision is detected, updating game state accordingly
+- [!] Trigger player crash state when oil slick collision is detected, updating game state accordingly  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Reset achievements.combo to 0 when player collides with an oil slick
 - [ ] Add a function to reset achievements.combo to 0 when the player collides with any other obstacle that ends the run
 - [ ] Add a function to reset achievements.combo to 0 when the player crashes due to a jump failure or collision with terrain
