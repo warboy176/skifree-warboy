@@ -676,6 +676,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateOilSlicks(dt);
+
 checkAndTriggerNewEncounterAchievement(entity.id, entity.type);
 
 updateCrashThroughHazards(dt);
@@ -7915,6 +7917,17 @@ function renderAchievementHUDIndicators() {
     }
   }
 }
+
+function updateOilSlicks(dt) {
+  for (let i = game.oilSlicks.length - 1; i >= 0; i--) {
+    const slick = game.oilSlicks[i];
+    slick.y += slick.speed * dt;
+    if (slick.y > H) {
+      game.oilSlicks.splice(i, 1);
+    }
+  }
+}
+
 
 
 
