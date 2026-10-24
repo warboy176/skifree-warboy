@@ -8116,6 +8116,17 @@ function applyNightBiomeTintTransition() {
     };
 }
 
+function triggerBiomeTransitionIfThresholdReached(meters) {
+  for (const [biome, threshold] of Object.entries(BIOME_THRESHOLDS)) {
+    if (meters >= threshold && !game.biomeTransitionTriggered[biome]) {
+      game.biomeTransitionTriggered[biome] = true;
+      applyBiomeTintTransition(biome);
+      break;
+    }
+  }
+}
+
+
 
 
 
