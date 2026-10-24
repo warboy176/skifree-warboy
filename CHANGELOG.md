@@ -1,4 +1,5 @@
 # Changelog
+- Add a biome change event handler that triggers both snow pattern and background color updates simultaneously, using only original art (initBiomeTransitionState, triggerBiomeChange)
 - Create a function to smoothly transition background color at biome boundaries using original color palettes defined in code (initBiomeTintState, updateBiomeTintTransition, checkBiomeBoundariesAndTriggerTransition)
 - Implement a foundation function to render a single original vector-style snow pattern on the canvas, using only Warboy's own code-drawn art (initSnowPattern, drawSnowPattern)
 - Define biome transition points based on player distance traveled, using a single numeric threshold per biome change (initBiomeThresholds, updateBiomeTransition)
