@@ -8057,6 +8057,20 @@ function checkBiomeBoundariesAndTriggerTransition(playerMeters) {
     }
 }
 
+function updateBiomeTintTransition(dt) {
+    if (game.biomeTintState === 'transitioning') {
+        game.biomeTransitionProgress += dt;
+        const progress = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+        applyBiomeTransitionTint(progress);
+        
+        if (progress >= 1) {
+            game.biomeTintState = 'active';
+            game.biomeTransitionProgress = 0;
+        }
+    }
+}
+
+
 
 
 
