@@ -676,6 +676,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateAchievementProgress(achievementKey, value);
+
 updateOilSlicks(dt);
 
 checkAndTriggerNewEncounterAchievement(entity.id, entity.type);
@@ -8021,6 +8023,19 @@ function resetAchievementsOnRestart() {
         }
     }
 }
+
+function updateAchievementProgress(achievementKey, value) {
+    if (!game.achievements[achievementKey]) return;
+    
+    game.achievements[achievementKey].counter = (game.achievements[achievementKey].counter || 0) + value;
+    
+    if (game.achievements[achievementKey].counter >= game.achievements[achievementKey].unlockThreshold && !game.achievements[achievementKey].unlocked) {
+        game.achievements[achievementKey].unlocked = true;
+        applyAchievementToHUD(achievementKey);
+        showAchievementUnlock(game.achievements[achievementKey]);
+    }
+}
+
 
 
 
