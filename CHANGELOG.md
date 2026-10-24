@@ -1,4 +1,5 @@
 # Changelog
+- Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary (initBiomeTransitionState, triggerBiomeTransitionIfThresholdReached)
 - Adjust snow and obstacle colors to darker, cooler tones during nighttime biome phase (applyNightBiomeTintTransition)
 - Ensure all functions are self-contained within index.html, require no external assets, and preserve existing game mechanics (initNPCs, spawnNPCs)
 - Add a biome change event handler that triggers both snow pattern and background color updates simultaneously, using only original art (initBiomeTransitionState, triggerBiomeChange)
