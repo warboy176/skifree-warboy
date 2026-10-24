@@ -198,11 +198,20 @@ if (autoplay.enabled) {
       lastSpawnTime: 0
     },
     lastInputTime: 0,
-    slopeStalkerActive: false
+    slopeStalkerActive: false,
+    biomeTransitionProgress: 0
   };
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
   let highScores=loadScores();
+
+  // Call triggerBiomeChange at appropriate update point
+  function update() {
+    if (game.state === GameState.PLAYING) {
+      const meters = game.distance;
+      triggerBiomeChange(meters);
+    }
+  }
 
   // Lightweight event log for player actions (run starts, crashes, etc), persisted to
   // localStorage so the log survives page reloads. Kept bounded so a long run (or many
@@ -8071,9 +8080,12 @@ function updateBiomeTintTransition(dt) {
 }
 
 function triggerBiomeChange(currentMeters) {
-  if (checkBiomeBoundariesAndTriggerTransition(currentMeters)) {
-    game.biomeTransitionProgress = 0;
-    updateBiomeTransition(currentMeters);
+  for (const [biome, threshold] of Object.entries(BIOME_THRESHOLDS)) {
+    if (currentMeters >= threshold) {
+      game.biomeTransitionProgress = 0;
+      updateBiomeTransition();
+      return;
+    }
   }
 }
 
