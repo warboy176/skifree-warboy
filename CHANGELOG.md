@@ -1,4 +1,5 @@
 # Changelog
+- Ensure all functions are self-contained within index.html, require no external assets, and preserve existing game mechanics (initNPCs, spawnNPCs)
 - Add a biome change event handler that triggers both snow pattern and background color updates simultaneously, using only original art (initBiomeTransitionState, triggerBiomeChange)
 - Create a function to smoothly transition background color at biome boundaries using original color palettes defined in code (initBiomeTintState, updateBiomeTintTransition, checkBiomeBoundariesAndTriggerTransition)
 - Implement a foundation function to render a single original vector-style snow pattern on the canvas, using only Warboy's own code-drawn art (initSnowPattern, drawSnowPattern)
