@@ -8103,6 +8103,20 @@ function spawnNPCs(dt) {
   }
 }
 
+function applyNightBiomeTintTransition() {
+    if (game.biome !== 'night') return;
+    const progress = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+    const currentTint = BIOME_TINTS[game.currentBiome];
+    const nightTint = BIOME_TINTS['night'];
+    game.biomeTint = {
+        r: Math.round(currentTint.r + (nightTint.r - currentTint.r) * progress),
+        g: Math.round(currentTint.g + (nightTint.g - currentTint.g) * progress),
+        b: Math.round(currentTint.b + (nightTint.b - currentTint.b) * progress),
+        alpha: Math.round(currentTint.alpha + (nightTint.alpha - currentTint.alpha) * progress)
+    };
+}
+
+
 
 
 
