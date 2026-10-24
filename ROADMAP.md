@@ -787,7 +787,9 @@ Operator direction from the daily report lands here.
 - [x] Reset 'isStyleHit' after each combo increment to prevent repeated triggering
 - [x] Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record
 - [x] Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state
-- [ ] Create a `renderAchievements()` function to display active achievements in the HUD using original pixel-art icons
+- [ ] Add a new `achievements` state object to track active achievements and their unlock status
+- [ ] Implement `renderAchievements()` to draw original pixel-art icons for active achievements in the HUD using the existing canvas context
+- [ ] Update `drawHUD()` to call `renderAchievements()` and include spacing for the new icons
 - [ ] Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes
 - [ ] Ensure all achievements are reset only on game restart, preserving progress across lives
 
