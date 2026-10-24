@@ -7985,6 +7985,33 @@ function initAchievementIcons() {
   ];
 }
 
+function initStyleAchievementSystem() {
+  game.styleAchievements = new Map();
+  const styleScoreAchievements = [];
+  for (let i = 0; i < STYLE_SCORE_ACHIEVEMENT_THRESHOLDS.length; i++) {
+    const thresh = STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[i];
+    const title = `Style Score ${thresh}`;
+    const description = `Reach a style score of ${thresh}`;
+    const newAchievement = { type: `styleScore${thresh}`, title, description, counter: thresh, unlockThreshold: thresh };
+    styleScoreAchievements.push(newAchievement);
+  }
+  const multiplierAchievements = [];
+  for (let i = 0; i < STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS.length; i++) {
+    const thresh = STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS[i];
+    const title = `Multiplier x${thresh}`;
+    const description = `Maintain a style multiplier of at least ${thresh}x`;
+    const newAchievement = { type: `multiplier${thresh}`, title, description, counter: thresh, unlockThreshold: thresh };
+    multiplierAchievements.push(newAchievement);
+  }
+  game.styleAchievements.set('styleScore', styleScoreAchievements);
+  game.styleAchievements.set('multiplier', multiplierAchievements);
+  game.styleAchievements.set('comboStreak', { threshold: COMBO_STREAK_THRESHOLD, window: COMBO_STREAK_WINDOW_MS });
+  game.styleAchievements.set('proximity', { range: PROXIMITY_ACHIEVEMENT_RANGE, threshold: PROXIMITY_ACHIEVEMENT_THRESHOLD });
+  game.styleAchievements.set('slalom', { reversals: SLALOM_REVERSALS_REQUIRED, window: SLALOM_REVERSAL_WINDOW, award: SLALOM_STYLE_AWARD });
+  game.styleAchievements.set('oilCrash', { condition: () => game.oilHits >= 1 });
+}
+
+
 
 
 
