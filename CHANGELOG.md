@@ -1,4 +1,5 @@
 # Changelog
+- Implement a foundation function to render a single original vector-style snow pattern on the canvas, using only Warboy's own code-drawn art (initSnowPattern, drawSnowPattern)
 - Define biome transition points based on player distance traveled, using a single numeric threshold per biome change (initBiomeThresholds, updateBiomeTransition)
 - Implement the chase antagonist: a custom-designed creature (e.g., a pixel-art 'Wasteland Weasel' with glowing eyes and twitchy movement) that spawns after 15 seconds of inactivity and pursues the player with increasing speed, adding tension to the gameplay. (initAntagonist, spawnAntagonistIfInactive, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementRegistry, registerScorableInteractions, updateAchievementProgress)
