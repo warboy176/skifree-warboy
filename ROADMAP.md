@@ -802,3 +802,5 @@ Operator direction from the daily report lands here.
 - [ ] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
 - [ ] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
 - [ ] Enhance the achievements system with new, data-driven entries for biome transitions (e.g., 'Alpine Initiate' for reaching the night biome), style chains (e.g., 'Ski-Slalom King' for 10 close passes), and chase antagonist evasion (e.g., 'Weasel Whisperer' for surviving 30 seconds without being caught).
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
