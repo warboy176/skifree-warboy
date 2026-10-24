@@ -806,7 +806,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a dynamic brightness reduction effect using canvas globalAlpha for nighttime visuals  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Draw original code-drawn moon and star effects using simple geometric shapes in the night sky  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Adjust snow and obstacle colors to darker, cooler tones during nighttime biome phase
-- [ ] Ensure lighting transitions smoothly when switching to the nighttime alpine biome
+- [!] Ensure lighting transitions smoothly when switching to the nighttime alpine biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
 - [ ] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
 - [ ] Enhance the achievements system with new, data-driven entries for biome transitions (e.g., 'Alpine Initiate' for reaching the night biome), style chains (e.g., 'Ski-Slalom King' for 10 close passes), and chase antagonist evasion (e.g., 'Weasel Whisperer' for surviving 30 seconds without being caught).
