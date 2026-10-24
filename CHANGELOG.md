@@ -1,4 +1,5 @@
 # Changelog
+- Ensure all achievements are reset only on game restart, preserving progress across lives (initAchievementPersistence, resetAchievementsOnRestart)
 - Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes (initStyleAchievementSystem, checkStyleAchievements)
 - Update `drawHUD()` to call `renderAchievements()` and include spacing for the new icons (initAchievementIcons, renderAchievements)
 - Implement `renderAchievements()` to draw original pixel-art icons for active achievements in the HUD using the existing canvas context (initAchievementIcons, renderAchievements)

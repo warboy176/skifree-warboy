@@ -791,6 +791,6 @@ Operator direction from the daily report lands here.
 - [x] Implement `renderAchievements()` to draw original pixel-art icons for active achievements in the HUD using the existing canvas context
 - [x] Update `drawHUD()` to call `renderAchievements()` and include spacing for the new icons
 - [x] Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes
-- [ ] Ensure all achievements are reset only on game restart, preserving progress across lives
+- [x] Ensure all achievements are reset only on game restart, preserving progress across lives
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
