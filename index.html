@@ -8036,6 +8036,14 @@ function updateAchievementProgress(achievementKey, value) {
     }
 }
 
+function initSnowPattern() {
+  game.snowPattern = [];
+  for (let i = 0; i < 100; i++) {
+    game.snowPattern.push({x: Math.random() * 100, y: Math.random() * 100});
+  }
+}
+
+
 
 
 
