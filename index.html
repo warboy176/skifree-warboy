@@ -8050,6 +8050,14 @@ function drawSnowPattern(ctx, x, y) {
   }
 }
 
+function checkBiomeBoundariesAndTriggerTransition(playerMeters) {
+    if (playerMeters >= BIOME_THRESHOLDS[game.biome] && game.biome < BIOME_THRESHOLDS.length - 1) {
+        game.biomeTintState.targetTint = BIOME_TINTS[game.biome + 1];
+        game.biomeTransitionProgress = 0;
+    }
+}
+
+
 
 
 
