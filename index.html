@@ -654,6 +654,8 @@ generateTreePositions();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+spawnNPCs(dt);
+
 updateComboCounter(dt);
 
 updateStyleMeter(dt);
@@ -8088,6 +8090,19 @@ function triggerBiomeChange(currentMeters) {
     }
   }
 }
+
+function spawnNPCs(dt) {
+  if (game.npcSkiers.length < NPC_SPAWN_MAX_SKIERS && Math.random() < (NPC_SPAWN_MIN_INTERVAL / 1000) * dt) {
+    const npcSkier = {
+      x: Math.random() * (canvas.width - NPC_SKIER_WIDTH),
+      y: -NPC_SKIER_HEIGHT,
+      speed: NPC_SKIER_SPEED + Math.random() * 2,
+      color: SKI_COLORS[Math.floor(Math.random() * SKI_COLORS.length)]
+    };
+    game.npcSkiers.push(npcSkier);
+  }
+}
+
 
 
 
