@@ -8043,6 +8043,14 @@ function initSnowPattern() {
   }
 }
 
+function drawSnowPattern(ctx, x, y) {
+  for (let i = 0; i < game.snowPattern.length; i++) {
+    const point = game.snowPattern[i];
+    ctx.fillRect(x + point.x, y + point.y, 2, 2);
+  }
+}
+
+
 
 
 
