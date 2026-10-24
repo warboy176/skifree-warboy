@@ -1,4 +1,5 @@
 # Changelog
+- Implement a `checkAchievements()` function that triggers on scoring events and updates the registry based on current game state (checkAchievements)
 - Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record (updateComboAchievement)
 - Reset 'isStyleHit' after each combo increment to prevent repeated triggering (resetStyleHitAfterComboIncrement)
 - Update the combo increment logic to only trigger when 'isStyleHit' is true and the player is not idle or moving without collision (updateComboStreak)
