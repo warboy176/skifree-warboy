@@ -803,7 +803,7 @@ Operator direction from the daily report lands here.
 - [x] Add a biome change event handler that triggers both snow pattern and background color updates simultaneously, using only original art
 - [x] Ensure all functions are self-contained within index.html, require no external assets, and preserve existing game mechanics
 - [!] Add a nighttime biome flag and initialize ambient lighting state in the game loop  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a dynamic brightness reduction effect using canvas globalAlpha for nighttime visuals
+- [!] Implement a dynamic brightness reduction effect using canvas globalAlpha for nighttime visuals  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Draw original code-drawn moon and star effects using simple geometric shapes in the night sky
 - [ ] Adjust snow and obstacle colors to darker, cooler tones during nighttime biome phase
 - [ ] Ensure lighting transitions smoothly when switching to the nighttime alpine biome
