@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to record `achievements.maxCombo` whenever the current combo exceeds the previous record (updateComboAchievement)
 - Reset 'isStyleHit' after each combo increment to prevent repeated triggering (resetStyleHitAfterComboIncrement)
 - Update the combo increment logic to only trigger when 'isStyleHit' is true and the player is not idle or moving without collision (updateComboStreak)
 - Add a new state flag 'isStyleHit' to track when the player performs a slalom or crash-through action (initPlayerStyleState)
