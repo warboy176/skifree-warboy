@@ -796,6 +796,9 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Implement the chase antagonist: a custom-designed creature (e.g., a pixel-art 'Wasteland Weasel' with glowing eyes and twitchy movement) that spawns after 15 seconds of inactivity and pursues the player with increasing speed, adding tension to the gameplay.
-- [ ] Add dynamic terrain biomes: transition from 'Lodge Slope' to 'Pine Forest' and then 'Nighttime Alpine' by changing background colors, snow patterns, and ambient lighting in code, using original vector-style art for each biome.
+- [ ] Define biome transition points based on player distance traveled, using a single numeric threshold per biome change
+- [ ] Implement a function to update the background color and snow pattern style at each biome boundary using original vector-style art in code
+- [ ] Add ambient lighting adjustments (darker tones, reduced brightness) for the Nighttime Alpine biome using original code-drawn effects
+- [ ] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
 - [ ] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
 - [ ] Enhance the achievements system with new, data-driven entries for biome transitions (e.g., 'Alpine Initiate' for reaching the night biome), style chains (e.g., 'Ski-Slalom King' for 10 close passes), and chase antagonist evasion (e.g., 'Weasel Whisperer' for surviving 30 seconds without being caught).
