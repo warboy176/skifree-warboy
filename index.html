@@ -8070,6 +8070,14 @@ function updateBiomeTintTransition(dt) {
     }
 }
 
+function triggerBiomeChange(currentMeters) {
+  if (checkBiomeBoundariesAndTriggerTransition(currentMeters)) {
+    game.biomeTransitionProgress = 0;
+    updateBiomeTransition(currentMeters);
+  }
+}
+
+
 
 
 
