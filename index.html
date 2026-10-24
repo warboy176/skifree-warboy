@@ -8011,6 +8011,18 @@ function initStyleAchievementSystem() {
   game.styleAchievements.set('oilCrash', { condition: () => game.oilHits >= 1 });
 }
 
+function resetAchievementsOnRestart() {
+    if (game.achievementsResetOnRestart) {
+        game.resetOnFrame = false;
+        for (let i = 0; i < game.achievements.length; i++) {
+            const a = game.achievements[i];
+            a.count = 0;
+            a.unlocked = false;
+        }
+    }
+}
+
+
 
 
 
