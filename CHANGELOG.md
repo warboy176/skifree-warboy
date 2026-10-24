@@ -1,4 +1,5 @@
 # Changelog
+- Implement the chase antagonist: a custom-designed creature (e.g., a pixel-art 'Wasteland Weasel' with glowing eyes and twitchy movement) that spawns after 15 seconds of inactivity and pursues the player with increasing speed, adding tension to the gameplay. (initAntagonist, spawnAntagonistIfInactive, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementRegistry, registerScorableInteractions, updateAchievementProgress)
 - Ensure all achievements are reset only on game restart, preserving progress across lives (initAchievementPersistence, resetAchievementsOnRestart)
 - Define achievement conditions for style hits (e.g., slaloming close to skiers), multipliers, and oil crashes (initStyleAchievementSystem, checkStyleAchievements)
