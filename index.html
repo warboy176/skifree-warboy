@@ -7944,6 +7944,38 @@ function updateComboAchievement(currentCombo) {
     }
 }
 
+function checkAchievementsOnEvent(eventType, eventData) {
+  const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
+  
+  for (const achievement of ACHIEVEMENT_DEFINITIONS) {
+    if (achievement.eventType === eventType) {
+      let conditionMet = false;
+      
+      switch (achievement.condition.type) {
+        case 'obstaclesPassed':
+          conditionMet = game.obstaclesPassed >= achievement.unlockThreshold;
+          break;
+        case 'coinsCollected':
+          conditionMet = game.coins >= achievement.unlockThreshold;
+          break;
+        case 'distanceTravelled':
+          conditionMet = game.distance >= achievement.unlockThreshold;
+          break;
+        case 'enemiesDefeated':
+          conditionMet = game.enemiesDefeated >= achievement.unlockThreshold;
+          break;
+      }
+      
+      if (conditionMet && !isAchievementUnlocked(achievement.id)) {
+        unlockAchievement(achievement.id);
+        showAchievementUnlock(achievement);
+        applyAchievementToHUD(achievement.id);
+      }
+    }
+  }
+}
+
+
 
 
 
