@@ -796,7 +796,7 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Implement the chase antagonist: a custom-designed creature (e.g., a pixel-art 'Wasteland Weasel' with glowing eyes and twitchy movement) that spawns after 15 seconds of inactivity and pursues the player with increasing speed, adding tension to the gameplay.
-- [ ] Define biome transition points based on player distance traveled, using a single numeric threshold per biome change
+- [x] Define biome transition points based on player distance traveled, using a single numeric threshold per biome change
 - [ ] Implement a function to update the background color and snow pattern style at each biome boundary using original vector-style art in code
 - [ ] Add ambient lighting adjustments (darker tones, reduced brightness) for the Nighttime Alpine biome using original code-drawn effects
 - [ ] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
