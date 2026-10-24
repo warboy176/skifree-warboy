@@ -7936,6 +7936,15 @@ function resetStyleHitAfterComboIncrement() {
   PlayerState.isStyleHit = false;
 }
 
+function updateComboAchievement(currentCombo) {
+    if (currentCombo > game.achievements.maxCombo) {
+        game.achievements.maxCombo = currentCombo;
+        unlockAchievement('maxCombo');
+        showAchievementUnlock(ACHIEVEMENT_DEFINITIONS.maxCombo);
+    }
+}
+
+
 
 
 
