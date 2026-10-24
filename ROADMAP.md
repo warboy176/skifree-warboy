@@ -802,7 +802,11 @@ Operator direction from the daily report lands here.
 - [x] Create a function to smoothly transition background color at biome boundaries using original color palettes defined in code
 - [x] Add a biome change event handler that triggers both snow pattern and background color updates simultaneously, using only original art
 - [x] Ensure all functions are self-contained within index.html, require no external assets, and preserve existing game mechanics
-- [ ] Add ambient lighting adjustments (darker tones, reduced brightness) for the Nighttime Alpine biome using original code-drawn effects
+- [ ] Add a nighttime biome flag and initialize ambient lighting state in the game loop
+- [ ] Implement a dynamic brightness reduction effect using canvas globalAlpha for nighttime visuals
+- [ ] Draw original code-drawn moon and star effects using simple geometric shapes in the night sky
+- [ ] Adjust snow and obstacle colors to darker, cooler tones during nighttime biome phase
+- [ ] Ensure lighting transitions smoothly when switching to the nighttime alpine biome
 - [ ] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
 - [ ] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
 - [ ] Enhance the achievements system with new, data-driven entries for biome transitions (e.g., 'Alpine Initiate' for reaching the night biome), style chains (e.g., 'Ski-Slalom King' for 10 close passes), and chase antagonist evasion (e.g., 'Weasel Whisperer' for surviving 30 seconds without being caught).
