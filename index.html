@@ -8229,6 +8229,17 @@ function updateStyleChainOnPass(player, npc) {
     }
 }
 
+function checkStyleChainAchievement() {
+  if (game.styleChainCounter >= 10) {
+    const achievementDef = ACHIEVEMENT_DEFINITIONS['Ski-Slalom King'];
+    if (!game.achievements.some(a => a.name === 'Ski-Slalom King')) {
+      game.achievements.push({name: 'Ski-Slalom King', unlocked: true});
+      applyAchievementToHUD(achievementDef);
+    }
+  }
+}
+
+
 
 
 
