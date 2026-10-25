@@ -1,4 +1,5 @@
 # Changelog
+- Add biome transition detection from open slope to night biome, triggering 'Alpine Initiate' achievement on first entry (initBiomeTransitionTrigger, checkBiomeTransition)
 - Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught (initChaseAntagonistTimer, updateChaseAntagonistTimer, checkChaseAntagonistCaught)
 - Implement a style chain counter that increments on close passes to skiers or obstacles and resets on collision or death (initStyleChainCounter, resetStyleChainCounter)
 - Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state (initBiomeTransitionTracking, checkBiomeTransition, recordBiomeAchievementTransition)
