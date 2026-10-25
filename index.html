@@ -8239,6 +8239,43 @@ function checkStyleChainAchievement() {
   }
 }
 
+function renderAchievementOverlay(achievementName, context, canvas) {
+  const startTime = Date.now();
+  const totalDuration = 2500;
+  const fadeInDuration = 500;
+  const displayDuration = 1500;
+  const fadeOutDuration = 500;
+  
+  function update() {
+    const elapsed = Date.now() - startTime;
+    let alpha;
+    
+    if (elapsed < fadeInDuration) {
+      alpha = elapsed / fadeInDuration;
+    } else if (elapsed < fadeInDuration + displayDuration) {
+      alpha = 1;
+    } else if (elapsed < totalDuration) {
+      alpha = 1 - ((elapsed - fadeInDuration - displayDuration) / fadeOutDuration);
+    } else {
+      return;
+    }
+    
+    context.globalAlpha = alpha;
+    context.fillStyle = 'white';
+    context.font = '24px Arial';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(achievementName, canvas.width / 2, canvas.height / 2);
+    
+    if (elapsed < totalDuration) {
+      requestAnimationFrame(update);
+    }
+  }
+  
+  update();
+}
+
+
 
 
 
