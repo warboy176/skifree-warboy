@@ -209,7 +209,7 @@ if (autoplay.enabled) {
   function update() {
     if (game.state === GameState.PLAYING) {
       const meters = game.distance;
-      triggerBiomeChange(meters);
+      updateBiomeProgress(meters);
     }
   }
 
@@ -8287,15 +8287,14 @@ function clearOverlayTimer() {
 }
 
 function updateBiomeProgress(meters) {
-    game.biomeState.progress += meters;
-    if (game.biomeState.progress >= BIOME_THRESHOLDS[game.biomeIndex]) {
-        game.biomeIndex++;
-        game.biomeState.progress = 0;
-        game.biomeTransitionActive = true;
-        game.biomeTransitionProgress = 0;
-        game.biomeTransitionIndex = game.biomeIndex;
-        game.biomeTransitionTriggered = true;
-    }
+  const biomeIndex = game.biomeState.index;
+  const threshold = BIOME_THRESHOLDS[biomeIndex];
+  game.biomeState.progress += meters;
+  if (game.biomeState.progress >= threshold) {
+    game.biomeState.index = (biomeIndex + 1) % BIOME_THRESHOLDS.length;
+    game.biomeState.progress = 0;
+    game.biomeTransitionActive = true;
+  }
 }
 
 
