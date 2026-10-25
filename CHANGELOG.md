@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to initialize an achievements object with empty unlock history and a current achievement tracker (initAchievements)
 - Create a function to check for new achievement conditions on each game tick and trigger notifications only when conditions are first met (checkAchievementConditions)
 - Add a persistent achievements state object to track unlocked achievements by ID (initAchievementsState)
 - Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion (initChaseAntagonistTimer, updateChaseAntagonistTimer)
