@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion (initChaseAntagonistTimer, updateChaseAntagonistTimer)
 - Implement style chain tracking for skier passes, incrementing on each close pass or crash-through, triggering 'Ski-Slalom King' at 10 (initStyleChainTracking, updateStyleChainOnPass, checkStyleChainAchievement)
 - Add biome transition detection from open slope to night biome, triggering 'Alpine Initiate' achievement on first entry (initBiomeTransitionTrigger, checkBiomeTransition)
 - Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught (initChaseAntagonistTimer, updateChaseAntagonistTimer, checkChaseAntagonistCaught)

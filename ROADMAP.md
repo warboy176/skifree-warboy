@@ -814,7 +814,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught
 - [x] Add biome transition detection from open slope to night biome, triggering 'Alpine Initiate' achievement on first entry
 - [x] Implement style chain tracking for skier passes, incrementing on each close pass or crash-through, triggering 'Ski-Slalom King' at 10
-- [ ] Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion
+- [x] Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion
 - [ ] Trigger and display achievements only when new conditions are met, using a minimal, self-contained notification system
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
