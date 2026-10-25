@@ -812,7 +812,9 @@ Operator direction from the daily report lands here.
 - [x] Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state
 - [x] Implement a style chain counter that increments on close passes to skiers or obstacles and resets on collision or death
 - [x] Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught
-- [ ] Create new achievement conditions for 'Alpine Initiate' (first night biome entry), 'Ski-Slalom King' (10 style chain passes), and 'Weasel Whisperer' (30s evasion)
+- [ ] Add biome transition detection from open slope to night biome, triggering 'Alpine Initiate' achievement on first entry
+- [ ] Implement style chain tracking for skier passes, incrementing on each close pass or crash-through, triggering 'Ski-Slalom King' at 10
+- [ ] Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion
 - [ ] Trigger and display achievements only when new conditions are met, using a minimal, self-contained notification system
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
