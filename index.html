@@ -8126,6 +8126,17 @@ function triggerBiomeTransitionIfThresholdReached(meters) {
   }
 }
 
+function updateStyleScoring(dt) {
+    if (game.lastStyleActionTime && Date.now() - game.lastStyleActionTime < COMBO_STREAK_WINDOW_MS) {
+        game.styleComboStreak++;
+        game.styleScore += COMBO_STREAK_BONUS;
+    } else {
+        game.styleComboStreak = 0;
+    }
+    applyComboMultiplierToScore(game.styleComboStreak);
+}
+
+
 
 
 
