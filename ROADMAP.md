@@ -827,3 +827,8 @@ Operator direction from the daily report lands here.
 - [!] Link the overlay trigger to the achievement unlock event without modifying existing game logic  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, appearing after 10 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
+- [ ] Design and implement a persistent achievements registry with data-driven unlock logic, extending existing system to cover new mechanics
