@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to check for new achievement conditions on each game tick and trigger notifications only when conditions are first met (checkAchievementConditions)
 - Add a persistent achievements state object to track unlocked achievements by ID (initAchievementsState)
 - Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion (initChaseAntagonistTimer, updateChaseAntagonistTimer)
 - Implement style chain tracking for skier passes, incrementing on each close pass or crash-through, triggering 'Ski-Slalom King' at 10 (initStyleChainTracking, updateStyleChainOnPass, checkStyleChainAchievement)
