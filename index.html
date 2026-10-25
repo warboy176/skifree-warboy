@@ -687,6 +687,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateStyleChainOnPass(player, npc);
+
 checkChaseAntagonistCaught(player, game.npcSkiers);
 
 updateChaseAntagonistTimer(dt);
@@ -8212,6 +8214,21 @@ function initStyleChainTracking() {
     game.styleChainCounter = 0;
     game.lastStyleChainTimestamp = performance.now();
 }
+
+function updateStyleChainOnPass(player, npc) {
+    if ((player.z - npc.z < NEAR_MISS_MARGIN) && !npc.isAntagonist) {
+        game.styleChainCounter++;
+        game.lastStyleChainTimestamp = Date.now();
+        addClosePassFlagToPlayer(player);
+        if (game.styleChainCounter >= 10) {
+            const achievementDef = ACHIEVEMENT_DEFINITIONS['Ski-Slalom King'];
+            if (!game.unlockedAchievements.includes(achievementDef.id)) {
+                game.unlockedAchievements.push(achievementDef.id);
+            }
+        }
+    }
+}
+
 
 
 
