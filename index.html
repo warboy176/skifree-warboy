@@ -687,6 +687,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateChaseAntagonistTimer(dt);
+
 updateAchievementProgress(achievementKey, value);
 
 updateOilSlicks(dt);
@@ -8174,6 +8176,13 @@ function initChaseAntagonistTimer() {
     game.chaseAntagonistTimer = 0;
     game.chaseAntagonistCaught = false;
 }
+
+function updateChaseAntagonistTimer(dt) {
+    if (!game.chaseAntagonistCaught) {
+        game.chaseAntagonistTimer += dt;
+    }
+}
+
 
 
 
