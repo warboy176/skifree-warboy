@@ -820,7 +820,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to initialize an achievements object with empty unlock history and a current achievement tracker
 - [!] Add a function to check for new achievements on each frame and update the temporary state with the latest unlocked achievement name  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds
-- [ ] Add a state variable to track unlocked achievements and a timer to manage overlay visibility
+- [!] Add a state variable to track unlocked achievements and a timer to manage overlay visibility  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [ ] Create a function to trigger the overlay when an achievement is unlocked, setting a 2-second timer
 - [ ] Implement a function to clear the overlay timer and hide the overlay after 2 seconds
 - [ ] Link the overlay trigger to the achievement unlock event without modifying existing game logic
