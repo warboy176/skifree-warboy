@@ -8286,6 +8286,19 @@ function clearOverlayTimer() {
     game.overlayTimer = null;
 }
 
+function updateBiomeProgress(meters) {
+    game.biomeState.progress += meters;
+    if (game.biomeState.progress >= BIOME_THRESHOLDS[game.biomeIndex]) {
+        game.biomeIndex++;
+        game.biomeState.progress = 0;
+        game.biomeTransitionActive = true;
+        game.biomeTransitionProgress = 0;
+        game.biomeTransitionIndex = game.biomeIndex;
+        game.biomeTransitionTriggered = true;
+    }
+}
+
+
 
 
 
