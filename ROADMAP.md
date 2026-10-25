@@ -819,7 +819,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check for new achievement conditions on each game tick and trigger notifications only when conditions are first met
 - [x] Add a function to initialize an achievements object with empty unlock history and a current achievement tracker
 - [!] Add a function to check for new achievements on each frame and update the temporary state with the latest unlocked achievement name  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds
+- [x] Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds
 - [ ] Integrate the overlay function to trigger automatically when an achievement is unlocked, using a timer that clears after 2 seconds
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)

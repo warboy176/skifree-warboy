@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds (renderAchievementOverlay)
 - Add a function to initialize an achievements object with empty unlock history and a current achievement tracker (initAchievements)
 - Create a function to check for new achievement conditions on each game tick and trigger notifications only when conditions are first met (checkAchievementConditions)
 - Add a persistent achievements state object to track unlocked achievements by ID (initAchievementsState)
