@@ -817,6 +817,8 @@ Operator direction from the daily report lands here.
 - [x] Introduce a 30-second evasion timer that starts when the chase antagonist appears, triggering 'Weasel Whisperer' upon completion
 - [x] Add a persistent achievements state object to track unlocked achievements by ID
 - [x] Create a function to check for new achievement conditions on each game tick and trigger notifications only when conditions are first met
-- [ ] Implement a minimal, self-contained notification system that displays a brief visual cue (e.g., a fade-in text overlay) for 2 seconds when an achievement is unlocked
+- [ ] Add a function to track achievement unlocks and store the latest achievement name in a temporary state variable
+- [ ] Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds
+- [ ] Integrate the overlay function to trigger automatically when an achievement is unlocked, using a timer that clears after 2 seconds
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
