@@ -1641,6 +1641,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleChainCounter();
+
 initBiomeTransitionTracking();
 
 initAchievementHUDState();
@@ -8155,6 +8157,12 @@ function recordBiomeAchievementTransition() {
     game.biomeTransitionTriggered = false;
   }
 }
+
+function initStyleChainCounter() {
+    game.styleChainCounter = 0;
+    game.lastStyleChainTimestamp = 0;
+}
+
 
 
 
