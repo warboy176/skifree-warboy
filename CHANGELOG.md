@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, appearing after 10 seconds of inactivity (initAntagonist, updateAntagonist, drawAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementRegistry, registerScorableInteractions, checkAchievementsOnEvent)
 - Add a function to clear any existing overlay timer when a new overlay is shown (clearOverlayTimer)
 - Add a function to hide the overlay element after 2 seconds using setTimeout (hideOverlayAfterDelay)
