@@ -809,7 +809,7 @@ Operator direction from the daily report lands here.
 - [!] Ensure lighting transitions smoothly when switching to the nighttime alpine biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary
 - [x] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
-- [ ] Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state
+- [x] Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state
 - [ ] Implement a style chain counter that increments on close passes to skiers or obstacles and resets on collision or death
 - [ ] Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught
 - [ ] Create new achievement conditions for 'Alpine Initiate' (first night biome entry), 'Ski-Slalom King' (10 style chain passes), and 'Weasel Whisperer' (30s evasion)
