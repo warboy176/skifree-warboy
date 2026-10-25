@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure. (initStyleScoringSystem, updateStyleScoring)
 - Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary (initBiomeTransitionState, triggerBiomeTransitionIfThresholdReached)
 - Adjust snow and obstacle colors to darker, cooler tones during nighttime biome phase (applyNightBiomeTintTransition)
 - Ensure all functions are self-contained within index.html, require no external assets, and preserve existing game mechanics (initNPCs, spawnNPCs)
