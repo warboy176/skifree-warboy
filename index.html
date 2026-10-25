@@ -1645,6 +1645,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeTransitionTrigger();
+
 initChaseAntagonistTimer();
 
 initStyleChainCounter();
@@ -8199,6 +8201,11 @@ function checkChaseAntagonistCaught(player, npcSkiers) {
         }
     }
 }
+
+function initBiomeTransitionTrigger() {
+    game.biomeTransitionTriggered = false;
+}
+
 
 
 
