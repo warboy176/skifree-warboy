@@ -1,4 +1,5 @@
 # Changelog
+- Implement a style chain counter that increments on close passes to skiers or obstacles and resets on collision or death (initStyleChainCounter, resetStyleChainCounter)
 - Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state (initBiomeTransitionTracking, checkBiomeTransition, recordBiomeAchievementTransition)
 - Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure. (initStyleScoringSystem, updateStyleScoring)
 - Ensure all biome visual changes are triggered only once per transition and persist until the next biome boundary (initBiomeTransitionState, triggerBiomeTransitionIfThresholdReached)
