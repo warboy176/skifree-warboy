@@ -811,7 +811,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a style-based scoring system: award points for slaloming close to NPCs (within 10px), crashing through obstacles, and landing jumps with air time, with multipliers that increase for consecutive actions and reset on failure.
 - [x] Add biome transition tracking: detect when player crosses into a new biome and record the event in a persistent achievements state
 - [x] Implement a style chain counter that increments on close passes to skiers or obstacles and resets on collision or death
-- [ ] Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught
+- [x] Introduce a chase antagonist evasion timer that tracks consecutive seconds survived without being caught
 - [ ] Create new achievement conditions for 'Alpine Initiate' (first night biome entry), 'Ski-Slalom King' (10 style chain passes), and 'Weasel Whisperer' (30s evasion)
 - [ ] Trigger and display achievements only when new conditions are met, using a minimal, self-contained notification system
 
