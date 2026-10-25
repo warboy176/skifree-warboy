@@ -826,4 +826,4 @@ Operator direction from the daily report lands here.
 - [x] Add a function to clear any existing overlay timer when a new overlay is shown
 - [!] Link the overlay trigger to the achievement unlock event without modifying existing game logic  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)

@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementRegistry, registerScorableInteractions, checkAchievementsOnEvent)
 - Add a function to clear any existing overlay timer when a new overlay is shown (clearOverlayTimer)
 - Add a function to hide the overlay element after 2 seconds using setTimeout (hideOverlayAfterDelay)
 - Create a function to render a fade-in text overlay at the center of the screen using the game's existing canvas context, displaying the achievement name for 2 seconds (renderAchievementOverlay)
