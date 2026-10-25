@@ -764,6 +764,8 @@ checkAchievementTrigger(dt);
 updateMultiplierOnNearMisses(dt);
 
 checkBiomeTransition(game.distance);
+recordBiomeAchievementTransition();
+
 getTreeHeightRange(game.biomeStage)
 
 
@@ -8142,6 +8144,18 @@ function initBiomeTransitionTracking() {
     game.biomeTransitionTriggered = false;
     game.lastBiomeIndex = -1;
 }
+
+function recordBiomeAchievementTransition() {
+  if (game.biomeTransitionTriggered) {
+    const achievementDef = ACHIEVEMENT_DEFINITIONS.biome_transition;
+    addDefaultAchievement({
+      type: 'biome_transition',
+      biomeIndex: game.lastBiomeIndex
+    }, achievementDef);
+    game.biomeTransitionTriggered = false;
+  }
+}
+
 
 
 
