@@ -823,7 +823,7 @@ Operator direction from the daily report lands here.
 - [!] Add a state variable to track unlocked achievements and a timer to manage overlay visibility  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 - [!] Create a function to trigger the overlay when an achievement is unlocked, setting a 2-second timer  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a function to hide the overlay element after 2 seconds using setTimeout
-- [ ] Add a function to clear any existing overlay timer when a new overlay is shown
+- [x] Add a function to clear any existing overlay timer when a new overlay is shown
 - [ ] Link the overlay trigger to the achievement unlock event without modifying existing game logic
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
