@@ -687,6 +687,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+checkChaseAntagonistCaught(player, game.npcSkiers);
+
 updateChaseAntagonistTimer(dt);
 
 updateAchievementProgress(achievementKey, value);
@@ -8182,6 +8184,22 @@ function updateChaseAntagonistTimer(dt) {
         game.chaseAntagonistTimer += dt;
     }
 }
+
+function checkChaseAntagonistCaught(player, npcSkiers) {
+    for (let i = 0; i < npcSkiers.length; i++) {
+        const npc = npcSkiers[i];
+        if (npc.isAntagonist) {
+            const horizontalDistance = Math.abs(npc.x - player.x);
+            const verticalDistance = Math.abs(npc.y - player.y);
+            const distance = Math.sqrt(horizontalDistance * horizontalDistance + verticalDistance * verticalDistance);
+            if (distance < 10) {
+                game.chaseAntagonistCaught = true;
+                return;
+            }
+        }
+    }
+}
+
 
 
 
