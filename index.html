@@ -1639,6 +1639,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeTransitionTracking();
+
 initAchievementHUDState();
 
 initAchievementTracker();
@@ -8135,6 +8137,12 @@ function updateStyleScoring(dt) {
     }
     applyComboMultiplierToScore(game.styleComboStreak);
 }
+
+function initBiomeTransitionTracking() {
+    game.biomeTransitionTriggered = false;
+    game.lastBiomeIndex = -1;
+}
+
 
 
 
