@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between the antagonist and the player to trigger the 'EATEN' state (checkAntagonistCollision)
 - Implement the antagonist's basic movement logic to follow the player when within a set distance (initAntagonist, updateAntagonist, drawAntagonist)
 - Create a function to spawn the antagonist at a random position above the player's current y-coordinate (initAntagonist, spawnAntagonist, updateAntagonist)
 - Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase (initAntagonistCooldown, updateAntagonistCooldown, startAntagonistCooldown)
