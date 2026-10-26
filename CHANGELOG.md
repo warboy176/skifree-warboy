@@ -1,4 +1,5 @@
 # Changelog
+- Implement the antagonist's basic movement logic to follow the player when within a set distance (initAntagonist, updateAntagonist, drawAntagonist)
 - Create a function to spawn the antagonist at a random position above the player's current y-coordinate (initAntagonist, spawnAntagonist, updateAntagonist)
 - Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase (initAntagonistCooldown, updateAntagonistCooldown, startAntagonistCooldown)
 - Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds (initAntagonistState, updateAntagonistActivation)
