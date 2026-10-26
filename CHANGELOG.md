@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to increment styleScore and reset styleMultiplier on successful near-miss or crash-through of an NPC, with multiplier increasing by 0.5 up to 3.0 (updateStyleMultiplierOnEncounter)
 - Update styleScore by 1 every 100 meters traveled while skiing (initStyleScoreTracking, updateStyleScore)
 - Initialize a styleMultiplier variable set to 1 in the game state (initStyleMultiplier)
 - Initialize a styleScore variable set to 0 in the game state (initStyleScore)
