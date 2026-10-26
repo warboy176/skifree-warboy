@@ -8536,6 +8536,16 @@ function updateAntagonistSpawnLogic(dt) {
     }
 }
 
+function checkAchievementUnlocks() {
+  for (const achievement of game.achievements) {
+    if (achievement.type === 'counter' && achievement.progress >= achievement.activationThresholdMs) {
+      achievement.unlocked = true;
+      applyAchievementToHUD(achievement.key);
+    }
+  }
+}
+
+
 
 
 
