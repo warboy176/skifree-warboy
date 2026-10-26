@@ -3942,6 +3942,8 @@ function initPlayerState() {
   };
 }
 initAntagonistCollisionState();
+registerAntagonistEatenAchievement();
+
 
 initCrashThroughHazards();
 
@@ -8503,6 +8505,11 @@ function initAntagonistCollisionState() {
     collisionRadius: 10
   };
 }
+
+function registerAntagonistEatenAchievement() {
+  addDefaultAchievement('antagonist_eaten', 'hazard', 'EATEN');
+}
+
 
 
 
