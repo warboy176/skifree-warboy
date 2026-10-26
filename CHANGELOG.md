@@ -1,4 +1,5 @@
 # Changelog
+- Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits (initBiomeState, updateBiomeTransition, drawBiomeLayer)
 - Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay (initAntagonist, spawnAntagonist, updateAntagonist)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)
