@@ -866,5 +866,9 @@ Operator direction from the daily report lands here.
 
 - [x] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay
 - [x] Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits
-- [ ] Introduce style-based scoring: award points for slaloming close to or crashing through NPCs, with multipliers for consecutive actions and penalties for hitting trees or oil
+- [ ] Add a styleScore variable initialized to 0 and a styleMultiplier set to 1 in the game state
+- [ ] Create a function to increment styleScore and reset styleMultiplier on successful near-miss or crash-through of an NPC, with multiplier increasing by 0.5 up to 3.0
+- [ ] Create a function to deduct points from styleScore and reset styleMultiplier when player hits a tree or oil slick, with penalty of -10 points
+- [ ] Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed
+- [ ] Display the current styleScore and styleMultiplier on the HUD using the existing score rendering function
 - [ ] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps
