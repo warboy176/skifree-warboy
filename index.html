@@ -658,6 +658,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAntagonistActivation(dt);
+
 spawnAntagonistIfNecessary();
 
 spawnNPCs(dt);
@@ -8420,6 +8422,18 @@ function spawnAntagonistIfNecessary() {
     game.npcSkiers.push(skier);
   }
 }
+
+function updateAntagonistActivation(dt) {
+  if (PlayerState.speed < 50) { // Assuming 50 is the thresholdSpeed equivalent
+    game.playerInactivityTimer += dt;
+    if (game.playerInactivityTimer >= 2000) {
+      game.antagonistState.isActive = true;
+    }
+  } else {
+    game.playerInactivityTimer = 0;
+  }
+}
+
 
 
 
