@@ -1,4 +1,5 @@
 # Changelog
+- Update styleScore by 1 every 100 meters traveled while skiing (initStyleScoreTracking, updateStyleScore)
 - Initialize a styleMultiplier variable set to 1 in the game state (initStyleMultiplier)
 - Initialize a styleScore variable set to 0 in the game state (initStyleScore)
 - Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits (initBiomeState, updateBiomeTransition, drawBiomeLayer)
