@@ -701,6 +701,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateStyleScoreOnNPCCollision(npc, dt);
+
 updateAntagonistVisualCue(dt);
 
 updateChaseAntagonist(dt);
@@ -8561,6 +8563,15 @@ function handleHazardPenalty(player, hazardType) {
     game.styleMultiplier = 1.0;
   }
 }
+
+function updateStyleScoreOnNPCCollision(npc, dt) {
+  if (!npc.active || npc.destroyed) return;
+  if (checkPlayerCollision(npc) && !PlayerState.isFlipping()) {
+    game.styleScore += STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+    updateStyleMultiplierOnEncounter(npc, false, false);
+  }
+}
+
 
 
 
