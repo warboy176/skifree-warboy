@@ -689,6 +689,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateChaseAntagonist(dt);
+
 updateStyleChainOnPass(player, npc);
 
 checkChaseAntagonistCaught(player, game.npcSkiers);
@@ -8318,6 +8320,21 @@ function initChaseAntagonist() {
     }
   });
 }
+
+function updateChaseAntagonist(dt) {
+  for (let i = game.npcSkiers.length - 1; i >= 0; i--) {
+    const npc = game.npcSkiers[i];
+    if (npc.type === 'chase') {
+      npc.y += npc.speed * dt * 100;
+      npc.x += (player.x - npc.x) * 0.01 * dt * 100;
+      if (npc.y > 600) {
+        game.npcSkiers.splice(i, 1);
+        npc.active = false;
+      }
+    }
+  }
+}
+
 
 
 
