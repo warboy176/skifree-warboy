@@ -8446,6 +8446,16 @@ function initAntagonistCooldown() {
     game.antagonistCooldownActive = false;
 }
 
+function updateAntagonistCooldown(dt) {
+    if (game.state === PLAYING && game.antagonistCooldownActive) {
+        game.antagonistCooldownTimer -= dt;
+        if (game.antagonistCooldownTimer <= 0) {
+            game.antagonistCooldownActive = false;
+        }
+    }
+}
+
+
 
 
 
