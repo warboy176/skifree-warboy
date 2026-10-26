@@ -833,7 +833,11 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
 - [x] Design and implement a persistent achievements registry with data-driven unlock logic, extending existing system to cover new mechanics
 
-- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [ ] Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites
+- [ ] Implement the antagonist's spawn logic to appear after a delay when player speed drops below threshold
+- [ ] Add the antagonist's movement pattern: slow tracking with increasing speed and erratic lateral shifts
+- [ ] Integrate collision detection between antagonist and player, triggering 'EATEN' state on contact
+- [ ] Ensure the antagonist's behavior is independent of existing obstacles and NPCs, with no impact on score or game loop
 - [ ] Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine)
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
