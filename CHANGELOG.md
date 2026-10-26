@@ -1,4 +1,5 @@
 # Changelog
+- Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds (initAntagonistState, updateAntagonistActivation)
 - Add collision detection between the antagonist and the player to trigger the EATEN state (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Implement the antagonist's basic movement logic to follow the player at a variable distance (initNPCs, updateAntagonist, spawnAntagonistIfNecessary)
 - Introduce a visual cue (e.g., flickering or distinct color) to signal the antagonist's presence on screen (initAntagonistVisualCue, updateAntagonistVisualCue, drawAntagonistVisualCue)
