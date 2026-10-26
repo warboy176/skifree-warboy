@@ -1655,6 +1655,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAntagonistVisualCue();
+
 initStyleChainTracking();
 
 initBiomeTransitionTrigger();
@@ -8375,6 +8377,16 @@ function triggerEatenState() {
     applyComboMultiplierToScore();
   }
 }
+
+function initAntagonistVisualCue() {
+  game.antagonistVisualCue = {
+    isOnScreen: false,
+    flickerTimer: 0
+  };
+  
+  game.state.antagonistVisualCue = game.antagonistVisualCue;
+}
+
 
 
 
