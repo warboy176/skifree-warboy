@@ -836,6 +836,9 @@ Operator direction from the daily report lands here.
 - [ ] Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites
 - [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
+- [ ] Introduce a visual 'chase' animation state for the antagonist when closing in on the player
+- [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
+- [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
 - [ ] Introduce a visual 'chase' animation or behavior when the antagonist is actively pursuing
 - [ ] Implement the antagonist's spawn logic to appear after a delay when player speed drops below threshold
 - [ ] Add the antagonist's movement pattern: slow tracking with increasing speed and erratic lateral shifts
