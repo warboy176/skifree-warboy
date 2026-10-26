@@ -1,4 +1,5 @@
 # Changelog
+- Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase (initAntagonistCooldown, updateAntagonistCooldown, startAntagonistCooldown)
 - Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds (initAntagonistState, updateAntagonistActivation)
 - Add collision detection between the antagonist and the player to trigger the EATEN state (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Implement the antagonist's basic movement logic to follow the player at a variable distance (initNPCs, updateAntagonist, spawnAntagonistIfNecessary)
