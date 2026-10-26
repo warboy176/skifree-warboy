@@ -1,4 +1,5 @@
 # Changelog
+- Implement the antagonist's basic movement logic to follow the player at a consistent distance (initNPCs, updateAntagonistMovement)
 - Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Design and implement a persistent achievements registry with data-driven unlock logic, extending existing system to cover new mechanics (initAchievementsRegistry, checkAchievements)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers (initStyleScoringSystem, updateStyleScoring)
