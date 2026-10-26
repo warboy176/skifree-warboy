@@ -844,7 +844,7 @@ Operator direction from the daily report lands here.
 - [x] Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds
 - [x] Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase
 - [x] Create a function to spawn the antagonist at a random position above the player's current y-coordinate
-- [ ] Add a visual cue (e.g., a distant shadow or flicker) to hint at the antagonist's presence before spawn
+- [!] Add a visual cue (e.g., a distant shadow or flicker) to hint at the antagonist's presence before spawn  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement the antagonist's basic movement logic to follow the player when within a set distance
 - [ ] Add collision detection between the antagonist and the player to trigger the 'EATEN' state
 - [ ] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
