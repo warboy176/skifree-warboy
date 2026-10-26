@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to spawn the antagonist at a random position above the player's current y-coordinate (initAntagonist, spawnAntagonist, updateAntagonist)
 - Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase (initAntagonistCooldown, updateAntagonistCooldown, startAntagonistCooldown)
 - Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds (initAntagonistState, updateAntagonistActivation)
 - Add collision detection between the antagonist and the player to trigger the EATEN state (initAntagonist, updateAntagonist, checkAntagonistCollision)
