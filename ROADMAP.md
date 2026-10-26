@@ -872,6 +872,6 @@ Operator direction from the daily report lands here.
 - [!] Increase styleMultiplier by 0.1 for each consecutive successful slalom through a skier, up to a maximum of 2.0  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a function to increment styleScore and reset styleMultiplier on successful near-miss or crash-through of an NPC, with multiplier increasing by 0.5 up to 3.0
 - [x] Create a function to deduct points from styleScore and reset styleMultiplier when player hits a tree or oil slick, with penalty of -10 points
-- [ ] Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed
+- [x] Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed
 - [ ] Display the current styleScore and styleMultiplier on the HUD using the existing score rendering function
 - [ ] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps
