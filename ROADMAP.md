@@ -862,4 +862,4 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
