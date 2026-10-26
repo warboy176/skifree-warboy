@@ -8399,6 +8399,14 @@ function updateAntagonistVisualCue(dt) {
     }
 }
 
+function drawAntagonistVisualCue(ctx) {
+  if (game.antagonistVisualCueActive) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, 4, 4);
+  }
+}
+
+
 
 
 
