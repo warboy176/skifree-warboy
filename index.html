@@ -416,6 +416,8 @@ generateTreePositions();
     const pb={x:player.x-8-margin,y:player.y-10-margin,w:16+margin*2,h:22+margin*2};
     const nb={x:npc.x-10,y:npc.y-18,w:20,h:34};
     return overlaps(pb,nb) && !checkNPCCollision(player,npc);
+triggerEatenState();
+
   }
 
   // Keeps player.closePass true for exactly the frames the player is close-passing any
@@ -8365,6 +8367,15 @@ function spawnAntagonist() {
     game.npcSkiers.push(npc);
   }
 }
+
+function triggerEatenState() {
+  game.playerState = 'eaten';
+  game.score += COMBO_STREAK_BONUS;
+  if (game.currentCombo > 0) {
+    applyComboMultiplierToScore();
+  }
+}
+
 
 
 
