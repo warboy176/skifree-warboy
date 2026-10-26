@@ -1,4 +1,5 @@
 # Changelog
+- Add a new antagonist object with position, speed, and visual representation using original code-drawn art (initAntagonist, spawnAntagonist, updateAntagonist)
 - Implement the antagonist's basic movement logic to follow the player at a consistent distance (initNPCs, updateAntagonistMovement)
 - Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Design and implement a persistent achievements registry with data-driven unlock logic, extending existing system to cover new mechanics (initAchievementsRegistry, checkAchievements)

@@ -835,7 +835,7 @@ Operator direction from the daily report lands here.
 
 - [x] Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites
 - [x] Implement the antagonist's basic movement logic to follow the player at a consistent distance
-- [ ] Add a new antagonist object with position, speed, and visual representation using original code-drawn art
+- [x] Add a new antagonist object with position, speed, and visual representation using original code-drawn art
 - [ ] Implement basic collision detection between the antagonist and player using bounding box checks
 - [ ] Trigger the player's EATEN state when collision occurs, updating game state and score accordingly
 - [ ] Introduce a visual cue (e.g., flickering or distinct color) to signal the antagonist's presence on screen
