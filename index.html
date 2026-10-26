@@ -8555,6 +8555,14 @@ function updateStyleMultiplierOnEncounter(npc, isNearMiss, isCrashThrough) {
     }
 }
 
+function handleHazardPenalty(player, hazardType) {
+  if (hazardType === 'tree' || hazardType === 'oilSlick') {
+    game.styleScore -= 10;
+    game.styleMultiplier = 1.0;
+  }
+}
+
+
 
 
 
