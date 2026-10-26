@@ -860,6 +860,6 @@ Operator direction from the daily report lands here.
 - [x] Ensure the antagonist's behavior is independent of existing obstacles and NPCs, with no impact on score or game loop
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine)
 - [x] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
-- [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
+- [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
