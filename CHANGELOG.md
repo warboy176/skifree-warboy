@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between the antagonist and the player to trigger the EATEN state (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Implement the antagonist's basic movement logic to follow the player at a variable distance (initNPCs, updateAntagonist, spawnAntagonistIfNecessary)
 - Introduce a visual cue (e.g., flickering or distinct color) to signal the antagonist's presence on screen (initAntagonistVisualCue, updateAntagonistVisualCue, drawAntagonistVisualCue)
 - Trigger the player's EATEN state when collision occurs, updating game state and score accordingly (initNPCs, checkNPCCollision, triggerEatenState)
