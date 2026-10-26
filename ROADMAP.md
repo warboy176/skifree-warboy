@@ -837,7 +837,7 @@ Operator direction from the daily report lands here.
 - [x] Implement the antagonist's basic movement logic to follow the player at a consistent distance
 - [x] Add a new antagonist object with position, speed, and visual representation using original code-drawn art
 - [!] Implement basic collision detection between the antagonist and player using bounding box checks  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Trigger the player's EATEN state when collision occurs, updating game state and score accordingly
+- [x] Trigger the player's EATEN state when collision occurs, updating game state and score accordingly
 - [ ] Introduce a visual cue (e.g., flickering or distinct color) to signal the antagonist's presence on screen
 - [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
