@@ -8480,6 +8480,18 @@ function updateAntagonistChaseState(dt) {
   }
 }
 
+function drawAntagonistChaseAnimation(ctx) {
+  if (!game.antagonistState.chaseMode) return;
+  
+  const antagonist = game.antagonist;
+  const scale = 1.0 + Math.abs(Math.sin(Date.now() / 200)) * 0.2;
+  const size = 4 * scale;
+  
+  ctx.fillStyle = 'white';
+  ctx.fillRect(antagonist.x - size/2, antagonist.y - size/2, size, size);
+}
+
+
 
 
 
