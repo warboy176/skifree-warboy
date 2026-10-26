@@ -658,6 +658,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateChaseBehavior(dt);
+
 updateAntagonistChaseState(dt);
 
 updateAntagonistActivation(dt);
@@ -8509,6 +8511,21 @@ function initAntagonistCollisionState() {
 function registerAntagonistEatenAchievement() {
   addDefaultAchievement('antagonist_eaten', 'hazard', 'EATEN');
 }
+
+function updateChaseBehavior(dt) {
+  game.npcSkiers.forEach(npc => {
+    const distance = Math.sqrt(Math.pow(npc.x - player.x, 2) + Math.pow(npc.y - player.y, 2));
+    if (distance < 100 * METERS_PER_PIXEL && !player.inJump) {
+      npc.chasing = true;
+      npc.speed = NPC_SKIER_SPEED * 1.2;
+      ctx.fillStyle = 'red';
+      ctx.fillRect(npc.x + 2, npc.y + 2, 4, 4);
+    } else {
+      npc.chasing = false;
+    }
+  });
+}
+
 
 
 
