@@ -8424,9 +8424,14 @@ function spawnAntagonistIfNecessary() {
 }
 
 function updateAntagonistActivation(dt) {
-  if (PlayerState.speed < 50) { // Assuming 50 is the thresholdSpeed equivalent
+  if (game.state !== GameState.PLAYING) return;
+
+  const thresholdSpeed = 150;
+  const activationThresholdMs = 2000;
+
+  if (PlayerState.speed < thresholdSpeed) {
     game.playerInactivityTimer += dt;
-    if (game.playerInactivityTimer >= 2000) {
+    if (game.playerInactivityTimer >= activationThresholdMs && !game.antagonistState.isActive) {
       game.antagonistState.isActive = true;
     }
   } else {
