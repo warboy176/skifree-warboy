@@ -856,7 +856,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a visual 'chase' animation or behavior when the antagonist is actively pursuing
 - [x] Implement the antagonist's spawn logic to appear after a delay when player speed drops below threshold
 - [x] Add the antagonist's movement pattern: slow tracking with increasing speed and erratic lateral shifts
-- [ ] Integrate collision detection between antagonist and player, triggering 'EATEN' state on contact
+- [x] Integrate collision detection between antagonist and player, triggering 'EATEN' state on contact
 - [ ] Ensure the antagonist's behavior is independent of existing obstacles and NPCs, with no impact on score or game loop
 - [ ] Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine)
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards

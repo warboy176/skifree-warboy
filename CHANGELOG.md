@@ -1,4 +1,5 @@
 # Changelog
+- Integrate collision detection between antagonist and player, triggering 'EATEN' state on contact (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Add the antagonist's movement pattern: slow tracking with increasing speed and erratic lateral shifts (initAntagonist, updateAntagonist, drawAntagonist)
 - Implement the antagonist's spawn logic to appear after a delay when player speed drops below threshold (initAntagonistState, updateAntagonistSpawnLogic, registerAntagonistAchievement)
 - Introduce a visual 'chase' animation or behavior when the antagonist is actively pursuing (initNPCs, updateChaseBehavior)
