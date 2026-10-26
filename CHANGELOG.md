@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the antagonist's behavior is independent of existing obstacles and NPCs, with no impact on score or game loop (initAntagonist, updateAntagonist, drawAntagonist)
 - Integrate collision detection between antagonist and player, triggering 'EATEN' state on contact (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Add the antagonist's movement pattern: slow tracking with increasing speed and erratic lateral shifts (initAntagonist, updateAntagonist, drawAntagonist)
 - Implement the antagonist's spawn logic to appear after a delay when player speed drops below threshold (initAntagonistState, updateAntagonistSpawnLogic, registerAntagonistAchievement)
