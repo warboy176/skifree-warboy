@@ -8526,6 +8526,17 @@ function updateChaseBehavior(dt) {
   });
 }
 
+function updateAntagonistSpawnLogic(dt) {
+    if (PlayerState.getSpeed() < MAX_SPEED / 2 && !game.antagonist.active) {
+        game.antagonist.lastSpeedCheck += dt;
+        if (game.antagonist.lastSpeedCheck >= game.antagonist.spawnDelay) {
+            game.antagonist.active = true;
+            game.antagonist.lastSpeedCheck = 0;
+        }
+    }
+}
+
+
 
 
 
