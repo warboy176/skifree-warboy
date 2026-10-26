@@ -834,6 +834,9 @@ Operator direction from the daily report lands here.
 - [x] Design and implement a persistent achievements registry with data-driven unlock logic, extending existing system to cover new mechanics
 
 - [ ] Define a new Warboy-original chase antagonist class with a unique visual style using original code-drawn sprites
+- [ ] Implement the antagonist's basic movement logic to follow the player when within a set distance
+- [ ] Add collision detection between the antagonist and the player to trigger the 'EATEN' state
+- [ ] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
 - [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
 - [ ] Introduce a visual 'chase' animation state for the antagonist when closing in on the player
