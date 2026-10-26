@@ -847,7 +847,7 @@ Operator direction from the daily report lands here.
 - [!] Add a visual cue (e.g., a distant shadow or flicker) to hint at the antagonist's presence before spawn  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement the antagonist's basic movement logic to follow the player when within a set distance
 - [x] Add collision detection between the antagonist and the player to trigger the 'EATEN' state
-- [ ] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
+- [x] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
 - [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
 - [ ] Introduce a visual 'chase' animation state for the antagonist when closing in on the player
