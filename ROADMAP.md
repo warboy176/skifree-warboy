@@ -864,7 +864,7 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 
-- [ ] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay
+- [x] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay
 - [ ] Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits
 - [ ] Introduce style-based scoring: award points for slaloming close to or crashing through NPCs, with multipliers for consecutive actions and penalties for hitting trees or oil
 - [ ] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps
