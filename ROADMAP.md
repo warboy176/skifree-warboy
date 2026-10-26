@@ -866,7 +866,10 @@ Operator direction from the daily report lands here.
 
 - [x] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay
 - [x] Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits
-- [ ] Add a styleScore variable initialized to 0 and a styleMultiplier set to 1 in the game state
+- [ ] Initialize a styleScore variable set to 0 in the game state
+- [ ] Initialize a styleMultiplier variable set to 1 in the game state
+- [ ] Update styleScore by 1 every 100 meters traveled while skiing
+- [ ] Increase styleMultiplier by 0.1 for each consecutive successful slalom through a skier, up to a maximum of 2.0
 - [ ] Create a function to increment styleScore and reset styleMultiplier on successful near-miss or crash-through of an NPC, with multiplier increasing by 0.5 up to 3.0
 - [ ] Create a function to deduct points from styleScore and reset styleMultiplier when player hits a tree or oil slick, with penalty of -10 points
 - [ ] Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed
