@@ -1661,6 +1661,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAntagonistCooldown();
+
 initAntagonistVisualCue();
 
 initStyleChainTracking();
@@ -8438,6 +8440,12 @@ function updateAntagonistActivation(dt) {
     game.playerInactivityTimer = 0;
   }
 }
+
+function initAntagonistCooldown() {
+    game.antagonistCooldownTimer = 0;
+    game.antagonistCooldownActive = false;
+}
+
 
 
 
