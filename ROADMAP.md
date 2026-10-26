@@ -841,7 +841,10 @@ Operator direction from the daily report lands here.
 - [x] Introduce a visual cue (e.g., flickering or distinct color) to signal the antagonist's presence on screen
 - [x] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [x] Add collision detection between the antagonist and the player to trigger the EATEN state
-- [ ] Ensure the antagonist appears only after a delay or specific condition (e.g., player slows down)
+- [ ] Add a player speed threshold that triggers the antagonist's activation when below it for 2 seconds
+- [ ] Implement a cooldown timer that prevents the antagonist from appearing during the initial ski lift phase
+- [ ] Create a function to spawn the antagonist at a random position above the player's current y-coordinate
+- [ ] Add a visual cue (e.g., a distant shadow or flicker) to hint at the antagonist's presence before spawn
 - [ ] Implement the antagonist's basic movement logic to follow the player when within a set distance
 - [ ] Add collision detection between the antagonist and the player to trigger the 'EATEN' state
 - [ ] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
