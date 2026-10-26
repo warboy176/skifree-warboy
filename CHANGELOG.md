@@ -1,4 +1,5 @@
 # Changelog
+- Initialize a styleScore variable set to 0 in the game state (initStyleScore)
 - Add dynamic terrain biomes that transition as the player descends—starting with open slope, shifting to forest, then night, each with unique visual and hazard traits (initBiomeState, updateBiomeTransition, drawBiomeLayer)
 - Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension to the gameplay (initAntagonist, spawnAntagonist, updateAntagonist)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions (initAchievementsRegistry, checkAchievementUnlocks)
