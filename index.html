@@ -268,6 +268,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initChaseAntagonist();
+
 registerChaseAntagonistAchievement();
 
 registerStyleProximityAchievement();
@@ -8296,6 +8298,27 @@ function updateBiomeProgress(meters) {
     game.biomeTransitionActive = true;
   }
 }
+
+function initChaseAntagonist() {
+  if (!game.npcSkiers) game.npcSkiers = [];
+  const CHASE_SPAWN_RATE = 0.02;
+  game.npcSkiers.push({
+    active: false,
+    type: 'chase',
+    speed: NPC_SKIER_SPEED * 1.2,
+    width: NPC_SKIER_WIDTH,
+    height: NPC_SKIER_HEIGHT,
+    color: 'red',
+    draw: function(ctx, x, y) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(x, y, 4, 4);
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(x, y, 4, 4);
+    }
+  });
+}
+
 
 
 
