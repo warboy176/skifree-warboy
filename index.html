@@ -658,6 +658,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+spawnAntagonistIfNecessary();
+
 spawnNPCs(dt);
 spawnAntagonist();
 
@@ -8405,6 +8407,20 @@ function drawAntagonistVisualCue(ctx) {
     ctx.fillRect(0, 0, 4, 4);
   }
 }
+
+function spawnAntagonistIfNecessary() {
+  if (game.npcSkiers.length === 0 && PlayerState.x > 100) {
+    const skier = {
+      x: PlayerState.x - 150 * METERS_PER_PIXEL,
+      y: PlayerState.y,
+      color: SKI_COLORS[Math.floor(Math.random() * SKI_COLORS.length)],
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT
+    };
+    game.npcSkiers.push(skier);
+  }
+}
+
 
 
 
