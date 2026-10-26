@@ -693,6 +693,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+updateAntagonistVisualCue(dt);
+
 updateChaseAntagonist(dt);
 
 updateStyleChainOnPass(player, npc);
@@ -8384,6 +8386,19 @@ function initAntagonistVisualCue() {
     flickerTimer: 0
   };
 }
+
+function updateAntagonistVisualCue(dt) {
+    if (game.antagonistState.isActive && !game.npcSkiers.some(npc => npc.type === 'antagonist')) {
+        game.antagonistFlickerTimer += dt;
+        if (game.antagonistFlickerTimer >= 200) {
+            game.antagonistFlickerTimer = 0;
+            game.antagonistVisualCueActive = !game.antagonistVisualCueActive;
+        }
+    } else {
+        game.antagonistVisualCueActive = false;
+    }
+}
+
 
 
 
