@@ -658,6 +658,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAntagonistChaseState(dt);
+
 updateAntagonistActivation(dt);
 
 spawnAntagonistIfNecessary();
@@ -8459,6 +8461,25 @@ function startAntagonistCooldown() {
     game.antagonistCooldownActive = true;
     game.antagonistCooldownTimer = 5000;
 }
+
+function updateAntagonistChaseState(dt) {
+  if (!game.antagonistState.isActive || game.npcSkiers.some(npc => npc.type === 'antagonist')) return;
+
+  const player = { x: PlayerState.x, y: PlayerState.y };
+  const antagonist = game.npcSkiers.find(npc => npc.type === 'antagonist');
+  if (!antagonist) return;
+
+  const dx = player.x - antagonist.x;
+  const dy = player.y - antagonist.y;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < NPC_SKIER_SPEED * 20) {
+    antagonist.chaseMode = true;
+  } else {
+    antagonist.chaseMode = false;
+  }
+}
+
 
 
 
