@@ -8545,6 +8545,17 @@ function checkAchievementUnlocks() {
   }
 }
 
+function updateStyleMultiplierOnEncounter(npc, isNearMiss, isCrashThrough) {
+    game.styleScore += STYLE_ACTION_BASE_POINTS;
+    if (!isNearMiss && !isCrashThrough) {
+        game.styleMultiplier = 1.0;
+    } else {
+        game.styleMultiplier += 0.5;
+        game.styleMultiplier = Math.min(game.styleMultiplier, 3.0);
+    }
+}
+
+
 
 
 
