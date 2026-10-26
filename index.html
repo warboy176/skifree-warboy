@@ -3941,6 +3941,8 @@ function initPlayerState() {
     }
   };
 }
+initAntagonistCollisionState();
+
 initCrashThroughHazards();
 
 initSlopeStalkers();
@@ -8490,6 +8492,18 @@ function drawAntagonistChaseAnimation(ctx) {
   ctx.fillStyle = 'white';
   ctx.fillRect(antagonist.x - size/2, antagonist.y - size/2, size, size);
 }
+
+function initAntagonistCollisionState() {
+  game.antagonist.collision = {
+    x: game.antagonist.x,
+    y: game.antagonist.y,
+    width: 20,
+    height: 20,
+    active: true,
+    collisionRadius: 10
+  };
+}
+
 
 
 
