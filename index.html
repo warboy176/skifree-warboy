@@ -8379,12 +8379,10 @@ function triggerEatenState() {
 }
 
 function initAntagonistVisualCue() {
-  game.antagonistVisualCue = {
+  game.state.antagonistVisualCue = {
     isOnScreen: false,
     flickerTimer: 0
   };
-  
-  game.state.antagonistVisualCue = game.antagonistVisualCue;
 }
 
 
