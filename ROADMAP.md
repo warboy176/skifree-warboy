@@ -850,7 +850,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player
 - [x] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [x] Add collision detection between the antagonist and the player to trigger the EATEN state
-- [ ] Introduce a visual 'chase' animation state for the antagonist when closing in on the player
+- [x] Introduce a visual 'chase' animation state for the antagonist when closing in on the player
 - [ ] Implement the antagonist's basic movement logic to follow the player at a variable distance
 - [ ] Add collision detection between the antagonist and the player to trigger the EATEN state
 - [ ] Introduce a visual 'chase' animation or behavior when the antagonist is actively pursuing

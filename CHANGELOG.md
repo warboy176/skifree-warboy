@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a visual 'chase' animation state for the antagonist when closing in on the player (initAntagonist, updateAntagonistChaseState, drawAntagonistChaseAnimation)
 - Add collision detection between the antagonist and the player to trigger the EATEN state (initAntagonistCollisionState, checkAntagonistCollision, registerAntagonistEatenAchievement)
 - Implement the antagonist's basic movement logic to follow the player at a variable distance (initAntagonist, updateAntagonist, drawAntagonist)
 - Introduce a visual 'chase' animation state for the antagonist when actively pursuing the player (initAntagonistState, updateAntagonistChaseState, drawAntagonistChaseAnimation)
