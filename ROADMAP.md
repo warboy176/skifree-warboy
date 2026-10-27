@@ -905,7 +905,7 @@ Operator direction from the daily report lands here.
 - [x] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
 - [!] Add a persistent achievements registry that auto-updates with new counters for the chase antagonist (e.g., 'Snow-Wolf Slayer' at 5 kills) and unlocks with original art popups  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 2 unspecifiable, 0 e -->
 
-- [ ] Add original chase antagonist creature with unique movement pattern and visual design, drawn in code using Warboy's original art style
+- [x] Add original chase antagonist creature with unique movement pattern and visual design, drawn in code using Warboy's original art style
 - [ ] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, with distinct visual and hazard changes
 - [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing tricks, with real-time HUD feedback
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics (e.g., 'Crashed Through 10 Skiers' or 'Jumped Over 5 Drones') in Warboy's witty, original voice
