@@ -8705,6 +8705,31 @@ function registerAchievementDef(achievementKey, unlockThreshold, type, descripti
   ACHIEVEMENT_DEFINITIONS[achievementKey] = { unlockThreshold, type, description };
 }
 
+function checkAchievementsForScorableInteractions() {
+  const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
+  
+  achievementsToCheck.forEach(achievement => {
+    if (achievement.type === 'nearMiss' && game.nearMisses >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+      applyAchievementToHUD(achievement);
+      updateAchievementHUD();
+    } else if (achievement.type === 'slalomReversal' && game.slalomReversals >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+      applyAchievementToHUD(achievement);
+      updateAchievementHUD();
+    } else if (achievement.type === 'stylePoint' && GameState.score >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+      applyAchievementToHUD(achievement);
+      updateAchievementHUD();
+    } else if (achievement.type === 'obstaclePass' && game.obstaclesPassed >= achievement.unlockThreshold) {
+      achievement.unlocked = true;
+      applyAchievementToHUD(achievement);
+      updateAchievementHUD();
+    }
+  });
+}
+
+
 
 
 
