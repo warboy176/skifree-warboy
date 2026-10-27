@@ -902,5 +902,5 @@ Operator direction from the daily report lands here.
 - [x] Implement near-miss detection between player and NPCs, triggering style point accumulation only when multiplier > 1
 - [x] Add 10 style points per near-miss, scaled by current multiplier value, and update score display in real time
 - [!] Ensure style points are only awarded during active gameplay and reset on death or restart  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
+- [x] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
 - [ ] Add a persistent achievements registry that auto-updates with new counters for the chase antagonist (e.g., 'Snow-Wolf Slayer' at 5 kills) and unlocks with original art popups
