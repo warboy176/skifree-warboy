@@ -8813,6 +8813,14 @@ function resetStyleMultiplierOnCollision() {
     }
 }
 
+function saveStyleMultiplierState() {
+  localStorage.setItem('styleMultiplierState', JSON.stringify({
+    styleMultiplier: game.styleMultiplier,
+    styleMultiplierActive: game.styleMultiplierActive
+  }));
+}
+
+
 
 
 
