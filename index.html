@@ -1668,6 +1668,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleScoreState();
+
 initCrashThroughEvent();
 
 initAntagonistCooldown();
@@ -8667,6 +8669,12 @@ function updateStyleScoreHUD() {
     ctx.font = oldFont;
     ctx.fillStyle = oldFillStyle;
 }
+
+function initStyleScoreState() {
+    game.styleScore = 0;
+    game.styleMultiplier = 1.0;
+}
+
 
 
 
