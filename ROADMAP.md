@@ -888,4 +888,4 @@ Operator direction from the daily report lands here.
 - [x] Display the style score and active multiplier in the HUD using the existing score display elements
 - [x] Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome)
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
