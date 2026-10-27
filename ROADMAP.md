@@ -892,7 +892,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns
-- [ ] Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier
+- [x] Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier
 - [ ] Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs
 - [ ] Introduce a style multiplier counter that increases by 1 for each consecutive near-miss, resets on collision or fall
 - [ ] Add style points (10 per near-miss) to the score only when multiplier is active, scaling total by current multiplier value
