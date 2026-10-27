@@ -881,7 +881,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient effects
 - [x] Add a style score counter that increments when the player passes within 30px of an NPC skier
 - [x] Add a 'consecutiveClosePasses' counter initialized to 0 in the game state
-- [ ] Increment the counter by 1 when the player passes an NPC within NEAR_MISS_MARGIN without collision, and reset to 0 on any collision
+- [!] Increment the counter by 1 when the player passes an NPC within NEAR_MISS_MARGIN without collision, and reset to 0 on any collision  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Display the current multiplier value as a visual effect (e.g., glowing score text or HUD indicator) that updates in real time
 - [ ] Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier
 - [ ] Add a trick landing detection that triggers on landing after a jump, awarding 20 points and applying the current multiplier to the score
