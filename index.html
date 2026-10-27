@@ -8572,6 +8572,17 @@ function updateStyleScoreOnNPCCollision(npc, dt) {
   }
 }
 
+function checkAchievementsForMechanic(achievementType, value) {
+  const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
+  for (const achievement of achievementsToCheck) {
+    if (achievement.type === achievementType && value >= achievement.unlockThreshold) {
+      unlockAchievement(achievement.id);
+      applyAchievementToHUD(achievement.id);
+    }
+  }
+}
+
+
 
 
 
