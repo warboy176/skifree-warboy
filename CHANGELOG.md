@@ -1,4 +1,5 @@
 # Changelog
+- Add a trick landing detection that triggers on landing after a jump, awarding 20 points and applying the current multiplier to the score (initTrickLandingSystem, checkTrickLanding, registerTrickLandingAchievement)
 - Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier (initCrashThroughEvent, handleCrashThroughCollision, registerCrashThroughAchievement)
 - Display the current multiplier value as a visual effect (e.g., glowing score text or HUD indicator) that updates in real time (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)
 - Add a 'consecutiveClosePasses' counter initialized to 0 in the game state (initConsecutiveClosePassesCounter)
