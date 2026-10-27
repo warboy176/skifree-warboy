@@ -1,4 +1,5 @@
 # Changelog
+- Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome) (initAchievementRegistry, checkAchievementsForPlayer)
 - Display the style score and active multiplier in the HUD using the existing score display elements (initStyleScoreState, updateStyleScoreHUD)
 - Add a trick landing detection that triggers on landing after a jump, awarding 20 points and applying the current multiplier to the score (initTrickLandingSystem, checkTrickLanding, registerTrickLandingAchievement)
 - Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier (initCrashThroughEvent, handleCrashThroughCollision, registerCrashThroughAchievement)
