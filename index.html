@@ -8859,6 +8859,39 @@ function updateStyleMultiplierAndScore(npcSkiers, playerState, game) {
   if (scoreEl) scoreEl.textContent = Math.floor(game.score).toString();
 }
 
+function initStyleHUD() {
+    const multiplierElement = document.createElement('div');
+    multiplierElement.id = 'styleMultiplier';
+    multiplierElement.style.position = 'fixed';
+    multiplierElement.style.top = `${H * 0.1}px`;
+    multiplierElement.style.right = `${W * 0.1}px`;
+    multiplierElement.style.fontSize = '24px';
+    multiplierElement.style.color = 'white';
+    multiplierElement.style.fontFamily = 'Arial, sans-serif';
+    multiplierElement.style.zIndex = '1000';
+    document.body.appendChild(multiplierElement);
+
+    const pointsElement = document.createElement('div');
+    pointsElement.id = 'stylePoints';
+    pointsElement.style.position = 'fixed';
+    pointsElement.style.top = `${H * 0.15}px`;
+    pointsElement.style.right = `${W * 0.1}px`;
+    pointsElement.style.fontSize = '24px';
+    pointsElement.style.color = 'white';
+    pointsElement.style.fontFamily = 'Arial, sans-serif';
+    pointsElement.style.zIndex = '1000';
+    document.body.appendChild(pointsElement);
+
+    function updateStyleHUD() {
+        multiplierElement.textContent = `x${game.styleMultiplier}`;
+        pointsElement.textContent = `${game.stylePoints}`;
+    }
+
+    updateStyleHUD();
+    setInterval(updateStyleHUD, 100);
+}
+
+
 
 
 
