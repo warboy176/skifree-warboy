@@ -8776,9 +8776,10 @@ function initNearMissFlash() {
 }
 
 function triggerNearMissFlash() {
-    game.flashActive = true;
-    game.flashAlpha = 1;
-    game.flashDurationMs = 150;
+  if (game.flash) return; // Only trigger if no other flash is active
+  game.flashActive = true;
+  game.flashAlpha = 1;
+  game.flashDurationMs = 150;
 }
 
 
