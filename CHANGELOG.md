@@ -1,4 +1,5 @@
 # Changelog
+- Display the current styleMultiplier value in the HUD as a growing number above the score (drawStyleMultiplierHUD)
 - Reset styleMultiplier to 0 when the player collides with an obstacle or falls (resetStyleMultiplierOnCollision)
 - Increment styleMultiplier by 1 when the player performs a near-miss with any obstacle without collision (initNearMissTracker, checkNearMisses, registerNearMissAchievement)
 - Add a styleMultiplier variable initialized to 0 in the game state (initStyleMultiplier)
