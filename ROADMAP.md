@@ -875,4 +875,4 @@ Operator direction from the daily report lands here.
 - [x] Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed
 - [x] Add a styleScore variable initialized to 0 in the game state
 - [!] Update the HUD rendering function to display styleScore and styleMultiplier using the existing score rendering logic  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps
+- [x] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps

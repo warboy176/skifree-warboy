@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps (initAchievementsRegistry, checkAchievementsForMechanic)
 - Add a styleScore variable initialized to 0 in the game state (initStyleScore)
 - Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed (updateStyleScoreOnNPCCollision)
 - Create a function to deduct points from styleScore and reset styleMultiplier when player hits a tree or oil slick, with penalty of -10 points (handleHazardPenalty)
