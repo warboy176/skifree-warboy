@@ -877,7 +877,7 @@ Operator direction from the daily report lands here.
 - [!] Update the HUD rendering function to display styleScore and styleMultiplier using the existing score rendering logic  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps
 
-- [ ] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
+- [x] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient effects
 - [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with multipliers
 - [ ] Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome)
