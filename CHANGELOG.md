@@ -1,4 +1,5 @@
 # Changelog
+- On game restart, load and apply the saved style points and multiplier from localStorage (loadStyleProgressFromStorage)
 - Add multiplier persistence across restarts by storing the current multiplier state in localStorage (loadMultiplierState, saveMultiplierState)
 - Add a trick landing bonus that triggers when the player lands after a jump, awarding points based on air time and multiplier (initTrickLandingSystem, updateTrickLandingOnJump, applyTrickLandingBonus)
 - Display the current style score and multiplier in the HUD using the existing score display area (updateStyleHUD)
