@@ -1,4 +1,5 @@
 # Changelog
+- Add a style score counter that increments when the player passes within 30px of an NPC skier (initStyleScore, updateStyleScore, registerStyleScoreAchievement)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient effects (initBiomeState, updateBiomeTransition, applyBiomeVisuals)
 - Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity (initChaseAntagonist, updateChaseAntagonist, drawChaseAntagonist)
 - Create a persistent achievements registry with new entries for each major mechanic—e.g., 'Forest Surge' for surviving 10 forest segments, 'Night Stalker' for 5 night-time jumps (initAchievementsRegistry, checkAchievementsForMechanic)
