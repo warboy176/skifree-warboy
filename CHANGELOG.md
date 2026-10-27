@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
 - Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (registerAchievementDef, checkAchievementsForScorableInteractions)
 - Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome) (initAchievementRegistry, checkAchievementsForPlayer)
