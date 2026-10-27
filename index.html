@@ -5320,6 +5320,8 @@ function drawAchievementBadge(achievement, x, y, durationMs) {
 function addForestBiomeThreshold() {
   BIOME_THRESHOLDS.push({ biome: 'forest', threshold: 2000 });
 }
+registerAchievementDef('near_miss_10', 10, 'proximity', 'Avoid 10 skiers within 1 meter');
+
 
 function checkForestThreshold(player, game) {
     return player.distance > game.biomeThresholds.forest;
@@ -8698,6 +8700,11 @@ function checkAchievementsForPlayer(gameState) {
     }
   }
 }
+
+function registerAchievementDef(achievementKey, unlockThreshold, type, description) {
+  ACHIEVEMENT_DEFINITIONS[achievementKey] = { unlockThreshold, type, description };
+}
+
 
 
 
