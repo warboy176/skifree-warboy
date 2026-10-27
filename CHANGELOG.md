@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (registerAchievementDef, checkAchievementsForScorableInteractions)
 - Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome) (initAchievementRegistry, checkAchievementsForPlayer)
 - Display the style score and active multiplier in the HUD using the existing score display elements (initStyleScoreState, updateStyleScoreHUD)
