@@ -8820,6 +8820,31 @@ function saveStyleMultiplierState() {
   }));
 }
 
+function updateStyleMultiplierAndScore(npcSkiers, playerState, game) {
+    const now = Date.now();
+    let hasNearMissThisFrame = false;
+
+    npcSkiers.forEach(npc => {
+        const isNearMiss = checkSlalomProximity(playerState, [npc], NEAR_MISS_MARGIN);
+        if (isNearMiss && !npc._styleScoredThisFrame) {
+            game.score += STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+            updateScoreDisplay(SCORE_KEY, game.score);
+            npc._styleScoredThisFrame = true;
+            hasNearMissThisFrame = true;
+            game.styleMultiplierActive = true;
+        }
+    });
+
+    if (!hasNearMissThisFrame && game.styleMultiplierActive) {
+        if (now - game.lastNearMissTime > COMBO_STREAK_WINDOW_MS) {
+            game.styleMultiplierActive = false;
+        }
+    } else if (hasNearMissThisFrame) {
+        game.lastNearMissTime = now;
+    }
+}
+
+
 
 
 
