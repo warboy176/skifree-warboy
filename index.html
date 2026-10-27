@@ -1668,6 +1668,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughEvent();
+
 initAntagonistCooldown();
 
 initAntagonistVisualCue();
@@ -8631,6 +8633,16 @@ function drawMultiplierDisplay(ctx) {
   ctx.strokeText(`x${game.multiplierDisplay.value}`, W - 100, H - 80);
   ctx.fillText(`x${game.multiplierDisplay.value}`, W - 100, H - 80);
 }
+
+function initCrashThroughEvent() {
+    game.crashThroughActive = false;
+    game.crashThroughPoints = 0;
+    game.crashThroughTimer = 0;
+    game.crashThroughBonus = { points: 0 };
+    player.crashedThrough = false;
+    game.obstacleCrashStreak = 0;
+}
+
 
 
 
