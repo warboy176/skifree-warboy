@@ -3589,6 +3589,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerNearMissAchievement();
+
 registerSleetHoundAchievement();
 
 registerCrashThroughAchievement();
@@ -8799,6 +8801,11 @@ function updateNearMissFlash(dt) {
 function initNearMissTracker() {
   game.nearMisses = [];
 }
+
+function registerNearMissAchievement() {
+  registerAchievementDef('near_miss_streak', 10, 'style_multiplier_boost', 'Near Miss Streak');
+}
+
 
 
 
