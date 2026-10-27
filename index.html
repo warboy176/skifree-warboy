@@ -8821,27 +8821,42 @@ function saveStyleMultiplierState() {
 }
 
 function updateStyleMultiplierAndScore(npcSkiers, playerState, game) {
-    const now = Date.now();
-    let hasNearMissThisFrame = false;
+  const COMBO_STREAK_WINDOW_MS = 1000;
+  const STYLE_ACTION_BASE_POINTS = 10;
+  const NEAR_MISS_MARGIN = 50;
 
-    npcSkiers.forEach(npc => {
-        const isNearMiss = checkSlalomProximity(playerState, [npc], NEAR_MISS_MARGIN);
-        if (isNearMiss && !npc._styleScoredThisFrame) {
-            game.score += STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
-            updateScoreDisplay(SCORE_KEY, game.score);
-            npc._styleScoredThisFrame = true;
-            hasNearMissThisFrame = true;
-            game.styleMultiplierActive = true;
-        }
-    });
+  let styleMultiplierActive = 0;
+  const now = Date.now();
 
-    if (!hasNearMissThisFrame && game.styleMultiplierActive) {
-        if (now - game.lastNearMissTime > COMBO_STREAK_WINDOW_MS) {
-            game.styleMultiplierActive = false;
-        }
-    } else if (hasNearMissThisFrame) {
+  // Reset styleMultiplierActive if no near-miss in last COMBO_STREAK_WINDOW_MS
+  if (game.lastNearMissTime === undefined || (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
+    game.styleMultiplierActive = 0;
+  }
+
+  // Check each NPC skier for near-miss
+  for (const skier of npcSkiers) {
+    const dx = skier.x - playerState.x;
+    const dy = skier.y - playerState.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < NEAR_MISS_MARGIN) {
+      // Only count if not already counted in this frame
+      if (!skier.countedThisFrame) {
+        // Add score
+        game.score += STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+        game.styleMultiplierActive += 1;
+        skier.countedThisFrame = true;
         game.lastNearMissTime = now;
+      }
+    } else {
+      // Reset counted flag if not near
+      skier.countedThisFrame = false;
     }
+  }
+
+  // Update HUD score display
+  const scoreEl = document.getElementById('score');
+  if (scoreEl) scoreEl.textContent = Math.floor(game.score).toString();
 }
 
 
