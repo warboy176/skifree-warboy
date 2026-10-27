@@ -660,6 +660,8 @@ triggerEatenState();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateTrickLandingOnJump(player, dt);
+applyTrickLandingBonus(player);
+
 
 updateChaseBehavior(dt);
 
@@ -8906,6 +8908,20 @@ function updateTrickLandingOnJump(player, dt) {
     }
   }
 }
+
+function applyTrickLandingBonus(player) {
+  const airTimeMs = game.trickLandingState.airTimeMs;
+  const multiplier = game.trickLandingState.multiplier;
+  const bonusPoints = (airTimeMs * 0.5) * multiplier;
+  player.score += bonusPoints;
+  if (airTimeMs >= 300) {
+    game.trickLandingState.multiplier = Math.min(5, multiplier * 1.2);
+  } else {
+    game.trickLandingState.multiplier = 1;
+  }
+  updateStyleHUD();
+}
+
 
 
 
