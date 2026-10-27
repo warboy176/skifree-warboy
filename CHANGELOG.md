@@ -1,4 +1,5 @@
 # Changelog
+- Implement a real-time style multiplier that increases by 1 for each consecutive style action and resets on collision or fall (initStyleMultiplier, updateStyleMultiplier, resetStyleMultiplierOnCollision)
 - Add a style score counter that increments when the player slaloms within 30px of an NPC skier or obstacle (initStyleScore, updateStyleScore, registerStyleAchievement)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, with distinct visual and hazard changes (initBiomeState, updateBiomeTransition, applyBiomeVisuals)
 - Add original chase antagonist creature with unique movement pattern and visual design, drawn in code using Warboy's original art style (initAntagonist, updateAntagonist, checkAntagonistCollision)

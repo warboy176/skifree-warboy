@@ -908,7 +908,7 @@ Operator direction from the daily report lands here.
 - [x] Add original chase antagonist creature with unique movement pattern and visual design, drawn in code using Warboy's original art style
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, with distinct visual and hazard changes
 - [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier or obstacle
-- [ ] Implement a real-time style multiplier that increases by 1 for each consecutive style action and resets on collision or fall
+- [x] Implement a real-time style multiplier that increases by 1 for each consecutive style action and resets on collision or fall
 - [ ] Display the current style score and multiplier in the HUD using the existing score display area
 - [ ] Add a trick landing bonus that triggers when the player lands after a jump, awarding points based on air time and multiplier
 - [ ] Ensure style points and multipliers are preserved across game restarts and reset only on death or game over
