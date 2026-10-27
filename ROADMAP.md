@@ -883,7 +883,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'consecutiveClosePasses' counter initialized to 0 in the game state
 - [!] Increment the counter by 1 when the player passes an NPC within NEAR_MISS_MARGIN without collision, and reset to 0 on any collision  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Display the current multiplier value as a visual effect (e.g., glowing score text or HUD indicator) that updates in real time
-- [ ] Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier
+- [x] Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier
 - [ ] Add a trick landing detection that triggers on landing after a jump, awarding 20 points and applying the current multiplier to the score
 - [ ] Display the style score and active multiplier in the HUD using the existing score display elements
 - [ ] Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome)
