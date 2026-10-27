@@ -754,6 +754,8 @@ updateAntagonistMovement(dt);
 applyFastModeVisualEffects(dt);
 
 checkNearMisses(dt);
+triggerNearMissFlash();
+
 
 detectPlayerLandingOnOilSlick(player, dt);
 
@@ -8772,6 +8774,13 @@ function initNearMissFlash() {
     game.flashAlpha = 0;
     game.flashDurationMs = 150;
 }
+
+function triggerNearMissFlash() {
+    game.flashActive = true;
+    game.flashAlpha = 1;
+    game.flashDurationMs = 150;
+}
+
 
 
 
