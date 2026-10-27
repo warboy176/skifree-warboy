@@ -1,4 +1,5 @@
 # Changelog
+- Display the current multiplier value as a visual effect (e.g., glowing score text or HUD indicator) that updates in real time (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)
 - Add a 'consecutiveClosePasses' counter initialized to 0 in the game state (initConsecutiveClosePassesCounter)
 - Add a style score counter that increments when the player passes within 30px of an NPC skier (initStyleScore, updateStyleScore, registerStyleScoreAchievement)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient effects (initBiomeState, updateBiomeTransition, applyBiomeVisuals)
