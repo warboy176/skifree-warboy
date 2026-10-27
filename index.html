@@ -8643,6 +8643,32 @@ function initCrashThroughEvent() {
     game.obstacleCrashStreak = 0;
 }
 
+function updateStyleScoreHUD() {
+    const score = game.styleScore;
+    const multiplier = game.styleMultiplier || 1;
+    const ctx = game.ctx;
+    const oldFont = ctx.font;
+    const oldFillStyle = ctx.fillStyle;
+    
+    ctx.font = '20px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    
+    const scoreText = score.toString();
+    const multiplierText = `x${multiplier}`;
+    
+    const scoreX = W - 100;
+    const scoreY = HUD_H - 30;
+    const multiplierX = W - 100;
+    const multiplierY = HUD_H - 10;
+    
+    ctx.fillText(scoreText, scoreX, scoreY);
+    ctx.fillText(multiplierText, multiplierX, multiplierY);
+    
+    ctx.font = oldFont;
+    ctx.fillStyle = oldFillStyle;
+}
+
+
 
 
 
