@@ -8897,9 +8897,11 @@ function updateTrickLandingOnJump(player, dt) {
   if (player.isJumping) {
     game.trickLandingState.airTimeMs += dt;
   } else if (player.isLanding) {
-    game.trickLandingState.lastLandingTime = game.trickLandingState.airTimeMs;
+    const airTimeMs = game.trickLandingState.airTimeMs;
+    game.trickLandingState.lastLandingTime = airTimeMs;
     game.trickLandingState.airTimeMs = 0;
-    if (game.trickLandingState.lastLandingTime >= 100) {
+    if (airTimeMs >= 100) {
+      game.trickLandingState.multiplier += 1;
       updateStyleHUD(player, game.trickLandingState.multiplier);
     }
   }
