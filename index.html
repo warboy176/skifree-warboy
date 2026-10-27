@@ -8937,6 +8937,25 @@ function saveMultiplierState() {
     localStorage.setItem('skiFreeMultiplier', JSON.stringify(game.multiplier));
 }
 
+function loadStyleProgressFromStorage() {
+  const savedData = localStorage.getItem('styleProgress');
+  if (savedData) {
+    try {
+      const data = JSON.parse(savedData);
+      if (typeof data.stylePoints === 'number' && typeof data.multiplier === 'number') {
+        game.stylePoints = data.stylePoints;
+        game.multiplier = data.multiplier;
+        return;
+      }
+    } catch (e) {
+      console.error('Failed to parse style progress data:', e);
+    }
+  }
+  game.stylePoints = 0;
+  game.multiplier = 0;
+}
+
+
 
 
 
