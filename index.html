@@ -8620,6 +8620,19 @@ function initMultiplierDisplay() {
   game.multiplierDisplay = { value: 1, lastUpdated: 0 };
 }
 
+function drawMultiplierDisplay(ctx) {
+  const multiplier = game.styleMultiplier || 1;
+  ctx.font = 'bold 32px sans-serif';
+  ctx.fillStyle = 'white';
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 2;
+  ctx.shadowColor = 'white';
+  ctx.shadowBlur = 1;
+  ctx.strokeText(`x${game.multiplierDisplay.value}`, W - 100, H - 80);
+  ctx.fillText(`x${game.multiplierDisplay.value}`, W - 100, H - 80);
+}
+
+
 
 
 
