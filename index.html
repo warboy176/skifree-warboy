@@ -702,6 +702,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+spawnSnowWolfIfInactive(dt);
+
 updateStyleScoreOnNPCCollision(npc, dt);
 
 updateAntagonistVisualCue(dt);
@@ -8728,6 +8730,16 @@ function checkAchievementsForScorableInteractions() {
     }
   });
 }
+
+function spawnSnowWolfIfInactive(dt) {
+    if (game.timeSinceLastPlayerAction >= 10000 && !game.snowWolf.active) {
+        game.snowWolf.x = game.width / 2;
+        game.snowWolf.y = -100;
+        game.snowWolf.active = true;
+        game.snowWolfSpawnTimer = 0;
+    }
+}
+
 
 
 
