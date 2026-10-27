@@ -1,4 +1,5 @@
 # Changelog
+- Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs (initNearMissFlash, triggerNearMissFlash, updateNearMissFlash)
 - Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier (initNPCs, checkNearMisses)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
 - Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
