@@ -898,6 +898,9 @@ Operator direction from the daily report lands here.
 - [x] Increment styleMultiplier by 1 when the player performs a near-miss with any obstacle without collision
 - [x] Reset styleMultiplier to 0 when the player collides with an obstacle or falls
 - [x] Display the current styleMultiplier value in the HUD as a growing number above the score
-- [ ] Add style points (10 per near-miss) to the score only when multiplier is active, scaling total by current multiplier value
+- [ ] Add a style multiplier state initialized at 1, persisting across game sessions
+- [ ] Implement near-miss detection between player and NPCs, triggering style point accumulation only when multiplier > 1
+- [ ] Add 10 style points per near-miss, scaled by current multiplier value, and update score display in real time
+- [ ] Ensure style points are only awarded during active gameplay and reset on death or restart
 - [ ] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
 - [ ] Add a persistent achievements registry that auto-updates with new counters for the chase antagonist (e.g., 'Snow-Wolf Slayer' at 5 kills) and unlocks with original art popups
