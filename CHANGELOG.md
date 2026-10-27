@@ -1,4 +1,5 @@
 # Changelog
+- Add a styleMultiplier variable initialized to 0 in the game state (initStyleMultiplier)
 - Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs (initNearMissFlash, triggerNearMissFlash, updateNearMissFlash)
 - Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier (initNPCs, checkNearMisses)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns (initBiomeState, updateBiomeTransition, drawBiomeVisuals)

@@ -894,7 +894,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns
 - [x] Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier
 - [x] Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs
-- [ ] Add a styleMultiplier variable initialized to 0 in the game state
+- [x] Add a styleMultiplier variable initialized to 0 in the game state
 - [ ] Increment styleMultiplier by 1 when the player performs a near-miss with any obstacle without collision
 - [ ] Reset styleMultiplier to 0 when the player collides with an obstacle or falls
 - [ ] Display the current styleMultiplier value in the HUD as a growing number above the score
