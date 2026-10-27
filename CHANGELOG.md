@@ -1,4 +1,5 @@
 # Changelog
+- Display the current style score and multiplier in the HUD using the existing score display area (updateStyleHUD)
 - Implement a real-time style multiplier that increases by 1 for each consecutive style action and resets on collision or fall (initStyleMultiplier, updateStyleMultiplier, resetStyleMultiplierOnCollision)
 - Add a style score counter that increments when the player slaloms within 30px of an NPC skier or obstacle (initStyleScore, updateStyleScore, registerStyleAchievement)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, with distinct visual and hazard changes (initBiomeState, updateBiomeTransition, applyBiomeVisuals)
