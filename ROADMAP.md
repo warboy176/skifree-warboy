@@ -911,5 +911,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a real-time style multiplier that increases by 1 for each consecutive style action and resets on collision or fall
 - [x] Display the current style score and multiplier in the HUD using the existing score display area
 - [x] Add a trick landing bonus that triggers when the player lands after a jump, awarding points based on air time and multiplier
-- [ ] Ensure style points and multipliers are preserved across game restarts and reset only on death or game over
+- [ ] Add persistent style score storage in localStorage, saving only the current style points when the player restarts
+- [ ] Add multiplier persistence across restarts by storing the current multiplier state in localStorage
+- [ ] On game restart, load and apply the saved style points and multiplier from localStorage
+- [ ] Reset style points and multiplier only when the player dies or the game ends, not on restart
 - [ ] Create a persistent achievements registry that auto-updates with new mechanics (e.g., 'Crashed Through 10 Skiers' or 'Jumped Over 5 Drones') in Warboy's witty, original voice
