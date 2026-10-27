@@ -1,4 +1,5 @@
 # Changelog
+- Add a styleScore variable initialized to 0 in the game state (initStyleScore)
 - Update the game loop to call the style scoring functions during NPC collision checks, only for NPCs that are not already destroyed (updateStyleScoreOnNPCCollision)
 - Create a function to deduct points from styleScore and reset styleMultiplier when player hits a tree or oil slick, with penalty of -10 points (handleHazardPenalty)
 - Create a function to increment styleScore and reset styleMultiplier on successful near-miss or crash-through of an NPC, with multiplier increasing by 0.5 up to 3.0 (updateStyleMultiplierOnEncounter)
