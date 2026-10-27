@@ -894,7 +894,10 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original code-drawn trees and snow patterns
 - [x] Add a 'near_miss' detection system that triggers when player passes within 30px of an NPC skier
 - [x] Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs
-- [ ] Introduce a style multiplier counter that increases by 1 for each consecutive near-miss, resets on collision or fall
+- [ ] Add a styleMultiplier variable initialized to 0 in the game state
+- [ ] Increment styleMultiplier by 1 when the player performs a near-miss with any obstacle without collision
+- [ ] Reset styleMultiplier to 0 when the player collides with an obstacle or falls
+- [ ] Display the current styleMultiplier value in the HUD as a growing number above the score
 - [ ] Add style points (10 per near-miss) to the score only when multiplier is active, scaling total by current multiplier value
 - [ ] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
 - [ ] Add a persistent achievements registry that auto-updates with new counters for the chase antagonist (e.g., 'Snow-Wolf Slayer' at 5 kills) and unlocks with original art popups
