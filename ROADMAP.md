@@ -879,5 +879,9 @@ Operator direction from the daily report lands here.
 
 - [x] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient effects
-- [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with multipliers
+- [ ] Add a style score counter that increments when the player passes within 30px of an NPC skier
+- [ ] Add a bonus multiplier that increases by 1 for each consecutive close pass to NPCs, resetting on collision
+- [ ] Add a 'crash through' event that triggers when the player collides with an obstacle while moving forward, awarding 50 points and resetting the multiplier
+- [ ] Add a trick landing detection that triggers on landing after a jump, awarding 20 points and applying the current multiplier to the score
+- [ ] Display the style score and active multiplier in the HUD using the existing score display elements
 - [ ] Add persistent achievement registry with data-driven unlocks for new mechanics (e.g., 'Forest Stalker' for surviving 10 forest trees, 'Night Owl' for 5 minutes in night biome)
