@@ -8922,6 +8922,16 @@ function applyTrickLandingBonus(player) {
   updateStyleHUD();
 }
 
+function loadMultiplierState(){
+  const savedMultiplier = localStorage.getItem('skiFreeMultiplier');
+  if (savedMultiplier !== null) {
+    game.multiplier = JSON.parse(savedMultiplier);
+  } else {
+    game.multiplier = 1;
+  }
+}
+
+
 
 
 
