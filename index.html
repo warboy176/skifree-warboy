@@ -8740,6 +8740,32 @@ function spawnSnowWolfIfInactive(dt) {
     }
 }
 
+function drawBiomeVisuals(ctx) {
+  if (game.biome !== 'forest') return;
+  
+  const treeInterval = FOREST_BIOME_TREE_INTERVAL_METERS;
+  const meters = game.metersTraveled;
+  
+  for (let m = Math.floor(game.lastTreeMeters / treeInterval) * treeInterval; m < meters; m += treeInterval) {
+    const x = 100 + (m % 1000) * 0.1;
+    const y = 300 + (m % 1000) * 0.1;
+    
+    ctx.fillStyle = 'black';
+    ctx.fillRect(x, y, 1, 4);
+    
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(x, y - 1, 1.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  
+  const tint = BIOME_TINTS.forest;
+  const alpha = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+  ctx.fillStyle = `${tint.color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
+
 
 
 
