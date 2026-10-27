@@ -1619,6 +1619,8 @@ drawMoon(ctx);
 drawAirTimeOverlay(ctx);
 
 updateMultiplierDisplay();
+saveMultiplierState();
+
 
 applyAchievementToHUD();
 
@@ -8930,6 +8932,11 @@ function loadMultiplierState(){
     game.multiplier = 1;
   }
 }
+
+function saveMultiplierState() {
+    localStorage.setItem('skiFreeMultiplier', JSON.stringify(game.multiplier));
+}
+
 
 
 
