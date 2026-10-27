@@ -8806,6 +8806,14 @@ function registerNearMissAchievement() {
   registerAchievementDef('near_miss_streak', 10, 'style_multiplier_boost', 'Near Miss Streak');
 }
 
+function resetStyleMultiplierOnCollision() {
+    if (game.fallDetected || game.obstacles.some(o => !o.used && Math.abs(o.y - game.player.y) <= 65 && checkPlayerCollision(o))) {
+        game.styleMultiplier = 0;
+        game.styleMultiplierActive = false;
+    }
+}
+
+
 
 
 
