@@ -8675,6 +8675,31 @@ function initStyleScoreState() {
     game.styleMultiplier = 1.0;
 }
 
+function checkAchievementsForPlayer(gameState) {
+  const achievementsToCheck = gameState.achievements.filter(a => !a.unlocked);
+  
+  for (const achievement of achievementsToCheck) {
+    let isUnlocked = false;
+    
+    if (achievement.type === 'score' && gameState.score >= achievement.unlockThreshold) {
+      isUnlocked = true;
+    } else if (achievement.type === 'obstacles' && gameState.obstaclesPassed >= achievement.unlockThreshold) {
+      isUnlocked = true;
+    } else if (achievement.type === 'coins' && gameState.coins >= achievement.unlockThreshold) {
+      isUnlocked = true;
+    } else if (achievement.type === 'npcs' && gameState.npcsPassed >= achievement.unlockThreshold) {
+      isUnlocked = true;
+    }
+    
+    if (isUnlocked) {
+      achievement.unlocked = true;
+      applyBiomeVisuals(achievement.biome, true);
+      applyBiomeTintTransition(achievement.biome);
+    }
+  }
+}
+
+
 
 
 
