@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, with distinct visual and hazard changes (initBiomeState, updateBiomeTransition, applyBiomeVisuals)
 - Add original chase antagonist creature with unique movement pattern and visual design, drawn in code using Warboy's original art style (initAntagonist, updateAntagonist, checkAntagonistCollision)
 - Display the current style multiplier and accumulated style points in the HUD with distinct visual styling (initStyleHUD, updateStyleHUD)
 - Add 10 style points per near-miss, scaled by current multiplier value, and update score display in real time (updateStyleMultiplierAndScore)
