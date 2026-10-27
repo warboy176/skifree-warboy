@@ -896,7 +896,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a visual 'style flash' effect (brief white glow) on screen when a near-miss occurs
 - [x] Add a styleMultiplier variable initialized to 0 in the game state
 - [x] Increment styleMultiplier by 1 when the player performs a near-miss with any obstacle without collision
-- [ ] Reset styleMultiplier to 0 when the player collides with an obstacle or falls
+- [x] Reset styleMultiplier to 0 when the player collides with an obstacle or falls
 - [ ] Display the current styleMultiplier value in the HUD as a growing number above the score
 - [ ] Add style points (10 per near-miss) to the score only when multiplier is active, scaling total by current multiplier value
 - [ ] Display the current style multiplier and accumulated style points in the HUD with distinct visual styling
