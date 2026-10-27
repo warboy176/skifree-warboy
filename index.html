@@ -8582,6 +8582,36 @@ function checkAchievementsForMechanic(achievementType, value) {
   }
 }
 
+function applyBiomeVisuals(ctx, game) {
+  const { biome } = game;
+  const { sky, dash } = game.biomeVisual || { sky: '#eefaff', dash: 'rgba(129,203,229,.25)' };
+  
+  if (biome === 'lodge') {
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  } else if (biome === 'open_slope') {
+    ctx.fillStyle = '#d3d3d3';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  } else if (biome === 'forest') {
+    ctx.fillStyle = '#228B22';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    
+    ctx.fillStyle = '#ffffff';
+    const interval = FOREST_BIOME_TREE_INTERVAL_METERS;
+    for (let x = 0; x < ctx.canvas.width; x += interval) {
+      for (let y = 0; y < ctx.canvas.height; y += interval) {
+        ctx.fillRect(x, y, 4, 4);
+      }
+    }
+  } else if (biome === 'night') {
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    
+    drawNightBiomeOverlay(ctx, 0, 0, ctx.canvas.width, ctx.canvas.height);
+  }
+}
+
+
 
 
 
