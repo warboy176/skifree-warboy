@@ -1,4 +1,5 @@
 # Changelog
+- Add 10 style points per near-miss, scaled by current multiplier value, and update score display in real time (updateStyleMultiplierAndScore)
 - Implement near-miss detection between player and NPCs, triggering style point accumulation only when multiplier > 1 (checkNearMisses)
 - Add a style multiplier state initialized at 1, persisting across game sessions (initStyleMultiplierState, saveStyleMultiplierState)
 - Display the current styleMultiplier value in the HUD as a growing number above the score (drawStyleMultiplierHUD)
