@@ -1672,6 +1672,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initNearMissTracker();
+
 initNearMissFlash();
 
 initStyleScoreState();
@@ -8793,6 +8795,11 @@ function updateNearMissFlash(dt) {
     }
   }
 }
+
+function initNearMissTracker() {
+  game.nearMisses = [];
+}
+
 
 
 
