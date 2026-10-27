@@ -659,6 +659,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateTrickLandingOnJump(player, dt);
+
 updateChaseBehavior(dt);
 
 updateAntagonistChaseState(dt);
@@ -8890,6 +8892,19 @@ function initStyleHUD() {
     updateStyleHUD();
     setInterval(updateStyleHUD, 100);
 }
+
+function updateTrickLandingOnJump(player, dt) {
+  if (player.isJumping) {
+    game.trickLandingState.airTimeMs += dt;
+  } else if (player.isLanding) {
+    game.trickLandingState.lastLandingTime = game.trickLandingState.airTimeMs;
+    game.trickLandingState.airTimeMs = 0;
+    if (game.trickLandingState.lastLandingTime >= 100) {
+      updateStyleHUD(player, game.trickLandingState.multiplier);
+    }
+  }
+}
+
 
 
 
