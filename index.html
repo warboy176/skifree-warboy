@@ -1670,6 +1670,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initNearMissFlash();
+
 initStyleScoreState();
 
 initCrashThroughEvent();
@@ -8764,6 +8766,13 @@ function drawBiomeVisuals(ctx) {
   ctx.fillStyle = `${tint.color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
+
+function initNearMissFlash() {
+    game.flashActive = false;
+    game.flashAlpha = 0;
+    game.flashDurationMs = 150;
+}
+
 
 
 
