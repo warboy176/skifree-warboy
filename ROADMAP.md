@@ -922,7 +922,7 @@ Operator direction from the daily report lands here.
 - [!] Create a function to increment the jump-over counter when the player jumps over an obstacle  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to check and update achievements whenever a crash-through or jump-over event occurs  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Add a function to track and store newly unlocked achievements in memory
-- [ ] Create a function to render a single achievement pop-up using Warboy's original pixel-art style on the canvas
+- [!] Create a function to render a single achievement pop-up using Warboy's original pixel-art style on the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a function to queue achievement pop-ups and manage their timing and display order
 - [ ] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
 
