@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect (initAchievementPopups, updateAchievementPopup, drawAchievementPopup)
 - Implement a function to queue achievement pop-ups and manage their timing and display order (initAchievementQueue, queueAchievement, updateAchievementPopups)
 - Add a function to track and store newly unlocked achievements in memory (initAchievementsStorage, unlockAchievement, checkForAchievements)
 - Create a function to increment the crash-through counter when the player passes through an NPC skier (initNPCs, updateNPCs)

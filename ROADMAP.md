@@ -924,6 +924,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to track and store newly unlocked achievements in memory
 - [!] Create a function to render a single achievement pop-up using Warboy's original pixel-art style on the canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a function to queue achievement pop-ups and manage their timing and display order
-- [ ] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
+- [x] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
