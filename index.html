@@ -3597,6 +3597,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerCrashThroughAndJumpOverAchievements();
+
 registerNearMissAchievement();
 
 registerSleetHoundAchievement();
@@ -8990,6 +8992,12 @@ function initAchievementsCounter() {
     game.state.jumpOverCount = 0;
     game.state.crashThroughCount = 0;
 }
+
+function registerCrashThroughAndJumpOverAchievements() {
+  ACHIEVEMENT_DEFINITIONS.crashThrough = { type: `styleScore10`, title: `Crash Through`, description: `Crash through 10 obstacles`, counter: 10, unlockThreshold: 10 };
+  ACHIEVEMENT_DEFINITIONS.jumpOver = { type: `styleScore5`, title: `Jump Over`, description: `Jump over 5 obstacles`, counter: 5, unlockThreshold: 5 };
+}
+
 
 
 
