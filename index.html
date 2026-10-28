@@ -1678,6 +1678,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAchievementsCounter();
+
 initNearMissTracker();
 
 initNearMissFlash();
@@ -8982,6 +8984,13 @@ function triggerAchievementEvent(eventType, value) {
     eventLog.push({type: eventType, value: value, timestamp: Date.now()});
     checkAchievementsOnEvent(eventType, {value: value});
 }
+
+function initAchievementsCounter() {
+    game.state = game.state || {};
+    game.state.jumpOverCount = 0;
+    game.state.crashThroughCount = 0;
+}
+
 
 
 
