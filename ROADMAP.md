@@ -925,3 +925,5 @@ Operator direction from the daily report lands here.
 - [ ] Create a function to render a single achievement pop-up using Warboy's original pixel-art style on the canvas
 - [ ] Implement a function to queue achievement pop-ups and manage their timing and display order
 - [ ] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
