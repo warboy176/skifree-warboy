@@ -1,4 +1,5 @@
 # Changelog
+- Add a new achievements object to track counters for crash-through and jump-over events (initAchievementsCounter, updateAchievementCounters, registerCrashThroughAndJumpOverAchievements)
 - Implement a function to check and unlock achievements based on new events (e.g., 'crashedThroughSkiers', 'jumpedOverDrones') with Warboy-style witty descriptions (checkAndUnlockAchievements, registerAchievementEvent, triggerAchievementEvent)
 - Add a persistent achievements registry object that stores unlocked achievements as an array of {id, name, description, count, unlockedAt} with default empty state (initAchievementsRegistry)
 - Reset style points and multiplier only when the player dies or the game ends, not on restart (resetStylePointsAndMultiplierOnGameEnd)

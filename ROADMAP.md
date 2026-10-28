@@ -917,7 +917,7 @@ Operator direction from the daily report lands here.
 - [x] Reset style points and multiplier only when the player dies or the game ends, not on restart
 - [x] Add a persistent achievements registry object that stores unlocked achievements as an array of {id, name, description, count, unlockedAt} with default empty state
 - [x] Implement a function to check and unlock achievements based on new events (e.g., 'crashedThroughSkiers', 'jumpedOverDrones') with Warboy-style witty descriptions
-- [ ] Add a new achievements object to track counters for crash-through and jump-over events
+- [x] Add a new achievements object to track counters for crash-through and jump-over events
 - [ ] Create a function to increment the crash-through counter when the player passes through an NPC skier
 - [ ] Create a function to increment the jump-over counter when the player jumps over an obstacle
 - [ ] Add a function to check and update achievements whenever a crash-through or jump-over event occurs
