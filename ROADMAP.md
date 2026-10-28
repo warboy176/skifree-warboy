@@ -926,4 +926,4 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to queue achievement pop-ups and manage their timing and display order
 - [x] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)

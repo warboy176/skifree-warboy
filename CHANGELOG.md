@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect (initAchievementPopups, updateAchievementPopup, drawAchievementPopup)
 - Implement a function to queue achievement pop-ups and manage their timing and display order (initAchievementQueue, queueAchievement, updateAchievementPopups)
 - Add a function to track and store newly unlocked achievements in memory (initAchievementsStorage, unlockAchievement, checkForAchievements)
