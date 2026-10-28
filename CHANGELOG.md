@@ -1,4 +1,5 @@
 # Changelog
+- Reset style points and multiplier only when the player dies or the game ends, not on restart (resetStylePointsAndMultiplierOnGameEnd)
 - On game restart, load and apply the saved style points and multiplier from localStorage (loadStyleProgressFromStorage)
 - Add multiplier persistence across restarts by storing the current multiplier state in localStorage (loadMultiplierState, saveMultiplierState)
 - Add a trick landing bonus that triggers when the player lands after a jump, awarding points based on air time and multiplier (initTrickLandingSystem, updateTrickLandingOnJump, applyTrickLandingBonus)
