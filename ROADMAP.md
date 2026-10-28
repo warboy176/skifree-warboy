@@ -927,3 +927,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to animate the achievement pop-up with a brief fade-in and fade-out effect
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Implement original chase antagonist creature with unique movement pattern and visual design
+- [ ] Add terrain biome transitions with distinct visual styles and obstacle evolution
+- [ ] Introduce style-based scoring with multipliers for close passes and crashes through NPCs
+- [ ] Implement persistent achievement registry with data-driven unlock logic and witty unlock messages
