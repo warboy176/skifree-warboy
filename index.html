@@ -1680,6 +1680,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initAchievementPopups();
+
 initAchievementsCounter();
 
 initNearMissTracker();
@@ -9070,6 +9072,11 @@ function updateAchievementPopups(dt) {
   // Remove displayed achievements
   game.achievementQueue = game.achievementQueue.filter(a => !a.displayed);
 }
+
+function initAchievementPopups() {
+    game.achievementPopup = { displayed: false, timestamp: 0, alpha: 0 };
+}
+
 
 
 
