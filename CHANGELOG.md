@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring with multipliers for close passes and crashes through NPCs (initStyleScoringSystem, updateStyleScoring)
 - Add terrain biome transitions with distinct visual styles and obstacle evolution (initBiomeTransitions, updateBiomeTransition, addBiomeObstacleEvolution)
 - Implement original chase antagonist creature with unique movement pattern and visual design (initAntagonist, spawnAntagonist, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
