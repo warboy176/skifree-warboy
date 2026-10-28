@@ -8965,6 +8965,19 @@ function resetStylePointsAndMultiplierOnGameEnd() {
   }
 }
 
+function registerAchievementEvent(eventType, threshold, description, unlockMessage) {
+  const achievementKey = `event${eventType}${threshold}`;
+  registerAchievementDef(achievementKey, threshold, eventType, description);
+  ACHIEVEMENT_DEFINITIONS.push({
+    key: achievementKey,
+    type: eventType,
+    threshold: threshold,
+    description: description,
+    unlockMessage: unlockMessage
+  });
+}
+
+
 
 
 
