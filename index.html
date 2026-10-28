@@ -8955,6 +8955,17 @@ function loadStyleProgressFromStorage() {
   game.multiplier = 0;
 }
 
+function resetStylePointsAndMultiplierOnGameEnd() {
+  if (game.state === GameState.GAME_OVER || game.state === GameState.PLAYER_DEAD) {
+    game.stylePoints = 0;
+    game.multiplier = 1;
+    game.styleMeter = 0;
+    game.bestStyleScore = 0;
+    game.lastStyleActionTime = 0;
+  }
+}
+
+
 
 
 
