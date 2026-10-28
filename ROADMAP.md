@@ -929,6 +929,6 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Implement original chase antagonist creature with unique movement pattern and visual design
-- [ ] Add terrain biome transitions with distinct visual styles and obstacle evolution
+- [x] Add terrain biome transitions with distinct visual styles and obstacle evolution
 - [ ] Introduce style-based scoring with multipliers for close passes and crashes through NPCs
 - [ ] Implement persistent achievement registry with data-driven unlock logic and witty unlock messages
