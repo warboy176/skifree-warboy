@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry object that stores unlocked achievements as an array of {id, name, description, count, unlockedAt} with default empty state (initAchievementsRegistry)
 - Reset style points and multiplier only when the player dies or the game ends, not on restart (resetStylePointsAndMultiplierOnGameEnd)
 - On game restart, load and apply the saved style points and multiplier from localStorage (loadStyleProgressFromStorage)
 - Add multiplier persistence across restarts by storing the current multiplier state in localStorage (loadMultiplierState, saveMultiplierState)

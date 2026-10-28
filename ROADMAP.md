@@ -915,7 +915,7 @@ Operator direction from the daily report lands here.
 - [x] Add multiplier persistence across restarts by storing the current multiplier state in localStorage
 - [x] On game restart, load and apply the saved style points and multiplier from localStorage
 - [x] Reset style points and multiplier only when the player dies or the game ends, not on restart
-- [ ] Add a persistent achievements registry object that stores unlocked achievements as an array of {id, name, description, count, unlockedAt} with default empty state
+- [x] Add a persistent achievements registry object that stores unlocked achievements as an array of {id, name, description, count, unlockedAt} with default empty state
 - [ ] Implement a function to check and unlock achievements based on new events (e.g., 'crashedThroughSkiers', 'jumpedOverDrones') with Warboy-style witty descriptions
 - [ ] Add a function to auto-update achievements when new mechanics trigger (e.g., increment counter on crash-through or jump-over events)
 - [ ] Integrate a visual overlay that displays newly unlocked achievements with a brief animated pop-up in Warboy's original art style
