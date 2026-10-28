@@ -1,4 +1,5 @@
 # Changelog
+- Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay when player slows, pursuing with increasing speed and aggressive pathfinding (initAntagonist, spawnAntagonistIfDelayed, updateAntagonist)
 - Implement persistent achievement registry with data-driven unlock logic and witty unlock messages (initAchievementRegistry, checkAchievements)
 - Introduce style-based scoring with multipliers for close passes and crashes through NPCs (initStyleScoringSystem, updateStyleScoring)
 - Add terrain biome transitions with distinct visual styles and obstacle evolution (initBiomeTransitions, updateBiomeTransition, addBiomeObstacleEvolution)
