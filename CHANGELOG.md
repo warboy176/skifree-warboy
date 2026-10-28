@@ -1,4 +1,5 @@
 # Changelog
+- Implement persistent achievement registry with data-driven unlock logic and witty unlock messages (initAchievementRegistry, checkAchievements)
 - Introduce style-based scoring with multipliers for close passes and crashes through NPCs (initStyleScoringSystem, updateStyleScoring)
 - Add terrain biome transitions with distinct visual styles and obstacle evolution (initBiomeTransitions, updateBiomeTransition, addBiomeObstacleEvolution)
 - Implement original chase antagonist creature with unique movement pattern and visual design (initAntagonist, spawnAntagonist, updateAntagonist)
