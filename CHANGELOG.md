@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to track and store newly unlocked achievements in memory (initAchievementsStorage, unlockAchievement, checkForAchievements)
 - Create a function to increment the crash-through counter when the player passes through an NPC skier (initNPCs, updateNPCs)
 - Add a new achievements object to track counters for crash-through and jump-over events (initAchievementsCounter, updateAchievementCounters, registerCrashThroughAndJumpOverAchievements)
 - Implement a function to check and unlock achievements based on new events (e.g., 'crashedThroughSkiers', 'jumpedOverDrones') with Warboy-style witty descriptions (checkAndUnlockAchievements, registerAchievementEvent, triggerAchievementEvent)
