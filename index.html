@@ -8977,6 +8977,13 @@ function registerAchievementEvent(eventType, threshold, description, unlockMessa
   });
 }
 
+function triggerAchievementEvent(eventType, value) {
+    const eventLog = window[eventType] || (window[eventType] = []);
+    eventLog.push({type: eventType, value: value, timestamp: Date.now()});
+    checkAchievementsOnEvent(eventType, {value: value});
+}
+
+
 
 
 
