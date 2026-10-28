@@ -9007,6 +9007,40 @@ function updateAchievementCounters(crashThrough, jumpOver) {
   }
 }
 
+function checkForAchievements() {
+  for (const achievementDef of ACHIEVEMENT_DEFINITIONS) {
+    if (game.unlockedAchievements.includes(achievementDef.key)) continue;
+    
+    let conditionMet = false;
+    
+    switch (achievementDef.condition) {
+      case 'stylePoints':
+        conditionMet = game.stylePoints >= achievementDef.unlockThreshold;
+        break;
+      case 'multiplier':
+        conditionMet = game.multiplier >= achievementDef.unlockThreshold;
+        break;
+      case 'npcSkiers':
+        conditionMet = game.npcSkiers >= achievementDef.unlockThreshold;
+        break;
+      case 'obstaclesPassed':
+        conditionMet = game.obstaclesPassed >= achievementDef.unlockThreshold;
+        break;
+      case 'npcsPassed':
+        conditionMet = game.npcsPassed >= achievementDef.unlockThreshold;
+        break;
+      case 'score':
+        conditionMet = GameState.score >= achievementDef.unlockThreshold;
+        break;
+    }
+    
+    if (conditionMet) {
+      unlockAchievement(achievementDef.key);
+    }
+  }
+}
+
+
 
 
 
