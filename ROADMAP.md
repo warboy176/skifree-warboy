@@ -937,7 +937,7 @@ Operator direction from the daily report lands here.
 - [x] Define a distance threshold for the first biome transition (e.g., open slope to forest) as a constant in the game state
 - [!] Add a function to check player distance against biome transition thresholds and trigger the next biome when crossed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a biome change handler that updates the terrain rendering and obstacle generation rules based on the current biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the transition is seamless by preserving player position and speed during the change
+- [!] Ensure the transition is seamless by preserving player position and speed during the change  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create foundational function to render original pixel-art snowfield with variable terrain patterns
 - [ ] Implement original pixel-art forest biome with trees using Warboy's own art style
 - [ ] Add original pixel-art night biome with ambient lighting and star effects
