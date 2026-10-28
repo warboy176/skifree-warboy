@@ -1684,6 +1684,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeTransitionSystem();
+
 initAchievementPopups();
 
 initAchievementsCounter();
@@ -9130,6 +9132,12 @@ function addBiomeObstacleEvolution(playerMeters) {
 function defineBiomeTransitionThresholds() {
     game.biomeTransitionThresholds = [100, 300, 600];
 }
+
+function initBiomeTransitionSystem() {
+    game.biomeTransitionThresholds = defineBiomeTransitionThresholds();
+    game.currentBiomeIndex = 0;
+}
+
 
 
 
