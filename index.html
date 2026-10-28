@@ -1618,6 +1618,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawAchievementPopup(ctx);
+
 drawAirTimeOverlay(ctx);
 
 updateMultiplierDisplay();
@@ -9076,6 +9078,20 @@ function updateAchievementPopups(dt) {
 function initAchievementPopups() {
     game.achievementPopup = { displayed: false, timestamp: 0, alpha: 0 };
 }
+
+function drawAchievementPopup(ctx) {
+  if (game.achievementPopup.displayed) {
+    const rectX = W / 2 - 60;
+    const rectY = H / 2 - 30;
+    ctx.fillStyle = `rgba(255, 255, 255, ${game.achievementPopup.alpha})`;
+    ctx.fillRect(rectX, rectY, 120, 60);
+    ctx.font = '20px sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.fillText('Achievement Unlocked!', W / 2, H / 2 + 5);
+  }
+}
+
 
 
 
