@@ -934,7 +934,7 @@ Operator direction from the daily report lands here.
 - [x] Implement persistent achievement registry with data-driven unlock logic and witty unlock messages
 
 - [x] Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay when player slows, pursuing with increasing speed and aggressive pathfinding
-- [ ] Define a distance threshold for the first biome transition (e.g., open slope to forest) as a constant in the game state
+- [x] Define a distance threshold for the first biome transition (e.g., open slope to forest) as a constant in the game state
 - [ ] Add a function to check player distance against biome transition thresholds and trigger the next biome when crossed
 - [ ] Implement a biome change handler that updates the terrain rendering and obstacle generation rules based on the current biome
 - [ ] Ensure the transition is seamless by preserving player position and speed during the change
