@@ -934,6 +934,10 @@ Operator direction from the daily report lands here.
 - [x] Implement persistent achievement registry with data-driven unlock logic and witty unlock messages
 
 - [x] Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay when player slows, pursuing with increasing speed and aggressive pathfinding
-- [ ] Add dynamic terrain biomes: transition from open slope to forest to night terrain with distinct visual styles and ambient effects using original pixel art
+- [ ] Define biome transition triggers based on player distance traveled
+- [ ] Create foundational function to render original pixel-art snowfield with variable terrain patterns
+- [ ] Implement original pixel-art forest biome with trees using Warboy's own art style
+- [ ] Add original pixel-art night biome with ambient lighting and star effects
+- [ ] Integrate smooth visual transitions between biomes using fade-in/fade-out effects
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback
 - [ ] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text
