@@ -829,6 +829,8 @@ checkAchievementsOnFrame();
 getTreeHeightFromSeed(42);
 
 checkAchievements();
+queueAchievement(achievementDef);
+
 
 triggerAchievement('first_ski');
 
@@ -9043,6 +9045,15 @@ function checkForAchievements() {
 function initAchievementQueue() {
     game.achievementQueue = [];
 }
+
+function queueAchievement(achievementDef) {
+    game.achievementQueue.push({
+        def: achievementDef,
+        timestamp: Date.now(),
+        displayed: false
+    });
+}
+
 
 
 
