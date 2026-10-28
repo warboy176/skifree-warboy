@@ -860,6 +860,8 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
         checkForestBiomeTransition();
         spawnForestBiomeTrees(game.distance);
         updateBiomeTransition(game.distance);
+addBiomeObstacleEvolution(game.player.meters);
+
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;displayAchievementUnlock('dangerZoneReached','DANGER ZONE: BARRELS + OIL');}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;displayAchievementUnlock('finalZoneReached','FINAL ZONE: MINI WARBOYS');}
         updateBiome(player.y);
@@ -9110,6 +9112,21 @@ function updateAchievementPopup(dt) {
         popup.displayed = false;
     }
 }
+
+function addBiomeObstacleEvolution(playerMeters) {
+  if (game.currentBiomeIndex === 0) { // forest biome
+    if (playerMeters > game.lastTreeMeters + FOREST_BIOME_TREE_INTERVAL_METERS) {
+      addTree();
+      game.lastTreeMeters = playerMeters;
+    }
+  } else if (game.currentBiomeIndex === 1) { // night biome
+    for (let i = 0; i < NIGHT_BIOME_PATTERNS.length; i++) {
+      const pattern = NIGHT_BIOME_PATTERNS[i];
+      drawNightBiomeOverlay(ctx, pattern.x, pattern.y, pattern.w, pattern.h);
+    }
+  }
+}
+
 
 
 
