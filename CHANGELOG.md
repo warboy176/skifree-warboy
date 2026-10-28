@@ -1,4 +1,5 @@
 # Changelog
+- Add a biome transition system that triggers at fixed distance intervals, updating terrain style without altering existing mechanics (initBiomeTransitionSystem, updateBiomeTransition)
 - Define a distance threshold for the first biome transition (e.g., open slope to forest) as a constant in the game state (defineBiomeTransitionThresholds)
 - Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay when player slows, pursuing with increasing speed and aggressive pathfinding (initAntagonist, spawnAntagonistIfDelayed, updateAntagonist)
 - Implement persistent achievement registry with data-driven unlock logic and witty unlock messages (initAchievementRegistry, checkAchievements)
