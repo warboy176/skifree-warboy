@@ -919,6 +919,6 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock achievements based on new events (e.g., 'crashedThroughSkiers', 'jumpedOverDrones') with Warboy-style witty descriptions
 - [x] Add a new achievements object to track counters for crash-through and jump-over events
 - [x] Create a function to increment the crash-through counter when the player passes through an NPC skier
-- [ ] Create a function to increment the jump-over counter when the player jumps over an obstacle
+- [!] Create a function to increment the jump-over counter when the player jumps over an obstacle  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a function to check and update achievements whenever a crash-through or jump-over event occurs
 - [ ] Integrate a visual overlay that displays newly unlocked achievements with a brief animated pop-up in Warboy's original art style
