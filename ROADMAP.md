@@ -932,3 +932,8 @@ Operator direction from the daily report lands here.
 - [x] Add terrain biome transitions with distinct visual styles and obstacle evolution
 - [x] Introduce style-based scoring with multipliers for close passes and crashes through NPCs
 - [x] Implement persistent achievement registry with data-driven unlock logic and witty unlock messages
+
+- [ ] Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay when player slows, pursuing with increasing speed and aggressive pathfinding
+- [ ] Add dynamic terrain biomes: transition from open slope to forest to night terrain with distinct visual styles and ambient effects using original pixel art
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback
+- [ ] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text
