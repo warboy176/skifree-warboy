@@ -8998,6 +8998,16 @@ function registerCrashThroughAndJumpOverAchievements() {
   ACHIEVEMENT_DEFINITIONS.jumpOver = { type: `styleScore5`, title: `Jump Over`, description: `Jump over 5 obstacles`, counter: 5, unlockThreshold: 5 };
 }
 
+function updateAchievementCounters(crashThrough, jumpOver) {
+  if (crashThrough) {
+    game.state.crashThroughCount = (game.state.crashThroughCount || 0) + 1;
+  }
+  if (jumpOver) {
+    game.state.jumpOverCount = (game.state.jumpOverCount || 0) + 1;
+  }
+}
+
+
 
 
 
