@@ -9056,18 +9056,19 @@ function queueAchievement(achievementDef) {
 
 function updateAchievementPopups(dt) {
   const now = Date.now();
+  let displayed = false;
   for (let i = 0; i < game.achievementQueue.length; i++) {
     const achievement = game.achievementQueue[i];
-    if (!achievement.displayed && now - achievement.timestamp > 1000) {
-      achievement.displayed = true;
-      showAchievementUnlock(achievement);
-      game.achievementQueue.splice(i, 1);
-      i--;
-    } else if (achievement.displayed) {
-      game.achievementQueue.splice(i, 1);
-      i--;
+    if (!achievement.displayed && now - achievement.timestamp >= 1000) {
+      if (!displayed) {
+        showAchievementUnlock(achievement);
+        achievement.displayed = true;
+        displayed = true;
+      }
     }
   }
+  // Remove displayed achievements
+  game.achievementQueue = game.achievementQueue.filter(a => !a.displayed);
 }
 
 
