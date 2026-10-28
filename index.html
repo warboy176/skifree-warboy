@@ -9092,6 +9092,26 @@ function drawAchievementPopup(ctx) {
   }
 }
 
+function updateAchievementPopup(dt) {
+    const popup = game.achievementPopup;
+    if (!popup.displayed) return;
+    
+    popup.timestamp += dt;
+    
+    if (popup.timestamp < 500) {
+        popup.alpha = popup.timestamp / 500;
+    } else if (popup.timestamp < 1500) {
+        popup.alpha = 1;
+    } else {
+        popup.alpha = 1 - (popup.timestamp - 1500) / 500;
+    }
+    
+    if (popup.alpha <= 0) {
+        popup.displayed = false;
+    }
+}
+
+
 
 
 
