@@ -9172,6 +9172,24 @@ function initNightBiomePatterns() {
   }
 }
 
+function drawBiomeTintTransition(ctx) {
+  if (!game.biomeTintFrom || !game.biomeTintTo) return;
+  
+  const elapsed = Date.now() - game.biomeTintTransitionStart;
+  const alpha = Math.min(elapsed / BIOME_TINT_DURATION, 1);
+  
+  const from = game.biomeTintFrom;
+  const to = game.biomeTintTo;
+  
+  const r = from.r + (to.r - from.r) * alpha;
+  const g = from.g + (to.g - from.g) * alpha;
+  const b = from.b + (to.b - from.b) * alpha;
+  
+  ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  ctx.fillRect(0, 0, W, H);
+}
+
+
 
 
 
