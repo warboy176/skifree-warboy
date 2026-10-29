@@ -970,7 +970,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues
 - [x] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time
 - [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, with a function to initialize and save state on each game end
-- [ ] Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions
+- [x] Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions
 - [ ] Add a function to track and award 'style streak' achievements based on consecutive high-style actions, triggering only when a new personal best is reached
 - [ ] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added
 - [ ] Ensure all achievement events are tied to game state transitions and only add new entries, never modifying existing ones
