@@ -3610,6 +3610,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+initBiomeTraversalAchievements();
+
 registerCrashThroughAndJumpOverAchievements();
 
 registerNearMissAchievement();
@@ -9229,6 +9231,26 @@ function spawnChaseAntagonistIfInactive() {
     game.chaseAntagonist.push(antagonist);
   }
 }
+
+function initBiomeTraversalAchievements() {
+  game.biomeTraversalAchievements = [];
+  for (let i = 0; i < game.biomeThresholds.length; i++) {
+    const threshold = game.biomeThresholds[i];
+    const achievement = addDefaultAchievement({
+      id: `biome_${i}`,
+      name: `Biome ${i + 1} Explorer`,
+      description: `Pass through ${threshold} meters in Biome ${i + 1}`,
+      unlockThreshold: threshold,
+      progress: 0,
+      unlocked: false
+    });
+    game.biomeTraversalAchievements.push(achievement);
+  }
+  initBiomeTransitionTracking();
+  game.obstaclesPassed = 0;
+  game.biomeTransitionThresholds = defineBiomeTransitionThresholds();
+}
+
 
 
 
