@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues (initBiomeState, updateBiomeTransition)
 - Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity (initChaseAntagonist, spawnChaseAntagonistIfInactive, updateChaseAntagonist)
 - Add a persistent achievements registry with data-driven unlock logic for all new mechanics (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring with multipliers for slaloming through NPCs and crashing into hazards (initStyleScoringSystem, updateStyleScoringOnAction, registerStyleAchievement)
