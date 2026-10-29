@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring with multipliers for slaloming through NPCs and crashing into hazards (initStyleScoringSystem, updateStyleScoringOnAction, registerStyleAchievement)
 - Implement terrain biome transitions (lodge → open slope → forest → night) with original art (initBiomeTransitions, updateBiomeTransition)
 - Add the Warboy-designed chase antagonist creature with unique movement pattern and visual design (initAntagonist, spawnAntagonist, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
