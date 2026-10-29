@@ -954,7 +954,7 @@ Operator direction from the daily report lands here.
 - [!] Introduce a terrain pattern sync function that adjusts the frequency and spacing of snow patterns based on current scroll speed, using only existing game loop and scroll state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a biome boundary check function that ensures terrain changes occur only at fixed distance intervals, preventing flickering or premature transitions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Implement original pixel-art forest biome with trees using Warboy's own art style
-- [ ] Add original pixel-art night biome with ambient lighting and star effects
+- [x] Add original pixel-art night biome with ambient lighting and star effects
 - [ ] Integrate smooth visual transitions between biomes using fade-in/fade-out effects
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback
 - [ ] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text
