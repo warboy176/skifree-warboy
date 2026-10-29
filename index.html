@@ -9156,6 +9156,23 @@ function initForestTrees() {
   game.treePalette = [trunk, foliage, accent];
 }
 
+function initNightBiomePatterns() {
+  NIGHT_BIOME_PATTERNS = [];
+  for (let i = 0; i < 100; i++) {
+    const pattern = [];
+    const dotCount = Math.floor(Math.random() * 11) + 5;
+    for (let j = 0; j < dotCount; j++) {
+      pattern.push({
+        x: Math.random() * 4,
+        y: Math.random() * 4,
+        radius: 1
+      });
+    }
+    NIGHT_BIOME_PATTERNS.push(pattern);
+  }
+}
+
+
 
 
 
