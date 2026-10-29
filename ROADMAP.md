@@ -960,3 +960,8 @@ Operator direction from the daily report lands here.
 - [!] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add the Warboy-designed chase antagonist creature with unique movement pattern and visual design
+- [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with original art
+- [ ] Introduce style-based scoring with multipliers for slaloming through NPCs and crashing into hazards
+- [ ] Add a persistent achievements registry with data-driven unlock logic for all new mechanics
