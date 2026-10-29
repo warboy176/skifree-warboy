@@ -9276,6 +9276,14 @@ function updateStyleStreak(actionType) {
   }
 }
 
+function checkStyleStreakAchievement() {
+  if (game.styleStreak >= STYLE_ACTION_BASE_POINTS && !game.styleStreakAchievementTriggered) {
+    addDefaultAchievement('style_streak', game.styleStreak);
+    game.styleStreakAchievementTriggered = true;
+  }
+}
+
+
 
 
 
