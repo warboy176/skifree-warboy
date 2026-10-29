@@ -9261,6 +9261,22 @@ function checkBiomeTraversalAchievements(playerMeters) {
   }
 }
 
+function updateStyleStreak(actionType) {
+  if (actionType === 'high-style') {
+    game.styleStreak++;
+    if (game.styleStreak >= SLALOM_REVERSALS_REQUIRED && game.styleStreak < PROXIMITY_ACHIEVEMENT_RANGE) {
+      GameState.styleScore += 10;
+    } else if (game.styleStreak >= PROXIMITY_ACHIEVEMENT_RANGE && game.styleStreak < HAZARD_ENCOUNTER_THRESHOLD) {
+      GameState.styleScore += 25;
+    } else if (game.styleStreak >= HAZARD_ENCOUNTER_THRESHOLD) {
+      GameState.styleScore += 50;
+    }
+  } else if (actionType === 'low-style') {
+    game.styleStreak = 0;
+  }
+}
+
+
 
 
 
