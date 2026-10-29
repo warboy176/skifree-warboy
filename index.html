@@ -9209,6 +9209,18 @@ function updateStyleScoringOnAction(actionType, timestamp) {
   }
 }
 
+function spawnChaseAntagonistIfInactive() {
+  if (game.lastPlayerActionTime + 30000 < Date.now() && game.chaseAntagonist.length === 0) {
+    game.chaseAntagonist.push({
+      x: W / 2,
+      y: -100,
+      speed: 2.5,
+      active: true
+    });
+  }
+}
+
+
 
 
 
