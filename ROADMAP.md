@@ -971,7 +971,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time
 - [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, with a function to initialize and save state on each game end
 - [x] Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions
-- [ ] Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions
+- [x] Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions
 - [ ] Track the player's personal best style streak and update it only when a new maximum is achieved
 - [ ] Trigger a visual or audio feedback (e.g., a brief glow or chime) when a new personal best style streak is reached
 - [ ] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added

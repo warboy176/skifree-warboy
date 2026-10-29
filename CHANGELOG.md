@@ -1,4 +1,5 @@
 # Changelog
+- Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions (initStyleStreak, updateStyleStreak, checkStyleStreakAchievement)
 - Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions (initBiomeTraversalAchievements, checkBiomeTraversalAchievements)
 - Add a persistent achievements registry that stores unlocked achievements in localStorage, with a function to initialize and save state on each game end (initAchievementsRegistry, saveAchievementsToStorage)
 - Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time (initStyleScoringSystem, updateStyleScoring)
