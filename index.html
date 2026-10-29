@@ -9277,6 +9277,8 @@ function updateStyleStreak(actionType) {
     game.styleStreak = 0;
   }
 }
+checkAndUpdateBestStyleStreak();
+
 
 function checkStyleStreakAchievement() {
   if (game.styleStreak >= STYLE_ACTION_BASE_POINTS && !game.styleStreakAchievementTriggered) {
@@ -9289,6 +9291,18 @@ function initStyleStreakTracking() {
     if (typeof game.styleStreak === 'undefined') game.styleStreak = 0;
     if (typeof game.styleStreakAchievementTriggered === 'undefined') game.styleStreakAchievementTriggered = 0;
 }
+
+function checkAndUpdateBestStyleStreak() {
+  if (game.styleStreak > game.bestStyleScore) {
+    game.bestStyleScore = game.styleStreak;
+    localStorage.setItem('bestStyleScore', game.bestStyleScore);
+    
+    if (game.bestStyleScore >= STYLE_SCORE_BEST_THRESHOLD) {
+      addDefaultAchievement('style_streak_master');
+    }
+  }
+}
+
 
 
 
