@@ -957,6 +957,6 @@ Operator direction from the daily report lands here.
 - [x] Add original pixel-art night biome with ambient lighting and star effects
 - [x] Integrate smooth visual transitions between biomes using fade-in/fade-out effects
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback
-- [ ] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text
+- [!] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
