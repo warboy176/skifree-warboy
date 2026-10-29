@@ -968,5 +968,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity
 - [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues
-- [ ] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time
+- [x] Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time
 - [ ] Create a persistent achievements registry with new entries for biome traversal, style streaks, and antagonist encounters
