@@ -1,4 +1,5 @@
 # Changelog
+- Create a smooth transition function that interpolates between adjacent biome textures during terrain changes (initBiomeTransitionState, updateBiomeTransition, addBiomeTintTransition)
 - Implement a biome transition system that updates the terrain style when crossing biome boundaries, ensuring seamless visual shifts (initBiomeTransitionSystem, updateBiomeTransition)
 - Add a biome transition system that triggers at fixed distance intervals, updating terrain style without altering existing mechanics (initBiomeTransitionSystem, updateBiomeTransition)
 - Define a distance threshold for the first biome transition (e.g., open slope to forest) as a constant in the game state (defineBiomeTransitionThresholds)
