@@ -1,4 +1,5 @@
 # Changelog
+- Add the Warboy-designed chase antagonist creature with unique movement pattern and visual design (initAntagonist, spawnAntagonist, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback (initStyleScoringSystem, updateStyleScoring)
 - Integrate smooth visual transitions between biomes using fade-in/fade-out effects (initBiomeTransitionSystem, updateBiomeTransitions, drawBiomeTintTransition)
