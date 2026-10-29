@@ -1,4 +1,5 @@
 # Changelog
+- Integrate smooth visual transitions between biomes using fade-in/fade-out effects (initBiomeTransitionSystem, updateBiomeTransitions, drawBiomeTintTransition)
 - Add original pixel-art night biome with ambient lighting and star effects (initNightBiomePatterns, drawNightBiomeLayer)
 - Implement original pixel-art forest biome with trees using Warboy's own art style (initForestTrees, addForestTrees)
 - Add a terrain biome transition trigger that activates when player distance exceeds 1000 meters, using existing scroll state and distance tracking (initBiomeTransitionSystem, checkBiomeTransition)
