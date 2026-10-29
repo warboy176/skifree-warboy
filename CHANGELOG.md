@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback (initStyleScoringSystem, updateStyleScoring)
 - Integrate smooth visual transitions between biomes using fade-in/fade-out effects (initBiomeTransitionSystem, updateBiomeTransitions, drawBiomeTintTransition)
 - Add original pixel-art night biome with ambient lighting and star effects (initNightBiomePatterns, drawNightBiomeLayer)
