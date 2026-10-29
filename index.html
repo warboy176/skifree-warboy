@@ -197,6 +197,7 @@ if (autoplay.enabled) {
       y: 0,
       lastSpawnTime: 0
     },
+    chaseAntagonist: [],
     lastInputTime: 0,
     slopeStalkerActive: false,
     biomeTransitionProgress: 0
@@ -9211,12 +9212,21 @@ function updateStyleScoringOnAction(actionType, timestamp) {
 
 function spawnChaseAntagonistIfInactive() {
   if (game.lastPlayerActionTime + 30000 < Date.now() && game.chaseAntagonist.length === 0) {
-    game.chaseAntagonist.push({
+    const antagonist = {
       x: W / 2,
       y: -100,
       speed: 2.5,
-      active: true
-    });
+      active: true,
+      // Visual properties (original art: 16x16 black square, eyes: 2x2 white, mouth: 4x4 red)
+      width: 16,
+      height: 16,
+      color: '#000000',
+      eyeSize: 2,
+      mouthSize: 4,
+      eyeColor: '#ffffff',
+      mouthColor: '#e33232'
+    };
+    game.chaseAntagonist.push(antagonist);
   }
 }
 
