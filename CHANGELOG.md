@@ -1,4 +1,5 @@
 # Changelog
+- Add a terrain biome transition trigger that activates when player distance exceeds 1000 meters, using existing scroll state and distance tracking (initBiomeTransitionSystem, checkBiomeTransition)
 - Create a smooth transition function that interpolates between adjacent biome textures during terrain changes (initBiomeTransitionState, updateBiomeTransition, addBiomeTintTransition)
 - Implement a biome transition system that updates the terrain style when crossing biome boundaries, ensuring seamless visual shifts (initBiomeTransitionSystem, updateBiomeTransition)
 - Add a biome transition system that triggers at fixed distance intervals, updating terrain style without altering existing mechanics (initBiomeTransitionSystem, updateBiomeTransition)
