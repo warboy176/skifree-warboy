@@ -974,5 +974,5 @@ Operator direction from the daily report lands here.
 - [x] Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions
 - [x] Track the player's personal best style streak and update it only when a new maximum is achieved
 - [!] Trigger a visual or audio feedback (e.g., a brief glow or chime) when a new personal best style streak is reached  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
-- [ ] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added
+- [!] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Ensure all achievement events are tied to game state transitions and only add new entries, never modifying existing ones
