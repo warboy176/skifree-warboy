@@ -9189,6 +9189,27 @@ function drawBiomeTintTransition(ctx) {
   ctx.fillRect(0, 0, W, H);
 }
 
+function updateStyleScoringOnAction(actionType, timestamp) {
+  if (actionType === 'slalom' || actionType === 'crash') {
+    game.lastStyleActionTime = timestamp;
+    if (timestamp - game.lastStyleActionTime < COMBO_STREAK_WINDOW_MS) {
+      game.comboStreak++;
+      game.styleScore += COMBO_STREAK_BONUS;
+    } else {
+      game.comboStreak = 0;
+    }
+    for (let i = 0; i < STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS.length; i++) {
+      if (game.comboStreak >= STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS[i].threshold) {
+        game.styleMultiplier = STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS[i].multiplier;
+      } else {
+        break;
+      }
+    }
+    game.styleScore += STYLE_ACTION_BASE_POINTS;
+  }
+}
+
+
 
 
 
