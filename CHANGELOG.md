@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that stores unlocked achievements in localStorage, with a function to initialize and save state on each game end (initAchievementsRegistry, saveAchievementsToStorage)
 - Introduce style-based scoring: bonus points for slaloming close to NPCs, crashing through obstacles, and landing tricks with air time (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues (initBiomeState, updateBiomeTransition)
 - Add original chase antagonist creature with unique movement pattern and visual design, appearing after 30 seconds of inactivity (initChaseAntagonist, spawnChaseAntagonistIfInactive, updateChaseAntagonist)
