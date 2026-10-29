@@ -952,7 +952,7 @@ Operator direction from the daily report lands here.
 - [x] Add a terrain biome transition trigger that activates when player distance exceeds 1000 meters, using existing scroll state and distance tracking
 - [!] Implement a biome change function that updates the tree style palette based on current player distance, without modifying any existing obstacle or scroll logic  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Introduce a terrain pattern sync function that adjusts the frequency and spacing of snow patterns based on current scroll speed, using only existing game loop and scroll state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a biome boundary check function that ensures terrain changes occur only at fixed distance intervals, preventing flickering or premature transitions
+- [!] Create a biome boundary check function that ensures terrain changes occur only at fixed distance intervals, preventing flickering or premature transitions  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement original pixel-art forest biome with trees using Warboy's own art style
 - [ ] Add original pixel-art night biome with ambient lighting and star effects
 - [ ] Integrate smooth visual transitions between biomes using fade-in/fade-out effects
