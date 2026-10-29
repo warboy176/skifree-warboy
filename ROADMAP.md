@@ -973,6 +973,6 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions
 - [x] Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions
 - [x] Track the player's personal best style streak and update it only when a new maximum is achieved
-- [ ] Trigger a visual or audio feedback (e.g., a brief glow or chime) when a new personal best style streak is reached
+- [!] Trigger a visual or audio feedback (e.g., a brief glow or chime) when a new personal best style streak is reached  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [ ] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added
 - [ ] Ensure all achievement events are tied to game state transitions and only add new entries, never modifying existing ones
