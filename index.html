@@ -860,6 +860,8 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
         checkForestBiomeTransition();
         spawnForestBiomeTrees(game.distance);
         updateBiomeTransition(game.distance);
+addBiomeTintTransition(newBiomeIndex, BIOME_TINT_DURATION);
+
 addBiomeObstacleEvolution(game.player.meters);
 
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;displayAchievementUnlock('dangerZoneReached','DANGER ZONE: BARRELS + OIL');}
@@ -9137,6 +9139,14 @@ function initBiomeTransitionSystem() {
     game.biomeTransitionThresholds = defineBiomeTransitionThresholds();
     game.currentBiomeIndex = 0;
 }
+
+function addBiomeTintTransition(newBiomeIndex, durationMs) {
+    game.biomeTintTransitionStart = Date.now();
+    game.biomeTintFrom = game.currentBiome;
+    game.biomeTintTo = newBiomeIndex;
+    game.biomeTintDuration = durationMs;
+}
+
 
 
 
