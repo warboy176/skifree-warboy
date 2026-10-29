@@ -946,7 +946,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a biome transition system that updates the terrain style when crossing biome boundaries, ensuring seamless visual shifts
 - [!] Add a function to draw the selected terrain pattern across the scrolling slope using only existing canvas drawing methods  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Add a biome layer manager that tracks current biome and updates rendering context with new snow texture patterns  <!-- blocked: pipeline: item INCOMPLETE — 1/5 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a function to draw biome-specific snow textures on the canvas background, using only original pixel art patterns
+- [!] Implement a function to draw biome-specific snow textures on the canvas background, using only original pixel art patterns  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a smooth transition function that interpolates between adjacent biome textures during terrain changes
 - [ ] Integrate the layer manager with the game's scrolling slope to apply new textures at biome boundary points
 - [ ] Ensure terrain pattern changes are synchronized with scrolling speed and player position, using only the existing game loop and scroll state
