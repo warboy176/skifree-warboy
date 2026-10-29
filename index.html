@@ -9147,6 +9147,16 @@ function addBiomeTintTransition(newBiomeIndex, durationMs) {
     game.biomeTintDuration = durationMs;
 }
 
+function initForestTrees() {
+  initTreeColorPalettes();
+  const pal = activeTreeColorPalette();
+  const trunk = [100, 60, 30];
+  const foliage = [30, 100, 30];
+  const accent = [150, 180, 100];
+  game.treePalette = [trunk, foliage, accent];
+}
+
+
 
 
 
