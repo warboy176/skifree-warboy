@@ -1687,6 +1687,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleStreakTracking();
+
 initBiomeTransitionSystem();
 
 initAchievementPopups();
@@ -9282,6 +9284,12 @@ function checkStyleStreakAchievement() {
     game.styleStreakAchievementTriggered = true;
   }
 }
+
+function initStyleStreakTracking() {
+    if (typeof game.styleStreak === 'undefined') game.styleStreak = 0;
+    if (typeof game.styleStreakAchievementTriggered === 'undefined') game.styleStreakAchievementTriggered = 0;
+}
+
 
 
 
