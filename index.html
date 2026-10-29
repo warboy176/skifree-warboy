@@ -9251,6 +9251,17 @@ function initBiomeTraversalAchievements() {
   game.biomeTransitionThresholds = defineBiomeTransitionThresholds();
 }
 
+function checkBiomeTraversalAchievements(playerMeters) {
+  for (let i = 0; i < BIOME_THRESHOLDS.length; i++) {
+    const threshold = BIOME_THRESHOLDS[i];
+    if (playerMeters >= threshold && !game.biomeProgression.includes(i)) {
+      addDefaultAchievement(ACHIEVEMENT_DEFINITIONS.biomeTraversal[i]);
+      game.biomeProgression.push(i);
+    }
+  }
+}
+
+
 
 
 
