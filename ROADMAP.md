@@ -944,7 +944,7 @@ Operator direction from the daily report lands here.
 - [!] Define biome-specific art style mappings using Warboy's original pixel art patterns in a new function that returns style data for each biome  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 0 unspecifiable, 2 e -->
 - [!] Create a terrain pattern generator function that selects and applies the correct art style based on current biome, using only existing canvas drawing functions  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a biome transition system that updates the terrain style when crossing biome boundaries, ensuring seamless visual shifts
-- [ ] Add a function to draw the selected terrain pattern across the scrolling slope using only existing canvas drawing methods
+- [!] Add a function to draw the selected terrain pattern across the scrolling slope using only existing canvas drawing methods  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [ ] Integrate a visual layering system to overlay biome-specific snow textures and ground patterns, ensuring smooth transitions between sections
 - [ ] Ensure terrain pattern changes are synchronized with scrolling speed and player position, using only the existing game loop and scroll state
 - [ ] Implement original pixel-art forest biome with trees using Warboy's own art style
