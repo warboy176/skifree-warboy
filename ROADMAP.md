@@ -955,3 +955,5 @@ Operator direction from the daily report lands here.
 - [ ] Integrate smooth visual transitions between biomes using fade-in/fade-out effects
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing tricks, with visible combo multipliers and penalty feedback
 - [ ] Create a persistent achievements registry with new unlockables for biome transitions, style combos, and antagonist encounters, using original art and witty Warboy-style text
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
