@@ -977,4 +977,4 @@ Operator direction from the daily report lands here.
 - [!] Create a function to register and unlock 'antagonist encounter' achievements when the chase antagonist appears or is defeated, ensuring no duplicates are added  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 - [!] Ensure all achievement events are tied to game state transitions and only add new entries, never modifying existing ones  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
