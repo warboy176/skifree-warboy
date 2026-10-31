@@ -978,3 +978,5 @@ Operator direction from the daily report lands here.
 - [!] Ensure all achievement events are tied to game state transitions and only add new entries, never modifying existing ones  <!-- blocked: pipeline NOT started: reasoner decompose failed: TimeoutErro -->
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
