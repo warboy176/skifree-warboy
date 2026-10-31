@@ -979,4 +979,4 @@ Operator direction from the daily report lands here.
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
