@@ -9303,6 +9303,14 @@ function checkAndUpdateBestStyleStreak() {
   }
 }
 
+function updateBiomeDepth(deltaMeters) {
+    game.biomeDepth += deltaMeters;
+    if (game.biomeDepth >= 500 && game.currentBiome === 'lodge') {
+        addBiomeTintTransition('forest');
+    }
+}
+
+
 
 
 
