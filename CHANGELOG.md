@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (forest → night → alpine) with distinct visual themes and obstacle changes (initBiomeState, updateBiomeState, addBiomeObstacleEvolution)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Track the player's personal best style streak and update it only when a new maximum is achieved (initStyleStreakTracking, updateStyleStreak, checkAndUpdateBestStyleStreak)
 - Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions (initStyleStreak, updateStyleStreak, checkStyleStreakAchievement)
