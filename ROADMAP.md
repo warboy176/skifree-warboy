@@ -994,7 +994,7 @@ Operator direction from the daily report lands here.
 - [x] Add biome transition logic that triggers at 500m depth, updating the game's terrain style without altering existing mechanics
 - [!] Define a reusable palette of original pixel-art tree colors using Warboy's own code-drawn design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to draw a single original pixel-art tree sprite using the defined palette  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to generate a random tree sprite from the palette with consistent proportions and style
+- [!] Implement a function to generate a random tree sprite from the palette with consistent proportions and style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a procedural tree cluster generator that places trees in dense groups within the forest biome using the new pixel-art sprites
 - [ ] Integrate tree cluster rendering into the scrolling slope, ensuring trees appear only in the forest biome and are drawn at correct depth-relative positions
 - [ ] Introduce style-based scoring: award bonus points for slalom passes within 10px of skiers or drones, with multipliers stacking for consecutive passes
