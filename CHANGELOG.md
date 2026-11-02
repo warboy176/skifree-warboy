@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Track the player's personal best style streak and update it only when a new maximum is achieved (initStyleStreakTracking, updateStyleStreak, checkAndUpdateBestStyleStreak)
 - Add a style streak counter that increments on each high-style action (e.g., slaloming close to skiers or crashing through obstacles) and resets on low-style or failed actions (initStyleStreak, updateStyleStreak, checkStyleStreakAchievement)
 - Implement a function to check and unlock 'biome traversal' achievements when the player progresses through new terrain biomes, adding only new entries for unmet conditions (initBiomeTraversalAchievements, checkBiomeTraversalAchievements)
