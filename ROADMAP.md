@@ -990,7 +990,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring system with multipliers for slaloming near NPCs and crashing through obstacles
 - [x] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
 
-- [ ] Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that appears after 30 seconds of inactivity, chasing the player with increasing speed and erratic pathing
+- [x] Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that appears after 30 seconds of inactivity, chasing the player with increasing speed and erratic pathing
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, with procedurally generated tree clusters using original pixel-art trees
 - [ ] Introduce style-based scoring: award bonus points for slalom passes within 10px of skiers or drones, with multipliers stacking for consecutive passes
 - [ ] Add a persistent achievements registry with new entries for biome transitions, style streaks, and chase antagonist evasion, all in Warboy's original visual style
