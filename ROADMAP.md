@@ -984,3 +984,8 @@ Operator direction from the daily report lands here.
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [ ] Implement dynamic terrain biomes (forest → night → alpine) with distinct visual themes and obstacle changes
+- [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs and crashing through obstacles
+- [ ] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
