@@ -995,7 +995,7 @@ Operator direction from the daily report lands here.
 - [!] Define a reusable palette of original pixel-art tree colors using Warboy's own code-drawn design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Create a function to draw a single original pixel-art tree sprite using the defined palette  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a function to generate a random tree sprite from the palette with consistent proportions and style  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Define a forest biome threshold that triggers tree clustering based on player distance from start
+- [x] Define a forest biome threshold that triggers tree clustering based on player distance from start
 - [ ] Create a function to generate a random cluster of tree positions within the forest biome using the existing pixel-art sprite coordinates
 - [ ] Implement a procedural tree placement system that adds trees to the game's obstacle array only within forest biome zones
 - [ ] Ensure tree clusters are spaced to avoid overlapping and maintain visual density using the original art
