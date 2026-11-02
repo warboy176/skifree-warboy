@@ -1,4 +1,5 @@
 # Changelog
+- Add biome transition logic that triggers at 500m depth, updating the game's terrain style without altering existing mechanics (initBiomeTransitionSystem, updateBiomeDepth, addBiomeTintTransition)
 - Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that appears after 30 seconds of inactivity, chasing the player with increasing speed and erratic pathing (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Add persistent achievements registry with data-driven unlock logic for new hazards and interactions (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring system with multipliers for slaloming near NPCs and crashing through obstacles (initStyleScoringSystem, updateStyleScoring)

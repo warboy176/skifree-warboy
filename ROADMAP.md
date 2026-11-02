@@ -991,7 +991,7 @@ Operator direction from the daily report lands here.
 - [x] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
 
 - [x] Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that appears after 30 seconds of inactivity, chasing the player with increasing speed and erratic pathing
-- [ ] Add biome transition logic that triggers at 500m depth, updating the game's terrain style without altering existing mechanics
+- [x] Add biome transition logic that triggers at 500m depth, updating the game's terrain style without altering existing mechanics
 - [ ] Define a new original pixel-art tree sprite set using Warboy's own code-drawn design, stored in a reusable palette
 - [ ] Implement a procedural tree cluster generator that places trees in dense groups within the forest biome using the new pixel-art sprites
 - [ ] Integrate tree cluster rendering into the scrolling slope, ensuring trees appear only in the forest biome and are drawn at correct depth-relative positions
