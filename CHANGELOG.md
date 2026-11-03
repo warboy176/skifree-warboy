@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award bonus points for slalom passes within 10px of NPCs or obstacles, with multipliers stacking for consecutive passes (initNPCs, checkSlalomPasses, registerSlalomPassAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendering original tree clusters using procedurally generated Warboy art (initForestBiomeTrees, addForestTrees, renderForestBiomeTrees)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)

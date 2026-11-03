@@ -1013,5 +1013,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendering original tree clusters using procedurally generated Warboy art
-- [ ] Introduce style-based scoring: award bonus points for slalom passes within 10px of NPCs or obstacles, with multipliers stacking for consecutive passes
+- [x] Introduce style-based scoring: award bonus points for slalom passes within 10px of NPCs or obstacles, with multipliers stacking for consecutive passes
 - [ ] Create a persistent achievements registry with new entries for 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Framer' (complete forest biome), and 'Style King' (earn 1000 style points)
