@@ -1689,6 +1689,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initForestBiomeTrees();
+
 initStyleStreakSystem();
 
 initStylePassTracker();
@@ -9417,6 +9419,12 @@ function initBiomeAchievements() {
     }
   ];
 }
+
+function initForestBiomeTrees() {
+  game.forestTrees = [];
+  game.renderTrees = false;
+}
+
 
 
 
