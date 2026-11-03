@@ -709,6 +709,8 @@ spawnAntagonistAtFixedDistanceBehindPlayer();
 updateScrollProgress(dt);
 
 updateNPCs(dt);
+spawnSnowFoxIfInactive(dt);
+
 spawnSnowWolfIfInactive(dt);
 
 updateStyleScoreOnNPCCollision(npc, dt);
@@ -9589,6 +9591,24 @@ function spawnSnowFox() {
   ctx.fillStyle = '#000000';
   ctx.fill();
 }
+
+function spawnSnowFoxIfInactive(dt) {
+  game.timeSinceLastPlayerAction += dt;
+  if (game.timeSinceLastPlayerAction >= 3000 && game.snowFoxes.length < 1) {
+    const playerPos = game.player.position;
+    const snowFox = {
+      x: playerPos.x - 120 * METERS_PER_PIXEL,
+      y: playerPos.y,
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT,
+      speed: NPC_SKIER_SPEED,
+      active: true
+    };
+    game.snowFoxes.push(snowFox);
+    game.timeSinceLastPlayerAction = 0;
+  }
+}
+
 
 
 
