@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Integrate biome transition achievements (e.g., 'Forest Runner', 'Night Skier') that trigger when entering new biomes, each with a custom pixel-art icon (initBiomeAchievements, checkBiomeAchievements)
 - Add a chase antagonist evasion achievement that unlocks after surviving 30 seconds without being caught, with a unique visual indicator (initChaseAntagonistState, updateChaseAntagonist, drawChaseAntagonistIndicator)
 - Create a style streak counter that tracks consecutive style-based actions (e.g., slaloming near skiers) and triggers an achievement at 5, 10, and 20 streaks (initStyleStreakSystem, updateStyleStreakOnAction, registerStyleStreakAchievements)
