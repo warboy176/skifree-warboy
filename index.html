@@ -3618,6 +3618,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+initBiomeAchievements();
+
 registerStyleStreakAchievements();
 
 initBiomeTraversalAchievements();
@@ -9390,6 +9392,32 @@ function checkBiomeAchievements() {
     }
   }
 }
+
+function initBiomeAchievements() {
+  ACHIEVEMENT_DEFINITIONS.biome_transition = [
+    {
+      name: "Forest Runner",
+      type: "biome_transition",
+      icon: [
+        [false, true, true, false],
+        [true, false, false, true],
+        [true, false, false, true],
+        [false, true, true, false]
+      ]
+    },
+    {
+      name: "Night Skier",
+      type: "biome_transition",
+      icon: [
+        [true, false, false, true],
+        [false, true, true, false],
+        [false, true, true, false],
+        [true, false, false, true]
+      ]
+    }
+  ];
+}
+
 
 
 
