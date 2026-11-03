@@ -1021,7 +1021,10 @@ Operator direction from the daily report lands here.
 - [!] Implement the snow-fox's basic movement pattern: slow drifting at the player's level when idle, then accelerating when the player slows down  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input
 - [x] Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met
-- [ ] Implement basic pursuit movement where the snow-fox follows the player's horizontal position at a base speed
+- [ ] Add a SnowFox class with x, y, and speed properties, initialized at the top of the screen and hidden until triggered
+- [ ] Implement a base pursuit update function that moves the SnowFox horizontally toward the player's x position at a fixed speed, only when the game is in PLAYING state
+- [ ] Add logic to spawn the SnowFox at a random time after the player has been skiing for 3 seconds, ensuring it appears only once
+- [ ] Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions
 - [ ] Increase the snow-fox's speed over time to create escalating tension, scaling with game duration
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
 - [ ] Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits
