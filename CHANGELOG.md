@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits (initNPCStyleScoring, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects (initBiomeThresholds, addForestTransitionTrigger, addForestTrees)
 - Add a game duration timer that increments every frame and is accessible globally (initGameTimer, updateGameTimer)
 - Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions (initSnowFoxes, drawSnowFoxes)
