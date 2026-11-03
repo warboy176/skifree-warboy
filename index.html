@@ -9424,6 +9424,18 @@ function initForestBiomeTrees() {
   game.forestTrees = [];
 }
 
+function renderForestBiomeTrees(ctx) {
+  game.forestTrees.forEach(tree => {
+    const x = tree.x;
+    const y = tree.y;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x - 1, y - 4, 4, 4);
+    ctx.fillRect(x + 1, y - 4, 4, 4);
+    ctx.fillRect(x, y, 4, 4);
+  });
+}
+
+
 
 
 
