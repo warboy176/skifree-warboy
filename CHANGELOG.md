@@ -1,4 +1,5 @@
 # Changelog
+- Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input (initSnowFoxes, spawnSnowFox)
 - Define the snow-fox antagonist's core shape and pixel-art body using only original code-drawn vectors in Warboy's style (initSnowFoxes)
 - Create a persistent achievements registry with new entries for 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Framer' (complete forest biome), and 'Style King' (earn 1000 style points) (initAchievementsRegistry, checkAchievementsOnEvent, unlockAchievement)
 - Introduce style-based scoring: award bonus points for slalom passes within 10px of NPCs or obstacles, with multipliers stacking for consecutive passes (initNPCs, checkSlalomPasses, registerSlalomPassAchievement)
