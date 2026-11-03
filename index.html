@@ -662,6 +662,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateGameTimer(dt);
+
 updateTrickLandingOnJump(player, dt);
 applyTrickLandingBonus(player);
 
@@ -9619,6 +9621,11 @@ function drawSnowFoxes(ctx) {
     ctx.strokeRect(fox.x, fox.y, 6, 6);
   }
 }
+
+function updateGameTimer(dt) {
+    game.timer += dt * game.timerIncrement;
+}
+
 
 
 
