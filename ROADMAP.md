@@ -1025,7 +1025,9 @@ Operator direction from the daily report lands here.
 - [!] Implement a base pursuit update function that moves the SnowFox horizontally toward the player's x position at a fixed speed, only when the game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add logic to spawn the SnowFox at a random time after the player has been skiing for 3 seconds, ensuring it appears only once  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 1 unspecifiable, 1 e -->
 - [x] Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions
-- [ ] Increase the snow-fox's speed over time to create escalating tension, scaling with game duration
+- [ ] Add a game duration timer that increments every frame and is accessible globally
+- [ ] Create a function to scale the snow-fox's speed based on elapsed game time, starting from base speed
+- [ ] Update the snow-fox's speed every frame using the scaling function, ensuring it increases smoothly over time
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
 - [ ] Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits
 - [ ] Add a persistent achievements registry with new entries for 'Snow Fox Escape' (survive 30s with chase antagonist) and 'Forest Flanker' (slalom 10 NPCs in forest biome)
