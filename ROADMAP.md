@@ -1008,3 +1008,5 @@ Operator direction from the daily report lands here.
 - [ ] Create a style streak counter that tracks consecutive style-based actions (e.g., slaloming near skiers) and triggers an achievement at 5, 10, and 20 streaks
 - [ ] Add a chase antagonist evasion achievement that unlocks after surviving 30 seconds without being caught, with a unique visual indicator
 - [ ] Integrate biome transition achievements (e.g., 'Forest Runner', 'Night Skier') that trigger when entering new biomes, each with a custom pixel-art icon
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
