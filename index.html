@@ -9609,6 +9609,18 @@ function spawnSnowFoxIfInactive(dt) {
   }
 }
 
+function drawSnowFoxes(ctx) {
+  for (let i = 0; i < game.snowFoxes.length; i++) {
+    const fox = game.snowFoxes[i];
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 1;
+    ctx.fillRect(fox.x, fox.y, 6, 6);
+    ctx.strokeRect(fox.x, fox.y, 6, 6);
+  }
+}
+
+
 
 
 
