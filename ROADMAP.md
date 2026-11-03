@@ -1000,7 +1000,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a procedural tree placement system that adds trees to the game's obstacle array only within forest biome zones
 - [!] Ensure tree clusters are spaced to avoid overlapping and maintain visual density using the original art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Integrate tree cluster rendering into the scrolling slope, ensuring trees appear only in the forest biome and are drawn at correct depth-relative positions  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to detect when the player passes within 10px of an NPC skier or drone during skiing
+- [x] Add a function to detect when the player passes within 10px of an NPC skier or drone during skiing
 - [ ] Add a function to track consecutive style passes and apply a stacking multiplier to the score
 - [ ] Update the score display to show the current style multiplier and bonus points in real time
 - [ ] Add a persistent achievements registry with new entries for biome transitions, style streaks, and chase antagonist evasion, all in Warboy's original visual style
