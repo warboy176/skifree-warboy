@@ -1623,6 +1623,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawChaseAntagonistIndicator();
+
 drawAchievementPopup(ctx);
 
 drawAirTimeOverlay(ctx);
@@ -9367,6 +9369,14 @@ function registerStyleStreakAchievements() {
     addDefaultAchievement(newAchievement);
   }
 }
+
+function drawChaseAntagonistIndicator() {
+    if (game.chaseAntagonist.active && !game.chaseAntagonistCaught) {
+        ctx.fillStyle = `rgba(255, 255, 255, 0.8)`;
+        ctx.fillRect(W - 20, 20, 4, 4);
+    }
+}
+
 
 
 
