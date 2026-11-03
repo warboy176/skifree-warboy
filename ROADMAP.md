@@ -1023,7 +1023,7 @@ Operator direction from the daily report lands here.
 - [x] Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met
 - [x] Add a SnowFox class with x, y, and speed properties, initialized at the top of the screen and hidden until triggered
 - [!] Implement a base pursuit update function that moves the SnowFox horizontally toward the player's x position at a fixed speed, only when the game is in PLAYING state  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add logic to spawn the SnowFox at a random time after the player has been skiing for 3 seconds, ensuring it appears only once
+- [!] Add logic to spawn the SnowFox at a random time after the player has been skiing for 3 seconds, ensuring it appears only once  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 1 unspecifiable, 1 e -->
 - [ ] Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions
 - [ ] Increase the snow-fox's speed over time to create escalating tension, scaling with game duration
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
