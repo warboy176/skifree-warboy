@@ -1028,6 +1028,6 @@ Operator direction from the daily report lands here.
 - [x] Add a game duration timer that increments every frame and is accessible globally
 - [!] Create a function to scale the snow-fox's speed based on elapsed game time, starting from base speed  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Update the snow-fox's speed every frame using the scaling function, ensuring it increases smoothly over time  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
+- [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
 - [ ] Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits
 - [ ] Add a persistent achievements registry with new entries for 'Snow Fox Escape' (survive 30s with chase antagonist) and 'Forest Flanker' (slalom 10 NPCs in forest biome)

@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects (initBiomeThresholds, addForestTransitionTrigger, addForestTrees)
 - Add a game duration timer that increments every frame and is accessible globally (initGameTimer, updateGameTimer)
 - Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions (initSnowFoxes, drawSnowFoxes)
 - Add a SnowFox class with x, y, and speed properties, initialized at the top of the screen and hidden until triggered (initSnowFoxes, spawnSnowFox)
