@@ -9555,6 +9555,14 @@ function initSnowFoxes() {
   };
 }
 
+function updateSnowFoxEyes(dt) {
+  for (let i = 0; i < game.snowFoxes.length; i++) {
+    const fox = game.snowFoxes[i];
+    fox.eyePulse = Math.sin(Date.now() * 0.005 + i) * 0.5 + 0.5;
+  }
+}
+
+
 
 
 
