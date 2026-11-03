@@ -9564,6 +9564,30 @@ function spawnSnowFox() {
     speed: 1.5
   };
   game.snowFoxes.push(fox);
+
+  // Draw the snow fox using canvas primitives
+  ctx.fillStyle = '#ffffff';
+  ctx.beginPath();
+  ctx.ellipse(fox.x + fox.width / 2, fox.y + fox.height / 2, fox.width / 2, fox.height / 2, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Draw eyes
+  ctx.fillStyle = '#000000';
+  ctx.beginPath();
+  ctx.arc(fox.x + fox.width * 0.3, fox.y + fox.height * 0.4, 2, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(fox.x + fox.width * 0.7, fox.y + fox.height * 0.4, 2, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Draw nose
+  ctx.beginPath();
+  ctx.moveTo(fox.x + fox.width * 0.5, fox.y + fox.height * 0.6);
+  ctx.lineTo(fox.x + fox.width * 0.5, fox.y + fox.height * 0.7);
+  ctx.lineTo(fox.x + fox.width * 0.6, fox.y + fox.height * 0.6);
+  ctx.closePath();
+  ctx.fillStyle = '#000000';
+  ctx.fill();
 }
 
 
