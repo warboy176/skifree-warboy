@@ -1,4 +1,5 @@
 # Changelog
+- Create a style streak counter that tracks consecutive style-based actions (e.g., slaloming near skiers) and triggers an achievement at 5, 10, and 20 streaks (initStyleStreakSystem, updateStyleStreakOnAction, registerStyleStreakAchievements)
 - Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial entries for biome transitions and chase antagonist evasion (initAchievementsRegistry, unlockAchievement, checkAndUnlockAchievements)
 - Update the score display to show the current style multiplier and bonus points in real time (updateScoreDisplay)
 - Add a function to track consecutive style passes and apply a stacking multiplier to the score (initStylePassTracker, updateStylePassMultiplier)
