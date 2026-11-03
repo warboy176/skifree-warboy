@@ -1687,6 +1687,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleStreakSystem();
+
 initStylePassTracker();
 
 initStyleStreakTracking();
@@ -9325,6 +9327,12 @@ function updateStylePassMultiplier(dt) {
     game.stylePassMultiplier = 1;
   }
 }
+
+function initStyleStreakSystem() {
+  if (typeof game.styleStreak !== 'number') game.styleStreak = 0;
+  if (typeof game.styleStreakLastActionTime !== 'number') game.styleStreakLastActionTime = 0;
+}
+
 
 
 
