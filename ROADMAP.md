@@ -1018,7 +1018,7 @@ Operator direction from the daily report lands here.
 
 - [x] Define the snow-fox antagonist's core shape and pixel-art body using only original code-drawn vectors in Warboy's style
 - [!] Add glowing eyes to the snow-fox using animated pixel-art effects with a soft pulse animation  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement the snow-fox's basic movement pattern: slow drifting at the player's level when idle, then accelerating when the player slows down
+- [!] Implement the snow-fox's basic movement pattern: slow drifting at the player's level when idle, then accelerating when the player slows down  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input
 - [ ] Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met
 - [ ] Implement basic pursuit movement where the snow-fox follows the player's horizontal position at a base speed
