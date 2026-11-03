@@ -9453,6 +9453,109 @@ function registerSlalomPassAchievement() {
   addDefaultAchievement(newAchievement);
 }
 
+function initSnowFoxes() {
+  game.snowFoxes = [];
+  
+  function drawSnowFox(ctx, fox) {
+    ctx.save();
+    ctx.translate(fox.x, fox.y);
+    
+    // Fox body - rectangle
+    ctx.fillStyle = '#8B4513';
+    ctx.fillRect(-12, -8, 24, 16);
+    
+    // Fox head - rectangle
+    ctx.fillStyle = '#A0522D';
+    ctx.fillRect(-8, -12, 16, 12);
+    
+    // Fox snout - triangle
+    ctx.fillStyle = '#654321';
+    ctx.beginPath();
+    ctx.moveTo(8, -6);
+    ctx.lineTo(16, -2);
+    ctx.lineTo(8, 2);
+    ctx.closePath();
+    ctx.fill();
+    
+    // Fox ears - triangles
+    ctx.fillStyle = '#8B4513';
+    ctx.beginPath();
+    ctx.moveTo(-6, -16);
+    ctx.lineTo(-2, -10);
+    ctx.lineTo(-6, -10);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.moveTo(6, -16);
+    ctx.lineTo(2, -10);
+    ctx.lineTo(6, -10);
+    ctx.closePath();
+    ctx.fill();
+    
+    // Fox tail - polygon
+    ctx.fillStyle = '#8B4513';
+    ctx.beginPath();
+    ctx.moveTo(12, 0);
+    ctx.lineTo(20, -4);
+    ctx.lineTo(24, 0);
+    ctx.lineTo(20, 4);
+    ctx.closePath();
+    ctx.fill();
+    
+    // Fox eyes - rectangles
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(-5, -10, 2, 2);
+    ctx.fillRect(3, -10, 2, 2);
+    
+    ctx.restore();
+  }
+  
+  function updateSnowFox(fox) {
+    fox.x += fox.vx;
+    fox.y += fox.vy;
+    
+    if (fox.x < 0 || fox.x > game.width) fox.vx *= -1;
+    if (fox.y < 0 || fox.y > game.height) fox.vy *= -1;
+    
+    fox.angle += fox.rotationSpeed;
+  }
+  
+  // Initialize snow foxes
+  for (let i = 0; i < 3; i++) {
+    game.snowFoxes.push({
+      x: Math.random() * game.width,
+      y: Math.random() * game.height,
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
+      angle: 0,
+      rotationSpeed: (Math.random() - 0.5) * 0.1,
+      width: 24,
+      height: 16
+    });
+  }
+  
+  // Wire into game loop
+  const originalUpdate = game.update;
+  game.update = function() {
+    originalUpdate.call(this);
+    
+    for (let i = 0; i < game.snowFoxes.length; i++) {
+      updateSnowFox(game.snowFoxes[i]);
+    }
+  };
+  
+  const originalDraw = game.draw;
+  game.draw = function(ctx) {
+    originalDraw.call(this, ctx);
+    
+    for (let i = 0; i < game.snowFoxes.length; i++) {
+      drawSnowFox(ctx, game.snowFoxes[i]);
+    }
+  };
+}
+
+
 
 
 
