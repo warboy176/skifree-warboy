@@ -9377,6 +9377,21 @@ function drawChaseAntagonistIndicator() {
     }
 }
 
+function checkBiomeAchievements() {
+  if (!game.biomeThresholds) return;
+  
+  for (const biome in BIOME_THRESHOLDS) {
+    if (game.player.meters >= BIOME_THRESHOLDS[biome] && !game.biomeThresholds[biome].unlocked) {
+      const achievementDef = ACHIEVEMENT_DEFINITIONS[biome + 'Biome'];
+      if (achievementDef) {
+        addDefaultAchievement(achievementDef);
+        game.biomeThresholds[biome].unlocked = true;
+      }
+    }
+  }
+}
+
+
 
 
 
