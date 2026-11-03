@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial entries for biome transitions and chase antagonist evasion (initAchievementsRegistry, unlockAchievement, checkAndUnlockAchievements)
 - Update the score display to show the current style multiplier and bonus points in real time (updateScoreDisplay)
 - Add a function to track consecutive style passes and apply a stacking multiplier to the score (initStylePassTracker, updateStylePassMultiplier)
 - Add a function to detect when the player passes within 10px of an NPC skier or drone during skiing (initNPCs, updateNPCs, checkNPCProximity)
