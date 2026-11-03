@@ -9627,16 +9627,9 @@ function updateGameTimer(dt) {
 }
 
 function initGameTimer() {
-    game.timer = 0;
-    game.timerIncrement = 1;
-    initGameState();
-initGameTimer();
-
-    initPlayerState();
-    initPlayerInactivityTimer();
-    game.trickMultiplierStartTime = null;
-    game.overlayTimer = null;
-    game.trackTimer = 0;
+  game.timer = 0;
+  game.timerIncrement = 1;
+  // Timer will be incremented every frame in the main loop
 }
 
 
