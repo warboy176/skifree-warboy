@@ -1687,6 +1687,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStylePassTracker();
+
 initStyleStreakTracking();
 
 initBiomeTransitionSystem();
@@ -9309,6 +9311,12 @@ function updateBiomeDepth(deltaMeters) {
         addBiomeTintTransition('forest');
     }
 }
+
+function initStylePassTracker() {
+    game.stylePasses = 0;
+    game.stylePassMultiplier = 1;
+}
+
 
 
 
