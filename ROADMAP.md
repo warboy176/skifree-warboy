@@ -1016,7 +1016,9 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award bonus points for slalom passes within 10px of NPCs or obstacles, with multipliers stacking for consecutive passes
 - [x] Create a persistent achievements registry with new entries for 'Snow-Wolf Slayer' (defeat chase antagonist), 'Forest Framer' (complete forest biome), and 'Style King' (earn 1000 style points)
 
-- [ ] Define the snow-fox antagonist with original pixel-art in code, featuring glowing eyes using only Warboy's own design
+- [ ] Define the snow-fox antagonist's core shape and pixel-art body using only original code-drawn vectors in Warboy's style
+- [ ] Add glowing eyes to the snow-fox using animated pixel-art effects with a soft pulse animation
+- [ ] Implement the snow-fox's basic movement pattern: slow drifting at the player's level when idle, then accelerating when the player slows down
 - [ ] Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input
 - [ ] Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met
 - [ ] Implement basic pursuit movement where the snow-fox follows the player's horizontal position at a base speed
