@@ -9333,6 +9333,24 @@ function initStyleStreakSystem() {
   if (typeof game.styleStreakLastActionTime !== 'number') game.styleStreakLastActionTime = 0;
 }
 
+function updateStyleStreakOnAction(actionType) {
+  const now = Date.now();
+  if (actionType === 'nearMiss' && (game.styleStreakLastActionTime === 0 || (now - game.styleStreakLastActionTime) <= COMBO_STREAK_WINDOW_MS)) {
+    game.styleStreak++;
+    game.styleStreakLastActionTime = now;
+    if (game.styleStreak === 5 || game.styleStreak === 10 || game.styleStreak === 20) {
+      const achievement = ACHIEVEMENT_DEFINITIONS.find(a => a.id === `styleStreak${game.styleStreak}`);
+      if (achievement) {
+        addDefaultAchievement(achievement);
+      }
+    }
+  } else {
+    game.styleStreak = 0;
+    game.styleStreakLastActionTime = now;
+  }
+}
+
+
 
 
 
