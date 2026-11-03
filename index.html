@@ -3616,6 +3616,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerStyleStreakAchievements();
+
 initBiomeTraversalAchievements();
 
 registerCrashThroughAndJumpOverAchievements();
@@ -9349,6 +9351,23 @@ function updateStyleStreakOnAction(actionType) {
     game.styleStreakLastActionTime = now;
   }
 }
+
+function registerStyleStreakAchievements() {
+  for (let i = 0; i < STYLE_SCORE_ACHIEVEMENT_THRESHOLDS.length; i++) {
+    const thresh = STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[i];
+    const title = `Style Streak ${thresh}`;
+    const description = `Maintain a style streak of ${thresh} days.`;
+    const newAchievement = {
+      type: 'style_streak',
+      title,
+      description,
+      counter: thresh,
+      unlockThreshold: thresh
+    };
+    addDefaultAchievement(newAchievement);
+  }
+}
+
 
 
 
