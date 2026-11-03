@@ -999,6 +999,6 @@ Operator direction from the daily report lands here.
 - [!] Create a function to generate a random cluster of tree positions within the forest biome using the existing pixel-art sprite coordinates  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a procedural tree placement system that adds trees to the game's obstacle array only within forest biome zones
 - [!] Ensure tree clusters are spaced to avoid overlapping and maintain visual density using the original art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Integrate tree cluster rendering into the scrolling slope, ensuring trees appear only in the forest biome and are drawn at correct depth-relative positions
+- [!] Integrate tree cluster rendering into the scrolling slope, ensuring trees appear only in the forest biome and are drawn at correct depth-relative positions  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Introduce style-based scoring: award bonus points for slalom passes within 10px of skiers or drones, with multipliers stacking for consecutive passes
 - [ ] Add a persistent achievements registry with new entries for biome transitions, style streaks, and chase antagonist evasion, all in Warboy's original visual style
