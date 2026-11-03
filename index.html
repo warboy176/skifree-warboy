@@ -9317,6 +9317,16 @@ function initStylePassTracker() {
     game.stylePassMultiplier = 1;
 }
 
+function updateStylePassMultiplier(dt) {
+  const now = Date.now();
+  if (game.stylePasses >= COMBO_STREAK_THRESHOLD) {
+    game.stylePassMultiplier = Math.min(1 + Math.floor(game.stylePasses / COMBO_STREAK_THRESHOLD), 5);
+  } else if (game.lastNearMissTime === undefined || (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
+    game.stylePassMultiplier = 1;
+  }
+}
+
+
 
 
 
