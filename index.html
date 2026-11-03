@@ -270,6 +270,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+registerSlalomPassAchievement();
+
 initChaseAntagonist();
 
 registerChaseAntagonistAchievement();
@@ -9434,6 +9436,23 @@ function renderForestBiomeTrees(ctx) {
     ctx.fillRect(x, y, 4, 4);
   });
 }
+
+function registerSlalomPassAchievement() {
+  const threshold = 5;
+  const title = 'Slalom Pass';
+  const description = 'Complete 5 consecutive slalom passes';
+  const newAchievement = {
+    type: `style_pass`,
+    key: 'slalom_passes',
+    threshold,
+    title,
+    description,
+    counter: 0,
+    unlockThreshold: threshold
+  };
+  addDefaultAchievement(newAchievement);
+}
+
 
 
 
