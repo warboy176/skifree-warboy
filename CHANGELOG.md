@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the SnowFox is drawn on the canvas using original pixel-art style, matching the game's existing art conventions (initSnowFoxes, drawSnowFoxes)
 - Add a SnowFox class with x, y, and speed properties, initialized at the top of the screen and hidden until triggered (initSnowFoxes, spawnSnowFox)
 - Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met (initSnowFoxes, spawnSnowFoxIfInactive)
 - Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input (initSnowFoxes, spawnSnowFox)
