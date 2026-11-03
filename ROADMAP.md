@@ -1003,4 +1003,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to detect when the player passes within 10px of an NPC skier or drone during skiing
 - [x] Add a function to track consecutive style passes and apply a stacking multiplier to the score
 - [x] Update the score display to show the current style multiplier and bonus points in real time
-- [ ] Add a persistent achievements registry with new entries for biome transitions, style streaks, and chase antagonist evasion, all in Warboy's original visual style
+- [ ] Add a persistent achievements registry that stores unlocked achievements in localStorage, with initial entries for biome transitions and chase antagonist evasion
+- [ ] Implement a visual achievement popup system that displays new achievements in Warboy's original pixel-art style when earned
+- [ ] Create a style streak counter that tracks consecutive style-based actions (e.g., slaloming near skiers) and triggers an achievement at 5, 10, and 20 streaks
+- [ ] Add a chase antagonist evasion achievement that unlocks after surviving 30 seconds without being caught, with a unique visual indicator
+- [ ] Integrate biome transition achievements (e.g., 'Forest Runner', 'Night Skier') that trigger when entering new biomes, each with a custom pixel-art icon
