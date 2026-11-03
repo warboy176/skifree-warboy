@@ -1,4 +1,5 @@
 # Changelog
+- Implement a procedural tree placement system that adds trees to the game's obstacle array only within forest biome zones (initForestTrees, addForestTrees)
 - Define a forest biome threshold that triggers tree clustering based on player distance from start (addForestBiomeThreshold, addForestTransitionTrigger, addForestTrees)
 - Add biome transition logic that triggers at 500m depth, updating the game's terrain style without altering existing mechanics (initBiomeTransitionSystem, updateBiomeDepth, addBiomeTintTransition)
 - Add original Warboy-designed chase antagonist (a snow-wolf with glowing eyes) that appears after 30 seconds of inactivity, chasing the player with increasing speed and erratic pathing (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
