@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to track consecutive style passes and apply a stacking multiplier to the score (initStylePassTracker, updateStylePassMultiplier)
 - Add a function to detect when the player passes within 10px of an NPC skier or drone during skiing (initNPCs, updateNPCs, checkNPCProximity)
 - Implement a procedural tree placement system that adds trees to the game's obstacle array only within forest biome zones (initForestTrees, addForestTrees)
 - Define a forest biome threshold that triggers tree clustering based on player distance from start (addForestBiomeThreshold, addForestTransitionTrigger, addForestTrees)
