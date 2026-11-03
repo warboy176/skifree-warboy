@@ -9562,6 +9562,20 @@ function updateSnowFoxEyes(dt) {
   }
 }
 
+function drawSnowFoxEyes(ctx) {
+  for(let i=0;i<game.snowFoxes.length;i++){
+    const fox = game.snowFoxes[i];
+    if(fox){
+      const pulse = 0.5 + Math.sin(Date.now() * 0.005) * 0.5;
+      const size = 2 * pulse;
+      ctx.fillStyle = 'white';
+      ctx.fillRect(Math.floor(fox.x + 8 - size/2), Math.floor(fox.y + 4 - size/2), size, size);
+      ctx.fillRect(Math.floor(fox.x + 12 - size/2), Math.floor(fox.y + 4 - size/2), size, size);
+    }
+  }
+}
+
+
 
 
 
