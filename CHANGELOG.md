@@ -1,4 +1,5 @@
 # Changelog
+- Add a SnowFox class with x, y, and speed properties, initialized at the top of the screen and hidden until triggered (initSnowFoxes, spawnSnowFox)
 - Add logic to spawn the snow-fox at a fixed distance behind the player when inactivity threshold is met (initSnowFoxes, spawnSnowFoxIfInactive)
 - Implement a timer that tracks player inactivity and triggers snow-fox spawn after 10 seconds of no input (initSnowFoxes, spawnSnowFox)
 - Define the snow-fox antagonist's core shape and pixel-art body using only original code-drawn vectors in Warboy's style (initSnowFoxes)
