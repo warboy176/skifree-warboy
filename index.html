@@ -9632,6 +9632,52 @@ function initGameTimer() {
   // Timer will be incremented every frame in the main loop
 }
 
+function initNPCStyleScoring() {
+  game.npcStyleHits = [];
+  const styleScoreUpdateInterval = 1000;
+  game.styleScoreUpdateTime = Date.now();
+  game.npcSkiers.forEach(skier => {
+    skier.lastHitTime = 0;
+  });
+  function updateStyleScore() {
+    if (game.styleScoreUpdateTime + styleScoreUpdateInterval < Date.now()) {
+      game.npcStyleHits = game.npcStyleHits.filter(hitTime => Date.now() - hitTime < 1000);
+      if (game.npcStyleHits.length > 0) {
+        GameState.styleScore += game.npcStyleHits.length;
+      }
+      game.styleScoreUpdateTime = Date.now();
+    }
+  }
+  function handleStyleHit(skier) {
+    const now = Date.now();
+    if (now - skier.lastHitTime < 1000) return;
+    skier.lastHitTime = now;
+    game.npcStyleHits.push(now);
+    PlayerState.isStyleHit = true;
+    updateStyleScore();
+  }
+  function resetStyleTracking() {
+    game.npcStyleHits = [];
+    PlayerState.isStyleHit = false;
+  }
+  initStyleScoreTracking = function() {
+    game.npcStyleHits = [];
+    PlayerState.isStyleHit = false;
+  };
+  initStyleStreakTracking = function() {
+    game.npcStyleHits = [];
+    PlayerState.isStyleHit = false;
+  };
+  updateStyleMultiplierOnEncounter = function(npc, isNearMiss, isCrashThrough) {
+    if (isNearMiss || isCrashThrough) {
+      handleStyleHit(npc);
+    } else {
+      resetStyleTracking();
+    }
+  };
+}
+
+
 
 
 
