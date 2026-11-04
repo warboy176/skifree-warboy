@@ -1048,7 +1048,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award points for close slaloming through skiers, crashing through obstacles, and landing jumps, with visible multipliers and combo counters
 - [x] Create a persistent achievements registry with new entries for each new mechanic: e.g., 'Forest Flanker' for slaloming 10 skiers in the forest, 'Night Rider' for surviving 100m in darkness
 
-- [ ] Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design
+- [x] Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design
 - [ ] Implement the Slosher's basic animation frame cycle (idle or moving) using a single canvas drawing function
 - [ ] Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite
 - [ ] Implement a state machine for the Slosher that starts inactive, then spawns after 10 seconds of no player input
