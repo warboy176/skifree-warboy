@@ -1705,6 +1705,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSlosherSpriteState();
+
 initForestBiomeTrees();
 
 initStyleStreakSystem();
@@ -9756,6 +9758,23 @@ function renderAchievementBadges() {
     ctx.strokeRect(x, y, 24, 24);
   }
 }
+
+function initSlosherSpriteState() {
+    const spriteWidth = 16;
+    const spriteHeight = 24;
+    const canvas = document.createElement('canvas');
+    canvas.width = spriteWidth;
+    canvas.height = spriteHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#333';
+    ctx.fillRect(0, 0, spriteWidth, spriteHeight);
+    ctx.strokeStyle = '#fff';
+    ctx.strokeRect(0, 0, spriteWidth, spriteHeight);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(7, 0, 2, spriteHeight);
+    game.slosherSprite = canvas;
+}
+
 
 
 
