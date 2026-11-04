@@ -1050,7 +1050,7 @@ Operator direction from the daily report lands here.
 
 - [x] Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design
 - [!] Implement the Slosher's basic animation frame cycle (idle or moving) using a single canvas drawing function  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite
+- [x] Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite
 - [ ] Implement a state machine for the Slosher that starts inactive, then spawns after 10 seconds of no player input
 - [ ] Add logic for the Slosher to initially glide slowly at a fixed offset from the player's path before accelerating
 - [ ] Implement erratic dodging behavior for the Slosher when approaching obstacles or the player's path
