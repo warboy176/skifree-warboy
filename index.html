@@ -9775,6 +9775,20 @@ function initSlosherSpriteState() {
     game.slosherSprite = canvas;
 }
 
+function drawSlosherSprite(ctx, x, y) {
+  ctx.fillStyle = '#555555';
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.fillRect(x, y, 16, 24);
+  ctx.strokeRect(x, y, 16, 24);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(x + 8, y);
+  ctx.lineTo(x + 8, y + 24);
+  ctx.stroke();
+}
+
+
 
 
 
