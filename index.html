@@ -5341,6 +5341,8 @@ function initAchievementsStorage() {
         saveAchievements();
     }
 }
+loadAchievements();
+
 
 function saveAchievementsToStorage() {
     if (game.state.achievements && game.state.achievements.length > 0) {
@@ -9724,6 +9726,20 @@ function checkForestFlankerAchievement() {
     addDefaultAchievement('Forest Flanker', ACHIEVEMENT_DEFINITIONS['Forest Flanker']);
   }
 }
+
+function loadAchievements(){
+  const stored = localStorage.getItem('warboy_achievements');
+  if (stored) {
+    try {
+      game.achievements = JSON.parse(stored);
+    } catch (e) {
+      game.achievements = [];
+    }
+  } else {
+    game.achievements = [];
+  }
+}
+
 
 
 
