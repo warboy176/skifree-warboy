@@ -1043,7 +1043,7 @@ Operator direction from the daily report lands here.
 - [x] Display achievement notification when triggered, persisting across restarts
 - [x] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD
 
-- [ ] Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay and pursues the player when they slow down, with distinct movement and visual design
+- [x] Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay and pursues the player when they slow down, with distinct movement and visual design
 - [ ] Add dynamic terrain biomes: code-generated transitions from open slope to forest to night, altering background, lighting, and obstacle density with depth
 - [ ] Introduce style-based scoring: award points for close slaloming through skiers, crashing through obstacles, and landing jumps, with visible multipliers and combo counters
 - [ ] Create a persistent achievements registry with new entries for each new mechanic: e.g., 'Forest Flanker' for slaloming 10 skiers in the forest, 'Night Rider' for surviving 100m in darkness
