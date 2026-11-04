@@ -1631,6 +1631,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawSnowFoxEscapeNotification(ctx);
+
 drawChaseAntagonistIndicator();
 
 drawAchievementPopup(ctx);
@@ -9685,6 +9687,14 @@ function checkForSnowFoxEscapeAchievement(dt) {
     game.achievements.find(a => a.name === 'Snow Fox Escape').active = true;
   }
 }
+
+function drawSnowFoxEscapeNotification(ctx) {
+  if (game.achievements && game.achievements.some(a=>a.id==='Snow Fox Escape' && a.unlocked)) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(W - 16, H - 16, 4, 4);
+  }
+}
+
 
 
 
