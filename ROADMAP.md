@@ -1041,4 +1041,4 @@ Operator direction from the daily report lands here.
 - [x] Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome
 - [x] Check if counter reaches 10 and trigger 'Forest Flanker' achievement if so
 - [x] Display achievement notification when triggered, persisting across restarts
-- [ ] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD
+- [x] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD

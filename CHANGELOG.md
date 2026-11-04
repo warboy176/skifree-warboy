@@ -1,4 +1,5 @@
 # Changelog
+- Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD (renderAchievementBadges)
 - Display achievement notification when triggered, persisting across restarts (initAchievementsStorage, loadAchievements, saveAchievements)
 - Check if counter reaches 10 and trigger 'Forest Flanker' achievement if so (checkForestFlankerAchievement)
 - Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome (initNPCs, updateNearMissCounter, registerNearMissAchievement)
