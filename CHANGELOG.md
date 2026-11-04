@@ -1,4 +1,5 @@
 # Changelog
+- Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome (initNPCs, updateNearMissCounter, registerNearMissAchievement)
 - Define forest biome detection by checking if current terrain style is one of the forest tree styles (initForestBiomeThresholds, isCurrentTerrainForest)
 - Display the 'Snow Fox Escape' achievement notification on screen when the 30-second survival is achieved (checkForSnowFoxEscapeAchievement, drawSnowFoxEscapeNotification)
 - Create a persistent game state flag to track whether the chase antagonist is currently active (initChaseAntagonistState)
