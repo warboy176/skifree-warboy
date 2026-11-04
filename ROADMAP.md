@@ -1048,7 +1048,11 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award points for close slaloming through skiers, crashing through obstacles, and landing jumps, with visible multipliers and combo counters
 - [x] Create a persistent achievements registry with new entries for each new mechanic: e.g., 'Forest Flanker' for slaloming 10 skiers in the forest, 'Night Rider' for surviving 100m in darkness
 
-- [ ] Add original chase antagonist: a pixel-art 'Slosher' creature (Warboy's design) that spawns after 10 seconds of inactivity, gliding slowly then accelerating to pursue the player with erratic dodges
+- [ ] Define the Slosher creature's original pixel-art sprite using Warboy's own code-drawn design in the canvas context
+- [ ] Implement a state machine for the Slosher that starts inactive, then spawns after 10 seconds of no player input
+- [ ] Add logic for the Slosher to initially glide slowly at a fixed offset from the player's path before accelerating
+- [ ] Implement erratic dodging behavior for the Slosher when approaching obstacles or the player's path
+- [ ] Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems
 - [ ] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
 - [ ] Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD
 - [ ] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements
