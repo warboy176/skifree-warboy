@@ -9799,6 +9799,23 @@ function defineSlosherHitbox(slosher) {
   };
 }
 
+function initSlosherState() {
+  game.slosher = {
+    idleTimer: 10000,
+    active: false
+  };
+  game.slopeStalkerTimer = null;
+  game.overlayTimer = null;
+  game.slopeStalkerActive = false;
+  game.cleanTime = 0;
+  game.shake = 0.25;
+  game.slosherSprite = canvas;
+  initSlosherSpriteState();
+  initPlayerInactivityTimer();
+  defineSlosherHitbox();
+}
+
+
 
 
 
