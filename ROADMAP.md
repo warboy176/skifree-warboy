@@ -1036,5 +1036,9 @@ Operator direction from the daily report lands here.
 - [!] Implement a 30-second timer that only counts while the chase antagonist is active  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add an achievement trigger that checks if the 30-second timer completes with the antagonist active  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Display the 'Snow Fox Escape' achievement notification on screen when the 30-second survival is achieved
-- [ ] Add 'Forest Flanker' achievement: trigger when player slaloms past 10 NPCs while in forest biome
+- [ ] Define forest biome detection by checking if current terrain style is one of the forest tree styles
+- [ ] Initialize a counter for slaloming past NPCs in the forest biome, reset on biome change
+- [ ] Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome
+- [ ] Check if counter reaches 10 and trigger 'Forest Flanker' achievement if so
+- [ ] Display achievement notification when triggered, persisting across restarts
 - [ ] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD
