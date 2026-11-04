@@ -1030,7 +1030,7 @@ Operator direction from the daily report lands here.
 - [!] Update the snow-fox's speed every frame using the scaling function, ensuring it increases smoothly over time  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects
 - [x] Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits
-- [ ] Initialize a persistent achievements registry in localStorage to store unlocked achievements
+- [x] Initialize a persistent achievements registry in localStorage to store unlocked achievements
 - [ ] Add 'Snow Fox Escape' achievement: trigger when player survives 30 seconds with chase antagonist active
 - [ ] Add 'Forest Flanker' achievement: trigger when player slaloms past 10 NPCs while in forest biome
 - [ ] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD
