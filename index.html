@@ -663,6 +663,8 @@ triggerEatenState();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateGameTimer(dt);
+checkForSnowFoxEscapeAchievement(dt);
+
 
 updateTrickLandingOnJump(player, dt);
 applyTrickLandingBonus(player);
@@ -9676,6 +9678,14 @@ function initNPCStyleScoring() {
     }
   };
 }
+
+function checkForSnowFoxEscapeAchievement(dt) {
+  if (game.timer >= 30000 && !ACHIEVEMENT_DEFINITIONS['Snow Fox Escape'].unlocked) {
+    ACHIEVEMENT_DEFINITIONS['Snow Fox Escape'].unlocked = true;
+    game.achievements.find(a => a.name === 'Snow Fox Escape').active = true;
+  }
+}
+
 
 
 
