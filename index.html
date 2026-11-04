@@ -662,6 +662,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateNearMissCounter(dt);
+
 updateGameTimer(dt);
 checkForSnowFoxEscapeAchievement(dt);
 
@@ -9698,6 +9700,21 @@ function drawSnowFoxEscapeNotification(ctx) {
 function isCurrentTerrainForest() {
   return game.meters > BIOME_THRESHOLDS.forest.entry && game.meters < BIOME_THRESHOLDS.forest.exit;
 }
+
+function updateNearMissCounter(dt) {
+    if (!isCurrentTerrainForest()) {
+        game.nearMissCounter = 0;
+        return;
+    }
+
+    for (let npc of game.npcSkiers) {
+        let distance = player.distance(npc);
+        if (distance < NEAR_MISS_MARGIN && isCurrentTerrainForest()) {
+            game.nearMissCounter++;
+        }
+    }
+}
+
 
 
 
