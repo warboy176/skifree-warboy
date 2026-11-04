@@ -1033,7 +1033,7 @@ Operator direction from the daily report lands here.
 - [x] Initialize a persistent achievements registry in localStorage to store unlocked achievements
 - [!] Add chase antagonist activation logic that starts after 10 seconds of gameplay and persists until player dies or restarts  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a persistent game state flag to track whether the chase antagonist is currently active
-- [ ] Implement a 30-second timer that only counts while the chase antagonist is active
+- [!] Implement a 30-second timer that only counts while the chase antagonist is active  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add an achievement trigger that checks if the 30-second timer completes with the antagonist active
 - [ ] Display the 'Snow Fox Escape' achievement notification on screen when the 30-second survival is achieved
 - [ ] Add 'Forest Flanker' achievement: trigger when player slaloms past 10 NPCs while in forest biome
