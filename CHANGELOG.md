@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent game state flag to track whether the chase antagonist is currently active (initChaseAntagonistState)
 - Initialize a persistent achievements registry in localStorage to store unlocked achievements (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits (initNPCStyleScoring, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth using original pixel-art tree clusters and fog effects (initBiomeThresholds, addForestTransitionTrigger, addForestTrees)

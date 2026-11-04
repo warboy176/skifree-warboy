@@ -1032,7 +1032,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits
 - [x] Initialize a persistent achievements registry in localStorage to store unlocked achievements
 - [!] Add chase antagonist activation logic that starts after 10 seconds of gameplay and persists until player dies or restarts  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Create a persistent game state flag to track whether the chase antagonist is currently active
+- [x] Create a persistent game state flag to track whether the chase antagonist is currently active
 - [ ] Implement a 30-second timer that only counts while the chase antagonist is active
 - [ ] Add an achievement trigger that checks if the 30-second timer completes with the antagonist active
 - [ ] Display the 'Snow Fox Escape' achievement notification on screen when the 30-second survival is achieved
