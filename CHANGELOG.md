@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award points for close slaloming through skiers, crashing through obstacles, and landing jumps, with visible multipliers and combo counters (initStyleScoringSystem, updateStyleScoring)
 - Add dynamic terrain biomes: code-generated transitions from open slope to forest to night, altering background, lighting, and obstacle density with depth (initBiomeState, updateBiomeState, drawBiomeTransition)
 - Implement the chase antagonist: a unique, original creature drawn in code that appears after a delay and pursues the player when they slow down, with distinct movement and visual design (initAntagonist, spawnAntagonist, updateAntagonist)
 - Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD (renderAchievementBadges)
