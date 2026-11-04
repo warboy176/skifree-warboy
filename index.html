@@ -185,7 +185,7 @@ if (autoplay.enabled) {
     cycle:'WAIT',cycleTime:0,cycleLimit:0
   };
   const game = {
-    state:GameState.START,distance:0,style:0,cameraY:-220,spawnY:300,
+    state:GameState.START,stats:{},trickLandingState:{airTimeMs:0,multiplier:1,lastLandingTime:0},distance:0,style:0,cameraY:-220,spawnY:300,
     obstacles:[],snow:[],tracks:[],trackTimer:0,shake:0,flash:0,trickText:'',trickTime:0,
     cleanTime:0,maxSpeed:0,scoreSaved:false,milestone:0,lastTime:0,
     audioContext: null,
@@ -662,7 +662,13 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
-updateNearMissCounter(dt);
+
+      // core-critical updates hoisted out of the accreted feature list and guarded,
+      // so a crash in that code can never freeze the game (it used to kill the frame loop)
+      try{ updateVerticalDistance(simDt); }catch(__e){}
+      try{ if(typeof spawnNPCs==='function') spawnNPCs(dt); }catch(__e){}
+      try{ if(typeof updateNPCs==='function') updateNPCs(dt); }catch(__e){}
+      try{updateNearMissCounter(dt);
 checkForestFlankerAchievement();
 
 
@@ -866,10 +872,11 @@ checkStyleScoreAchievement();
 checkStyleAchievements(dt);
 
 if(Array.isArray(game.npcSkiers)){for(let i=0;i<game.npcSkiers.length;i++){trackAchievementOnProximity('npcSkier',game.npcSkiers[i]);}}
+      }catch(__featErr){ if(!game.__featWarned){try{console.warn('[skifree] a bolted-on feature was isolated after it threw; the core game keeps running');}catch(_){}game.__featWarned=true;} }
 if(yeti.active)trackAchievementOnProximity('yeti',yeti);
 
       if(game.state===GameState.PLAYING){
-        updateBiomeFromDistance();
+        try{ updateBiomeFromDistance();
         checkForestBiomeTransition();
         spawnForestBiomeTrees(game.distance);
         updateBiomeTransition(game.distance);
@@ -885,6 +892,7 @@ defineSlosherHitbox(slosher);
         updateBiomeTintState(simDt);
         checkBiomeTransition(game.distance);
         updateBiomeTransitions();
+        }catch(__biomeErr){ if(!game.__biomeWarned){try{console.warn('[skifree] bolted-on biome code was isolated after it threw; the core sim keeps running');}catch(_){}game.__biomeWarned=true;} }
         updateYeti(simDt);updateObstacles(simDt);handleCollisions();generateCourse();
       }
       const targetCam=player.y-H*.34;
@@ -3082,7 +3090,7 @@ function callStyleScoreCheckEveryFrame() {
 }
 
 function initGameMultiplier() {
-  game.state.multiplier = 1.0;
+  game.stats.multiplier = 1.0;
 }
 
 function updateMultiplierOnNearMisses(dt) {
@@ -3095,7 +3103,7 @@ function updateMultiplierOnNearMisses(dt) {
             const playerDirection = Math.atan2(player.vy, player.vx);
 
             if (Math.abs(direction - playerDirection) < Math.PI / 4) {
-                game.state.multiplier += 0.5;
+                game.stats.multiplier += 0.5;
                 npc.grazed = true;
             }
         }
@@ -3117,10 +3125,8 @@ function drawMultiplierHUD() {
 }
 
 function initMultiplierState() {
-  if (!game.state) {
-    game.state = {};
-  }
-  game.state.multiplier = 1;
+  game.stats = game.stats || {};
+  game.stats.multiplier = 1;
 }
 
 const UNLOCK_MESSAGES = [
@@ -5317,24 +5323,24 @@ function checkSlickWillyUnlockOnLanding(player, jump, oilSlicks) {
 }
 
 function initAchievementsStorage() {
-    if (!game.state) game.state = {};
-    if (!game.state.achievements) {
-        game.state.achievements = [];
+    game.stats = game.stats || {};
+    if (!game.stats.achievements) {
+        game.stats.achievements = [];
     }
     
     const saveAchievements = () => {
-        localStorage.setItem('achievements', JSON.stringify(game.state.achievements));
+        localStorage.setItem('achievements', JSON.stringify(game.stats.achievements));
     };
     
-    const originalPush = game.state.achievements.push;
-    game.state.achievements.push = function(...items) {
+    const originalPush = game.stats.achievements.push;
+    game.stats.achievements.push = function(...items) {
         const result = originalPush.apply(this, items);
         saveAchievements();
         return result;
     };
     
-    const originalSplice = game.state.achievements.splice;
-    game.state.achievements.splice = function(...args) {
+    const originalSplice = game.stats.achievements.splice;
+    game.stats.achievements.splice = function(...args) {
         const result = originalSplice.apply(this, args);
         saveAchievements();
         return result;
@@ -5342,7 +5348,7 @@ function initAchievementsStorage() {
     
     const storedAchievements = JSON.parse(localStorage.getItem('achievements') || '[]');
     if (storedAchievements.length > 0) {
-        game.state.achievements = storedAchievements;
+        game.stats.achievements = storedAchievements;
     } else {
         saveAchievements();
     }
@@ -5351,8 +5357,8 @@ loadAchievements();
 
 
 function saveAchievementsToStorage() {
-    if (game.state.achievements && game.state.achievements.length > 0) {
-        localStorage.setItem('achievements', JSON.stringify(game.state.achievements));
+    if (game.stats.achievements && game.stats.achievements.length > 0) {
+        localStorage.setItem('achievements', JSON.stringify(game.stats.achievements));
     }
 }
 
@@ -6199,9 +6205,9 @@ function registerStyleAchievement() {
 }
 
 function registerNewHazardAchievement(hazardType) {
-  if (!game.state.achievements[hazardType]) {
+  if (!game.stats.achievements[hazardType]) {
     const definition = ACHIEVEMENT_DEFINITIONS[hazardType];
-    game.state.achievements[hazardType] = {
+    game.stats.achievements[hazardType] = {
       count: 0,
       unlocked: false,
       timestamp: 0,
@@ -6211,8 +6217,8 @@ function registerNewHazardAchievement(hazardType) {
 }
 
 function registerNewNPCAchievement(npcType) {
-  if (!game.state.achievements[npcType]) {
-    game.state.achievements[npcType] = {
+  if (!game.stats.achievements[npcType]) {
+    game.stats.achievements[npcType] = {
       definition: ACHIEVEMENT_DEFINITIONS[npcType],
       count: 0,
       unlocked: false,
@@ -6222,12 +6228,12 @@ function registerNewNPCAchievement(npcType) {
 }
 
 function initHazardAchievements() {
-    game.state.hazardEncounters = {};
+    game.stats.hazardEncounters = {};
 }
 
 function registerHazardEncounter(hazardType) {
-  if (!game.state.hazardEncounters[hazardType]) {
-    game.state.hazardEncounters[hazardType] = true;
+  if (!game.stats.hazardEncounters[hazardType]) {
+    game.stats.hazardEncounters[hazardType] = true;
     const achievementDef = ACHIEVEMENT_DEFINITIONS.find(a => a.type === 'first_hazard' && a.condition?.hazardType === hazardType);
     if (achievementDef) {
       addDefaultAchievement(achievementDef);
@@ -6390,7 +6396,7 @@ function initStyleHUDState() {
     if (typeof game.styleMultiplier !== 'number') game.styleMultiplier = 0;
 }
 
-function updateStyleHUD(game) {
+function updateStyleHUD() {  // param dropped: arg-less callers passed undefined
   const scoreX = 16;
   const multiplierX = 16;
   const y = 18;
@@ -6399,8 +6405,8 @@ function updateStyleHUD(game) {
   ctx.textAlign = 'left';
   ctx.font = '16px sans-serif';
   
-  ctx.fillText(`Style: ${game.styleScore}`, scoreX, y);
-  ctx.fillText(`×${game.styleMultiplier}`, multiplierX, y + 20);
+  ctx.fillText(`Style: ${game.styleScore||0}`, scoreX, y);
+  ctx.fillText(`×${game.styleMultiplier||1}`, multiplierX, y + 20);
 }
 
 function initBiomeZones() {
@@ -6830,20 +6836,20 @@ function initStyleScoreDisplay() {
 }
 
 function initTreeAchievementSystem() {
-    if (typeof game.state === 'string') game.state = {};
-    if (!game.state.treeEncounters) {
+    game.stats = game.stats || {};
+    if (!game.stats.treeEncounters) {
         const saved = localStorage.getItem('treeEncounters');
-        game.state.treeEncounters = saved ? parseInt(saved) : 0;
+        game.stats.treeEncounters = saved ? parseInt(saved) : 0;
     }
 }
 
 function handleTreeEncounter(player, tree) {
-    game.state.treeEncounters++;
+    game.stats.treeEncounters++;
     const unlockedAchievementKeys = JSON.parse(localStorage.getItem('achievements') || '[]');
     
     for (const [key, achievement] of Object.entries(ACHIEVEMENT_DEFINITIONS)) {
         if (achievement.type === 'treeEncounter' && 
-            game.state.treeEncounters >= achievement.threshold &&
+            game.stats.treeEncounters >= achievement.threshold &&
             !unlockedAchievementKeys.includes(key)) {
             
             unlockAchievement(key);
@@ -6942,12 +6948,12 @@ function spawnAntagonistIfInactive(dt) {
 }
 
 function initConsecutivePasses() {
-    game.state.consecutivePasses = 0;
+    game.stats.consecutivePasses = 0;
 }
 
 function checkHorizontalProximity(player, npc) {
     const horizontalDistance = Math.abs(npc.x - player.x);
-    return horizontalDistance <= 15 && !game.state.collisionDetected;
+    return horizontalDistance <= 15 && !game.stats.collisionDetected;
 }
 
 function resetConsecutivePassesOnHazardCollision() {
@@ -8475,7 +8481,7 @@ function triggerEatenState() {
 }
 
 function initAntagonistVisualCue() {
-  game.state.antagonistVisualCue = {
+  game.stats.antagonistVisualCue = {
     isOnScreen: false,
     flickerTimer: 0
   };
@@ -8690,7 +8696,7 @@ function applyBiomeVisuals(ctx, game) {
 }
 
 function initConsecutiveClosePassesCounter() {
-    game.state.consecutiveClosePasses = 0;
+    game.stats.consecutiveClosePasses = 0;
 }
 
 function initMultiplierDisplay() {
@@ -9040,8 +9046,8 @@ function triggerAchievementEvent(eventType, value) {
 
 function initAchievementsCounter() {
     game.state = game.state || {};
-    game.state.jumpOverCount = 0;
-    game.state.crashThroughCount = 0;
+    game.stats.jumpOverCount = 0;
+    game.stats.crashThroughCount = 0;
 }
 
 function registerCrashThroughAndJumpOverAchievements() {
@@ -9051,10 +9057,10 @@ function registerCrashThroughAndJumpOverAchievements() {
 
 function updateAchievementCounters(crashThrough, jumpOver) {
   if (crashThrough) {
-    game.state.crashThroughCount = (game.state.crashThroughCount || 0) + 1;
+    game.stats.crashThroughCount = (game.stats.crashThroughCount || 0) + 1;
   }
   if (jumpOver) {
-    game.state.jumpOverCount = (game.state.jumpOverCount || 0) + 1;
+    game.stats.jumpOverCount = (game.stats.jumpOverCount || 0) + 1;
   }
 }
 
