@@ -1,4 +1,5 @@
 # Changelog
+- Initialize a 'Slosher' state tracker with inactive state and a 10-second idle timer (initSlosherState)
 - Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite (defineSlosherHitbox)
 - Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design (initSlosherSpriteState, drawSlosherSprite)
 - Create a persistent achievements registry with new entries for each new mechanic: e.g., 'Forest Flanker' for slaloming 10 skiers in the forest, 'Night Rider' for surviving 100m in darkness (initAchievementsRegistry, registerAchievement, checkAchievementProgress)

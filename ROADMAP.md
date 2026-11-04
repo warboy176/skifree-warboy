@@ -1051,7 +1051,7 @@ Operator direction from the daily report lands here.
 - [x] Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design
 - [!] Implement the Slosher's basic animation frame cycle (idle or moving) using a single canvas drawing function  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite
-- [ ] Initialize a 'Slosher' state tracker with inactive state and a 10-second idle timer
+- [x] Initialize a 'Slosher' state tracker with inactive state and a 10-second idle timer
 - [ ] Add logic to reset the idle timer on any player input (key or pointer)
 - [ ] Create a function to spawn the Slosher at the top of the screen after 10 seconds of no input
 - [ ] Implement a check in the game loop to trigger spawning only if the Slosher is not already active
