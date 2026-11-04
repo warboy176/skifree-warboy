@@ -1,4 +1,5 @@
 # Changelog
+- Display achievement notification when triggered, persisting across restarts (initAchievementsStorage, loadAchievements, saveAchievements)
 - Check if counter reaches 10 and trigger 'Forest Flanker' achievement if so (checkForestFlankerAchievement)
 - Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome (initNPCs, updateNearMissCounter, registerNearMissAchievement)
 - Define forest biome detection by checking if current terrain style is one of the forest tree styles (initForestBiomeThresholds, isCurrentTerrainForest)

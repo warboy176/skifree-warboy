@@ -1040,5 +1040,5 @@ Operator direction from the daily report lands here.
 - [!] Initialize a counter for slaloming past NPCs in the forest biome, reset on biome change  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Increment the counter when player passes an NPC within NEAR_MISS_MARGIN while in forest biome
 - [x] Check if counter reaches 10 and trigger 'Forest Flanker' achievement if so
-- [ ] Display achievement notification when triggered, persisting across restarts
+- [x] Display achievement notification when triggered, persisting across restarts
 - [ ] Display unlocked achievements in the UI with visual indicators (e.g., badges) on the HUD
