@@ -1,4 +1,5 @@
 # Changelog
+- Add logic to reset the idle timer on any player input (key or pointer) (resetIdleTimer)
 - Initialize a 'Slosher' state tracker with inactive state and a 10-second idle timer (initSlosherState)
 - Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite (defineSlosherHitbox)
 - Define the Slosher's pixel-art sprite shape using custom canvas drawing functions with Warboy's original code-drawn design (initSlosherSpriteState, drawSlosherSprite)
