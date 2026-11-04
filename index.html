@@ -663,6 +663,8 @@ triggerEatenState();
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
 updateNearMissCounter(dt);
+checkForestFlankerAchievement();
+
 
 updateGameTimer(dt);
 checkForSnowFoxEscapeAchievement(dt);
@@ -9716,6 +9718,13 @@ function updateNearMissCounter(dt) {
     game.nearMissCounter = 0;
   }
 }
+
+function checkForestFlankerAchievement() {
+  if (game.nearMissCounter >= 10) {
+    addDefaultAchievement('Forest Flanker', ACHIEVEMENT_DEFINITIONS['Forest Flanker']);
+  }
+}
+
 
 
 
