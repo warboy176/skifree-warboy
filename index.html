@@ -876,6 +876,8 @@ if(yeti.active)trackAchievementOnProximity('yeti',yeti);
 addBiomeTintTransition(newBiomeIndex, BIOME_TINT_DURATION);
 
 addBiomeObstacleEvolution(game.player.meters);
+defineSlosherHitbox(slosher);
+
 
         if(game.milestone<1&&game.distance>=10000){game.milestone=1;displayAchievementUnlock('dangerZoneReached','DANGER ZONE: BARRELS + OIL');}
         if(game.milestone<2&&game.distance>=20000){game.milestone=2;displayAchievementUnlock('finalZoneReached','FINAL ZONE: MINI WARBOYS');}
@@ -9787,6 +9789,16 @@ function drawSlosherSprite(ctx, x, y) {
   ctx.lineTo(x + 8, y + 24);
   ctx.stroke();
 }
+
+function defineSlosherHitbox(slosher) {
+  return {
+    x: slosher.x,
+    y: slosher.y + 0.5 * NPC_SKIER_HEIGHT,
+    width: NPC_SKIER_WIDTH,
+    height: NPC_SKIER_HEIGHT
+  };
+}
+
 
 
 
