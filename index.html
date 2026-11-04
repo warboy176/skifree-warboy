@@ -1635,6 +1635,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+renderAchievementBadges();
+
 drawSnowFoxEscapeNotification(ctx);
 
 drawChaseAntagonistIndicator();
@@ -9739,6 +9741,22 @@ function loadAchievements(){
     game.achievements = [];
   }
 }
+
+function renderAchievementBadges() {
+  const ctx = game.ctx;
+  const badges = game.achievements.filter(a => a.unlocked);
+  const y = HUD_H - 60;
+  for (let i = 0; i < badges.length; i++) {
+    const x = 10 + i * 32;
+    const tint = BIOME_TINTS[game.biome];
+    ctx.fillStyle = tint;
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.fillRect(x, y, 24, 24);
+    ctx.strokeRect(x, y, 24, 24);
+  }
+}
+
 
 
 
