@@ -9695,6 +9695,11 @@ function drawSnowFoxEscapeNotification(ctx) {
   }
 }
 
+function isCurrentTerrainForest() {
+  return game.meters > BIOME_THRESHOLDS.forest.entry && game.meters < BIOME_THRESHOLDS.forest.exit;
+}
+
+
 
 
 
