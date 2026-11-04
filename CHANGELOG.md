@@ -1,4 +1,5 @@
 # Changelog
+- Display the 'Snow Fox Escape' achievement notification on screen when the 30-second survival is achieved (checkForSnowFoxEscapeAchievement, drawSnowFoxEscapeNotification)
 - Create a persistent game state flag to track whether the chase antagonist is currently active (initChaseAntagonistState)
 - Initialize a persistent achievements registry in localStorage to store unlocked achievements (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Introduce style scoring: award points for slaloming within 10px of NPCs or crashing through them, with multipliers stacking up to x5 for consecutive hits (initNPCStyleScoring, updateStyleScoring, registerStyleAchievement)
