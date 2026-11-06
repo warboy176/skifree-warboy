@@ -9830,6 +9830,45 @@ function initSlosherJitterState() {
     game.slosher.jitterStrength = 0;
 }
 
+function updateSlosherJitter(dt) {
+  if (!game.slosher.jitterInitialized) {
+    initSlosherJitterState();
+  }
+
+  let nearby = false;
+  const slosherRect = defineSlosherHitbox(game.slosher.x, game.slosher.y);
+
+  for (let i = 0; i < game.obstacles.length; i++) {
+    const obs = game.obstacles[i];
+    if (Math.abs(slosherRect.x - obs.x) < 200 && Math.abs(slosherRect.y - obs.y) < 200) {
+      nearby = true;
+      break;
+    }
+  }
+
+  if (!nearby && game.playerPath) {
+    for (let i = 0; i < game.playerPath.length; i++) {
+      const point = game.playerPath[i];
+      if (Math.abs(slosherRect.x - point.x) < 200 && Math.abs(slosherRect.y - point.y) < 200) {
+        nearby = true;
+        break;
+      }
+    }
+  }
+
+  if (nearby) {
+    game.slosher.jitterActive = true;
+    game.slosher.jitterStrength = Math.min(game.slosher.jitterStrength + dt * 5, 10);
+  } else {
+    game.slosher.jitterStrength = Math.max(game.slosher.jitterStrength - dt * 3, 0);
+  }
+
+  if (game.slosher.jitterActive) {
+    game.slosher.x += (Math.random() - 0.5) * game.slosher.jitterStrength;
+  }
+}
+
+
 
 
 
