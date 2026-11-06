@@ -1,4 +1,5 @@
 # Changelog
+- Add a random jitter effect to the Slosher's horizontal movement when within 200px of an obstacle or the player's path (initSlosherJitterState, updateSlosherJitter)
 - Add logic to reset the idle timer on any player input (key or pointer) (resetIdleTimer)
 - Initialize a 'Slosher' state tracker with inactive state and a 10-second idle timer (initSlosherState)
 - Add the Slosher's collision box definition as a separate, minimal function that only defines its hitbox dimensions and position relative to its sprite (defineSlosherHitbox)
