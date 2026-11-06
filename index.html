@@ -662,6 +662,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateSlosher(dt);
+
 
       // core-critical updates hoisted out of the accreted feature list and guarded,
       // so a crash in that code can never freeze the game (it used to kill the frame loop)
@@ -9878,6 +9880,15 @@ function initSlosher() {
     active: false
   };
 }
+
+function updateSlosher(dt) {
+  game.slosher.y += NPC_SKIER_SPEED * dt;
+  if (game.slosher.y > H) {
+    game.slosher.y = -NPC_SKIER_HEIGHT;
+    game.slosher.x = Math.random() * (W - NPC_SKIER_WIDTH);
+  }
+}
+
 
 
 
