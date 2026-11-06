@@ -1055,7 +1055,7 @@ Operator direction from the daily report lands here.
 - [x] Add logic to reset the idle timer on any player input (key or pointer)
 - [!] Create a function to spawn the Slosher at the top of the screen after 10 seconds of no input  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a check in the game loop to trigger spawning only if the Slosher is not already active  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add logic for the Slosher to initially glide slowly at a fixed offset from the player's path before accelerating
+- [!] Add logic for the Slosher to initially glide slowly at a fixed offset from the player's path before accelerating  <!-- blocked: pipeline escalated to an operator briefing on every cycle for 2 days (updateSlosher kick-backs: mechanical/gate_fail/structural_break) and never re-decomposed -- attempts stayed at 1. Deferred 2026-11-06 so the mission keeps shipping. -->
 - [ ] Implement erratic dodging behavior for the Slosher when approaching obstacles or the player's path
 - [ ] Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems
 - [ ] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
