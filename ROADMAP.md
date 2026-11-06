@@ -1057,7 +1057,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a check in the game loop to trigger spawning only if the Slosher is not already active  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add logic for the Slosher to initially glide slowly at a fixed offset from the player's path before accelerating  <!-- blocked: pipeline escalated to an operator briefing on every cycle for 2 days (updateSlosher kick-backs: mechanical/gate_fail/structural_break) and never re-decomposed -- attempts stayed at 1. Deferred 2026-11-06 so the mission keeps shipping. -->
 - [x] Add a random jitter effect to the Slosher's horizontal movement when within 200px of an obstacle or the player's path
-- [ ] Implement a probabilistic dodge trigger that activates when the Slosher is within 150px of the player's path, causing it to veer left or right by 10-20px for 1 second
+- [!] Implement a probabilistic dodge trigger that activates when the Slosher is within 150px of the player's path, causing it to veer left or right by 10-20px for 1 second  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure the Slosher's dodging behavior respects the slope's curvature and does not cross into unsafe terrain boundaries
 - [ ] Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems
 - [ ] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
