@@ -4025,6 +4025,8 @@ function initPlayerState() {
     }
   };
 }
+initSlosher();
+
 initAntagonistCollisionState();
 registerAntagonistEatenAchievement();
 
@@ -9867,6 +9869,16 @@ function updateSlosherJitter(dt) {
     game.slosher.x += (Math.random() - 0.5) * game.slosher.jitterStrength;
   }
 }
+
+function initSlosher() {
+  game.slosher = {
+    x: canvas.width / 2,
+    y: -NPC_SKIER_HEIGHT,
+    speed: NPC_SKIER_SPEED,
+    active: false
+  };
+}
+
 
 
 
