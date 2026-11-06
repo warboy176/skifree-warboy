@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art (initBiomeState, updateBiomeState, drawBiomeLayer)
 - Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems (initSlosher, updateSlosher, drawSlosher)
 - Add a random jitter effect to the Slosher's horizontal movement when within 200px of an obstacle or the player's path (initSlosherJitterState, updateSlosherJitter)
 - Add logic to reset the idle timer on any player input (key or pointer) (resetIdleTimer)

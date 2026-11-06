@@ -1060,6 +1060,6 @@ Operator direction from the daily report lands here.
 - [!] Implement a probabilistic dodge trigger that activates when the Slosher is within 150px of the player's path, causing it to veer left or right by 10-20px for 1 second  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Ensure the Slosher's dodging behavior respects the slope's curvature and does not cross into unsafe terrain boundaries  <!-- blocked: pipeline: item INCOMPLETE — 1/6 landed, 0 unspecifiable, 2 e -->
 - [x] Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems
-- [ ] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
+- [x] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
 - [ ] Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD
 - [ ] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements
