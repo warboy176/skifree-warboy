@@ -1064,7 +1064,11 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD
 - [!] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 
-- [ ] Add original Warboy-designed chase antagonist: a pixel-art snow-wolf with glowing eyes, that spawns after 30 seconds and pursues the player with increasing speed, visible only when near
+- [ ] Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code
+- [ ] Implement spawn logic that triggers the snow-wolf after 30 seconds of gameplay, only if player is still alive and skiing
+- [ ] Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player
+- [ ] Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn
+- [ ] Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m, using original tree sprites drawn in code with randomized placement and depth layering
 - [ ] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [ ] Add persistent achievements registry: extend the existing system to include new entries for 'Snow-Wolf Slay' (kill antagonist), 'Forest Flurry' (survive 100m in forest biome), and 'Jumping Jack' (land 5 jumps in a row)
