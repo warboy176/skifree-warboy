@@ -1,4 +1,5 @@
 # Changelog
+- Implement a depth-based z-indexing system that assigns tree rendering order based on vertical position relative to the player (initTreeRenderingOrder, updateTreeRenderingOrder, renderTreesInDepthOrder)
 - Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics (initTreeData, addForestTrees, updateTreeAnimationBranch)
 - Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth (initTreePalette, addForestTrees, drawTrees)
 - Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold (initBiomeTransitionSystem, updateBiomeTransition, drawBiomeTransition)
