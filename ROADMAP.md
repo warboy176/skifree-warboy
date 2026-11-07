@@ -1072,7 +1072,7 @@ Operator direction from the daily report lands here.
 - [x] Add a distance tracker that increments with player movement and triggers biome transitions at 500 meters
 - [x] Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome
 - [x] Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold
-- [ ] Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth
+- [x] Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth
 - [ ] Implement a function to render trees in the forest biome only, using the new sprite set and depth-based z-indexing
 - [ ] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
 - [ ] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
