@@ -9986,6 +9986,11 @@ function initTreeRenderingOrder() {
   game.treeRenderingOrder = [];
 }
 
+function updateTreeRenderingOrder() {
+    game.treeRenderingOrder.sort((a, b) => a.y - b.y);
+}
+
+
 
 
 
