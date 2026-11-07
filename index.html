@@ -662,6 +662,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateSnowWolfSpawner(dt);
+
 updateSlosher(dt);
 
 
@@ -9900,6 +9902,17 @@ function initSnowWolfSpawner() {
     game.snowWolfSpawnTimer = 30000;
     game.snowWolfActive = false;
 }
+
+function updateSnowWolfSpawner(dt) {
+    if (game.snowWolfActive) {
+        game.snowWolfSpawnTimer -= dt;
+        if (game.snowWolfSpawnTimer <= 0 && game.player.alive) {
+            spawnSnowWolf();
+            game.snowWolfActive = false;
+        }
+    }
+}
+
 
 
 
