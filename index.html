@@ -9913,6 +9913,19 @@ function updateSnowWolfSpawner(dt) {
     }
 }
 
+function updateSnowWolfVisibility(dt) {
+    if (!game.snowWolfActive) {
+        const distance = Math.sqrt(
+            Math.pow(game.player.x - game.snowWolfSpawnTimer.x, 2) +
+            Math.pow(game.player.y - game.snowWolfSpawnTimer.y, 2)
+        );
+        if (distance <= 200) {
+            game.snowWolfActive = true;
+        }
+    }
+}
+
+
 
 
 
