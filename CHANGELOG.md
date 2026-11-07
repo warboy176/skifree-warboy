@@ -1,4 +1,5 @@
 # Changelog
+- Add a distance tracker that increments with player movement and triggers biome transitions at 500 meters (initDistanceTracker, updateDistanceAndTriggerBiomeTransition)
 - Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn (initSnowWolf, spawnSnowWolf, updateSnowWolf)
 - Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player (initSnowWolfState, updateSnowWolfVisibility, drawSnowWolfIfVisible)
