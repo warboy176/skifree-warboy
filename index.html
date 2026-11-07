@@ -272,6 +272,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initSnowWolves();
+
 registerSlalomPassAchievement();
 
 initChaseAntagonist();
@@ -10021,6 +10023,82 @@ function drawStyleBurstParticles() {
     }
   }
 }
+
+function initSnowWolves() {
+  game.npcSnowWolves = [];
+  
+  function updateSnowWolves() {
+    for(let i=0;i<game.npcSnowWolves.length;i++) {
+      const wolf = game.npcSnowWolves[i];
+      if(wolf.active) {
+        wolf.x += wolf.vx;
+        wolf.y += wolf.vy;
+        wolf.angle += wolf.av;
+        if(wolf.x < -50 || wolf.x > 850 || wolf.y < -50 || wolf.y > 650) {
+          wolf.active = false;
+        }
+      }
+    }
+  }
+  
+  function drawSnowWolves() {
+    for(let i=0;i<game.npcSnowWolves.length;i++) {
+      const wolf = game.npcSnowWolves[i];
+      if(wolf.active) {
+        drawSnowWolfIfVisible(wolf);
+      }
+    }
+  }
+  
+  function initSnowWolf(wolf) {
+    wolf.x = Math.random() * 800 + 25;
+    wolf.y = Math.random() * 600 + 25;
+    wolf.vx = (Math.random() - 0.5) * 2;
+    wolf.vy = (Math.random() - 0.5) * 2;
+    wolf.av = (Math.random() - 0.5) * 0.1;
+    wolf.active = true;
+    initSnowWolfOffsets(wolf);
+    initSnowWolfState(wolf);
+  }
+  
+  function drawSnowWolfIfVisible(wolf) {
+    if(wolf.x > -20 && wolf.x < 820 && wolf.y > -20 && wolf.y < 620) {
+      drawSnowWolf(wolf);
+    }
+  }
+  
+  function initSnowWolfOffsets(wolf) {
+    wolf.offsetX = Math.random() * 10 - 5;
+    wolf.offsetY = Math.random() * 10 - 5;
+  }
+  
+  function initSnowWolfState(wolf) {
+    wolf.state = 'idle';
+    wolf.timer = 0;
+  }
+  
+  function drawSnowWolf(wolf) {
+    alpha = 0.8;
+    const size = 20;
+    const centerX = wolf.x + wolf.offsetX;
+    const centerY = wolf.y + wolf.offsetY;
+    ctx.save();
+    ctx.translate(centerX, centerY);
+    ctx.rotate(wolf.angle);
+    ctx.fillStyle = '#8B4513';
+    ctx.fillRect(-size/2, -size/2, size, size);
+    ctx.restore();
+  }
+  
+  game.updateSnowWolves = updateSnowWolves;
+  game.drawSnowWolves = drawSnowWolves;
+  game.initSnowWolf = initSnowWolf;
+  game.drawSnowWolfIfVisible = drawSnowWolfIfVisible;
+  game.initSnowWolfOffsets = initSnowWolfOffsets;
+  game.initSnowWolfState = initSnowWolfState;
+  game.drawSnowWolf = drawSnowWolf;
+}
+
 
 
 
