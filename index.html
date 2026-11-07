@@ -9990,6 +9990,13 @@ function updateTreeRenderingOrder() {
     game.treeRenderingOrder.sort((a, b) => a.y - b.y);
 }
 
+function renderTreesInDepthOrder() {
+  for (let i = 0; i < game.treeRenderingOrder.length; i++) {
+    drawTree(game.treeRenderingOrder[i]);
+  }
+}
+
+
 
 
 
