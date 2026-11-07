@@ -1077,3 +1077,5 @@ Operator direction from the daily report lands here.
 - [ ] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
 - [ ] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [ ] Add persistent achievements registry: extend the existing system to include new entries for 'Snow-Wolf Slay' (kill antagonist), 'Forest Flurry' (survive 100m in forest biome), and 'Jumping Jack' (land 5 jumps in a row)
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
