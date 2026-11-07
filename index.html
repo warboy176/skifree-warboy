@@ -9996,6 +9996,18 @@ function renderTreesInDepthOrder() {
   }
 }
 
+function updateTreeCollision(playerY, playerX, playerWidth, playerHeight) {
+  for (let i = 0; i < game.treeRenderingOrder.length; i++) {
+    const tree = game.treeRenderingOrder[i];
+    if (tree.x >= playerX - playerWidth && tree.x <= playerX + playerWidth &&
+        tree.y >= playerY - playerHeight && tree.y <= playerY + playerHeight) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
 
 
 
