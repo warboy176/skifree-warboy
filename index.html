@@ -1717,6 +1717,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSnowWolfSpawner();
+
 initSlosherSpriteState();
 
 initForestBiomeTrees();
@@ -9893,6 +9895,12 @@ function drawSlosher() {
   ctx.fillStyle = 'white';
   ctx.fillRect(game.slosher.x, game.slosher.y, 4, 4);
 }
+
+function initSnowWolfSpawner() {
+    game.snowWolfSpawnTimer = 30000;
+    game.snowWolfActive = false;
+}
+
 
 
 
