@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry object to store unlocked achievements using localStorage (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen (initStyleScoringSystem, updateStyleScoring, drawStyleBurstParticles)
 - Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player (initTrees, addTree, updateTreeCollision)
 - Create a function to render trees only within the forest biome, using the defined sprite set and z-indexing logic (initForestTrees, addForestTrees)
