@@ -1076,7 +1076,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics
 - [x] Implement a depth-based z-indexing system that assigns tree rendering order based on vertical position relative to the player
 - [x] Create a function to render trees only within the forest biome, using the defined sprite set and z-indexing logic
-- [ ] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
+- [x] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
 - [ ] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [ ] Add persistent achievements registry: extend the existing system to include new entries for 'Snow-Wolf Slay' (kill antagonist), 'Forest Flurry' (survive 100m in forest biome), and 'Jumping Jack' (land 5 jumps in a row)
 
