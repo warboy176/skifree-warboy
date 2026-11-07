@@ -1721,6 +1721,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initTreeRenderingOrder();
+
 TREE_SPRITE_DATA = initTreeData();
 
 initDistanceTracker();
@@ -9979,6 +9981,15 @@ function updateTreeAnimationBranch() {
     drawForestTree(tree.x, tree.y, 16, 32, '#228B22', sway);
   }
 }
+
+function initTreeRenderingOrder() {
+  game.treeRenderingOrder = [];
+  game.renderTrees = false;
+  initTreeArray();
+  initTreePositions();
+  initTrees();
+}
+
 
 
 
