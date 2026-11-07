@@ -1079,7 +1079,7 @@ Operator direction from the daily report lands here.
 - [x] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
 - [x] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [x] Add a persistent achievements registry object to store unlocked achievements using localStorage
-- [ ] Add a new NPC type 'Snow-Wolf' with unique visual design using original code-drawn art
+- [x] Add a new NPC type 'Snow-Wolf' with unique visual design using original code-drawn art
 - [ ] Implement collision detection between player and Snow-Wolf that triggers defeat state
 - [ ] Create a game state flag to track Snow-Wolf defeat and unlock 'Snow-Wolf Slay' achievement
 - [ ] Add visual feedback (e.g., explosion animation) when Snow-Wolf is defeated
