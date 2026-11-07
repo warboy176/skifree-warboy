@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to render trees only within the forest biome, using the defined sprite set and z-indexing logic (initForestTrees, addForestTrees)
 - Implement a depth-based z-indexing system that assigns tree rendering order based on vertical position relative to the player (initTreeRenderingOrder, updateTreeRenderingOrder, renderTreesInDepthOrder)
 - Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics (initTreeData, addForestTrees, updateTreeAnimationBranch)
 - Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth (initTreePalette, addForestTrees, drawTrees)
