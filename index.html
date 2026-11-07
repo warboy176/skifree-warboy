@@ -9931,6 +9931,16 @@ function drawSnowWolfIfVisible() {
     }
 }
 
+function updateDistanceAndTriggerBiomeTransition(dt) {
+    game.distanceMeters += game.distanceMetersIncrement * dt;
+    if (game.distanceMeters >= BIOME_THRESHOLDS[0]) {
+        addBiomeTintTransition();
+        addForestTransitionTrigger();
+        game.distanceMetersIncrement = 0;
+    }
+}
+
+
 
 
 
