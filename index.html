@@ -9969,6 +9969,18 @@ function initTreeData() {
   return treeSprites;
 }
 
+function updateTreeAnimationBranch() {
+  const currentTime = game.timeMs;
+  for (let i = 0; i < game.trees.length; i++) {
+    const tree = game.trees[i];
+    if (!tree.active) continue;
+    const frame = Math.floor((currentTime / 100) % 3);
+    const sway = frame === 1 ? -0.5 : frame === 2 ? 0.5 : 0;
+    drawForestTree(tree.x, tree.y, 16, 32, '#228B22', sway);
+  }
+}
+
+
 
 
 
