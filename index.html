@@ -31,6 +31,8 @@
 </main>
 <script>
 (() => {
+  let TREE_SPRITE_DATA;   // scope state (foundation-provided)
+
   let TREE_PALETTE;   // scope state (foundation-provided)
 
   let BIOME_TREE_STYLES;   // scope state (foundation-provided)
@@ -1719,6 +1721,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+TREE_SPRITE_DATA = initTreeData();
+
 initDistanceTracker();
 
 initSnowWolfSpawner();
@@ -9946,6 +9950,25 @@ function initDistanceTracker() {
     game.distanceMeters = 0;
     game.distanceMetersIncrement = 1;
 }
+
+function initTreeData() {
+  const treeSprites = [];
+  for (let i = 0; i < 8; i++) {
+    const sprite = [];
+    for (let y = 0; y < 8; y++) {
+      const row = [];
+      for (let x = 0; x < 6; x++) {
+        if (y < 2) row.push(255); // white snow
+        else if (y < 6) row.push(0); // black trunk
+        else row.push(30); // dark green needles
+      }
+      sprite.push(row);
+    }
+    treeSprites.push(sprite);
+  }
+  return treeSprites;
+}
+
 
 
 
