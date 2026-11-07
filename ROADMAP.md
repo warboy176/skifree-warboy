@@ -1062,4 +1062,4 @@ Operator direction from the daily report lands here.
 - [x] Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems
 - [x] Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art
 - [x] Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD
-- [ ] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements
+- [!] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
