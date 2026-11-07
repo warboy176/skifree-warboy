@@ -1070,7 +1070,7 @@ Operator direction from the daily report lands here.
 - [x] Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn
 - [x] Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts
 - [x] Add a distance tracker that increments with player movement and triggers biome transitions at 500 meters
-- [ ] Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome
+- [x] Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome
 - [ ] Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold
 - [ ] Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth
 - [ ] Implement a function to render trees in the forest biome only, using the new sprite set and depth-based z-indexing
