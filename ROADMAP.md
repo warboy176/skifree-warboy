@@ -1069,6 +1069,9 @@ Operator direction from the daily report lands here.
 - [x] Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player
 - [x] Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn
 - [x] Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m, using original tree sprites drawn in code with randomized placement and depth layering
+- [ ] Add biome transition trigger at 500 meters of distance traveled, updating terrain state without altering existing gameplay
+- [ ] Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth
+- [ ] Implement a function to render trees in the forest biome only, using the new sprite set and depth-based z-indexing
+- [ ] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player
 - [ ] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [ ] Add persistent achievements registry: extend the existing system to include new entries for 'Snow-Wolf Slay' (kill antagonist), 'Forest Flurry' (survive 100m in forest biome), and 'Jumping Jack' (land 5 jumps in a row)
