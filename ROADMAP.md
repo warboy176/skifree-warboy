@@ -1084,6 +1084,8 @@ Operator direction from the daily report lands here.
 - [!] Create a game state flag to track Snow-Wolf defeat and unlock 'Snow-Wolf Slay' achievement  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add visual feedback (e.g., explosion animation) when Snow-Wolf is defeated  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a function to check and unlock 'Forest Flurry' when the player survives 100 meters in the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to check and unlock 'Jumping Jack' when the player lands five consecutive jumps
+- [ ] Add a jump counter to track consecutive successful landings, incrementing only when player lands after a jump
+- [ ] Create a function to check if the jump counter reaches five, and if so, unlock the 'Jumping Jack' achievement
+- [ ] Display the 'Jumping Jack' unlock notification in the HUD when triggered
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
