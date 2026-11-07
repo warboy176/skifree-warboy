@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold (initBiomeTransitionSystem, updateBiomeTransition, drawBiomeTransition)
 - Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome (initBiomeState, updateBiomeState, drawBiomeLayer)
 - Add a distance tracker that increments with player movement and triggers biome transitions at 500 meters (initDistanceTracker, updateDistanceAndTriggerBiomeTransition)
 - Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts (initSnowWolf, updateSnowWolf, drawSnowWolf)
