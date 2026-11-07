@@ -10007,6 +10007,22 @@ function updateTreeCollision(playerY, playerX, playerWidth, playerHeight) {
   return false;
 }
 
+function drawStyleBurstParticles() {
+  if (game.lastNearMissTime && Date.now() - game.lastNearMissTime < 300) {
+    const alpha = 1.0 - (Date.now() - game.lastNearMissTime) / 300;
+    for (let i = 0; i < 4; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const vx = Math.cos(angle) * (5 + Math.random() * 5);
+      const vy = Math.sin(angle) * (5 + Math.random() * 5);
+      const x = player.x + vx * (300 - (Date.now() - game.lastNearMissTime)) / 1000;
+      const y = player.y + vy * (300 - (Date.now() - game.lastNearMissTime)) / 1000;
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.fillRect(x, y, 2, 2);
+    }
+  }
+}
+
+
 
 
 
