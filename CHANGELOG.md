@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to check if the jump counter reaches five, and if so, unlock the 'Jumping Jack' achievement (checkJumpCounterForJumpingJackAchievement)
 - Increment jumpCounter by 1 when player lands after a jump, only if they were in JUMPING state and land on the slope (updatePlayerJumpState)
 - Add a jumpCounter variable initialized to 0 in the game state (initJumpCounter)
 - Implement collision detection between player and Snow-Wolf that triggers defeat state (initSnowWolfState, updateSnowWolves, checkSnowWolfCollision)
