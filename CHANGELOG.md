@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn (initSnowWolf, spawnSnowWolf, updateSnowWolf)
 - Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player (initSnowWolfState, updateSnowWolfVisibility, drawSnowWolfIfVisible)
 - Implement spawn logic that triggers the snow-wolf after 30 seconds of gameplay, only if player is still alive and skiing (initSnowWolfSpawner, updateSnowWolfSpawner, spawnSnowWolf)
