@@ -1,4 +1,5 @@
 # Changelog
+- Increment jumpCounter by 1 when player lands after a jump, only if they were in JUMPING state and land on the slope (updatePlayerJumpState)
 - Add a jumpCounter variable initialized to 0 in the game state (initJumpCounter)
 - Implement collision detection between player and Snow-Wolf that triggers defeat state (initSnowWolfState, updateSnowWolves, checkSnowWolfCollision)
 - Add a new NPC type 'Snow-Wolf' with unique visual design using original code-drawn art (initSnowWolves, spawnSnowWolf, updateSnowWolves)
