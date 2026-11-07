@@ -1073,7 +1073,7 @@ Operator direction from the daily report lands here.
 - [x] Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome
 - [x] Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold
 - [x] Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth
-- [ ] Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics
+- [x] Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics
 - [ ] Implement a depth-based z-indexing system that assigns tree rendering order based on vertical position relative to the player
 - [ ] Create a function to render trees only within the forest biome, using the defined sprite set and z-indexing logic
 - [ ] Ensure tree rendering respects the scrolling slope and maintains consistent collision boundaries with player

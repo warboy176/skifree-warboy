@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to define tree sprite data with original pixel art using only Warboy's own code-drawn graphics (initTreeData, addForestTrees, updateTreeAnimationBranch)
 - Define a new tree sprite set using original code-drawn shapes with randomized positions and vertical layering for depth (initTreePalette, addForestTrees, drawTrees)
 - Introduce a transition effect that smoothly shifts the background and terrain style when crossing the 500-meter threshold (initBiomeTransitionSystem, updateBiomeTransition, drawBiomeTransition)
 - Define a new biome state object with distinct terrain characteristics and update the drawing logic to render it based on current biome (initBiomeState, updateBiomeState, drawBiomeLayer)
