@@ -10099,6 +10099,17 @@ function initSnowWolves() {
   game.drawSnowWolf = drawSnowWolf;
 }
 
+function updatePlayerJumpState(player, dt) {
+    if (player.jumpState === PlayerState.JUMPING) {
+        player.airTimeMs += dt;
+        if (player.airTimeMs >= JUMPMASTER_LANDING_THRESHOLD) {
+            player.jumpState = PlayerState.LANDED;
+            game.jumpCounter++;
+        }
+    }
+}
+
+
 
 
 
