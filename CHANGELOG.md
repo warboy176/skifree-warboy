@@ -1,4 +1,5 @@
 # Changelog
+- Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player (initSnowWolfState, updateSnowWolfVisibility, drawSnowWolfIfVisible)
 - Implement spawn logic that triggers the snow-wolf after 30 seconds of gameplay, only if player is still alive and skiing (initSnowWolfSpawner, updateSnowWolfSpawner, spawnSnowWolf)
 - Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code (initNPCs, spawnSnowWolf, drawSnowWolf)
 - Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)

@@ -1066,7 +1066,7 @@ Operator direction from the daily report lands here.
 
 - [x] Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code
 - [x] Implement spawn logic that triggers the snow-wolf after 30 seconds of gameplay, only if player is still alive and skiing
-- [ ] Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player
+- [x] Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player
 - [ ] Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn
 - [ ] Ensure the snow-wolf does not interfere with existing game mechanics like scoring, collisions, or restarts
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m, using original tree sprites drawn in code with randomized placement and depth layering
