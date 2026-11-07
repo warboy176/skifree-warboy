@@ -1064,7 +1064,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD
 - [!] Add 'crash-through' mechanic: allow player to crash into NPCs (skiers, drones) for bonus points, with visual impact effects and sound, tracked in achievements  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 1 unspecifiable, 0 e -->
 
-- [ ] Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code
+- [x] Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code
 - [ ] Implement spawn logic that triggers the snow-wolf after 30 seconds of gameplay, only if player is still alive and skiing
 - [ ] Add visibility logic so the snow-wolf is only rendered when within a 200-pixel proximity to the player
 - [ ] Implement pursuit behavior where the snow-wolf moves toward the player at increasing speed based on time elapsed since spawn

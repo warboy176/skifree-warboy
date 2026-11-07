@@ -1,4 +1,5 @@
 # Changelog
+- Define a new NPC class for the Warboy-designed snow-wolf with glowing eyes, using original pixel-art drawing in code (initNPCs, spawnSnowWolf, drawSnowWolf)
 - Introduce style scoring: award points for slaloming within 20px of skiers/drones, with multipliers for consecutive close passes, using original 'Wasteland Style' icons in the HUD (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain biomes: transition from open slope → dense forest (with animated trees) → night (with starfield and moon) using time-based state changes and original art (initBiomeState, updateBiomeState, drawBiomeLayer)
 - Ensure the Slosher's pursuit and movement are independent of existing game loops and collision systems (initSlosher, updateSlosher, drawSlosher)
