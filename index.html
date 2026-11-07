@@ -10109,6 +10109,13 @@ function updatePlayerJumpState(player, dt) {
     }
 }
 
+function checkJumpCounterForJumpingJackAchievement() {
+  if (game.jumpCounter === 5) {
+    addDefaultAchievement('JumpingJack', ACHIEVEMENT_DEFINITIONS.JumpingJack);
+  }
+}
+
+
 
 
 
