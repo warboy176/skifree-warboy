@@ -1083,7 +1083,7 @@ Operator direction from the daily report lands here.
 - [x] Implement collision detection between player and Snow-Wolf that triggers defeat state
 - [!] Create a game state flag to track Snow-Wolf defeat and unlock 'Snow-Wolf Slay' achievement  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add visual feedback (e.g., explosion animation) when Snow-Wolf is defeated  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a function to check and unlock 'Forest Flurry' when the player survives 100 meters in the forest biome
+- [!] Implement a function to check and unlock 'Forest Flurry' when the player survives 100 meters in the forest biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a function to check and unlock 'Jumping Jack' when the player lands five consecutive jumps
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
