@@ -9924,6 +9924,14 @@ function updateSnowWolfVisibility(dt) {
   }
 }
 
+function drawSnowWolfIfVisible() {
+    if (game.snowWolfActive) {
+        ctx.fillStyle = 'black';
+        ctx.fillRect(game.snowWolf.x, game.snowWolf.y, 32, 32);
+    }
+}
+
+
 
 
 
