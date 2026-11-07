@@ -1719,6 +1719,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initDistanceTracker();
+
 initSnowWolfSpawner();
 
 initSlosherSpriteState();
@@ -9939,6 +9941,12 @@ function updateDistanceAndTriggerBiomeTransition(dt) {
         game.distanceMetersIncrement = 0;
     }
 }
+
+function initDistanceTracker() {
+    game.distanceMeters = 0;
+    game.distanceMetersIncrement = 1;
+}
+
 
 
 
