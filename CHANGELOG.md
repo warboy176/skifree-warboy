@@ -1,4 +1,5 @@
 # Changelog
+- Implement collision detection between player and Snow-Wolf that triggers defeat state (initSnowWolfState, updateSnowWolves, checkSnowWolfCollision)
 - Add a new NPC type 'Snow-Wolf' with unique visual design using original code-drawn art (initSnowWolves, spawnSnowWolf, updateSnowWolves)
 - Add a persistent achievements registry object to store unlocked achievements using localStorage (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen (initStyleScoringSystem, updateStyleScoring, drawStyleBurstParticles)

@@ -1080,7 +1080,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring system: award points for slaloming within 10px of NPCs, with multipliers for consecutive near-misses, and visual feedback via animated 'style burst' particles on screen
 - [x] Add a persistent achievements registry object to store unlocked achievements using localStorage
 - [x] Add a new NPC type 'Snow-Wolf' with unique visual design using original code-drawn art
-- [ ] Implement collision detection between player and Snow-Wolf that triggers defeat state
+- [x] Implement collision detection between player and Snow-Wolf that triggers defeat state
 - [ ] Create a game state flag to track Snow-Wolf defeat and unlock 'Snow-Wolf Slay' achievement
 - [ ] Add visual feedback (e.g., explosion animation) when Snow-Wolf is defeated
 - [ ] Implement a function to check and unlock 'Forest Flurry' when the player survives 100 meters in the forest biome
