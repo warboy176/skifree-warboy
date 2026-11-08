@@ -1732,6 +1732,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initNightBiomeState();
+
 initSnowfieldTransitionEffect();
 
 initNPCStylePointsTracking();
@@ -10420,6 +10422,12 @@ function renderNightBiomeEffect(ctx) {
     ctx.arc(ctx.canvas.width / 2, ctx.canvas.height / 2, 100, 0, Math.PI * 2);
     ctx.fill();
 }
+
+function initNightBiomeState() {
+    game.nightBiomeActive = false;
+    game.nightBiomeIntensity = 0;
+}
+
 
 
 
