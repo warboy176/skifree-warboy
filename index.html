@@ -10396,6 +10396,21 @@ function drawSnowfieldTransitionEffect(ctx) {
     ctx.globalAlpha = 1;
 }
 
+function updateNightBiomeTransition(dt) {
+    if (game.nightBiomeActive) {
+        game.nightBiomeIntensity += dt * 0.001;
+        if (game.nightBiomeIntensity > 1.0) {
+            game.nightBiomeIntensity = 1.0;
+        }
+    } else {
+        game.nightBiomeIntensity -= 0.001 * dt;
+        if (game.nightBiomeIntensity < 0) {
+            game.nightBiomeIntensity = 0;
+        }
+    }
+}
+
+
 
 
 
