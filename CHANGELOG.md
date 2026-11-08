@@ -1,4 +1,5 @@
 # Changelog
+- Add night biome with reduced visibility and glowing moonlight effect (initNightBiomeState, updateNightBiomeTransition, renderNightBiomeEffect)
 - Introduce forest biome with dynamically generated trees using Warboy's original art (initForestTrees, addForestTrees)
 - Implement visual transition from lodge to open slope using a fading snowfield effect (initSnowfieldTransitionEffect, updateSnowfieldTransitionEffect, drawSnowfieldTransitionEffect)
 - Add biome state tracking to the game loop with initial lodge phase (initBiomeState, updateBiomeState, drawBiomeOverlay)

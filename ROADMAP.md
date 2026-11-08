@@ -1122,7 +1122,7 @@ Operator direction from the daily report lands here.
 - [x] Add biome state tracking to the game loop with initial lodge phase
 - [x] Implement visual transition from lodge to open slope using a fading snowfield effect
 - [x] Introduce forest biome with dynamically generated trees using Warboy's original art
-- [ ] Add night biome with reduced visibility and glowing moonlight effect
+- [x] Add night biome with reduced visibility and glowing moonlight effect
 - [ ] Integrate distinct obstacle patterns per biome: trees in forest, drones in night, and oil slicks in open slope
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
 - [ ] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
