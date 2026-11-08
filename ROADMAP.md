@@ -1131,6 +1131,6 @@ Operator direction from the daily report lands here.
 - [x] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
+- [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
 - [ ] Introduce style-based scoring: award points for slaloming close to NPC skiers (within 20px) and crashing through them, with multipliers for consecutive hits
 - [ ] Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue
