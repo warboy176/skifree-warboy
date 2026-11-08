@@ -1105,3 +1105,5 @@ Operator direction from the daily report lands here.
 - [ ] Add dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendering original tree clusters using procedurally generated, Warboy-designed pixel art
 - [ ] Introduce style-based scoring: award bonus points for slaloming within 20px of NPCs, with multipliers that increase for consecutive close passes
 - [ ] Implement a 'crash-through' mechanic: allow the player to collide with NPC skiers, triggering a visual explosion effect and earning points, with a penalty for hitting trees
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
