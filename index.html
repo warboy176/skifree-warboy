@@ -680,7 +680,9 @@ updateSlosher(dt);
       // so a crash in that code can never freeze the game (it used to kill the frame loop)
       try{ updateVerticalDistance(simDt); }catch(__e){}
       try{ if(typeof spawnNPCs==='function') spawnNPCs(dt); }catch(__e){}
-      try{ if(typeof updateNPCs==='function') updateNPCs(dt); }catch(__e){}
+      try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateExplosionEffects(dt);
+ }catch(__e){}
       try{updateNearMissCounter(dt);
 checkForestFlankerAchievement();
 
@@ -10335,6 +10337,22 @@ function createExplosionAt(x, y) {
         }
     });
 }
+
+function updateExplosionEffects(dt) {
+  for (let i = game.explosionEffects.length - 1; i >= 0; i--) {
+    const effect = game.explosionEffects[i];
+    effect.radius += 2 * dt;
+    effect.alpha -= 0.05 * dt;
+    
+    if (effect.alpha <= 0 || effect.radius >= 20) {
+      game.explosionEffects.splice(i, 1);
+      continue;
+    }
+    
+    drawExplosionEffect(effect.x, effect.y, effect.radius, effect.alpha);
+  }
+}
+
 
 
 
