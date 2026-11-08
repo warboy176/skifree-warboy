@@ -10131,6 +10131,19 @@ function showJumpingJackUnlockNotification() {
   }
 }
 
+function registerAchievementUnlock(achievementKey, progress, threshold) {
+    const achievementDef = ACHIEVEMENT_DEFINITIONS.find(a => a.id === achievementKey);
+    if (!achievementDef) return;
+    
+    if (progress >= threshold && !game.state.achievements[achievementKey]?.unlocked) {
+        game.state.achievements[achievementKey] = { unlocked: true, timestamp: Date.now() };
+        if (UNLOCK_MESSAGES[achievementKey]) {
+            console.log(UNLOCK_MESSAGES[achievementKey]);
+        }
+    }
+}
+
+
 
 
 
