@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerNearMissAchievement)
 - Ensure all new behaviors are independent, self-contained, and use only original art and code (initNPCs, spawnNPCs, updateNPCs)
 - Add scoring logic that awards points for successfully crashing through an NPC skier (initNPCs, updateNPCs, checkNPCCrash)
 - Implement a visual explosion effect (drawn in original code) that appears at the player's position when crashing through an NPC skier (initExplosionEffects, createExplosionAt, updateExplosionEffects)
