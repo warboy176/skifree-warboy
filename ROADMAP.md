@@ -1089,4 +1089,4 @@ Operator direction from the daily report lands here.
 - [x] Create a function to check if the jump counter reaches five, and if so, unlock the 'Jumping Jack' achievement
 - [x] Display the 'Jumping Jack' unlock notification in the HUD when triggered
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
