@@ -10227,6 +10227,38 @@ function updateClosePassCounter(dt) {
   }
 }
 
+function awardStylePointsOnClosePass(dt) {
+  if (!game.npcSkiers || !game.styleScore || !game.npcStylePointsCounted || !player || !player.x || !player.y) return;
+
+  const threshold = 20;
+  let nearNPC = false;
+
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    if (!npc || !npc.x || !npc.y) continue;
+
+    const dx = player.x - npc.x;
+    const dy = player.y - npc.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance <= threshold && !game.npcStylePointsCounted.includes(npc)) {
+      game.styleScore += STYLE_ACTION_BASE_POINTS;
+      game.npcStylePointsCounted.push(npc);
+      nearNPC = true;
+    }
+  }
+
+  player.isNearNPC = nearNPC;
+
+  if (nearNPC) {
+    clearTimeout(game.closePassTimeout);
+    game.closePassTimeout = setTimeout(() => {
+      game.npcStylePointsCounted = [];
+    }, COMBO_STREAK_WINDOW_MS);
+  }
+}
+
+
 
 
 
