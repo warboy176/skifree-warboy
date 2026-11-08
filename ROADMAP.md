@@ -1129,3 +1129,8 @@ Operator direction from the daily report lands here.
 - [!] Add visual distinction to obstacle patterns by adjusting spawn density and behavior per biome, using only original art and code  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
 - [x] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
+
+- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
+- [ ] Introduce style-based scoring: award points for slaloming close to NPC skiers (within 20px) and crashing through them, with multipliers for consecutive hits
+- [ ] Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue
