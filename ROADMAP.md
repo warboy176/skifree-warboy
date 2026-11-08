@@ -1128,4 +1128,4 @@ Operator direction from the daily report lands here.
 - [x] Ensure each obstacle type (trees, drones, oil slicks) is rendered and updated only within its designated biome, using the existing game loop and rendering infrastructure
 - [!] Add visual distinction to obstacle patterns by adjusting spawn density and behavior per biome, using only original art and code  <!-- blocked: pipeline: item INCOMPLETE — 0/3 landed, 1 unspecifiable, 2 e -->
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
-- [ ] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
+- [x] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)

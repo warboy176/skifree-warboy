@@ -1,4 +1,5 @@
 # Changelog
+- Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps) (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers (initStyleScoringSystem, updateStyleScoring)
 - Ensure each obstacle type (trees, drones, oil slicks) is rendered and updated only within its designated biome, using the existing game loop and rendering infrastructure (initObstacleTypes, updateObstaclesInBiome)
 - Add biome-specific obstacle spawn logic that triggers based on current biome, using only existing obstacle types (trees, drones, oil slicks) already defined in the game (initBiomeObstacleSpawners)
