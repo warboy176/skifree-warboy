@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Jump Master' for 10 jumps, 'Speed Demon' for 500m distance) (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues (initBiomeState, updateBiomeProgress, drawBiomeBackground)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 15 seconds of inactivity and pursues the player with increasing speed (initAntagonist, updateAntagonist, spawnAntagonistIfInactive)
