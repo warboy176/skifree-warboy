@@ -10273,6 +10273,21 @@ function applyClosePassMultiplierToScore(score) {
   return score * game.closePassMultiplier;
 }
 
+function updateClosePassMultiplier(dt) {
+  const now = Date.now();
+  if (player.isNearNPC) {
+    if (game.lastNearMissTime === undefined || (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
+      game.closePassCounter = 0;
+    }
+    game.closePassCounter++;
+    game.closePassMultiplier = Math.min(3.0, 1.0 + 0.5 * game.closePassCounter);
+    game.lastNearMissTime = now;
+  } else if (game.lastNearMissTime !== undefined && (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
+    game.closePassCounter = 0;
+  }
+}
+
+
 
 
 
