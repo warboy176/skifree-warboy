@@ -1,4 +1,5 @@
 # Changelog
+- Add biome state tracking to the game loop with initial lodge phase (initBiomeState, updateBiomeState, drawBiomeOverlay)
 - Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing after 30 seconds of inactivity (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerNearMissAchievement)
 - Ensure all new behaviors are independent, self-contained, and use only original art and code (initNPCs, spawnNPCs, updateNPCs)
