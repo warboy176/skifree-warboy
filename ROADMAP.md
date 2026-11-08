@@ -1087,6 +1087,6 @@ Operator direction from the daily report lands here.
 - [x] Add a jumpCounter variable initialized to 0 in the game state
 - [x] Increment jumpCounter by 1 when player lands after a jump, only if they were in JUMPING state and land on the slope
 - [x] Create a function to check if the jump counter reaches five, and if so, unlock the 'Jumping Jack' achievement
-- [ ] Display the 'Jumping Jack' unlock notification in the HUD when triggered
+- [x] Display the 'Jumping Jack' unlock notification in the HUD when triggered
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
