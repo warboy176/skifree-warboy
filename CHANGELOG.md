@@ -1,4 +1,5 @@
 # Changelog
+- Add scoring logic that awards points for successfully crashing through an NPC skier (initNPCs, updateNPCs, checkNPCCrash)
 - Implement a visual explosion effect (drawn in original code) that appears at the player's position when crashing through an NPC skier (initExplosionEffects, createExplosionAt, updateExplosionEffects)
 - Add collision detection between player and NPC skiers, triggering a 'crash-through' event when they overlap (initNPCs, checkNPCPlayerCollision)
 - Add a function to display the current style multiplier and score in the HUD, updating in real time (drawHUD)

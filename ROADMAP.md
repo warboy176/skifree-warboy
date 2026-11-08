@@ -1112,7 +1112,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to display the current style multiplier and score in the HUD, updating in real time
 - [x] Add collision detection between player and NPC skiers, triggering a 'crash-through' event when they overlap
 - [x] Implement a visual explosion effect (drawn in original code) that appears at the player's position when crashing through an NPC skier
-- [ ] Add scoring logic that awards points for successfully crashing through an NPC skier
+- [x] Add scoring logic that awards points for successfully crashing through an NPC skier
 - [ ] Apply a penalty to the score when the player collides with a tree, using the existing collision system
 - [ ] Ensure all new behaviors are independent, self-contained, and use only original art and code
 
