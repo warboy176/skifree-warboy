@@ -1110,6 +1110,10 @@ Operator direction from the daily report lands here.
 - [x] Add a function to apply a multiplier (starting at 1.0) that increases by 0.5 for each consecutive close pass, capping at 3.0
 - [x] Add a function to reset the close-pass counter and multiplier when player hits an obstacle or falls
 - [x] Add a function to display the current style multiplier and score in the HUD, updating in real time
-- [ ] Implement a 'crash-through' mechanic: allow the player to collide with NPC skiers, triggering a visual explosion effect and earning points, with a penalty for hitting trees
+- [ ] Add collision detection between player and NPC skiers, triggering a 'crash-through' event when they overlap
+- [ ] Implement a visual explosion effect (drawn in original code) that appears at the player's position when crashing through an NPC skier
+- [ ] Add scoring logic that awards points for successfully crashing through an NPC skier
+- [ ] Apply a penalty to the score when the player collides with a tree, using the existing collision system
+- [ ] Ensure all new behaviors are independent, self-contained, and use only original art and code
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
