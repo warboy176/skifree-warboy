@@ -10274,15 +10274,17 @@ function applyClosePassMultiplierToScore(score) {
 }
 
 function updateClosePassMultiplier(dt) {
+  const COMBO_STREAK_WINDOW_MS = 2000;
   const now = Date.now();
-  if (player.isNearNPC) {
-    if (game.lastNearMissTime === undefined || (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
-      game.closePassCounter = 0;
-    }
-    game.closePassCounter++;
+
+  // Check if a close pass occurred in the last frame via lastNearMissTime
+  if (game.lastNearMissTime !== undefined && now - game.lastNearMissTime < COMBO_STREAK_WINDOW_MS) {
+    // Increment counter if a close pass occurred in the last frame
+    game.closePassCounter = (game.closePassCounter || 0) + 1;
+    // Update multiplier: min(3.0, 1.0 + 0.5 * counter)
     game.closePassMultiplier = Math.min(3.0, 1.0 + 0.5 * game.closePassCounter);
-    game.lastNearMissTime = now;
-  } else if (game.lastNearMissTime !== undefined && (now - game.lastNearMissTime) > COMBO_STREAK_WINDOW_MS) {
+  } else {
+    // Reset counter if no close pass in the window
     game.closePassCounter = 0;
   }
 }
