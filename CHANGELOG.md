@@ -1,4 +1,5 @@
 # Changelog
+- Add a new state variable to track the current close-pass counter and a flag to indicate if the player is currently within 20px of an NPC (initPlayerClosePassTracking, updatePlayerClosePassState)
 - Add dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendering original tree clusters using procedurally generated, Warboy-designed pixel art (initForestBiomeTrees, addForestTrees, addForestTransitionTrigger)
 - Implement the chase antagonist: a unique, original creature (e.g., a pixel-art 'Snow Hound' with glowing eyes and jagged teeth) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonistIfInactive, initChaseAntagonistConstants, spawnChaseAntagonistIfInactive, updateChaseAntagonist)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Jump Master' for 10 jumps, 'Speed Demon' for 500m distance) (initAchievementsRegistry, checkAchievementUnlocks)
