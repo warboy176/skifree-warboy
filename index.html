@@ -1732,6 +1732,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSnowfieldTransitionEffect();
+
 initNPCStylePointsTracking();
 
 initPlayerClosePassTracking();
@@ -10368,6 +10370,11 @@ function checkNPCCrash(player, dt) {
     }
   }
 }
+
+function initSnowfieldTransitionEffect() {
+    game.snowfieldEffect = { alpha: 0, radius: 0, x: W/2, y: H/2 };
+}
+
 
 
 
