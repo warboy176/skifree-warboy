@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues using original code-drawn art (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Display the 'Jumping Jack' unlock notification in the HUD when triggered (showJumpingJackUnlockNotification)
 - Create a function to check if the jump counter reaches five, and if so, unlock the 'Jumping Jack' achievement (checkJumpCounterForJumpingJackAchievement)
