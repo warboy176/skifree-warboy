@@ -10410,6 +10410,18 @@ function updateNightBiomeTransition(dt) {
     }
 }
 
+function renderNightBiomeEffect(ctx) {
+    ctx.globalAlpha = game.nightBiomeIntensity * 0.6;
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.globalAlpha = game.nightBiomeIntensity * 0.8;
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(ctx.canvas.width / 2, ctx.canvas.height / 2, 100, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+
 
 
 
