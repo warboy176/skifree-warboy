@@ -10204,8 +10204,24 @@ function checkPlayerNearNPCs(dt) {
 }
 
 function updateClosePassCounter(dt) {
-  if (player.isNearNPC) {
-    player.closePassCounter++;
+  let isNearNPC = false;
+  const margin = NEAR_MISS_MARGIN;
+  const width = NPC_SKIER_WIDTH;
+
+  for (const npc of game.npcSkiers) {
+    const dx = Math.abs(npc.x - player.x);
+    const dy = Math.abs(npc.y - player.y);
+    const halfWidth = width / 2;
+    const halfMargin = margin / 2;
+
+    if (dx < halfWidth + halfMargin && dy < halfMargin) {
+      isNearNPC = true;
+      break;
+    }
+  }
+
+  if (isNearNPC) {
+    player.closePassCounter += 1;
   } else {
     player.closePassCounter = 0;
   }
