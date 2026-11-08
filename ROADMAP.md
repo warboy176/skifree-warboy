@@ -1123,6 +1123,9 @@ Operator direction from the daily report lands here.
 - [x] Implement visual transition from lodge to open slope using a fading snowfield effect
 - [x] Introduce forest biome with dynamically generated trees using Warboy's original art
 - [x] Add night biome with reduced visibility and glowing moonlight effect
-- [ ] Integrate distinct obstacle patterns per biome: trees in forest, drones in night, and oil slicks in open slope
+- [ ] Add biome-specific obstacle spawn logic that triggers based on current biome, using only existing obstacle types (trees, drones, oil slicks) already defined in the game
+- [ ] Implement a biome transition system that updates the active obstacle pattern when terrain changes, ensuring only one pattern is active at a time
+- [ ] Ensure each obstacle type (trees, drones, oil slicks) is rendered and updated only within its designated biome, using the existing game loop and rendering infrastructure
+- [ ] Add visual distinction to obstacle patterns by adjusting spawn density and behavior per biome, using only original art and code
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
 - [ ] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
