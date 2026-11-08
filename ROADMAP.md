@@ -1106,7 +1106,7 @@ Operator direction from the daily report lands here.
 - [x] Add a new state variable to track the current close-pass counter and a flag to indicate if the player is currently within 20px of an NPC
 - [x] Create a function to check, each frame, if the player is within 20px of any NPC and update the counter accordingly, resetting it if the player moves outside the range
 - [x] Update the game loop to call the close-pass check function every frame, ensuring the counter only increments while the player remains within range of an NPC
-- [ ] Add a function to award base style points (e.g., 10 points) when player passes within 20px of an NPC, only if not already counted in current streak
+- [x] Add a function to award base style points (e.g., 10 points) when player passes within 20px of an NPC, only if not already counted in current streak
 - [ ] Add a function to apply a multiplier (starting at 1.0) that increases by 0.5 for each consecutive close pass, capping at 3.0
 - [ ] Add a function to reset the close-pass counter and multiplier when player hits an obstacle or falls
 - [ ] Add a function to display the current style multiplier and score in the HUD, updating in real time
