@@ -3662,6 +3662,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerStyleAchievements();
+
 initBiomeAchievements();
 
 registerStyleStreakAchievements();
@@ -10142,6 +10144,12 @@ function registerAchievementUnlock(achievementKey, progress, threshold) {
         }
     }
 }
+
+function registerStyleAchievements() {
+  addDefaultAchievement('Slalom Maestro', () => GameState.styleScore >= STYLE_SCORE_BEST_THRESHOLD, STYLE_SCORE_BEST_THRESHOLD);
+  addDefaultAchievement('Airborne Artist', () => GameState.styleScore >= STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0], STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0]);
+}
+
 
 
 
