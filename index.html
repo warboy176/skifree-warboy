@@ -1726,6 +1726,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initPlayerClosePassTracking();
+
 initTreeRenderingOrder();
 
 TREE_SPRITE_DATA = initTreeData();
@@ -10174,6 +10176,13 @@ function updatePlayerClosePassState(npcSkiers) {
   player.isNearNPC = isNearNPC;
   player.closePassCounter = closePassCounter;
 }
+
+function initPlayerClosePassTracking() {
+    if (!game.playerState) game.playerState = {};
+    game.playerState.closePassCounter = 0;
+    game.playerState.isNearNPC = false;
+}
+
 
 
 
