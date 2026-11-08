@@ -1090,3 +1090,8 @@ Operator direction from the daily report lands here.
 - [x] Display the 'Jumping Jack' unlock notification in the HUD when triggered
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity, pursuing player with increasing speed and unique movement pattern
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues using original code-drawn art
+- [ ] Introduce style-based scoring: award points for slaloming near skiers/drones, with multipliers for consecutive close passes, and penalties for hitting trees or oil
+- [ ] Add persistent achievements registry with data-driven unlock triggers for new mechanics (e.g., 'Jump Master' for 10 successful jumps, 'Night Runner' for surviving past 500m in night biome)
