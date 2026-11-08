@@ -669,6 +669,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkPlayerNearNPCs(dt);
+
 updateSnowWolfSpawner(dt);
 
 updateSlosher(dt);
@@ -10182,6 +10184,25 @@ function initPlayerClosePassTracking() {
     game.playerState.closePassCounter = 0;
     game.playerState.isNearNPC = false;
 }
+
+function checkPlayerNearNPCs(dt) {
+    let isNearNPC = false;
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        const dx = player.x - npc.x;
+        const dy = player.y - npc.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance <= 20) {
+            isNearNPC = true;
+            player.closePassCounter++;
+        }
+    }
+    player.isNearNPC = isNearNPC;
+    if (!isNearNPC) {
+        player.closePassCounter = 0;
+    }
+}
+
 
 
 
