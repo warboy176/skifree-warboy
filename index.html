@@ -1728,6 +1728,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initNPCStylePointsTracking();
+
 initPlayerClosePassTracking();
 
 initTreeRenderingOrder();
@@ -10257,6 +10259,11 @@ function awardStylePointsOnClosePass(dt) {
     }, COMBO_STREAK_WINDOW_MS);
   }
 }
+
+function initNPCStylePointsTracking() {
+  game.npcStylePointsCounted = new Set();
+}
+
 
 
 
