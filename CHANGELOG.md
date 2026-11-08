@@ -1,4 +1,5 @@
 # Changelog
+- Add biome-specific obstacle spawn logic that triggers based on current biome, using only existing obstacle types (trees, drones, oil slicks) already defined in the game (initBiomeObstacleSpawners)
 - Add night biome with reduced visibility and glowing moonlight effect (initNightBiomeState, updateNightBiomeTransition, renderNightBiomeEffect)
 - Introduce forest biome with dynamically generated trees using Warboy's original art (initForestTrees, addForestTrees)
 - Implement visual transition from lodge to open slope using a fading snowfield effect (initSnowfieldTransitionEffect, updateSnowfieldTransitionEffect, drawSnowfieldTransitionEffect)
