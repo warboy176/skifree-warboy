@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between player and NPC skiers, triggering a 'crash-through' event when they overlap (initNPCs, checkNPCPlayerCollision)
 - Add a function to display the current style multiplier and score in the HUD, updating in real time (drawHUD)
 - Add a function to reset the close-pass counter and multiplier when player hits an obstacle or falls (resetClosePassCounterAndMultiplier)
 - Add a function to apply a multiplier (starting at 1.0) that increases by 0.5 for each consecutive close pass, capping at 3.0 (initClosePassMultiplier, updateClosePassMultiplier, applyClosePassMultiplierToScore)
