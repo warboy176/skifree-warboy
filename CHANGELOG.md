@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps) (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers (initStyleScoringSystem, updateStyleScoring)
 - Ensure each obstacle type (trees, drones, oil slicks) is rendered and updated only within its designated biome, using the existing game loop and rendering infrastructure (initObstacleTypes, updateObstaclesInBiome)
