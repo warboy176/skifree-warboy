@@ -10384,6 +10384,19 @@ function updateSnowfieldTransitionEffect(dt) {
     game.snowfieldEffect.y = H/2;
 }
 
+function drawSnowfieldTransitionEffect(ctx) {
+    const effect = game.snowfieldEffect;
+    const oldFillStyle = ctx.fillStyle;
+    ctx.globalAlpha = effect.alpha;
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(effect.x, effect.y, effect.radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = oldFillStyle;
+    ctx.globalAlpha = 1;
+}
+
+
 
 
 
