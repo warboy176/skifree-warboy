@@ -10503,11 +10503,14 @@ function initObstacleTypes() {
 }
 
 function updateObstaclesInBiome(biomeId, dt) {
-  game.obstacles.forEach(obstacle => {
-    if (obstacle.biomeId === biomeId && obstacle.isActive) {
-      obstacle.updateFn(dt);
-    }
-  });
+  const biome = game.biomes[biomeId];
+  if (!biome) return;
+  const activeZone = biome.activeZone;
+  for (const obstacle of game.obstacles) {
+    if (obstacle.biomeId !== biomeId || !obstacle.isActive) continue;
+    if (obstacle.y < activeZone.start || obstacle.y > activeZone.end) continue;
+    obstacle.updateFn(dt);
+  }
 }
 
 
