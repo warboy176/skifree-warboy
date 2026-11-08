@@ -272,6 +272,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initChaseAntagonistConstants();
+
 initSnowWolves();
 
 registerSlalomPassAchievement();
@@ -10149,6 +10151,13 @@ function registerStyleAchievements() {
   addDefaultAchievement('Slalom Maestro', () => GameState.styleScore >= STYLE_SCORE_BEST_THRESHOLD, STYLE_SCORE_BEST_THRESHOLD);
   addDefaultAchievement('Airborne Artist', () => GameState.styleScore >= STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0], STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[0]);
 }
+
+function initChaseAntagonistConstants() {
+  const CHASE_ANTAGONIST_WIDTH = 16;
+  const CHASE_ANTAGONIST_HEIGHT = 24;
+  const CHASE_ANTAGONIST_SPEED_BASE = 1.2;
+}
+
 
 
 
