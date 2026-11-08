@@ -10115,6 +10115,23 @@ function checkJumpCounterForJumpingJackAchievement() {
   }
 }
 
+function showJumpingJackUnlockNotification() {
+  if (ACHIEVEMENT_DEFINITIONS.JumpingJack.unlocked) {
+    ctx.fillStyle = 'white';
+    ctx.font = '12px monospace';
+    const lines = [
+      'JUMPING JACK UNLOCKED!',
+      '',
+      'Keep jumping to',
+      'unlock more!'
+    ];
+    lines.forEach((line, i) => {
+      ctx.fillText(line, H + 2, W * 0.1 + (i * 14));
+    });
+  }
+}
+
+
 
 
 
