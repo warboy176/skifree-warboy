@@ -681,6 +681,8 @@ updateSlosher(dt);
       try{ updateVerticalDistance(simDt); }catch(__e){}
       try{ if(typeof spawnNPCs==='function') spawnNPCs(dt); }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateObstaclesInBiome(currentBiomeId, dt);
+
 checkNPCCrash(player, dt);
 
 updateExplosionEffects(dt);
@@ -10499,6 +10501,15 @@ function initObstacleTypes() {
     }
   ];
 }
+
+function updateObstaclesInBiome(biomeId, dt) {
+  game.obstacles.forEach(obstacle => {
+    if (obstacle.biomeId === biomeId && obstacle.isActive) {
+      obstacle.updateFn(dt);
+    }
+  });
+}
+
 
 
 
