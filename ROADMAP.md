@@ -1101,7 +1101,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Jump Master' for 10 jumps, 'Speed Demon' for 500m distance)
 
-- [ ] Implement the chase antagonist: a unique, original creature (e.g., a pixel-art 'Snow Hound' with glowing eyes and jagged teeth) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [x] Implement the chase antagonist: a unique, original creature (e.g., a pixel-art 'Snow Hound' with glowing eyes and jagged teeth) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [ ] Add dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendering original tree clusters using procedurally generated, Warboy-designed pixel art
 - [ ] Introduce style-based scoring: award bonus points for slaloming within 20px of NPCs, with multipliers that increase for consecutive close passes
 - [ ] Implement a 'crash-through' mechanic: allow the player to collide with NPC skiers, triggering a visual explosion effect and earning points, with a penalty for hitting trees
