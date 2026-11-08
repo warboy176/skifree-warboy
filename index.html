@@ -1732,6 +1732,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initObstacleTypes();
+
 initBiomeObstacleSpawners();
 
 initNightBiomeState();
@@ -10446,6 +10448,58 @@ function initBiomeObstacleSpawners() {
     ]
   };
 }
+
+function initObstacleTypes() {
+  game.obstacleTypes = [
+    {
+      type: 'tree',
+      biome: 'forest',
+      renderFn: (ctx, obstacle) => {
+        ctx.fillStyle = '#228B22';
+        ctx.fillRect(obstacle.x, obstacle.y, 20, 40);
+        ctx.fillStyle = '#8B4513';
+        ctx.fillRect(obstacle.x + 9, obstacle.y + 35, 2, 5);
+      },
+      updateFn: (obstacle) => {
+        obstacle.y += game.scrollSpeed;
+      },
+      spawnRate: 0.7
+    },
+    {
+      type: 'rock',
+      biome: 'mountain',
+      renderFn: (ctx, obstacle) => {
+        ctx.fillStyle = '#696969';
+        ctx.beginPath();
+        ctx.arc(obstacle.x + 10, obstacle.y + 10, 10, 0, Math.PI * 2);
+        ctx.fill();
+      },
+      updateFn: (obstacle) => {
+        obstacle.y += game.scrollSpeed;
+      },
+      spawnRate: 0.5
+    },
+    {
+      type: 'crash',
+      biome: 'desert',
+      renderFn: (ctx, obstacle) => {
+        ctx.fillStyle = '#FFD700';
+        ctx.fillRect(obstacle.x, obstacle.y, 30, 15);
+        ctx.fillStyle = '#FF4500';
+        ctx.fillRect(obstacle.x + 5, obstacle.y - 5, 20, 5);
+      },
+      updateFn: (obstacle) => {
+        if (!obstacle.crashed) {
+          obstacle.y += game.scrollSpeed;
+        } else {
+          obstacle.y += game.scrollSpeed * 2;
+        }
+      },
+      spawnRate: 0.3
+    }
+  ];
+}
+
 
 
 
