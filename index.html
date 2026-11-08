@@ -1732,6 +1732,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeObstacleSpawners();
+
 initNightBiomeState();
 
 initSnowfieldTransitionEffect();
@@ -10427,6 +10429,24 @@ function initNightBiomeState() {
     game.nightBiomeActive = false;
     game.nightBiomeIntensity = 0;
 }
+
+function initBiomeObstacleSpawners() {
+  game.biomeObstacleSpawners = {
+    forest: [
+      { type: 'tree', intervalMeters: FOREST_BIOME_TREE_INTERVAL_METERS, minDistanceFromPlayer: 50 },
+      { type: 'drone', intervalMeters: NPC_SPAWN_SPACING, minDistanceFromPlayer: 30 }
+    ],
+    desert: [
+      { type: 'oilSlick', intervalMeters: NPC_SPAWN_SPACING, minDistanceFromPlayer: 40 }
+    ],
+    swamp: [
+      { type: 'tree', intervalMeters: FOREST_BIOME_TREE_INTERVAL_METERS, minDistanceFromPlayer: 50 },
+      { type: 'drone', intervalMeters: NPC_SPAWN_SPACING, minDistanceFromPlayer: 30 },
+      { type: 'oilSlick', intervalMeters: NPC_SPAWN_SPACING, minDistanceFromPlayer: 40 }
+    ]
+  };
+}
+
 
 
 
