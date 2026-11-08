@@ -1109,7 +1109,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to award base style points (e.g., 10 points) when player passes within 20px of an NPC, only if not already counted in current streak
 - [x] Add a function to apply a multiplier (starting at 1.0) that increases by 0.5 for each consecutive close pass, capping at 3.0
 - [x] Add a function to reset the close-pass counter and multiplier when player hits an obstacle or falls
-- [ ] Add a function to display the current style multiplier and score in the HUD, updating in real time
+- [x] Add a function to display the current style multiplier and score in the HUD, updating in real time
 - [ ] Implement a 'crash-through' mechanic: allow the player to collide with NPC skiers, triggering a visual explosion effect and earning points, with a penalty for hitting trees
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
