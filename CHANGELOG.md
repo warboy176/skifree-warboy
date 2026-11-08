@@ -1,4 +1,5 @@
 # Changelog
+- Add persistent achievements registry with data-driven unlock triggers for new mechanics (e.g., 'Jump Master' for 10 successful jumps, 'Night Runner' for surviving past 500m in night biome) (initAchievementsRegistry, registerAchievementUnlock)
 - Introduce style-based scoring: award points for slaloming near skiers/drones, with multipliers for consecutive close passes, and penalties for hitting trees or oil (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues using original code-drawn art (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
