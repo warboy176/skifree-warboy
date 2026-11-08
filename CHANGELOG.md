@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between player and NPC skiers with a 20px proximity threshold (initNPCs, updateNPCs, checkNPCCollision)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code (initBiomes, addForestTrees, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps) (initAchievementsRegistry, checkAchievementUnlocks)

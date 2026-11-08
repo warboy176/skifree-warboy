@@ -1132,7 +1132,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code
-- [ ] Add collision detection between player and NPC skiers with a 20px proximity threshold
+- [x] Add collision detection between player and NPC skiers with a 20px proximity threshold
 - [ ] Implement a 'near-miss' event that triggers when player passes within 20px of an NPC skier
 - [ ] Add a 'crash-through' event that triggers when player collides with an NPC skier
 - [ ] Introduce a consecutive-hit counter that resets on misses or crashes into non-NPC obstacles
