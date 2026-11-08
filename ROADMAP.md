@@ -1117,3 +1117,8 @@ Operator direction from the daily report lands here.
 - [x] Ensure all new behaviors are independent, self-contained, and use only original art and code
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing after 30 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with visual transitions and distinct obstacle patterns
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers
+- [ ] Add persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Tree Tagger' for 10 trees hit, 'Airborne King' for 5 consecutive jumps)
