@@ -1113,7 +1113,7 @@ Operator direction from the daily report lands here.
 - [x] Add collision detection between player and NPC skiers, triggering a 'crash-through' event when they overlap
 - [x] Implement a visual explosion effect (drawn in original code) that appears at the player's position when crashing through an NPC skier
 - [x] Add scoring logic that awards points for successfully crashing through an NPC skier
-- [ ] Apply a penalty to the score when the player collides with a tree, using the existing collision system
+- [!] Apply a penalty to the score when the player collides with a tree, using the existing collision system  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure all new behaviors are independent, self-contained, and use only original art and code
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
