@@ -1097,6 +1097,6 @@ Operator direction from the daily report lands here.
 - [x] Add persistent achievements registry with data-driven unlock triggers for new mechanics (e.g., 'Jump Master' for 10 successful jumps, 'Night Runner' for surviving past 500m in night biome)
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 15 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues
+- [x] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct background art and ambient sound cues
 - [ ] Introduce style scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics (e.g., 'Jump Master' for 10 jumps, 'Speed Demon' for 500m distance)
