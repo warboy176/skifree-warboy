@@ -10159,6 +10159,27 @@ function initChaseAntagonistConstants() {
   CHASE_ANTAGONIST_SPEED_BASE = 1.2;
 }
 
+function updatePlayerClosePassState(npcSkiers) {
+    const player = game.playerState;
+    const threshold = 20;
+    
+    for (let i = 0; i < npcSkiers.length; i++) {
+        const npcSkier = npcSkiers[i];
+        const distance = Math.sqrt(
+            Math.pow(npcSkier.x - player.x, 2) + 
+            Math.pow(npcSkier.y - player.y, 2)
+        );
+        
+        if (distance < threshold) {
+            player.isNearNPC = true;
+            player.closePassCounter++;
+        } else {
+            player.isNearNPC = false;
+        }
+    }
+}
+
+
 
 
 
