@@ -1,4 +1,5 @@
 # Changelog
+- Implement a 'near-miss' event that triggers when player passes within 20px of an NPC skier (initNPCs, checkNearMisses)
 - Add collision detection between player and NPC skiers with a 20px proximity threshold (initNPCs, updateNPCs, checkNPCCollision)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code (initBiomes, addForestTrees, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
