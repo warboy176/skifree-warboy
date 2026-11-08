@@ -10375,6 +10375,16 @@ function initSnowfieldTransitionEffect() {
     game.snowfieldEffect = { alpha: 0, radius: 0, x: W/2, y: H/2 };
 }
 
+function updateSnowfieldTransitionEffect(dt) {
+    game.snowfieldEffect.alpha += 0.005 * dt;
+    game.snowfieldEffect.alpha = Math.min(game.snowfieldEffect.alpha, 1.0);
+    game.snowfieldEffect.radius += 0.5 * dt;
+    game.snowfieldEffect.radius = Math.min(game.snowfieldEffect.radius, 100);
+    game.snowfieldEffect.x = W/2;
+    game.snowfieldEffect.y = H/2;
+}
+
+
 
 
 
