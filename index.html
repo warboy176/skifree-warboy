@@ -10203,6 +10203,15 @@ function checkPlayerNearNPCs(dt) {
     }
 }
 
+function updateClosePassCounter(dt) {
+  if (player.isNearNPC) {
+    player.closePassCounter++;
+  } else {
+    player.closePassCounter = 0;
+  }
+}
+
+
 
 
 
