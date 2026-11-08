@@ -1120,7 +1120,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing after 30 seconds of inactivity
 - [x] Add biome state tracking to the game loop with initial lodge phase
-- [ ] Implement visual transition from lodge to open slope using a fading snowfield effect
+- [x] Implement visual transition from lodge to open slope using a fading snowfield effect
 - [ ] Introduce forest biome with dynamically generated trees using Warboy's original art
 - [ ] Add night biome with reduced visibility and glowing moonlight effect
 - [ ] Integrate distinct obstacle patterns per biome: trees in forest, drones in night, and oil slicks in open slope
