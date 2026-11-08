@@ -10294,6 +10294,24 @@ function resetClosePassCounterAndMultiplier() {
     game.closePassMultiplier = 1;
 }
 
+function checkNPCPlayerCollision() {
+  if (!game.npcSkiers) return;
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    if (
+      player.x - NPC_SKIER_WIDTH / 2 < npc.x + NPC_SKIER_WIDTH / 2 &&
+      player.x + NPC_SKIER_WIDTH / 2 > npc.x - NPC_SKIER_WIDTH / 2 &&
+      player.y - NPC_SKIER_HEIGHT / 2 < npc.y + NPC_SKIER_HEIGHT / 2 &&
+      player.y + NPC_SKIER_HEIGHT / 2 > npc.y - NPC_SKIER_HEIGHT / 2
+    ) {
+      player.isNearNPC = true;
+      game.closePassCounter++;
+      break;
+    }
+  }
+}
+
+
 
 
 
