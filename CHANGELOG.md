@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, spawnAntagonist, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon') (initNPCs, updateNPCs, registerCrashThroughAchievement)
 - Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses (initStyleScoring, checkNearMisses, registerStyleAchievement)
