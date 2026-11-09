@@ -1146,7 +1146,7 @@ Operator direction from the daily report lands here.
 - [!] Reset styleMultiplier to 1 after any collision with a tree, oil slick, or obstacle, preserving the score but ending the combo  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue
 
-- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed
+- [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree and snow patterns drawn in code
 - [ ] Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses
 - [ ] Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon')

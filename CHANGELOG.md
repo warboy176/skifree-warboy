@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue (initFastModeState, toggleFastMode, updateFastModeEffects)
 - Update the score display to show stylePoints and styleMultiplier in real time, formatted as 'Score: 123 (+1.5x)' (updateScoreDisplay)
 - Add a styleMultiplier state that starts at 1 and increases by 0.5 for each consecutive near-miss, resetting to 1 on collision or crash (initStyleMultiplier, updateStyleMultiplier, registerStyleMultiplierAchievement)
