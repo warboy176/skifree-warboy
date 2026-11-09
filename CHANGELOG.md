@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards (initStyleScoring, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine) (initBiomeState, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, spawnAntagonist, updateAntagonist)
 - Introduce a 'flip trick' mechanic: press space mid-air to perform a 180° flip, earning 25 bonus points and a visual 'crackle' effect using original pixel art (initPlayerFlipState, handlePlayerFlipInput, drawPlayerFlipEffect)
