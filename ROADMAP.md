@@ -1180,5 +1180,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist with unique movement pattern and visual style
 - [x] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
-- [ ] Introduce style-based scoring with multipliers for slaloming close to NPCs and crashing through obstacles
+- [x] Introduce style-based scoring with multipliers for slaloming close to NPCs and crashing through obstacles
 - [ ] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
