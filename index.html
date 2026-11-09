@@ -10695,11 +10695,13 @@ function updateAchievementsOnNewMechanic(mechanicType, threshold, unlockMessage)
 }
 
 function initDroneHazard() {
+  const width = 6;
+  const height = 4;
+  const speed = 1.2;
+  const spawnRate = 0.005;
+
   game.droneHazards = [];
-  const DRONE_WIDTH = 6;
-  const DRONE_HEIGHT = 4;
-  const DRONE_SPEED = 1.2;
-  const DRONE_SPAWN_RATE = 0.005;
+  game.droneHazardConstants = { width, height, speed, spawnRate };
 }
 
 
