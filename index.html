@@ -687,7 +687,9 @@ updateSlosher(dt);
       // core-critical updates hoisted out of the accreted feature list and guarded,
       // so a crash in that code can never freeze the game (it used to kill the frame loop)
       try{ updateVerticalDistance(simDt); }catch(__e){}
-      try{ if(typeof spawnNPCs==='function') spawnNPCs(dt); }catch(__e){}
+      try{ if(typeof spawnNPCs==='function') spawnNPCs(dt);
+spawnDroneHazard();
+ }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
 updateObstaclesInBiome(currentBiomeId, dt);
 
@@ -10703,6 +10705,20 @@ function initDroneHazard() {
   game.droneHazards = [];
   game.droneHazardConstants = { width, height, speed, spawnRate };
 }
+
+function spawnDroneHazard() {
+  if (Math.random() < game.droneHazardConstants.spawnRate) {
+    const droneHazard = {
+      x: canvas.width + 10,
+      y: game.droneHazardConstants.height / 2 + (Math.random() * 40 - 20),
+      width: game.droneHazardConstants.width,
+      height: game.droneHazardConstants.height,
+      speed: game.droneHazardConstants.speed
+    };
+    game.droneHazards.push(droneHazard);
+  }
+}
+
 
 
 
