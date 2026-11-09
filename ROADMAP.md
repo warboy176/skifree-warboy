@@ -1139,7 +1139,7 @@ Operator direction from the daily report lands here.
 - [x] Increment the consecutive-hit counter when the player collides with an NPC skier
 - [x] Reset the consecutive-hit counter to 0 when the player crashes into a tree, rock, or oil slick
 - [x] Reset the consecutive-hit counter to 0 when the player crashes into the chase antagonist
-- [ ] Add a stylePoints counter that increments on near-misses with skiers, initialized to 0
+- [!] Add a stylePoints counter that increments on near-misses with skiers, initialized to 0  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Add a styleMultiplier state that starts at 1 and increases by 0.5 for each consecutive near-miss, resetting to 1 on collision or crash
 - [ ] Update the score display to show stylePoints and styleMultiplier in real time, formatted as 'Score: 123 (+1.5x)'
 - [ ] Award bonus points (e.g., 10 × styleMultiplier) when player crashes through an NPC skier, applying the current multiplier
