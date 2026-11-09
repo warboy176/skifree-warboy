@@ -3687,6 +3687,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerConsecutiveHitAchievement();
+
 registerStyleAchievements();
 
 initBiomeAchievements();
@@ -10543,6 +10545,17 @@ function updateConsecutiveHits(dt) {
         }
     }
 }
+
+function registerConsecutiveHitAchievement() {
+  ACHIEVEMENT_DEFINITIONS.consecutive_hits = {
+    type: 'counter',
+    threshold: 10,
+    unlockMessage: 'Hit 10 skiers in a row!',
+    award: '100 points'
+  };
+  addDefaultAchievement('consecutive_hits', () => updateConsecutiveHits(), 10);
+}
+
 
 
 
