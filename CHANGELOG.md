@@ -1,4 +1,5 @@
 # Changelog
+- Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, increasing in speed as distance grows (initAntagonist, spawnAntagonist, updateAntagonist)
 - Create a persistent achievements registry with new witty unlocks tied to biome transitions and style combos (initAchievementsRegistry, registerBiomeTransitionAchievements, checkStyleComboAchievements)
 - Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards (initStyleScoring, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine) (initBiomeState, updateBiomeTransition)
