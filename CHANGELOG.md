@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon') (initNPCs, updateNPCs, registerCrashThroughAchievement)
 - Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses (initStyleScoring, checkNearMisses, registerStyleAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree and snow patterns drawn in code (initBiomeState, addForestTrees, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
