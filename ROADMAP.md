@@ -1159,6 +1159,6 @@ Operator direction from the daily report lands here.
 - [x] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
 
 - [x] Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, using a unique visual style and behavior distinct from skiers and obstacles
-- [ ] Add dynamic terrain biome transitions (e.g., open slope → forest → night) with original art-coded visual shifts and ambient audio cues
+- [x] Add dynamic terrain biome transitions (e.g., open slope → forest → night) with original art-coded visual shifts and ambient audio cues
 - [ ] Introduce a style-based scoring system that rewards slaloming close to NPCs, crashing through obstacles, and landing tricks, with real-time multiplier feedback
 - [ ] Implement a persistent achievements registry with new original unlockables tied to advanced behaviors: 'Slope Whisperer' (50 near-misses), 'Chase Survivor' (evade antagonist 10 times), 'Night Runner' (survive 1000 meters in night biome)
