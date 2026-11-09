@@ -1167,3 +1167,8 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain transitions: change background biome from open slope to dense forest at 500 meters, using original code-drawn trees and snow textures
 - [x] Add style scoring for slaloming close to NPCs: award 10 points per 10px proximity, with multipliers for consecutive near-misses
 - [x] Introduce a 'flip trick' mechanic: press space mid-air to perform a 180° flip, earning 25 bonus points and a visual 'crackle' effect using original pixel art
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [ ] Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine)
+- [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
+- [ ] Create a persistent achievements registry with new witty unlocks tied to biome transitions and style combos
