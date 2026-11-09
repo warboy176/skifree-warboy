@@ -1,4 +1,5 @@
 # Changelog
+- Add a styleMultiplier state that starts at 1 and increases by 0.5 for each consecutive near-miss, resetting to 1 on collision or crash (initStyleMultiplier, updateStyleMultiplier, registerStyleMultiplierAchievement)
 - Reset the consecutive-hit counter to 0 when the player crashes into the chase antagonist (resetComboStreakOnAntagonistCrash)
 - Reset the consecutive-hit counter to 0 when the player crashes into a tree, rock, or oil slick (resetConsecutiveHitCounter)
 - Increment the consecutive-hit counter when the player collides with an NPC skier (initNPCs, updateConsecutiveHits, registerConsecutiveHitAchievement)
