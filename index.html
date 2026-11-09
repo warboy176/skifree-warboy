@@ -273,6 +273,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initDroneHazard();
+
 initChaseAntagonistConstants();
 
 initSnowWolves();
@@ -10691,6 +10693,15 @@ function renderBiomeTint(ctx) {
 function updateAchievementsOnNewMechanic(mechanicType, threshold, unlockMessage) {
     registerAchievement(mechanicType, threshold, unlockMessage);
 }
+
+function initDroneHazard() {
+  game.droneHazards = [];
+  const DRONE_WIDTH = 6;
+  const DRONE_HEIGHT = 4;
+  const DRONE_SPEED = 1.2;
+  const DRONE_SPAWN_RATE = 0.005;
+}
+
 
 
 
