@@ -1137,7 +1137,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'crash-through' event that triggers when player collides with an NPC skier
 - [x] Add a consecutive-hit counter variable initialized to 0 in the game state
 - [x] Increment the consecutive-hit counter when the player collides with an NPC skier
-- [ ] Reset the consecutive-hit counter to 0 when the player crashes into a tree, rock, or oil slick
+- [x] Reset the consecutive-hit counter to 0 when the player crashes into a tree, rock, or oil slick
 - [ ] Reset the consecutive-hit counter to 0 when the player crashes into the chase antagonist
 - [ ] Apply style points and multipliers to scoring based on near-misses and crash-throughs, updating the score display
 - [ ] Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue
