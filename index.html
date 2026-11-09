@@ -10637,6 +10637,16 @@ function handlePlayerFlipInput(dt) {
   }
 }
 
+function drawPlayerFlipEffect(ctx, player) {
+  if (player.flipProgress > 0.99 && !player.flipEffectDrawn) {
+    ctx.fillStyle = '#ffffff';
+    ctx.globalAlpha = 0.8;
+    ctx.fillRect(player.x - 2, player.y - 2, 4, 4);
+    player.flipEffectDrawn = true;
+  }
+}
+
+
 
 
 
