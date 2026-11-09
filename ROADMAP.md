@@ -1151,4 +1151,4 @@ Operator direction from the daily report lands here.
 - [x] Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses
 - [x] Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon')
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
