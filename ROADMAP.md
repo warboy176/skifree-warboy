@@ -1152,3 +1152,8 @@ Operator direction from the daily report lands here.
 - [x] Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon')
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with changing background and obstacle themes
+- [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs and crashing through obstacles
+- [ ] Add persistent achievements registry with data-driven unlock logic for new hazards and interactions
