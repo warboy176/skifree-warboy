@@ -10619,6 +10619,25 @@ function updateStyleScoringSystem(dt) {
     }
 }
 
+function handlePlayerFlipInput(dt) {
+  if (game.input.isPressed(' ') && player.jumpHeight > 0 && player.flipState !== 'active') {
+    player.flipState = 'active';
+    player.flipProgress = 0;
+  }
+
+  if (player.flipState === 'active') {
+    player.flipProgress += dt * 1000;
+
+    if (player.flipProgress >= 180) {
+      player.flipState = null;
+      player.flipProgress = 0;
+      game.score += 25;
+      addClosePassFlagToPlayer();
+    }
+  }
+}
+
+
 
 
 
