@@ -10679,6 +10679,16 @@ function checkStyleComboAchievements() {
   });
 }
 
+function renderBiomeTint(ctx) {
+  if (game.biomeTransitionProgress > 0) {
+    const progress = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+    const currentTint = BIOME_TINTS[game.biomeState.currentTint];
+    ctx.fillStyle = `rgba(${currentTint.r}, ${currentTint.g}, ${currentTint.b}, ${progress})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+
 
 
 
