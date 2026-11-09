@@ -3687,6 +3687,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerStyleMultiplierAchievement();
+
 registerConsecutiveHitAchievement();
 
 registerStyleAchievements();
@@ -10565,6 +10567,12 @@ function resetComboStreakOnAntagonistCrash() {
         PlayerState.comboStreak = 0;
     }
 }
+
+function registerStyleMultiplierAchievement() {
+  registerAchievementDef('style_multiplier_streak', 3.0, 'styleScore', 'Reach a style multiplier of 3.0');
+  addDefaultAchievement('style_multiplier_streak', () => game.styleMultiplier >= 3.0, 3.0);
+}
+
 
 
 
