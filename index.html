@@ -10662,6 +10662,24 @@ function registerBiomeTransitionAchievements() {
   }
 }
 
+function checkStyleComboAchievements() {
+  if (!game.achievements) game.achievements = [];
+  if (!game.styleMultiplierThresholdsCrossed) game.styleMultiplierThresholdsCrossed = [];
+  
+  STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS.forEach((threshold, index) => {
+    if (player.styleMultiplier >= threshold && !game.styleMultiplierThresholdsCrossed.includes(index)) {
+      addDefaultAchievement(`Style Combo ${threshold}x`, () => player.styleMultiplier >= threshold, threshold);
+      game.styleMultiplierThresholdsCrossed.push(index);
+      
+      const x = 10 + (index % 4) * 20;
+      const y = 10 + Math.floor(index / 4) * 20;
+      ctx.fillStyle = 'white';
+      ctx.fillRect(x, y, 16, 16);
+    }
+  });
+}
+
+
 
 
 
