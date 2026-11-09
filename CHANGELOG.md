@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a style-based scoring system that rewards close slaloming through NPCs, drones, and oil slicks with multipliers and combo counters (initStyleScoringSystem, updateStyleScoring)
 - Add dynamic terrain biomes (forest → night → alpine) that transition smoothly as the player descends, each with unique visual style and obstacle density (initBiomeState, updateBiomeTransition, renderBiomeTint)
 - Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, increasing in speed as distance grows (initAntagonist, spawnAntagonist, updateAntagonist)
 - Create a persistent achievements registry with new witty unlocks tied to biome transitions and style combos (initAchievementsRegistry, registerBiomeTransitionAchievements, checkStyleComboAchievements)
