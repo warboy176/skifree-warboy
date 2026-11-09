@@ -669,6 +669,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateConsecutiveHits(dt);
+
 checkPlayerNearNPCs(dt);
 
 updateSnowWolfSpawner(dt);
@@ -10516,6 +10518,32 @@ function updateObstaclesInBiome(biomeId, dt) {
 function initConsecutiveHitCounter() {
     game.consecutiveHits = 0;
 }
+
+function updateConsecutiveHits(dt) {
+    if (!game.player || !game.npcSkiers) return;
+    
+    const player = game.player;
+    const W = 32;
+    const H = 32;
+    const NPC_SKIER_WIDTH = 32;
+    const NPC_SKIER_HEIGHT = 32;
+    
+    let hitThisFrame = false;
+    
+    for (let i = 0; i < game.npcSkiers.length; i++) {
+        const npc = game.npcSkiers[i];
+        
+        if (player.x + W/2 > npc.x && player.x - W/2 < npc.x + NPC_SKIER_WIDTH &&
+            player.y + H/2 > npc.y && player.y - H/2 < npc.y + NPC_SKIER_HEIGHT) {
+            
+            if (!hitThisFrame) {
+                game.consecutiveHits++;
+                hitThisFrame = true;
+            }
+        }
+    }
+}
+
 
 
 
