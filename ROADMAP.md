@@ -1164,6 +1164,6 @@ Operator direction from the daily report lands here.
 - [x] Implement a persistent achievements registry with new original unlockables tied to advanced behaviors: 'Slope Whisperer' (50 near-misses), 'Chase Survivor' (evade antagonist 10 times), 'Night Runner' (survive 1000 meters in night biome)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain transitions: change background biome from open slope to dense forest at 500 meters, using original code-drawn trees and snow textures
+- [x] Implement dynamic terrain transitions: change background biome from open slope to dense forest at 500 meters, using original code-drawn trees and snow textures
 - [ ] Add style scoring for slaloming close to NPCs: award 10 points per 10px proximity, with multipliers for consecutive near-misses
 - [ ] Introduce a 'flip trick' mechanic: press space mid-air to perform a 180° flip, earning 25 bonus points and a visual 'crackle' effect using original pixel art
