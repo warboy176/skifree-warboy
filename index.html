@@ -669,6 +669,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateStyleScoringSystem(dt);
+
 updateFastModeEffects(dt);
 
 updateConsecutiveHits(dt);
@@ -10589,6 +10591,34 @@ function initStyleScoring() {
     game.styleStreak = 0;
     initStyleScoreTracking();
 }
+
+function updateStyleScoringSystem(dt) {
+    for (let npc of game.npcSkiers) {
+        const playerSpeed = player.speed;
+        const playerAngle = player.angle;
+        const npcAngle = npc.angle;
+        const isOppositeDirection = Math.abs(playerAngle - npcAngle) > Math.PI;
+        const distance = Math.sqrt(Math.pow(player.x - npc.x, 2) + Math.pow(player.y - npc.y, 2));
+        const isNearMiss = distance < NEAR_MISS_MARGIN && isOppositeDirection;
+
+        if (isNearMiss) {
+            game.styleStreak++;
+            game.styleScore += STYLE_ACTION_BASE_POINTS * game.styleMultiplier;
+            if (game.styleStreak >= COMBO_STREAK_THRESHOLD) {
+                game.styleScore += COMBO_STREAK_BONUS;
+            }
+            if (STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS[game.styleStreak]) {
+                game.styleMultiplier *= STYLE_MULTIPLIER_ACHIEVEMENT_THRESHOLDS[game.styleStreak];
+            }
+        }
+
+        if (player.fallen === 1.0) {
+            game.styleStreak = 0;
+            game.styleMultiplier = 1;
+        }
+    }
+}
+
 
 
 
