@@ -1187,5 +1187,9 @@ Operator direction from the daily report lands here.
 - [!] Implement a drone-specific collision response that triggers player crash state when hit  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Create a new achievement system entry that unlocks on first drone interaction  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [!] Display the achievement unlock notification in the HUD with a unique visual cue  <!-- blocked: pipeline: item INCOMPLETE — 2/6 landed, 0 unspecifiable, 2 e -->
-- [ ] Implement a new interaction (e.g., crashing through a skier) with a style-based achievement that triggers on success
+- [ ] Add collision detection between player and NPC skier that triggers a 'crash-through' event when player's speed exceeds threshold
+- [ ] Implement visual feedback (e.g., sprite burst, screen shake) when player crashes through an NPC skier
+- [ ] Track and display a 'style multiplier' counter that increases with consecutive crash-throughs
+- [ ] Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs
+- [ ] Add a subtle audio cue (original sound effect) to reinforce the success of a crash-through interaction
 - [ ] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
