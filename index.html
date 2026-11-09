@@ -10560,6 +10560,13 @@ function resetConsecutiveHitCounter() {
     PlayerState.comboStreak = 0;
 }
 
+function resetComboStreakOnAntagonistCrash() {
+    if (game.player && game.antagonist && game.player.collidesWith(game.antagonist)) {
+        PlayerState.comboStreak = 0;
+    }
+}
+
+
 
 
 
