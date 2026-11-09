@@ -1143,5 +1143,5 @@ Operator direction from the daily report lands here.
 - [x] Add a styleMultiplier state that starts at 1 and increases by 0.5 for each consecutive near-miss, resetting to 1 on collision or crash
 - [x] Update the score display to show stylePoints and styleMultiplier in real time, formatted as 'Score: 123 (+1.5x)'
 - [!] Award bonus points (e.g., 10 × styleMultiplier) when player crashes through an NPC skier, applying the current multiplier  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Reset styleMultiplier to 1 after any collision with a tree, oil slick, or obstacle, preserving the score but ending the combo
+- [!] Reset styleMultiplier to 1 after any collision with a tree, oil slick, or obstacle, preserving the score but ending the combo  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue
