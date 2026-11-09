@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, spawnAntagonist, updateAntagonist)
 - Introduce a 'flip trick' mechanic: press space mid-air to perform a 180° flip, earning 25 bonus points and a visual 'crackle' effect using original pixel art (initPlayerFlipState, handlePlayerFlipInput, drawPlayerFlipEffect)
 - Add style scoring for slaloming close to NPCs: award 10 points per 10px proximity, with multipliers for consecutive near-misses (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)
 - Implement dynamic terrain transitions: change background biome from open slope to dense forest at 500 meters, using original code-drawn trees and snow textures (addForestTransitionTrigger, addForestTrees, addTreeAnimationBranch)
