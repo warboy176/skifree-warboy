@@ -3438,6 +3438,8 @@ function initAchievementsRegistry() {
     { type: 'survivalTime', counter: 0, unlockThreshold: 60, title: 'Survivor', description: 'Survive on the slope for 60 seconds.', unlocked: false }
   ];
 }
+registerBiomeTransitionAchievements();
+
 registerForestRunnerAchievement();
 
 
@@ -10645,6 +10647,21 @@ function drawPlayerFlipEffect(ctx, player) {
     player.flipEffectDrawn = true;
   }
 }
+
+function registerBiomeTransitionAchievements() {
+  for (let i = 0; i < BIOME_THRESHOLDS.length; i++) {
+    const threshold = BIOME_THRESHOLDS[i];
+    addDefaultAchievement({
+      type: 'biome_transition',
+      unlockCondition: () => player.meters >= threshold,
+      icon: (ctx, x, y) => {
+        ctx.fillStyle = 'white';
+        ctx.fillRect(x, y, 4, 4);
+      }
+    });
+  }
+}
+
 
 
 
