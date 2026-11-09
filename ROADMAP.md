@@ -1186,6 +1186,6 @@ Operator direction from the daily report lands here.
 - [x] Add a drone hazard with basic movement and collision detection, using only original code-drawn art
 - [!] Implement a drone-specific collision response that triggers player crash state when hit  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [!] Create a new achievement system entry that unlocks on first drone interaction  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
-- [ ] Display the achievement unlock notification in the HUD with a unique visual cue
+- [!] Display the achievement unlock notification in the HUD with a unique visual cue  <!-- blocked: pipeline: item INCOMPLETE — 2/6 landed, 0 unspecifiable, 2 e -->
 - [ ] Implement a new interaction (e.g., crashing through a skier) with a style-based achievement that triggers on success
 - [ ] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
