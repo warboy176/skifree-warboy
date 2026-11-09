@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a style-based scoring system that rewards slaloming close to NPCs, crashing through obstacles, and landing tricks, with real-time multiplier feedback (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Add dynamic terrain biome transitions (e.g., open slope → forest → night) with original art-coded visual shifts and ambient audio cues (initBiomeState, updateBiomeTransition)
 - Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, using a unique visual style and behavior distinct from skiers and obstacles (initAntagonist, spawnAntagonist, updateAntagonist)
 - Add persistent achievements registry with data-driven unlock logic for new hazards and interactions (initAchievementsRegistry, checkAchievements)
