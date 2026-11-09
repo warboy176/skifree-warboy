@@ -10556,6 +10556,11 @@ function registerConsecutiveHitAchievement() {
   addDefaultAchievement('consecutive_hits', () => updateConsecutiveHits(), 10);
 }
 
+function resetConsecutiveHitCounter() {
+    PlayerState.comboStreak = 0;
+}
+
+
 
 
 
