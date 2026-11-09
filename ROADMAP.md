@@ -1171,4 +1171,4 @@ Operator direction from the daily report lands here.
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., forest → night → alpine)
 - [x] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs and hazards
-- [ ] Create a persistent achievements registry with new witty unlocks tied to biome transitions and style combos
+- [x] Create a persistent achievements registry with new witty unlocks tied to biome transitions and style combos
