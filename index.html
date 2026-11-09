@@ -669,6 +669,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateFastModeEffects(dt);
+
 updateConsecutiveHits(dt);
 
 checkPlayerNearNPCs(dt);
@@ -10572,6 +10574,14 @@ function registerStyleMultiplierAchievement() {
   registerAchievementDef('style_multiplier_streak', 3.0, 'styleScore', 'Reach a style multiplier of 3.0');
   addDefaultAchievement('style_multiplier_streak', () => game.styleMultiplier >= 3.0, 3.0);
 }
+
+function updateFastModeEffects(dt) {
+    if (game.fastMode) {
+        PlayerState.speed = PlayerState.speed * 1.3;
+        PlayerState.jumpHeight = PlayerState.jumpHeight * 1.3;
+    }
+}
+
 
 
 
