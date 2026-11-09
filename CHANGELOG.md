@@ -1,4 +1,5 @@
 # Changelog
+- Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, using a unique visual style and behavior distinct from skiers and obstacles (initAntagonist, spawnAntagonist, updateAntagonist)
 - Add persistent achievements registry with data-driven unlock logic for new hazards and interactions (initAchievementsRegistry, checkAchievements)
 - Introduce style-based scoring system with multipliers for slaloming near NPCs and crashing through obstacles (initStyleScoringSystem, updateStyleScoringSystem)
 - Implement terrain biome transitions (lodge → open slope → forest → night) with changing background and obstacle themes (initBiomeState, updateBiomeTransition, addBiomeObstacleEvolution)
