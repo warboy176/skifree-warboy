@@ -1181,7 +1181,7 @@ Operator direction from the daily report lands here.
 - [x] Add original Warboy-designed chase antagonist with unique movement pattern and visual style
 - [x] Implement terrain biome transitions (lodge → open slope → forest → night) with distinct visual themes
 - [x] Introduce style-based scoring with multipliers for slaloming close to NPCs and crashing through obstacles
-- [ ] Add a persistent achievements registry that stores unlock states in localStorage
+- [x] Add a persistent achievements registry that stores unlock states in localStorage
 - [ ] Implement a data-driven achievement system with unlock conditions for new hazards (e.g., 'First oil slick encounter')
 - [ ] Add a new hazard (e.g., a drone) with a corresponding achievement that unlocks on first interaction
 - [ ] Implement a new interaction (e.g., crashing through a skier) with a style-based achievement that triggers on success
