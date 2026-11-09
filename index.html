@@ -691,6 +691,8 @@ updateSlosher(dt);
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateDroneHazard(dt);
+
 updateObstaclesInBiome(currentBiomeId, dt);
 
 checkNPCCrash(player, dt);
@@ -10718,6 +10720,19 @@ function spawnDroneHazard() {
     game.droneHazards.push(droneHazard);
   }
 }
+
+function updateDroneHazard(dt) {
+  for (let i = game.droneHazards.length - 1; i >= 0; i--) {
+    const drone = game.droneHazards[i];
+    drone.x -= game.droneHazardConstants.speed * dt;
+    if (drone.x < -game.droneHazardConstants.width) {
+      game.droneHazards.splice(i, 1);
+      continue;
+    }
+    ctx.fillRect(drone.x, drone.y, 6, 4);
+  }
+}
+
 
 
 
