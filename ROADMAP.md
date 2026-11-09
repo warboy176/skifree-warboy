@@ -1183,7 +1183,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring with multipliers for slaloming close to NPCs and crashing through obstacles
 - [x] Add a persistent achievements registry that stores unlock states in localStorage
 - [x] Implement a data-driven achievement system with unlock conditions for new hazards (e.g., 'First oil slick encounter')
-- [ ] Add a drone hazard with basic movement and collision detection, using only original code-drawn art
+- [x] Add a drone hazard with basic movement and collision detection, using only original code-drawn art
 - [ ] Implement a drone-specific collision response that triggers player crash state when hit
 - [ ] Create a new achievement system entry that unlocks on first drone interaction
 - [ ] Display the achievement unlock notification in the HUD with a unique visual cue
