@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Implement a persistent achievements registry with new original unlockables tied to advanced behaviors: 'Slope Whisperer' (50 near-misses), 'Chase Survivor' (evade antagonist 10 times), 'Night Runner' (survive 1000 meters in night biome) (initAchievementsRegistry, checkAchievementConditions, unlockAchievement)
 - Introduce a style-based scoring system that rewards slaloming close to NPCs, crashing through obstacles, and landing tricks, with real-time multiplier feedback (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Add dynamic terrain biome transitions (e.g., open slope → forest → night) with original art-coded visual shifts and ambient audio cues (initBiomeState, updateBiomeTransition)
