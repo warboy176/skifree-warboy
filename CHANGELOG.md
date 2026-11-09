@@ -1,4 +1,5 @@
 # Changelog
+- Increment the consecutive-hit counter when the player collides with an NPC skier (initNPCs, updateConsecutiveHits, registerConsecutiveHitAchievement)
 - Add a consecutive-hit counter variable initialized to 0 in the game state (initConsecutiveHitCounter)
 - Add a 'crash-through' event that triggers when player collides with an NPC skier (initNPCs, spawnNPCs, checkNPCCollision)
 - Implement a 'near-miss' event that triggers when player passes within 20px of an NPC skier (initNPCs, checkNearMisses)
