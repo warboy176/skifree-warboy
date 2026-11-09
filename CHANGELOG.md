@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses (initStyleScoring, checkNearMisses, registerStyleAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree and snow patterns drawn in code (initBiomeState, addForestTrees, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Add a 'fast mode' toggle (F key) that temporarily increases player speed by 30% and boosts jump height, with a visual pulse effect and original sound cue (initFastModeState, toggleFastMode, updateFastModeEffects)

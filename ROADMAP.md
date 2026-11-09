@@ -1148,7 +1148,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player at increasing speed
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree and snow patterns drawn in code
-- [ ] Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses
+- [x] Introduce style scoring: award points for slaloming within 10px of NPC skiers, with multipliers stacking for consecutive near-misses
 - [ ] Add a 'crash-through' mechanic where hitting an NPC skier grants a brief speed boost and a witty achievement toast (e.g., 'Flesh Cannon')
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
