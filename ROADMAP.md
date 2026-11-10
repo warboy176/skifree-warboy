@@ -1226,7 +1226,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night)
-- [ ] Add a style score counter that tracks proximity to NPCs during skiing, incrementing on close passes without collision
+- [x] Add a style score counter that tracks proximity to NPCs during skiing, incrementing on close passes without collision
 - [ ] Implement a multiplier system that activates when the player slaloms within NEAR_MISS_MARGIN of an NPC, resetting on collision or missed pass
 - [ ] Add visual feedback (e.g., a brief glow or particle burst) when a close slalom triggers a style point
 - [ ] Extend the multiplier to chain across multiple consecutive close slaloms through NPCs, increasing with each valid pass

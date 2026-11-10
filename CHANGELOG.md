@@ -1,4 +1,5 @@
 # Changelog
+- Add a style score counter that tracks proximity to NPCs during skiing, incrementing on close passes without collision (initStyleScore, updateStyleScore, registerStyleScoreAchievement)
 - Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night) (initBiomeState, updateBiomeTransition, drawBiomeLayerTint)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, updateAntagonist, drawAntagonist)
 - Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping') (initNPCs, spawnNPCs, checkAchievementCrashedThroughSkiers)
