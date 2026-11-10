@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones (checkAndTriggerAchievements)
 - Add a persistent achievements registry that stores unlock states in localStorage, initialized with empty data on first load (initAchievementsRegistry)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, each with unique visual art and ambient sound cues (initBiomeState, updateBiomeTransition, drawBiomeLayer)
