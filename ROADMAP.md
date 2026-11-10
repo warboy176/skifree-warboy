@@ -1192,4 +1192,4 @@ Operator direction from the daily report lands here.
 - [x] Track and display a 'style multiplier' counter that increases with consecutive crash-throughs
 - [x] Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs
 - [!] Add a subtle audio cue (original sound effect) to reinforce the success of a crash-through interaction  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
+- [x] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
