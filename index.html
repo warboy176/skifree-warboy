@@ -10853,16 +10853,30 @@ function startAnimatedEntry() {
 }
 
 function updateAnimatedEntry(dt) {
-  if (game.entryAnimation.active) {
-    game.entryAnimation.progress += dt * 2;
-    const ease = 1 - Math.pow(1 - game.entryAnimation.progress, 3);
-    ctx.globalAlpha = ease;
-    ctx.translate(0, -H * (1 - ease));
-    if (game.entryAnimation.progress >= 1) {
-      game.entryAnimation.active = false;
-      ctx.globalAlpha = 1;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-    }
+  if (!game.entryAnimation.active) return;
+
+  const progress = game.entryAnimation.progress || 0;
+  const duration = game.entryAnimation.duration;
+  const t = Math.min(1, (Date.now() - game.entryAnimation.startTime) / duration);
+  const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+
+  game.entryAnimation.progress = eased;
+
+  const alpha = eased;
+  const offset = (1 - eased) * H;
+
+  ctx.save();
+  ctx.translate(0, offset);
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, W, H);
+  ctx.restore();
+
+  if (eased >= 1) {
+    game.entryAnimation.active = false;
+    game.entryAnimation.progress = 0;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalAlpha = 1;
   }
 }
 
