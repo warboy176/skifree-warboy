@@ -1223,3 +1223,8 @@ Operator direction from the daily report lands here.
 - [!] Add a function to define unique unlock messages for each achievement condition, stored as a map of condition keys to message strings  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Add a function to trigger and display a popup with the appropriate witty message when an achievement condition is met, using only the game's existing popup system  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
+- [ ] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night)
+- [ ] Introduce style-based scoring with multipliers for close slaloms and crashes through NPCs
+- [ ] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
