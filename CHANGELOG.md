@@ -1,4 +1,5 @@
 # Changelog
+- Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping') (initNPCs, spawnNPCs, checkAchievementCrashedThroughSkiers)
 - Add animated exit (fade-out + slide-down) with completion callback to clean up state (initExitAnimation, startExitAnimation, updateExitAnimation)
 - Integrate animated entry (fade-in + slide-up) using a simple time-based easing function (initAnimatedEntryState, startAnimatedEntry, updateAnimatedEntry)
 - Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas (drawWarboyPopup)
