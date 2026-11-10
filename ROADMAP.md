@@ -1219,6 +1219,6 @@ Operator direction from the daily report lands here.
 - [x] Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas
 - [x] Integrate animated entry (fade-in + slide-up) using a simple time-based easing function
 - [x] Add animated exit (fade-out + slide-down) with completion callback to clean up state
-- [ ] Ensure all UI elements are rendered directly in canvas with no external dependencies
+- [!] Ensure all UI elements are rendered directly in canvas with no external dependencies  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Add a function to display witty unlock messages in the popup, with unique text for each achievement condition
 - [ ] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
