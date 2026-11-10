@@ -671,6 +671,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateCrashThroughStreak(player, game);
+
 updateStyleScoringSystem(dt);
 
 updateFastModeEffects(dt);
@@ -10739,6 +10741,18 @@ function initCrashThroughStreak() {
     game.crashThroughStreak = 0;
     game.crashThroughStreakThreshold = 3;
 }
+
+function updateCrashThroughStreak(player, game) {
+  if (player.isCrashing) {
+    game.crashThroughStreak++;
+    if (game.crashThroughStreak === game.crashThroughStreakThreshold) {
+      addDefaultAchievement('crash_through_streak_3');
+    }
+  } else {
+    game.crashThroughStreak = 0;
+  }
+}
+
 
 
 
