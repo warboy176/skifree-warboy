@@ -1221,5 +1221,5 @@ Operator direction from the daily report lands here.
 - [x] Add animated exit (fade-out + slide-down) with completion callback to clean up state
 - [!] Ensure all UI elements are rendered directly in canvas with no external dependencies  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Add a function to define unique unlock messages for each achievement condition, stored as a map of condition keys to message strings  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to trigger and display a popup with the appropriate witty message when an achievement condition is met, using only the game's existing popup system
+- [!] Add a function to trigger and display a popup with the appropriate witty message when an achievement condition is met, using only the game's existing popup system  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
