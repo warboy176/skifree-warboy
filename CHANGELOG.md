@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, each with unique visual art and ambient sound cues (initBiomeState, updateBiomeTransition, drawBiomeLayer)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initAntagonist, spawnAntagonistIfInactive, updateAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Integrate the popup system with the achievement registry so that each unlock triggers a unique, animated popup with original art and sound feedback (initAchievementPopups, showAchievementPopup, updateAchievementPopups)
