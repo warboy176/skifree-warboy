@@ -1215,6 +1215,10 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions
 - [x] Add a persistent achievements registry that stores unlock states in localStorage, initialized with empty data on first load
 - [x] Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones
-- [ ] Create a minimal, original Warboy-style popup UI with animated entry and exit, rendered directly in the canvas context
+- [ ] Add a foundational popup state manager that tracks active popup visibility and animation phase
+- [ ] Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas
+- [ ] Integrate animated entry (fade-in + slide-up) using a simple time-based easing function
+- [ ] Add animated exit (fade-out + slide-down) with completion callback to clean up state
+- [ ] Ensure all UI elements are rendered directly in canvas with no external dependencies
 - [ ] Add a function to display witty unlock messages in the popup, with unique text for each achievement condition
 - [ ] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
