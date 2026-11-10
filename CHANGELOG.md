@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night) (initBiomeState, updateBiomeTransition, drawBiomeLayerTint)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, updateAntagonist, drawAntagonist)
 - Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping') (initNPCs, spawnNPCs, checkAchievementCrashedThroughSkiers)
 - Add animated exit (fade-out + slide-down) with completion callback to clean up state (initExitAnimation, startExitAnimation, updateExitAnimation)

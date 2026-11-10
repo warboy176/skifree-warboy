@@ -1225,6 +1225,6 @@ Operator direction from the daily report lands here.
 - [x] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
 
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
-- [ ] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night)
+- [x] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night)
 - [ ] Introduce style-based scoring with multipliers for close slaloms and crashes through NPCs
 - [ ] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
