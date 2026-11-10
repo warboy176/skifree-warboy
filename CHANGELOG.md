@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Display unlocked achievements in a non-intrusive HUD overlay with visual feedback (initAchievementHUD, updateAchievementHUD)
 - Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs (initCrashThroughStreak, updateCrashThroughStreak)
 - Track and display a 'style multiplier' counter that increases with consecutive crash-throughs (initStyleMultiplier, updateStyleMultiplier, drawStyleMultiplierHUD)
