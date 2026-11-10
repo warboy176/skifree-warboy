@@ -1,4 +1,5 @@
 # Changelog
+- Add a particle burst effect that triggers when the player passes within NEAR_MISS_MARGIN of an NPC skier (initNearMissParticles, spawnNearMissParticleBurst, updateNearMissParticles)
 - Apply multiplier to score when the player successfully slaloms through a near-miss without collision (initNearMissCombo, updateNearMissCombo, applyNearMissScoreMultiplier)
 - Display the active multiplier on screen with a visual indicator (e.g., glowing 'X2', 'X3') that fades after 1 second (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)
 - Implement a multiplier counter that increases by 1 for each valid near-miss pass, resets on collision or missed pass (initNearMissCounter, updateNearMissCounter, registerNearMissAchievement)
