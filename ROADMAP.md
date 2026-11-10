@@ -1203,7 +1203,7 @@ Operator direction from the daily report lands here.
 - [x] Add dynamic terrain biomes that transition as the player descends, with visual and gameplay changes (e.g., open slope → dense forest → night with stars)
 - [x] Introduce a style-based scoring system that rewards close slaloming, crashing through NPCs, and multipliers for combo chains
 - [x] Add a persistent achievements registry that stores unlock state in localStorage, with a single function to save and load achievement progress
-- [ ] Implement a foundation function to register new achievements with unique IDs, unlock conditions, and original Warboy-style visual popup triggers
+- [x] Implement a foundation function to register new achievements with unique IDs, unlock conditions, and original Warboy-style visual popup triggers
 - [ ] Create a core function to check and trigger achievement unlocks on event boundaries (e.g., after a trick, collecting an item, or surviving a hazard)
 - [ ] Add a minimal, self-contained visual popup system that displays original Warboy-style achievement unlock animations using canvas rendering only
 - [ ] Integrate the popup system with the achievement registry so that each unlock triggers a unique, animated popup with original art and sound feedback

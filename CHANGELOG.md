@@ -1,4 +1,5 @@
 # Changelog
+- Implement a foundation function to register new achievements with unique IDs, unlock conditions, and original Warboy-style visual popup triggers (initAchievements, registerAchievement, checkAchievements)
 - Add a persistent achievements registry that stores unlock state in localStorage, with a single function to save and load achievement progress (initAchievementsRegistry, saveAchievementsToStorage, loadAchievementsFromStorage)
 - Introduce a style-based scoring system that rewards close slaloming, crashing through NPCs, and multipliers for combo chains (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)
 - Add dynamic terrain biomes that transition as the player descends, with visual and gameplay changes (e.g., open slope → dense forest → night with stars) (initBiomeState, updateBiomeTransition, addForestTransitionTrigger)
