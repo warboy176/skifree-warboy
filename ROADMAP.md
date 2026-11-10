@@ -1213,4 +1213,8 @@ Operator direction from the daily report lands here.
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, each with unique visual art and ambient sound cues
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions
-- [ ] Create a persistent achievements registry that auto-updates with new unlock conditions for each new mechanic, using original Warboy-style visual popups and witty unlock messages
+- [ ] Add a persistent achievements registry that stores unlock states in localStorage, initialized with empty data on first load
+- [ ] Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones
+- [ ] Create a minimal, original Warboy-style popup UI with animated entry and exit, rendered directly in the canvas context
+- [ ] Add a function to display witty unlock messages in the popup, with unique text for each achievement condition
+- [ ] Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping')
