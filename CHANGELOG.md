@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a style-based scoring system that rewards close slaloming, crashing through NPCs, and multipliers for combo chains (initStyleScoringSystem, updateStyleScoring, registerStyleAchievement)
 - Add dynamic terrain biomes that transition as the player descends, with visual and gameplay changes (e.g., open slope → dense forest → night with stars) (initBiomeState, updateBiomeTransition, addForestTransitionTrigger)
 - Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, using a distinct visual style and behavior (initAntagonist, updateAntagonist, drawAntagonist)
 - Add a persistent achievements registry that auto-updates counters for new interactions (e.g., 'Forest Fugitive' for surviving 30 seconds in the forest biome) and displays unlock popups with original art (initAchievementsRegistry, updateAchievementCounters, checkAndUnlockAchievements)
