@@ -1215,7 +1215,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions
 - [x] Add a persistent achievements registry that stores unlock states in localStorage, initialized with empty data on first load
 - [x] Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones
-- [ ] Add a foundational popup state manager that tracks active popup visibility and animation phase
+- [!] Add a foundational popup state manager that tracks active popup visibility and animation phase  <!-- blocked: pipeline: item INCOMPLETE — 2/5 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas
 - [ ] Integrate animated entry (fade-in + slide-up) using a simple time-based easing function
 - [ ] Add animated exit (fade-out + slide-down) with completion callback to clean up state
