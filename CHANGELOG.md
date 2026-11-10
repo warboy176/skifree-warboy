@@ -1,4 +1,5 @@
 # Changelog
+- Track and display a 'style multiplier' counter that increases with consecutive crash-throughs (initStyleMultiplier, updateStyleMultiplier, drawStyleMultiplierHUD)
 - Add a drone hazard with basic movement and collision detection, using only original code-drawn art (initDroneHazard, spawnDroneHazard, updateDroneHazard)
 - Implement a data-driven achievement system with unlock conditions for new hazards (e.g., 'First oil slick encounter') (initAchievementSystem, checkAchievementConditions)
 - Add a persistent achievements registry that stores unlock states in localStorage (initAchievementsRegistry, saveAchievementsToStorage, loadAchievementsFromStorage)
