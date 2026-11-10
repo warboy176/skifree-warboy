@@ -10832,6 +10832,22 @@ function drawWarboyPopup(ctx, x, y, width, height, content) {
   ctx.fillText(content, x + width / 2, y + height / 2);
 }
 
+function initAnimatedEntryState() {
+    game.entryAnimation = {
+        startTime: null,
+        duration: 1000,
+        active: false
+    };
+    game.flashActive = false;
+    game.evasionCueActive = false;
+    game.biomeTransitionActive = false;
+    player.flipActive = false;
+    player.flips = 0;
+    game.fastMode = false;
+    game.trickMultiplierStartTime = null;
+}
+
+
 
 
 
