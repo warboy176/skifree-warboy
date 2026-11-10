@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style (initAntagonist, updateAntagonist, drawAntagonist)
 - Ensure all achievements are tied to specific mechanics already present (e.g., 'Crashed through 5 skiers' or 'Survived 100 seconds without jumping') (initNPCs, spawnNPCs, checkAchievementCrashedThroughSkiers)
 - Add animated exit (fade-out + slide-down) with completion callback to clean up state (initExitAnimation, startExitAnimation, updateExitAnimation)
 - Integrate animated entry (fade-in + slide-up) using a simple time-based easing function (initAnimatedEntryState, startAnimatedEntry, updateAnimatedEntry)
