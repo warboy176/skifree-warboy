@@ -1212,5 +1212,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends, each with unique visual art and ambient sound cues
-- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions
+- [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with air time, with multipliers for consecutive actions
 - [ ] Create a persistent achievements registry that auto-updates with new unlock conditions for each new mechanic, using original Warboy-style visual popups and witty unlock messages
