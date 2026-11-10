@@ -1191,5 +1191,5 @@ Operator direction from the daily report lands here.
 - [!] Implement visual feedback (e.g., sprite burst, screen shake) when player crashes through an NPC skier  <!-- blocked: pipeline: item INCOMPLETE — 0/0 landed, 2 unspecifiable, 0 e -->
 - [x] Track and display a 'style multiplier' counter that increases with consecutive crash-throughs
 - [x] Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs
-- [ ] Add a subtle audio cue (original sound effect) to reinforce the success of a crash-through interaction
+- [!] Add a subtle audio cue (original sound effect) to reinforce the success of a crash-through interaction  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [ ] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
