@@ -1746,6 +1746,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughStreak();
+
 initStyleScoring();
 
 initObstacleTypes();
@@ -10732,6 +10734,12 @@ function updateDroneHazard(dt) {
     ctx.fillRect(drone.x, drone.y, 6, 4);
   }
 }
+
+function initCrashThroughStreak() {
+    game.crashThroughStreak = 0;
+    game.crashThroughStreakThreshold = 3;
+}
+
 
 
 
