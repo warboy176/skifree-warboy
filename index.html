@@ -4101,6 +4101,8 @@ function initPlayerState() {
     }
   };
 }
+initNearMissCounter();
+
 initSlosher();
 
 initAntagonistCollisionState();
@@ -10930,6 +10932,12 @@ function initPlayerNearMissTracker() {
     PlayerState.nearMiss = false;
     PlayerState.nearMissTimer = 0;
 }
+
+function initNearMissCounter() {
+    PlayerState.nearMiss = 0;
+    PlayerState.nearMissTimer = 0;
+}
+
 
 
 
