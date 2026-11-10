@@ -1217,7 +1217,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones
 - [!] Add a foundational popup state manager that tracks active popup visibility and animation phase  <!-- blocked: pipeline: item INCOMPLETE — 2/5 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas
-- [ ] Integrate animated entry (fade-in + slide-up) using a simple time-based easing function
+- [x] Integrate animated entry (fade-in + slide-up) using a simple time-based easing function
 - [ ] Add animated exit (fade-out + slide-down) with completion callback to clean up state
 - [ ] Ensure all UI elements are rendered directly in canvas with no external dependencies
 - [ ] Add a function to display witty unlock messages in the popup, with unique text for each achievement condition
