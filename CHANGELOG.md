@@ -1,4 +1,5 @@
 # Changelog
+- Implement a multiplier counter that increases by 1 for each valid near-miss pass, resets on collision or missed pass (initNearMissCounter, updateNearMissCounter, registerNearMissAchievement)
 - Add a 'nearMiss' state tracker to the player object to detect when within NEAR_MISS_MARGIN of an NPC skier (initPlayerNearMissTracker, checkNearMisses, registerNearMissAchievement)
 - Add a style score counter that tracks proximity to NPCs during skiing, incrementing on close passes without collision (initStyleScore, updateStyleScore, registerStyleScoreAchievement)
 - Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night) (initBiomeState, updateBiomeTransition, drawBiomeLayerTint)

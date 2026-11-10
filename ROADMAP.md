@@ -1228,7 +1228,7 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night)
 - [x] Add a style score counter that tracks proximity to NPCs during skiing, incrementing on close passes without collision
 - [x] Add a 'nearMiss' state tracker to the player object to detect when within NEAR_MISS_MARGIN of an NPC skier
-- [ ] Implement a multiplier counter that increases by 1 for each valid near-miss pass, resets on collision or missed pass
+- [x] Implement a multiplier counter that increases by 1 for each valid near-miss pass, resets on collision or missed pass
 - [ ] Display the active multiplier on screen with a visual indicator (e.g., glowing 'X2', 'X3') that fades after 1 second
 - [ ] Apply multiplier to score when the player successfully slaloms through a near-miss without collision
 - [ ] Add visual feedback (e.g., a brief glow or particle burst) when a close slalom triggers a style point
