@@ -10815,6 +10815,24 @@ function showAchievementPopup(achievementDef) {
     ctx.fillText(achievementDef.name, x + 32, y + 24);
 }
 
+function drawWarboyPopup(ctx, x, y, width, height, content) {
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(x, y, width, height);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+  for (let i = 0; i < width; i += 2) {
+    for (let j = 0; j < height; j += 2) {
+      ctx.fillRect(x + i, y + j, 1, 1);
+    }
+  }
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.font = 'bold 4px "Courier New", monospace';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText(content, x + width / 2, y + height / 2);
+}
+
+
 
 
 
