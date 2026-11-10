@@ -676,6 +676,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAnimatedEntry(dt);
+
 updateCrashThroughStreak(player, game);
 
 updateStyleScoringSystem(dt);
@@ -10849,6 +10851,21 @@ function startAnimatedEntry() {
   game.entryAnimation.active = true;
   game.entryAnimation.startTime = Date.now();
 }
+
+function updateAnimatedEntry(dt) {
+  if (game.entryAnimation.active) {
+    game.entryAnimation.progress += dt * 2;
+    const ease = 1 - Math.pow(1 - game.entryAnimation.progress, 3);
+    ctx.globalAlpha = ease;
+    ctx.translate(0, -H * (1 - ease));
+    if (game.entryAnimation.progress >= 1) {
+      game.entryAnimation.active = false;
+      ctx.globalAlpha = 1;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+    }
+  }
+}
+
 
 
 
