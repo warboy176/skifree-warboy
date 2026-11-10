@@ -1,4 +1,5 @@
 # Changelog
+- Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs (initCrashThroughStreak, updateCrashThroughStreak)
 - Track and display a 'style multiplier' counter that increases with consecutive crash-throughs (initStyleMultiplier, updateStyleMultiplier, drawStyleMultiplierHUD)
 - Add a drone hazard with basic movement and collision detection, using only original code-drawn art (initDroneHazard, spawnDroneHazard, updateDroneHazard)
 - Implement a data-driven achievement system with unlock conditions for new hazards (e.g., 'First oil slick encounter') (initAchievementSystem, checkAchievementConditions)
