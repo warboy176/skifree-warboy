@@ -1205,7 +1205,7 @@ Operator direction from the daily report lands here.
 - [x] Add a persistent achievements registry that stores unlock state in localStorage, with a single function to save and load achievement progress
 - [x] Implement a foundation function to register new achievements with unique IDs, unlock conditions, and original Warboy-style visual popup triggers
 - [x] Create a core function to check and trigger achievement unlocks on event boundaries (e.g., after a trick, collecting an item, or surviving a hazard)
-- [ ] Add a minimal, self-contained visual popup system that displays original Warboy-style achievement unlock animations using canvas rendering only
+- [x] Add a minimal, self-contained visual popup system that displays original Warboy-style achievement unlock animations using canvas rendering only
 - [ ] Integrate the popup system with the achievement registry so that each unlock triggers a unique, animated popup with original art and sound feedback
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)

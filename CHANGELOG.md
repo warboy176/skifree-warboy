@@ -1,4 +1,5 @@
 # Changelog
+- Add a minimal, self-contained visual popup system that displays original Warboy-style achievement unlock animations using canvas rendering only (initAchievementPopups, showAchievementPopup, updateAchievementPopups)
 - Create a core function to check and trigger achievement unlocks on event boundaries (e.g., after a trick, collecting an item, or surviving a hazard) (initAchievementSystem, checkAndTriggerAchievements, registerAchievementEvent)
 - Implement a foundation function to register new achievements with unique IDs, unlock conditions, and original Warboy-style visual popup triggers (initAchievements, registerAchievement, checkAchievements)
 - Add a persistent achievements registry that stores unlock state in localStorage, with a single function to save and load achievement progress (initAchievementsRegistry, saveAchievementsToStorage, loadAchievementsFromStorage)
