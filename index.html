@@ -700,6 +700,8 @@ updateSlosher(dt);
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateNearMissParticles(dt);
+
 updateNearMissCombo(game, dt);
 
 checkAchievementCrashedThroughSkiers();
@@ -10983,6 +10985,23 @@ function spawnNearMissParticleBurst(player, npc) {
     });
   }
 }
+
+function updateNearMissParticles(dt) {
+  for (let i = game.nearMissParticles.length - 1; i >= 0; i--) {
+    const p = game.nearMissParticles[i];
+    p.x += p.vx * dt;
+    p.y += p.vy * dt;
+    p.age += dt;
+    if (p.y > canvas.height || p.age > 1000) {
+      game.nearMissParticles.splice(i, 1);
+    } else {
+      ctx.fillStyle = 'white';
+      ctx.globalAlpha = 1 - p.age / 1000;
+      ctx.fillRect(p.x, p.y, 2, 2);
+    }
+  }
+}
+
 
 
 
