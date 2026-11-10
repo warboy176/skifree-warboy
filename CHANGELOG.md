@@ -1,4 +1,5 @@
 # Changelog
+- Add animated exit (fade-out + slide-down) with completion callback to clean up state (initExitAnimation, startExitAnimation, updateExitAnimation)
 - Integrate animated entry (fade-in + slide-up) using a simple time-based easing function (initAnimatedEntryState, startAnimatedEntry, updateAnimatedEntry)
 - Implement a minimal Warboy-style popup drawing function using original pixel-art primitives in canvas (drawWarboyPopup)
 - Implement a function to check and trigger achievement unlocks after each game loop iteration, based on new mechanic milestones (checkAndTriggerAchievements)
