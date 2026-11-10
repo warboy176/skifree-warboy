@@ -203,7 +203,12 @@ if (autoplay.enabled) {
     chaseAntagonist: [],
     lastInputTime: 0,
     slopeStalkerActive: false,
-    biomeTransitionProgress: 0
+    biomeTransitionProgress: 0,
+    entryAnimation: {
+      startTime: null,
+      duration: 2000,
+      active: false
+    }
   };
   const SCORE_KEY='skifree91_arcade_scores_v1';
   function loadScores(){try{return JSON.parse(localStorage.getItem(SCORE_KEY)||'[]').slice(0,8);}catch(e){return [];}}
@@ -10833,18 +10838,11 @@ function drawWarboyPopup(ctx, x, y, width, height, content) {
 }
 
 function initAnimatedEntryState() {
-    game.entryAnimation = {
-        startTime: null,
-        duration: 1000,
-        active: false
-    };
-    game.flashActive = false;
-    game.evasionCueActive = false;
-    game.biomeTransitionActive = false;
-    player.flipActive = false;
-    player.flips = 0;
-    game.fastMode = false;
-    game.trickMultiplierStartTime = null;
+  game.entryAnimation = {
+    startTime: null,
+    duration: 2000,
+    active: false
+  };
 }
 
 
