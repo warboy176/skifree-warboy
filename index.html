@@ -701,6 +701,8 @@ updateSlosher(dt);
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+awardStylePointsAndParticlesIfNewEncounter(npc);
+
 updateNearMissParticles(dt);
 
 updateNearMissCombo(game, dt);
@@ -11006,6 +11008,24 @@ function updateNearMissParticles(dt) {
 function initNPCsEncounterTracking() {
   game.npcsEncounterTracking = new Map();
 }
+
+function awardStylePointsAndParticlesIfNewEncounter(npc) {
+    if (!game.npcEncounterAwarded.has(npc)) {
+        for (let i = 0; i < 4; i++) {
+            game.particles.push({
+                x: npc.x + Math.random() * 4 - 2,
+                y: npc.y + Math.random() * 4 - 2,
+                width: 4,
+                height: 4,
+                color: 'white',
+                life: 1
+            });
+        }
+        game.styleScore += STYLE_ACTION_BASE_POINTS;
+        game.npcEncounterAwarded.add(npc);
+    }
+}
+
 
 
 
