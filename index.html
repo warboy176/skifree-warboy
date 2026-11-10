@@ -10894,6 +10894,21 @@ function startExitAnimation(callback) {
   game.exitAnimation.callback = callback;
 }
 
+function updateExitAnimation(dt) {
+  if (game.exitAnimation.active) {
+    game.exitAnimation.progress += dt * 0.002;
+    if (game.exitAnimation.progress >= 1) {
+      game.exitAnimation.active = false;
+      game.exitAnimation.callback();
+      game.exitAnimation.progress = 0;
+    }
+    ctx.globalAlpha = 1 - game.exitAnimation.progress;
+    ctx.fillStyle = `rgba(0, 0, 0, ${ctx.globalAlpha})`;
+    ctx.fillRect(0, H * game.exitAnimation.progress, W, H);
+  }
+}
+
+
 
 
 
