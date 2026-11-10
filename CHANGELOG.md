@@ -1,4 +1,5 @@
 # Changelog
+- Ensure particle bursts and style points are only awarded once per NPC skier per encounter (initNPCsEncounterTracking, awardStylePointsAndParticlesIfNewEncounter)
 - Add a particle burst effect that triggers when the player passes within NEAR_MISS_MARGIN of an NPC skier (initNearMissParticles, spawnNearMissParticleBurst, updateNearMissParticles)
 - Apply multiplier to score when the player successfully slaloms through a near-miss without collision (initNearMissCombo, updateNearMissCombo, applyNearMissScoreMultiplier)
 - Display the active multiplier on screen with a visual indicator (e.g., glowing 'X2', 'X3') that fades after 1 second (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)
