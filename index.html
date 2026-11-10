@@ -10759,6 +10759,33 @@ function initBiomeData() {
     FOREST_BIOME_TREE_INTERVAL_METERS = 15;
 }
 
+function checkAndTriggerAchievements(eventType, eventData) {
+  for (let i = game.achievementsToCheck.length - 1; i >= 0; i--) {
+    const achievement = game.achievementsToCheck[i];
+    if (achievement.type === eventType) {
+      let conditionMet = false;
+      switch (achievement.condition.type) {
+        case 'count':
+          conditionMet = achievement.progress >= achievement.condition.threshold;
+          break;
+        case 'time':
+          conditionMet = eventData.time <= achievement.condition.threshold;
+          break;
+        case 'distance':
+          conditionMet = eventData.distance <= achievement.condition.threshold;
+          break;
+      }
+      if (conditionMet) {
+        achievement.unlocked = true;
+        const message = UNLOCK_MESSAGES[achievement.type] || 'Achievement unlocked!';
+        displayAchievementUnlock(achievement.type, message);
+        game.achievementsToCheck.splice(i, 1);
+      }
+    }
+  }
+}
+
+
 
 
 
