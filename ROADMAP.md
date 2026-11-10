@@ -1231,7 +1231,9 @@ Operator direction from the daily report lands here.
 - [x] Implement a multiplier counter that increases by 1 for each valid near-miss pass, resets on collision or missed pass
 - [x] Display the active multiplier on screen with a visual indicator (e.g., glowing 'X2', 'X3') that fades after 1 second
 - [x] Apply multiplier to score when the player successfully slaloms through a near-miss without collision
-- [ ] Add visual feedback (e.g., a brief glow or particle burst) when a close slalom triggers a style point
+- [ ] Add a particle burst effect that triggers when the player passes within NEAR_MISS_MARGIN of an NPC skier
+- [ ] Implement a style point increment and visual feedback (glow on player sprite) when a close slalom is detected
+- [ ] Ensure particle bursts and style points are only awarded once per NPC skier per encounter
 - [ ] Extend the multiplier to chain across multiple consecutive close slaloms through NPCs, increasing with each valid pass
 - [ ] Apply a penalty to the style score and reset the multiplier when the player crashes into an NPC or obstacle
 - [ ] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
