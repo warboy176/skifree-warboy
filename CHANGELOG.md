@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with varying density and color palette (initBiomeData, addForestTransitionTrigger)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Display unlocked achievements in a non-intrusive HUD overlay with visual feedback (initAchievementHUD, updateAchievementHUD)
 - Award a style-based achievement badge when the player achieves 3 consecutive crash-throughs (initCrashThroughStreak, updateCrashThroughStreak)

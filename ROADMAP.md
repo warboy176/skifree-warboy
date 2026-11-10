@@ -1195,6 +1195,6 @@ Operator direction from the daily report lands here.
 - [x] Display unlocked achievements in a non-intrusive HUD overlay with visual feedback
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with varying density and color palette
+- [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with varying density and color palette
 - [ ] Introduce style-based scoring: award bonus points for slaloming within 10px of NPCs or crashing through them, with a visible multiplier counter that increases with consecutive hits
 - [ ] Add a persistent achievements registry that auto-updates counters for new interactions (e.g., 'Forest Fugitive' for surviving 30 seconds in the forest biome) and displays unlock popups with original art
