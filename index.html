@@ -10919,6 +10919,14 @@ function checkAchievementCrashedThroughSkiers() {
   }
 }
 
+function drawBiomeLayerTint(ctx) {
+  const progress = Math.min(game.biomeState.transitionProgress / BIOME_TINT_DURATION, 1);
+  const currentTint = BIOME_TINTS[game.biomeState.current];
+  ctx.fillStyle = `rgba(${currentTint.r}, ${currentTint.g}, ${currentTint.b}, ${progress})`;
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
+
 
 
 
