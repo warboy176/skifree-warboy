@@ -700,6 +700,8 @@ updateSlosher(dt);
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+checkAchievementCrashedThroughSkiers();
+
 updateDroneHazard(dt);
 
 updateObstaclesInBiome(currentBiomeId, dt);
@@ -10907,6 +10909,16 @@ function updateExitAnimation(dt) {
     ctx.fillRect(0, H * game.exitAnimation.progress, W, H);
   }
 }
+
+function checkAchievementCrashedThroughSkiers() {
+  if (game.npcSkiers.some(npc => checkClosePassCollision(PlayerState, npc))) {
+    game.crashedThroughSkiers++;
+    if (game.crashedThroughSkiers >= ACHIEVEMENT_DEFINITIONS['Crashed through 5 skiers'].unlockThreshold) {
+      PlayerState.achievements['Crashed through 5 skiers'] = true;
+    }
+  }
+}
+
 
 
 
