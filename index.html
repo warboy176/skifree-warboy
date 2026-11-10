@@ -10888,6 +10888,13 @@ function initExitAnimation() {
     };
 }
 
+function startExitAnimation(callback) {
+  game.exitAnimation.active = true;
+  game.exitAnimation.progress = 0;
+  game.exitAnimation.callback = callback;
+}
+
+
 
 
 
