@@ -1,4 +1,5 @@
 # Changelog
+- Implement a chase antagonist creature with original code-drawn art that pursues the player when they slow down, using a distinct visual style and behavior (initAntagonist, updateAntagonist, drawAntagonist)
 - Add a persistent achievements registry that auto-updates counters for new interactions (e.g., 'Forest Fugitive' for surviving 30 seconds in the forest biome) and displays unlock popups with original art (initAchievementsRegistry, updateAchievementCounters, checkAndUnlockAchievements)
 - Introduce style-based scoring: award bonus points for slaloming within 10px of NPCs or crashing through them, with a visible multiplier counter that increases with consecutive hits (initNPCs, updateStyleScoring)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with varying density and color palette (initBiomeData, addForestTransitionTrigger)
