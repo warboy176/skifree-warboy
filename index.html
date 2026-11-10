@@ -10926,6 +10926,12 @@ function drawBiomeLayerTint(ctx) {
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
+function initPlayerNearMissTracker() {
+    PlayerState.nearMiss = false;
+    PlayerState.nearMissTimer = 0;
+}
+
+
 
 
 
