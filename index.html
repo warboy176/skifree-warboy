@@ -10957,6 +10957,12 @@ function updateNearMissCombo(game, dt) {
   }
 }
 
+function applyNearMissScoreMultiplier(game, score) {
+    const multiplier = Math.min(1 + 0.1 * game.nearMissCombo, 2.0);
+    return score * multiplier;
+}
+
+
 
 
 
