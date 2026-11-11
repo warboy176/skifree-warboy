@@ -677,6 +677,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkCrashAndBurnAchievement(dt);
+
 updateTrickDetection(dt);
 
 updateAnimatedEntry(dt);
@@ -11265,6 +11267,15 @@ function initSlalomKingAchievementTracking() {
   PlayerState.slalomKingProximityTimer = 0;
   PlayerState.minProximityCount = 0;
 }
+
+function checkCrashAndBurnAchievement(dt) {
+  if (PlayerState.isJumping && game.npcSkiers.some(npc => checkNPCCollision(game.player, npc))) {
+    if (!game.achievements.awarded[ACHIEVEMENT_DEFINITIONS.crashAndBurn.key]) {
+      addDefaultAchievement(ACHIEVEMENT_DEFINITIONS.crashAndBurn.key);
+    }
+  }
+}
+
 
 
 
