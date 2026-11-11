@@ -11026,6 +11026,13 @@ function awardStylePointsAndParticlesIfNewEncounter(npc) {
     }
 }
 
+function resetComboStreakOnCrashOrTreeHit() {
+  if (game.crashedThroughSkiers || (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc)))) {
+    PlayerState.comboStreak = 1;
+  }
+}
+
+
 
 
 
