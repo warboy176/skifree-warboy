@@ -11291,6 +11291,21 @@ function checkAntagonistAchievements() {
   }
 }
 
+function checkAntagonistChaseCollision() {
+  if (!game.antagonist) return;
+  const dx = game.player.x - game.antagonist.x;
+  const dy = game.player.y - game.antagonist.y;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  if (distance < 10) {
+    game.crashedThroughSkiers += 1;
+    game.antagonist.x = -50;
+    game.antagonist.y = Math.random() * 400;
+    PlayerState.crashedThroughSkiers += 1;
+    PlayerState.achievements['Crashed through 5 skiers'] = true;
+  }
+}
+
+
 
 
 
