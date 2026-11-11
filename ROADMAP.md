@@ -1249,7 +1249,11 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing when player slows down
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night), each with distinct visual and hazard themes
-- [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing tricks
+- [ ] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
+- [ ] Implement a temporary multiplier that increases by 1 for each consecutive near-miss of an NPC skier, resetting on collision or fall
+- [ ] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
+- [ ] Introduce a trick landing system that detects airtime and awards bonus points when landing after a jump, with multiplier scaling by air duration
+- [ ] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [ ] Create a persistent achievements registry with new original achievements tied to biome transitions, style scoring, and antagonist encounters
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
