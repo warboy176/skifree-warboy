@@ -11083,6 +11083,14 @@ function resetMultiplierOnDeathOrRestart() {
   }
 }
 
+function resetMultiplierOnCollision() {
+    if (game.crashedThroughSkiers || game.npcSkiers.some(npc => checkClosePassCollision(game.player, npc))) {
+        game.multiplier = 1;
+        game.styleMultiplierActive = false;
+    }
+}
+
+
 
 
 
