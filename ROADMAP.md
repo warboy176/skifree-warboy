@@ -1260,7 +1260,7 @@ Operator direction from the daily report lands here.
 - [x] Reset the multiplier to 1 when the player collides with any obstacle or falls
 - [x] Display the current multiplier visually in the HUD using a simple text overlay
 - [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
-- [ ] Add airtime tracking to player state: record jump start time when player enters JUMPING state
+- [x] Add airtime tracking to player state: record jump start time when player enters JUMPING state
 - [ ] Detect landing by checking when player returns to ground after jump, and calculate air duration from jump start time
 - [ ] Award base bonus points on landing, scaled by air duration using a non-linear multiplier function
 - [ ] Display a temporary visual feedback (e.g., glowing 'Landed!' text) on successful trick landing

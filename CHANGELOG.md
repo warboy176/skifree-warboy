@@ -1,4 +1,5 @@
 # Changelog
+- Add airtime tracking to player state: record jump start time when player enters JUMPING state (initPlayerAirTimeTracking, updatePlayerAirTime)
 - Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type (initCrashThroughObstacles, handleCrashThroughBonus)
 - Display the current multiplier visually in the HUD using a simple text overlay (drawMultiplierHUD)
 - Reset the multiplier to 1 when the player collides with any obstacle or falls (resetMultiplierOnCollision)
