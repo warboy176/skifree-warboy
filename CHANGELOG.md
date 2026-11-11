@@ -1,4 +1,5 @@
 # Changelog
+- Award base bonus points on landing, scaled by air duration using a non-linear multiplier function (awardLandingBonusPoints)
 - Detect landing by checking when player returns to ground after jump, and calculate air duration from jump start time (initPlayerAirState, checkPlayerLandingAndCalculateAirTime)
 - Add airtime tracking to player state: record jump start time when player enters JUMPING state (initPlayerAirTimeTracking, updatePlayerAirTime)
 - Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type (initCrashThroughObstacles, handleCrashThroughBonus)

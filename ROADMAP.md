@@ -1262,7 +1262,7 @@ Operator direction from the daily report lands here.
 - [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
 - [x] Add airtime tracking to player state: record jump start time when player enters JUMPING state
 - [x] Detect landing by checking when player returns to ground after jump, and calculate air duration from jump start time
-- [ ] Award base bonus points on landing, scaled by air duration using a non-linear multiplier function
+- [x] Award base bonus points on landing, scaled by air duration using a non-linear multiplier function
 - [ ] Display a temporary visual feedback (e.g., glowing 'Landed!' text) on successful trick landing
 - [ ] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [ ] Create a persistent achievements registry with new original achievements tied to biome transitions, style scoring, and antagonist encounters
