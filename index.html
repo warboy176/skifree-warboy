@@ -11032,6 +11032,15 @@ function resetComboStreakOnCrashOrTreeHit() {
   }
 }
 
+function applyCrashPenaltyAndResetMultiplier() {
+  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    PlayerState.styleScore -= 20;
+    PlayerState.styleMultiplier = 1.0;
+    PlayerState.crashedThroughSkiers = 0;
+  }
+}
+
+
 
 
 
