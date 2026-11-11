@@ -11261,12 +11261,9 @@ function updateSlalomKingAchievement(dt) {
 }
 
 function initSlalomKingAchievementTracking() {
-    if (!PlayerState.achievements) PlayerState.achievements = [];
-    if (!game.npcSkiers) game.npcSkiers = [];
-    
-    player.slalomKingTracking = false;
-    player.slalomKingProximityTimer = 0;
-    player.minProximityCount = 0;
+  PlayerState.slalomKingTracking = false;
+  PlayerState.slalomKingProximityTimer = 0;
+  PlayerState.minProximityCount = 0;
 }
 
 
