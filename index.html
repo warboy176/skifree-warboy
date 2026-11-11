@@ -11276,6 +11276,22 @@ function checkCrashAndBurnAchievement(dt) {
   }
 }
 
+function checkAntagonistAchievements() {
+  const distance = PlayerState.distance;
+  const hasEvaded = PlayerState.hasEvaded;
+
+  if (distance <= 100 && !hasEvaded) {
+    if (!PlayerState.achievements.includes('Warboy\'s Shadow')) {
+      addDefaultAchievement('Warboy\'s Shadow');
+    }
+  } else if (distance > 100 && hasEvaded) {
+    if (!PlayerState.achievements.includes('Escape Artist')) {
+      addDefaultAchievement('Escape Artist');
+    }
+  }
+}
+
+
 
 
 
