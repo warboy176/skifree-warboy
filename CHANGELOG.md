@@ -1,4 +1,5 @@
 # Changelog
+- Increment the multiplier by 1 only when a near_miss occurs and the player is not in a collision state (incrementMultiplierOnNearMiss)
 - Add a 'near_miss' flag to obstacle detection logic that triggers when player passes within 30px of an obstacle without collision (checkNearMisses)
 - Initialize a local variable `multiplier` to 1 in the game state, persisting across frames (initGameMultiplierState)
 - Add a near-miss counter that increments when the player passes an NPC skier within NEAR_MISS_MARGIN without colliding (checkNearMisses)
