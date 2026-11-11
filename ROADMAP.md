@@ -1250,7 +1250,7 @@ Operator direction from the daily report lands here.
 - [x] Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing when player slows down
 - [x] Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night), each with distinct visual and hazard themes
 - [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
-- [ ] Add a near-miss counter that increments when the player passes an NPC skier within NEAR_MISS_MARGIN without colliding
+- [x] Add a near-miss counter that increments when the player passes an NPC skier within NEAR_MISS_MARGIN without colliding
 - [ ] Implement a temporary multiplier that starts at 1 and increases by 1 for each consecutive near-miss, stored in a local variable
 - [ ] Reset the multiplier to 1 when the player collides with any obstacle or falls
 - [ ] Display the current multiplier visually in the HUD using a simple text overlay

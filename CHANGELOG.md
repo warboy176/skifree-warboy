@@ -1,4 +1,5 @@
 # Changelog
+- Add a near-miss counter that increments when the player passes an NPC skier within NEAR_MISS_MARGIN without colliding (checkNearMisses)
 - Add a style score counter that increments when the player slaloms within 30px of an NPC skier (initStyleScoreSystem, updateStyleScoreOnNearPass, registerStyleScoreAchievement)
 - Implement dynamic terrain biomes that transition as player descends (e.g., open slope → forest → night), each with distinct visual and hazard themes (initBiomeState, updateBiomeState, drawBiomeLayer)
 - Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing when player slows down (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
