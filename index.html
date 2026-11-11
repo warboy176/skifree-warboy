@@ -11305,6 +11305,24 @@ function checkAntagonistChaseCollision() {
   }
 }
 
+function renderBiomeTransition(ctx) {
+  if (!game.biomeState.transitioning) return;
+  
+  const progress = Math.min(game.biomeTransitionProgress / BIOME_TINT_DURATION, 1);
+  const startTint = BIOME_TINTS[game.biomeState.previous];
+  const endTint = BIOME_TINTS[game.biomeState.current];
+  
+  const r = Math.floor(startTint.r + (endTint.r - startTint.r) * progress);
+  const g = Math.floor(startTint.g + (endTint.g - startTint.g) * progress);
+  const b = Math.floor(startTint.b + (endTint.b - startTint.b) * progress);
+  
+  ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+  ctx.globalAlpha = 1 - progress;
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.globalAlpha = 1;
+}
+
+
 
 
 
