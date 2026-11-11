@@ -11110,6 +11110,13 @@ function handleCrashThroughBonus(player, obstacle) {
   }
 }
 
+function initPlayerAirTimeTracking() {
+    if (player.currentState === PlayerState.JUMPING) {
+        PlayerState.airTimeStart = Date.now();
+    }
+}
+
+
 
 
 
