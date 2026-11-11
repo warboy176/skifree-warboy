@@ -11133,6 +11133,19 @@ function checkPlayerLandingAndCalculateAirTime(dt) {
   }
 }
 
+function awardLandingBonusPoints(airTimeMs) {
+  if (airTimeMs < 100) return 0;
+  
+  const base = 10 * Math.sqrt(airTimeMs / 100);
+  const bonusPoints = Math.floor(base);
+  
+  game.stats.score += bonusPoints;
+  game.stats.totalScore += bonusPoints;
+  
+  return bonusPoints;
+}
+
+
 
 
 
