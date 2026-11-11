@@ -11114,6 +11114,15 @@ function initPlayerAirTimeTracking() {
   PlayerState.airTimeStart = null;
 }
 
+function updatePlayerAirTime(player, dt) {
+    if (player.state === 'JUMPING' && PlayerState.airTimeStart === null) {
+        PlayerState.airTimeStart = Date.now();
+    } else if (player.state !== 'JUMPING' && PlayerState.airTimeStart !== null) {
+        PlayerState.airTimeStart = null;
+    }
+}
+
+
 
 
 
