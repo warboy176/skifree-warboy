@@ -11218,6 +11218,16 @@ function updateTrickDetection(dt) {
   }
 }
 
+function initPlayerTrickState() {
+  if (PlayerState.airTimeStart === undefined) {
+    PlayerState.airTimeStart = null;
+  }
+  if (PlayerState.trickLandingFeedback === undefined) {
+    PlayerState.trickLandingFeedback = null;
+  }
+}
+
+
 
 
 
