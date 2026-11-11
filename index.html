@@ -4114,6 +4114,8 @@ function initPlayerState() {
     }
   };
 }
+initSlalomKingAchievementTracking();
+
 initNearMissCounter();
 
 initSlosher();
@@ -11257,6 +11259,16 @@ function updateSlalomKingAchievement(dt) {
         player.slalomKingProximityTimer = 0;
     }
 }
+
+function initSlalomKingAchievementTracking() {
+    if (!PlayerState.achievements) PlayerState.achievements = [];
+    if (!game.npcSkiers) game.npcSkiers = [];
+    
+    player.slalomKingTracking = false;
+    player.slalomKingProximityTimer = 0;
+    player.minProximityCount = 0;
+}
+
 
 
 
