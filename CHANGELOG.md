@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity (initAntagonist, updateAntagonist, checkAntagonistAchievements)
 - Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air (checkCrashAndBurnAchievement)
 - Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration (initSlalomKingAchievementTracking, updateSlalomKingAchievement)
 - Add a function to detect successful tricks (air time with directional input) and record them as style points (initPlayerTrickState, updateTrickDetection, registerTrickAchievement)
