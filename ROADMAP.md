@@ -1266,7 +1266,7 @@ Operator direction from the daily report lands here.
 - [x] Display a temporary visual feedback (e.g., glowing 'Landed!' text) on successful trick landing
 - [x] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty data on first load
-- [ ] Implement a function to check and unlock biome transition achievements (e.g., 'First Forest', 'Nightfall Navigator') when terrain changes, using original art-based biome detection
+- [x] Implement a function to check and unlock biome transition achievements (e.g., 'First Forest', 'Nightfall Navigator') when terrain changes, using original art-based biome detection
 - [ ] Add a function to track and trigger style scoring achievements (e.g., 'Slalom King', 'Crash & Burn') based on proximity to skiers and successful tricks, using original art for visual feedback
 - [ ] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
 
