@@ -1274,4 +1274,4 @@ Operator direction from the daily report lands here.
 - [!] Add a function to display original pixel-art visual feedback (e.g., animated icons) for each style achievement, positioned in the HUD  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
