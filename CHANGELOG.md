@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty data on first load (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
 - Display the current style score and multiplier in the HUD, updating in real time during gameplay (updateStyleScoreAndMultiplierHUD)
 - Display a temporary visual feedback (e.g., glowing 'Landed!' text) on successful trick landing (initTrickLandingFeedback, updateTrickLandingFeedback, drawTrickLandingFeedback)
 - Award base bonus points on landing, scaled by air duration using a non-linear multiplier function (awardLandingBonusPoints)
