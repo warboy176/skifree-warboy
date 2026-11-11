@@ -11076,6 +11076,15 @@ function updateMultiplierOnCollision() {
   }
 }
 
+function resetMultiplierOnDeathOrRestart() {
+  if (game.state === GameState.GAME_OVER || game.state === GameState.PLAYER_DEAD) {
+    game.multiplier = 1;
+    game.multiplierDisplay.value = 1;
+    game.stats.multiplier = 1.0;
+  }
+}
+
+
 
 
 
