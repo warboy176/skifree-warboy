@@ -1264,7 +1264,7 @@ Operator direction from the daily report lands here.
 - [x] Detect landing by checking when player returns to ground after jump, and calculate air duration from jump start time
 - [x] Award base bonus points on landing, scaled by air duration using a non-linear multiplier function
 - [x] Display a temporary visual feedback (e.g., glowing 'Landed!' text) on successful trick landing
-- [ ] Display the current style score and multiplier in the HUD, updating in real time during gameplay
+- [x] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [ ] Create a persistent achievements registry with new original achievements tied to biome transitions, style scoring, and antagonist encounters
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
