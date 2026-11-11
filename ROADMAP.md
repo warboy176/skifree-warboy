@@ -1241,3 +1241,8 @@ Operator direction from the daily report lands here.
 - [x] Ensure the multiplier resets to 1 when the player crashes or hits a tree, preserving only the streak on valid passes
 - [x] Apply a penalty to the style score and reset the multiplier when the player crashes into an NPC or obstacle
 - [x] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, replacing placeholder logic
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual themes and scrolling behavior
+- [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps
+- [ ] Design and integrate a persistent achievements registry with data-driven unlock logic for new hazards, NPCs, and actions
