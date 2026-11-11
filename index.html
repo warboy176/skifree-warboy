@@ -11126,6 +11126,14 @@ function initPlayerAirState() {
     PlayerState.airTimeStart = null;
 }
 
+function checkPlayerLandingAndCalculateAirTime(dt) {
+  if (player.state === PlayerState.JUMPING && player.y >= H - player.height) {
+    game.airTimeMs = performance.now() - PlayerState.airTimeStart;
+    PlayerState.airTimeStart = null;
+  }
+}
+
+
 
 
 
