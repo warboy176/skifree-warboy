@@ -1271,7 +1271,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to detect successful tricks (air time with directional input) and record them as style points
 - [x] Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration
 - [x] Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air
-- [ ] Add a function to display original pixel-art visual feedback (e.g., animated icons) for each style achievement, positioned in the HUD
+- [!] Add a function to display original pixel-art visual feedback (e.g., animated icons) for each style achievement, positioned in the HUD  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
