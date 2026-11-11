@@ -1,4 +1,5 @@
 # Changelog
+- Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension without being predictable (initAntagonist, updateAntagonist, checkAntagonistChaseCollision)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (registerAchievementDef, checkAchievementsForPlayer)
 - Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity (initAntagonist, updateAntagonist, checkAntagonistAchievements)
 - Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air (checkCrashAndBurnAchievement)
