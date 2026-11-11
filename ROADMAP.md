@@ -1256,7 +1256,7 @@ Operator direction from the daily report lands here.
 - [x] Increment the multiplier by 1 only when a near_miss occurs and the player is not in a collision state
 - [x] Ensure the multiplier persists across collisions but resets only on death or restart
 - [x] Reset `multiplier` to 1 when the player collides with any obstacle or crashes
-- [ ] Display the current `multiplier` value in the HUD as a floating text effect above the player during gameplay
+- [x] Display the current `multiplier` value in the HUD as a floating text effect above the player during gameplay
 - [ ] Reset the multiplier to 1 when the player collides with any obstacle or falls
 - [ ] Display the current multiplier visually in the HUD using a simple text overlay
 - [ ] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
