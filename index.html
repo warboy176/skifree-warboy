@@ -11063,6 +11063,13 @@ function initGameMultiplierState() {
   game.stylePassMultiplier = 1;
 }
 
+function incrementMultiplierOnNearMiss() {
+  if (game.nearMiss && game.state !== 'crashed' && !game.nearMissTimer.expired) {
+    game.multiplier += 1;
+  }
+}
+
+
 
 
 
