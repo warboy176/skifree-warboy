@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual themes and scrolling behavior (initBiomeState, updateBiomeState, drawBiomeLayer)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, replacing placeholder logic (initAntagonist, updateAntagonist, drawAntagonist)
 - Create a persistent achievements registry with data-driven unlocks for new hazards and interactions (initAchievementsRegistry, checkAchievements)
 - Apply a penalty to the style score and reset the multiplier when the player crashes into an NPC or obstacle (applyCrashPenaltyAndResetMultiplier)
