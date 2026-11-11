@@ -11185,6 +11185,16 @@ function updateTrickLandingFeedback(dt) {
   ctx.fillText(feedback.message, feedback.x, feedback.y);
 }
 
+function drawTrickLandingFeedback() {
+  const feedback = game.trickLandingFeedback;
+  if (!feedback.active) return;
+  ctx.globalAlpha = feedback.alpha;
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '32px sans-serif';
+  ctx.fillText('Landed!', W / 2, H / 2);
+}
+
+
 
 
 
