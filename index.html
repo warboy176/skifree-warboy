@@ -11040,6 +11040,20 @@ function applyCrashPenaltyAndResetMultiplier() {
   }
 }
 
+function checkAchievementsForEvent(eventType, eventData) {
+  for (const achievement of ACHIEVEMENT_DEFINITIONS) {
+    if (achievement.type === eventType) {
+      const conditionMet = achievement.unlockCondition(eventData);
+      if (conditionMet && !PlayerState.achievements[achievement.id]) {
+        PlayerState.achievements[achievement.id] = true;
+        const message = UNLOCK_MESSAGES[achievement.type] || 'Achievement unlocked!';
+        displayAchievementUnlock(achievement.type, message);
+      }
+    }
+  }
+}
+
+
 
 
 
