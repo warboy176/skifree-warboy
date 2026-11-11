@@ -11226,6 +11226,13 @@ function initPlayerTrickState() {
     PlayerState.trickLandingFeedback = null;
   }
 }
+registerTrickAchievement();
+
+
+function registerTrickAchievement() {
+  addDefaultAchievement('trick_success', () => PlayerState.styleScore > 0, 1);
+}
+
 
 
 
