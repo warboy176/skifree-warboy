@@ -701,6 +701,8 @@ updateSlosher(dt);
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateTrickLandingFeedback(dt);
+
 awardStylePointsAndParticlesIfNewEncounter(npc);
 
 updateNearMissParticles(dt);
@@ -11153,6 +11155,36 @@ function initTrickLandingFeedback() {
         timer: 0
     };
 }
+
+function updateTrickLandingFeedback(dt) {
+  const feedback = game.trickLandingFeedback;
+  if (!feedback.active) return;
+
+  feedback.timer += dt;
+  if (feedback.timer >= 1000) {
+    feedback.active = false;
+    feedback.timer = 0;
+    return;
+  }
+
+  const progress = Math.min(feedback.timer / 200, 1);
+  const holdProgress = Math.min((feedback.timer - 200) / 600, 1);
+  const fadeProgress = Math.min((feedback.timer - 800) / 200, 1);
+
+  if (progress < 1) {
+    feedback.alpha = progress;
+  } else if (holdProgress < 1) {
+    feedback.alpha = 1;
+  } else {
+    feedback.alpha = 1 - fadeProgress;
+  }
+
+  ctx.globalAlpha = feedback.alpha;
+  ctx.fillStyle = `rgb(${feedback.r}, ${feedback.g}, ${feedback.b})`;
+  ctx.font = '20px Arial';
+  ctx.fillText(feedback.message, feedback.x, feedback.y);
+}
+
 
 
 
