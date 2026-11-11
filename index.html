@@ -11053,6 +11053,17 @@ function checkAchievementsForEvent(eventType, eventData) {
   }
 }
 
+function initGameMultiplierState() {
+  game.state.multiplier = 1;
+  PlayerState.styleMultiplier = 1.0;
+  game.stats.multiplier = 1.0;
+  if (typeof game.multiplier !== 'number') game.multiplier = 1;
+  game.multiplierDisplay = { value: 1, lastUpdated: 0 };
+  game.styleMultiplierActive = false;
+  game.stylePassMultiplier = 1;
+}
+
+
 
 
 
