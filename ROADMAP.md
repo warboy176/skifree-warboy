@@ -1267,7 +1267,11 @@ Operator direction from the daily report lands here.
 - [x] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [x] Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty data on first load
 - [x] Implement a function to check and unlock biome transition achievements (e.g., 'First Forest', 'Nightfall Navigator') when terrain changes, using original art-based biome detection
-- [ ] Add a function to track and trigger style scoring achievements (e.g., 'Slalom King', 'Crash & Burn') based on proximity to skiers and successful tricks, using original art for visual feedback
+- [ ] Add a function to detect when the player is within proximity to another skier and record a 'near-miss' event for style scoring
+- [ ] Add a function to detect successful tricks (air time with directional input) and record them as style points
+- [ ] Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration
+- [ ] Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air
+- [ ] Add a function to display original pixel-art visual feedback (e.g., animated icons) for each style achievement, positioned in the HUD
 - [ ] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
