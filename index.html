@@ -11094,6 +11094,23 @@ function initCrashThroughObstacles() {
   game.crashedThroughObstacles = [];
 }
 
+function handleCrashThroughBonus(player, obstacle) {
+  if (player.x < obstacle.x + obstacle.width &&
+      player.x + player.width > obstacle.x &&
+      player.y < obstacle.y + obstacle.height &&
+      player.y + player.height > obstacle.y) {
+    if (!game.crashedThroughObstacles.includes(obstacle.type)) {
+      game.crashedThroughObstacles.push(obstacle.type);
+    }
+    let points = 0;
+    if (obstacle.type === 'tree') points = 10;
+    else if (obstacle.type === 'rock') points = 25;
+    else if (obstacle.type === 'snowman') points = 50;
+    game.stats.score += points;
+  }
+}
+
+
 
 
 
