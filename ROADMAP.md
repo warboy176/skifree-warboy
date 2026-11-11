@@ -1277,6 +1277,6 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension without being predictable
-- [ ] Add terrain biome transitions (lodge → open slope → forest → night) with distinct visual styles and ambient audio shifts using original pixel art
+- [x] Add terrain biome transitions (lodge → open slope → forest → night) with distinct visual styles and ambient audio shifts using original pixel art
 - [ ] Introduce a style-based scoring system that rewards close slaloming past NPCs, crashing through obstacles, and landing jumps, with real-time multiplier feedback
 - [ ] Implement a persistent achievements registry with new unlocks tied to style actions, such as 'Style King' for 10 style points in one run, using original animated toast art
