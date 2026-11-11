@@ -11145,6 +11145,16 @@ function awardLandingBonusPoints(airTimeMs) {
   return bonusPoints;
 }
 
+function initTrickLandingFeedback() {
+    game.trickLandingFeedback = {
+        active: false,
+        text: 'Landed!',
+        alpha: 0,
+        timer: 0
+    };
+}
+
+
 
 
 
