@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist creature with unique movement and visual style, appearing when player slows down (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Design and integrate a persistent achievements registry with data-driven unlock logic for new hazards, NPCs, and actions (initAchievementsRegistry, checkAchievementsForEvent)
 - Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual themes and scrolling behavior (initBiomeState, updateBiomeState, drawBiomeLayer)
