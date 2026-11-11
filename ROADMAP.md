@@ -1269,7 +1269,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to check and unlock biome transition achievements (e.g., 'First Forest', 'Nightfall Navigator') when terrain changes, using original art-based biome detection
 - [x] Add a function to detect when the player is within proximity to another skier and record a 'near-miss' event for style scoring
 - [x] Add a function to detect successful tricks (air time with directional input) and record them as style points
-- [ ] Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration
+- [x] Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration
 - [ ] Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air
 - [ ] Add a function to display original pixel-art visual feedback (e.g., animated icons) for each style achievement, positioned in the HUD
 - [ ] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
