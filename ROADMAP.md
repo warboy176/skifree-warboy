@@ -1234,7 +1234,7 @@ Operator direction from the daily report lands here.
 - [x] Add a particle burst effect that triggers when the player passes within NEAR_MISS_MARGIN of an NPC skier
 - [!] Implement a style point increment and visual feedback (glow on player sprite) when a close slalom is detected  <!-- blocked: pipeline: item INCOMPLETE — 1/3 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure particle bursts and style points are only awarded once per NPC skier per encounter
-- [ ] Add a 'slalom streak' counter that increments when the player passes within NEAR_MISS_MARGIN of an NPC skier without colliding
+- [!] Add a 'slalom streak' counter that increments when the player passes within NEAR_MISS_MARGIN of an NPC skier without colliding  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a multiplier that increases by 1 for each consecutive valid slalom pass, resetting to 1 on collision or missed pass
 - [ ] Display the current multiplier on screen with a dynamic visual effect (e.g., pulsing gold text) that scales with value
 - [ ] Apply the multiplier to the score when a valid slalom pass is completed, increasing points proportionally to the streak
