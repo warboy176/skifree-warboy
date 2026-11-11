@@ -677,6 +677,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateTrickDetection(dt);
+
 updateAnimatedEntry(dt);
 
 updateCrashThroughStreak(player, game);
@@ -11200,6 +11202,22 @@ function updateStyleScoreAndMultiplierHUD(dt) {
   ctx.fillText(game.styleScore, 10, 30);
   ctx.fillText('x' + game.styleMultiplierActive, 10, 60);
 }
+
+function updateTrickDetection(dt) {
+  if (player.isJumping && input.direction !== input.lastDirection && PlayerState.airTimeStart) {
+    game.airTimeMs = Date.now() - PlayerState.airTimeStart;
+    PlayerState.trickLandingFeedback = 'success';
+  }
+
+  if (!player.isJumping && PlayerState.airTimeStart) {
+    awardLandingBonusPoints(game.airTimeMs);
+    awardAirTimeStylePoints(game);
+    applyTrickLandingBonus(player);
+    PlayerState.styleScore += STYLE_ACTION_BASE_POINTS;
+    PlayerState.airTimeStart = null;
+  }
+}
+
 
 
 
