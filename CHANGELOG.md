@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type (initCrashThroughObstacles, handleCrashThroughBonus)
 - Display the current multiplier visually in the HUD using a simple text overlay (drawMultiplierHUD)
 - Reset the multiplier to 1 when the player collides with any obstacle or falls (resetMultiplierOnCollision)
 - Display the current `multiplier` value in the HUD as a floating text effect above the player during gameplay (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)

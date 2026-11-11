@@ -1259,7 +1259,7 @@ Operator direction from the daily report lands here.
 - [x] Display the current `multiplier` value in the HUD as a floating text effect above the player during gameplay
 - [x] Reset the multiplier to 1 when the player collides with any obstacle or falls
 - [x] Display the current multiplier visually in the HUD using a simple text overlay
-- [ ] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
+- [x] Add a 'crash-through' bonus that triggers when the player collides with an obstacle and awards points based on obstacle type
 - [ ] Introduce a trick landing system that detects airtime and awards bonus points when landing after a jump, with multiplier scaling by air duration
 - [ ] Display the current style score and multiplier in the HUD, updating in real time during gameplay
 - [ ] Create a persistent achievements registry with new original achievements tied to biome transitions, style scoring, and antagonist encounters
