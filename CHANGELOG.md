@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to detect successful tricks (air time with directional input) and record them as style points (initPlayerTrickState, updateTrickDetection, registerTrickAchievement)
 - Add a function to detect when the player is within proximity to another skier and record a 'near-miss' event for style scoring (checkNearMisses)
 - Implement a function to check and unlock biome transition achievements (e.g., 'First Forest', 'Nightfall Navigator') when terrain changes, using original art-based biome detection (initBiomeState, checkBiomeTransition)
 - Add a persistent achievements registry that stores unlocked achievements in localStorage, initializing with empty data on first load (initAchievementsRegistry, loadAchievementsFromStorage, saveAchievementsToStorage)
