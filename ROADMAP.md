@@ -1252,7 +1252,7 @@ Operator direction from the daily report lands here.
 - [x] Add a style score counter that increments when the player slaloms within 30px of an NPC skier
 - [x] Add a near-miss counter that increments when the player passes an NPC skier within NEAR_MISS_MARGIN without colliding
 - [x] Initialize a local variable `multiplier` to 1 in the game state, persisting across frames
-- [ ] Add a 'near_miss' flag to obstacle detection logic that triggers when player passes within 30px of an obstacle without collision
+- [x] Add a 'near_miss' flag to obstacle detection logic that triggers when player passes within 30px of an obstacle without collision
 - [ ] Increment the multiplier by 1 only when a near_miss occurs and the player is not in a collision state
 - [ ] Ensure the multiplier persists across collisions but resets only on death or restart
 - [ ] Reset `multiplier` to 1 when the player collides with any obstacle or crashes
