@@ -1240,4 +1240,4 @@ Operator direction from the daily report lands here.
 - [!] Apply the multiplier to the score when a valid slalom pass is completed, increasing points proportionally to the streak  <!-- blocked: pipeline: item INCOMPLETE — 2/4 landed, 0 unspecifiable, 1 e -->
 - [x] Ensure the multiplier resets to 1 when the player crashes or hits a tree, preserving only the streak on valid passes
 - [x] Apply a penalty to the style score and reset the multiplier when the player crashes into an NPC or obstacle
-- [ ] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
+- [x] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions

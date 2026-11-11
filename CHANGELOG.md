@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with data-driven unlocks for new hazards and interactions (initAchievementsRegistry, checkAchievements)
 - Apply a penalty to the style score and reset the multiplier when the player crashes into an NPC or obstacle (applyCrashPenaltyAndResetMultiplier)
 - Ensure the multiplier resets to 1 when the player crashes or hits a tree, preserving only the streak on valid passes (resetComboStreakOnCrashOrTreeHit)
 - Display the current multiplier on screen with a dynamic visual effect (e.g., pulsing gold text) that scales with value (initMultiplierState, updateMultiplierDisplay, drawMultiplierDisplay)
