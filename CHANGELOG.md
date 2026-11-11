@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to trigger 'Crash & Burn' achievement when the player crashes into a skier or obstacle while in mid-air (checkCrashAndBurnAchievement)
 - Add a function to trigger 'Slalom King' achievement when the player maintains close proximity to skiers for a sustained duration (initSlalomKingAchievementTracking, updateSlalomKingAchievement)
 - Add a function to detect successful tricks (air time with directional input) and record them as style points (initPlayerTrickState, updateTrickDetection, registerTrickAchievement)
 - Add a function to detect when the player is within proximity to another skier and record a 'near-miss' event for style scoring (checkNearMisses)
