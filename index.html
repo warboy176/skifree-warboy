@@ -11069,6 +11069,14 @@ function incrementMultiplierOnNearMiss() {
   }
 }
 
+function updateMultiplierOnCollision() {
+  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    game.multiplier += 1;
+    game.crashedThroughSkiers++;
+  }
+}
+
+
 
 
 
