@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the multiplier resets to 1 when the player crashes or hits a tree, preserving only the streak on valid passes (resetComboStreakOnCrashOrTreeHit)
 - Display the current multiplier on screen with a dynamic visual effect (e.g., pulsing gold text) that scales with value (initMultiplierState, updateMultiplierDisplay, drawMultiplierDisplay)
 - Ensure particle bursts and style points are only awarded once per NPC skier per encounter (initNPCsEncounterTracking, awardStylePointsAndParticlesIfNewEncounter)
 - Add a particle burst effect that triggers when the player passes within NEAR_MISS_MARGIN of an NPC skier (initNearMissParticles, spawnNearMissParticleBurst, updateNearMissParticles)
