@@ -1,4 +1,5 @@
 # Changelog
+- Reset the multiplier to 1 when the player collides with any obstacle or falls (resetMultiplierOnCollision)
 - Display the current `multiplier` value in the HUD as a floating text effect above the player during gameplay (initMultiplierDisplay, updateMultiplierDisplay, drawMultiplierDisplay)
 - Reset `multiplier` to 1 when the player collides with any obstacle or crashes (resetMultiplierOnCollision)
 - Ensure the multiplier persists across collisions but resets only on death or restart (initMultiplierState, updateMultiplierOnCollision, resetMultiplierOnDeathOrRestart)
