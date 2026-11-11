@@ -1275,3 +1275,8 @@ Operator direction from the daily report lands here.
 - [x] Create a function to detect and unlock antagonist encounter achievements (e.g., 'Warboy's Shadow', 'Escape Artist') when the chase antagonist appears or is evaded, using original art for the antagonist's visual identity
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Implement the chase antagonist creature with original code-drawn art, designed to pursue the player when they slow down, adding tension without being predictable
+- [ ] Add terrain biome transitions (lodge → open slope → forest → night) with distinct visual styles and ambient audio shifts using original pixel art
+- [ ] Introduce a style-based scoring system that rewards close slaloming past NPCs, crashing through obstacles, and landing jumps, with real-time multiplier feedback
+- [ ] Implement a persistent achievements registry with new unlocks tied to style actions, such as 'Style King' for 10 style points in one run, using original animated toast art
