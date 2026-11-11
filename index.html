@@ -11194,6 +11194,14 @@ function drawTrickLandingFeedback() {
   ctx.fillText('Landed!', W / 2, H / 2);
 }
 
+function updateStyleScoreAndMultiplierHUD(dt) {
+  ctx.font = '24px Arial';
+  ctx.fillStyle = 'white';
+  ctx.fillText(game.styleScore, 10, 30);
+  ctx.fillText('x' + game.styleMultiplierActive, 10, 60);
+}
+
+
 
 
 
