@@ -1,4 +1,5 @@
 # Changelog
+- Reset `multiplier` to 1 when the player collides with any obstacle or crashes (resetMultiplierOnCollision)
 - Ensure the multiplier persists across collisions but resets only on death or restart (initMultiplierState, updateMultiplierOnCollision, resetMultiplierOnDeathOrRestart)
 - Increment the multiplier by 1 only when a near_miss occurs and the player is not in a collision state (incrementMultiplierOnNearMiss)
 - Add a 'near_miss' flag to obstacle detection logic that triggers when player passes within 30px of an obstacle without collision (checkNearMisses)
