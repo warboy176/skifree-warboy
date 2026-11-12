@@ -11490,6 +11490,23 @@ function createSnowWolf(y, x = null) {
   return wolf;
 }
 
+function initSnowWolfObstacle() {
+  game.snowWolfObstacle = {
+    active: false,
+    spawnTimer: 0,
+    inactivityThresholdMs: 15000,
+    draw: function(x, y) {
+      game.ctx.fillStyle = 'black';
+      game.ctx.fillRect(x, y, 16, 16);
+      game.ctx.fillStyle = 'white';
+      game.ctx.beginPath();
+      game.ctx.arc(x + 4, y + 4, 2, 0, Math.PI * 2);
+      game.ctx.fill();
+    }
+  };
+}
+
+
 
 
 
