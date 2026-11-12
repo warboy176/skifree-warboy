@@ -1,4 +1,5 @@
 # Changelog
+- Implement event handling for selecting each skin icon, updating the player's visual appearance accordingly (initSkinSelector)
 - Add a persistent skin selector UI element to the start screen using three original Warboy-designed character icons drawn in code with canvas primitives (initSkinSelectorState, drawSkinSelectorUI)
 - Introduce style scoring: award bonus points for slaloming within 20px of NPCs or crashing through them, with a multiplier that increases with consecutive hits (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art (initBiomeState, addForestTrees, updateBiomeTransition)
