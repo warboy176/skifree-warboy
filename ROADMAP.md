@@ -1306,7 +1306,7 @@ Operator direction from the daily report lands here.
 - [x] Add the snow-wolf to the game's active obstacles array only when the inactivity timer triggers
 - [x] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
 - [x] Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension
-- [ ] Define the snow-wolf's collision bounds as a rectangle matching its visual size
+- [x] Define the snow-wolf's collision bounds as a rectangle matching its visual size
 - [ ] Add a collision check between the snow-wolf and player during the game loop
 - [ ] Trigger the player's 'EATEN' state when a collision is detected
 - [ ] Reset the game state and player position after the 'EATEN' state is triggered

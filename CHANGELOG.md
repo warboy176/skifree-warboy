@@ -1,4 +1,5 @@
 # Changelog
+- Define the snow-wolf's collision bounds as a rectangle matching its visual size (defineSnowWolfCollisionBounds)
 - Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension (updateSnowWolfSpeed)
 - Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Add the snow-wolf to the game's active obstacles array only when the inactivity timer triggers (initSnowWolfObstacle, updateSnowWolfObstacle, addSnowWolfToObstacles)
