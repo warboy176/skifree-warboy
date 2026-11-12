@@ -173,6 +173,11 @@ if (autoplay.enabled) {
 
   // ---------------------------------------------------------------------------
   // Game model & finite state machine
+  // Add collision check to update loop
+  function update(dt) {
+    // ... existing update logic ...
+    checkPlayerCollisionWithSkiers(dt);
+  }
   // ---------------------------------------------------------------------------
   const player = {
     x:0,y:0,vx:0,speed:150,state:PlayerState.IDLE,stateTime:0,jumpTime:0,
@@ -11558,9 +11563,16 @@ function defineSnowWolfCollisionBounds(snowWolf) {
 }
 
 function checkPlayerCollisionWithSkiers(dt) {
-  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
-    PlayerState.crashedThroughSkiers = true;
-    game.crashedThroughSkiers = true;
+  for (const npc of game.npcSkiers) {
+    const playerBox = { x: player.x, y: player.y, width: 20, height: 20 };
+    const npcBox = { x: npc.x, y: npc.y, width: NPC_SKIER_WIDTH, height: NPC_SKIER_HEIGHT };
+    if (playerBox.x < npcBox.x + npcBox.width &&
+        playerBox.x + playerBox.width > npcBox.x &&
+        playerBox.y < npcBox.y + npcBox.height &&
+        playerBox.y + playerBox.height > npcBox.y) {
+      PlayerState.crashedThroughSkiers = true;
+      game.crashedThroughSkiers = true;
+    }
   }
 }
 
