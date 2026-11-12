@@ -1287,7 +1287,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a style score counter that increases by 10 points for each near-miss with an NPC
 - [x] Initialize a `nearMissChain` variable to track consecutive near-misses, starting at 0
 - [!] Increment `nearMissChain` by 1 whenever the player passes an NPC skier within `NEAR_MISS_MARGIN` without collision  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Reset `nearMissChain` to 0 when the player collides with any obstacle or hits a tree
+- [x] Reset `nearMissChain` to 0 when the player collides with any obstacle or hits a tree
 - [ ] Update the game loop to check for near-misses only between player and NPC skiers, using their positions and `NEAR_MISS_MARGIN`
 - [ ] Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points
 - [ ] Add a penalty of 50 points for hitting any tree, subtracting from total score

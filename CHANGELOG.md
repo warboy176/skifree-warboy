@@ -1,4 +1,5 @@
 # Changelog
+- Reset `nearMissChain` to 0 when the player collides with any obstacle or hits a tree (resetNearMissChainOnCollision)
 - Initialize a `nearMissChain` variable to track consecutive near-misses, starting at 0 (initNearMissChain)
 - Implement a style score counter that increases by 10 points for each near-miss with an NPC (initStyleScoreSystem, checkNearMisses)
 - Add a 'nearMiss' flag to NPC skiers that triggers when player passes within 30px horizontally (updateNearMissFlagForNPCs)
