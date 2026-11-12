@@ -11584,6 +11584,16 @@ function resetPlayerAfterEaten() {
   PlayerState.crashedThroughSkiers = 0;
 }
 
+function initSkinSelectorState() {
+  game.skinSelector = [
+    { id: 0, name: "Default", color: "#ffffff" },
+    { id: 1, name: "Red", color: "#ff0000" },
+    { id: 2, name: "Blue", color: "#0000ff" }
+  ];
+  game.skin = game.skinSelector[0];
+}
+
+
 
 
 
