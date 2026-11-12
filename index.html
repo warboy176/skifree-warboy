@@ -11593,6 +11593,21 @@ function initSkinSelectorState() {
   game.skin = game.skinSelector[0];
 }
 
+function drawSkinSelectorUI() {
+  const ctx = game.ctx;
+  for (let i = 0; i < 3; i++) {
+    const x = 100 + i * 80;
+    const y = 150;
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.fillRect(x, y, 30, 30);
+    ctx.strokeRect(x, y, 30, 30);
+    ctx.fillStyle = game.skinSelector[i];
+    ctx.fillRect(x + 10, y + 10, 10, 10);
+  }
+}
+
+
 
 
 
