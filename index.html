@@ -11510,15 +11510,16 @@ function initSnowWolfObstacle() {
 
 function updateSnowWolfObstacle(dt) {
   if (game.snowWolfObstacle.active) {
-    const targetX = game.player.x + Math.cos(game.player.angle) * 10;
-    const targetY = game.player.y + Math.sin(game.player.angle) * 10;
-    game.snowWolfObstacle.x += (targetX - game.snowWolfObstacle.x) * NPC_SKIER_SPEED * dt;
-    game.snowWolfObstacle.y += (targetY - game.snowWolfObstacle.y) * NPC_SKIER_SPEED * dt;
+    const playerSpeed = player.speed;
+    const playerDir = input.left ? -1 : input.right ? 1 : 0;
+    const offsetX = playerDir * 10;
+    game.snowWolfObstacle.x = player.x + offsetX;
+    game.snowWolfObstacle.y += NPC_SKIER_SPEED * dt;
   } else {
-    game.snowWolfSpawnTimer += dt;
-    if (game.snowWolfSpawnTimer >= 5000) {
+    game.snowWolfObstacle.spawnTimer += dt;
+    if (game.snowWolfObstacle.spawnTimer >= inactivityThresholdMs) {
       game.snowWolfObstacle.active = true;
-      game.snowWolfSpawnTimer = 0;
+      game.snowWolfObstacle.spawnTimer = 0;
     }
   }
 }
