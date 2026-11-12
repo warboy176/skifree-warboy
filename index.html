@@ -714,6 +714,8 @@ spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
 updateSnowWolfObstacle(dt);
+addSnowWolfToObstacles();
+
 
 updateSnowWolfNPCs(dt);
 
@@ -11523,6 +11525,19 @@ function updateSnowWolfObstacle(dt) {
     }
   }
 }
+
+function addSnowWolfToObstacles() {
+  if (game.snowWolfObstacle.active) {
+    game.obstacles.push({
+      type: 'snowWolf',
+      x: game.snowWolfObstacle.x,
+      y: game.snowWolfObstacle.y,
+      width: NPC_SKIER_WIDTH,
+      height: NPC_SKIER_HEIGHT
+    });
+  }
+}
+
 
 
 
