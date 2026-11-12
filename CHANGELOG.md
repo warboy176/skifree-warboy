@@ -1,4 +1,5 @@
 # Changelog
+- Add a 'nearMiss' flag to NPC skiers that triggers when player passes within 30px horizontally (updateNearMissFlagForNPCs)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code (initBiomeState, addForestTransitionTrigger, addForestTrees)
 - Add original Warboy-designed chase antagonist that appears after 30 seconds of inactivity, moving faster as time passes and forcing player to stay active (initAntagonist, updateAntagonist, spawnAntagonistIfInactive)
 - Implement a persistent achievements registry with new unlocks tied to style actions, such as 'Style King' for 10 style points in one run, using original animated toast art (initAchievementRegistry, unlockAchievement, checkStyleAchievements)
