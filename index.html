@@ -11607,6 +11607,18 @@ function drawSkinSelectorUI() {
   }
 }
 
+function initSkinSelector() {
+  game.skinSelector = [
+    { name: "default", color: "#ffffff", style: "classic" },
+    { name: "night", color: "#2c2c2c", style: "dark" },
+    { name: "forest", color: "#4ade80", style: "green" },
+    { name: "ocean", color: "#3b82f6", style: "blue" },
+    { name: "desert", color: "#f59e0b", style: "yellow" }
+  ];
+  game.skin = game.skinSelector[0];
+}
+
+
 
 
 
