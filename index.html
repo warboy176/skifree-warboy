@@ -11405,6 +11405,23 @@ function removeCrashedNPCs(dt) {
   }
 }
 
+function initSnowWolfNPCs() {
+  if (!game.npcSkiers) game.npcSkiers = [];
+  if (game.npcSkiers.length > 0) return;
+  const snowWolf = {
+    id: 'snow-wolf-1',
+    x: Math.random() * (canvas.width - NPC_SKIER_WIDTH),
+    y: -NPC_SKIER_HEIGHT,
+    speed: 2,
+    eyes: [
+      { x: 6, y: 6, radius: 2 },
+      { x: 10, y: 6, radius: 2 }
+    ]
+  };
+  game.npcSkiers.push(snowWolf);
+}
+
+
 
 
 
