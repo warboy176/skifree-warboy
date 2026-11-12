@@ -1312,7 +1312,9 @@ Operator direction from the daily report lands here.
 - [x] Reset the game state and player position after the 'EATEN' state is triggered
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art
 - [x] Introduce style scoring: award bonus points for slaloming within 20px of NPCs or crashing through them, with a multiplier that increases with consecutive hits
-- [ ] Add a persistent skin selector UI element to the start screen with three original Warboy-designed character icons, each drawn in code using canvas primitives
+- [ ] Add a persistent skin selector UI element to the start screen using three original Warboy-designed character icons drawn in code with canvas primitives
+- [ ] Implement event handling for selecting each skin icon, updating the player's visual appearance accordingly
+- [ ] Ensure the selected skin persists across restarts and is reflected in the player's initial render
 - [ ] Implement the logic to cycle through the three character icons using left/right arrow keys while on the start screen
 - [ ] Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector
 - [ ] Ensure the selected skin persists and is applied to the player character when the game starts
