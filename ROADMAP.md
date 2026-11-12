@@ -1292,6 +1292,8 @@ Operator direction from the daily report lands here.
 - [x] Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points
 - [x] Add a collision detection function between the player and trees that triggers on overlap
 - [!] Add a penalty of 50 points to the score when a tree collision is detected  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a 'crash-through' mechanic where player gains bonus points and a brief speed boost when colliding with an NPC skier
+- [ ] Add collision detection between player and NPC skier using bounding boxes
+- [ ] Implement a 'crash-through' effect: player gains 100 bonus points and a 1.5x speed boost for 0.5 seconds on collision
+- [ ] Ensure the NPC skier is removed from the game after being crashed into
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
