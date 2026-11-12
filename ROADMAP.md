@@ -1302,7 +1302,7 @@ Operator direction from the daily report lands here.
 - [!] Add a player inactivity timer that resets on any input and tracks elapsed time in seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Define a snow-wolf spawn condition that activates after 30 seconds of inactivity
 - [x] Implement a function to generate a random x-position above the player's current y-coordinate for the snow-wolf
-- [ ] Create a new snow-wolf object with a fixed size, color, and initial position above the player
+- [x] Create a new snow-wolf object with a fixed size, color, and initial position above the player
 - [ ] Add the snow-wolf to the game's active obstacles array only when the inactivity timer triggers
 - [ ] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
 - [ ] Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension
