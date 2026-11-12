@@ -1285,7 +1285,10 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code
 - [x] Add a 'nearMiss' flag to NPC skiers that triggers when player passes within 30px horizontally
 - [x] Implement a style score counter that increases by 10 points for each near-miss with an NPC
-- [ ] Track consecutive near-misses in a chain variable that resets on collision or tree hit
+- [ ] Initialize a `nearMissChain` variable to track consecutive near-misses, starting at 0
+- [ ] Increment `nearMissChain` by 1 whenever the player passes an NPC skier within `NEAR_MISS_MARGIN` without collision
+- [ ] Reset `nearMissChain` to 0 when the player collides with any obstacle or hits a tree
+- [ ] Update the game loop to check for near-misses only between player and NPC skiers, using their positions and `NEAR_MISS_MARGIN`
 - [ ] Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points
 - [ ] Add a penalty of 50 points for hitting any tree, subtracting from total score
 - [ ] Add a 'crash-through' mechanic where player gains bonus points and a brief speed boost when colliding with an NPC skier
