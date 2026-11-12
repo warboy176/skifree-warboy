@@ -1,4 +1,5 @@
 # Changelog
+- Define a snow-wolf spawn condition that activates after 30 seconds of inactivity (initSnowWolfSpawnState, updateSnowWolfSpawnTimer, spawnSnowWolf)
 - Define a new NPC class for the snow-wolf with glowing eyes using original pixel-art code, drawn entirely in the canvas context with Warboy's unique style (initSnowWolfNPCs, spawnSnowWolfNPC, updateSnowWolfNPCs)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (registerAchievementDef, checkAchievementsForPlayer)
 - Ensure the NPC skier is removed from the game after being crashed into (removeCrashedNPCs)
