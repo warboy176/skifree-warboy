@@ -1,4 +1,5 @@
 # Changelog
+- Trigger the player's 'EATEN' state when a collision is detected (checkPlayerCollisionWithSkiers)
 - Add a collision check between the snow-wolf and player during the game loop (checkSnowWolfCollision)
 - Define the snow-wolf's collision bounds as a rectangle matching its visual size (defineSnowWolfCollisionBounds)
 - Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension (updateSnowWolfSpeed)
