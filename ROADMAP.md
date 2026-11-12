@@ -1299,7 +1299,7 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Define a new NPC class for the snow-wolf with glowing eyes using original pixel-art code, drawn entirely in the canvas context with Warboy's unique style
-- [ ] Add a player inactivity timer that resets on any input and tracks elapsed time in seconds
+- [!] Add a player inactivity timer that resets on any input and tracks elapsed time in seconds  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Define a snow-wolf spawn condition that activates after 30 seconds of inactivity
 - [ ] Implement a function to generate a random x-position above the player's current y-coordinate for the snow-wolf
 - [ ] Create a new snow-wolf object with a fixed size, color, and initial position above the player
