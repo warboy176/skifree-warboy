@@ -11468,6 +11468,22 @@ function initSnowWolfSpawnState() {
     game.snowWolfSpawnActive = false;
 }
 
+function createSnowWolf(y, x = null) {
+  const wolf = {
+    x: x !== null ? x : Math.random() * (canvas.width - NPC_SKIER_WIDTH),
+    y: y - (100 + Math.random() * 200),
+    width: NPC_SKIER_WIDTH,
+    height: NPC_SKIER_HEIGHT,
+    offsetAmplitude: 8 + Math.random() * 12,
+    offsetY: Math.random() * 10 - 5,
+    offsetX: Math.random() * 10 - 5,
+    offsetSpeed: 1.5 + Math.random() * 1.5
+  };
+  game.mutantSnowWolves.push(wolf);
+  return wolf;
+}
+
+
 
 
 
