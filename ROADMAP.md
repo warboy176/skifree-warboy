@@ -1298,7 +1298,7 @@ Operator direction from the daily report lands here.
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
-- [ ] Define a new NPC class for the snow-wolf with glowing eyes using original pixel-art code, drawn entirely in the canvas context with Warboy's unique style
+- [x] Define a new NPC class for the snow-wolf with glowing eyes using original pixel-art code, drawn entirely in the canvas context with Warboy's unique style
 - [ ] Implement a timer that tracks player inactivity (no input for 30 seconds) and triggers the snow-wolf's appearance at a random position above the player
 - [ ] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
 - [ ] Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension
