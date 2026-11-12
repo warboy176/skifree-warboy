@@ -11576,6 +11576,16 @@ function checkPlayerCollisionWithSkiers(dt) {
   }
 }
 
+function resetPlayerAfterEaten() {
+  PlayerState.distance = 0;
+  PlayerState.speed = 0;
+  PlayerState.comboStreak = 0;
+  PlayerState.styleMultiplier = 1;
+  PlayerState.crashedThroughSkiers = 0;
+  game.npcSkiers = [];
+}
+
+
 
 
 
