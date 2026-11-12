@@ -1298,7 +1298,11 @@ Operator direction from the daily report lands here.
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
-- [ ] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that appears after 30 seconds of inactivity and pursues the player with increasing speed
+- [ ] Define a new NPC class for the snow-wolf with glowing eyes using original pixel-art code, drawn entirely in the canvas context with Warboy's unique style
+- [ ] Implement a timer that tracks player inactivity (no input for 30 seconds) and triggers the snow-wolf's appearance at a random position above the player
+- [ ] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
+- [ ] Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension
+- [ ] Ensure the snow-wolf's collision with the player triggers the 'EATEN' state and resets the game, without affecting existing obstacle or scoring logic
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art
 - [ ] Introduce style scoring: award bonus points for slaloming within 20px of NPCs or crashing through them, with a multiplier that increases with consecutive hits
 - [ ] Add a persistent 'Warboy's Wasteland' skin selector with three original character designs (each drawn in code), accessible from the start screen and stored in localStorage
