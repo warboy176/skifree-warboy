@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the NPC skier is removed from the game after being crashed into (removeCrashedNPCs)
 - Implement a 'crash-through' effect: player gains 100 bonus points and a 1.5x speed boost for 0.5 seconds on collision (initCrashThroughEffect, updateCrashThroughBoost)
 - Add collision detection between player and NPC skier using bounding boxes (initNPCs, checkNPCPlayerCollision)
 - Add a collision detection function between the player and trees that triggers on overlap (initTrees, addTree, checkPlayerTreeCollision)
