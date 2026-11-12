@@ -677,6 +677,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+checkPlayerTreeCollision();
+
 updateNearMissFlagForNPCs(dt);
 
 checkCrashAndBurnAchievement(dt);
@@ -11356,6 +11358,22 @@ function resetNearMissChainOnCollision() {
     }
   }
 }
+
+function checkPlayerTreeCollision() {
+  if (!game.player || !game.obstacles) return;
+  const player = game.player;
+  for (let i = 0; i < game.obstacles.length; i++) {
+    const tree = game.obstacles[i];
+    if (player.x < tree.x + tree.width &&
+        player.x + player.width > tree.x &&
+        player.y < tree.y + tree.height &&
+        player.y + player.height > tree.y) {
+      game.crashedThroughObstacles = true;
+      break;
+    }
+  }
+}
+
 
 
 
