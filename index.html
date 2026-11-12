@@ -11469,17 +11469,24 @@ function initSnowWolfSpawnState() {
 }
 
 function createSnowWolf(y, x = null) {
+  const width = 16;
+  const height = 16;
+  const randomX = x ?? (Math.random() * (W - width)) + (width / 2);
+  const offsetY = 100 + Math.random() * 200;
   const wolf = {
-    x: x !== null ? x : Math.random() * (canvas.width - NPC_SKIER_WIDTH),
-    y: y - (100 + Math.random() * 200),
-    width: NPC_SKIER_WIDTH,
-    height: NPC_SKIER_HEIGHT,
-    offsetAmplitude: 8 + Math.random() * 12,
-    offsetY: Math.random() * 10 - 5,
-    offsetX: Math.random() * 10 - 5,
-    offsetSpeed: 1.5 + Math.random() * 1.5
+    x: randomX,
+    y: y - offsetY,
+    width,
+    height,
+    draw() {
+      ctx.fillStyle = '#000';
+      ctx.fillRect(this.x, this.y, this.width, this.height);
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(this.x + 6, this.y + 6, 1, 1);
+      ctx.fillStyle = '#e33232';
+      ctx.fillRect(this.x + 8, this.y + 12, 1, 1);
+    }
   };
-  game.mutantSnowWolves.push(wolf);
   return wolf;
 }
 
