@@ -717,6 +717,8 @@ updateSnowWolfSpeed(dt);
 
 updateSnowWolfObstacle(dt);
 addSnowWolfToObstacles();
+defineSnowWolfCollisionBounds(game.antagonist);
+
 
 
 updateSnowWolfNPCs(dt);
@@ -11545,6 +11547,16 @@ function updateSnowWolfSpeed(dt) {
   const newSpeed = NPC_SKIER_SPEED * (1 + game.elapsedTimeMs / 10000);
   snowWolf.speed = Math.min(newSpeed, MAX_SPEED);
 }
+
+function defineSnowWolfCollisionBounds(snowWolf) {
+  snowWolf.collisionRect = {
+    x: snowWolf.x,
+    y: snowWolf.y,
+    width: NPC_SKIER_WIDTH,
+    height: NPC_SKIER_HEIGHT
+  };
+}
+
 
 
 
