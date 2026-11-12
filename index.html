@@ -11340,19 +11340,19 @@ function initNearMissChain() {
 }
 
 function resetNearMissChainOnCollision() {
-  if (game.player && game.npcsEncounterTracking) {
-    const player = game.player;
-    const npcs = game.npcsEncounterTracking;
-
-    // Check collision with obstacles or trees
-    const hasCollidedWithObstacleOrTree = game.fallDetected || game.obstacles.some(o => !o.used && Math.abs(o.y - player.y) <= 65 && checkPlayerCollision(o));
-
-    // Check collision with skiers or other NPCs
-    const hasCollidedWithNPC = npcs.some(npc => checkNPCCollision(player, npc));
-
-    // Reset chain only on collision with obstacles or trees
-    if (hasCollidedWithObstacleOrTree && !hasCollidedWithNPC) {
+  // Check collision with any obstacle or tree
+  for (const obstacle of game.obstacles) {
+    if (checkPlayerCollision(obstacle)) {
       game.nearMissChain = 0;
+      return;
+    }
+  }
+
+  // Check collision with any NPC (skier) in encounter tracking
+  for (const npc of game.npcsEncounterTracking.values()) {
+    if (checkPlayerCollision(npc)) {
+      game.nearMissChain = 0;
+      return;
     }
   }
 }
