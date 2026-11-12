@@ -1,4 +1,5 @@
 # Changelog
+- Implement a 'crash-through' effect: player gains 100 bonus points and a 1.5x speed boost for 0.5 seconds on collision (initCrashThroughEffect, updateCrashThroughBoost)
 - Add collision detection between player and NPC skier using bounding boxes (initNPCs, checkNPCPlayerCollision)
 - Add a collision detection function between the player and trees that triggers on overlap (initTrees, addTree, checkPlayerTreeCollision)
 - Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points (initStyleMultiplier, updateStyleMultiplier)
