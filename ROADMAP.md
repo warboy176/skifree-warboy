@@ -1283,5 +1283,9 @@ Operator direction from the daily report lands here.
 
 - [x] Add original Warboy-designed chase antagonist that appears after 30 seconds of inactivity, moving faster as time passes and forcing player to stay active
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code
-- [ ] Introduce style scoring system: award points for slaloming close to NPCs, with multipliers for consecutive near-misses and penalties for hitting trees
+- [ ] Add a 'nearMiss' flag to NPC skiers that triggers when player passes within 30px horizontally
+- [ ] Implement a style score counter that increases by 10 points for each near-miss with an NPC
+- [ ] Track consecutive near-misses in a chain variable that resets on collision or tree hit
+- [ ] Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points
+- [ ] Add a penalty of 50 points for hitting any tree, subtracting from total score
 - [ ] Add a 'crash-through' mechanic where player gains bonus points and a brief speed boost when colliding with an NPC skier
