@@ -11382,6 +11382,16 @@ function initCrashThroughEffect() {
   game.crashedThroughBoostEndTime = Date.now() + 500;
 }
 
+function updateCrashThroughBoost(dt) {
+  if (game.crashedThroughBoostActive) {
+    PlayerState.speed *= 1.5;
+    if (Date.now() > game.crashedThroughBoostEndTime) {
+      game.crashedThroughBoostActive = false;
+    }
+  }
+}
+
+
 
 
 
