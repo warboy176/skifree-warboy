@@ -1281,7 +1281,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a style-based scoring system that rewards close slaloming past NPCs, crashing through obstacles, and landing jumps, with real-time multiplier feedback
 - [x] Implement a persistent achievements registry with new unlocks tied to style actions, such as 'Style King' for 10 style points in one run, using original animated toast art
 
-- [ ] Add original Warboy-designed chase antagonist that appears after 30 seconds of inactivity, moving faster as time passes and forcing player to stay active
+- [x] Add original Warboy-designed chase antagonist that appears after 30 seconds of inactivity, moving faster as time passes and forcing player to stay active
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code
 - [ ] Introduce style scoring system: award points for slaloming close to NPCs, with multipliers for consecutive near-misses and penalties for hitting trees
 - [ ] Add a 'crash-through' mechanic where player gains bonus points and a brief speed boost when colliding with an NPC skier
