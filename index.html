@@ -11557,6 +11557,14 @@ function defineSnowWolfCollisionBounds(snowWolf) {
   };
 }
 
+function checkPlayerCollisionWithSkiers(dt) {
+  if (game.npcSkiers && game.npcSkiers.some(npc => checkClosePassCollision(player, npc))) {
+    PlayerState.crashedThroughSkiers = true;
+    game.crashedThroughSkiers = true;
+  }
+}
+
+
 
 
 
