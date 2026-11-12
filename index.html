@@ -713,6 +713,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateSnowWolfNPCs(dt);
+
 updateSlalomKingAchievement(dt);
 
 updateTrickLandingFeedback(dt);
@@ -11443,6 +11445,24 @@ function spawnSnowWolfNPC() {
     ]
   });
 }
+
+function updateSnowWolfNPCs(dt) {
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    let snowWolf = game.npcSkiers[i];
+    snowWolf.x += NPC_SKIER_SPEED * 0.8 * dt;
+    if (snowWolf.x > W + 100) {
+      game.npcSkiers.splice(i, 1);
+      i--;
+    } else {
+      ctx.fillStyle = '#555555';
+      ctx.fillRect(snowWolf.x, snowWolf.y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(snowWolf.x + 6, snowWolf.y + 6, 4, 4);
+      ctx.fillRect(snowWolf.x + 10, snowWolf.y + 6, 4, 4);
+    }
+  }
+}
+
 
 
 
