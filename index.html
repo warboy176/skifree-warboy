@@ -708,6 +708,8 @@ updateSlosher(dt);
       // so a crash in that code can never freeze the game (it used to kill the frame loop)
       try{ updateVerticalDistance(simDt); }catch(__e){}
       try{ if(typeof spawnNPCs==='function') spawnNPCs(dt);
+spawnSnowWolfNPC();
+
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
@@ -11420,6 +11422,28 @@ function initSnowWolfNPCs() {
   };
   game.npcSkiers.push(snowWolf);
 }
+
+function spawnSnowWolfNPC() {
+  const id = Date.now();
+  const x = W + 100;
+  const y = H - NPC_SKIER_HEIGHT;
+  const speed = NPC_SKIER_SPEED * 0.8;
+
+  game.npcSkiers.push({
+    id,
+    x,
+    y,
+    width: NPC_SKIER_WIDTH,
+    height: NPC_SKIER_HEIGHT,
+    speed,
+    color: '#ffffff',
+    eyes: [
+      { x: 6, y: 6, width: 4, height: 4, color: '#ffffff' },
+      { x: 10, y: 6, width: 4, height: 4, color: '#ffffff' }
+    ]
+  });
+}
+
 
 
 
