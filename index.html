@@ -713,6 +713,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateSnowWolfObstacle(dt);
+
 updateSnowWolfNPCs(dt);
 
 updateSlalomKingAchievement(dt);
@@ -11505,6 +11507,22 @@ function initSnowWolfObstacle() {
     }
   };
 }
+
+function updateSnowWolfObstacle(dt) {
+  if (game.snowWolfObstacle.active) {
+    const targetX = game.player.x + Math.cos(game.player.angle) * 10;
+    const targetY = game.player.y + Math.sin(game.player.angle) * 10;
+    game.snowWolfObstacle.x += (targetX - game.snowWolfObstacle.x) * NPC_SKIER_SPEED * dt;
+    game.snowWolfObstacle.y += (targetY - game.snowWolfObstacle.y) * NPC_SKIER_SPEED * dt;
+  } else {
+    game.snowWolfSpawnTimer += dt;
+    if (game.snowWolfSpawnTimer >= 5000) {
+      game.snowWolfObstacle.active = true;
+      game.snowWolfSpawnTimer = 0;
+    }
+  }
+}
+
 
 
 
