@@ -1,4 +1,5 @@
 # Changelog
+- Add the snow-wolf to the game's active obstacles array only when the inactivity timer triggers (initSnowWolfObstacle, updateSnowWolfObstacle, addSnowWolfToObstacles)
 - Create a new snow-wolf object with a fixed size, color, and initial position above the player (initSnowWolf, spawnSnowWolf, updateSnowWolves)
 - Implement a function to generate a random x-position above the player's current y-coordinate for the snow-wolf (initSnowWolves, createSnowWolf)
 - Define a snow-wolf spawn condition that activates after 30 seconds of inactivity (initSnowWolfSpawnState, updateSnowWolfSpawnTimer, spawnSnowWolf)
