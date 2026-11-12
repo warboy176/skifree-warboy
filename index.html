@@ -677,6 +677,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateNearMissFlagForNPCs(dt);
+
 checkCrashAndBurnAchievement(dt);
 
 updateTrickDetection(dt);
@@ -11321,6 +11323,16 @@ function renderBiomeTransition(ctx) {
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.globalAlpha = 1;
 }
+
+function updateNearMissFlagForNPCs(dt) {
+  const proximityThreshold = 30;
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const horizontalDistance = Math.abs(npc.x - player.x);
+    npc.nearMiss = horizontalDistance <= proximityThreshold;
+  }
+}
+
 
 
 
