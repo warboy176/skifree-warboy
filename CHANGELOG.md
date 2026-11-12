@@ -1,4 +1,5 @@
 # Changelog
+- Initialize a `nearMissChain` variable to track consecutive near-misses, starting at 0 (initNearMissChain)
 - Implement a style score counter that increases by 10 points for each near-miss with an NPC (initStyleScoreSystem, checkNearMisses)
 - Add a 'nearMiss' flag to NPC skiers that triggers when player passes within 30px horizontally (updateNearMissFlagForNPCs)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code (initBiomeState, addForestTransitionTrigger, addForestTrees)
