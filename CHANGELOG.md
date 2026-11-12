@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style scoring: award bonus points for slaloming within 20px of NPCs or crashing through them, with a multiplier that increases with consecutive hits (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art (initBiomeState, addForestTrees, updateBiomeTransition)
 - Reset the game state and player position after the 'EATEN' state is triggered (resetPlayerAfterEaten)
 - Trigger the player's 'EATEN' state when a collision is detected (checkPlayerCollisionWithSkiers)
