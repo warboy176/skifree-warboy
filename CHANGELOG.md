@@ -1,4 +1,5 @@
 # Changelog
+- Add collision detection between player and NPC skier using bounding boxes (initNPCs, checkNPCPlayerCollision)
 - Add a collision detection function between the player and trees that triggers on overlap (initTrees, addTree, checkPlayerTreeCollision)
 - Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points (initStyleMultiplier, updateStyleMultiplier)
 - Update the game loop to check for near-misses only between player and NPC skiers, using their positions and `NEAR_MISS_MARGIN` (checkNearMisses)
