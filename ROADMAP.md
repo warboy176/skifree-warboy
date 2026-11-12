@@ -1313,6 +1313,10 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art
 - [x] Introduce style scoring: award bonus points for slaloming within 20px of NPCs or crashing through them, with a multiplier that increases with consecutive hits
 - [ ] Add a persistent skin selector UI element to the start screen with three original Warboy-designed character icons, each drawn in code using canvas primitives
+- [ ] Implement a function to draw the first original Warboy-designed character icon in code using canvas primitives within the skin selector UI
+- [ ] Implement a function to draw the second original Warboy-designed character icon in code using canvas primitives within the skin selector UI
+- [ ] Implement a function to draw the third original Warboy-designed character icon in code using canvas primitives within the skin selector UI
+- [ ] Add logic to handle skin selection via keyboard or pointer input and update the player's visual skin on start
 - [ ] Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions
 - [ ] Update the player's visual representation during gameplay to reflect the selected skin, using only original code-drawn art
 - [ ] Ensure the skin selector is accessible from the start screen and remains active after restarts, with default selection on first use
