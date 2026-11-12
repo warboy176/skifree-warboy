@@ -1296,4 +1296,4 @@ Operator direction from the daily report lands here.
 - [x] Implement a 'crash-through' effect: player gains 100 bonus points and a 1.5x speed boost for 0.5 seconds on collision
 - [x] Ensure the NPC skier is removed from the game after being crashed into
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
