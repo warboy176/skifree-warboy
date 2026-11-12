@@ -1778,6 +1778,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCrashThroughEffect();
+
 initCrashThroughStreak();
 
 initStyleScoring();
@@ -11373,6 +11375,13 @@ function checkPlayerTreeCollision() {
     }
   }
 }
+
+function initCrashThroughEffect() {
+  game.crashedThroughSkiers = 0;
+  game.crashedThroughBoostActive = true;
+  game.crashedThroughBoostEndTime = Date.now() + 500;
+}
+
 
 
 
