@@ -1304,7 +1304,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to generate a random x-position above the player's current y-coordinate for the snow-wolf
 - [x] Create a new snow-wolf object with a fixed size, color, and initial position above the player
 - [x] Add the snow-wolf to the game's active obstacles array only when the inactivity timer triggers
-- [ ] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
+- [x] Add logic for the snow-wolf to follow the player's current x-position with a base speed, updating its y-position each frame to close the gap
 - [ ] Increase the snow-wolf's speed progressively over time, scaling with the game's elapsed time to create escalating tension
 - [ ] Ensure the snow-wolf's collision with the player triggers the 'EATEN' state and resets the game, without affecting existing obstacle or scoring logic
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, rendered with original tree sprites drawn in code using procedural pixel art
