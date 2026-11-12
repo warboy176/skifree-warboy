@@ -1292,3 +1292,5 @@ Operator direction from the daily report lands here.
 - [ ] Apply a multiplier (starting at 1.0, increasing by 0.5 per consecutive near-miss up to 3.0) to style points
 - [ ] Add a penalty of 50 points for hitting any tree, subtracting from total score
 - [ ] Add a 'crash-through' mechanic where player gains bonus points and a brief speed boost when colliding with an NPC skier
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
