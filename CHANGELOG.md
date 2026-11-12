@@ -1,4 +1,5 @@
 # Changelog
+- Update the game loop to check for near-misses only between player and NPC skiers, using their positions and `NEAR_MISS_MARGIN` (checkNearMisses)
 - Reset `nearMissChain` to 0 when the player collides with any obstacle or hits a tree (resetNearMissChainOnCollision)
 - Initialize a `nearMissChain` variable to track consecutive near-misses, starting at 0 (initNearMissChain)
 - Implement a style score counter that increases by 10 points for each near-miss with an NPC (initStyleScoreSystem, checkNearMisses)
