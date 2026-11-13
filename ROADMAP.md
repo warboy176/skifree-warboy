@@ -1323,7 +1323,9 @@ Operator direction from the daily report lands here.
 - [!] Define a new Warboy-designed character icon using only canvas primitives in a standalone function that draws the base shape and color scheme  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to render the character icon at the correct position in the skin selector UI without altering existing game state or layout
 - [x] Implement a function to update the character icon's appearance based on selection state (e.g., highlight) using only canvas primitives
-- [ ] Define a new function to draw the second Warboy-designed character icon using only canvas primitives in the skin selector
+- [ ] Create a new function to draw the Warboy-designed character icon using only canvas primitives, with no external assets
+- [ ] Implement the skin selector UI to display the new character icon alongside existing options
+- [ ] Ensure the new character icon is drawn at the correct position and size within the skin selector UI
 - [ ] Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size
 - [ ] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Add logic to handle selection of a skin from the selector and persist the choice across restarts
