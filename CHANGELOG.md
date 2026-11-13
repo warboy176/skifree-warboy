@@ -1,4 +1,5 @@
 # Changelog
+- Load the saved skin ID from localStorage on game start and apply it to the player's initial render (loadSavedSkinId, applySkinToPlayer)
 - Store the selected skin ID in localStorage when changed (saveSkinSelectionToLocalStorage, loadSkinSelectionFromLocalStorage)
 - Implement event handling for selecting each skin icon, updating the player's visual appearance accordingly (initSkinSelector)
 - Add a persistent skin selector UI element to the start screen using three original Warboy-designed character icons drawn in code with canvas primitives (initSkinSelectorState, drawSkinSelectorUI)
