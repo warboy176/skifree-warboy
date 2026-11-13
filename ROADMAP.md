@@ -1333,3 +1333,5 @@ Operator direction from the daily report lands here.
 - [ ] Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions
 - [ ] Update the player's visual representation during gameplay to reflect the selected skin, using only original code-drawn art
 - [ ] Ensure the skin selector is accessible from the start screen and remains active after restarts, with default selection on first use
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
