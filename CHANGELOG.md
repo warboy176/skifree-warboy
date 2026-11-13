@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the new character icon is drawn at the correct position and size within the skin selector UI (drawCharacterIcon)
 - Implement the skin selector UI to display the new character icon alongside existing options (initSkinSelectorState, drawSkinSelectorIcon)
 - Implement a function to update the character icon's appearance based on selection state (e.g., highlight) using only canvas primitives (updateCharacterIconHighlight)
 - Add a function to render the character icon at the correct position in the skin selector UI without altering existing game state or layout (renderSkinSelectorIcon)
