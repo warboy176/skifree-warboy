@@ -11722,6 +11722,15 @@ function renderSkinSelectorIcon(skinIndex, x, y) {
   ctx.strokeRect(x, y, 16, 16);
 }
 
+function updateCharacterIconHighlight(ctx, game, isSelected) {
+    if (isSelected) {
+        ctx.fillStyle = 'white';
+        ctx.globalAlpha = 1.0;
+        ctx.fillRect(game.hud.x + 10 - 2, game.hud.y + 10 - 2, 4, 4);
+    }
+}
+
+
 
 
 
