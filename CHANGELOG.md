@@ -1,4 +1,5 @@
 # Changelog
+- Integrate the new character icon drawing function into the skin selector UI rendering loop (initSkinSelectorNPCs, renderSkinSelectorNPCs)
 - Add a new canvas function to draw the third Warboy-designed character icon using only primitives in the skin selector UI (initWarboyCharacterIcons, drawWarboyCharacterIcon)
 - Integrate the new character icon drawing function into the skin selector UI rendering loop (renderSkinSelectorIcons)
 - Add a new function to draw the second Warboy-designed character icon using only canvas primitives in the skin selector UI (drawWarboySkinIcon)
