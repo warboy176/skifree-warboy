@@ -1320,7 +1320,9 @@ Operator direction from the daily report lands here.
 - [x] Update the start screen UI to render the currently selected character icon based on the cycle state
 - [x] Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector
 - [x] Ensure the selected skin persists and is applied to the player character when the game starts
-- [ ] Implement a function to draw the first Warboy-designed character icon in the skin selector using only canvas primitives
+- [ ] Define a new Warboy-designed character icon using only canvas primitives in a standalone function that draws the base shape and color scheme
+- [ ] Add a function to render the character icon at the correct position in the skin selector UI without altering existing game state or layout
+- [ ] Implement a function to update the character icon's appearance based on selection state (e.g., highlight) using only canvas primitives
 - [ ] Implement a function to draw the second Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Add logic to handle selection of a skin from the selector and persist the choice across restarts
