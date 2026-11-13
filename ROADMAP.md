@@ -1334,7 +1334,8 @@ Operator direction from the daily report lands here.
 - [x] Add a function to define the Warboy-designed character icon's pixel art using canvas draw commands within the skin selector UI
 - [!] Add a function to draw the Warboy character icon using only original code-drawn primitives on the skin selector canvas  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a function to render the Warboy character icon with consistent proportions and original pixel-art style in the skin selector
-- [ ] Implement a function to draw the second original Warboy-designed character icon in code using canvas primitives within the skin selector UI
+- [ ] Add a new function to draw the second Warboy-designed character icon using only canvas primitives in the skin selector UI
+- [ ] Integrate the new character icon drawing function into the skin selector UI rendering loop
 - [ ] Implement a function to draw the third original Warboy-designed character icon in code using canvas primitives within the skin selector UI
 - [ ] Add logic to handle skin selection via keyboard or pointer input and update the player's visual skin on start
 - [ ] Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions
