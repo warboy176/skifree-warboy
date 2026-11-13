@@ -1316,7 +1316,8 @@ Operator direction from the daily report lands here.
 - [x] Implement event handling for selecting each skin icon, updating the player's visual appearance accordingly
 - [x] Store the selected skin ID in localStorage when changed
 - [x] Load the saved skin ID from localStorage on game start and apply it to the player's initial render
-- [ ] Implement the logic to cycle through the three character icons using left/right arrow keys while on the start screen
+- [ ] Add left/right arrow key handling to the start screen state to cycle between character icons
+- [ ] Update the start screen UI to render the currently selected character icon based on the cycle state
 - [ ] Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector
 - [ ] Ensure the selected skin persists and is applied to the player character when the game starts
 - [ ] Implement a function to draw the first Warboy-designed character icon in the skin selector using only canvas primitives
