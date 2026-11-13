@@ -1339,7 +1339,7 @@ Operator direction from the daily report lands here.
 - [x] Add a new canvas function to draw the third Warboy-designed character icon using only primitives in the skin selector UI
 - [x] Integrate the new character icon drawing function into the skin selector UI rendering loop
 - [x] Integrate the new character icon rendering function into the skin selector's draw loop, ensuring it appears alongside existing icons
-- [ ] Add logic to handle skin selection via keyboard or pointer input and update the player's visual skin on start
+- [!] Add logic to handle skin selection via keyboard or pointer input and update the player's visual skin on start  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions
 - [ ] Update the player's visual representation during gameplay to reflect the selected skin, using only original code-drawn art
 - [ ] Ensure the skin selector is accessible from the start screen and remains active after restarts, with default selection on first use
