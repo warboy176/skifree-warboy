@@ -1326,7 +1326,7 @@ Operator direction from the daily report lands here.
 - [!] Create a new function to draw the Warboy-designed character icon using only canvas primitives, with no external assets  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement the skin selector UI to display the new character icon alongside existing options
 - [x] Ensure the new character icon is drawn at the correct position and size within the skin selector UI
-- [ ] Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size
+- [x] Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size
 - [ ] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Add logic to handle selection of a skin from the selector and persist the choice across restarts
 - [ ] Implement a function to draw the first original Warboy-designed character icon in code using canvas primitives within the skin selector UI
