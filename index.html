@@ -1797,6 +1797,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initCharacterIcons();
+
 initCrashThroughEffect();
 
 initCrashThroughStreak();
@@ -11659,6 +11661,15 @@ function drawCharacterIcons() {
     }
   }
 }
+
+function initCharacterIcons() {
+    game.characterIcons = [
+        {name: 'warboy', x: 100, y: 200, width: 64, height: 64, selected: true},
+        {name: 'warboy2', x: 200, y: 200, width: 64, height: 64, selected: false},
+        {name: 'warboy3', x: 300, y: 200, width: 64, height: 64, selected: false}
+    ];
+}
+
 
 
 
