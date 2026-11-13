@@ -31,6 +31,8 @@
 </main>
 <script>
 (() => {
+  let SKIN_SELECTOR_CHARACTERS;   // scope state (foundation-provided)
+
   let TREE_SPRITE_DATA;   // scope state (foundation-provided)
 
   let TREE_PALETTE;   // scope state (foundation-provided)
@@ -11753,6 +11755,49 @@ function drawCharacterIcon(x, y, size, characterId) {
   ctx.fillRect(x + size/3, y + size/6, size/6, size/6); // Eye
   ctx.fillRect(x + 2*size/3, y + size/6, size/6, size/6); // Eye
 }
+
+function initSkinSelectorCharacters() {
+    const characters = [];
+    for (let i = 0; i < 3; i++) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#4a90e2';
+        ctx.strokeStyle = '#2c5a8a';
+        ctx.lineWidth = 1;
+        
+        switch(i) {
+            case 0:
+                // Abstract geometric character 1
+                ctx.fillRect(10, 10, 12, 12);
+                ctx.beginPath();
+                ctx.arc(16, 8, 4, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeRect(12, 14, 8, 4);
+                break;
+            case 1:
+                // Abstract geometric character 2
+                ctx.fillRect(8, 8, 16, 16);
+                ctx.beginPath();
+                ctx.arc(16, 16, 6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeRect(14, 10, 4, 8);
+                break;
+            case 2:
+                // Abstract geometric character 3
+                ctx.fillRect(12, 12, 8, 8);
+                ctx.beginPath();
+                ctx.arc(16, 16, 5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeRect(10, 14, 12, 4);
+                break;
+        }
+        characters.push(canvas);
+    }
+    return characters;
+}
+
 
 
 
