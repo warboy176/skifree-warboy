@@ -1807,6 +1807,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSkinSelectorNPCs();
+
 initWarboyCharacterIcons();
 
 initCharacterIcons();
@@ -11943,6 +11945,20 @@ function drawWarboyCharacterIcon(ctx, iconIndex, x, y) {
         ctx.fillRect(x + 2, y + 1, 1, 1);
     }
 }
+
+function initSkinSelectorNPCs() {
+    if (!game.npcSkiers) game.npcSkiers = [];
+    for (let i = 0; i < 4; i++) {
+        game.npcSkiers.push({
+            x: 100 + i * 150,
+            y: 300,
+            skin: i,
+            color: NPC_SKIER_COLOR
+        });
+    }
+    renderSkinSelectorIcons();
+}
+
 
 
 
