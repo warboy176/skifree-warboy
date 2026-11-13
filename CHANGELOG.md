@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the selected skin persists and is applied to the player character when the game starts (initPlayerSkinState, applyPlayerSkinToCharacter)
 - Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector (initSkinSelectorState, drawSkinSelectorHighlight)
 - Update the start screen UI to render the currently selected character icon based on the cycle state (renderCharacterIcon)
 - Add left/right arrow key handling to the start screen state to cycle between character icons (initCharacterIcons, drawCharacterIcons)

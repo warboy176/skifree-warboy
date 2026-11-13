@@ -1319,7 +1319,7 @@ Operator direction from the daily report lands here.
 - [x] Add left/right arrow key handling to the start screen state to cycle between character icons
 - [x] Update the start screen UI to render the currently selected character icon based on the cycle state
 - [x] Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector
-- [ ] Ensure the selected skin persists and is applied to the player character when the game starts
+- [x] Ensure the selected skin persists and is applied to the player character when the game starts
 - [ ] Implement a function to draw the first Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Implement a function to draw the second Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
