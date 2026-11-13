@@ -1729,6 +1729,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+renderSkinSelectorIcons();
+
 drawWarboySkinIcon(ctx, game.selectedSkin, 100, 50, 24);
 
 drawCharacterIcon(100, 100, 20, 'warboy');
@@ -11887,6 +11889,31 @@ function renderWarboyIcon(ctx, x, y, skinIndex) {
   ctx.fillStyle = mouthColor;
   ctx.fillRect(x + 4, y + 11, 2, 2);
 }
+
+function renderSkinSelectorIcons() {
+  const canvas = document.getElementById('gameCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const startY = canvas.height - 60;
+  const iconSize = 32;
+  const spacing = 40;
+
+  for (let i = 0; i < game.skins.length; i++) {
+    const x = 10 + i * spacing;
+    const y = startY;
+
+    drawCharacterIcon(ctx, game.skins[i], x, y, iconSize);
+
+    if (i === game.selectedSkinIndex) {
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(x - 1, y - 1, iconSize + 2, iconSize + 2);
+    }
+  }
+}
+
 
 
 
