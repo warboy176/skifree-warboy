@@ -11933,6 +11933,18 @@ function initWarboyCharacterIcons() {
     }
 }
 
+function drawWarboyCharacterIcon(ctx, iconIndex, x, y) {
+    if (iconIndex === 2) {
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(x + 0, y + 0, 1, 1);
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(x + 1, y + 1, 2, 2);
+        ctx.fillStyle = '#808080';
+        ctx.fillRect(x + 2, y + 1, 1, 1);
+    }
+}
+
+
 
 
 
