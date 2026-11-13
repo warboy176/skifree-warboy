@@ -1727,6 +1727,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawCharacterIcon(100, 100, 20, 'warboy');
+
 drawSkinSelectorHighlight();
 
 renderAchievementBadges();
@@ -11737,6 +11739,21 @@ function drawSkinSelectorIcon(ctx, skin, x, y) {
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
 }
+
+function drawCharacterIcon(x, y, size, characterId) {
+  const icon = game.characterIcons[characterId];
+  if (!icon) return;
+  
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(x, y, size, size);
+  
+  // Draw simple character representation
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(x + size/4, y + size/4, size/2, size/2); // Body
+  ctx.fillRect(x + size/3, y + size/6, size/6, size/6); // Eye
+  ctx.fillRect(x + 2*size/3, y + size/6, size/6, size/6); // Eye
+}
+
 
 
 
