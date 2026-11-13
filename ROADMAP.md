@@ -1328,7 +1328,9 @@ Operator direction from the daily report lands here.
 - [x] Ensure the new character icon is drawn at the correct position and size within the skin selector UI
 - [x] Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size
 - [x] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
-- [ ] Add logic to handle selection of a skin from the selector and persist the choice across restarts
+- [ ] Add a function to store the selected skin ID in localStorage when a skin is chosen from the selector
+- [ ] Add a function to retrieve the previously saved skin ID from localStorage on game startup and apply it to the player
+- [ ] Update the skin selector UI to reflect the currently selected skin based on localStorage value on load
 - [ ] Implement a function to draw the first original Warboy-designed character icon in code using canvas primitives within the skin selector UI
 - [ ] Implement a function to draw the second original Warboy-designed character icon in code using canvas primitives within the skin selector UI
 - [ ] Implement a function to draw the third original Warboy-designed character icon in code using canvas primitives within the skin selector UI
