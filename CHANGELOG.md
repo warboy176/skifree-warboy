@@ -1,4 +1,5 @@
 # Changelog
+- Integrate the new character icon drawing function into the skin selector UI rendering loop (renderSkinSelectorIcons)
 - Add a new function to draw the second Warboy-designed character icon using only canvas primitives in the skin selector UI (drawWarboySkinIcon)
 - Implement a function to render the Warboy character icon with consistent proportions and original pixel-art style in the skin selector (renderWarboyIcon)
 - Add a function to define the Warboy-designed character icon's pixel art using canvas draw commands within the skin selector UI (drawWarboySkinIcon)
