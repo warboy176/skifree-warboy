@@ -1729,6 +1729,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+renderSkinSelectorNPCs();
+
 renderSkinSelectorIcons();
 
 drawWarboySkinIcon(ctx, game.selectedSkin, 100, 50, 24);
@@ -11958,6 +11960,15 @@ function initSkinSelectorNPCs() {
     }
     renderSkinSelectorIcons();
 }
+
+function renderSkinSelectorNPCs() {
+  for (let i = 0; i < SKI_COLORS.length; i++) {
+    const x = 100 + (i % 4) * 40;
+    const y = 100 + Math.floor(i / 4) * 60;
+    drawSkinSelectorIcon(SKI_COLORS[i], x, y);
+  }
+}
+
 
 
 
