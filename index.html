@@ -11637,6 +11637,16 @@ function loadSavedSkinId() {
     game.skin = 0;
   }
 }
+applySkinToPlayer();
+
+
+function applySkinToPlayer() {
+    if (game.skin !== undefined && SKI_COLORS[game.skin]) {
+        player.color = SKI_COLORS[game.skin];
+        animatePlayerFlip();
+    }
+}
+
 
 
 
