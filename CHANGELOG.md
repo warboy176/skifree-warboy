@@ -1,4 +1,5 @@
 # Changelog
+- Add left/right arrow key handling to the start screen state to cycle between character icons (initCharacterIcons, drawCharacterIcons)
 - Load the saved skin ID from localStorage on game start and apply it to the player's initial render (loadSavedSkinId, applySkinToPlayer)
 - Store the selected skin ID in localStorage when changed (saveSkinSelectionToLocalStorage, loadSkinSelectionFromLocalStorage)
 - Implement event handling for selecting each skin icon, updating the player's visual appearance accordingly (initSkinSelector)
