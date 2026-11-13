@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives (initSkinSelectorCharacters, drawSkinSelectorCharacter)
 - Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size (drawCharacterIcon)
 - Ensure the new character icon is drawn at the correct position and size within the skin selector UI (drawCharacterIcon)
 - Implement the skin selector UI to display the new character icon alongside existing options (initSkinSelectorState, drawSkinSelectorIcon)

@@ -1327,7 +1327,7 @@ Operator direction from the daily report lands here.
 - [x] Implement the skin selector UI to display the new character icon alongside existing options
 - [x] Ensure the new character icon is drawn at the correct position and size within the skin selector UI
 - [x] Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size
-- [ ] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
+- [x] Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives
 - [ ] Add logic to handle selection of a skin from the selector and persist the choice across restarts
 - [ ] Implement a function to draw the first original Warboy-designed character icon in code using canvas primitives within the skin selector UI
 - [ ] Implement a function to draw the second original Warboy-designed character icon in code using canvas primitives within the skin selector UI
