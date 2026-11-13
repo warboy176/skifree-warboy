@@ -11670,6 +11670,24 @@ function initCharacterIcons() {
     ];
 }
 
+function renderCharacterIcon() {
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+  const iconSize = 32;
+  const borderSize = 4;
+  
+  if (game.selectedCharacter) {
+    const color = SKI_COLORS[game.selectedCharacter];
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, iconSize, iconSize);
+    
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = borderSize;
+    ctx.strokeRect(borderSize/2, borderSize/2, iconSize - borderSize, iconSize - borderSize);
+  }
+}
+
+
 
 
 
