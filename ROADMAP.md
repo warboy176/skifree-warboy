@@ -1331,7 +1331,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to store the selected skin ID in localStorage when a skin is chosen from the selector
 - [x] Add a function to retrieve the previously saved skin ID from localStorage on game startup and apply it to the player
 - [x] Update the skin selector UI to reflect the currently selected skin based on localStorage value on load
-- [ ] Add a function to define the Warboy-designed character icon's pixel art using canvas draw commands within the skin selector UI
+- [x] Add a function to define the Warboy-designed character icon's pixel art using canvas draw commands within the skin selector UI
 - [ ] Implement a function to render the Warboy character icon on the skin selector canvas using only original code-drawn primitives
 - [ ] Implement a function to draw the second original Warboy-designed character icon in code using canvas primitives within the skin selector UI
 - [ ] Implement a function to draw the third original Warboy-designed character icon in code using canvas primitives within the skin selector UI

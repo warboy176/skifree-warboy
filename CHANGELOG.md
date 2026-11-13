@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to define the Warboy-designed character icon's pixel art using canvas draw commands within the skin selector UI (drawWarboySkinIcon)
 - Update the skin selector UI to reflect the currently selected skin based on localStorage value on load (loadSelectedSkinFromLocalStorage)
 - Add a function to retrieve the previously saved skin ID from localStorage on game startup and apply it to the player (loadSavedSkinId)
 - Add a function to store the selected skin ID in localStorage when a skin is chosen from the selector (saveSelectedSkinId)
