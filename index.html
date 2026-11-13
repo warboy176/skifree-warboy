@@ -11858,7 +11858,34 @@ function drawWarboySkinIcon(ctx, skinIndex, x, y, size) {
 }
 
 function renderWarboyIcon(ctx, x, y, skinIndex) {
-  drawWarboySkinIcon(ctx, skinIndex, x, y, 16);
+  // Draw 16x16 pixel-art icon using only code-drawn pixels
+  const bodyColor = '#333333';  // dark gray
+  const headColor = '#cccccc';  // light gray
+  const eyeColor = '#ffffff';    // white
+  const pupilColor = '#000000'; // black
+  const mouthColor = '#ff0000'; // red
+
+  // 8x8 body (dark gray) at (x, y)
+  ctx.fillStyle = bodyColor;
+  ctx.fillRect(x, y, 8, 8);
+
+  // 4x4 head (light gray) centered on body (x+2, y+8)
+  ctx.fillStyle = headColor;
+  ctx.fillRect(x + 2, y + 8, 4, 4);
+
+  // 2x2 eyes (white) — left eye at (x+3, y+9), right at (x+5, y+9)
+  ctx.fillStyle = eyeColor;
+  ctx.fillRect(x + 3, y + 9, 2, 2);
+  ctx.fillRect(x + 5, y + 9, 2, 2);
+
+  // 1x1 pupils (black) — centered in each eye
+  ctx.fillStyle = pupilColor;
+  ctx.fillRect(x + 3.5, y + 9.5, 1, 1);
+  ctx.fillRect(x + 5.5, y + 9.5, 1, 1);
+
+  // 2x2 mouth (red) — centered at (x+4, y+11)
+  ctx.fillStyle = mouthColor;
+  ctx.fillRect(x + 4, y + 11, 2, 2);
 }
 
 
