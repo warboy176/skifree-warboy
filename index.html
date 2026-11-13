@@ -11647,6 +11647,20 @@ function applySkinToPlayer() {
     }
 }
 
+function drawCharacterIcons() {
+  for (let i = 0; i < game.characterIcons.length; i++) {
+    const icon = game.characterIcons[i];
+    ctx.fillStyle = icon.color;
+    ctx.fillRect(icon.x, icon.y, 64, 64);
+    if (icon.selected) {
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(icon.x, icon.y, 64, 64);
+    }
+  }
+}
+
+
 
 
 
