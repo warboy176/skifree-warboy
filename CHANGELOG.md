@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to store the selected skin ID in localStorage when a skin is chosen from the selector (saveSelectedSkinId)
 - Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives (initSkinSelectorCharacters, drawSkinSelectorCharacter)
 - Integrate the new character icon drawing function into the skin selector UI, ensuring it renders correctly at the intended position and size (drawCharacterIcon)
 - Ensure the new character icon is drawn at the correct position and size within the skin selector UI (drawCharacterIcon)
