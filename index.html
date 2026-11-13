@@ -11618,6 +11618,11 @@ function initSkinSelector() {
   game.skin = game.skinSelector[0];
 }
 
+function saveSkinSelectionToLocalStorage(skinId) {
+  localStorage.setItem('selectedSkin', skinId.toString());
+}
+
+
 
 
 
