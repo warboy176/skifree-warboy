@@ -11702,6 +11702,15 @@ function drawSkinSelectorHighlight() {
   ctx.strokeRect(x, y, skinWidth, skinHeight);
 }
 
+function initPlayerSkinState() {
+    const savedSkin = localStorage.getItem('selectedSkin');
+    game.playerSkin = savedSkin || 'default';
+    if (savedSkin) {
+        applySkinToPlayer();
+    }
+}
+
+
 
 
 
