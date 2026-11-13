@@ -1727,6 +1727,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawSkinSelectorHighlight();
+
 renderAchievementBadges();
 
 drawSnowFoxEscapeNotification(ctx);
@@ -11686,6 +11688,20 @@ function renderCharacterIcon() {
     ctx.strokeRect(borderSize/2, borderSize/2, iconSize - borderSize, iconSize - borderSize);
   }
 }
+
+function drawSkinSelectorHighlight() {
+  if (!game.skinSelectorState || !ctx) return;
+  const { selectedSkinIndex } = game.skinSelectorState;
+  const skinWidth = 64;
+  const skinHeight = 64;
+  const x = selectedSkinIndex * (skinWidth + 10) + 20;
+  const y = 100;
+  
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = 'white';
+  ctx.strokeRect(x, y, skinWidth, skinHeight);
+}
+
 
 
 
