@@ -11715,6 +11715,14 @@ function applyPlayerSkinToCharacter() {
   drawWarboyBody(0, 'normal');
 }
 
+function renderSkinSelectorIcon(skinIndex, x, y) {
+  ctx.fillStyle = SKI_COLORS[skinIndex];
+  ctx.fillRect(x, y, 16, 16);
+  ctx.strokeStyle = '#000000';
+  ctx.strokeRect(x, y, 16, 16);
+}
+
+
 
 
 
