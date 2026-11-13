@@ -1729,6 +1729,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawWarboySkinIcon(ctx, game.selectedSkin, 100, 50, 24);
+
 drawCharacterIcon(100, 100, 20, 'warboy');
 
 drawSkinSelectorHighlight();
@@ -11832,6 +11834,29 @@ function loadSelectedSkinFromLocalStorage() {
   const savedSkin = localStorage.getItem('selectedSkin');
   game.selectedSkin = savedSkin ? parseInt(savedSkin) : 0;
 }
+
+function drawWarboySkinIcon(ctx, skinIndex, x, y, size) {
+  const blockSize = size / 6;
+  const colors = ['black', 'white', 'red', 'blue', 'green', 'yellow'];
+  const skinData = [
+    [0,0,0,0,0,0],
+    [0,1,1,1,1,0],
+    [0,1,2,2,1,0],
+    [0,1,2,2,1,0],
+    [0,1,1,1,1,0],
+    [0,0,0,0,0,0]
+  ];
+  
+  for (let row = 0; row < 6; row++) {
+    for (let col = 0; col < 6; col++) {
+      if (skinData[row][col] !== 0) {
+        ctx.fillStyle = colors[skinData[row][col]];
+        ctx.fillRect(x + col * blockSize, y + row * blockSize, blockSize, blockSize);
+      }
+    }
+  }
+}
+
 
 
 
