@@ -11962,10 +11962,31 @@ function initSkinSelectorNPCs() {
 }
 
 function renderSkinSelectorNPCs() {
+  const SKI_COLORS = ['rgba(200,100,50,1)', 'rgba(255,150,0,1)', 'rgba(180,80,30,1)', 'rgba(220,120,60,1)'];
+  const startX = 100;
+  const startY = 100;
+  const spacing = 60;
+
   for (let i = 0; i < SKI_COLORS.length; i++) {
-    const x = 100 + (i % 4) * 40;
-    const y = 100 + Math.floor(i / 4) * 60;
-    drawSkinSelectorIcon(SKI_COLORS[i], x, y);
+    const x = startX + i * spacing;
+    const y = startY;
+
+    // Draw 32x48 pixel rectangle filled with skin color
+    ctx.fillStyle = SKI_COLORS[i];
+    ctx.fillRect(x, y, 32, 48);
+
+    // Draw 4-pixel border
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, 32, 48);
+
+    // Draw 16x16 white square for the face at (x+8, y+16)
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(x + 8, y + 16, 16, 16);
+
+    // Draw 12x12 black square for the hat at (x+10, y+28)
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(x + 10, y + 28, 12, 12);
   }
 }
 
