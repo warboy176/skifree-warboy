@@ -1807,6 +1807,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initWarboyCharacterIcons();
+
 initCharacterIcons();
 
 initCrashThroughEffect();
@@ -11913,6 +11915,24 @@ function renderSkinSelectorIcons() {
     }
   }
 }
+
+function initWarboyCharacterIcons() {
+    game.warboyCharacterIcons = [];
+    for (let i = 0; i < 3; i++) {
+        const icon = {
+            draw: function(ctx, x, y, size) {
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(x + 0, y + 0, 1, 1);
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(x + 1, y + 1, 2, 2);
+                ctx.fillStyle = '#888888';
+                ctx.fillRect(x + 2, y + 1, 1, 1);
+            }
+        };
+        game.warboyCharacterIcons.push(icon);
+    }
+}
+
 
 
 
