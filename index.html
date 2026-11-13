@@ -11994,6 +11994,16 @@ function saveSkinSelection(skinIndex) {
     localStorage.setItem('warboy.skin', JSON.stringify(skinIndex));
 }
 
+function loadSkinSelection() {
+    const stored = localStorage.getItem('warboy.skin');
+    if (stored && !isNaN(stored)) {
+        PlayerState.skinIndex = parseInt(stored);
+    } else {
+        PlayerState.skinIndex = 0;
+    }
+}
+
+
 
 
 
