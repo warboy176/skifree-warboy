@@ -11622,6 +11622,14 @@ function saveSkinSelectionToLocalStorage(skinId) {
   localStorage.setItem('selectedSkin', skinId.toString());
 }
 
+function loadSkinSelectionFromLocalStorage() {
+  const savedSkin = localStorage.getItem('selectedSkin');
+  if (savedSkin && game.skinSelector.includes(savedSkin)) {
+    game.skin = savedSkin;
+  }
+}
+
+
 
 
 
