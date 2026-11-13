@@ -11730,6 +11730,15 @@ function updateCharacterIconHighlight(ctx, game, isSelected) {
     }
 }
 
+function drawSkinSelectorIcon(ctx, skin, x, y) {
+  ctx.fillStyle = skin.color;
+  ctx.fillRect(x, y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(x, y, NPC_SKIER_WIDTH, NPC_SKIER_HEIGHT);
+}
+
+
 
 
 
