@@ -1,4 +1,5 @@
 # Changelog
+- Add visual feedback (e.g., highlight) to indicate the currently selected skin in the selector (initSkinSelectorState, drawSkinSelectorHighlight)
 - Update the start screen UI to render the currently selected character icon based on the cycle state (renderCharacterIcon)
 - Add left/right arrow key handling to the start screen state to cycle between character icons (initCharacterIcons, drawCharacterIcons)
 - Load the saved skin ID from localStorage on game start and apply it to the player's initial render (loadSavedSkinId, applySkinToPlayer)
