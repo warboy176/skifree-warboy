@@ -1,4 +1,5 @@
 # Changelog
+- Update the skin selector UI to reflect the currently selected skin based on localStorage value on load (loadSelectedSkinFromLocalStorage)
 - Add a function to retrieve the previously saved skin ID from localStorage on game startup and apply it to the player (loadSavedSkinId)
 - Add a function to store the selected skin ID in localStorage when a skin is chosen from the selector (saveSelectedSkinId)
 - Implement a function to draw the third Warboy-designed character icon in the skin selector using only canvas primitives (initSkinSelectorCharacters, drawSkinSelectorCharacter)
