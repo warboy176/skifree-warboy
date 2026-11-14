@@ -1350,4 +1350,4 @@ Operator direction from the daily report lands here.
 - [!] Set the default skin to the first available option when no prior selection exists  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the selected skin is applied to the player character at game start and persists through restarts  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 
-- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+- [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
