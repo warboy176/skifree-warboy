@@ -12163,6 +12163,34 @@ function initBiomeProgress() {
     game.biomeProgress = 0;
 }
 
+function drawSkiLodge(ctx, game) {
+  const x = W / 2;
+  const y = H - 100;
+  
+  // Base
+  ctx.fillStyle = '#8B4513';
+  ctx.fillRect(x - 60, y - 30, 120, 60);
+  
+  // Roof
+  ctx.fillStyle = '#A52A2A';
+  ctx.beginPath();
+  ctx.moveTo(x - 60, y - 30);
+  ctx.lineTo(x, y - 80);
+  ctx.lineTo(x + 60, y - 30);
+  ctx.closePath();
+  ctx.fill();
+  
+  // Windows
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(x - 40, y - 20, 20, 20);
+  ctx.fillRect(x + 20, y - 20, 20, 20);
+  
+  // Door
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(x - 15, y - 10, 30, 50);
+}
+
+
 
 
 
