@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives (drawLodgeToSlopeTransition)
 - Add a function to render the original code-drawn ski lodge at the start position using only canvas primitives (drawSkiLodge)
 - Define biome transition thresholds as an array of distance values in the game state (initBiomeThresholds)
 - Create a function to update biomeProgress based on player distance traveled each frame (updateBiomeProgress)

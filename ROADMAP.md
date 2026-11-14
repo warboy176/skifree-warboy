@@ -1376,7 +1376,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to check if biomeProgress has crossed a threshold and trigger a biome change  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Implement a single, self-contained biome change function that updates the visual style and terrain behavior  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to render the original code-drawn ski lodge at the start position using only canvas primitives
-- [ ] Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives
+- [x] Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives
 - [ ] Implement a state-driven draw loop that switches from lodge to scrolling slope art once skiing begins
 - [ ] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
 - [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
