@@ -12190,6 +12190,16 @@ function drawSkiLodge(ctx, game) {
   ctx.fillRect(x - 15, y - 10, 30, 50);
 }
 
+function drawLodgeToSlopeTransition(ctx, game) {
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = 'white';
+  ctx.beginPath();
+  ctx.moveTo(W / 2, H - 10);
+  ctx.lineTo(0, H - 100);
+  ctx.stroke();
+}
+
+
 
 
 
