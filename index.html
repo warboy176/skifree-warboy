@@ -11662,6 +11662,8 @@ function applySkinToPlayer() {
     if (game.skin !== undefined && SKI_COLORS[game.skin]) {
         player.color = SKI_COLORS[game.skin];
         animatePlayerFlip();
+drawPlayerHeadAndTorso(ctx, game.playerState);
+
     }
 }
 
@@ -12002,6 +12004,21 @@ function loadSkinSelection() {
         PlayerState.skinIndex = 0;
     }
 }
+
+function drawPlayerHeadAndTorso(ctx, playerState) {
+  ctx.fillStyle = 'white';
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 4;
+  ctx.fillRect(playerState.x - 8, playerState.y - 32, 16, 16);
+  ctx.strokeRect(playerState.x - 8, playerState.y - 32, 16, 16);
+  
+  ctx.fillStyle = 'darkgray';
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+  ctx.fillRect(playerState.x - 8, playerState.y - 16, 16, 24);
+  ctx.strokeRect(playerState.x - 8, playerState.y - 16, 16, 24);
+}
+
 
 
 
