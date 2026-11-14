@@ -1,4 +1,5 @@
 # Changelog
+- Implement persistent skin selection using localStorage, saving the user's choice across restarts (saveSkinSelection, loadSkinSelection)
 - Add a skin selector UI element to the start screen that displays at least one available skin preview (initSkinSelectorState, drawSkinSelectorUI)
 - Add a function to draw the player's head and torso using original code-drawn pixel art in the default skin (drawPlayerHeadAndTorso)
 - Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions (saveSkinSelection, loadSkinSelection)

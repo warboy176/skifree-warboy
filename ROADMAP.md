@@ -1346,7 +1346,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to switch the player's visual representation based on the selected skin, using only original code-drawn art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the player's visual representation updates in real time during gameplay without affecting existing mechanics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a skin selector UI element to the start screen that displays at least one available skin preview
-- [ ] Implement persistent skin selection using localStorage, saving the user's choice across restarts
+- [x] Implement persistent skin selection using localStorage, saving the user's choice across restarts
 - [ ] Set the default skin to the first available option when no prior selection exists
 - [ ] Ensure the selected skin is applied to the player character at game start and persists through restarts
 
