@@ -1,4 +1,5 @@
 # Changelog
+- Create a function to update biomeProgress based on player distance traveled each frame (updateBiomeProgress)
 - Initialize a biomeProgress counter starting at 0 in the game state (initBiomeProgress)
 - Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseCreatures, spawnChaseCreature, updateChaseCreatures)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions (initAchievementsRegistry, checkAchievementUnlocks)

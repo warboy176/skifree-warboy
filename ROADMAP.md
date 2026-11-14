@@ -1371,7 +1371,7 @@ Operator direction from the daily report lands here.
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Initialize a biomeProgress counter starting at 0 in the game state
-- [ ] Create a function to update biomeProgress based on player distance traveled each frame
+- [x] Create a function to update biomeProgress based on player distance traveled each frame
 - [ ] Define biome transition thresholds as an array of distance values in the game state
 - [ ] Add a function to check if biomeProgress has crossed a threshold and trigger a biome change
 - [ ] Implement a single, self-contained biome change function that updates the visual style and terrain behavior
