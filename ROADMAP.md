@@ -1374,7 +1374,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to update biomeProgress based on player distance traveled each frame
 - [x] Define biome transition thresholds as an array of distance values in the game state
 - [!] Add a function to check if biomeProgress has crossed a threshold and trigger a biome change  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Implement a single, self-contained biome change function that updates the visual style and terrain behavior
+- [!] Implement a single, self-contained biome change function that updates the visual style and terrain behavior  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a foundation function to draw original code-drawn lodge-to-slope transition art using pixel-perfect canvas primitives
 - [ ] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
 - [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
