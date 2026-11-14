@@ -1365,5 +1365,6 @@ Operator direction from the daily report lands here.
 - [x] Add a function to render the style score in the HUD using Warboy's original pixel-art font and color scheme
 - [x] Add a function to render the active multiplier in the HUD using Warboy's original pixel-art font and color scheme
 - [!] Update the game loop to call both HUD rendering functions every frame  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
-- [ ] Trigger a visual feedback effect (e.g., screen shake or color pulse) when a multiplier is achieved or broken
+- [ ] Add a screen shake effect triggered when a multiplier is achieved or broken
+- [ ] Implement a color pulse effect that activates on multiplier changes, using only original pixel art colors
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
