@@ -724,6 +724,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateChaseCreatures(dt);
+
 updateSnowWolfSpeed(dt);
 
 updateSnowWolfObstacle(dt);
@@ -12079,6 +12081,17 @@ function spawnChaseCreature() {
     });
   }
 }
+
+function updateChaseCreatures(dt) {
+  for (let i = game.chaseCreatures.length - 1; i >= 0; i--) {
+    const c = game.chaseCreatures[i];
+    c.y += c.speed * dt;
+    c.x -= 0.1 * dt;
+    if (c.x < 0) c.x = W;
+    if (c.y > H) game.chaseCreatures.splice(i, 1);
+  }
+}
+
 
 
 
