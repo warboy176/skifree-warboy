@@ -1360,7 +1360,7 @@ Operator direction from the daily report lands here.
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, drawn in code
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition as player descends
 - [x] Add a style score counter that increments when the player passes close to an NPC skier or hazard without collision
-- [ ] Implement a multiplier system that increases when the player maintains close proximity to NPCs or hazards in sequence
+- [x] Implement a multiplier system that increases when the player maintains close proximity to NPCs or hazards in sequence
 - [ ] Apply a penalty to the style score and reset the multiplier when the player hits a tree or crashes on oil
 - [ ] Display the current style score and active multiplier in the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Trigger a visual feedback effect (e.g., screen shake or color pulse) when a multiplier is achieved or broken
