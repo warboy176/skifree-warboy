@@ -1370,7 +1370,11 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Add biome transition triggers based on player distance traveled, using a single integer counter for biome progression
+- [ ] Initialize a biomeProgress counter starting at 0 in the game state
+- [ ] Create a function to update biomeProgress based on player distance traveled each frame
+- [ ] Define biome transition thresholds as an array of distance values in the game state
+- [ ] Add a function to check if biomeProgress has crossed a threshold and trigger a biome change
+- [ ] Implement a single, self-contained biome change function that updates the visual style and terrain behavior
 - [ ] Implement a foundation function to draw original code-drawn lodge-to-slope transition art using pixel-perfect canvas primitives
 - [ ] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
 - [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
