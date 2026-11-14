@@ -686,6 +686,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateComboSystem(dt);
+
 removeCrashedNPCs(dt);
 
 checkPlayerTreeCollision();
@@ -12091,6 +12093,46 @@ function updateChaseCreatures(dt) {
     if (c.y > H) game.chaseCreatures.splice(i, 1);
   }
 }
+
+function updateComboSystem(dt) {
+  const now = Date.now();
+  const player = PlayerState;
+  let inProximity = false;
+
+  // Check NPCs and hazards for proximity
+  for (let i = 0; i < game.npcSkiers.length; i++) {
+    const npc = game.npcSkiers[i];
+    const distance = Math.sqrt(Math.pow(player.x - npc.x, 2) + Math.pow(player.y - npc.y, 2));
+    if (distance < PROXIMITY_ACHIEVEMENT_RANGE) {
+      inProximity = true;
+      break;
+    }
+  }
+
+  if (!inProximity) {
+    for (let i = 0; i < game.chaseCreatures.length; i++) {
+      const creature = game.chaseCreatures[i];
+      const distance = Math.sqrt(Math.pow(player.x - creature.x, 2) + Math.pow(player.y - creature.y, 2));
+      if (distance < PROXIMITY_ACHIEVEMENT_RANGE) {
+        inProximity = true;
+        break;
+      }
+    }
+  }
+
+  // If player is moving and within proximity, increment combo
+  const playerMoving = Math.abs(player.x - player.lastX) > 0.1 || Math.abs(player.y - player.lastY) > 0.1;
+  if (playerMoving && inProximity) {
+    game.comboStreak++;
+    game.comboLastProximityTime = now;
+  }
+
+  // Reset combo if no proximity in window
+  if ((game.comboLastProximityTime === undefined || (now - game.comboLastProximityTime) > COMBO_STREAK_WINDOW_MS)) {
+    game.comboStreak = 0;
+  }
+}
+
 
 
 
