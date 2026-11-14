@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to render the active multiplier in the HUD using Warboy's original pixel-art font and color scheme (renderMultiplierHUD)
 - Add a function to render the style score in the HUD using Warboy's original pixel-art font and color scheme (renderStyleScoreHUD)
 - Apply a penalty to the style score and reset the multiplier when the player hits a tree or crashes on oil (applyPenaltyToStyleScoreAndResetMultiplier)
 - Implement a multiplier system that increases when the player maintains close proximity to NPCs or hazards in sequence (initComboSystem, updateComboSystem)
