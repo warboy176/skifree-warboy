@@ -9393,6 +9393,8 @@ function updateStyleScoringOnAction(actionType, timestamp) {
     game.styleScore += STYLE_ACTION_BASE_POINTS;
   }
 }
+applyStyleMultiplierAndCheckAchievements(Date.now());
+
 
 function spawnChaseAntagonistIfInactive() {
   if (game.lastPlayerActionTime + 30000 < Date.now() && game.chaseAntagonist.length === 0) {
@@ -12018,6 +12020,18 @@ function drawPlayerHeadAndTorso(ctx, playerState) {
   ctx.fillRect(playerState.x - 8, playerState.y - 16, 16, 24);
   ctx.strokeRect(playerState.x - 8, playerState.y - 16, 16, 24);
 }
+
+function applyStyleMultiplierAndCheckAchievements(timestamp) {
+  if (game.comboStreak >= COMBO_STREAK_THRESHOLD) {
+    game.styleMultiplier = Math.min(game.styleMultiplier + 0.1 * COMBO_STREAK_BONUS, DPR_CAP);
+  }
+  for (let i = 0; i < STYLE_SCORE_ACHIEVEMENT_THRESHOLDS.length; i++) {
+    if (game.styleScore >= STYLE_SCORE_ACHIEVEMENT_THRESHOLDS[i]) {
+      addDefaultAchievement(i);
+    }
+  }
+}
+
 
 
 
