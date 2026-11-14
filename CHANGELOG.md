@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to render the original code-drawn ski lodge at the start position using only canvas primitives (drawSkiLodge)
 - Define biome transition thresholds as an array of distance values in the game state (initBiomeThresholds)
 - Create a function to update biomeProgress based on player distance traveled each frame (updateBiomeProgress)
 - Initialize a biomeProgress counter starting at 0 in the game state (initBiomeProgress)
