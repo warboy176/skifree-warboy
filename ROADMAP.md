@@ -1345,6 +1345,9 @@ Operator direction from the daily report lands here.
 - [x] Add a function to draw the player's head and torso using original code-drawn pixel art in the default skin
 - [!] Add a function to switch the player's visual representation based on the selected skin, using only original code-drawn art  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Ensure the player's visual representation updates in real time during gameplay without affecting existing mechanics  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Ensure the skin selector is accessible from the start screen and remains active after restarts, with default selection on first use
+- [ ] Add a skin selector UI element to the start screen that displays at least one available skin preview
+- [ ] Implement persistent skin selection using localStorage, saving the user's choice across restarts
+- [ ] Set the default skin to the first available option when no prior selection exists
+- [ ] Ensure the selected skin is applied to the player character at game start and persists through restarts
 
 - [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
