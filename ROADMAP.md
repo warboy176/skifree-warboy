@@ -1369,7 +1369,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a color pulse effect that activates on multiplier changes, using only original pixel art colors  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
 
-- [ ] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
+- [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [ ] Implement dynamic terrain biome transitions (lodge → open slope → forest → night) with original code-drawn environmental shifts and ambient sound cues
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
 - [ ] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
