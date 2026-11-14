@@ -1370,6 +1370,10 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics and interactions
 
 - [x] Add original animated chase antagonist (Warboy's own creature design) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biome transitions (lodge → open slope → forest → night) with original code-drawn environmental shifts and ambient sound cues
+- [ ] Add biome transition triggers based on player distance traveled, using a single integer counter for biome progression
+- [ ] Implement a foundation function to draw original code-drawn lodge-to-slope transition art using pixel-perfect canvas primitives
+- [ ] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
+- [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
+- [ ] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
 - [ ] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
