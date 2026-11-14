@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to draw the player's head and torso using original code-drawn pixel art in the default skin (drawPlayerHeadAndTorso)
 - Implement localStorage persistence for the selected skin index, saving and loading the user's choice across sessions (saveSkinSelection, loadSkinSelection)
 - Integrate the new character icon rendering function into the skin selector's draw loop, ensuring it appears alongside existing icons (initCharacterIcons, drawCharacterIcons)
 - Integrate the new character icon drawing function into the skin selector UI rendering loop (initSkinSelectorNPCs, renderSkinSelectorNPCs)
