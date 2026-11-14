@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with data-driven unlock logic for new mechanics (initAchievementsRegistry, registerAchievementUnlock)
 - Introduce style-based scoring with multipliers for slaloming near NPCs and crashing through obstacles (initStyleScoringSystem, updateStyleScoringOnAction, applyStyleMultiplierAndCheckAchievements)
 - Implement terrain biome transitions (lodge → open slope → forest → night) with visual and audio shifts (initBiomeState, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist with unique movement pattern and visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
