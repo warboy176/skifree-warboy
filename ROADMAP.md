@@ -1362,7 +1362,7 @@ Operator direction from the daily report lands here.
 - [x] Add a style score counter that increments when the player passes close to an NPC skier or hazard without collision
 - [x] Implement a multiplier system that increases when the player maintains close proximity to NPCs or hazards in sequence
 - [x] Apply a penalty to the style score and reset the multiplier when the player hits a tree or crashes on oil
-- [ ] Add a function to render the style score in the HUD using Warboy's original pixel-art font and color scheme
+- [x] Add a function to render the style score in the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Add a function to render the active multiplier in the HUD using Warboy's original pixel-art font and color scheme
 - [ ] Update the game loop to call both HUD rendering functions every frame
 - [ ] Trigger a visual feedback effect (e.g., screen shake or color pulse) when a multiplier is achieved or broken
