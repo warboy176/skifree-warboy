@@ -1,4 +1,5 @@
 # Changelog
+- Add a style score counter that increments when the player passes close to an NPC skier or hazard without collision (initStyleScore, updateStyleScore, checkStyleScoreAchievement)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition as player descends (initBiomeState, updateBiomeTransition, addBiomeTintTransition)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, drawn in code (initChaseCreature, spawnChaseCreature, updateChaseCreatures)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics (initAchievementsRegistry, registerAchievementUnlock)
