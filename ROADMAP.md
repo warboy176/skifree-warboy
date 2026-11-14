@@ -1353,6 +1353,6 @@ Operator direction from the daily report lands here.
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
 - [x] Add original Warboy-designed chase antagonist with unique movement pattern and visual style
-- [ ] Implement terrain biome transitions (lodge → open slope → forest → night) with visual and audio shifts
+- [x] Implement terrain biome transitions (lodge → open slope → forest → night) with visual and audio shifts
 - [ ] Introduce style-based scoring with multipliers for slaloming near NPCs and crashing through obstacles
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics

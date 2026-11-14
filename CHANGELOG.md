@@ -1,4 +1,5 @@
 # Changelog
+- Implement terrain biome transitions (lodge → open slope → forest → night) with visual and audio shifts (initBiomeState, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist with unique movement pattern and visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Implement persistent skin selection using localStorage, saving the user's choice across restarts (saveSkinSelection, loadSkinSelection)
