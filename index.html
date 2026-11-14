@@ -286,6 +286,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+game.chaseCreatures = initChaseCreatures();
+
 initChaseCreature();
 
 initDroneHazard();
@@ -12137,6 +12139,19 @@ function applyPenaltyToStyleScoreAndResetMultiplier() {
     game.state.styleScore -= 10;
     game.state.styleMultiplier = 1.0;
 }
+
+function initChaseCreatures() {
+  game.chaseCreatures = [];
+  function chaseCreatureFactory(x, y) {
+    return {
+      x: x,
+      y: y,
+      speed: 0.5 * NPC_SKIER_SPEED,
+      active: true
+    };
+  }
+}
+
 
 
 
