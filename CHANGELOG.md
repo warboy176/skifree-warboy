@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist with unique movement pattern and visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Implement persistent skin selection using localStorage, saving the user's choice across restarts (saveSkinSelection, loadSkinSelection)
 - Add a skin selector UI element to the start screen that displays at least one available skin preview (initSkinSelectorState, drawSkinSelectorUI)
