@@ -286,6 +286,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initChaseCreature();
+
 initDroneHazard();
 
 initChaseAntagonistConstants();
@@ -12031,6 +12033,39 @@ function applyStyleMultiplierAndCheckAchievements(timestamp) {
     }
   }
 }
+
+function initChaseCreature() {
+  game.chaseCreatures = [];
+  game.chaseCreatureDraw = function(ctx) {
+    for (let i = 0; i < game.chaseCreatures.length; i++) {
+      const c = game.chaseCreatures[i];
+      ctx.fillStyle = '#8B4513';
+      ctx.fillRect(c.x, c.y, 20, 20);
+    }
+  };
+  game.chaseCreatureUpdate = function(dt) {
+    for (let i = 0; i < game.chaseCreatures.length; i++) {
+      const c = game.chaseCreatures[i];
+      if (c.type === 'chaser') {
+        const dx = game.player.x - c.x;
+        const dy = game.player.y - c.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > 0) {
+          c.x += (dx / dist) * c.speed * dt;
+          c.y += (dy / dist) * c.speed * dt;
+        }
+        c.speed += game.creatureSpeedAcceleration * dt;
+      }
+    }
+  };
+  game.chaseAntagonist = {
+    x: 100,
+    y: 100,
+    speed: 20,
+    type: 'chaser'
+  };
+}
+
 
 
 
