@@ -1378,7 +1378,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to render the original code-drawn ski lodge at the start position using only canvas primitives
 - [x] Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives
 - [!] Implement a state-driven draw loop that switches from lodge to scrolling slope art once skiing begins  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
+- [x] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
 - [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
 - [ ] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
