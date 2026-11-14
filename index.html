@@ -12141,15 +12141,22 @@ function applyPenaltyToStyleScoreAndResetMultiplier() {
 }
 
 function initChaseCreatures() {
-  game.chaseCreatures = [];
+  const chaseCreatures = [];
+  const speed = 0.5 * NPC_SKIER_SPEED;
+  
   function chaseCreatureFactory(x, y) {
     return {
-      x: x,
-      y: y,
-      speed: 0.5 * NPC_SKIER_SPEED,
+      x,
+      y,
+      speed,
       active: true
     };
   }
+  
+  game.chaseCreatures = chaseCreatures;
+  game.chaseCreatureFactory = chaseCreatureFactory;
+  
+  return chaseCreatures;
 }
 
 
