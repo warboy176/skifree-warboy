@@ -1819,6 +1819,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initForestBiomeState();
+
 initSkinSelectorNPCs();
 
 initWarboyCharacterIcons();
@@ -12198,6 +12200,13 @@ function drawLodgeToSlopeTransition(ctx, game) {
   ctx.lineTo(0, H - 100);
   ctx.stroke();
 }
+
+function initForestBiomeState() {
+    game.forestTrees = [];
+    game.forestTreeIntervalMeters = FOREST_BIOME_TREE_INTERVAL_METERS;
+    if (typeof game.lastForestBiomeTreeMeters !== 'number') game.lastForestBiomeTreeMeters = 0;
+}
+
 
 
 
