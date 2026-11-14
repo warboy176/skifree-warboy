@@ -717,6 +717,8 @@ updateSlosher(dt);
       // so a crash in that code can never freeze the game (it used to kill the frame loop)
       try{ updateVerticalDistance(simDt); }catch(__e){}
       try{ if(typeof spawnNPCs==='function') spawnNPCs(dt);
+spawnChaseCreature();
+
 spawnSnowWolfNPC();
 
 spawnDroneHazard();
@@ -12065,6 +12067,19 @@ function initChaseCreature() {
     type: 'chaser'
   };
 }
+
+function spawnChaseCreature() {
+  if (Math.random() < 0.02) {
+    const x = Math.random() * 800;
+    game.chaseCreatures.push({
+      x: x,
+      y: -100,
+      speed: 2.5,
+      type: 'warboy_snowstalker'
+    });
+  }
+}
+
 
 
 
