@@ -12413,6 +12413,17 @@ function updateBiomeVisualEffects(currentBiome) {
   }
 }
 
+function renderStyleComboFeedback() {
+  if (game.comboStreak >= 2) {
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(W - 100, HUD_H - 40, 100, 20);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '16px monospace';
+    ctx.fillText('X' + game.comboStreak, W - 100, HUD_H - 25);
+  }
+}
+
+
 
 
 
