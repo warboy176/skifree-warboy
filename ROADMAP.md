@@ -1417,5 +1417,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add the chase antagonist — a unique, original creature drawn in code — that spawns after 10 seconds of inactivity and pursues the player with increasing speed
 - [x] Implement dynamic terrain biomes: transition from open slope to forest at 500 meters, using original tree and snow patterns drawn in code
-- [ ] Introduce a style-based scoring system that rewards close slaloming around NPCs and drones, with real-time combo multipliers and visual feedback
+- [x] Introduce a style-based scoring system that rewards close slaloming around NPCs and drones, with real-time combo multipliers and visual feedback
 - [ ] Add a persistent achievements registry that automatically tracks and unlocks new achievements for every new hazard, NPC, or mechanic introduced
