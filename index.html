@@ -12207,6 +12207,40 @@ function initForestBiomeState() {
     if (typeof game.lastForestBiomeTreeMeters !== 'number') game.lastForestBiomeTreeMeters = 0;
 }
 
+function checkAchievementsOnGameEvent(eventType, eventData) {
+  if (eventType === 'forestProgress') {
+    const forestMeters = game.meters - game.lastForestBiomeTreeMeters;
+    if (forestMeters >= 1000) {
+      const achievement = game.achievements.find(a => a.id === 'Forest Fugitive');
+      if (achievement && !achievement.unlocked) {
+        achievement.active = true;
+        achievement.progress = Math.min(100, Math.floor(forestMeters / 10));
+        if (achievement.progress >= 100) {
+          achievement.unlocked = true;
+        }
+      }
+    }
+  } else if (eventType === 'nightSegmentComplete') {
+    const achievement = game.achievements.find(a => a.id === 'Night Runner');
+    if (achievement && !achievement.unlocked && game.nightSegmentCompleted) {
+      achievement.active = true;
+      achievement.progress = 100;
+      achievement.unlocked = true;
+    }
+  } else if (eventType === 'droneCrash') {
+    game.crashCount++;
+    const achievement = game.achievements.find(a => a.id === 'Crash King');
+    if (achievement && !achievement.unlocked) {
+      achievement.active = true;
+      achievement.progress = Math.min(100, Math.floor(game.crashCount / 5));
+      if (achievement.progress >= 100) {
+        achievement.unlocked = true;
+      }
+    }
+  }
+}
+
+
 
 
 
