@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that automatically tracks and unlocks new achievements for every new hazard, NPC, or mechanic introduced (initAchievementsRegistry, registerNewAchievementFor)
 - Introduce a style-based scoring system that rewards close slaloming around NPCs and drones, with real-time combo multipliers and visual feedback (initStyleScoringSystem, updateStyleScoring, renderStyleComboFeedback)
 - Implement dynamic terrain biomes: transition from open slope to forest at 500 meters, using original tree and snow patterns drawn in code (initBiomeData, addForestTransitionTrigger, addForestTrees)
 - Add the chase antagonist — a unique, original creature drawn in code — that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
