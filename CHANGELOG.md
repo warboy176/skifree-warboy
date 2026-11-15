@@ -1,4 +1,5 @@
 # Changelog
+- Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
 - Add a 'fast mode' toggle (F key) that increases player speed by 30% and reduces NPC skier speed by 20%, with a visual pulse effect and original sound cue (initFastModeState, toggleFastMode)
 - Introduce style-based scoring: award bonus points for slaloming close to NPC skiers (within 10px) and crashing through oil slicks, with a multiplier that resets on collision (initStyleScoringState, updateStyleScoring, registerStyleScoringAchievement)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with randomized placement (initForestBiomeTrees, addForestTrees, addForestTransitionTrigger)
