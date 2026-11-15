@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Ensure all biome transitions are seamless, independent, and do not interfere with existing game mechanics like scoring, obstacles, or player movement (initBiomeTransitions, updateBiomeTransitions, addBiomeTintTransition)
 - Ensure the visual effect uses only original art drawn in code, matching the existing pixel-art style and rendering pipeline (initNPCs, drawNPCs)
 - Implement a biome-specific visual effect renderer that draws new elements (e.g., dense trees, starlight) only when the current biome is active (initBiomeVisualEffects, updateBiomeVisualEffects)

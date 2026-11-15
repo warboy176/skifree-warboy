@@ -1412,5 +1412,5 @@ Operator direction from the daily report lands here.
 - [x] Implement a biome-specific visual effect renderer that draws new elements (e.g., dense trees, starlight) only when the current biome is active
 - [x] Ensure the visual effect uses only original art drawn in code, matching the existing pixel-art style and rendering pipeline
 - [x] Ensure all biome transitions are seamless, independent, and do not interfere with existing game mechanics like scoring, obstacles, or player movement
-- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos
+- [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups
