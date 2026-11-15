@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award bonus points for slaloming close to NPC skiers, crashing through obstacles, and landing jumps with precision (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues, transitioning smoothly as player descends (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
 - Add original animated chase antagonist (Warboy's own creature design) that appears after 10 seconds of inactivity, pursuing player with increasing speed and erratic pathing (initChaseAntagonist, updateChaseAntagonist, checkChaseAntagonistAchievement)
 - Add a persistent achievements registry that automatically tracks and unlocks new achievements for every new hazard, NPC, or mechanic introduced (initAchievementsRegistry, registerNewAchievementFor)
