@@ -1823,6 +1823,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initGroundTextureSwitcher();
+
 initSnowDensityState();
 
 initBiomeAudioCues();
@@ -12366,6 +12368,16 @@ function drawSnowDensity(ctx) {
     }
   }
 }
+
+function initGroundTextureSwitcher() {
+  game.groundTexturePatterns = [
+    [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true], // solid
+    [true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false], // crisscross
+    [Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5], // random
+    [true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false] // grid
+  ];
+}
+
 
 
 
