@@ -1823,6 +1823,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeVisualEffects();
+
 initGroundTextureSwitcher();
 
 initSnowDensityState();
@@ -12392,6 +12394,11 @@ function drawGroundTexture(ctx) {
     }
   }
 }
+
+function initBiomeVisualEffects() {
+    game.biomeVisualEffects = { forest: [], night: [] };
+}
+
 
 
 
