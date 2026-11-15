@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a ground texture switcher that changes the base snowfield pixel pattern at biome boundaries using only original code-drawn textures (initGroundTextureSwitcher, drawGroundTexture)
 - Implement a dynamic snow density effect by modifying the pixel art pattern of the background canvas using original code-drawn snowflakes and texture variations (initSnowDensityState, updateSnowDensity, drawSnowDensity)
 - Add a biome transition system that triggers at fixed distance intervals, updating the background style without altering existing game mechanics (initBiomeThresholds, updateBiomeTransition, addBiomeTintTransition)
 - Introduce a new ambient audio cue for each biome transition, triggered only when crossing a distance threshold, using Web Audio API with original sound design (initBiomeAudioCues, triggerBiomeTransitionAudio)
