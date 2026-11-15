@@ -12438,6 +12438,17 @@ function registerNewAchievementFor(hazardType, achievementId) {
   }
 }
 
+function checkChaseAntagonistAchievement() {
+    if (game.chaseAntagonist.active && PlayerState.distance < 20) {
+        game.achievements.chaseEncounter++;
+        if (game.achievements.chaseEncounter >= 1) {
+            const achievementDef = ACHIEVEMENT_DEFINITIONS['Chase Encounter'];
+            registerNewAchievementFor('Chase Encounter');
+        }
+    }
+}
+
+
 
 
 
