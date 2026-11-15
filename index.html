@@ -12423,6 +12423,22 @@ function renderStyleComboFeedback() {
   }
 }
 
+function registerNewAchievementFor(hazardType, achievementId) {
+  if (!game.achievements.some(a => a.id === achievementId)) {
+    const achievementDef = ACHIEVEMENT_DEFINITIONS[achievementId];
+    if (achievementDef) {
+      game.achievements.push({
+        id: achievementId,
+        name: achievementDef.name,
+        description: achievementDef.description,
+        unlocked: false,
+        trigger: hazardType
+      });
+    }
+  }
+}
+
+
 
 
 
