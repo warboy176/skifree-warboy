@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking (initStyleScoring, updateStyleScoring, registerStyleAchievements)
 - Add a function to transition the game's visual style to the night biome when player reaches a threshold distance (initBiomeThresholds, updateBiomeTintTransition)
 - Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art (drawMoon)
 - Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows (initForestBiomeState, addForestTrees)
