@@ -1393,3 +1393,8 @@ Operator direction from the daily report lands here.
 - [x] Add a 'fast mode' toggle (F key) that increases player speed by 30% and reduces NPC skier speed by 20%, with a visual pulse effect and original sound cue
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, appearing after 30 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with original pixel art transitions and ambient audio cues
+- [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos
+- [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups
