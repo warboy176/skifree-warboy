@@ -1379,7 +1379,10 @@ Operator direction from the daily report lands here.
 - [x] Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives
 - [!] Implement a state-driven draw loop that switches from lodge to scrolling slope art once skiing begins  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
-- [ ] Add a third foundation function to draw original code-drawn night biome art with moon, stars, and reduced visibility effects
+- [ ] Add a function to draw a procedurally generated night sky with randomly placed stars using original code-drawn pixels
+- [ ] Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art
+- [ ] Add a function to apply a global dimming overlay that reduces visibility and contrasts during night biome
+- [ ] Add a function to transition the game's visual style to the night biome when player reaches a threshold distance
 - [ ] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
 - [ ] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
