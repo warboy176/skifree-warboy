@@ -1821,6 +1821,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initBiomeAudioCues();
+
 initStyleScoringState();
 
 initForestBiomeState();
@@ -12288,6 +12290,24 @@ function updateAntagonistVisibility(dt) {
     ctx.fillRect(player.x + 100, player.y + 20, 6, 6);
   }
 }
+
+function initBiomeAudioCues() {
+  game.biomeAudioCues = [];
+  const thresholds = game.biomeThresholds;
+  if (!thresholds || !Array.isArray(thresholds)) return;
+  
+  for (let i = 0; i < thresholds.length; i++) {
+    const biomeId = thresholds[i].biomeId;
+    const thresholdMeters = thresholds[i].thresholdMeters;
+    
+    game.biomeAudioCues.push({
+      biomeId: biomeId,
+      thresholdMeters: thresholdMeters,
+      audioBuffer: null
+    });
+  }
+}
+
 
 
 
