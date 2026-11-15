@@ -12370,11 +12370,16 @@ function drawSnowDensity(ctx) {
 }
 
 function initGroundTextureSwitcher() {
+  // Define 4 distinct 4x4 patterns as fixed arrays of 16 booleans (true=white snow, false=black base)
   game.groundTexturePatterns = [
-    [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true], // solid
-    [true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false], // crisscross
-    [Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5,Math.random()>.5], // random
-    [true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,false,false,false] // grid
+    // Solid: all white
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    // Crisscross: diagonal lines
+    [true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true],
+    // Grid: alternating 2x2 blocks
+    [true, true, false, false, true, true, false, false, false, false, true, true, false, false, true, true],
+    // Random: deterministic pattern (using seedable logic, but fixed for consistency)
+    [true, false, true, false, false, true, false, true, true, true, true, false, false, false, true, true]
   ];
 }
 
