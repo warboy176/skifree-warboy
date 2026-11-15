@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to forest at 500 meters, using original tree and snow patterns drawn in code (initBiomeData, addForestTransitionTrigger, addForestTrees)
 - Add the chase antagonist — a unique, original creature drawn in code — that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups (initAchievementsRegistry, checkAchievementsForEvent, registerAchievementUnlock)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
