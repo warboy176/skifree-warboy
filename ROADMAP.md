@@ -1388,6 +1388,6 @@ Operator direction from the daily report lands here.
 - [x] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
 
 - [x] Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed
-- [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with randomized placement
+- [x] Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with randomized placement
 - [ ] Introduce style-based scoring: award bonus points for slaloming close to NPC skiers (within 10px) and crashing through oil slicks, with a multiplier that resets on collision
 - [ ] Add a 'fast mode' toggle (F key) that increases player speed by 30% and reduces NPC skier speed by 20%, with a visual pulse effect and original sound cue

@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to dense forest at 500 meters, using original tree sprites drawn in code with randomized placement (initForestBiomeTrees, addForestTrees, addForestTransitionTrigger)
 - Add original Warboy-designed chase antagonist (a pixel-art snow-wolf with glowing eyes) that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initSnowWolf, spawnSnowWolfIfInactive, updateSnowWolf)
 - Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones) (initAchievementsRegistry, checkAchievementsOnGameEvent)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking (initStyleScoring, updateStyleScoring, registerStyleAchievements)
