@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the visual effect uses only original art drawn in code, matching the existing pixel-art style and rendering pipeline (initNPCs, drawNPCs)
 - Implement a biome-specific visual effect renderer that draws new elements (e.g., dense trees, starlight) only when the current biome is active (initBiomeVisualEffects, updateBiomeVisualEffects)
 - Add biome transition detection that triggers when player.y exceeds a threshold specific to each biome (initBiomeThresholds, checkBiomeTransition)
 - Introduce a ground texture switcher that changes the base snowfield pixel pattern at biome boundaries using only original code-drawn textures (initGroundTextureSwitcher, drawGroundTexture)
