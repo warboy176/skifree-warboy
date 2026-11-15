@@ -12272,6 +12272,16 @@ function calculateAntagonistSpawnY(playerY) {
   return playerY - NPC_SKIER_HEIGHT - NPC_SPAWN_SPACING;
 }
 
+function setAntagonistVelocityToScrollRate() {
+  if (game.npcSkiers.length > 0 && !game.npcSkiers[0].velocitySet) {
+    const snowWolf = game.npcSkiers[0];
+    const newSpeed = NPC_SKIER_SPEED * (1 + game.elapsedTimeMs / 10000);
+    snowWolf.velocity = newSpeed * game.scrollRate;
+    snowWolf.velocitySet = true;
+  }
+}
+
+
 
 
 
