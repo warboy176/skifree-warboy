@@ -1420,7 +1420,7 @@ Operator direction from the daily report lands here.
 - [x] Introduce a style-based scoring system that rewards close slaloming around NPCs and drones, with real-time combo multipliers and visual feedback
 - [x] Add a persistent achievements registry that automatically tracks and unlocks new achievements for every new hazard, NPC, or mechanic introduced
 
-- [ ] Add original animated chase antagonist (Warboy's own creature design) that appears after 10 seconds of inactivity, pursuing player with increasing speed and erratic pathing
+- [x] Add original animated chase antagonist (Warboy's own creature design) that appears after 10 seconds of inactivity, pursuing player with increasing speed and erratic pathing
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues, transitioning smoothly as player descends
 - [ ] Introduce style-based scoring: award bonus points for slaloming close to NPC skiers, crashing through obstacles, and landing jumps with precision
 - [ ] Create a persistent achievements registry with new entries for each biome completed, style score milestones, and chase antagonist evasion feats — all in Warboy's original wit and art

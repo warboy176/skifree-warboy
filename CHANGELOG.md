@@ -1,4 +1,5 @@
 # Changelog
+- Add original animated chase antagonist (Warboy's own creature design) that appears after 10 seconds of inactivity, pursuing player with increasing speed and erratic pathing (initChaseAntagonist, updateChaseAntagonist, checkChaseAntagonistAchievement)
 - Add a persistent achievements registry that automatically tracks and unlocks new achievements for every new hazard, NPC, or mechanic introduced (initAchievementsRegistry, registerNewAchievementFor)
 - Introduce a style-based scoring system that rewards close slaloming around NPCs and drones, with real-time combo multipliers and visual feedback (initStyleScoringSystem, updateStyleScoring, renderStyleComboFeedback)
 - Implement dynamic terrain biomes: transition from open slope to forest at 500 meters, using original tree and snow patterns drawn in code (initBiomeData, addForestTransitionTrigger, addForestTrees)
