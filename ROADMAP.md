@@ -1382,7 +1382,7 @@ Operator direction from the daily report lands here.
 - [!] Add a function to draw a procedurally generated night sky with randomly placed stars using original code-drawn pixels  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art
 - [!] Add a function to apply a global dimming overlay that reduces visibility and contrasts during night biome  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to transition the game's visual style to the night biome when player reaches a threshold distance
+- [x] Add a function to transition the game's visual style to the night biome when player reaches a threshold distance
 - [ ] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
 - [ ] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
