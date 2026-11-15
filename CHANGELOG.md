@@ -1,4 +1,5 @@
 # Changelog
+- Add the chase antagonist — a unique, original creature drawn in code — that spawns after 10 seconds of inactivity and pursues the player with increasing speed (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups (initAchievementsRegistry, checkAchievementsForEvent, registerAchievementUnlock)
 - Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Ensure all biome transitions are seamless, independent, and do not interfere with existing game mechanics like scoring, obstacles, or player movement (initBiomeTransitions, updateBiomeTransitions, addBiomeTintTransition)
