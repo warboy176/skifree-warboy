@@ -12399,6 +12399,21 @@ function initBiomeVisualEffects() {
     game.biomeVisualEffects = { forest: [], night: [] };
 }
 
+function updateBiomeVisualEffects(currentBiome) {
+  if (currentBiome === 'forest') {
+    game.biomeVisualEffects.forest.forEach(tree => {
+      addTree(tree.x, tree.y);
+    });
+  } else if (currentBiome === 'night') {
+    game.biomeVisualEffects.night.forEach(pattern => {
+      const ctx = game.ctx;
+      ctx.fillStyle = 'white';
+      ctx.fillRect(pattern.x, pattern.y, 1, 1);
+    });
+  }
+}
+
+
 
 
 
