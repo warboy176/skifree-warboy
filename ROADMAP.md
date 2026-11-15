@@ -1394,7 +1394,7 @@ Operator direction from the daily report lands here.
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
-- [ ] Define a new Warboy-original chase antagonist sprite using only code-drawn pixels, with a distinct visual style that differentiates it from skiers and obstacles
+- [x] Define a new Warboy-original chase antagonist sprite using only code-drawn pixels, with a distinct visual style that differentiates it from skiers and obstacles
 - [ ] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after exactly 30 seconds of no input
 - [ ] Add a function to spawn the antagonist at a fixed distance behind the player when triggered, with initial position and velocity set to match the slope's scroll rate
 - [ ] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
