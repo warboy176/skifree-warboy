@@ -12308,6 +12308,30 @@ function initBiomeAudioCues() {
   }
 }
 
+function triggerBiomeTransitionAudio(playerMeters) {
+    if (!game.biomeAudioCues || !game.audioContext) return;
+    
+    const thresholds = game.biomeThresholds;
+    const lastMeters = game.lastMeters || 0;
+    
+    for (let i = 0; i < thresholds.length; i++) {
+        const thresholdMeters = thresholds[i];
+        if (lastMeters <= thresholdMeters && playerMeters > thresholdMeters) {
+            const audioBuffer = game.biomeAudioCues[i];
+            if (audioBuffer) {
+                const source = game.audioContext.createBufferSource();
+                source.buffer = audioBuffer;
+                source.connect(game.audioContext.destination);
+                source.start(0);
+            }
+            break;
+        }
+    }
+    
+    game.lastMeters = playerMeters;
+}
+
+
 
 
 
