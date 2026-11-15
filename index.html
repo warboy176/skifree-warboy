@@ -12443,7 +12443,7 @@ function checkChaseAntagonistAchievement() {
         game.achievements.chaseEncounter++;
         if (game.achievements.chaseEncounter >= 1) {
             const achievementDef = ACHIEVEMENT_DEFINITIONS['Chase Encounter'];
-            registerNewAchievementFor('Chase Encounter');
+            registerNewAchievementFor('Chase Encounter', 'Chase Encounter');
         }
     }
 }
