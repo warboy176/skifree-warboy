@@ -1819,6 +1819,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initStyleScoringState();
+
 initForestBiomeState();
 
 initSkinSelectorNPCs();
@@ -12239,6 +12241,16 @@ function checkAchievementsOnGameEvent(eventType, eventData) {
     }
   }
 }
+
+function initStyleScoringState() {
+  game.styleScoring = {
+    score: 0,
+    multiplier: 1,
+    lastEventTime: 0,
+    comboStreak: 0
+  };
+}
+
 
 
 
