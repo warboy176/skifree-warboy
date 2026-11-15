@@ -688,6 +688,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateSnowDensity(dt);
+
 updateAntagonistVisibility(dt);
 
 updateComboSystem(dt);
@@ -12337,6 +12339,22 @@ function initSnowDensityState() {
   game.snowDensity = 0.5;
   game.snowflakePattern = [];
 }
+
+function updateSnowDensity(dt) {
+    game.snowDensity = Math.min(1, Math.max(0, game.snowDensity + dt * 0.001));
+    if (game.snowDensity > 0.3) {
+        const count = Math.min(5, Math.floor(Math.random() * 6));
+        for (let i = 0; i < count; i++) {
+            game.snowflakePattern.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                size: 1 + Math.random() * 2,
+                opacity: 0.3 + Math.random() * 0.5
+            });
+        }
+    }
+}
+
 
 
 
