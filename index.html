@@ -12273,12 +12273,11 @@ function calculateAntagonistSpawnY(playerY) {
 }
 
 function setAntagonistVelocityToScrollRate() {
-  if (game.npcSkiers.length > 0 && !game.npcSkiers[0].velocitySet) {
-    const snowWolf = game.npcSkiers[0];
-    const newSpeed = NPC_SKIER_SPEED * (1 + game.elapsedTimeMs / 10000);
-    snowWolf.velocity = newSpeed * game.scrollRate;
-    snowWolf.velocitySet = true;
-  }
+  if (game.npcSkiers.length === 0) return;
+  const firstSkier = game.npcSkiers[0];
+  firstSkier.speed = NPC_SKIER_SPEED * game.scrollRate;
+  // Mark as initialized to prevent re-setting
+  firstSkier.velocitySet = true;
 }
 
 
