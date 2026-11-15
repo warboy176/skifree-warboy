@@ -1394,7 +1394,11 @@ Operator direction from the daily report lands here.
 
 - [x] Grow the achievements registry to cover the current scorable interactions (quality-audit)
 
-- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, appearing after 30 seconds of inactivity
+- [ ] Define a new Warboy-original chase antagonist sprite using only code-drawn pixels, with a distinct visual style that differentiates it from skiers and obstacles
+- [ ] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after exactly 30 seconds of no input
+- [ ] Add a function to spawn the antagonist at a fixed distance behind the player when triggered, with initial position and velocity set to match the slope's scroll rate
+- [ ] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
+- [ ] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with original pixel art transitions and ambient audio cues
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups
