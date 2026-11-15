@@ -12355,6 +12355,18 @@ function updateSnowDensity(dt) {
     }
 }
 
+function drawSnowDensity(ctx) {
+  for (let i = 0; i < game.snowflakePattern.length; i++) {
+    const flake = game.snowflakePattern[i];
+    if (flake.x >= 0 && flake.x <= ctx.canvas.width && flake.y >= 0 && flake.y <= ctx.canvas.height) {
+      ctx.globalAlpha = flake.a;
+      ctx.fillStyle = 'white';
+      ctx.fillRect(flake.x, flake.y, flake.s, flake.s);
+    }
+  }
+}
+
+
 
 
 
