@@ -1380,7 +1380,7 @@ Operator direction from the daily report lands here.
 - [!] Implement a state-driven draw loop that switches from lodge to scrolling slope art once skiing begins  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows
 - [!] Add a function to draw a procedurally generated night sky with randomly placed stars using original code-drawn pixels  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art
+- [x] Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art
 - [ ] Add a function to apply a global dimming overlay that reduces visibility and contrasts during night biome
 - [ ] Add a function to transition the game's visual style to the night biome when player reaches a threshold distance
 - [ ] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones

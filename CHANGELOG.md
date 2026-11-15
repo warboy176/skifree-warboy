@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to draw a single, original code-drawn moon with soft glow effect using vector-based pixel art (drawMoon)
 - Add a second foundation function to draw original code-drawn forest biome art with trees, snow depth, and ambient shadows (initForestBiomeState, addForestTrees)
 - Add a function to draw the transition from the lodge to the first slope segment with pixel-perfect line and shape primitives (drawLodgeToSlopeTransition)
 - Add a function to render the original code-drawn ski lodge at the start position using only canvas primitives (drawSkiLodge)
