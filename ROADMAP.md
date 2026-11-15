@@ -1401,7 +1401,7 @@ Operator direction from the daily report lands here.
 - [x] Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope
 - [x] Integrate the antagonist spawn function into the game loop with proper triggering logic
 - [x] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
-- [ ] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
+- [x] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with original pixel art transitions and ambient audio cues
 - [ ] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps with multipliers for combos
 - [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics, including original witty names and visual popups

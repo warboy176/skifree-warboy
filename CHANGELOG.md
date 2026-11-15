@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing (initAntagonistState, updateAntagonistVisibility)
 - Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior (initNPCs, spawnNPCs, updateNPCs)
 - Integrate the antagonist spawn function into the game loop with proper triggering logic (initNPCs, spawnNPCs, updateNPCs)
 - Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope (setAntagonistVelocityToScrollRate)
