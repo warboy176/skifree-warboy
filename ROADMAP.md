@@ -1398,7 +1398,7 @@ Operator direction from the daily report lands here.
 - [x] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after exactly 30 seconds of no input
 - [!] Add a function to track the player's vertical position and trigger antagonist spawn when distance behind exceeds threshold  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a function to calculate the antagonist's initial spawn position based on the player's current y-position minus fixed offset
-- [ ] Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope
+- [x] Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope
 - [ ] Integrate the antagonist spawn function into the game loop with proper triggering logic
 - [ ] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
 - [ ] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
