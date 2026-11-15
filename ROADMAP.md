@@ -1396,7 +1396,10 @@ Operator direction from the daily report lands here.
 
 - [x] Define a new Warboy-original chase antagonist sprite using only code-drawn pixels, with a distinct visual style that differentiates it from skiers and obstacles
 - [x] Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after exactly 30 seconds of no input
-- [ ] Add a function to spawn the antagonist at a fixed distance behind the player when triggered, with initial position and velocity set to match the slope's scroll rate
+- [ ] Add a function to track the player's vertical position and trigger antagonist spawn when distance behind exceeds threshold
+- [ ] Implement a function to calculate the antagonist's initial spawn position based on the player's current y-position minus fixed offset
+- [ ] Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope
+- [ ] Integrate the antagonist spawn function into the game loop with proper triggering logic
 - [ ] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
 - [ ] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
 - [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with original pixel art transitions and ambient audio cues
