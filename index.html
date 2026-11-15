@@ -688,6 +688,8 @@ triggerEatenState();
     const simDt=Math.min(dt,.04)*(fastMode?2:1);
     if(game.state===GameState.PLAYING){
       updatePlayer(simDt);
+updateAntagonistVisibility(dt);
+
 updateComboSystem(dt);
 
 removeCrashedNPCs(dt);
@@ -12279,6 +12281,14 @@ function setAntagonistVelocityToScrollRate() {
   // Mark as initialized to prevent re-setting
   firstSkier.velocitySet = true;
 }
+
+function updateAntagonistVisibility(dt) {
+  if (game.antagonist.active) {
+    ctx.fillStyle = 'black';
+    ctx.fillRect(player.x + 100, player.y + 20, 6, 6);
+  }
+}
+
 
 
 
