@@ -1403,7 +1403,7 @@ Operator direction from the daily report lands here.
 - [x] Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior
 - [x] Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing
 - [x] Add biome transition logic that changes terrain style at fixed distance intervals, using only existing canvas drawing functions and original pixel art
-- [ ] Introduce a new ambient audio cue for each biome transition, triggered only when crossing a distance threshold, using Web Audio API with original sound design
+- [x] Introduce a new ambient audio cue for each biome transition, triggered only when crossing a distance threshold, using Web Audio API with original sound design
 - [ ] Implement visual terrain style changes (e.g., snow density, ground texture) via dynamic pixel art updates to the scrolling background, using only original code-drawn assets
 - [ ] Add a new biome-specific visual effect (e.g., tree density increase in forest, starlight in night) that activates only when the player enters that biome, using existing rendering pipeline
 - [ ] Ensure all biome transitions are seamless, independent, and do not interfere with existing game mechanics like scoring, obstacles, or player movement

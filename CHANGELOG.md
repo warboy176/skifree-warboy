@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a new ambient audio cue for each biome transition, triggered only when crossing a distance threshold, using Web Audio API with original sound design (initBiomeAudioCues, triggerBiomeTransitionAudio)
 - Add biome transition logic that changes terrain style at fixed distance intervals, using only existing canvas drawing functions and original pixel art (initBiomeState, updateBiomeTransition, drawBiomeTransition)
 - Ensure the antagonist is drawn only when active and does not interfere with existing collision logic or game loop timing (initAntagonistState, updateAntagonistVisibility)
 - Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior (initNPCs, spawnNPCs, updateNPCs)
