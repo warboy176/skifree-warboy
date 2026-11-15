@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to calculate the antagonist's initial spawn position based on the player's current y-position minus fixed offset (initNPCs, calculateAntagonistSpawnY)
 - Implement a state machine for the antagonist that tracks player inactivity and triggers appearance after exactly 30 seconds of no input (initAntagonistState, updateAntagonistState, spawnAntagonistIfTriggered)
 - Define a new Warboy-original chase antagonist sprite using only code-drawn pixels, with a distinct visual style that differentiates it from skiers and obstacles (initChaseAntagonist, drawChaseAntagonist, updateChaseAntagonist)
 - Grow the achievements registry to cover the current scorable interactions (quality-audit) (initAchievementsRegistry, registerScorableInteractions)
