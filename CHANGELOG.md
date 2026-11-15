@@ -1,4 +1,5 @@
 # Changelog
+- Create a movement pattern function where the antagonist advances toward the player at increasing speed based on time elapsed since spawn, with jittery lateral motion to simulate pursuit behavior (initNPCs, spawnNPCs, updateNPCs)
 - Integrate the antagonist spawn function into the game loop with proper triggering logic (initNPCs, spawnNPCs, updateNPCs)
 - Create a function to set the antagonist's initial velocity to match the current scroll rate of the slope (setAntagonistVelocityToScrollRate)
 - Implement a function to calculate the antagonist's initial spawn position based on the player's current y-position minus fixed offset (initNPCs, calculateAntagonistSpawnY)
