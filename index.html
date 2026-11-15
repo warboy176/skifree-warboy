@@ -12383,6 +12383,17 @@ function initGroundTextureSwitcher() {
   ];
 }
 
+function drawGroundTexture(ctx) {
+  const pattern = game.groundTexturePatterns[game.groundTextureIndex];
+  for (let y = 0; y < 4; y++) {
+    for (let x = 0; x < 4; x++) {
+      ctx.fillStyle = pattern[y][x] ? '#ffffff' : '#000000';
+      ctx.fillRect(x * 4, y * 4, 4, 4);
+    }
+  }
+}
+
+
 
 
 
