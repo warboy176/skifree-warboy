@@ -1385,4 +1385,4 @@ Operator direction from the daily report lands here.
 - [x] Add a function to transition the game's visual style to the night biome when player reaches a threshold distance
 - [!] Integrate ambient sound cues that trigger at biome transition points using Web Audio API with original synthesized tones  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [x] Introduce style-based scoring: award points for slaloming close to NPCs, crashing through obstacles, and landing jumps, with visual feedback and multiplier tracking
-- [ ] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
+- [x] Create a persistent achievements registry with new Warboy-style unlocks tied to new mechanics: 'Forest Fugitive' (survive 5 forest zones), 'Night Runner' (complete 1 night segment), 'Crash King' (crash through 3 drones)
