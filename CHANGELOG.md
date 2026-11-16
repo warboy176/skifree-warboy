@@ -1,4 +1,5 @@
 # Changelog
+- Add a persistent achievements registry that auto-updates with new counters for NPC skiers hit, drones dodged, and jumps landed, with witty unlock messages in Warboy's original voice (initAchievementsRegistry, updateAchievementsOnEvent, registerAchievementEvent)
 - Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive near-misses and penalties for collisions (initNPCs, updateStyleScoring)
 - Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, rendering with original tree sprites and ambient lighting (initBiomeState, addForestTransitionTrigger, addForestTrees)
 - Increase the snow-demon's speed over time to simulate escalating threat, updating every frame (updateSnowDemonSpeed)
