@@ -12494,6 +12494,15 @@ function initSnowDemonSpawnTimer() {
   game.inactivityTimerThresholdMs = 30000;
 }
 
+function updateSnowDemonSpawnTimer(dt) {
+    game.inactivityTimerMs += dt;
+    if (game.inactivityTimerMs >= game.inactivityTimerThresholdMs) {
+        addSnowDemonToObstacles();
+        game.inactivityTimerMs = 0;
+    }
+}
+
+
 
 
 
