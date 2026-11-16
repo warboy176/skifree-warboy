@@ -1425,7 +1425,11 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award bonus points for slaloming close to NPC skiers, crashing through obstacles, and landing jumps with precision
 - [x] Create a persistent achievements registry with new entries for each biome completed, style score milestones, and chase antagonist evasion feats — all in Warboy's original wit and art
 
-- [ ] Add original Warboy-designed chase antagonist (a glitchy, skittering snow-demon) that spawns after 30 seconds of inactivity and pursues the player with increasing speed
+- [ ] Define the Warboy-designed snow-demon sprite using original code-drawn pixel art in the canvas context
+- [ ] Implement a timer that tracks player inactivity and triggers snow-demon spawn after 30 seconds of no input
+- [ ] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
+- [ ] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed
+- [ ] Increase the snow-demon's speed over time to simulate escalating threat, updating every frame
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, rendering with original tree sprites and ambient lighting
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive near-misses and penalties for collisions
 - [ ] Add a persistent achievements registry that auto-updates with new counters for NPC skiers hit, drones dodged, and jumps landed, with witty unlock messages in Warboy's original voice
