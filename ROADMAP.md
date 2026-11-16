@@ -1425,7 +1425,9 @@ Operator direction from the daily report lands here.
 - [x] Introduce style-based scoring: award bonus points for slaloming close to NPC skiers, crashing through obstacles, and landing jumps with precision
 - [x] Create a persistent achievements registry with new entries for each biome completed, style score milestones, and chase antagonist evasion feats — all in Warboy's original wit and art
 
-- [ ] Define the Warboy-designed snow-demon sprite using original code-drawn pixel art in the canvas context
+- [ ] Define the Warboy-designed snow-demon sprite as a function that draws a single, original pixel-art frame using only canvas fillRect and strokeRect operations
+- [ ] Add a simple animation loop to the snow-demon sprite that cycles through 2 distinct frames of the original pixel art design
+- [ ] Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing
 - [ ] Implement a timer that tracks player inactivity and triggers snow-demon spawn after 30 seconds of no input
 - [ ] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
 - [ ] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed
