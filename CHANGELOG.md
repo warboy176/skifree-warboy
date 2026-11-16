@@ -1,4 +1,5 @@
 # Changelog
+- Implement a foundation function to track player inactivity duration and trigger antagonist spawn after 30 seconds (initPlayerInactivityTracker, updatePlayerInactivityDuration)
 - Define a new Warboy-designed chase antagonist sprite using original code-drawn art with unique visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Create a persistent achievements registry with data-driven unlocks for new hazards and interactions (initAchievementsRegistry, checkAchievementUnlocks)
 - Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs (initNPCStyleData, updateStyleScore, registerStyleAchievements)
