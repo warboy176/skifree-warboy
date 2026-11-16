@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, rendering with original tree sprites and ambient lighting (initBiomeState, addForestTransitionTrigger, addForestTrees)
 - Increase the snow-demon's speed over time to simulate escalating threat, updating every frame (updateSnowDemonSpeed)
 - Implement basic pursuit logic where the snow-demon moves toward the player with a base speed (initSnowDemon, updateSnowDemon)
 - Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers (initSnowDemonSpawner, registerSnowDemonAchievement)
