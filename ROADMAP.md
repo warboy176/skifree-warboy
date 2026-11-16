@@ -1462,7 +1462,7 @@ Operator direction from the daily report lands here.
 - [x] Implement terrain biome transitions: open slope → forest → night → alpine, each with original art and changing background/obstacle patterns
 - [x] Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback
 - [x] Initialize a persistent achievements registry object in the global scope with an empty map of named counters
-- [ ] Add a function to increment a named achievement counter when a new hazard, NPC, or mechanic is first introduced during gameplay
+- [x] Add a function to increment a named achievement counter when a new hazard, NPC, or mechanic is first introduced during gameplay
 - [ ] Ensure each achievement is uniquely named and only counted once per session, using a set to track introduced mechanics
 - [ ] Implement a visual achievement badge system that displays a new badge only when a previously untracked hazard, NPC, or mechanic is first encountered during gameplay
 - [ ] Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics
