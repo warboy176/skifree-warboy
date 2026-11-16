@@ -734,6 +734,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateSnowDemonObstacle(obstacle, dt);
+
 spawnSnowDemonIfAppropriate(dt);
 
 updateChaseCreatures(dt);
@@ -12535,6 +12537,16 @@ function spawnSnowDemonIfAppropriate(dt) {
     });
   }
 }
+
+function updateSnowDemonObstacle(obstacle, dt) {
+  obstacle.x += (game.player.x - obstacle.x) * 0.005 * dt;
+  obstacle.y += (game.player.y - obstacle.y) * 0.005 * dt;
+  const distance = Math.sqrt(Math.pow(game.player.x - obstacle.x, 2) + Math.pow(game.player.y - obstacle.y, 2));
+  if (distance < 100) {
+    game.onPlayerHit('snowDemon');
+  }
+}
+
 
 
 
