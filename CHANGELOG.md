@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and combo chains (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends (initBiomeState, updateBiomeTransition)
 - Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, using code-drawn art only (initChaseCreature, spawnChaseCreature, updateChaseCreatures)
 - Create a persistent achievements registry with new entries for each new mechanic: 'Tree Tango' (5 trees slalomed), 'Drone Derby' (10 drones dodged), 'Night Rider' (reach night biome), 'Jump King' (10 jumps landed) (initAchievementsRegistry, updateAchievementCounter)
