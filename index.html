@@ -12687,6 +12687,11 @@ function initAchievementTracking() {
     }
 }
 
+function checkAchievementUniqueness(achievementId) {
+    return !game.unlockedAchievements.has(achievementId);
+}
+
+
 
 
 
