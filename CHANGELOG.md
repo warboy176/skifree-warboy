@@ -1,4 +1,5 @@
 # Changelog
+- Create a persistent achievements registry with new entries for each new mechanic: 'Tree Tango' (5 trees slalomed), 'Drone Derby' (10 drones dodged), 'Night Rider' (reach night biome), 'Jump King' (10 jumps landed) (initAchievementsRegistry, updateAchievementCounter)
 - Introduce style-based scoring with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps with precision (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues (initBiomeState, updateBiomeTransition, drawBiomeBackground)
 - Integrate the antagonist into the game loop with collision detection and visual rendering, ensuring it does not interfere with existing mechanics (initSnowWolf, updateSnowWolf, drawSnowWolf)
