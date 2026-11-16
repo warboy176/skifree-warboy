@@ -12518,6 +12518,8 @@ function updateSnowDemonSpawnTimer(dt) {
     game.inactivityTimerMs += dt;
     if (game.inactivityTimerMs >= game.inactivityTimerThresholdMs) {
         addSnowDemonToObstacles();
+incrementAchievementCounter('first_hazard');
+
         game.inactivityTimerMs = 0;
     }
 }
@@ -12667,6 +12669,18 @@ function updateAchievementCounter(achievementType, increment) {
 function registerAchievementCounter(achievementKey, threshold, type) {
   ACHIEVEMENT_DEFINITIONS[achievementKey] = { threshold, type };
 }
+
+function incrementAchievementCounter(achievementKey) {
+  const achievement = game.achievements.find(a => a.key === achievementKey);
+  if (achievement) {
+    achievement.counter++;
+    if (achievement.counter >= achievement.threshold && !achievement.unlocked) {
+      achievement.unlocked = true;
+      game.unlockedAchievements.push(achievement.id);
+    }
+  }
+}
+
 
 
 
