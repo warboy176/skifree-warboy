@@ -1833,6 +1833,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initPlayerInactivityState();
+
 initPlayerInactivityTracker();
 
 initSnowDemonSpawner();
@@ -12644,6 +12646,12 @@ function updatePlayerInactivityDuration(dt) {
   }
   game.lastPlayerX = PlayerState.x;
 }
+
+function initPlayerInactivityState() {
+    game.playerInactivityStart = null;
+    game.playerInactivityDuration = 0;
+}
+
 
 
 
