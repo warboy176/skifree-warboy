@@ -1461,4 +1461,8 @@ Operator direction from the daily report lands here.
 - [x] Add the chase antagonist — a unique, original creature drawn in code — that spawns after a delay and pursues the player when they slow down, with distinct movement and visual design
 - [x] Implement terrain biome transitions: open slope → forest → night → alpine, each with original art and changing background/obstacle patterns
 - [x] Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback
-- [ ] Create a persistent achievements registry that auto-updates with new counters for every new hazard, NPC, or mechanic, using Warboy's original visual and narrative voice
+- [ ] Add a persistent achievements registry that tracks new hazards, NPCs, and mechanics as they are introduced, storing each as a unique, named counter with zero initial value
+- [ ] Implement a visual achievement badge system that displays a new badge only when a previously untracked hazard, NPC, or mechanic is first encountered during gameplay
+- [ ] Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics
+- [ ] Link each badge to a narrative tagline that reflects Warboy's voice, dynamically updating the tagline when the associated mechanic is first used
+- [ ] Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart
