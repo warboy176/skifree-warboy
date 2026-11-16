@@ -179,6 +179,7 @@ if (autoplay.enabled) {
   function update(dt) {
     // ... existing update logic ...
     checkPlayerCollisionWithSkiers(dt);
+    updateSnowDemonSpeed(dt);
   }
   // ---------------------------------------------------------------------------
   const player = {
@@ -12596,7 +12597,10 @@ function updateSnowDemon(dt) {
 }
 
 function updateSnowDemonSpeed(dt) {
-  game.snowDemon.speed = Math.min(game.snowDemon.speed + 0.001 * dt, MAX_SPEED);
+  if (game.snowDemon && game.snowDemon.speed < MAX_SPEED) {
+    game.snowDemon.speed += 0.001 * dt;
+    if (game.snowDemon.speed > MAX_SPEED) game.snowDemon.speed = MAX_SPEED;
+  }
 }
 
 
