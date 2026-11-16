@@ -1,4 +1,5 @@
 # Changelog
+- Initialize snow-demon spawn timer after 30 seconds of no input (initSnowDemonSpawnTimer, updateSnowDemonSpawnTimer)
 - Add inactivity timer state to track elapsed time since last input (initInactivityTimer, updateInactivityTimer)
 - Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing (initSnowDemonObstacles, addSnowDemonToObstacles)
 - Create a persistent achievements registry with new entries for each biome completed, style score milestones, and chase antagonist evasion feats — all in Warboy's original wit and art (initAchievementsRegistry, registerAchievement, checkAchievements)

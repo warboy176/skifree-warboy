@@ -1429,7 +1429,7 @@ Operator direction from the daily report lands here.
 - [!] Add a simple animation loop to the snow-demon sprite that cycles through 2 distinct frames of the original pixel art design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing
 - [x] Add inactivity timer state to track elapsed time since last input
-- [ ] Initialize snow-demon spawn timer after 30 seconds of no input
+- [x] Initialize snow-demon spawn timer after 30 seconds of no input
 - [ ] Create function to spawn snow-demon at player's current position when timer triggers
 - [ ] Ensure snow-demon is added to game obstacles and starts pursuing player
 - [ ] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
