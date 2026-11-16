@@ -12595,6 +12595,11 @@ function updateSnowDemon(dt) {
   }
 }
 
+function updateSnowDemonSpeed(dt) {
+  game.snowDemon.speed = Math.min(game.snowDemon.speed + 0.001 * dt, MAX_SPEED);
+}
+
+
 
 
 
