@@ -3810,6 +3810,8 @@ function initAchievements() {
   }
   game.achievements = {};
 }
+registerSnowDemonAchievement();
+
 registerStyleMultiplierAchievement();
 
 registerConsecutiveHitAchievement();
@@ -12557,6 +12559,19 @@ function initSnowDemonSpawner() {
         active: false
     };
 }
+
+function registerSnowDemonAchievement() {
+  const achievementDef = {
+    key: 'snow_demon_encounter',
+    type: 'hazard',
+    unlockThreshold: 1,
+    condition: () => game.enemiesDefeated >= 1,
+    unlockMessage: 'You\'ve met the snow demon'
+  };
+  
+  addDefaultAchievement(achievementDef);
+}
+
 
 
 
