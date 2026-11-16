@@ -1,4 +1,5 @@
 # Changelog
+- Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues (initBiomeState, updateBiomeTransition, drawBiomeBackground)
 - Integrate the antagonist into the game loop with collision detection and visual rendering, ensuring it does not interfere with existing mechanics (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Create a movement pattern function for the antagonist that follows the player with escalating speed and erratic behavior (initNPCs, updateAntagonistMovement)
 - Add a spawn condition that only activates when the player is not actively moving (no input for 30s) (initPlayerInactivityState, updatePlayerInactivityDuration)

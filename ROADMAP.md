@@ -1449,6 +1449,6 @@ Operator direction from the daily report lands here.
 - [x] Add a spawn condition that only activates when the player is not actively moving (no input for 30s)
 - [x] Create a movement pattern function for the antagonist that follows the player with escalating speed and erratic behavior
 - [x] Integrate the antagonist into the game loop with collision detection and visual rendering, ensuring it does not interfere with existing mechanics
-- [ ] Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues
+- [x] Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues
 - [ ] Introduce style-based scoring with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps with precision
 - [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Tree Tango' (5 trees slalomed), 'Drone Derby' (10 drones dodged), 'Night Rider' (reach night biome), 'Jump King' (10 jumps landed)
