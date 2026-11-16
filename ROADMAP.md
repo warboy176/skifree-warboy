@@ -1460,5 +1460,5 @@ Operator direction from the daily report lands here.
 
 - [x] Add the chase antagonist — a unique, original creature drawn in code — that spawns after a delay and pursues the player when they slow down, with distinct movement and visual design
 - [x] Implement terrain biome transitions: open slope → forest → night → alpine, each with original art and changing background/obstacle patterns
-- [ ] Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback
+- [x] Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback
 - [ ] Create a persistent achievements registry that auto-updates with new counters for every new hazard, NPC, or mechanic, using Warboy's original visual and narrative voice

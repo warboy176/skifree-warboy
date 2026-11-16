@@ -1,4 +1,5 @@
 # Changelog
+- Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement terrain biome transitions: open slope → forest → night → alpine, each with original art and changing background/obstacle patterns (initBiomeTransitions, updateBiomeProgress, addBiomeObstacleEvolution)
 - Add the chase antagonist — a unique, original creature drawn in code — that spawns after a delay and pursues the player when they slow down, with distinct movement and visual design (initSnowWolf, spawnSnowWolf, updateSnowWolf)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics, NPCs, and hazards (initAchievementsRegistry, registerAchievementUnlock)
