@@ -1,4 +1,5 @@
 # Changelog
+- Add the chase antagonist — a unique, original creature drawn in code — that spawns after a delay and pursues the player when they slow down, with distinct movement and visual design (initSnowWolf, spawnSnowWolf, updateSnowWolf)
 - Create a persistent achievements registry with data-driven unlock logic for new mechanics, NPCs, and hazards (initAchievementsRegistry, registerAchievementUnlock)
 - Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and combo chains (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends (initBiomeState, updateBiomeTransition)
