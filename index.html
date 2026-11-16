@@ -12652,6 +12652,19 @@ function initPlayerInactivityState() {
   game.playerInactivityDuration = 0;
 }
 
+function updateAchievementCounter(achievementType, increment) {
+  const achievement = game.achievements.find(a => a.type === achievementType);
+  if (!achievement || achievement.unlocked) return;
+  
+  achievement.counter += increment;
+  if (achievement.counter >= achievement.threshold) {
+    achievement.unlocked = true;
+    const message = UNLOCK_MESSAGES[achievement.type] || 'Achievement unlocked!';
+    displayAchievementUnlock(achievementType, message);
+  }
+}
+
+
 
 
 
