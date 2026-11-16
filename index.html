@@ -12681,6 +12681,13 @@ function incrementAchievementCounter(achievementKey) {
   }
 }
 
+function initAchievementTracking() {
+    if (!game.unlockedAchievements) {
+        game.unlockedAchievements = new Set();
+    }
+}
+
+
 
 
 
