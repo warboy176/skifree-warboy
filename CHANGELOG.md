@@ -1,4 +1,5 @@
 # Changelog
+- Add a spawn condition that only activates when the player is not actively moving (no input for 30s) (initPlayerInactivityState, updatePlayerInactivityDuration)
 - Implement a foundation function to track player inactivity duration and trigger antagonist spawn after 30 seconds (initPlayerInactivityTracker, updatePlayerInactivityDuration)
 - Define a new Warboy-designed chase antagonist sprite using original code-drawn art with unique visual style (initChaseAntagonist, spawnChaseAntagonist, updateChaseAntagonist)
 - Create a persistent achievements registry with data-driven unlocks for new hazards and interactions (initAchievementsRegistry, checkAchievementUnlocks)
