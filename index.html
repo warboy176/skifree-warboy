@@ -735,6 +735,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateAchievementsOnEvent('npcSkierHit', 1);
+
 updateSnowDemonObstacle(obstacle, dt);
 
 spawnSnowDemonIfAppropriate(dt);
@@ -12602,6 +12604,21 @@ function updateSnowDemonSpeed(dt) {
     if (game.snowDemon.speed > MAX_SPEED) game.snowDemon.speed = MAX_SPEED;
   }
 }
+
+function updateAchievementsOnEvent(eventType, value) {
+  for (const achievement of ACHIEVEMENT_DEFINITIONS) {
+    if (achievement.counterKey === eventType && value >= achievement.threshold) {
+      achievement.counter = (achievement.counter || 0) + 1;
+      if (achievement.counter >= achievement.threshold) {
+        achievement.unlocked = true;
+        const message = UNLOCK_MESSAGES[achievement.type] || 'Achievement unlocked!';
+        displayAchievementUnlock(achievement.type, message);
+        localStorage.setItem(EVENTLOG_KEY, JSON.stringify(ACHIEVEMENT_DEFINITIONS));
+      }
+    }
+  }
+}
+
 
 
 
