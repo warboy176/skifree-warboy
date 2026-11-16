@@ -1443,3 +1443,8 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes transitioning as player descends (e.g., forest → night → alpine)
 - [x] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [x] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
+
+- [ ] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, appearing after 30 seconds of inactivity
+- [ ] Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues
+- [ ] Introduce style-based scoring with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps with precision
+- [ ] Create a persistent achievements registry with new entries for each new mechanic: 'Tree Tango' (5 trees slalomed), 'Drone Derby' (10 drones dodged), 'Night Rider' (reach night biome), 'Jump King' (10 jumps landed)
