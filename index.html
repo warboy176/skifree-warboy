@@ -179,6 +179,7 @@ if (autoplay.enabled) {
   function update(dt) {
     // ... existing update logic ...
     checkPlayerCollisionWithSkiers(dt);
+    if (player.crashed) updateAchievementsOnEvent('npcSkierHit', 1);
     updateSnowDemonSpeed(dt);
   }
   // ---------------------------------------------------------------------------
@@ -735,7 +736,7 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
-updateAchievementsOnEvent('npcSkierHit', 1);
+
 
 updateSnowDemonObstacle(obstacle, dt);
 
