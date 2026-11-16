@@ -12583,6 +12583,19 @@ function initSnowDemon() {
   };
 }
 
+function updateSnowDemon(dt) {
+  if (game.snowDemon) {
+    const targetX = PlayerState.x;
+    if (targetX > game.snowDemon.x) {
+      game.snowDemon.x += NPC_SKIER_SPEED * dt;
+    } else {
+      game.snowDemon.x -= NPC_SKIER_SPEED * dt;
+    }
+    game.snowDemon.x = Math.max(0, Math.min(W, game.snowDemon.x));
+  }
+}
+
+
 
 
 
