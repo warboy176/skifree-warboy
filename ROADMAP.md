@@ -1447,7 +1447,7 @@ Operator direction from the daily report lands here.
 - [x] Define a new Warboy-designed chase antagonist sprite using original code-drawn art with unique visual style
 - [x] Implement a foundation function to track player inactivity duration and trigger antagonist spawn after 30 seconds
 - [x] Add a spawn condition that only activates when the player is not actively moving (no input for 30s)
-- [ ] Create a movement pattern function for the antagonist that follows the player with escalating speed and erratic behavior
+- [x] Create a movement pattern function for the antagonist that follows the player with escalating speed and erratic behavior
 - [ ] Integrate the antagonist into the game loop with collision detection and visual rendering, ensuring it does not interfere with existing mechanics
 - [ ] Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues
 - [ ] Introduce style-based scoring with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps with precision
