@@ -1833,6 +1833,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initPlayerInactivityTracker();
+
 initSnowDemonSpawner();
 
 initSnowDemonObstacles();
@@ -12627,6 +12629,11 @@ function initNPCStyleData() {
   COMBO_STREAK_THRESHOLD = 100;
   STYLE_ACTION_BASE_POINTS = 5;
 }
+
+function initPlayerInactivityTracker() {
+    game.playerInactivityStart = null;
+}
+
 
 
 
