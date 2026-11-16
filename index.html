@@ -12479,6 +12479,17 @@ function initInactivityTimer() {
     game.lastInputTime = performance.now();
 }
 
+function updateInactivityTimer(dt) {
+  if (game.lastInputTime) {
+    game.inactivityTimerMs += dt * 1000;
+    if (game.inactivityTimerMs > 5000) {
+      game.inactivityTimerMs = 0;
+      game.speed *= 0.9;
+    }
+  }
+}
+
+
 
 
 
