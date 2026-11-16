@@ -1823,6 +1823,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSnowDemonObstacles();
+
 initBiomeVisualEffects();
 
 initGroundTextureSwitcher();
@@ -12447,6 +12449,11 @@ function checkChaseAntagonistAchievement() {
         }
     }
 }
+
+function initSnowDemonObstacles() {
+    game.snowDemonObstacles = [];
+}
+
 
 
 
