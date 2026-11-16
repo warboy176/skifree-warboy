@@ -1464,7 +1464,7 @@ Operator direction from the daily report lands here.
 - [x] Initialize a persistent achievements registry object in the global scope with an empty map of named counters
 - [x] Add a function to increment a named achievement counter when a new hazard, NPC, or mechanic is first introduced during gameplay
 - [x] Ensure each achievement is uniquely named and only counted once per session, using a set to track introduced mechanics
-- [ ] Add a state to track which hazards, NPCs, and mechanics have been encountered, initialized at game start
+- [!] Add a state to track which hazards, NPCs, and mechanics have been encountered, initialized at game start  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Create a function to check if a new hazard, NPC, or mechanic has been encountered for the first time during gameplay
 - [ ] Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art
 - [ ] Ensure the badge appears only once per unique encounter and persists until the next game reset
