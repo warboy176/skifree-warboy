@@ -12474,6 +12474,12 @@ function addSnowDemonToObstacles() {
   });
 }
 
+function initInactivityTimer() {
+    game.inactivityTimerMs = 0;
+    game.lastInputTime = performance.now();
+}
+
+
 
 
 
