@@ -1,4 +1,5 @@
 # Changelog
+- Ensure snow-demon is added to game obstacles and starts pursuing player (initSnowDemonObstacle, spawnSnowDemonIfAppropriate, updateSnowDemonObstacle)
 - Initialize snow-demon spawn timer after 30 seconds of no input (initSnowDemonSpawnTimer, updateSnowDemonSpawnTimer)
 - Add inactivity timer state to track elapsed time since last input (initInactivityTimer, updateInactivityTimer)
 - Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing (initSnowDemonObstacles, addSnowDemonToObstacles)
