@@ -1440,6 +1440,6 @@ Operator direction from the daily report lands here.
 - [x] Add a persistent achievements registry that auto-updates with new counters for NPC skiers hit, drones dodged, and jumps landed, with witty unlock messages in Warboy's original voice
 
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style
-- [ ] Implement dynamic terrain biomes transitioning as player descends (e.g., forest → night → alpine)
+- [x] Implement dynamic terrain biomes transitioning as player descends (e.g., forest → night → alpine)
 - [ ] Introduce style-based scoring with multipliers for slaloming near or crashing through NPCs
 - [ ] Create a persistent achievements registry with data-driven unlocks for new hazards and interactions
