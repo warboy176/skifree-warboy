@@ -1427,7 +1427,7 @@ Operator direction from the daily report lands here.
 
 - [!] Define the Warboy-designed snow-demon sprite as a function that draws a single, original pixel-art frame using only canvas fillRect and strokeRect operations  <!-- blocked: pipeline NOT started: reasoner produced no valid single-func -->
 - [!] Add a simple animation loop to the snow-demon sprite that cycles through 2 distinct frames of the original pixel art design  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
-- [ ] Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing
+- [x] Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing
 - [ ] Implement a timer that tracks player inactivity and triggers snow-demon spawn after 30 seconds of no input
 - [ ] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
 - [ ] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed

@@ -1,4 +1,5 @@
 # Changelog
+- Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing (initSnowDemonObstacles, addSnowDemonToObstacles)
 - Create a persistent achievements registry with new entries for each biome completed, style score milestones, and chase antagonist evasion feats — all in Warboy's original wit and art (initAchievementsRegistry, registerAchievement, checkAchievements)
 - Introduce style-based scoring: award bonus points for slaloming close to NPC skiers, crashing through obstacles, and landing jumps with precision (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
 - Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual styles and ambient sound cues, transitioning smoothly as player descends (initBiomeState, updateBiomeTransition, drawBiomeVisuals)
