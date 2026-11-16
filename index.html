@@ -4197,6 +4197,8 @@ function initPlayerState() {
     }
   };
 }
+initSnowDemon();
+
 initSlalomKingAchievementTracking();
 
 initNearMissCounter();
@@ -12571,6 +12573,16 @@ function registerSnowDemonAchievement() {
   
   addDefaultAchievement(achievementDef);
 }
+
+function initSnowDemon() {
+  game.snowDemon = {
+    x: 0,
+    y: 0,
+    speed: 0,
+    baseSpeed: NPC_SKIER_SPEED * 0.8
+  };
+}
+
 
 
 
