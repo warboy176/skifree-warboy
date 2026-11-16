@@ -286,6 +286,8 @@ if (autoplay.enabled) {
 spawnHighJumpRamps();
 
     initNPCs();
+initSnowDemonObstacle();
+
 game.chaseCreatures = initChaseCreatures();
 
 initChaseCreature();
@@ -12501,6 +12503,27 @@ function updateSnowDemonSpawnTimer(dt) {
         game.inactivityTimerMs = 0;
     }
 }
+
+function initSnowDemonObstacle() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 32;
+  canvas.height = 48;
+  const ctx = canvas.getContext('2d');
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0, 0, 32, 48);
+  
+  game.obstacles.push({
+    type: 'snowDemon',
+    x: -100,
+    y: -100,
+    width: 32,
+    height: 48,
+    speed: 1.8,
+    frame: canvas
+  });
+}
+
 
 
 
