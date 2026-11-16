@@ -1,4 +1,5 @@
 # Changelog
+- Introduce style-based scoring with multipliers for slaloming near NPCs, crashing through obstacles, and landing jumps with precision (initStyleScoringSystem, updateStyleScoring)
 - Implement dynamic terrain biomes transitioning from open slope to forest to night, each with distinct background art and ambient sound cues (initBiomeState, updateBiomeTransition, drawBiomeBackground)
 - Integrate the antagonist into the game loop with collision detection and visual rendering, ensuring it does not interfere with existing mechanics (initSnowWolf, updateSnowWolf, drawSnowWolf)
 - Create a movement pattern function for the antagonist that follows the player with escalating speed and erratic behavior (initNPCs, updateAntagonistMovement)
