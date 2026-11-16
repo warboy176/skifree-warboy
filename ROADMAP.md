@@ -1430,7 +1430,7 @@ Operator direction from the daily report lands here.
 - [x] Integrate the snow-demon sprite into the game's obstacle array with a fixed spawn delay after player starts skiing
 - [x] Add inactivity timer state to track elapsed time since last input
 - [x] Initialize snow-demon spawn timer after 30 seconds of no input
-- [ ] Create function to spawn snow-demon at player's current position when timer triggers
+- [!] Create function to spawn snow-demon at player's current position when timer triggers  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [ ] Ensure snow-demon is added to game obstacles and starts pursuing player
 - [ ] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
 - [ ] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed
