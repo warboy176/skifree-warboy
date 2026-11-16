@@ -1433,7 +1433,7 @@ Operator direction from the daily report lands here.
 - [!] Create function to spawn snow-demon at player's current position when timer triggers  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [x] Ensure snow-demon is added to game obstacles and starts pursuing player
 - [x] Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers
-- [ ] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed
+- [x] Implement basic pursuit logic where the snow-demon moves toward the player with a base speed
 - [ ] Increase the snow-demon's speed over time to simulate escalating threat, updating every frame
 - [ ] Implement dynamic terrain biomes: transition from open slope to dense forest at 500m depth, rendering with original tree sprites and ambient lighting
 - [ ] Introduce a style-based scoring system that awards points for slaloming close to NPCs, with multipliers for consecutive near-misses and penalties for collisions

@@ -1,4 +1,5 @@
 # Changelog
+- Implement basic pursuit logic where the snow-demon moves toward the player with a base speed (initSnowDemon, updateSnowDemon)
 - Add a function to spawn the snow-demon at a fixed offset behind the player when the timer triggers (initSnowDemonSpawner, registerSnowDemonAchievement)
 - Ensure snow-demon is added to game obstacles and starts pursuing player (initSnowDemonObstacle, spawnSnowDemonIfAppropriate, updateSnowDemonObstacle)
 - Initialize snow-demon spawn timer after 30 seconds of no input (initSnowDemonSpawnTimer, updateSnowDemonSpawnTimer)
