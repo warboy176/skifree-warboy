@@ -12664,6 +12664,11 @@ function updateAchievementCounter(achievementType, increment) {
   }
 }
 
+function registerAchievementCounter(achievementKey, threshold, type) {
+  ACHIEVEMENT_DEFINITIONS[achievementKey] = { threshold, type };
+}
+
+
 
 
 
