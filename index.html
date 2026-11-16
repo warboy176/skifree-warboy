@@ -12490,10 +12490,8 @@ function updateInactivityTimer(dt) {
 }
 
 function initSnowDemonSpawnTimer() {
-    game.inactivityTimerMs = 0;
-    game.playerInactivityTimer = {
-        threshold: 30000
-    };
+  game.inactivityTimerMs = 0;
+  game.inactivityTimerThresholdMs = 30000;
 }
 
 
