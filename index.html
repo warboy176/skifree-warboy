@@ -1829,6 +1829,8 @@ updateGameEndStats();
 function initGameState() {
     game.state = GameState.PAUSED;
 }
+initSnowDemonSpawner();
+
 initSnowDemonObstacles();
 
 initBiomeVisualEffects();
@@ -12546,6 +12548,16 @@ function updateSnowDemonObstacle(obstacle, dt) {
     game.onPlayerHit('snowDemon');
   }
 }
+
+function initSnowDemonSpawner() {
+    game.snowDemonSpawner = {
+        timer: 0,
+        offset: -120,
+        spawnRate: 3000,
+        active: false
+    };
+}
+
 
 
 
