@@ -1457,3 +1457,8 @@ Operator direction from the daily report lands here.
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends
 - [x] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and combo chains
 - [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics, NPCs, and hazards
+
+- [ ] Add the chase antagonist — a unique, original creature drawn in code — that spawns after a delay and pursues the player when they slow down, with distinct movement and visual design
+- [ ] Implement terrain biome transitions: open slope → forest → night → alpine, each with original art and changing background/obstacle patterns
+- [ ] Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback
+- [ ] Create a persistent achievements registry that auto-updates with new counters for every new hazard, NPC, or mechanic, using Warboy's original visual and narrative voice
