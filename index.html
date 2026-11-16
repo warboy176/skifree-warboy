@@ -12634,6 +12634,18 @@ function initPlayerInactivityTracker() {
     game.playerInactivityStart = null;
 }
 
+function updatePlayerInactivityDuration(dt) {
+  if (game.playerInactivityStart === null) {
+    game.playerInactivityStart = Date.now();
+  } else if (PlayerState.x !== game.lastPlayerX) {
+    game.playerInactivityStart = null;
+  } else {
+    game.playerInactivityDuration += dt;
+  }
+  game.lastPlayerX = PlayerState.x;
+}
+
+
 
 
 
