@@ -1456,4 +1456,4 @@ Operator direction from the daily report lands here.
 - [x] Add original Warboy-designed chase antagonist creature with unique movement pattern and visual style, using code-drawn art only
 - [x] Implement dynamic terrain biomes (forest → night → alpine) that transition smoothly as player descends
 - [x] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and combo chains
-- [ ] Create a persistent achievements registry with data-driven unlock logic for new mechanics, NPCs, and hazards
+- [x] Create a persistent achievements registry with data-driven unlock logic for new mechanics, NPCs, and hazards
