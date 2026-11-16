@@ -1,4 +1,5 @@
 # Changelog
+- Ensure each achievement is uniquely named and only counted once per session, using a set to track introduced mechanics (initAchievementTracking, checkAchievementUniqueness, unlockAchievement)
 - Add a function to increment a named achievement counter when a new hazard, NPC, or mechanic is first introduced during gameplay (registerAchievementCounter, incrementAchievementCounter)
 - Initialize a persistent achievements registry object in the global scope with an empty map of named counters (initAchievementsRegistry)
 - Introduce a style-based scoring system that rewards close slaloming through NPCs, crashing through obstacles, and chaining multipliers, with real-time HUD feedback (initStyleScoringSystem, updateStyleScoring, registerStyleAchievements)
