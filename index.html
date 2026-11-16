@@ -12454,6 +12454,27 @@ function initSnowDemonObstacles() {
     game.snowDemonObstacles = [];
 }
 
+function addSnowDemonToObstacles() {
+  game.snowDemonObstacles.push({
+    x: W + 100,
+    y: H - NPC_SKIER_HEIGHT,
+    speed: NPC_SKIER_SPEED * 0.8,
+    width: 32,
+    height: 32,
+    draw: function(ctx) {
+      ctx.fillStyle = "black";
+      ctx.fillRect(this.x, this.y, 32, 32);
+      ctx.strokeStyle = "white";
+      ctx.beginPath();
+      ctx.moveTo(this.x + 16, this.y + 8);
+      ctx.lineTo(this.x + 20, this.y);
+      ctx.lineTo(this.x + 24, this.y + 8);
+      ctx.stroke();
+    }
+  });
+}
+
+
 
 
 
