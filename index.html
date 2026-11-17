@@ -12796,6 +12796,18 @@ function renderTaglineIfActive() {
   }
 }
 
+function showTaglineOnce() {
+  if (!game.taglineDisplayState.active && game.taglineDisplayState.displayCount === 0) {
+    game.taglineDisplayState.active = true;
+    game.taglineDisplayState.displayCount++;
+    ctx.font = '24px sans-serif';
+    ctx.fillStyle = 'white';
+    ctx.textAlign = 'center';
+    ctx.fillText('STYLE POINTS', W/2, H/2);
+  }
+}
+
+
 
 
 
