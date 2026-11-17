@@ -12749,6 +12749,17 @@ function showEncounterBadge(npcId) {
   ctx.fillRect(x, y, 4, 4);
 }
 
+function initAchievementBadges() {
+  game.achievementsBadges = game.achievements
+    .filter(achievement => game.unlockedAchievements.includes(achievement.id))
+    .map(achievement => ({
+      id: achievement.id,
+      unlocked: true,
+      position: { x: 0, y: 0 }
+    }));
+}
+
+
 
 
 
