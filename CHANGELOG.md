@@ -1,4 +1,5 @@
 # Changelog
+- Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics (initAchievementBadges, drawAchievementBadge, updateAchievementBadges)
 - Ensure the badge appears only once per unique encounter and persists until the next game reset (initEncounterBadgeState, shouldShowEncounterBadge, showEncounterBadge)
 - Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art (initEncounterBadgeState, updateEncounterBadgeVisibility, drawEncounterBadge)
 - Ensure each achievement is uniquely named and only counted once per session, using a set to track introduced mechanics (initAchievementTracking, checkAchievementUniqueness, unlockAchievement)
