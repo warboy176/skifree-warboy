@@ -1473,7 +1473,7 @@ Operator direction from the daily report lands here.
 - [x] Add a function to check for the first obstacle hit during collision detection and set the tagline flag if not already set
 - [x] Create a HUD rendering function that draws the tagline 'First obstacle encountered!' only when the flag is true and the game is in PLAYING state
 - [x] Ensure the tagline appears only once and persists until the next game restart
-- [ ] Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles
+- [x] Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles
 - [ ] Create a mapping of badge types to their corresponding narrative taglines based on the game's existing mechanic triggers
 - [ ] Implement a function to trigger the first-use tagline update when the player first collides with an obstacle
 - [ ] Ensure the tagline updates only once per badge type and persists across restarts

@@ -1,4 +1,5 @@
 # Changelog
+- Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles (initTaglineDisplayState, updateTaglineVisibility)
 - Ensure the tagline appears only once and persists until the next game restart (initTaglineDisplayState, showTaglineOnce)
 - Create a HUD rendering function that draws the tagline 'First obstacle encountered!' only when the flag is true and the game is in PLAYING state (renderTaglineIfActive)
 - Add a function to check for the first obstacle hit during collision detection and set the tagline flag if not already set (checkFirstObstacleHit)
