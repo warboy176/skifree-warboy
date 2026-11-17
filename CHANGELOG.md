@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to trigger the first-use tagline update when the player first collides with an obstacle (initFirstUseTaglineState, handleFirstObstacleCollisionTaglineUpdate)
 - Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles (initTaglineDisplayState, updateTaglineVisibility)
 - Ensure the tagline appears only once and persists until the next game restart (initTaglineDisplayState, showTaglineOnce)
 - Create a HUD rendering function that draws the tagline 'First obstacle encountered!' only when the flag is true and the game is in PLAYING state (renderTaglineIfActive)
