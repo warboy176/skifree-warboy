@@ -12750,13 +12750,11 @@ function showEncounterBadge(npcId) {
 }
 
 function initAchievementBadges() {
-  game.achievementsBadges = game.achievements
-    .filter(achievement => game.unlockedAchievements.includes(achievement.id))
-    .map(achievement => ({
-      id: achievement.id,
-      unlocked: true,
-      position: { x: 0, y: 0 }
-    }));
+  game.achievementsBadges = game.achievements.map(achievement => ({
+    id: achievement.id,
+    unlocked: game.unlockedAchievements.has(achievement.id),
+    position: { x: 0, y: 0 } // placeholder; will be set during rendering
+  }));
 }
 
 
