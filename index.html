@@ -12818,6 +12818,15 @@ function updateTaglineVisibility(dt) {
   }
 }
 
+function initFirstUseTaglineState() {
+  if (!game.taglineDisplayState) {
+    game.taglineDisplayState = {
+      firstObstacleCollision: false
+    };
+  }
+}
+
+
 
 
 
