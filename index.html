@@ -12776,6 +12776,20 @@ function initTaglineDisplayState() {
   };
 }
 
+function checkFirstObstacleHit(game, player, obstacles) {
+  for (let i = 0; i < obstacles.length; i++) {
+    const obstacle = obstacles[i];
+    if (!obstacle.used && checkPlayerCollision(obstacle)) {
+      if (!game.taglineDisplayState) {
+        game.taglineDisplayState = true;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+
 
 
 
