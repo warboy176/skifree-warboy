@@ -12758,23 +12758,14 @@ function initAchievementBadges() {
 }
 
 function updateAchievementBadges(dt) {
-  const badges = game.achievements.filter(a => a.unlocked);
-  const achievementsToCheck = game.achievements.filter(a => !a.unlocked);
-
-  for (let i = 0; i < game.achievementsBadges.length; i++) {
-    const badge = game.achievementsBadges[i];
-    const achievement = game.achievements[i];
-
-    if (game.unlockedAchievements.includes(achievement.id)) {
+  for (const badge of game.achievementsBadges) {
+    if (badge.unlocked) {
       if (badge.revealProgress < 1) {
-        badge.revealProgress += dt / 0.5;
-        if (badge.revealProgress > 1) badge.revealProgress = 1;
+        badge.revealProgress += dt / 0.5; // 500ms duration
+        badge.revealProgress = Math.min(badge.revealProgress, 1);
       }
     } else {
-      if (badge.revealProgress > 0) {
-        badge.revealProgress -= dt / 0.5;
-        if (badge.revealProgress < 0) badge.revealProgress = 0;
-      }
+      badge.revealProgress = 0;
     }
   }
 }
