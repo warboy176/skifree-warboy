@@ -1753,6 +1753,8 @@ drawMoon(ctx);
     drawWarboyChase();drawYeti();drawSkier();
     for(const o of ordered)if(o.y>=player.y)drawObstacle(o);
     ctx.restore();drawHUD();
+drawEncounterBadge(ctx);
+
 renderSkinSelectorNPCs();
 
 renderSkinSelectorIcons();
@@ -12722,6 +12724,17 @@ function updateEncounterBadgeVisibility(newEncounter) {
     game.encounterBadge.active = false;
   }
 }
+
+function drawEncounterBadge(ctx) {
+  if (game.encounterBadge.active) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(game.encounterBadge.x, game.encounterBadge.y, 4, 4);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(game.encounterBadge.x, game.encounterBadge.y, 4, 4);
+  }
+}
+
 
 
 
