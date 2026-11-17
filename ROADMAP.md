@@ -1469,5 +1469,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art
 - [x] Ensure the badge appears only once per unique encounter and persists until the next game reset
 - [x] Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics
-- [ ] Link each badge to a narrative tagline that reflects Warboy's voice, dynamically updating the tagline when the associated mechanic is first used
+- [ ] Add a dynamic tagline display element in the HUD that updates when the first obstacle is encountered
+- [ ] Create a mapping of badge types to their corresponding narrative taglines based on the game's existing mechanic triggers
+- [ ] Implement a function to trigger the first-use tagline update when the player first collides with an obstacle
+- [ ] Ensure the tagline updates only once per badge type and persists across restarts
 - [ ] Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart
