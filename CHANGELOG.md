@@ -1,4 +1,5 @@
 # Changelog
+- Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art (initEncounterBadgeState, updateEncounterBadgeVisibility, drawEncounterBadge)
 - Ensure each achievement is uniquely named and only counted once per session, using a set to track introduced mechanics (initAchievementTracking, checkAchievementUniqueness, unlockAchievement)
 - Add a function to increment a named achievement counter when a new hazard, NPC, or mechanic is first introduced during gameplay (registerAchievementCounter, incrementAchievementCounter)
 - Initialize a persistent achievements registry object in the global scope with an empty map of named counters (initAchievementsRegistry)
