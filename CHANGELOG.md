@@ -1,4 +1,5 @@
 # Changelog
+- Add a function to check for the first obstacle hit during collision detection and set the tagline flag if not already set (checkFirstObstacleHit)
 - Initialize a tagline display state in the game object to track whether the first obstacle has been encountered (initTaglineDisplayState)
 - Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics (initAchievementBadges, drawAchievementBadge, updateAchievementBadges)
 - Ensure the badge appears only once per unique encounter and persists until the next game reset (initEncounterBadgeState, shouldShowEncounterBadge, showEncounterBadge)
