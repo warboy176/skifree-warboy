@@ -1469,7 +1469,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art
 - [x] Ensure the badge appears only once per unique encounter and persists until the next game reset
 - [x] Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics
-- [ ] Add a dynamic tagline display element in the HUD that updates when the first obstacle is encountered
+- [ ] Add a dynamic tagline display element in the HUD that shows 'First obstacle encountered!' when the first obstacle is hit
+- [ ] Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles
 - [ ] Create a mapping of badge types to their corresponding narrative taglines based on the game's existing mechanic triggers
 - [ ] Implement a function to trigger the first-use tagline update when the player first collides with an obstacle
 - [ ] Ensure the tagline updates only once per badge type and persists across restarts
