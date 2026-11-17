@@ -1,4 +1,5 @@
 # Changelog
+- Add original Warboy-designed chase antagonist with unique movement pattern and visual style, appearing after 10 seconds of inactivity (initChaseAntagonist, updateChaseAntagonist)
 - Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart (loadGameProgress, saveGameProgress)
 - Implement a function to trigger the first-use tagline update when the player first collides with an obstacle (initFirstUseTaglineState, handleFirstObstacleCollisionTaglineUpdate)
 - Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles (initTaglineDisplayState, updateTaglineVisibility)
