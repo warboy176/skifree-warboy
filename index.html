@@ -736,6 +736,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+if (shouldShowEncounterBadge(npc.id)) { showEncounterBadge(npc.id); }
+
 
 
 updateSnowDemonObstacle(obstacle, dt);
@@ -12734,6 +12736,11 @@ function drawEncounterBadge(ctx) {
     ctx.strokeRect(game.encounterBadge.x, game.encounterBadge.y, 4, 4);
   }
 }
+
+function shouldShowEncounterBadge(npcId) {
+  return !game.encounterBadge.includes(npcId);
+}
+
 
 
 
