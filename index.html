@@ -12855,6 +12855,12 @@ function loadGameProgress() {
   }
 }
 
+function saveGameProgress() {
+  localStorage.setItem(SCORE_KEY, JSON.stringify(game.achievements));
+  localStorage.setItem(EVENTLOG_KEY, JSON.stringify(game.unlockedAchievements));
+}
+
+
 
 
 
