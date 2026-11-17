@@ -1467,7 +1467,7 @@ Operator direction from the daily report lands here.
 - [!] Add a state to track which hazards, NPCs, and mechanics have been encountered, initialized at game start  <!-- blocked: pipeline: item INCOMPLETE — 0/4 landed, 0 unspecifiable, 2 e -->
 - [!] Create a function to check if a new hazard, NPC, or mechanic has been encountered for the first time during gameplay  <!-- blocked: pipeline: item INCOMPLETE — 1/4 landed, 0 unspecifiable, 1 e -->
 - [x] Implement a function to draw a visual badge on screen only when a new encounter is detected, using original Warboy art
-- [ ] Ensure the badge appears only once per unique encounter and persists until the next game reset
+- [x] Ensure the badge appears only once per unique encounter and persists until the next game reset
 - [ ] Ensure each badge appears in the HUD with Warboy's original pixel-art style and animated reveal, using only code-drawn graphics
 - [ ] Link each badge to a narrative tagline that reflects Warboy's voice, dynamically updating the tagline when the associated mechanic is first used
 - [ ] Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart
