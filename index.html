@@ -736,6 +736,8 @@ spawnSnowWolfNPC();
 spawnDroneHazard();
  }catch(__e){}
       try{ if(typeof updateNPCs==='function') updateNPCs(dt);
+updateTaglineVisibility(dt);
+
 if (shouldShowEncounterBadge(npc.id)) { showEncounterBadge(npc.id); }
 
 
@@ -12806,6 +12808,16 @@ function showTaglineOnce() {
     ctx.fillText('STYLE POINTS', W/2, H/2);
   }
 }
+
+function updateTaglineVisibility(dt) {
+  if (game.taglineDisplayState.visible && game.trickMultiplierStartTime !== null) {
+    const elapsed = performance.now() - game.trickMultiplierStartTime;
+    if (elapsed >= 2000) {
+      game.taglineDisplayState.visible = false;
+    }
+  }
+}
+
 
 
 
