@@ -4205,6 +4205,8 @@ function initPlayerState() {
     }
   };
 }
+initEncounterBadgeState();
+
 initSnowDemon();
 
 initSlalomKingAchievementTracking();
@@ -12690,6 +12692,26 @@ function initAchievementTracking() {
 function checkAchievementUniqueness(achievementId) {
     return !game.unlockedAchievements.has(achievementId);
 }
+
+function initEncounterBadgeState() {
+  game.encounterBadge = {
+    active: false,
+    x: 0,
+    y: 0,
+    showDuration: 0,
+    fadeOutDuration: 1000,
+    draw: function(ctx) {
+      if (!this.active) return;
+      const alpha = Math.min(1, (this.showDuration - Date.now() + this.fadeOutDuration) / this.fadeOutDuration);
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = '#FFD700';
+      ctx.font = '20px Arial';
+      ctx.fillText('Encounter', this.x, this.y);
+      ctx.globalAlpha = 1;
+    }
+  };
+}
+
 
 
 
