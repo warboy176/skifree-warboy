@@ -12826,6 +12826,15 @@ function initFirstUseTaglineState() {
   }
 }
 
+function handleFirstObstacleCollisionTaglineUpdate(player, obstacle) {
+  if (!game.taglineDisplayState.firstObstacleCollision && checkClosePassCollision(player, obstacle)) {
+    game.taglineDisplayState.firstObstacleCollision = true;
+    game.tagline = UNLOCK_MESSAGES[0];
+    localStorage.setItem('taglineDisplayState', JSON.stringify(game.taglineDisplayState));
+  }
+}
+
+
 
 
 
