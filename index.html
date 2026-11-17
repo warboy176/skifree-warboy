@@ -12788,6 +12788,15 @@ function checkFirstObstacleHit(game, player, obstacles) {
   return false;
 }
 
+function renderTaglineIfActive() {
+  if (game.taglineDisplayState && GameState === 'PLAYING') {
+    ctx.font = '24px Arial';
+    ctx.fillStyle = 'white';
+    ctx.fillText('First obstacle encountered!', W/2, H/2);
+  }
+}
+
+
 
 
 
