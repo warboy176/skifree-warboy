@@ -12712,6 +12712,18 @@ function initEncounterBadgeState() {
   };
 }
 
+function updateEncounterBadgeVisibility(newEncounter) {
+  if (newEncounter) {
+    game.encounterBadge.active = true;
+    game.encounterBadge.x = W / 2;
+    game.encounterBadge.y = H / 2;
+    game.encounterBadge.showDuration = 500;
+  } else {
+    game.encounterBadge.active = false;
+  }
+}
+
+
 
 
 
