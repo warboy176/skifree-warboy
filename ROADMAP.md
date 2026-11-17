@@ -1478,3 +1478,8 @@ Operator direction from the daily report lands here.
 - [x] Implement a function to trigger the first-use tagline update when the player first collides with an obstacle
 - [!] Ensure the tagline updates only once per badge type and persists across restarts  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [x] Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart
+
+- [ ] Add original Warboy-designed chase antagonist with unique movement pattern and visual style, appearing after 10 seconds of inactivity
+- [ ] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient audio shifts
+- [ ] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing tricks
+- [ ] Create a persistent achievements registry with data-driven unlock logic and witty, original unlock messages for new gameplay milestones
