@@ -12834,6 +12834,28 @@ function handleFirstObstacleCollisionTaglineUpdate(player, obstacle) {
   }
 }
 
+function loadGameProgress() {
+  const savedScore = localStorage.getItem(SCORE_KEY);
+  if (savedScore !== null) {
+    GameState.score = parseInt(savedScore, 10);
+  }
+
+  const savedAchievements = localStorage.getItem(EVENTLOG_KEY);
+  if (savedAchievements !== null) {
+    const parsedAchievements = JSON.parse(savedAchievements);
+    for (const achievement of parsedAchievements) {
+      if (game.achievements[achievement.id]) {
+        game.achievements[achievement.id].unlocked = true;
+        game.achievements[achievement.id].counter = achievement.counter;
+      }
+      if (!game.unlockedAchievements.includes(achievement.id)) {
+        game.unlockedAchievements.push(achievement.id);
+      }
+    }
+  }
+}
+
+
 
 
 
