@@ -1474,7 +1474,7 @@ Operator direction from the daily report lands here.
 - [x] Create a HUD rendering function that draws the tagline 'First obstacle encountered!' only when the flag is true and the game is in PLAYING state
 - [x] Ensure the tagline appears only once and persists until the next game restart
 - [x] Ensure the tagline disappears after 2 seconds and does not reappear on subsequent obstacles
-- [ ] Create a mapping of badge types to their corresponding narrative taglines based on the game's existing mechanic triggers
+- [!] Create a mapping of badge types to their corresponding narrative taglines based on the game's existing mechanic triggers  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [ ] Implement a function to trigger the first-use tagline update when the player first collides with an obstacle
 - [ ] Ensure the tagline updates only once per badge type and persists across restarts
 - [ ] Make the registry auto-update across sessions using localStorage, preserving progress on new hazards, NPCs, and mechanics even after game restart
