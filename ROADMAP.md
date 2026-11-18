@@ -1483,3 +1483,5 @@ Operator direction from the daily report lands here.
 - [!] Implement dynamic terrain biomes (lodge → open slope → forest → night) with distinct visual layers and ambient audio shifts  <!-- blocked: pipeline: item INCOMPLETE — 0/2 landed, 0 unspecifiable, 1 e -->
 - [!] Introduce style-based scoring system with multipliers for slaloming near NPCs, crashing through obstacles, and landing tricks  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
 - [!] Create a persistent achievements registry with data-driven unlock logic and witty, original unlock messages for new gameplay milestones  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
