@@ -1485,3 +1485,5 @@ Operator direction from the daily report lands here.
 - [!] Create a persistent achievements registry with data-driven unlock logic and witty, original unlock messages for new gameplay milestones  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
 
 - [!] Grow the achievements registry to cover the current scorable interactions (quality-audit)  <!-- blocked: pipeline NOT started: reasoner decompose failed: HTTPError:  -->
+
+- [ ] Grow the achievements registry to cover the current scorable interactions (quality-audit)
